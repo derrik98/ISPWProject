@@ -29,7 +29,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/it/ispw/daniele/backpacker" />
-    <property name="last_opened_file_path" value="E:/Università/Ingegneria del Software e Progettazione Web/2021-2022/Lezione13-14/Lezioni13-14/esempioFrazioni" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="vcs.Subversion" />
   </component>
@@ -102,6 +102,7 @@
       <workItem from="1636236343829" duration="291000" />
       <workItem from="1636300314517" duration="83000" />
       <workItem from="1636310009785" duration="1998000" />
+      <workItem from="1636315494277" duration="218000" />
     </task>
     <servers />
   </component>
