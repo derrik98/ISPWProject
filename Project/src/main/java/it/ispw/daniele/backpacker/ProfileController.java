@@ -70,7 +70,6 @@ public class ProfileController extends HelloController implements Initializable 
                 if (!titledPane.isCollapsible()) {
                     titledPane.setCollapsible(true);
                     titledPane.setExpanded(true);
-                    System.out.println("tasto mappa cliccato");
                 } else {
                     titledPane.setCollapsible(false);
                     titledPane.setExpanded(false);
@@ -80,7 +79,6 @@ public class ProfileController extends HelloController implements Initializable 
 
             ivSave.setOnMouseClicked(mouseEvent -> {
                 Node s = contentPane.getChildren().get(0);
-                System.out.println("salvato" + l.getText());
             });
 
             contentPane.getChildren().addAll(l, region, ivMap, region1, ivSave);
