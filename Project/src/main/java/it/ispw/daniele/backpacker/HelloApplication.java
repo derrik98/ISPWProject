@@ -12,7 +12,7 @@ import java.util.Stack;
 public class HelloApplication extends Application {
 
     Parent fxmlLoader;
-    public static Scene scene;
+    protected static Scene scene;
     public static Stack<Scene> stackScene = new Stack<>();
 
     @Override
