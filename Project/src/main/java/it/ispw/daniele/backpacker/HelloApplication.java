@@ -13,7 +13,7 @@ public class HelloApplication extends Application {
 
     Parent fxmlLoader;
     protected static Scene scene;
-    public static Stack<Scene> stackScene = new Stack<>();
+    protected static Stack<Scene> stackScene = new Stack<>();
 
     @Override
     public void start(Stage stage) throws IOException {
