@@ -8,11 +8,9 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.HelloController">
-<!--            prefHeight="400.0" prefWidth="600.0">-->
-
-    <children>
-        <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <content>
+   <children>
+      <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
                 <VBox>
                     <children>
                   <StackPane>
@@ -184,7 +182,8 @@
                                         <Label fx:id="labelRange" text="1.0 km">
                                             <font>
                                                 <Font size="27.0" />
-                                            </font></Label>
+                                            </font>
+                              </Label>
                                         <Separator orientation="VERTICAL">
                                             <HBox.margin>
                                                 <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
@@ -201,7 +200,7 @@
                                     </VBox.margin>
                                 </HBox>
                                 <HBox alignment="CENTER">
-                                    <children>
+                                      <children>
                                         <Button id="search" fx:id="buttonSearch" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#SearchRoutes" text="Search">
                                             <font>
                                                 <Font size="27.0" />
@@ -219,8 +218,7 @@
                         </VBox>
                     </children>
                 </VBox>
-            </content>
-        </ScrollPane>
-    </children>
-
+         </content>
+      </ScrollPane>
+   </children>
 </AnchorPane>
