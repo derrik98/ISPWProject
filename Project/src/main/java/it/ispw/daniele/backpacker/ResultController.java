@@ -21,7 +21,7 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class ResultController extends HelloController implements Initializable {
+public class ResultController extends GUIController implements Initializable {
 
     private final Accordion accordionResult = new Accordion();
 

@@ -7,19 +7,18 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.HelloController">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.HomeController">
    <children>
-      <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ScrollPane  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <content>
                 <VBox>
                     <children>
                   <StackPane>
                      <children>
-                              <ImageView fitHeight="281.0" fitWidth="1914.0" focusTraversable="true" pickOnBounds="true">
-                                  <image>
-                                      <Image url="@/itinerario.jpg" />
-                                  </image>
-                              </ImageView>
+                         <ImageView fitHeight="281.0" fitWidth="1914.0" focusTraversable="true" pickOnBounds="true">
+                             <Image url="@/itinerario.jpg"/>
+                         </ImageView>
+      
                         <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="5.0" text="Backpacker">
                            <font>
                               <Font size="140.0" />
@@ -99,9 +98,6 @@
                                     </HBox.margin>
                                 </ImageView>
                             </children>
-                            <VBox.margin>
-                                <Insets />
-                            </VBox.margin>
                         </HBox>
                         <VBox alignment="CENTER">
                             <children>
@@ -143,7 +139,7 @@
                                             </font>
                                         </TextField>
                                     </children>
-                                    <VBox.margin>
+                                     <VBox.margin>
                                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                                     </VBox.margin>
                                 </HBox>

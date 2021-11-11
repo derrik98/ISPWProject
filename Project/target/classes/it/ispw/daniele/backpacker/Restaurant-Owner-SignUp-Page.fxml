@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.HelloController">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.SignUpController">
 
 
     <children>
@@ -155,7 +155,7 @@
                                                                 <Insets right="10.0" />
                                                             </HBox.margin>
                                                         </Text>
-                                                        <TextField>
+                                                        <TextField fx:id="textFieldEmailSignUp">
                                                             <font>
                                                                 <Font size="20.0" />
                                                             </font>
@@ -175,7 +175,7 @@
                                                                 <Insets right="10.0" />
                                                             </HBox.margin>
                                                         </Text>
-                                                        <TextField>
+                                                        <TextField fx:id="textFieldNameSignUp">
                                                             <font>
                                                                 <Font size="20.0" />
                                                             </font>
@@ -195,7 +195,7 @@
                                                                 <Insets right="10.0" />
                                                             </HBox.margin>
                                                         </Text>
-                                                        <TextField>
+                                                        <TextField fx:id="textFieldSurnameSignUp">
                                                             <font>
                                                                 <Font size="20.0" />
                                                             </font>
@@ -225,7 +225,7 @@
                                                                 <Insets right="10.0" />
                                                             </HBox.margin>
                                                         </Text>
-                                                        <PasswordField>
+                                                        <PasswordField fx:id="textFieldPassSignUp">
                                                             <font>
                                                                 <Font size="20.0" />
                                                             </font>
@@ -245,7 +245,7 @@
                                                                 <Insets right="10.0" />
                                                             </HBox.margin>
                                                         </Text>
-                                                        <PasswordField>
+                                                        <PasswordField fx:id="textFieldConfPassSignUp">
                                                             <font>
                                                                 <Font size="20.0" />
                                                             </font>
@@ -265,7 +265,7 @@
                                                 <Font size="27.0" />
                                              </font>
                                           </Text>
-                                          <TextField>
+                                          <TextField fx:id="textFieldVATNumber">
                                              <font>
                                                 <Font size="20.0" />
                                              </font>
@@ -284,7 +284,7 @@
                                         <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </HBox>
-                                <Button mnemonicParsing="false" text="Sign up">
+                                <Button fx:id="buttonSignUpRest" mnemonicParsing="false" onMouseClicked="#signUpRest" text="Sign up">
                                     <font>
                                         <Font size="27.0" />
                                     </font>

@@ -20,6 +20,7 @@
     </option>
   </component>
   <component name="ProjectId" id="209IoJ2Kn3WnJzwK830g9TOTXdc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -31,7 +32,7 @@
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/it/ispw/daniele/backpacker" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Progetto/trunk" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="vcs.Subversion" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -44,8 +45,8 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.HelloApplication" />
+    <configuration name="GUIController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.GUIController" />
       <module name="Backpacker" />
       <extension name="coverage">
         <pattern>
@@ -59,7 +60,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.GUIController" />
       </list>
     </recent_temporary>
   </component>
@@ -106,11 +107,23 @@
       <workItem from="1636317327511" duration="344000" />
       <workItem from="1636396920542" duration="231000" />
       <workItem from="1636407092975" duration="2752000" />
+      <workItem from="1636464126742" duration="156000" />
+      <workItem from="1636466056517" duration="73000" />
+      <workItem from="1636540930900" duration="4194000" />
+      <workItem from="1636560798822" duration="773000" />
+      <workItem from="1636570605359" duration="43000" />
+      <workItem from="1636654801068" duration="503000" />
+      <workItem from="1636655319390" duration="2222000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

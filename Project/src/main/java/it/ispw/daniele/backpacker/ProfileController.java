@@ -1,32 +1,62 @@
 package it.ispw.daniele.backpacker;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class ProfileController extends HelloController implements Initializable {
+public class ProfileController extends GUIController implements Initializable {
 
+    @FXML
+    ImageView imageSettings;
+    @FXML
+    Text textSettings;
     @FXML
     VBox vBoxProfile;
 
     private final Accordion accordionResult = new Accordion();
+
+    public void switchToSettings() throws IOException {
+        fxmlLoader = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Edit-Profile-Page.fxml")));
+        stage = (Stage) LabelHome.getScene().getWindow();
+        scene = new Scene(fxmlLoader, stage.getScene().getWidth(), stage.getScene().getHeight());
+        stage.setScene(scene);
+        stackScene.push(scene);
+        System.out.println(stackScene);
+    }
+
+    public void showInfoSettings(MouseEvent mouseEvent) {
+        System.out.println("entrato");
+        textSettings.setVisible(true);
+        //return textSettings.isVisible();
+
+    }
+
+    public void notShowInfoSettings(MouseEvent mouseEvent) {
+        textSettings.setVisible(false);
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

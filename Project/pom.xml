@@ -112,7 +112,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>it.ispw.daniele.backpacker/it.ispw.daniele.backpacker.HelloApplication
+                            <mainClass>it.ispw.daniele.backpacker/it.ispw.daniele.backpacker.GUIController
                             </mainClass>
                         </configuration>
                     </execution>
