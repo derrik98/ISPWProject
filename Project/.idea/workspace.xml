@@ -32,7 +32,7 @@
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/it/ispw/daniele/backpacker" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Progetto/trunk" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -115,6 +115,9 @@
       <workItem from="1636654801068" duration="503000" />
       <workItem from="1636655319390" duration="2222000" />
       <workItem from="1636711489004" duration="86000" />
+      <workItem from="1636720586746" duration="630000" />
+      <workItem from="1636724194060" duration="3135000" />
+      <workItem from="1636727351684" duration="4395000" />
     </task>
     <servers />
   </component>
@@ -135,5 +138,9 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

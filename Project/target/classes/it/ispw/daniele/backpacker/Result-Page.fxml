@@ -8,158 +8,156 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.ResultController">
-
-
-    <children>
-        <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <content>
-                <VBox>
-                    <children>
-                        <StackPane>
-                            <children>
-                                <ImageView fitHeight="281.0" fitWidth="1914.0" focusTraversable="true" pickOnBounds="true">
-                                    <image>
-                                        <Image url="@/itinerario.jpg" />
-                                    </image>
-                                </ImageView>
-                                <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="5.0" text="Backpacker">
-                                    <font>
-                                        <Font size="140.0" />
-                                    </font>
-                                </Text>
-                            </children>
-                        </StackPane>
-                        <HBox alignment="CENTER" spacing="35.0" style="-fx-background-color: silver;">
-                            <children>
-                                <Label fx:id="LabelHome" onMouseClicked="#switchToHome" text="Home">
-                                    <font>
-                                        <Font size="40.0" />
-                                    </font>
-                                    <cursor>
-                                        <Cursor fx:constant="HAND" />
-                                    </cursor>
-                                    <padding>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                    </padding>
-                                </Label>
-                                <Label fx:id="LabelResult" onMouseClicked="#switchToResult" text="Result" underline="true">
-                                    <font>
-                                        <Font size="40.0" />
-                                    </font>
-                                    <cursor>
-                                        <Cursor fx:constant="HAND" />
-                                    </cursor>
-                                    <padding>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                    </padding>
-                                </Label>
-                                <Label fx:id="LabelProfile" onMouseClicked="#switchToProfile" text="Profile">
-                                    <font>
-                                        <Font size="40.0" />
-                                    </font>
-                                    <cursor>
-                                        <Cursor fx:constant="HAND" />
-                                    </cursor>
-                                    <padding>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                    </padding>
-                                </Label>
-                                <Label fx:id="LabelLogin" onMouseClicked="#switchToLogin" text="Log in">
-                                    <font>
-                                        <Font size="40.0" />
-                                    </font>
-                                    <cursor>
-                                        <Cursor fx:constant="HAND" />
-                                          </cursor>
-                                    <padding>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                    </padding>
-                                </Label>
-                                <Label fx:id="LabelSignUp" onMouseClicked="#switchToSignUp" text="Sign up">
-                                    <padding>
-                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                                    </padding>
-                                    <font>
-                                        <Font size="40.0" />
-                                    </font>
-                                    <cursor>
-                                        <Cursor fx:constant="HAND" />
-                                    </cursor>
-                                </Label>
-                                <ImageView fx:id="imageUndo" fitHeight="50.0" fitWidth="50.0" nodeOrientation="INHERIT" onMouseClicked="#undoScene" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@/annulla.png" />
-                                    </image>
-                                    <viewport>
-                                        <Rectangle2D />
-                                    </viewport>
-                                    <cursor>
-                                        <Cursor fx:constant="HAND" />
-                                    </cursor>
-                                    <HBox.margin>
-                                        <Insets />
-                                    </HBox.margin>
-                                </ImageView>
-                            </children>
-                            <VBox.margin>
-                                 <Insets />
-                            </VBox.margin>
-                        </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Search Results for: ">
-                           <font>
-                              <Font size="24.0" />
-                           </font></Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Country = ">
-                           <font>
-                              <Font size="24.0" />
-                           </font></Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Italia">
-                           <font>
-                              <Font name="System Bold" size="24.0" />
-                           </font></Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text=", City = ">
-                           <font>
-                              <Font size="24.0" />
-                           </font></Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Roma">
-                           <font>
-                              <Font name="System Bold" size="24.0" />
-                           </font></Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text=", Address = ">
-                           <font>
-                              <Font size="24.0" />
-                           </font></Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="via del corso">
-                           <font>
-                              <Font name="System Bold" size="24.0" />
-                           </font></Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text=", Restaurant = ">
-                           <font>
-                              <Font size="24.0" />
-                           </font></Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Incuded">
-                           <font>
-                              <Font name="System Bold" size="24.0" />
-                           </font></Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text=", Search radius = ">
-                           <font>
-                              <Font size="24.0" />
-                           </font></Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="5.2 km">
-                           <font>
-                              <Font name="System Bold" size="24.0" />
-                           </font></Text>
-                     </children>
-                  </HBox>
-                        <VBox fx:id="vBoxResult" alignment="TOP_CENTER">
-                     <VBox.margin>
-                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </VBox.margin></VBox>
-                    </children>
-                </VBox>
-            </content>
-        </ScrollPane>
-    </children>
+    <ScrollPane fitToHeight="true" fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox alignment="TOP_CENTER">
+            <StackPane>
+                <Region style="-fx-background-image: url('itinerario.jpg'); -fx-background-size: 100% 100%;" StackPane.alignment="CENTER" />
+                <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="5.0" text="Backpacker">
+                    <font>
+                        <Font size="140.0" />
+                    </font>
+                    <StackPane.margin>
+                        <Insets bottom="30.0" top="30.0" />
+                    </StackPane.margin>
+                </Text>
+            </StackPane>
+            <HBox alignment="CENTER" spacing="35.0" style="-fx-background-color: silver;">
+                <VBox.margin>
+                    <Insets />
+                </VBox.margin>
+                <Label fx:id="LabelHome" onMouseClicked="#switchToHome" text="Home">
+                    <font>
+                        <Font size="40.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </Label>
+                <Label fx:id="LabelResult" onMouseClicked="#switchToResult" text="Result" underline="true">
+                    <font>
+                        <Font size="40.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </Label>
+                <Label fx:id="LabelProfile" onMouseClicked="#switchToProfile" text="Profile">
+                    <font>
+                        <Font size="40.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </Label>
+                <Label fx:id="LabelLogin" onMouseClicked="#switchToLogin" text="Log in">
+                    <font>
+                        <Font size="40.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </Label>
+                <Label fx:id="LabelSignUp" onMouseClicked="#switchToSignUp" text="Sign up">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                    <font>
+                        <Font size="40.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Label>
+                <ImageView fx:id="imageUndo" fitHeight="50.0" fitWidth="50.0" nodeOrientation="INHERIT" onMouseClicked="#undoScene" pickOnBounds="true" preserveRatio="true">
+                    <viewport>
+                        <Rectangle2D />
+                    </viewport>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                    <Image url="@/annulla.png" />
+                </ImageView>
+            </HBox>
+            <HBox alignment="CENTER">
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Search Results for: ">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Country = ">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Italia">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text=", City = ">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Roma">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text=", Address = ">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="via del corso">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text=", Restaurant = ">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Incuded">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text=", Search radius = ">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Text>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="5.2 km">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Text>
+            <padding>
+               <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+            </padding>
+            </HBox>
+            <VBox fx:id="vBoxResult" alignment="CENTER">
+                <VBox.margin>
+                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                </VBox.margin>
+            </VBox>
+        </VBox>
+    </ScrollPane>
 </AnchorPane>

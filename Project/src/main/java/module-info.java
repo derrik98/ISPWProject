@@ -9,6 +9,7 @@ module it.ispw.daniele.backpacker {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires java.desktop;
 
     opens it.ispw.daniele.backpacker to javafx.fxml;
     exports it.ispw.daniele.backpacker;

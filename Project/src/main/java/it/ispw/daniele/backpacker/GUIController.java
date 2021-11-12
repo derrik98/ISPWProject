@@ -3,16 +3,29 @@ package it.ispw.daniele.backpacker;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.effect.ImageInput;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import org.kordamp.ikonli.javafx.Icon;
+
+import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 import java.util.Stack;
+
+import javax.swing.*;
 
 public class GUIController extends Application {
 
@@ -37,11 +50,11 @@ public class GUIController extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        Screen screen = Screen.getPrimary();
-        Rectangle2D bounds = screen.getVisualBounds();
-        stage.setWidth(bounds.getWidth());
-        stage.setHeight(bounds.getHeight());
-        System.out.println(bounds);
+        //Screen screen = Screen.getPrimary();
+        //Rectangle2D bounds = screen.getVisualBounds();
+//        stage.setWidth(bounds.getWidth());
+//        stage.setHeight(bounds.getHeight());
+//        System.out.println(bounds);
         fxmlLoader = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Home-Page.fxml")));
         scene = new Scene(fxmlLoader);
         stackScene.push(scene);
