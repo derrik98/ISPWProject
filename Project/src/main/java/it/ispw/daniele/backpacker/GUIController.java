@@ -60,6 +60,7 @@ public class GUIController extends Application {
         stackScene.push(scene);
         stage.setTitle("Backpacker");
         stage.setScene(scene);
+        stage.setMaximized(true);
         stage.show();
 
         System.out.println(stackScene);
