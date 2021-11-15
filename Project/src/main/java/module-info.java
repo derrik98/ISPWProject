@@ -10,6 +10,7 @@ module it.ispw.daniele.backpacker {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires java.desktop;
+    requires com.jfoenix;
 
     opens it.ispw.daniele.backpacker to javafx.fxml;
     exports it.ispw.daniele.backpacker;

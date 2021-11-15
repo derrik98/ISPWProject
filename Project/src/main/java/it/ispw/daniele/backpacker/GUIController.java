@@ -92,17 +92,17 @@ public class GUIController extends Application {
         scene = new Scene(fxmlLoader, stage.getScene().getWidth(), stage.getScene().getHeight());
         stage.setScene(scene);
         stackScene.push(scene);
-        System.out.println(stackScene);
     }
 
     public void switchToLogin() throws IOException {
         fxmlLoader = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Login-Page.fxml")));
         stage = (Stage) LabelHome.getScene().getWindow();
         scene = new Scene(fxmlLoader, stage.getScene().getWidth(), stage.getScene().getHeight());
+        //scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
+
+        //scene.getStylesheets().add((Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm()));
         stage.setScene(scene);
         stackScene.push(scene);
-        System.out.println(stackScene);
-        //textSettings.setVisible(false);
     }
 
     public void switchToSignUp() throws IOException {
@@ -111,7 +111,6 @@ public class GUIController extends Application {
         scene = new Scene(fxmlLoader, stage.getScene().getWidth(), stage.getScene().getHeight());
         stage.setScene(scene);
         stackScene.push(scene);
-        System.out.println(stackScene);
     }
 
     public void undoScene() {

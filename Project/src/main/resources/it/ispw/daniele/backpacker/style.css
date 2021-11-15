@@ -1,0 +1,10 @@
+.jfx-snackbar-content{
+    -fx-background-color: #000000;
+}
+.jfx-snackbar-toast{
+    -fx-text-fill: GREEN;
+/*    -fx-font-size: 27px;*/
+}
+.jfx-snackbar-border{
+    -fx-border-color: YELLOW;
+}

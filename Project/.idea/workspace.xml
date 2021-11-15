@@ -26,12 +26,19 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/it/ispw/daniele/backpacker" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Progetto/trunk" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/jar_files/jfoenix-9.0.10.jar" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.40728477" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
   <component name="RecentsManager">
@@ -120,6 +127,7 @@
       <workItem from="1636727351684" duration="4395000" />
       <workItem from="1636814130337" duration="133000" />
       <workItem from="1636909984565" duration="24000" />
+      <workItem from="1636921181687" duration="6930000" />
     </task>
     <servers />
   </component>
