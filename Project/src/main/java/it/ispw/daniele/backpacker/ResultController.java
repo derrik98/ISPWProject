@@ -23,10 +23,10 @@ import java.util.ResourceBundle;
 
 public class ResultController extends GUIController implements Initializable {
 
-    private final Accordion accordionResult = new Accordion();
-
     @FXML
-    VBox vBoxResult = new VBox();
+    VBox vBoxResult;
+
+    private final Accordion accordionResult = new Accordion();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

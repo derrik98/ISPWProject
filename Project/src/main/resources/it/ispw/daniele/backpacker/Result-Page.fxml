@@ -93,67 +93,67 @@
                     <Image url="@/annulla.png" />
                 </ImageView>
             </HBox>
-            <HBox alignment="CENTER">
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Search Results for: ">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Country = ">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Italia">
-                    <font>
-                        <Font name="System Bold" size="24.0" />
-                    </font>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text=", City = ">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Roma">
-                    <font>
-                        <Font name="System Bold" size="24.0" />
-                    </font>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text=", Address = ">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="via del corso">
-                    <font>
-                        <Font name="System Bold" size="24.0" />
-                    </font>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text=", Restaurant = ">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Incuded">
-                    <font>
-                        <Font name="System Bold" size="24.0" />
-                    </font>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text=", Search radius = ">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                </Text>
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="5.2 km">
-                    <font>
-                        <Font name="System Bold" size="24.0" />
-                    </font>
-                </Text>
-            <padding>
+            <HBox alignment="TOP_CENTER" VBox.vgrow="SOMETIMES">
+            <Label text="Search Results for : ">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label text="Country = ">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label text="Italia">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label text=", City = ">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label text="Roma">
+               <font>
+                   <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label text=", Address = ">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label text="via del Corso">
+               <font>
+                   <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label text=", Restaurant = ">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label text="Included">
+               <font>
+                   <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label text=", Search radius = ">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label text="5.2 km">
+               <font>
+                   <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <VBox.margin>
                <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
-            </padding>
+            </VBox.margin>
             </HBox>
-            <VBox fx:id="vBoxResult" alignment="CENTER">
+            <VBox fx:id="vBoxResult" alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
                 <VBox.margin>
                     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                 </VBox.margin>

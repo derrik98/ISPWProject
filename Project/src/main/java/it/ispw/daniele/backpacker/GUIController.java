@@ -3,24 +3,12 @@ package it.ispw.daniele.backpacker;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.effect.ImageInput;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.CornerRadii;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
-import org.kordamp.ikonli.javafx.Icon;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 import java.util.Stack;
@@ -50,11 +38,6 @@ public class GUIController extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        //Screen screen = Screen.getPrimary();
-        //Rectangle2D bounds = screen.getVisualBounds();
-//        stage.setWidth(bounds.getWidth());
-//        stage.setHeight(bounds.getHeight());
-//        System.out.println(bounds);
         fxmlLoader = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Home-Page.fxml")));
         scene = new Scene(fxmlLoader);
         stackScene.push(scene);
@@ -62,9 +45,6 @@ public class GUIController extends Application {
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.show();
-
-        System.out.println(stackScene);
-
     }
 
     public void switchToHome() throws IOException {
@@ -73,7 +53,6 @@ public class GUIController extends Application {
         scene = new Scene(fxmlLoader, stage.getScene().getWidth(), stage.getScene().getHeight());
         stage.setScene(scene);
         stackScene.push(scene);
-        System.out.println(stackScene);
     }
 
 
@@ -98,9 +77,6 @@ public class GUIController extends Application {
         fxmlLoader = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Login-Page.fxml")));
         stage = (Stage) LabelHome.getScene().getWindow();
         scene = new Scene(fxmlLoader, stage.getScene().getWidth(), stage.getScene().getHeight());
-        //scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
-
-        //scene.getStylesheets().add((Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm()));
         stage.setScene(scene);
         stackScene.push(scene);
     }
