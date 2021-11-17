@@ -2,10 +2,10 @@ package it.ispw.daniele.backpacker;
 
 import com.jfoenix.controls.JFXSnackbar;
 import com.jfoenix.controls.JFXSnackbarLayout;
+import it.ispw.daniele.backpacker.bean.LoginBean;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
@@ -36,12 +36,19 @@ public class LoginController extends GUIController{
 
     public void login() {
         if(!textFieldUserLogin.getText().equals("") || !textFieldPassLogin.getText().equals("")){
+            LoginBean loginBean = new LoginBean(textFieldUserLogin.getText(), textFieldPassLogin.getText()).getInstance();
+            System.out.println("User " + textFieldUserLogin.getText() + "\tPass " + textFieldPassLogin.getText());
             showFeedback(1);
         }
         else{
             showFeedback(0);
         }
-        System.out.println("User " + textFieldUserLogin.getText() + "\tPass " + textFieldPassLogin.getText());
+
+
+       //);
+//        homeBean.setCountry(textFieldCountry.getText());
+//        homeBean.setCity(textFieldCity.getText());
+//        homeBean.setAddress(textFieldAddress.getText());
     }
 
     private void showFeedback(int i){

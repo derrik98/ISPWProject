@@ -1,5 +1,6 @@
 package it.ispw.daniele.backpacker;
 
+import it.ispw.daniele.backpacker.bean.HomeBean;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -29,7 +30,10 @@ public class HomeController extends GUIController{
     }
 
     public void SearchRoutes() {
-        System.out.println("Country " + textFieldCountry.getText() + "\tCity " + textFieldCity.getText() + "\tAddress " + textFieldAddress.getText() + "\tRadius " + labelRange.getText()
-                + "\tRestaurant " + radioButtonRestaurant.isSelected());
+
+        HomeBean homeBean = new HomeBean(textFieldCountry.getText(), textFieldCity.getText(), textFieldAddress.getText(), labelRange.getText(), radioButtonRestaurant.isSelected()).getInstance();
+//        homeBean.setCountry(textFieldCountry.getText());
+//        homeBean.setCity(textFieldCity.getText());
+//        homeBean.setAddress(textFieldAddress.getText());
     }
 }

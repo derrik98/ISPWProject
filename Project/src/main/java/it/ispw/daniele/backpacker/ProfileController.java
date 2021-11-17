@@ -1,5 +1,6 @@
 package it.ispw.daniele.backpacker;
 
+import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -21,6 +22,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
@@ -48,10 +50,7 @@ public class ProfileController extends GUIController implements Initializable {
     }
 
     public void showInfoSettings(MouseEvent mouseEvent) {
-        System.out.println("entrato");
         textSettings.setVisible(true);
-        //return textSettings.isVisible();
-
     }
 
     public void notShowInfoSettings(MouseEvent mouseEvent) {

@@ -13,8 +13,6 @@ import java.io.IOException;
 import java.util.Objects;
 import java.util.Stack;
 
-import javax.swing.*;
-
 public class GUIController extends Application {
 
     protected Stage stage = new Stage();

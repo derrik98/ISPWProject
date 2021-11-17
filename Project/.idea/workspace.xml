@@ -13,9 +13,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="FxmlFile" />
         <option value="Class" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -34,12 +34,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/it/ispw/daniele/backpacker" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/jar_files/jfoenix-9.0.10.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.40728477" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -51,9 +51,48 @@
       <recent name="C:\Users\danie\Desktop\Backpacker\src\main\resources\it\ispw\daniele\backpacker" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.GUIController">
     <configuration name="GUIController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.GUIController" />
+      <module name="Backpacker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.ispw.daniele.backpacker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Sample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.Sample" />
+      <module name="Backpacker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.ispw.daniele.backpacker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleSlideShow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.SimpleSlideShow" />
+      <module name="Backpacker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.ispw.daniele.backpacker.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="image" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.image" />
       <module name="Backpacker" />
       <extension name="coverage">
         <pattern>
@@ -68,6 +107,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.GUIController" />
+        <item itemvalue="Application.Sample" />
+        <item itemvalue="Application.SimpleSlideShow" />
+        <item itemvalue="Application.image" />
       </list>
     </recent_temporary>
   </component>
@@ -131,6 +173,9 @@
       <workItem from="1636991527167" duration="62000" />
       <workItem from="1637082504346" duration="131000" />
       <workItem from="1637084029617" duration="4183000" />
+      <workItem from="1637100594346" duration="6243000" />
+      <workItem from="1637162791383" duration="831000" />
+      <workItem from="1637173178692" duration="1707000" />
     </task>
     <servers />
   </component>

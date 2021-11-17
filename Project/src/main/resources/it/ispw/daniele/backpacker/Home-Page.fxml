@@ -152,7 +152,7 @@
                          <Font size="27.0" />
                      </font>
                  </Text>
-                 <Slider fx:id="sliderRange" blockIncrement="1.0" cache="true" depthTest="DISABLE" majorTickUnit="1.0" max="10.0" maxHeight="-Infinity" maxWidth="-Infinity" min="1.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="1" onMouseDragged="#onSliderChanged" prefHeight="53.0" prefWidth="392.0" showTickLabels="true" showTickMarks="true" style="-fx-font-size: 20px;">
+                 <Slider fx:id="sliderRange" blockIncrement="1.0" cache="true" depthTest="DISABLE" majorTickUnit="1.0" max="8.0" maxHeight="-Infinity" maxWidth="-Infinity" min="1.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="1" onMouseClicked="#onSliderChanged" onMouseDragged="#onSliderChanged" prefHeight="53.0" prefWidth="392.0" showTickLabels="true" showTickMarks="true" style="-fx-font-size: 20px;">
                      <HBox.margin>
                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
