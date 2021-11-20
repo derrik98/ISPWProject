@@ -1,5 +1,8 @@
 package it.ispw.daniele.backpacker.bean;
 
+import it.ispw.daniele.backpacker.controller.search.JSONNotFound;
+import it.ispw.daniele.backpacker.controller.search.SearchController;
+
 import java.io.IOException;
 
 public class HomeBean {
@@ -74,24 +77,24 @@ public class HomeBean {
     }
 
 
-//    public boolean validate() throws IOException{//, JSONException, JSONNotFound {
-//        // controllo sintattico
-//        if (country == "" || city == "" || address == null) {
-//            System.out.println(country + city + address);
-//            return false;
-//        }
-//
-//        HomeBean datiCorretti = SearchController.getInstances().getInput(this.getCountry(), this.getCity(), this.getAddress());
-//        System.out.println("provafatta" + city);//FARE COME LA VALIDATE
-//        System.out.println(country);
-//
-//        System.out.println(datiCorretti.country + datiCorretti.city + datiCorretti.address);
-//        /*if(utenteTrovato==null)
-//            return false;
-//        return true;*/
-//        return datiCorretti != null;
-//
-//    }
+    public boolean validate() throws IOException, JSONNotFound, JSONNotFound {
+        // controllo sintattico
+        if (country == "" || city == "" || address == null) {
+            System.out.println(country + city + address);
+            return false;
+        }
+
+        HomeBean datiCorretti = SearchController.getInstances().getInput(this.getCountry(), this.getCity(), this.getAddress());
+        System.out.println("provafatta" + city);//FARE COME LA VALIDATE
+        System.out.println(country);
+
+        System.out.println(datiCorretti.country + datiCorretti.city + datiCorretti.address);
+        /*if(utenteTrovato==null)
+            return false;
+        return true;*/
+        return datiCorretti != null;
+
+    }
 
 
 

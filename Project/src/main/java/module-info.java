@@ -11,7 +11,8 @@ module it.ispw.daniele.backpacker {
     requires eu.hansolo.tilesfx;
     requires java.desktop;
     requires com.jfoenix;
+    requires org.json;
 
-    opens it.ispw.daniele.backpacker to javafx.fxml;
-    exports it.ispw.daniele.backpacker;
+    exports it.ispw.daniele.backpacker.boundary;
+    opens it.ispw.daniele.backpacker.boundary to javafx.fxml;
 }

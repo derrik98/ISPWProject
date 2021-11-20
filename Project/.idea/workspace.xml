@@ -34,7 +34,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/it/ispw/daniele/backpacker" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea/libraries/jfoenix-9.0.10.jar" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/jar_files/json-20210307.jar" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -42,6 +42,9 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="it.ispw.daniele.backpacker.controller.search" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\danie\Desktop\Backpacker\src\main\resources" />
       <recent name="C:\Users\danie\Desktop\Backpacker\src\main\resources\it\ispw\daniele\backpacker" />
@@ -53,11 +56,11 @@
   </component>
   <component name="RunManager" selected="Application.GUIController">
     <configuration name="GUIController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.GUIController" />
+      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.boundary.GUIController" />
       <module name="Backpacker" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.ispw.daniele.backpacker.*" />
+          <option name="PATTERN" value="it.ispw.daniele.backpacker.boundary.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -70,7 +73,7 @@
       <module name="Backpacker" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.ispw.daniele.backpacker.*" />
+          <option name="PATTERN" value="it.ispw.daniele.backpacker.boundary.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -83,7 +86,7 @@
       <module name="Backpacker" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.ispw.daniele.backpacker.*" />
+          <option name="PATTERN" value="it.ispw.daniele.backpacker.boundary.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -96,7 +99,7 @@
       <module name="Backpacker" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.ispw.daniele.backpacker.*" />
+          <option name="PATTERN" value="it.ispw.daniele.backpacker.boundary.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -179,6 +182,8 @@
       <workItem from="1637187544814" duration="458000" />
       <workItem from="1637235348242" duration="4000" />
       <workItem from="1637363821163" duration="678000" />
+      <workItem from="1637404370916" duration="749000" />
+      <workItem from="1637418984640" duration="5007000" />
     </task>
     <servers />
   </component>
