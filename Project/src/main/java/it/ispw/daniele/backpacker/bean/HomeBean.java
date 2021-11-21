@@ -7,9 +7,9 @@ import java.io.IOException;
 
 public class HomeBean {
 
-    private String country;
-    private String city;
-    private String address;
+    public String country;
+    public String city;
+    public String address;
     private String range;
     private boolean restaurant;
 
@@ -77,10 +77,11 @@ public class HomeBean {
     }
 
 
-    public boolean validate() throws IOException, JSONNotFound, JSONNotFound {
+    public boolean validate() throws IOException, JSONNotFound {
+        System.out.println("djcndsjcnkds" + country + city + address);
         // controllo sintattico
-        if (country == "" || city == "" || address == null) {
-            System.out.println(country + city + address);
+        if (country.equals("") || city.equals("") || address.equals("")) {
+            System.out.println("djcndsjcnkds" + country + city + address);
             return false;
         }
 

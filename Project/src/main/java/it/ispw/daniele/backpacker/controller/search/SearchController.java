@@ -1,6 +1,7 @@
 package it.ispw.daniele.backpacker.controller.search;
 
 import it.ispw.daniele.backpacker.bean.HomeBean;
+import it.ispw.daniele.backpacker.bean.ResultBean;
 import it.ispw.daniele.backpacker.boundary.HomeController;
 import org.json.JSONException;
 
@@ -13,7 +14,7 @@ public class SearchController{// extends HomeBean {
 
 
     private static SearchController INSTANCE = null;
-    //public static ResultBean resultbean = new ResultBean().getInstance();
+    public static ResultBean resultBean = new ResultBean().getInstance();
     private MonumentFromAddress mfa = new MonumentFromAddress().getInstance();
 
     public static SearchController getInstances() {
@@ -25,7 +26,7 @@ public class SearchController{// extends HomeBean {
 
 
     public HomeBean getInput(String country, String city, String address) throws IOException, JSONException, JSONNotFound {
-        //InterfaceBean interfacebean;
+        //HomeBean interfacebean;
         //System.out.println(country + city + address);
         JSONFactory firstCheck = new CityFromCountry();
         JSONFactory.convertString(address);
@@ -36,7 +37,7 @@ public class SearchController{// extends HomeBean {
             JSONFactory secondCheck = new AddressFromCity();
             if (secondCheck.getJSON(address, city)) {
 //				interfacebean.setAddress(address);
-                //searchMonuments();     RIMOSSO DOPO
+                searchMonuments();     //RIMOSSO DOPO
                 createItinerary(mfa.getMonuments());
 //				createItinerary(mfa.getMonuments());
                 //JSONFactory thirdCheck = new MonumentFromAddress();
@@ -56,13 +57,13 @@ public class SearchController{// extends HomeBean {
         return new HomeBean();
     }
 
-//    public List<String> searchMonuments() throws JSONNotFound {
-//        mfa.getJSON(interfaceBean.getAddress(), "monuments");
-//        System.out.println("MONUMENTI" + mfa.getMonuments());
-//        resultBean.setMonuments(mfa.getMonuments());
-//        return mfa.getMonuments();
-//
-//    }
+    public List<String> searchMonuments() throws JSONNotFound {
+        mfa.getJSON(new HomeBean().getInstance().getAddress(), "monuments");
+        System.out.println("MONUMENTI" + mfa.getMonuments());
+        resultBean.setMonuments(mfa.getMonuments());
+        return mfa.getMonuments();
+
+    }
 
     public List<String> createItinerary(ArrayList<String> attraction) {
         Random num = new Random();
@@ -77,7 +78,7 @@ public class SearchController{// extends HomeBean {
 //    		System.out.println(copyList.get(index));
             itinerary.add(copyList.get(index));
 //    		itinerary.add(copyList.get(i));
-           // resultBean.getInstance().setItinerary(itinerary); RIMOSSO DOPO
+            resultBean.getInstance().setItinerary(itinerary); //RIMOSSO DOPO
 //    		System.out.println(resultBean.getInstance().getItinerary());
 //    		copyList.remove(index);
             System.out.println("elemento scelto   :" + copyList.get(index));

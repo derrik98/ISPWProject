@@ -13,6 +13,7 @@ public class CityFromCountry extends JSONFactory{
         try {
             json = readJsonFromUrl("https://maps.googleapis.com/maps/api/geocode/json?address=" + city
                     + "&components=country:" + country + "&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");
+            System.out.println(json);
             System.out.println(json.getString("status"));
             if(!json.getString("status").equals("OK")) {
                 throw new JSONNotFound("Questa città non è presente in questo stato");

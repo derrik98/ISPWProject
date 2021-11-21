@@ -1,6 +1,7 @@
 package it.ispw.daniele.backpacker.boundary;
 
 import it.ispw.daniele.backpacker.bean.HomeBean;
+import it.ispw.daniele.backpacker.controller.search.JSONNotFound;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -33,11 +34,14 @@ public class HomeController extends GUIController{
         labelRange.setText(sliderValue.setScale(1, RoundingMode.HALF_UP)+" km");
     }
 
-    public void SearchRoutes() {
+    public void SearchRoutes() throws JSONNotFound, IOException {
 
-        HomeBean homeBean = new HomeBean(textFieldCountry.getText(), textFieldCity.getText(), textFieldAddress.getText(), labelRange.getText(), radioButtonRestaurant.isSelected()).getInstance();
-//        homeBean.setCountry(textFieldCountry.getText());
-//        homeBean.setCity(textFieldCity.getText());
-//        homeBean.setAddress(textFieldAddress.getText());
+        //HomeBean homeBean = new HomeBean(textFieldCountry.getText(), textFieldCity.getText(), textFieldAddress.getText(), labelRange.getText(), radioButtonRestaurant.isSelected());
+
+         HomeBean homeBean = new HomeBean().getInstance();
+         homeBean.setCountry(textFieldCountry.getText());
+         homeBean.setCity(textFieldCity.getText());
+         homeBean.setAddress(textFieldAddress.getText());
+         homeBean.validate();
     }
 }
