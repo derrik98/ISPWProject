@@ -1,1 +1,1 @@
- 2xmlXhr;Project/.idea/libraries/Maven__eu_hansolo_tilesfx_11_48.xml
+ 2xmlX	hr*Project/.idea/libraries/jfoenix_9_0_10.xml

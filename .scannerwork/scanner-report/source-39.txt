@@ -1,277 +1,213 @@
-package it.ispw.daniele.backpacker;
-
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.*;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import java.io.IOException;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.util.Objects;
-
-
-public class HelloController extends HelloApplication {
-
-    private Stage stage = new Stage();
-
-    @FXML
-    Label LabelHome;
-    @FXML
-    Label LabelResult;
-    @FXML
-    Label LabelLogin;
-    @FXML
-    Label LabelSignUp;
-    @FXML
-    Label LabelProfile;
-    @FXML
-    Slider sliderRange;
-    @FXML
-    Label labelRange;
-    @FXML
-    ImageView imageSettings;
-    @FXML
-    Text textSettings;
-    @FXML
-    ImageView imageUndo;
-    @FXML
-    TextField textFieldCountry;
-    @FXML
-    TextField textFieldCity;
-    @FXML
-    TextField textFieldAddress;
-    @FXML
-    Button buttonSearch;
-    @FXML
-    RadioButton radioButtonRestaurant;
-    @FXML
-    TextField textFieldUserLogin;
-    @FXML
-    TextField textFieldPassLogin;
-    @FXML
-    TextField textFieldNameSetting;
-    @FXML
-    TextField textFieldSurnameSetting;
-    @FXML
-    TextField textFieldCurrentPassSetting;
-    @FXML
-    TextField textFieldNewPassSetting;
-    @FXML
-    TextField textFieldConfNewPassSetting;
-    @FXML
-    Label genericUserSignUp;
-    @FXML
-    Label restaurantOwnerSignUp;
-
-
-    //VBox vBoxResult = createStackedTitledPanes();
-
-    private static final Image BLUE_FISH = new Image("http://icons.iconarchive.com/icons/fasticon/fish-toys/128/Blue-Fish-icon.png");
-    private static final Image RED_FISH = new Image("http://icons.iconarchive.com/icons/fasticon/fish-toys/128/Red-Fish-icon.png");
-    private static final Image YELLOW_FISH = new Image("http://icons.iconarchive.com/icons/fasticon/fish-toys/128/Yellow-Fish-icon.png");
-    private static final Image GREEN_FISH = new Image("http://icons.iconarchive.com/icons/fasticon/fish-toys/128/Green-Fish-icon.png");
-
-
-    public void switchToHome() throws IOException {
-        fxmlLoader = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Home-Page.fxml")));
-        stage = (Stage) LabelHome.getScene().getWindow();
-        scene = new Scene(fxmlLoader, stage.getScene().getWidth(), stage.getScene().getHeight());
-        stage.setScene(scene);
-        stackScene.push(scene);
-        System.out.println(stackScene);
-    }
-
-    @FXML
-    public void switchToResult() throws IOException {
-        fxmlLoader = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Result-Page.fxml")));
-        stage = (Stage) LabelResult.getScene().getWindow();
-        scene = new Scene(fxmlLoader, stage.getScene().getWidth(), stage.getScene().getHeight());
-
-        stackScene.push(scene);
-        stage.setScene(scene);
-//        Accordion accordion = new Accordion ();
-//        //final TitledPane tps = new TitledPane();
-//        TitledPane tpss =new TitledPane();
-//        accordion.getPanes().addAll(tpss);
-//        accordion.setExpandedPane(tpss);
-//        vBoxResult.getChildren().add(accordion);
-//        System.out.println(accordion.getPanes());
-//        vBoxResult.setPrefHeight(500);
-//        vBoxResult.setBorder(new Border(new BorderStroke(Color.GREEN, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, new BorderWidths(3))));
-
-
-//        stage.setOnShown(e -> {
-//            TitledPane title = new TitledPane("Title",
-//                    new StackPane(new Label("Graphic to the Right")));
-//        ImageView imageView = new ImageView(new Image(getClass().getResource("impostazioni.png").toExternalForm()));
-//
-//        title.setGraphic(imageView);
-//        title.setContentDisplay(ContentDisplay.RIGHT);
-//
-//        scene.setRoot(titledpane);
-//
-//        // apply css and force layout of nodes
-//        title.applyCss();
-//        title.layout();
-//
-//        // title region
-//        Node titleRegion=title.lookup(".title");
-//        // padding
-//        Insets padding=((StackPane)titleRegion).getPadding();
-//        // image width
-//        double graphicWidth=imageView.getLayoutBounds().getWidth();
-//        // arrow
-//        double arrowWidth=titleRegion.lookup(".arrow-button").getLayoutBounds().getWidth();
-//        // text
-//        double labelWidth=titleRegion.lookup(".text").getLayoutBounds().getWidth();
-//
-//        double nodesWidth = graphicWidth+padding.getLeft()+padding.getRight()+arrowWidth+labelWidth;
-//
-//        title.graphicTextGapProperty().bind(title.widthProperty().subtract(nodesWidth));
-//        accordionResult.getPanes().add(title);
-//        accordionResult.setExpandedPane(title);
-//    });
-}
-
-    private VBox createStackedTitledPanes() {
-        final VBox stackedTitledPanes = new VBox();
-        stackedTitledPanes.getChildren().setAll(
-                createTitledPane("One Fish", GREEN_FISH),
-                createTitledPane("Two Fish", YELLOW_FISH, GREEN_FISH),
-                createTitledPane("Red Fish", RED_FISH),
-                createTitledPane("Blue Fish", BLUE_FISH)
-        );
-        ((TitledPane) stackedTitledPanes.getChildren().get(0)).setExpanded(true);
-
-        return stackedTitledPanes;
-    }
-
-    public TitledPane createTitledPane(String title, Image... images) {
-        FlowPane content = new FlowPane();
-        for (Image image : images) {
-            ImageView imageView = new ImageView(image);
-            content.getChildren().add(imageView);
-
-            FlowPane.setMargin(imageView, new Insets(10));
-        }
-        content.setAlignment(Pos.TOP_CENTER);
-
-        TitledPane pane = new TitledPane(title, content);
-        pane.setExpanded(false);
-
-        return pane;
-    }
-
-
-    public void switchToProfile() throws IOException {
-        fxmlLoader = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Profile-Page.fxml")));
-        stage = (Stage) LabelProfile.getScene().getWindow();
-        scene = new Scene(fxmlLoader, stage.getScene().getWidth(), stage.getScene().getHeight());
-        stage.setScene(scene);
-        stackScene.push(scene);
-        System.out.println(stackScene);
-    }
-
-    public void switchToLogin() throws IOException {
-        fxmlLoader = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Login-Page.fxml")));
-        stage = (Stage) LabelHome.getScene().getWindow();
-        scene = new Scene(fxmlLoader, stage.getScene().getWidth(), stage.getScene().getHeight());
-        stage.setScene(scene);
-        stackScene.push(scene);
-        System.out.println(stackScene);
-        //textSettings.setVisible(false);
-    }
-
-    public void switchToSignUp() throws IOException {
-        fxmlLoader = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SignUp-Page.fxml")));
-        stage = (Stage) LabelHome.getScene().getWindow();
-        scene = new Scene(fxmlLoader, stage.getScene().getWidth(), stage.getScene().getHeight());
-        stage.setScene(scene);
-        stackScene.push(scene);
-        System.out.println(stackScene);
-    }
-
-    public void onSliderChanged() {
-        BigDecimal sliderValue = BigDecimal.valueOf(sliderRange.getValue()).setScale(1, RoundingMode.HALF_UP);
-        labelRange.setText(sliderValue.setScale(1, RoundingMode.HALF_UP)+" km");
-    }
-
-    public void switchToSettings() throws IOException {
-        fxmlLoader = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Edit-Profile-Page.fxml")));
-        stage = (Stage) LabelHome.getScene().getWindow();
-        scene = new Scene(fxmlLoader, stage.getScene().getWidth(), stage.getScene().getHeight());
-        stage.setScene(scene);
-        stackScene.push(scene);
-        System.out.println(stackScene);
-    }
-
-    public void undoScene() {
-        if (stackScene.size() > 1) {
-            stage = (Stage) imageUndo.getScene().getWindow().getScene().getWindow();
-            stackScene.remove(stackScene.size()-1);
-            stage.setScene(stackScene.get(stackScene.size()-1));
-
-            System.out.println(stackScene);
-        }
-        else{
-            imageUndo.isDisable();
-            imageUndo.setOpacity(0.5);
-            imageUndo.setCursor(null);
-
-        }
-    }
-
-    public void SearchRoutes() {
-        System.out.println("Country " + textFieldCountry.getText() + "\tCity " + textFieldCity.getText() + "\tAddress " + textFieldAddress.getText() + "\tRadius " + labelRange.getText()
-         + "\tRestaurant " + radioButtonRestaurant.isSelected());
-    }
-
-    public void googleLogin(MouseEvent mouseEvent) {
-        System.out.println("Login with Google");
-    }
-
-    public void facebookLogin(MouseEvent mouseEvent) {
-        System.out.println("Login with Facebook");
-    }
-
-    public void login() {
-        System.out.println("User " + textFieldUserLogin.getText() + "\tPass " + textFieldPassLogin.getText());
-    }
-
-    public void showInfoSettings(MouseEvent mouseEvent) {
-        System.out.println("entrato");
-        textSettings.setVisible(true);
-        //return textSettings.isVisible();
-
-    }
-
-    public void notShowInfoSettings(MouseEvent mouseEvent) {
-        textSettings.setVisible(false);
-    }
-
-    public void switchToGenericUserSignUpPage() throws IOException {
-        fxmlLoader = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SignUp-Page.fxml")));
-        stage = (Stage) LabelProfile.getScene().getWindow();
-        scene = new Scene(fxmlLoader, stage.getScene().getWidth(), stage.getScene().getHeight());
-        stage.setScene(scene);
-        stackScene.push(scene);
-        System.out.println(stackScene);
-    }
-
-    public void switchToRestaurantOwnerSignUpPage() throws IOException {
-        fxmlLoader = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Restaurant-Owner-SignUp-Page.fxml")));
-        stage = (Stage) LabelProfile.getScene().getWindow();
-        scene = new Scene(fxmlLoader, stage.getScene().getWidth(), stage.getScene().getHeight());
-        stage.setScene(scene);
-        stackScene.push(scene);
-        System.out.println(stackScene);
-    }
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="34193e3c-4be1-488a-9b93-54caf9ed44f4" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="209IoJ2Kn3WnJzwK830g9TOTXdc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/it/ispw/daniele/backpacker" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/jar_files/json-20210307.jar" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.40728477" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="it.ispw.daniele.backpacker.controller.search" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\Desktop\Backpacker\src\main\resources" />
+      <recent name="C:\Users\danie\Desktop\Backpacker\src\main\resources\it\ispw\daniele\backpacker" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\Desktop\Backpacker\src\main\resources" />
+      <recent name="C:\Users\danie\Desktop\Backpacker\src\main\resources\it\ispw\daniele\backpacker" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.GUIController">
+    <configuration name="GUIController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.boundary.GUIController" />
+      <module name="Backpacker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.ispw.daniele.backpacker.boundary.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Sample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.Sample" />
+      <module name="Backpacker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.ispw.daniele.backpacker.boundary.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SimpleSlideShow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.SimpleSlideShow" />
+      <module name="Backpacker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.ispw.daniele.backpacker.boundary.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="image" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.image" />
+      <module name="Backpacker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.ispw.daniele.backpacker.boundary.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GUIController" />
+        <item itemvalue="Application.Sample" />
+        <item itemvalue="Application.SimpleSlideShow" />
+        <item itemvalue="Application.image" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration useDefault="false" />
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="34193e3c-4be1-488a-9b93-54caf9ed44f4" name="Changes" comment="" />
+      <created>1635450332462</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635450332462</updated>
+      <workItem from="1635450333687" duration="210000" />
+      <workItem from="1635450552858" duration="146000" />
+      <workItem from="1635450725865" duration="4948000" />
+      <workItem from="1635528432453" duration="1226000" />
+      <workItem from="1635529699807" duration="1931000" />
+      <workItem from="1635531683242" duration="109000" />
+      <workItem from="1635545306002" duration="1400000" />
+      <workItem from="1635546724677" duration="1667000" />
+      <workItem from="1635548409919" duration="943000" />
+      <workItem from="1635549371910" duration="1634000" />
+      <workItem from="1635618238845" duration="4105000" />
+      <workItem from="1635775869368" duration="13000" />
+      <workItem from="1635957148408" duration="1026000" />
+      <workItem from="1635958191573" duration="3409000" />
+      <workItem from="1635976491997" duration="4570000" />
+      <workItem from="1636032022190" duration="3468000" />
+      <workItem from="1636048595446" duration="4339000" />
+      <workItem from="1636114535029" duration="1367000" />
+      <workItem from="1636119453355" duration="6535000" />
+      <workItem from="1636126016556" duration="2511000" />
+      <workItem from="1636150965488" duration="6146000" />
+      <workItem from="1636201016611" duration="1142000" />
+      <workItem from="1636213558155" duration="4211000" />
+      <workItem from="1636217786823" duration="824000" />
+      <workItem from="1636236343829" duration="291000" />
+      <workItem from="1636300314517" duration="83000" />
+      <workItem from="1636310009785" duration="1998000" />
+      <workItem from="1636315494277" duration="218000" />
+      <workItem from="1636317327511" duration="344000" />
+      <workItem from="1636396920542" duration="231000" />
+      <workItem from="1636407092975" duration="2752000" />
+      <workItem from="1636464126742" duration="156000" />
+      <workItem from="1636466056517" duration="73000" />
+      <workItem from="1636540930900" duration="4194000" />
+      <workItem from="1636560798822" duration="773000" />
+      <workItem from="1636570605359" duration="43000" />
+      <workItem from="1636654801068" duration="503000" />
+      <workItem from="1636655319390" duration="2222000" />
+      <workItem from="1636711489004" duration="86000" />
+      <workItem from="1636720586746" duration="630000" />
+      <workItem from="1636724194060" duration="3135000" />
+      <workItem from="1636727351684" duration="4395000" />
+      <workItem from="1636814130337" duration="133000" />
+      <workItem from="1636909984565" duration="24000" />
+      <workItem from="1636921181687" duration="6930000" />
+      <workItem from="1636991527167" duration="62000" />
+      <workItem from="1637082504346" duration="131000" />
+      <workItem from="1637084029617" duration="4183000" />
+      <workItem from="1637100594346" duration="6243000" />
+      <workItem from="1637162791383" duration="831000" />
+      <workItem from="1637173178692" duration="1707000" />
+      <workItem from="1637187544814" duration="458000" />
+      <workItem from="1637235348242" duration="4000" />
+      <workItem from="1637363821163" duration="678000" />
+      <workItem from="1637404370916" duration="749000" />
+      <workItem from="1637418984640" duration="5007000" />
+      <workItem from="1637450030884" duration="210000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.EmptyStackException" package="java.util" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

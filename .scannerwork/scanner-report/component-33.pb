@@ -1,2 +1,1 @@
-! 2xmlX
-hr#Project/.idea/runConfigurations.xml
+! 2xmlXhrFProject/.idea/libraries/Maven__org_openjfx_javafx_web_win_17_0_0_1.xml

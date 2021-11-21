@@ -1,10 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="RunConfigurationProducerService">
-    <option name="ignoredProducers">
-      <set>
-        <option value="com.android.tools.idea.compose.preview.runconfiguration.ComposePreviewRunConfigurationProducer" />
-      </set>
-    </option>
-  </component>
-</project>
+<component name="libraryTable">
+  <library name="Maven: org.openjfx:javafx-web:win:17.0.0.1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-web/17.0.0.1/javafx-web-17.0.0.1-win.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-web/17.0.0.1/javafx-web-17.0.0.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-web/17.0.0.1/javafx-web-17.0.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

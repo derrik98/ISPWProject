@@ -1,13 +1,9 @@
 <component name="libraryTable">
-  <library name="Maven: eu.hansolo:tilesfx:11.48">
+  <library name="jfoenix-9.0.10">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/eu/hansolo/tilesfx/11.48/tilesfx-11.48.jar!/" />
+      <root url="jar://$PROJECT_DIR$/.idea/libraries/jfoenix-9.0.10.jar!/" />
     </CLASSES>
-    <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/eu/hansolo/tilesfx/11.48/tilesfx-11.48-javadoc.jar!/" />
-    </JAVADOC>
-    <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/eu/hansolo/tilesfx/11.48/tilesfx-11.48-sources.jar!/" />
-    </SOURCES>
+    <JAVADOC />
+    <SOURCES />
   </library>
 </component>

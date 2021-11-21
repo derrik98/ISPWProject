@@ -1,1 +1,1 @@
- 2xmlXhrDProject/.idea/libraries/Maven__org_openjfx_javafx_media_17_0_0_1.xml
+ 2xmlXhrCProject/.idea/libraries/Maven__org_openjfx_javafx_fxml_17_0_0_1.xml

@@ -1,33 +1,32 @@
 SonarCloud plugins:
-  - CSS Code Quality and Security 1.4.2.2002 (cssfamily)
-  - IaC Code Quality and Security 1.2.0.976 (iac)
+  - IaC Code Quality and Security 1.4.0.1294 (iac)
   - PL/SQL Code Quality and Security 3.6.1.3873 (plsql)
   - Scala Code Quality and Security 1.8.3.2219 (sonarscala)
-  - C# Code Quality and Security 8.30.0.37606 (csharp)
+  - C# Code Quality and Security 8.32.0.39516 (csharp)
   - Vulnerability Analysis 9.2.0-M2.14128 (security)
-  - Java Code Quality and Security 7.4.0.27839 (java)
+  - Java Code Quality and Security 7.5.0.28054 (java)
   - HTML Code Quality and Security 3.4.0.2754 (web)
   - Flex Code Quality and Security 2.6.2.2641 (flex)
   - XML Code Quality and Security 2.4.0.3273 (xml)
-  - VB.NET Code Quality and Security 8.30.0.37606 (vbnet)
+  - VB.NET Code Quality and Security 8.32.0.39516 (vbnet)
   - Swift Code Quality and Security 4.3.2.5043 (swift)
-  - CFamily Code Quality and Security 6.27.0.38122 (cpp)
-  - Python Code Quality and Security 3.6.0.8488 (python)
+  - CFamily Code Quality and Security 6.28.0.39490 (cpp)
+  - Python Code Quality and Security 3.8.0.8883 (python)
   - Go Code Quality and Security 1.8.3.2219 (go)
   - JaCoCo 1.1.1.1157 (jacoco)
-  - Kotlin Code Quality and Security 2.5.0.754 (kotlin)
+  - Kotlin Code Quality and Security 2.7.0.948 (kotlin)
   - Mercurial 1.1.2 (scmmercurial)
   - T-SQL Code Quality and Security 1.5.1.4340 (tsql)
   - Apex Code Quality and Security 1.8.3.2219 (sonarapex)
-  - JavaScript/TypeScript Code Quality and Security 8.5.0.16762 (javascript)
+  - JavaScript/TypeScript Code Quality and Security 8.6.0.16913 (javascript)
   - Ruby Code Quality and Security 1.8.3.2219 (ruby)
   - Vulnerability Rules for C# 9.2.0-M2.14128 (securitycsharpfrontend)
   - Vulnerability Rules for Java 9.2.0-M2.14128 (securityjavafrontend)
-  - License for SonarLint 8.0.0.24584 (license)
+  - License for SonarLint 8.0.0.24907 (license)
   - Vulnerability Rules for JS 9.2.0-M2.14128 (securityjsfrontend)
   - COBOL Code Quality 4.6.2.4876 (cobol)
   - Vulnerability Rules for Python 9.2.0-M2.14128 (securitypythonfrontend)
-  - PHP Code Quality and Security 3.21.1.8250 (php)
+  - PHP Code Quality and Security 3.21.2.8292 (php)
   - ABAP Code Quality and Security 3.9.1.3127 (abap)
   - Configuration detection fot Code Quality and Security 1.0.0.32 (config)
   - Vulnerability Rules for PHP 9.2.0-M2.14128 (securityphpfrontend)
@@ -41,12 +40,13 @@ Global server settings:
   - sonar.auth.microsoft.enabled=true
   - sonar.core.id=1BD809FA-AWHW8ct9-T_TB3XqouNu
   - sonar.core.serverBaseURL=https://sonarcloud.io
-  - sonar.core.startTime=2021-11-04T15:00:34+0100
+  - sonar.core.startTime=2021-11-18T09:41:33+0100
   - sonar.dbcleaner.weeksBeforeDeletingAllSnapshots=260
   - sonar.dbcleaner.weeksBeforeKeepingOnlyOneSnapshotByMonth=4
   - sonar.dbcleaner.weeksBeforeKeepingOnlyOneSnapshotByWeek=1
   - sonar.lf.enableGravatar=true
   - sonar.lf.logoWidthPx=105
+  - sonar.maintenance_mode.link=https://sonarcloud.statuspage.io/incidents/4y1k6q1wsy4v
   - sonar.organizations.anyoneCanCreate=true
   - sonar.organizations.createPersonalOrg=true
   - sonar.plsql.file.suffixes=sql,tab,pkb
@@ -63,7 +63,7 @@ Project scanner properties:
   - sonar.links.scm=https://github.com/derrik98/ISPWProject
   - sonar.login=******
   - sonar.organization=derrik98
-  - sonar.projectBaseDir=C:\Users\danie\Desktop\ISPW Project\trunk
+  - sonar.projectBaseDir=C:\Users\danie\Desktop\ISPWProject\trunk
   - sonar.projectKey=derrik98_ISPWProject
   - sonar.projectName=ISPWProject
   - sonar.scanner.app=ScannerCLI
@@ -71,4 +71,4 @@ Project scanner properties:
   - sonar.sourceEncoding=windows-1252
   - sonar.sources=.
   - sonar.verbose=true
-  - sonar.working.directory=C:\Users\danie\Desktop\ISPW Project\trunk\.scannerwork
+  - sonar.working.directory=C:\Users\danie\Desktop\ISPWProject\trunk\.scannerwork
