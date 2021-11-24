@@ -8,6 +8,17 @@ import java.io.IOException;
 
 public class AddressFromCity extends JSONFactory{
 
+    private static AddressFromCity instance = null;
+
+    public static synchronized AddressFromCity getInstance() {
+        if(instance==null) {
+            instance = new AddressFromCity();
+        }
+        return instance;
+    }
+
+    protected AddressFromCity(){
+    }
 
     @Override
     public boolean getJSON(String address, String city) throws JSONNotFound {
@@ -27,7 +38,7 @@ public class AddressFromCity extends JSONFactory{
                 throw new JSONNotFound("Questa via non è presente in questo città");
             }
 
-            //System.out.println(json);
+            System.out.println("Address from city" + json);
             //System.out.println(a);
             //System.out.println(o);
             //System.out.println(arr);

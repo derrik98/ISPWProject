@@ -2,20 +2,20 @@ package it.ispw.daniele.backpacker.controller.search;
 
 import it.ispw.daniele.backpacker.bean.HomeBean;
 import it.ispw.daniele.backpacker.bean.ResultBean;
-import it.ispw.daniele.backpacker.boundary.HomeController;
 import org.json.JSONException;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Vector;
 
 public class SearchController{// extends HomeBean {
 
 
     private static SearchController INSTANCE = null;
-    public static ResultBean resultBean = new ResultBean().getInstance();
-    private MonumentFromAddress mfa = new MonumentFromAddress().getInstance();
+    public ResultBean resultBean = ResultBean.getInstance();
+    private static MonumentFromAddress mfa = MonumentFromAddress.getInstance();
 
     public static SearchController getInstances() {
         if (INSTANCE == null) {
@@ -28,12 +28,13 @@ public class SearchController{// extends HomeBean {
     public HomeBean getInput(String country, String city, String address) throws IOException, JSONException, JSONNotFound {
         //HomeBean interfacebean;
         //System.out.println(country + city + address);
-        JSONFactory firstCheck = new CityFromCountry();
+        JSONFactory firstCheck = CityFromCountry.getInstance();
         JSONFactory.convertString(address);
         if (firstCheck.getJSON(city, country)) {
 //    		interfacebean = new InterfaceBean(country, city, address);
 //    		interfacebean.setCountry(country);
 //    		interfacebean.setCity(city);
+
             JSONFactory secondCheck = new AddressFromCity();
             if (secondCheck.getJSON(address, city)) {
 //				interfacebean.setAddress(address);
@@ -45,29 +46,31 @@ public class SearchController{// extends HomeBean {
                 //interfacebean.setMonuments(MonumentFromAddress.monuments); } else {
                 //interfacebean = null;
                 // }
-
+                return HomeBean.getInstance();
             }
 //    		else {
 //    			interfacebean = null;
 //    		}
-        } else {
-           // interfaceBean = null; RIMOSSO DOPO
+//        } else {
+//           // interfaceBean = null; RIMOSSO DOPO
+//        }
+//      //  return interfaceBean; RIMOSSO DOPO
+
         }
-      //  return interfaceBean; RIMOSSO DOPO
-        return new HomeBean();
+        return HomeBean.getInstance();
     }
 
     public List<String> searchMonuments() throws JSONNotFound {
-        mfa.getJSON(new HomeBean().getInstance().getAddress(), "monuments");
+        mfa.getJSON(HomeBean.getInstance().getAddress(), "monuments");
         System.out.println("MONUMENTI" + mfa.getMonuments());
         resultBean.setMonuments(mfa.getMonuments());
         return mfa.getMonuments();
 
     }
 
-    public List<String> createItinerary(ArrayList<String> attraction) {
+    public List<String> createItinerary(Vector<String> attraction) {
         Random num = new Random();
-        ArrayList<String> copyList = new ArrayList<String>();
+        Vector<String> copyList = new Vector<>();
         copyList = attraction;
         System.out.println(copyList.size());
         ArrayList<String> itinerary = new ArrayList<String>();

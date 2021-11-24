@@ -37,8 +37,7 @@ public class HomeController extends GUIController{
     public void SearchRoutes() throws JSONNotFound, IOException {
 
         //HomeBean homeBean = new HomeBean(textFieldCountry.getText(), textFieldCity.getText(), textFieldAddress.getText(), labelRange.getText(), radioButtonRestaurant.isSelected());
-
-         HomeBean homeBean = new HomeBean().getInstance();
+         HomeBean homeBean = HomeBean.getInstance();
          homeBean.setCountry(textFieldCountry.getText());
          homeBean.setCity(textFieldCity.getText());
          homeBean.setAddress(textFieldAddress.getText());

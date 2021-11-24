@@ -1,5 +1,6 @@
 package it.ispw.daniele.backpacker.boundary;
 
+import it.ispw.daniele.backpacker.bean.ResultBean;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -28,6 +29,7 @@ public class ResultController extends GUIController implements Initializable {
     VBox vBoxResult;
 
     private final Accordion accordionResult = new Accordion();
+    private ResultBean resultBean = ResultBean.getInstance();
 
     public ResultController() throws IOException {
     }
@@ -39,7 +41,7 @@ public class ResultController extends GUIController implements Initializable {
 
 
         Accordion accordion = new Accordion();
-        for(int i = 0; i <4;i++) {
+        for(int i = 0; i < 4;i++) {
 
             TitledPane titledPane = new TitledPane();
             titledPane.setCollapsible(false);
@@ -59,7 +61,7 @@ public class ResultController extends GUIController implements Initializable {
             region1.setMinWidth(15);
             region1.setMaxWidth(Double.MAX_VALUE);
 
-            Label l = new Label("prova" + i);
+            Label l = new Label(resultBean.getItinerary().get(i).get(i));// + i);
             l.setFont(new Font("Arial", 20));
             ImageView ivMap = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/googleMaps.png")).toExternalForm()));
             ivMap.setFitWidth(40);

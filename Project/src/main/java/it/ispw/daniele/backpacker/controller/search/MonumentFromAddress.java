@@ -6,33 +6,30 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Vector;
 
 public class MonumentFromAddress extends JSONFactory{
 
-    private static MonumentFromAddress INSTANCE = null;
-    public static ArrayList<String> monuments = new ArrayList<String>();
+    public static Vector<String> monuments = new Vector<String>();
+    private static MonumentFromAddress instance = null;
 
-    public MonumentFromAddress getInstance() {
-        if(INSTANCE==null) {
-            INSTANCE = new MonumentFromAddress();
+    public static synchronized MonumentFromAddress getInstance() {
+        if(instance==null) {
+            instance = new MonumentFromAddress();
         }
-        return INSTANCE;
+        return instance;
     }
 
-    public MonumentFromAddress() {
-
+    protected MonumentFromAddress(){
     }
 
-    public static void setMonuments(ArrayList<String> monuments) {
+    public static void setMonuments(Vector<String> monuments) {
         MonumentFromAddress.monuments = monuments;
     }
 
-
-
-    public ArrayList<String> getMonuments() {
+    public Vector<String> getMonuments() {
         return monuments;
     }
-
 
 
     @Override
@@ -44,7 +41,8 @@ public class MonumentFromAddress extends JSONFactory{
             System.out.println(a);
             System.out.println("lunghezza record " + a.length());
             int i = 0;
-            while(!a.getJSONObject(i).get("name").equals("")) {
+            //while(!a.getJSONObject(i).get("name").equals(null)) {
+            while (i < 20){ //OKKKKKKK
 //				System.out.println(a);
 
                 JSONObject o = a.getJSONObject(i);

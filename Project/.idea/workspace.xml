@@ -34,7 +34,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/it/ispw/daniele/backpacker" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/jar_files/json-20210307.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../OptimisticCoverage" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -187,6 +187,9 @@
       <workItem from="1637450030884" duration="210000" />
       <workItem from="1637495720652" duration="933000" />
       <workItem from="1637507514690" duration="1415000" />
+      <workItem from="1637509010480" duration="303000" />
+      <workItem from="1637532913227" duration="396000" />
+      <workItem from="1637780341861" duration="2744000" />
     </task>
     <servers />
   </component>

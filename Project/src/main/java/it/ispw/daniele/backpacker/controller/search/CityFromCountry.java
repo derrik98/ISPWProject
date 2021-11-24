@@ -1,11 +1,24 @@
 package it.ispw.daniele.backpacker.controller.search;
 
+import it.ispw.daniele.backpacker.bean.HomeBean;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
 
 public class CityFromCountry extends JSONFactory{
+
+    private static CityFromCountry instance = null;
+
+    public static synchronized CityFromCountry getInstance() {
+        if(instance==null) {
+            instance = new CityFromCountry();
+        }
+        return instance;
+    }
+
+    protected CityFromCountry(){
+    }
 
     @Override
     public boolean getJSON(String city, String country) throws JSONNotFound {

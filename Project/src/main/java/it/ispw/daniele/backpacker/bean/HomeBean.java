@@ -15,17 +15,18 @@ public class HomeBean {
 
     private static HomeBean INSTANCE = null;
 
-    public HomeBean getInstance() {
+    public static synchronized HomeBean getInstance() {
         if(INSTANCE==null) {
             INSTANCE = new HomeBean();
+            //INSTANCE = new HomeBean(country, city, address, range, restaurant);
         }
         return INSTANCE;
     }
 
-    public HomeBean() {
+    protected HomeBean() {
     }
 
-    public HomeBean(String country, String city, String address, String range, boolean restaurant) {
+    protected HomeBean(String country, String city, String address, String range, boolean restaurant) {
         this.country = country;
         this.city = city;
         this.address = address;
