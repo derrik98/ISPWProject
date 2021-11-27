@@ -2,6 +2,7 @@ package it.ispw.daniele.backpacker.controller.search;
 
 import it.ispw.daniele.backpacker.bean.HomeBean;
 import it.ispw.daniele.backpacker.bean.ResultBean;
+import it.ispw.daniele.backpacker.entity.Itinerary;
 import org.json.JSONException;
 
 import java.io.IOException;
@@ -73,7 +74,7 @@ public class SearchController{// extends HomeBean {
         Vector<String> copyList = new Vector<>();
         copyList = attraction;
         System.out.println(copyList.size());
-        ArrayList<String> itinerary = new ArrayList<String>();
+        Vector<String> itinerary = new Vector<>();
         System.out.println("COPYLIST   " + copyList);
         for (int i = 0; i <= 5; i++) {
             int index = num.nextInt(copyList.size());
@@ -81,6 +82,9 @@ public class SearchController{// extends HomeBean {
 //    		System.out.println(copyList.get(index));
             itinerary.add(copyList.get(index));
 //    		itinerary.add(copyList.get(i));
+            Itinerary iti = new Itinerary();
+            iti.setItinerary(attraction);
+            System.out.println("ENTITY " + iti.getItinerary());
             resultBean.getInstance().setItinerary(itinerary); //RIMOSSO DOPO
 //    		System.out.println(resultBean.getInstance().getItinerary());
 //    		copyList.remove(index);

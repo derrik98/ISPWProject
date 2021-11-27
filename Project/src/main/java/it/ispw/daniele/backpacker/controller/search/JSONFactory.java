@@ -34,7 +34,8 @@ public abstract class JSONFactory {
 
     public static String convertString(String string) {
         String newString;
-        newString = string.replaceAll("\\s+", "");
+        newString = string.replaceAll("\\s+", "%20");
+        System.out.println("NEWSTRING "+ newString);
         System.out.println(string);
         return newString;
 

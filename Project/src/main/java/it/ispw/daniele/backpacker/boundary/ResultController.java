@@ -61,7 +61,12 @@ public class ResultController extends GUIController implements Initializable {
             region1.setMinWidth(15);
             region1.setMaxWidth(Double.MAX_VALUE);
 
-            Label l = new Label(resultBean.getItinerary().get(i).get(i));// + i);
+            for(int j = 0; j < resultBean.getItinerary().size(); j++){  // OKKKKKKKKKKKKKKKK RIVEDERE
+                Label label = new Label(resultBean.getItinerary().get(j));
+                contentPane.getChildren().add(label);
+            }
+
+            Label l = new Label(resultBean.getItinerary().get(i));// + i);
             l.setFont(new Font("Arial", 20));
             ImageView ivMap = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/googleMaps.png")).toExternalForm()));
             ivMap.setFitWidth(40);

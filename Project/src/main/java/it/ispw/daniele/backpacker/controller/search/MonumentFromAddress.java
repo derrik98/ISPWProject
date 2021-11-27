@@ -34,18 +34,17 @@ public class MonumentFromAddress extends JSONFactory{
 
     @Override
     public boolean getJSON(String address, String type) throws JSONNotFound {
-        JSONObject json;
+        JSONObject json = new JSONObject();
         try {
-            json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + type + "+in+" + convertString(address) + "&radius=7000&type=tourist_attraction&language=it&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");
+            json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + type + "+in+" + convertString(address) + "&radius=8000&type=tourist_attraction&language=it&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");
             JSONArray a = (JSONArray) json.get("results");
-            System.out.println(a);
+            System.out.println("QUESTO è A " + a);
             System.out.println("lunghezza record " + a.length());
             int i = 0;
             //while(!a.getJSONObject(i).get("name").equals(null)) {
             while (i < 20){ //OKKKKKKK
-//				System.out.println(a);
-
                 JSONObject o = a.getJSONObject(i);
+                System.out.println(o);
                 System.out.println(o.get("name"));
                 monuments.add(o.get("name").toString());
                 i++;

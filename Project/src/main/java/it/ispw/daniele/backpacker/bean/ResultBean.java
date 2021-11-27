@@ -1,5 +1,6 @@
 package it.ispw.daniele.backpacker.bean;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
@@ -8,7 +9,7 @@ public class ResultBean {
     private static ResultBean INSTANCE = null;
 
     private Vector<String> monuments = new Vector<>();
-    private final Vector<List<String>> itinerary = new Vector<>();
+    private Vector<String> itinerary = new Vector<String>();
 
     protected ResultBean() {
     }
@@ -20,13 +21,13 @@ public class ResultBean {
         return INSTANCE;
     }
 
-    public Vector<List<String>> getItinerary() {
+    public Vector<String> getItinerary() {
         return itinerary;
     }
 
-    public void setItinerary(List<String> itinerary) {
-//		this.itinerary = itinerary;
-        this.itinerary.add(itinerary);
+    public void setItinerary(Vector<String> itinerary) {
+		this.itinerary = itinerary;
+        //this.itinerary.add(itinerary);
     }
 
     public List<String> getMonuments() {
