@@ -1,38 +1,75 @@
 package it.ispw.daniele.backpacker.entity;
 
+import org.json.JSONArray;
+
+import java.math.BigDecimal;
+
 public class Monument {
 
-    private int id;
-    private String route;
+    private String name;
+    private BigDecimal latitude;
+    private BigDecimal longitude;
+    private String rating;
+    private JSONArray types;
+
 
     public Monument() {
     }
 
-    public Monument(int id, String route) {
-        this.id = id;
-        this.route = route;
+    public Monument(String name, BigDecimal latitude, BigDecimal longitude, String rating, JSONArray types) {
+        this.name = name;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.rating = rating;
+        this.types = types;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public BigDecimal getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(BigDecimal latitude) {
+        this.latitude = latitude;
+    }
+
+    public BigDecimal getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(BigDecimal longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    public JSONArray getTypes() {
+        return types;
+    }
+
+    public void setTypes(JSONArray types) {
+        this.types = types;
     }
 
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getRoute() {
-        return route;
-    }
-
-    public void setRoute(String route) {
-        this.route = route;
-    }
 
     @Override
     public String toString(){
-        return String.valueOf(this.id);
+        return String.valueOf(this.name);
 //		return this.id + " \"" + this.route + "\" (" + this.id + this.route +")";
     }
 }

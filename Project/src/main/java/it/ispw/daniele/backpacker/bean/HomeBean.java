@@ -7,9 +7,9 @@ import java.io.IOException;
 
 public class HomeBean {
 
-    public String country;
-    public String city;
-    public String address;
+    private String country;
+    private String city;
+    private String address;
     private String range;
     private boolean restaurant;
 
@@ -86,7 +86,7 @@ public class HomeBean {
             return false;
         }
 
-        HomeBean datiCorretti = SearchController.getInstances().getInput(this.getCountry(), this.getCity(), this.getAddress());
+        HomeBean datiCorretti = SearchController.getInstances().getInput(this);
         System.out.println("provafatta" + city);//FARE COME LA VALIDATE
         System.out.println(country);
 

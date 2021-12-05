@@ -5,12 +5,12 @@ import java.util.Vector;
 public class Itinerary {
 
         private int id;
-        private Vector<String> itinerary;
+        private Vector<Monument> itinerary;
 
         public Itinerary() {
         }
 
-        public Itinerary(int id, Vector<String> itinerary) {
+        public Itinerary(int id, Vector<Monument> itinerary) {
             this.id = id;
             this.itinerary = itinerary;
         }
@@ -24,11 +24,11 @@ public class Itinerary {
             this.id = id;
         }
 
-        public Vector<String> getItinerary() {
+        public Vector<Monument> getItinerary() {
             return itinerary;
         }
 
-        public void setItinerary(Vector<String> route) {
+        public void setItinerary(Vector<Monument> route) {
             this.itinerary = route;
         }
 
