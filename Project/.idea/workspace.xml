@@ -39,10 +39,11 @@
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/it/ispw/daniele/backpacker" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../OptimisticCoverage" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.40728477" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -202,6 +203,13 @@
       <workItem from="1638288515984" duration="40000" />
       <workItem from="1638455950067" duration="275000" />
       <workItem from="1638717729503" duration="7322000" />
+      <workItem from="1638865395680" duration="4686000" />
+      <workItem from="1638870127060" duration="50000" />
+      <workItem from="1638870189340" duration="32000" />
+      <workItem from="1638870390255" duration="77000" />
+      <workItem from="1638870479767" duration="46000" />
+      <workItem from="1638870536027" duration="600000" />
+      <workItem from="1638871148802" duration="176000" />
     </task>
     <servers />
   </component>

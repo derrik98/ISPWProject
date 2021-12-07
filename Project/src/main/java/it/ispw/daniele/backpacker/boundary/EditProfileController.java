@@ -18,6 +18,7 @@ public class EditProfileController extends GUIController{
     @FXML
     TextField textFieldConfNewPassSetting;
 
+
     public EditProfileController() throws IOException {
     }
 }

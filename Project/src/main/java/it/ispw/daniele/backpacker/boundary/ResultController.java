@@ -1,6 +1,7 @@
 package it.ispw.daniele.backpacker.boundary;
 
 import it.ispw.daniele.backpacker.bean.ResultBean;
+import it.ispw.daniele.backpacker.entity.Itinerary;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -41,7 +42,8 @@ public class ResultController extends GUIController implements Initializable {
 
 
         Accordion accordion = new Accordion();
-        for(int i = 0; i < 4;i++) {
+        //for(int i = 0; i < 4;i++) {
+        for(int indexItinerary = 0; indexItinerary < ResultBean.getInstance().getItinerary().size(); indexItinerary++){
 
             TitledPane titledPane = new TitledPane();
             titledPane.setCollapsible(false);
@@ -61,14 +63,27 @@ public class ResultController extends GUIController implements Initializable {
             region1.setMinWidth(15);
             region1.setMaxWidth(Double.MAX_VALUE);
 
-            for(int j = 0; j < resultBean.getItinerary().size(); j++){  // OKKKKKKKKKKKKKKKK RIVEDERE
-                Label label = new Label(resultBean.getItinerary().get(j).getItinerary().get(j).getName());
-                label.setFont(new Font("Arial", 20));
-                contentPane.getChildren().add(label);
-            }
+            WebView webView = new WebView();
+            webView.setMinHeight(300);
+            StringBuilder Url = new StringBuilder("https://google.it/maps/dir");
 
-            //Label l = new Label(resultBean.getItinerary().get(i));// + i);
-            //l.setFont(new Font("Arial", 20));
+            System.out.println(ResultBean.getInstance().getItinerary());
+
+                Itinerary itinerary = ResultBean.getInstance().getItinerary().get(indexItinerary);
+                System.out.println(itinerary);
+                for(int indexMonument = 0; indexMonument < itinerary.getItinerary().size(); indexMonument++){
+                    //System.out.println(itinerary.getItinerary());
+                    Label label = new Label(" " + itinerary.getItinerary().get(indexMonument).getName() + " ");
+                    label.setFont(new Font("Arial", 16));
+                    contentPane.getChildren().add(label);
+                    Url.append("/").append(itinerary.getItinerary().get(indexMonument).getName());
+
+                }
+
+            webView.getEngine().load(Url.toString());
+            VBox v = new VBox(webView);
+            titledPane.setContent(v);
+
             ImageView ivMap = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/googleMaps.png")).toExternalForm()));
             ivMap.setFitWidth(40);
             ivMap.setFitHeight(40);
@@ -92,17 +107,11 @@ public class ResultController extends GUIController implements Initializable {
 
             ivSave.setOnMouseClicked(mouseEvent -> {
                 Node s = contentPane.getChildren().get(0);
-               // System.out.println("salvato" + l.getText());
             });
 
-            //contentPane.getChildren().addAll(l, region, ivMap, region1, ivSave);
             contentPane.getChildren().addAll(region, ivMap, region1, ivSave);
 
             titledPane.setGraphic(contentPane);
-            WebView webView = new WebView();
-            webView.getEngine().load("https://googlemaps.com");
-            VBox v = new VBox(webView);
-            titledPane.setContent(v);
             accordion.getPanes().add(titledPane);
         }
         vBoxResult.getChildren().add(accordion);

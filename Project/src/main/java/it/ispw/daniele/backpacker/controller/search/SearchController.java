@@ -7,8 +7,6 @@ import it.ispw.daniele.backpacker.entity.Monument;
 import org.json.JSONException;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 import java.util.Vector;
 
@@ -70,9 +68,14 @@ public class SearchController{
             JSONFactory checkAddressCity = new AddressFromCity();
             if (checkAddressCity.getJSON(bean.getAddress(), bean.getCity())) {
                 Vector<Monument> monuments = this.searchMonuments();
+                Vector<Itinerary> allItinerary = new Vector<>();
                 for(int i = 0; i < 5; i++){
                     this.createItinerary(monuments);
+                    allItinerary.add(this.createItinerary(monuments));
+                    //System.out.println(allItinerary.size());
+
                 }
+                ResultBean.getInstance().setItinerary(allItinerary);
                 return HomeBean.getInstance();
             }
         }
@@ -87,22 +90,27 @@ public class SearchController{
 
     }
 
-    public Vector<Monument> createItinerary(Vector<Monument> pointOfInterest) {
+    public Itinerary createItinerary(Vector<Monument> pointOfInterest) {
         Random num = new Random();
         //Vector<String> copyList = pointOfInterest;
         //copyList = attraction;
        // System.out.println(copyList.size());
-        Vector<Monument> itinerary = new Vector<>();
-        Vector<Itinerary> allItinerary = new Vector<>();
+        Itinerary itinerary = new Itinerary();
+        Vector<Monument> vector = new Vector<>();
+        //Vector<Itinerary> allItinerary = new Vector<>();
         //System.out.println("COPYLIST   " + copyList);
         for (int i = 0; i <= 5; i++) {
             //int index = num.nextInt(copyList.size());
             int index = num.nextInt((pointOfInterest.size()-1) + 1);
-            System.out.println("INDEX " + index + " BOUND " + pointOfInterest.size());
+            //System.out.println("INDEX " + index + " BOUND " + pointOfInterest.size());
 //    		int index = num.nextInt(10);
 //    		System.out.println(copyList.get(index));
         //    itinerary.add(copyList.get(index));
-            itinerary.add(pointOfInterest.get(index));
+            //itinerary.setItinerary(pointOfInterest.get(index));
+            if(!vector.contains(pointOfInterest.get(index))){
+                vector.add(pointOfInterest.get(index));
+            }
+            //vector.add(pointOfInterest.get(index));
 //    		itinerary.add(copyList.get(i));
             //Itinerary iti = new Itinerary();
             //iti.setItinerary(pointOfInterest);
@@ -118,16 +126,17 @@ public class SearchController{
 
 //    		new ResultPage().getInstance().addRoute(itinerary.toString());
         }
-        allItinerary.add(new Itinerary(0, itinerary));
-        ResultBean.getInstance().setItinerary(allItinerary);
-        System.out.println("ITINERARYYYYYY " + itinerary);
+//        allItinerary.add(new Itinerary(itinerary));
+//        ResultBean.getInstance().setItinerary(allItinerary);
+        //System.out.println("ITINERARYYYYYY " + vector);
 
+        itinerary.setItinerary(vector);
       //  new ResultPage().getInstance().addRoute(itinerary);   RIMOSSO DOPO
 //    	new ResultPage().getInstance().addRoute(itinerary);
 
 
 //    	System.out.println(itinerary);
-//    	resultBean.getInstance().setItinerary(itinerary);
+//    	ResultBean.getInstance().setItinerary(itinerary);
 //    	System.out.println(resultBean.getInstance().getItinerary());
         return itinerary;
     }

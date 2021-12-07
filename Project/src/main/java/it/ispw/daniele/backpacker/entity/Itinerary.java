@@ -4,25 +4,25 @@ import java.util.Vector;
 
 public class Itinerary {
 
-        private int id;
+        //private int id;
         private Vector<Monument> itinerary;
 
         public Itinerary() {
         }
 
-        public Itinerary(int id, Vector<Monument> itinerary) {
-            this.id = id;
+        public Itinerary(Vector<Monument> itinerary) {
+            //this.id = id;
             this.itinerary = itinerary;
         }
 
 
-        public int getId() {
-            return id;
-        }
-
-        public void setId(int id) {
-            this.id = id;
-        }
+//        public int getId() {
+//            return id;
+//        }
+//
+//        public void setId(int id) {
+//            this.id = id;
+//        }
 
         public Vector<Monument> getItinerary() {
             return itinerary;
@@ -34,7 +34,7 @@ public class Itinerary {
 
         @Override
         public String toString(){
-            return String.valueOf(this.id);
+            return String.valueOf(this.itinerary);
 //		return this.id + " \"" + this.route + "\" (" + this.id + this.route +")";
         }
 

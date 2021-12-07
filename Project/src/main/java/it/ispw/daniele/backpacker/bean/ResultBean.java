@@ -25,7 +25,7 @@ public class ResultBean {
     }
 
     public Vector<Itinerary> getItinerary() {
-        return itinerary;
+        return this.itinerary;
     }
 
     public void setItinerary(Vector<Itinerary> itinerary) {
@@ -34,7 +34,7 @@ public class ResultBean {
     }
 
     public List<Monument> getMonuments() {
-        return monuments;
+        return this.monuments;
     }
 
     public void setMonuments(Vector<Monument> monuments) {
