@@ -41,6 +41,6 @@ public abstract class JSONFactory {
 
     }
 
-    public abstract boolean getJSON(String city, String country) throws JSONNotFound;
+    public abstract boolean getJSON(String city, String country) throws JSONNotFound, IOException;
 
 }

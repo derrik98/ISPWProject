@@ -9,6 +9,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.control.Accordion;
+import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.Image;
@@ -29,7 +30,7 @@ public class ResultController extends GUIController implements Initializable {
     @FXML
     VBox vBoxResult;
 
-    private final Accordion accordionResult = new Accordion();
+    //private final Accordion accordionResult = new Accordion();
     private ResultBean resultBean = ResultBean.getInstance();
 
     public ResultController() throws IOException {
@@ -38,8 +39,7 @@ public class ResultController extends GUIController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        vBoxResult.getChildren().add(accordionResult);
-
+        //vBoxResult.getChildren().add(accordionResult);
 
         Accordion accordion = new Accordion();
         //for(int i = 0; i < 4;i++) {
@@ -75,6 +75,8 @@ public class ResultController extends GUIController implements Initializable {
                     //System.out.println(itinerary.getItinerary());
                     Label label = new Label(" " + itinerary.getItinerary().get(indexMonument).getName() + " ");
                     label.setFont(new Font("Arial", 16));
+                    label.setPrefWidth(Control.USE_COMPUTED_SIZE);
+                    System.out.println(label.getLayoutX() + " " +label.getTranslateX());
                     contentPane.getChildren().add(label);
                     Url.append("/").append(itinerary.getItinerary().get(indexMonument).getName());
 
@@ -110,6 +112,8 @@ public class ResultController extends GUIController implements Initializable {
             });
 
             contentPane.getChildren().addAll(region, ivMap, region1, ivSave);
+            contentPane.setPrefWidth(Control.USE_PREF_SIZE);
+            ScrollString s = new ScrollString();
 
             titledPane.setGraphic(contentPane);
             accordion.getPanes().add(titledPane);

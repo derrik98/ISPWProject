@@ -82,7 +82,7 @@ public class SearchController{
         return HomeBean.getInstance();
     }
 
-    public Vector<Monument> searchMonuments() throws JSONNotFound {
+    public Vector<Monument> searchMonuments() throws JSONNotFound, IOException {
         monumentFromAddress.getJSON(HomeBean.getInstance().getAddress(), "monuments");
         System.out.println("MONUMENTI" + monumentFromAddress.getMonuments());
         resultBean.setMonuments(monumentFromAddress.getMonuments());

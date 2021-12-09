@@ -68,7 +68,7 @@ public class ProfileController extends GUIController implements Initializable {
 
 
         Accordion accordion = new Accordion();
-        for(int i = 0; i <4;i++) {
+        for(int i = 0; i < 4;i++) {
 
             TitledPane titledPane = new TitledPane();
             titledPane.setCollapsible(false);

@@ -35,14 +35,16 @@ public class MonumentFromAddress extends JSONFactory{
 
 
     @Override
-    public boolean getJSON(String address, String type) throws JSONNotFound {
-        JSONObject json;
+    public boolean getJSON(String address, String type) throws JSONNotFound, IOException {
+        JSONObject json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/textsearch/json?query=monuments+in+"
+                + convertString(address) +
+                "&radius=8000&type=tourist_attraction&language=it&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");;
         try {
             //json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + type + "+in+" + convertString(address) + "&radius=8000&type=tourist_attraction&language=it&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");
 
-            json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/textsearch/json?query=monuments+in+"
-                    + convertString(address) +
-                    "&radius=8000&type=tourist_attraction&language=it&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");
+//            json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/textsearch/json?query=monuments+in+"
+//                    + convertString(address) +
+//                    "&radius=8000&type=tourist_attraction&language=it&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");
             JSONArray a = (JSONArray) json.get("results");
             System.out.println("QUESTO è A " + a);
             System.out.println("lunghezza record " + a.length());
@@ -62,11 +64,13 @@ public class MonumentFromAddress extends JSONFactory{
                 getMonuments().add(monument);
                 i++;
             }
-            if(!json.getString("status").equals("OK")) {
+            if(!json.get("status").equals("OK")) {
+                System.out.println(json);
+                System.out.println(json.get("status"));
                 throw new JSONNotFound("Non sono presenti monumenti in questa zona");
             }
         }
-        catch (JSONException | IOException e) {
+        catch (JSONException e) {
             e.printStackTrace();
         }
         return true;
