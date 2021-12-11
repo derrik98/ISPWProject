@@ -104,57 +104,57 @@
             <HBox alignment="TOP_CENTER" VBox.vgrow="SOMETIMES">
             <Label text="Search Results for : ">
                <font>
-                  <Font size="24.0" />
+                  <Font size="18.0" />
                </font>
             </Label>
             <Label text="Country = ">
                <font>
-                  <Font size="24.0" />
+                  <Font size="18.0" />
                </font>
             </Label>
             <Label text="Italia">
                <font>
-                  <Font name="System Bold" size="24.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <Label text=", City = ">
                <font>
-                  <Font size="24.0" />
+                  <Font size="18.0" />
                </font>
             </Label>
             <Label text="Roma">
                <font>
-                   <Font name="System Bold" size="24.0" />
+                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <Label text=", Address = ">
                <font>
-                  <Font size="24.0" />
+                  <Font size="18.0" />
                </font>
             </Label>
             <Label text="via del Corso">
                <font>
-                   <Font name="System Bold" size="24.0" />
+                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <Label text=", Restaurant = ">
                <font>
-                  <Font size="24.0" />
+                  <Font size="18.0" />
                </font>
             </Label>
             <Label text="Included">
                <font>
-                   <Font name="System Bold" size="24.0" />
+                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <Label text=", Search radius = ">
                <font>
-                  <Font size="24.0" />
+                  <Font size="18.0" />
                </font>
             </Label>
             <Label text="5.2 km">
                <font>
-                   <Font name="System Bold" size="24.0" />
+                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <VBox.margin>

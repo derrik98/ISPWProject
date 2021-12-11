@@ -2,8 +2,10 @@ package it.ispw.daniele.backpacker.boundary;
 
 import it.ispw.daniele.backpacker.bean.ResultBean;
 import it.ispw.daniele.backpacker.entity.Itinerary;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Bounds;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
@@ -14,11 +16,15 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseDragEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.web.WebView;
+import javafx.stage.Popup;
 
 import java.io.IOException;
 import java.net.URL;
@@ -79,9 +85,31 @@ public class ResultController extends GUIController implements Initializable {
                     System.out.println(label.getLayoutX() + " " +label.getTranslateX());
                     contentPane.getChildren().add(label);
                     Url.append("/").append(itinerary.getItinerary().get(indexMonument).getName());
-
-                }
-
+                    label.setCursor(Cursor.HAND);
+                    label.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(MouseEvent mouseEvent) {
+                            System.out.println("label cliccata");
+                        }
+                    });
+//                    Popup popup = new Popup();
+//                    label.setOnMouseEntered(mouseEvent -> {
+//                        StackPane stickyNotesPane = new StackPane();
+//                        stickyNotesPane.setPrefSize(50, 50);
+//                        stickyNotesPane.setStyle("-fx-background-color: white;");
+//                        stickyNotesPane.setStyle("-fx-background-radius: 20px;");
+//
+//                        popup.getContent().add(stickyNotesPane);
+//                            Bounds bnds = label.localToScreen(label.getLayoutBounds());
+//                            double x = bnds.getMinX() - (stickyNotesPane.getWidth() / 2) + (label.getWidth() / 2);
+//                            double y = bnds.getMinY() - stickyNotesPane.getHeight();
+//                            popup.getContent().add(new Label("Click for Detals"));
+//                            popup.show(label, x, y);
+//                    });
+//
+//                    label.setOnMouseExited(mouseEvent -> popup.hide());
+////
+            }
             webView.getEngine().load(Url.toString());
             VBox v = new VBox(webView);
             titledPane.setContent(v);

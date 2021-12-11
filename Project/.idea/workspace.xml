@@ -37,7 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/it/ispw/daniele/backpacker" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../OptimisticCoverage" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Università/Ingegneria del Software e Progettazione Web/Lezioni38-39/Lezioni38-39/EsempiJavaIO" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -58,7 +58,7 @@
       <recent name="C:\Users\danie\Desktop\Backpacker\src\main\resources\it\ispw\daniele\backpacker" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ScrollString">
+  <component name="RunManager" selected="Application.GUIController">
     <configuration name="GUIController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.boundary.GUIController" />
       <module name="Backpacker" />
@@ -111,8 +111,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="image" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.image" />
+    <configuration name="SubSceneExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.boundary.SubSceneExample" />
       <module name="Backpacker" />
       <extension name="coverage">
         <pattern>
@@ -126,11 +126,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ScrollString" />
         <item itemvalue="Application.GUIController" />
+        <item itemvalue="Application.SubSceneExample" />
+        <item itemvalue="Application.ScrollString" />
         <item itemvalue="Application.Sample" />
         <item itemvalue="Application.SimpleSlideShow" />
-        <item itemvalue="Application.image" />
       </list>
     </recent_temporary>
   </component>
@@ -235,6 +235,11 @@
       <workItem from="1638967537097" duration="828000" />
       <workItem from="1639047804723" duration="127000" />
       <workItem from="1639061648862" duration="5504000" />
+      <workItem from="1639222923850" duration="1504000" />
+      <workItem from="1639224560110" duration="38000" />
+      <workItem from="1639232815592" duration="2690000" />
+      <workItem from="1639237062541" duration="34000" />
+      <workItem from="1639238862769" duration="6000" />
     </task>
     <servers />
   </component>
