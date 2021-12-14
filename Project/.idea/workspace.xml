@@ -37,7 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/it/ispw/daniele/backpacker" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Università/Ingegneria del Software e Progettazione Web/Lezioni38-39/Lezioni38-39/EsempiJavaIO" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Università/Ingegneria del Software e Progettazione Web/Lezioni42-43-PrimaParte/Lezioni42-43-PrimaParte/EsempiJavaExceptions-PrimaParte" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -127,8 +127,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.GUIController" />
-        <item itemvalue="Application.SubSceneExample" />
         <item itemvalue="Application.ScrollString" />
+        <item itemvalue="Application.SubSceneExample" />
         <item itemvalue="Application.Sample" />
         <item itemvalue="Application.SimpleSlideShow" />
       </list>
@@ -240,6 +240,10 @@
       <workItem from="1639232815592" duration="2690000" />
       <workItem from="1639237062541" duration="34000" />
       <workItem from="1639238862769" duration="6000" />
+      <workItem from="1639311059846" duration="19000" />
+      <workItem from="1639311223097" duration="30000" />
+      <workItem from="1639474749227" duration="1262000" />
+      <workItem from="1639476032266" duration="814000" />
     </task>
     <servers />
   </component>

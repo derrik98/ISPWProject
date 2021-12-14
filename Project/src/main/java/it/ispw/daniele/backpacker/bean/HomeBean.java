@@ -79,10 +79,8 @@ public class HomeBean {
 
 
     public boolean validate() throws IOException, JSONNotFound {
-        System.out.println("djcndsjcnkds" + country + city + address);
         // controllo sintattico
         if (country.equals("") || city.equals("") || address.equals("")) {
-            System.out.println("djcndsjcnkds" + country + city + address);
             return false;
         }
 
@@ -97,7 +95,4 @@ public class HomeBean {
         return datiCorretti != null;
 
     }
-
-
-
 }

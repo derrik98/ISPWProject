@@ -33,7 +33,7 @@ public class HomeController extends GUIController{
 
     public void onSliderChanged() {
         BigDecimal sliderValue = BigDecimal.valueOf(sliderRange.getValue()).setScale(1, RoundingMode.HALF_UP);
-        labelRange.setText(sliderValue.setScale(1, RoundingMode.HALF_UP)+" km");
+        labelRange.setText(sliderValue.setScale(1, RoundingMode.HALF_UP) + " km");
     }
 
     public void SearchRoutes() throws JSONNotFound, IOException {

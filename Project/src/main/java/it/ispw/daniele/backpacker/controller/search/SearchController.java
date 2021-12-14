@@ -60,7 +60,6 @@ public class SearchController{
 //        return HomeBean.getInstance();
 //    }
 
-    //VEDERE SE FUNZIONA COSì
     public HomeBean getInput(HomeBean bean) throws IOException, JSONException, JSONNotFound {
         JSONFactory checkCityCountry = CityFromCountry.getInstance();
         JSONFactory.convertString(bean.getAddress());
@@ -73,7 +72,6 @@ public class SearchController{
                     this.createItinerary(monuments);
                     allItinerary.add(this.createItinerary(monuments));
                     //System.out.println(allItinerary.size());
-
                 }
                 ResultBean.getInstance().setItinerary(allItinerary);
                 return HomeBean.getInstance();
@@ -146,7 +144,10 @@ public class SearchController{
 
     }
 
-    public void searchRestaurants() {
+    public void searchRestaurants(HomeBean bean) {
+        if (bean.isRestaurant()){
+            JSONFactory checkRestaurant = new Restaurants(bean.getAddress());
+        }
 
     }
 

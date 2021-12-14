@@ -79,11 +79,17 @@ public class ResultController extends GUIController implements Initializable {
                 System.out.println(itinerary);
                 for(int indexMonument = 0; indexMonument < itinerary.getItinerary().size(); indexMonument++){
                     //System.out.println(itinerary.getItinerary());
-                    Label label = new Label(" " + itinerary.getItinerary().get(indexMonument).getName() + " ");
+                    Label label = new Label("  " + itinerary.getItinerary().get(indexMonument).getName() + "  ");
                     label.setFont(new Font("Arial", 16));
                     label.setPrefWidth(Control.USE_COMPUTED_SIZE);
+
+                    Label space = new Label(" - ");
+                    space.setFont(new Font("Arial", 16));
+                    space.setPrefWidth(Control.USE_COMPUTED_SIZE);
+
                     System.out.println(label.getLayoutX() + " " +label.getTranslateX());
                     contentPane.getChildren().add(label);
+                    contentPane.getChildren().add(space);
                     Url.append("/").append(itinerary.getItinerary().get(indexMonument).getName());
                     label.setCursor(Cursor.HAND);
                     label.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -140,7 +146,9 @@ public class ResultController extends GUIController implements Initializable {
             });
 
             contentPane.getChildren().addAll(region, ivMap, region1, ivSave);
-            contentPane.setPrefWidth(Control.USE_PREF_SIZE);
+
+            //restringere accordion
+            //contentPane.setPrefWidth(Control.USE_PREF_SIZE);
             ScrollString s = new ScrollString();
 
             titledPane.setGraphic(contentPane);
