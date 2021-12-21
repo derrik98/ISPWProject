@@ -4,6 +4,9 @@ import it.ispw.daniele.backpacker.bean.HomeBean;
 import it.ispw.daniele.backpacker.bean.ResultBean;
 import it.ispw.daniele.backpacker.entity.Itinerary;
 import it.ispw.daniele.backpacker.entity.Monument;
+import it.ispw.daniele.backpacker.exceptions.AddressNotFoundException;
+import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
+import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
 import org.json.JSONException;
 
 import java.io.IOException;
@@ -60,27 +63,29 @@ public class SearchController{
 //        return HomeBean.getInstance();
 //    }
 
-    public HomeBean getInput(HomeBean bean) throws IOException, JSONException, JSONNotFound {
+    public HomeBean getInput(HomeBean bean) throws CityNotFoundException, AddressNotFoundException, MonumentNotFoundException, IOException {
         JSONFactory checkCityCountry = CityFromCountry.getInstance();
         JSONFactory.convertString(bean.getAddress());
-        if (checkCityCountry.getJSON(bean.getCity(), bean.getCountry())) {
-            JSONFactory checkAddressCity = new AddressFromCity();
-            if (checkAddressCity.getJSON(bean.getAddress(), bean.getCity())) {
-                Vector<Monument> monuments = this.searchMonuments();
-                Vector<Itinerary> allItinerary = new Vector<>();
-                for(int i = 0; i < 5; i++){
-                    this.createItinerary(monuments);
-                    allItinerary.add(this.createItinerary(monuments));
-                    //System.out.println(allItinerary.size());
+
+            if (checkCityCountry.getJSON(bean.getCity(), bean.getCountry())) {
+                JSONFactory checkAddressCity = new AddressFromCity();
+                if (checkAddressCity.getJSON(bean.getAddress(), bean.getCity())) {
+                    Vector<Monument> monuments = this.searchMonuments();
+                    Vector<Itinerary> allItinerary = new Vector<>();
+                    for (int i = 0; i < 5; i++) {
+                        this.createItinerary(monuments);
+                        allItinerary.add(this.createItinerary(monuments));
+                        //System.out.println(allItinerary.size());
+                    }
+                    ResultBean.getInstance().setItinerary(allItinerary);
+                    return HomeBean.getInstance();
                 }
-                ResultBean.getInstance().setItinerary(allItinerary);
-                return HomeBean.getInstance();
             }
-        }
+
         return HomeBean.getInstance();
     }
 
-    public Vector<Monument> searchMonuments() throws JSONNotFound, IOException {
+    public Vector<Monument> searchMonuments() throws MonumentNotFoundException {
         monumentFromAddress.getJSON(HomeBean.getInstance().getAddress(), "monuments");
         System.out.println("MONUMENTI" + monumentFromAddress.getMonuments());
         resultBean.setMonuments(monumentFromAddress.getMonuments());
@@ -146,7 +151,7 @@ public class SearchController{
 
     public void searchRestaurants(HomeBean bean) {
         if (bean.isRestaurant()){
-            JSONFactory checkRestaurant = new Restaurants(bean.getAddress());
+           // JSONFactory checkRestaurant = new Restaurants(bean.getAddress());
         }
 
     }

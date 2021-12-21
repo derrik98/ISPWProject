@@ -12,7 +12,9 @@ module it.ispw.daniele.backpacker {
     requires java.desktop;
     requires com.jfoenix;
     requires org.json;
+    requires java.logging;
+    requires java.sql;
 
-    exports it.ispw.daniele.backpacker.boundary;
-    opens it.ispw.daniele.backpacker.boundary to javafx.fxml;
+    exports it.ispw.daniele.backpacker.fxmlView;
+    opens it.ispw.daniele.backpacker.fxmlView to javafx.fxml;
 }

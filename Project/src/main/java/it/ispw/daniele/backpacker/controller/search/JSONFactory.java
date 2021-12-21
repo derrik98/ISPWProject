@@ -5,6 +5,9 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
+import it.ispw.daniele.backpacker.exceptions.AddressNotFoundException;
+import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
+import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -41,6 +44,6 @@ public abstract class JSONFactory {
 
     }
 
-    public abstract boolean getJSON(String city, String country) throws JSONNotFound, IOException;
+    public abstract boolean getJSON(String city, String country) throws CityNotFoundException, AddressNotFoundException, MonumentNotFoundException, IOException;
 
 }

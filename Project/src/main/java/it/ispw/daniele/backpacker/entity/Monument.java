@@ -14,6 +14,11 @@ public class Monument {
 
 
     public Monument() {
+        this.name = "";
+        this.latitude = BigDecimal.valueOf(0.0);
+        this.longitude = BigDecimal.valueOf(0.0);
+        this.rating = "";
+        this.types = null;
     }
 
     public Monument(String name, BigDecimal latitude, BigDecimal longitude, String rating, JSONArray types) {

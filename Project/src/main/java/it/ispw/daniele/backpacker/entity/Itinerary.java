@@ -8,6 +8,7 @@ public class Itinerary {
         private Vector<Monument> itinerary;
 
         public Itinerary() {
+            this.itinerary = null;
         }
 
         public Itinerary(Vector<Monument> itinerary) {

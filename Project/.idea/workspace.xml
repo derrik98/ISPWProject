@@ -15,6 +15,7 @@
       <list>
         <option value="CSS File" />
         <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -37,7 +38,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/it/ispw/daniele/backpacker" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Università/Ingegneria del Software e Progettazione Web/Lezioni42-43-PrimaParte/Lezioni42-43-PrimaParte/EsempiJavaExceptions-PrimaParte" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Università/Ingegneria del Software e Progettazione Web/Lezioni42-43/Lezioni42-43/EsempiJavaExceptions-SecondaParte" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -47,6 +48,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="it.ispw.daniele.backpacker.exceptions" />
       <recent name="it.ispw.daniele.backpacker.controller.search" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -54,17 +56,20 @@
       <recent name="C:\Users\danie\Desktop\Backpacker\src\main\resources\it\ispw\daniele\backpacker" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\Desktop\ISPWProject\trunk\Project\src\main\java\it\ispw\daniele\backpacker\fxmlView" />
+      <recent name="C:\Users\danie\Desktop\ISPWProject\trunk\Project\src\main\resources\it\ispw\daniele\backpacker" />
+      <recent name="C:\Users\danie\Desktop\ISPWProject\trunk\Project\src\main\resources" />
+      <recent name="C:\Users\danie\Desktop\ISPWProject\trunk\Project\src\main\java\it\ispw\daniele\backpacker\fxmlView\style" />
       <recent name="C:\Users\danie\Desktop\Backpacker\src\main\resources" />
-      <recent name="C:\Users\danie\Desktop\Backpacker\src\main\resources\it\ispw\daniele\backpacker" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GUIController">
-    <configuration name="GUIController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.boundary.GUIController" />
+  <component name="RunManager" selected="Application.GUIControllerAction">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.fxmlView.App" />
       <module name="Backpacker" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.ispw.daniele.backpacker.boundary.*" />
+          <option name="PATTERN" value="it.ispw.daniele.backpacker.fxmlView.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -77,7 +82,7 @@
       <module name="Backpacker" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.ispw.daniele.backpacker.boundary.*" />
+          <option name="PATTERN" value="it.ispw.daniele.backpacker.fxmlView.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -86,11 +91,11 @@
       </method>
     </configuration>
     <configuration name="ScrollString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.boundary.ScrollString" />
+      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.fxmlView.ScrollString" />
       <module name="Backpacker" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.ispw.daniele.backpacker.boundary.*" />
+          <option name="PATTERN" value="it.ispw.daniele.backpacker.fxmlView.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -103,7 +108,7 @@
       <module name="Backpacker" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.ispw.daniele.backpacker.boundary.*" />
+          <option name="PATTERN" value="it.ispw.daniele.backpacker.fxmlView.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -116,7 +121,7 @@
       <module name="Backpacker" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.ispw.daniele.backpacker.boundary.*" />
+          <option name="PATTERN" value="it.ispw.daniele.backpacker.fxmlView.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -126,7 +131,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GUIController" />
+        <item itemvalue="Application.GUIControllerAction" />
         <item itemvalue="Application.ScrollString" />
         <item itemvalue="Application.SubSceneExample" />
         <item itemvalue="Application.Sample" />
@@ -244,6 +249,11 @@
       <workItem from="1639311223097" duration="30000" />
       <workItem from="1639474749227" duration="1262000" />
       <workItem from="1639476032266" duration="814000" />
+      <workItem from="1639518339492" duration="2177000" />
+      <workItem from="1639562326687" duration="5242000" />
+      <workItem from="1639605875144" duration="12000" />
+      <workItem from="1639666719643" duration="1848000" />
+      <workItem from="1640106121662" duration="12570000" />
     </task>
     <servers />
   </component>

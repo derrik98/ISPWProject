@@ -1,6 +1,7 @@
 package it.ispw.daniele.backpacker.controller.search;
 
 import it.ispw.daniele.backpacker.entity.Monument;
+import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -35,10 +36,16 @@ public class MonumentFromAddress extends JSONFactory{
 
 
     @Override
-    public boolean getJSON(String address, String type) throws JSONNotFound, IOException {
-        JSONObject json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/textsearch/json?query=monuments+in+"
-                + convertString(address) +
-                "&radius=8000&type=tourist_attraction&language=it&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");;
+    public boolean getJSON(String address, String type) throws MonumentNotFoundException {
+        JSONObject json = null;
+        try {
+            json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/textsearch/json?query=monuments+in+"
+                    + convertString(address) +
+                    "&radius=8000&type=tourist_attraction&language=it&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        ;
         try {
             //json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + type + "+in+" + convertString(address) + "&radius=8000&type=tourist_attraction&language=it&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");
 
@@ -65,9 +72,7 @@ public class MonumentFromAddress extends JSONFactory{
                 i++;
             }
             if(!json.get("status").equals("OK")) {
-                System.out.println(json);
-                System.out.println(json.get("status"));
-                throw new JSONNotFound("Non sono presenti monumenti in questa zona");
+                throw new MonumentNotFoundException("Non sono presenti monumenti in questa zona");
             }
         }
         catch (JSONException e) {

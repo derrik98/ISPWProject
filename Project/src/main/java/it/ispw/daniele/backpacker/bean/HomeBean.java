@@ -1,7 +1,9 @@
 package it.ispw.daniele.backpacker.bean;
 
-import it.ispw.daniele.backpacker.controller.search.JSONNotFound;
 import it.ispw.daniele.backpacker.controller.search.SearchController;
+import it.ispw.daniele.backpacker.exceptions.AddressNotFoundException;
+import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
+import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
 
 import java.io.IOException;
 
@@ -78,13 +80,19 @@ public class HomeBean {
     }
 
 
-    public boolean validate() throws IOException, JSONNotFound {
+    public boolean validate() throws IOException, CityNotFoundException, AddressNotFoundException, MonumentNotFoundException {
         // controllo sintattico
         if (country.equals("") || city.equals("") || address.equals("")) {
             return false;
         }
 
-        HomeBean datiCorretti = SearchController.getInstances().getInput(this);
+        HomeBean datiCorretti = null;
+        try {
+            datiCorretti = SearchController.getInstances().getInput(this);
+        } catch (CityNotFoundException e) {
+            throw new CityNotFoundException(e.getMessage());
+           // e.printStackTrace();
+        }
         System.out.println("provafatta" + city);//FARE COME LA VALIDATE
         System.out.println(country);
 
