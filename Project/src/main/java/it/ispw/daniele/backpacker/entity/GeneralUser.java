@@ -2,40 +2,32 @@ package it.ispw.daniele.backpacker.entity;
 
 import java.io.Serializable;
 
-public class GeneralUser implements Serializable {
-
-    protected String name;
-    protected String surname;
-    protected String email;
+public class GeneralUser {
+    protected String username;
     protected String password;
+    private String role;
 
     public GeneralUser() {
-        this.name = "";
-        this.surname = "";
-        this.email = "";
+        this.username = "";
         this.password = "";
+        this.role = "";
     }
 
-    public GeneralUser(String name, String surname, String email, String password) {
-        this.name = name;
-        this.surname = surname;
-        this.email = email;
+    public GeneralUser(String username, String password, String role) {
+        this.username = username;
         this.password = password;
+        this.role = role;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
     public String getPassword() {
         return password;
+    }
+
+    public String getRole() {
+        return role;
     }
 }

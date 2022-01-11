@@ -8,15 +8,12 @@ public abstract class DaoTemplate {
 
     protected static final Logger logger = Logger.getLogger("Dao");
 
-    protected final <T> T execute(DaoAction <T> daoAction){
+    public final <G> G execute(DaoAction<G> daoAction){
         try {
             return daoAction.act();
         }catch (SQLException | ClassNotFoundException exception){
-            logger.log(Level.WARNING, exception.toString());
+            logger.log(Level.WARNING, exception.toString(), exception.getMessage());
         }
-
         return null;
-
     }
-
 }

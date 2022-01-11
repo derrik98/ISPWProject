@@ -30,6 +30,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql.8" />
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -38,13 +39,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/it/ispw/daniele/backpacker" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Università/Ingegneria del Software e Progettazione Web/Lezioni42-43/Lezioni42-43/EsempiJavaExceptions-SecondaParte" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/mysql-connector-java-5.1.46-bin.jar" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.40728477" />
-    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
+    <property name="settings.editor.selected.configurable" value="SQL Resolution Scopes" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -63,7 +64,7 @@
       <recent name="C:\Users\danie\Desktop\Backpacker\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GUIControllerAction">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.fxmlView.App" />
       <module name="Backpacker" />
@@ -131,7 +132,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GUIControllerAction" />
+        <item itemvalue="Application.App" />
         <item itemvalue="Application.ScrollString" />
         <item itemvalue="Application.SubSceneExample" />
         <item itemvalue="Application.Sample" />
@@ -254,6 +255,15 @@
       <workItem from="1639605875144" duration="12000" />
       <workItem from="1639666719643" duration="1848000" />
       <workItem from="1640106121662" duration="12570000" />
+      <workItem from="1640971073984" duration="27000" />
+      <workItem from="1640971151333" duration="1151000" />
+      <workItem from="1641039134651" duration="107000" />
+      <workItem from="1641039790458" duration="2026000" />
+      <workItem from="1641580205115" duration="7582000" />
+      <workItem from="1641590524487" duration="4865000" />
+      <workItem from="1641829907319" duration="2676000" />
+      <workItem from="1641854979494" duration="5932000" />
+      <workItem from="1641925070043" duration="1833000" />
     </task>
     <servers />
   </component>

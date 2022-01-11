@@ -1,27 +1,40 @@
 package it.ispw.daniele.backpacker.bean;
 
-public class GeneralUserBean {
+import java.io.Serializable;
 
-    private String password;
+public class GeneralUserBean implements Serializable {
+
     private String username;
-    private boolean isLogged;
+    private String password;
+    //private boolean isLogged;
+    protected String email;
+    protected String role;
+    protected String profilePicture;
 
-    private static GeneralUserBean INSTANCE = null;
+//    private static GeneralUserBean INSTANCE = null;
+//
+//    public final GeneralUserBean getInstance() {
+//        if(INSTANCE==null) {
+//            INSTANCE = new GeneralUserBean();
+//        }
+//
+//        return INSTANCE;
+//    }
+//
+//    public GeneralUserBean() {
+//    }
+//
+//    public GeneralUserBean(String user, String pass) {
+//        this.username = user;
+//        this.password = pass;
+//    }
 
-    public final GeneralUserBean getInstance() {
-        if(INSTANCE==null) {
-            INSTANCE = new GeneralUserBean();
-        }
-
-        return INSTANCE;
+    public void setRole(String name) {
+        this.role = name;
     }
 
-    public GeneralUserBean() {
-    }
-
-    public GeneralUserBean(String user, String pass) {
-        this.username = user;
-        this.password = pass;
+    public String getRole() {
+        return this.role;
     }
 
     public String getUsername() {
@@ -33,11 +46,11 @@ public class GeneralUserBean {
     }
 
     public String getEmail() {
-        return username;
+        return email;
     }
 
     public void setEmail(String email) {
-        this.username = email;
+        this.email = email;
     }
 
     public String getPassword() {
@@ -48,13 +61,21 @@ public class GeneralUserBean {
         this.password = password;
     }
 
-    public boolean getLogged() {
-        return isLogged;
+//    //public boolean getLogged() {
+//        return isLogged;
+//    }
+
+    public String getProfilePicture() {
+        return profilePicture;
     }
 
-    public void setLogged(boolean isLogged) {
-        this.isLogged = isLogged;
+    public void setProfilePicture(String profilePicture) {
+        this.profilePicture = profilePicture;
     }
+
+//    public void setLogged(boolean isLogged) {
+//        this.isLogged = isLogged;
+//    }
 
 //    public boolean validate() throws Exception {
 //        System.out.println("loginbean" + getLogged() + getEmail() + getPassword());
