@@ -1,8 +1,10 @@
 package it.ispw.daniele.backpacker.controller.login;
 
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
+import it.ispw.daniele.backpacker.bean.TouristGuideBean;
 import it.ispw.daniele.backpacker.bean.UserBean;
 import it.ispw.daniele.backpacker.dao.GeneralUserDao;
+import it.ispw.daniele.backpacker.dao.TouristGuideDao;
 import it.ispw.daniele.backpacker.dao.UserDAO;
 import it.ispw.daniele.backpacker.entity.GeneralUser;
 import it.ispw.daniele.backpacker.exceptions.LoginEmptyFieldException;
@@ -42,9 +44,9 @@ public class LoginController {
 //        return ad.createRestaurantOwner(ab.getUsername(), ab.getPassword(), ab.getBandName(), ab.getProfilePicture(), ab.getEmail());
 //    }
 //
-//    public boolean createTouristGuide(TouristGuideBean ab) {
-//        TouristGuideDao ad = new TouristGuideDao();
-//        return ad.createTouristGuide(ab.getUsername(), ab.getPassword(), ab.getBandName(), ab.getProfilePicture(), ab.getEmail());
-//    }
+    public boolean createTouristGuide(TouristGuideBean tgb) {
+        TouristGuideDao tgd = new TouristGuideDao();
+        return tgd.createTouristGuide(tgb.getUsername(), tgb.getName(), tgb.getSurname(), tgb.getEmail(), tgb.getPassword(), tgb.getProfilePicture(), tgb.getIdentificationCode());
+    }
 
 }

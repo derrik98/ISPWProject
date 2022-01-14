@@ -1,5 +1,8 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
+import it.ispw.daniele.backpacker.bean.GeneralUserBean;
+import it.ispw.daniele.backpacker.bean.UserBean;
+import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -37,10 +40,46 @@ public class ProfileController extends App implements Initializable {
     private Text textSettings;
     @FXML
     private VBox vBoxProfile;
+    @FXML
+    private Label username;
+    @FXML
+    private Label name;
+    @FXML
+    private Label surname;
+    @FXML
+    private Label email;
 
     private final Accordion accordionResult = new Accordion();
 
-    public ProfileController() throws IOException {
+    public void init() {
+
+        //init controller
+        //UserGraphicChange ugc = UserGraphicChange.getInstance();
+        //FriendsController fc=new FriendsController();
+        //init menuBar
+        //ugc.menuBar(this.menuBar,"friends");
+
+        //init labels
+        //this.username = new Label(ub.getUsername());
+       // this.username.setText(ub.getUsername());
+//        this.name.setText(ub.getName());
+//        this.surname.setText(ub.getSurname());
+        //this.email.setText(ub.getEmail());
+
+        GeneralUserBean gu= SessionUser.getInstance().getSession();
+        this.username.setText(gu.getUsername());
+        this.name.setText(gu.getEmail());
+
+        //init buttons
+//        GeneralUserBean gu = SessionUser.getInstance().getSession();
+//        boolean isFriend = fc.isFriend(gu, ub);
+//        String who = fc.whoSentRequest(gu, ub);
+//
+//        String style = "-fx-background-color:  #F5CB5C";
+//
+//        Button btn1 = new Button();
+//        btn1.setStyle(style);
+//        Button btn2 = null;
     }
 
     public void switchToSettings() throws IOException {

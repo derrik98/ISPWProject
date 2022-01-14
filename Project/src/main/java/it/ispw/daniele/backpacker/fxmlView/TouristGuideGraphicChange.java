@@ -6,17 +6,17 @@ import javafx.scene.Scene;
 
 import java.io.IOException;
 
-public class RestaurantGraphicChange extends GUIChangeTemplate{
+public class TouristGuideGraphicChange extends GUIChangeTemplate{
 
-    private static RestaurantGraphicChange instance = null;
+    private static TouristGuideGraphicChange instance = null;
 
-    private RestaurantGraphicChange(){
-        whoAmI = Roles.RESTAURANT_OWNER;
+    private TouristGuideGraphicChange(){
+        whoAmI = Roles.TOURIST_GUIDE;
     }
 
-    public static RestaurantGraphicChange getInstance(){
+    public static TouristGuideGraphicChange getInstance(){
         if(instance == null){
-            instance = new RestaurantGraphicChange();
+            instance = new TouristGuideGraphicChange();
         }
         return instance;
     }
@@ -25,9 +25,9 @@ public class RestaurantGraphicChange extends GUIChangeTemplate{
         this.catcher(new GUIAction() {
             @Override
             public void action() throws IOException {
-                HomeController homeController = new HomeController();
+                HomeUserController homeUserController = new HomeUserController();
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Home-Page.fxml"));
-                loader.setController(homeController);
+                loader.setController(homeUserController);
                 scene.setRoot(loader.load());
                 //huc.init();
             }

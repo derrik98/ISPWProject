@@ -14,8 +14,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="FxmlFile" />
         <option value="Interface" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -49,6 +49,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="it.ispw.daniele.backpacker.fxmlView" />
       <recent name="it.ispw.daniele.backpacker.exceptions" />
       <recent name="it.ispw.daniele.backpacker.controller.search" />
     </key>
@@ -264,6 +265,10 @@
       <workItem from="1641829907319" duration="2676000" />
       <workItem from="1641854979494" duration="5932000" />
       <workItem from="1641925070043" duration="1833000" />
+      <workItem from="1642115833715" duration="5142000" />
+      <workItem from="1642172135121" duration="17613000" />
+      <workItem from="1642194965750" duration="5858000" />
+      <workItem from="1642201669524" duration="522000" />
     </task>
     <servers />
   </component>

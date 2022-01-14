@@ -7,18 +7,27 @@ import it.ispw.daniele.backpacker.exceptions.AddressNotFoundException;
 import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
 import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.util.Duration;
 
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class HomeController extends App {
+public class HomeUserController implements Initializable {
 
+    @FXML
+    private HBox menuBar = new HBox();
     @FXML
     private AnchorPane APHome = new AnchorPane();
     @FXML
@@ -36,7 +45,7 @@ public class HomeController extends App {
     @FXML
     private RadioButton radioButtonRestaurant;
 
-    public HomeController() throws IOException {
+    public HomeUserController() throws IOException {
     }
 
     public void onSliderChanged() {
@@ -64,6 +73,7 @@ public class HomeController extends App {
         }
     }
 
+    @FXML
     public void handleKeyPressed(KeyEvent event) throws  IOException {
         if (event.getCode().equals(KeyCode.ENTER)) {
             this.SearchRoutes();
@@ -85,5 +95,20 @@ public class HomeController extends App {
 //        layout.getStylesheets().add(css);
 //
 //        snackbar.enqueue(new JFXSnackbar.SnackbarEvent(layout, Duration.seconds(2.5)));
+    }
+
+//    public void init(){
+//        UserGraphicChange ugc = UserGraphicChange.getInstance();
+//
+//        ugc.menuBar(this.menuBar, "home");
+//        System.out.println(this.menuBar.getChildren() + "EEEEEEEEEEE");
+//    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        UserGraphicChange ugc = UserGraphicChange.getInstance();
+
+        ugc.menuBar(this.menuBar, "home");
+        System.out.println(this.menuBar.getChildren() + "EEEEEEEEEEE");
     }
 }

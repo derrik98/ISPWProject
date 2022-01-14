@@ -7,40 +7,40 @@ import it.ispw.daniele.backpacker.controller.login.LoginController;
 import it.ispw.daniele.backpacker.exceptions.LoginEmptyFieldException;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Objects;
 
 public class LoginViewController extends App {
 
     @FXML
+    public Label LabelLogin;
+    @FXML
+    public Label LabelSignUp;
+    public ImageView imageUndo;
+    @FXML
+    public VBox dynamicZone;
+    @FXML
     private AnchorPane APLogin;
     @FXML
     private Button ButtonLogin;
     @FXML
-    private Button buttonFacebookLogin;
-    @FXML
-    private Button buttonGoogleLogin;
-    @FXML
     private TextField textFieldUserLogin = new TextField();
     @FXML
     private TextField textFieldPassLogin = new TextField();
-
-    public LoginViewController() throws IOException {
-
-    }
-
-    public void googleLogin() {
-        System.out.println("Login with Google");
-    }
-
-    public void facebookLogin() {
-        System.out.println("Login with Facebook");
-    }
 
     @FXML
     public void loginAction() throws IOException {
@@ -66,10 +66,11 @@ public class LoginViewController extends App {
                 switch (role){
                     case "user":
                         UserGraphicChange.getInstance().switchToHomepage(this.textFieldUserLogin.getScene());
+                        //ProfileController.init();
                         System.out.println(this.textFieldUserLogin.getScene());
                         break;
-                    case "restaurant_owner":
-                        RestaurantGraphicChange.getInstance().switchToHomepage(this.textFieldUserLogin.getScene());
+                    case "tourist_guide":
+                        TouristGuideGraphicChange.getInstance().switchToHomepage(this.textFieldUserLogin.getScene());
                         break;
                     default:
                         break;
@@ -111,4 +112,29 @@ public class LoginViewController extends App {
         }
     }
 
+    public void switchToSignUp() throws IOException {
+        SignUpController signUpController = new SignUpController();
+        FXMLLoader loader = new FXMLLoader();
+        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/SignUp-Page.fxml");
+        //loader.setController(loginViewController);
+        Parent fxmlLoader = loader.load(fileInputStream);
+
+        dynamicZone.getChildren().remove(0, dynamicZone.getChildren().size());
+        dynamicZone.getChildren().add(fxmlLoader);
+        this.LabelSignUp.setUnderline(true);
+        this.LabelLogin.setUnderline(false);
+    }
+
+    public void switchToLogin() throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/LoginViewPage.fxml");
+        //loader.setController(loginViewController);
+        Parent fxmlLoader = loader.load(fileInputStream);
+        this.LabelLogin.getScene().setRoot(fxmlLoader);
+        this.LabelSignUp.setUnderline(false);
+        this.LabelLogin.setUnderline(true);
+    }
+
+    public void undoScene(MouseEvent mouseEvent) {
+    }
 }
