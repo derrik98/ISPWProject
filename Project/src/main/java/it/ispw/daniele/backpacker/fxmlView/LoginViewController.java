@@ -9,7 +9,6 @@ import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -20,7 +19,6 @@ import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -65,12 +63,12 @@ public class LoginViewController extends App {
 
                 switch (role){
                     case "user":
-                        UserGraphicChange.getInstance().switchToHomepage(this.textFieldUserLogin.getScene());
+                        UserGraphicChange.getInstance().switchToHomePage(this.textFieldUserLogin.getScene());
                         //ProfileController.init();
                         System.out.println(this.textFieldUserLogin.getScene());
                         break;
                     case "tourist_guide":
-                        TouristGuideGraphicChange.getInstance().switchToHomepage(this.textFieldUserLogin.getScene());
+                        TouristGuideGraphicChange.getInstance().switchToHomePage(this.textFieldUserLogin.getScene());
                         break;
                     default:
                         break;

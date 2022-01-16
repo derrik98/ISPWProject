@@ -60,8 +60,10 @@ public class HomeUserController implements Initializable {
          homeBean.setCountry(textFieldCountry.getText());
          homeBean.setCity(textFieldCity.getText());
          homeBean.setAddress(textFieldAddress.getText());
+
         try {
             homeBean.validate();
+            UserGraphicChange.getInstance().switchToResultPage(this.textFieldCountry.getScene());
         } catch (CityNotFoundException cnfe) {
             //e.printStackTrace();
             this.showFeedback(cnfe.getMessage());

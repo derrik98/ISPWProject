@@ -1,7 +1,9 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
+import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.bean.ResultBean;
 import it.ispw.daniele.backpacker.entity.Itinerary;
+import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -27,10 +29,12 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class ResultController extends App implements Initializable {
+public class ResultController implements Initializable {
 
     @FXML
     private VBox vBoxResult;
+    @FXML
+    private HBox menuBar = new HBox();
 
     //private final Accordion accordionResult = new Accordion();
     private ResultBean resultBean = ResultBean.getInstance();
@@ -40,9 +44,9 @@ public class ResultController extends App implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        UserGraphicChange ugc = UserGraphicChange.getInstance();
         //vBoxResult.getChildren().add(accordionResult);
-
+        ugc.menuBar(this.menuBar, "result");
         Accordion accordion = new Accordion();
         //for(int i = 0; i < 4;i++) {
         for(int indexItinerary = 0; indexItinerary < ResultBean.getInstance().getItinerary().size(); indexItinerary++){

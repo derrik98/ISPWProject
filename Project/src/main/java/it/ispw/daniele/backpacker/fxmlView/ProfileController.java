@@ -32,7 +32,7 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class ProfileController extends App implements Initializable {
+public class ProfileController implements Initializable {
 
     @FXML
     private ImageView imageSettings;
@@ -48,13 +48,15 @@ public class ProfileController extends App implements Initializable {
     private Label surname;
     @FXML
     private Label email;
+    @FXML
+    private HBox menuBar = new HBox();
 
     private final Accordion accordionResult = new Accordion();
 
     public void init() {
 
         //init controller
-        //UserGraphicChange ugc = UserGraphicChange.getInstance();
+        UserGraphicChange ugc = UserGraphicChange.getInstance();
         //FriendsController fc=new FriendsController();
         //init menuBar
         //ugc.menuBar(this.menuBar,"friends");
@@ -88,7 +90,7 @@ public class ProfileController extends App implements Initializable {
         Parent fxmlLoader = loader.load(fileInputStream);
         Scene scene = this.imageSettings.getScene();
         scene.setRoot(fxmlLoader);
-        stackScene.push(fxmlLoader);
+        //stackScene.push(fxmlLoader);
     }
 
     public void showInfoSettings(MouseEvent mouseEvent) {
@@ -101,6 +103,13 @@ public class ProfileController extends App implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        UserGraphicChange ugc = UserGraphicChange.getInstance();
+        GeneralUserBean gu= SessionUser.getInstance().getSession();
+        this.username.setText(gu.getUsername());
+        this.name.setText(gu.getPassword());
+
+        ugc.menuBar(this.menuBar, "profile");
 
         vBoxProfile.getChildren().add(accordionResult);
 

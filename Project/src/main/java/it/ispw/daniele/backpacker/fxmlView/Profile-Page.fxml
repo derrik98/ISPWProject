@@ -8,6 +8,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -16,6 +17,24 @@
 <AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.fxmlView.ProfileController">
     <ScrollPane fitToHeight="true" fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <VBox alignment="TOP_CENTER">
+         <StackPane>
+            <children>
+               <Region style="-fx-background-image: url('itinerario.jpg'); -fx-background-size: 100% 100%;" StackPane.alignment="CENTER" />
+               <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="5.0" text="Backpacker">
+                  <font>
+                     <Font size="140.0" />
+                  </font>
+                  <StackPane.margin>
+                     <Insets bottom="30.0" top="30.0" />
+                  </StackPane.margin>
+               </Text>
+            </children>
+         </StackPane>
+         <AnchorPane>
+            <children>
+               <HBox fx:id="menuBar" alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            </children>
+         </AnchorPane>
             <HBox alignment="TOP_CENTER">
                 <VBox.margin>
                     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

@@ -1,29 +1,22 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
-import it.ispw.daniele.backpacker.bean.RegisterBean;
 import it.ispw.daniele.backpacker.bean.UserBean;
 import it.ispw.daniele.backpacker.controller.login.LoginController;
-import it.ispw.daniele.backpacker.utils.FileManager;
 import it.ispw.daniele.backpacker.utils.Roles;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
+import javafx.scene.layout.VBox;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
 
-import static it.ispw.daniele.backpacker.utils.Roles.*;
-
-public class SignUpController extends App {
+public class SignUpController{
 
     @FXML
     private Label USER;
@@ -37,7 +30,8 @@ public class SignUpController extends App {
     private Button buttonSignUp;
     @FXML
     private Button buttonSignUpRest;
-
+    @FXML
+    private VBox dynamicZone;
     private File imageFile = null;
 
     public SignUpController() throws IOException {
@@ -45,20 +39,25 @@ public class SignUpController extends App {
 
     public void switchToGenericUserSignUpPage() throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        FileInputStream fileInputStream = new FileInputStream("src/main/resources/it/ispw/daniele/backpacker/SignUp-Page.fxml");
+        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/SignUp-Page.fxml");
         Parent fxmlLoader = loader.load(fileInputStream);
-        Scene scene = this.USER.getScene();
-        scene.setRoot(fxmlLoader);
-        stackScene.push(fxmlLoader);
+//        Scene scene = this.USER.getScene();
+//        scene.setRoot(fxmlLoader);
+        dynamicZone.getChildren().remove(0, dynamicZone.getChildren().size());
+        dynamicZone.getChildren().add(fxmlLoader);
+        //stackScene.push(fxmlLoader);
     }
 
     public void switchToRestaurantOwnerSignUpPage() throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        FileInputStream fileInputStream = new FileInputStream("src/main/resources/it/ispw/daniele/backpacker/Restaurant-Owner-SignUp-Page.fxml");
+        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Restaurant-Owner-SignUp-Page.fxml" +
+                "");
         Parent fxmlLoader = loader.load(fileInputStream);
-        Scene scene = this.restaurantOwnerSignUp.getScene();
-        scene.setRoot(fxmlLoader);
-        stackScene.push(fxmlLoader);
+//        Scene scene = this.restaurantOwnerSignUp.getScene();
+//        scene.setRoot(fxmlLoader);
+        dynamicZone.getChildren().remove(0, dynamicZone.getChildren().size());
+        dynamicZone.getChildren().add(fxmlLoader);
+        //stackScene.push(fxmlLoader);
     }
 
     public void signUp(MouseEvent mouseEvent) {

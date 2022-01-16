@@ -21,7 +21,7 @@ public class TouristGuideGraphicChange extends GUIChangeTemplate{
         return instance;
     }
 
-    public void switchToHomepage(Scene scene) throws IOException {
+    public void switchToHomePage(Scene scene) throws IOException {
         this.catcher(new GUIAction() {
             @Override
             public void action() throws IOException {

@@ -24,7 +24,7 @@ public class UserGraphicChange extends GUIChangeTemplate{
         return instance;
     }
 
-    public void switchToHomepage(Scene scene) throws IOException {
+    public void switchToHomePage(Scene scene) throws IOException {
         this.catcher(new GUIAction() {
             @Override
             public void action() throws IOException {
@@ -41,16 +41,17 @@ public class UserGraphicChange extends GUIChangeTemplate{
     }
 
     //public void toProfilePage(Scene scene, UserBean ub, String from, String searchString) {
-//        public void switchToProfilePage(Scene scene) {
-//        this.catcher(new GUIAction() {
-//            @Override
-//            public void action() throws IOException {
-//                ProfileController controller = new ProfileController();
-//                FXMLLoader loader=  new FXMLLoader(getClass().getResource("src/main/java/it/ispw/daniele/backpacker/fxmlView/Home-Page.fxml"));
-//                loader.setController(controller);
-//                scene.setRoot(loader.load());
-//                controller.init();
-//            }
-//        });
- //   }
+        public void switchToProfilePage(Scene scene) {
+        this.catcher(new GUIAction() {
+            @Override
+            public void action() throws IOException {
+                ProfileController controller = new ProfileController();
+                FXMLLoader loader = new FXMLLoader();
+                FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Profile-Page.fxml");
+                Parent fxmlLoader = loader.load(fileInputStream);
+                scene.setRoot(fxmlLoader);
+                //                controller.init();
+            }
+        });
+    }
 }

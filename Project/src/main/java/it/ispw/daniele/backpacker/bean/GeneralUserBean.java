@@ -6,7 +6,6 @@ public class GeneralUserBean implements Serializable {
 
     private String username;
     private String password;
-    //private boolean isLogged;
     protected String email;
     protected String role;
     protected String profilePicture;
@@ -61,10 +60,6 @@ public class GeneralUserBean implements Serializable {
         this.password = password;
     }
 
-//    //public boolean getLogged() {
-//        return isLogged;
-//    }
-
     public String getProfilePicture() {
         return profilePicture;
     }
@@ -72,10 +67,6 @@ public class GeneralUserBean implements Serializable {
     public void setProfilePicture(String profilePicture) {
         this.profilePicture = profilePicture;
     }
-
-//    public void setLogged(boolean isLogged) {
-//        this.isLogged = isLogged;
-//    }
 
 //    public boolean validate() throws Exception {
 //        System.out.println("loginbean" + getLogged() + getEmail() + getPassword());

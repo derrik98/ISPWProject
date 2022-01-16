@@ -13,7 +13,7 @@ public class MenuBarController {
     @FXML
     public Label LabelResult = new Label();
     @FXML
-    public Label LabelProfile = new Label();
+    private Label LabelProfile = new Label();
     @FXML
     public Label LabelLogin = new Label();
 //    @FXML
@@ -22,23 +22,24 @@ public class MenuBarController {
     public ImageView imageUndo;
 
 
-    private UserGraphicChange ugc;
+    private UserGraphicChange ugc = UserGraphicChange.getInstance();
 
     String style = "-fx-background-color: trasparent; -fx-border:none; -fx-text-fill: rgba(245, 203, 92, 1); " +
             "-fx-font-size:16;";
 
     @FXML
     public void switchToHome(MouseEvent mouseEvent) throws IOException {
-        this.ugc.switchToHomepage(this.LabelHome.getScene());
+        this.ugc.switchToHomePage(this.LabelHome.getScene());
     }
-@FXML
+    @FXML
     public void switchToResult(MouseEvent mouseEvent) {
+        this.ugc.switchToResultPage(this.LabelResult.getScene());
     }
-@FXML
-    public void switchToProfile(MouseEvent mouseEvent) {
-
+    @FXML
+    public void switchToProfile(MouseEvent mouseEvent) throws IOException {
+        this.ugc.switchToProfilePage(this.LabelProfile.getScene());
     }
-@FXML
+    @FXML
     public void switchToLogin(MouseEvent mouseEvent) {
         this.ugc.switchToLogin(this.LabelLogin.getScene());
     }
@@ -52,6 +53,12 @@ public class MenuBarController {
         switch(selected){
             case "home":
                 this.LabelHome.setStyle(style);
+                break;
+            case "profile":
+                this.LabelProfile.setStyle(style);
+                break;
+            case "result":
+                this.LabelProfile.setStyle(style);
                 break;
             default:
                 break;

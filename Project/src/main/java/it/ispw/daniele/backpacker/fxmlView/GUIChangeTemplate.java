@@ -46,35 +46,40 @@ public class GUIChangeTemplate{
         });
     }
 
-//    public void switchToHomepage(Scene scene) throws IOException {
-//        this.catcher(new GUIAction() {
-//            @Override
-//            public void action() throws IOException {
-//                //HomeUserController homeController = new HomeUserController();
-//              //  FXMLLoader loader = new FXMLLoader(getClass().getResource("src/main/java/it/ispw/daniele/backpacker/fxmlView/Home-Page.fxml"));
-//               // loader.setController(homeController);
-//
-//                //huc.init();
-//
-//                FXMLLoader loader = new FXMLLoader();
-//                FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Home-Page.fxml");
-//                //loader.setController(loginViewController);
-//                Parent fxmlLoader = loader.load(fileInputStream);
-//                scene.setRoot(fxmlLoader);
-//            }
-//        });
-//    }
+    public void switchToResultPage(Scene scene) {
+        this.catcher(new GUIAction() {
+            @Override
+            public void action() throws IOException {
+                ResultController resultController = new ResultController();
+                FXMLLoader loader = new FXMLLoader();
+                FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Result-Page.fxml");
+                Parent fxmlLoader = loader.load(fileInputStream);
+                //loader.setController(loginController);
+                scene.setRoot(fxmlLoader);
+            }
+        });
+    }
 
+    //    public void switchToResult() throws IOException {
+//        FXMLLoader loader = new FXMLLoader();
+//        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Result-Page.fxml");
+//        Parent fxmlLoader = loader.load(fileInputStream);
+//        Scene scene = this.LabelResult.getScene();
+//        scene.setRoot(fxmlLoader);
+//        stackScene.push(fxmlLoader);
+//    }
 
 //    public void switchToProfile(Scene scene) throws IOException {
 //        this.catcher(new GUIAction() {
 //            @Override
 //            public void action() throws IOException {
-//                HomeController homeController = new HomeController();
-//                FXMLLoader loader = new FXMLLoader(getClass().getResource("src/main/java/it/ispw/daniele/backpacker/fxmlView/Profile-Page.fxml"));
-//                loader.setController(homeController);
-//                scene.setRoot(loader.load());
-//                //huc.init();
+//                ProfileController profileController = new ProfileController();
+//                FXMLLoader loader = new FXMLLoader();
+//                FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Profile-Page.fxml");
+//                Parent fxmlLoader = loader.load(fileInputStream);
+//                //loader.setController(homeController);
+//                scene.setRoot(fxmlLoader);
+//               // profileController.init();
 //            }
 //        });
 //    }
@@ -120,5 +125,7 @@ public class GUIChangeTemplate{
             }
         });
     }
+
+
 }
 
