@@ -2,8 +2,10 @@ package it.ispw.daniele.backpacker.fxmlView;
 
 import it.ispw.daniele.backpacker.utils.Roles;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class TouristGuideGraphicChange extends GUIChangeTemplate{
@@ -25,11 +27,32 @@ public class TouristGuideGraphicChange extends GUIChangeTemplate{
         this.catcher(new GUIAction() {
             @Override
             public void action() throws IOException {
+//                HomeUserController homeUserController = new HomeUserController();
+//                FXMLLoader loader = new FXMLLoader(getClass().getResource("src/main/java/it/ispw/daniele/backpacker/fxmlView/Home-Page.fxml"));
+//                loader.setController(homeUserController);
+//                scene.setRoot(loader.load());
+
+
                 HomeUserController homeUserController = new HomeUserController();
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("Home-Page.fxml"));
-                loader.setController(homeUserController);
-                scene.setRoot(loader.load());
+                FXMLLoader loader = new FXMLLoader();
+                FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Home-Page.fxml");
+                Parent fxmlLoader = loader.load(fileInputStream);
+                scene.setRoot(fxmlLoader);
                 //huc.init();
+            }
+        });
+    }
+
+    public void switchToProfilePage(Scene scene) {
+        this.catcher(new GUIAction() {
+            @Override
+            public void action() throws IOException {
+                ProfileController controller = new ProfileController();
+                FXMLLoader loader = new FXMLLoader();
+                FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Profile-Page.fxml");
+                Parent fxmlLoader = loader.load(fileInputStream);
+                scene.setRoot(fxmlLoader);
+                //                controller.init();
             }
         });
     }

@@ -6,6 +6,8 @@ import it.ispw.daniele.backpacker.bean.HomeBean;
 import it.ispw.daniele.backpacker.exceptions.AddressNotFoundException;
 import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
 import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
+import it.ispw.daniele.backpacker.utils.Roles;
+import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -108,9 +110,17 @@ public class HomeUserController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        if(SessionUser.getInstance().getSession().getRole().equals(Roles.TOURIST_GUIDE.name().toLowerCase())) {
+            TouristGuideGraphicChange i = TouristGuideGraphicChange.getInstance();
+            i.menuBar(this.menuBar, "home");
+            System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.TOURIST_GUIDE.name());
+        }
+        else {
         UserGraphicChange ugc = UserGraphicChange.getInstance();
-
         ugc.menuBar(this.menuBar, "home");
+            System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.USER.name().toLowerCase());
+
+        }
         System.out.println(this.menuBar.getChildren() + "EEEEEEEEEEE");
     }
 }

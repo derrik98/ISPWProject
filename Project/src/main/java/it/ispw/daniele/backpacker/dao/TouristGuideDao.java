@@ -19,7 +19,7 @@ public class TouristGuideDao extends DaoTemplate{
                     System.out.println("connessoine non stabilita");
                 }
                 else{
-                    System.out.println("connessoine stabilita");
+                    System.out.println("connessoine stabilitaaaaaaa");
                 }
 
                 String sql = "call backpacker.add_tourist_guide(?, ?, ?, ?, ?, ?, ?);\r\n";

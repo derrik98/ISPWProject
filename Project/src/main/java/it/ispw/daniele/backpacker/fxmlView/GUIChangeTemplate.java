@@ -6,12 +6,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import static it.ispw.daniele.backpacker.utils.Roles.TOURIST_GUIDE;
 
 public class GUIChangeTemplate{
 
@@ -84,6 +88,7 @@ public class GUIChangeTemplate{
 //        });
 //    }
 
+
     public void menuBar (HBox pos, String sel){
         this.catcher(new GUIAction() {
             @Override
@@ -119,8 +124,27 @@ public class GUIChangeTemplate{
                         Parent a = (Parent) pos.getChildren().get(0);
                         System.out.println(a.getChildrenUnmodifiable());
                         System.out.println(pos);
-                       break;
-                    }default -> {break;}
+                       break;}
+                       case TOURIST_GUIDE -> {
+                            FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/TouristGuideMenuBar.fxml");
+                            Parent fxmlLoader = loader.load(fileInputStream);
+                            TouristGuideMenuBarController menuBarController = new TouristGuideMenuBarController();
+//                        //FXMLLoader loader = new FXMLLoader();
+
+//                        //scene.setRoot(fxmlLoader);
+                            //loader.setController(menuBarController);
+                            pos.getChildren().add(fxmlLoader);
+
+//                        //stackScene.push(fxmlLoader);
+                            menuBarController.init(sel);
+                            System.out.println(pos.getChildren());
+                            System.out.println(pos.getChildren().get(0));
+                            Parent a = (Parent) pos.getChildren().get(0);
+                            System.out.println(a.getChildrenUnmodifiable());
+                            System.out.println(pos);
+                            break;
+                    }
+                    default -> {break;}
                 }
             }
         });

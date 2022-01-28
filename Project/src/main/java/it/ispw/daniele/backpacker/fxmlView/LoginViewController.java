@@ -25,6 +25,8 @@ import java.util.Objects;
 public class LoginViewController extends App {
 
     @FXML
+    public Label LabelHome;
+    @FXML
     public Label LabelLogin;
     @FXML
     public Label LabelSignUp;
@@ -126,6 +128,16 @@ public class LoginViewController extends App {
     public void switchToLogin() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/LoginViewPage.fxml");
+        //loader.setController(loginViewController);
+        Parent fxmlLoader = loader.load(fileInputStream);
+        this.LabelLogin.getScene().setRoot(fxmlLoader);
+        this.LabelSignUp.setUnderline(false);
+        this.LabelLogin.setUnderline(true);
+    }
+
+    public void switchToHome() throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Home-Page.fxml");
         //loader.setController(loginViewController);
         Parent fxmlLoader = loader.load(fileInputStream);
         this.LabelLogin.getScene().setRoot(fxmlLoader);

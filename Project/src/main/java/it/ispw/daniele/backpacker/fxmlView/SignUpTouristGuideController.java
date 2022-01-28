@@ -1,5 +1,6 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
+import it.ispw.daniele.backpacker.bean.TouristGuideBean;
 import it.ispw.daniele.backpacker.bean.UserBean;
 import it.ispw.daniele.backpacker.controller.login.LoginController;
 import it.ispw.daniele.backpacker.utils.Roles;
@@ -12,16 +13,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class SignUpController{
+public class SignUpTouristGuideController {
 
     @FXML
-    private Label USER;
-    @FXML
-    private Label restaurantOwnerSignUp;
+    private Label TOURIST_GUIDE;
     @FXML
     private TextField textFieldEmailSignUp,textFieldNameSignUp, textFieldSurnameSignUp, textFieldPassSignUp, textFieldConfPassSignUp;
     @FXML
@@ -32,7 +30,6 @@ public class SignUpController{
     private Button buttonSignUpRest;
     @FXML
     private VBox dynamicZone;
-    private File imageFile = null;
 
     public void switchToGenericUserSignUpPage() throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -70,7 +67,7 @@ public class SignUpController{
         username = textFieldNameSignUp.getText();
         password = textFieldPassSignUp.getText();
         //userType = this.typeOfUserField.getValue();
-        userType = USER.getId();
+        userType = TOURIST_GUIDE.getId();
 
         String filename;
         String newFileName;
@@ -83,10 +80,10 @@ public class SignUpController{
 //            filename = this.imageFile.getName();
 //            newFileName = username + filename;
 //        }
-        if (userType.equals(Roles.USER.name())){
+        if (userType.equals(Roles.TOURIST_GUIDE.name())){
             String firstName = this.textFieldNameSignUp.getText();
             String lastName = this.textFieldSurnameSignUp.getText();
-            UserBean u = new UserBean();
+            TouristGuideBean u = new TouristGuideBean();
             u.setUsername(username);
             u.setName(firstName);
             u.setSurname(lastName);
@@ -94,7 +91,7 @@ public class SignUpController{
             u.setPassword(password);
             u.setProfilePicture("");
             //u.setProfilePicture(newFileName);
-            regResult = loginController.createUser(u);
+            regResult = loginController.createTouristGuide(u);
         }
 //        else if(userType.equals(RESTAURANT_OWNER)){
 //System.out.println("ristoratore");
@@ -114,7 +111,7 @@ public class SignUpController{
 //                if(!file.renameTo(newFile)){
 //                    System.out.println("unable to rename");
 //                }
- //           }
+            //           }
         }
         else{
             System.out.println("unsuccessfull registration");

@@ -16,7 +16,7 @@ import java.util.Stack;
 
 public class App extends Application {
 
-    protected static Stack<Parent> stackScene = new Stack<>();
+    //protected static Stack<Parent> stackScene = new Stack<>();
 
 
     @Override
