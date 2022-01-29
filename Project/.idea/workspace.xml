@@ -273,6 +273,7 @@
       <workItem from="1643323367293" duration="2413000" />
       <workItem from="1643383202406" duration="310000" />
       <workItem from="1643383982808" duration="5012000" />
+      <workItem from="1643469398869" duration="4692000" />
     </task>
     <servers />
   </component>
@@ -290,6 +291,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.util.EmptyStackException" package="java.util" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="2" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

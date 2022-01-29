@@ -26,8 +26,7 @@ public class TouristGuideMenuBarController {
 
     private TouristGuideGraphicChange tggc = TouristGuideGraphicChange.getInstance();
 
-    String style = "-fx-background-color: trasparent; -fx-border:none; -fx-text-fill: rgba(245, 203, 92, 1); " +
-            "-fx-font-size:16;";
+    String style = "-fx-background-color: trasparent; -fx-border:none; -fx-font-size:16;";
 
     @FXML
     public void switchToHome(MouseEvent mouseEvent) throws IOException {

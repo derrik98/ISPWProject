@@ -119,11 +119,11 @@ public class GUIChangeTemplate{
 
 //                        //stackScene.push(fxmlLoader);
                         menuBarController.init(sel);
-                        System.out.println(pos.getChildren());
-                        System.out.println(pos.getChildren().get(0));
-                        Parent a = (Parent) pos.getChildren().get(0);
-                        System.out.println(a.getChildrenUnmodifiable());
-                        System.out.println(pos);
+//                        System.out.println(pos.getChildren());
+//                        System.out.println(pos.getChildren().get(0));
+//                        Parent a = (Parent) pos.getChildren().get(0);
+//                        System.out.println(a.getChildrenUnmodifiable());
+//                        System.out.println(pos);
                        break;}
                        case TOURIST_GUIDE -> {
                             FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/TouristGuideMenuBar.fxml");
@@ -137,11 +137,11 @@ public class GUIChangeTemplate{
 
 //                        //stackScene.push(fxmlLoader);
                             menuBarController.init(sel);
-                            System.out.println(pos.getChildren());
-                            System.out.println(pos.getChildren().get(0));
-                            Parent a = (Parent) pos.getChildren().get(0);
-                            System.out.println(a.getChildrenUnmodifiable());
-                            System.out.println(pos);
+//                            System.out.println(pos.getChildren());
+//                            System.out.println(pos.getChildren().get(0));
+//                            Parent a = (Parent) pos.getChildren().get(0);
+//                            System.out.println(a.getChildrenUnmodifiable());
+//                            System.out.println(pos);
                             break;
                     }
                     default -> {break;}
