@@ -14,7 +14,7 @@
    <children>
       <HBox alignment="CENTER" spacing="35.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label fx:id="LabelHome" contentDisplay="TEXT_ONLY" onMouseClicked="#switchToHome" text="Home">
+            <Label fx:id="LabelHome" onMouseClicked="#switchToHome" text="Home" wrapText="true" style="-fx-border: none;">
                <font>
                   <Font size="40.0" />
                </font>
@@ -25,7 +25,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </Label>
-            <Label fx:id="LabelResult" onMouseClicked="#switchToResult" text="Result">
+            <Label fx:id="LabelResult" onMouseClicked="#switchToResult" text="Result" style="-fx-border: none;">
                <font>
                   <Font size="40.0" />
                </font>
@@ -36,7 +36,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </Label>
-            <Label fx:id="LabelProfile" onMouseClicked="#switchToProfile" text="Profile">
+            <Label fx:id="LabelProfile" onMouseClicked="#switchToProfile" text="Profile" style="-fx-border: none;;">
                <font>
                   <Font size="40.0" />
                </font>

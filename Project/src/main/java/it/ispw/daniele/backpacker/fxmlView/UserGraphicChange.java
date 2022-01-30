@@ -28,7 +28,7 @@ public class UserGraphicChange extends GUIChangeTemplate{
         this.catcher(new GUIAction() {
             @Override
             public void action() throws IOException {
-                HomeUserController homeUserController = new HomeUserController();
+                //HomeUserController homeUserController = new HomeUserController();
                 FXMLLoader loader = new FXMLLoader();
                 FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Home-Page.fxml");
                 Parent fxmlLoader = loader.load(fileInputStream);

@@ -64,6 +64,9 @@
       <recent name="C:\Users\danie\Desktop\ISPWProject\trunk\Project\src\main\java\it\ispw\daniele\backpacker\fxmlView\style" />
       <recent name="C:\Users\danie\Desktop\Backpacker\src\main\resources" />
     </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="it.ispw.daniele.backpacker.fxmlView" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -274,6 +277,7 @@
       <workItem from="1643383202406" duration="310000" />
       <workItem from="1643383982808" duration="5012000" />
       <workItem from="1643469398869" duration="4692000" />
+      <workItem from="1643496541085" duration="6594000" />
     </task>
     <servers />
   </component>

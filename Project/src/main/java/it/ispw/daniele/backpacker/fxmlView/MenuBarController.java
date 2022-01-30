@@ -2,57 +2,116 @@ package it.ispw.daniele.backpacker.fxmlView;
 
 import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.event.ActionEvent;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import java.util.Stack;
 
-public class MenuBarController {
+public class MenuBarController implements Initializable{
+
     @FXML
     private Label LabelHome = new Label();
     @FXML
-    public Label LabelResult = new Label();
+    Label LabelResult = new Label();
     @FXML
-    private Label LabelProfile = new Label();
-    @FXML
-    public Label LabelLogin = new Label();
-//    @FXML
-//    public Label LabelSignUp;
+    Label LabelProfile = new Label();
     @FXML
     public ImageView imageUndo;
 
     private String from = "home";
-    private String searchString = "";
-    private UserGraphicChange grCtrl;
 
     protected static Stack<String> stackScene = new Stack<>();
 
-    //COMPLEATARE STACK DI UNDO
-
-
     private UserGraphicChange ugc = UserGraphicChange.getInstance();
 
-    String style = " -fx-font-size:16; -fx-font-style: bold;";
+    private static String sel = "home";
 
-    @FXML
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        String style="-fx-background-color: transparent; -fx-border: none; -fx-text-fill: rgba(245, 203, 92, 1); -fx-font-size: 40 ; -fx-font-weight: bold;";
+
+        switch (sel){
+            case "home" -> {
+            //    this.LabelHome.setUnderline(true);
+                this.LabelHome.setStyle(style);
+//                this.LabelHome.setUnderline(true);
+            }
+            case "profile" -> {
+                this.LabelProfile.setStyle(style);
+                //this.LabelProfile.setUnderline(true);
+            }
+            case "result" -> {
+                this.LabelResult.setStyle(style);
+                break;
+            }
+            default -> {
+                break;
+            }
+
+        }
+
+
+    }
+
+//    public void init(String selected) {
+//        System.out.println(this.LabelHome + "" +  this.LabelProfile);
+//        //String style="-fx-background-color: transparent; -fx-border: none; -fx-text-fill: rgba(245, 203, 92, 1); -fx-font-size: 40 ; -fx-font-weight: bold;";
+//
+//        this.ugc = UserGraphicChange.getInstance();
+//        System.out.println(selected);
+//        switch (selected) {
+//
+//            case "home" -> {
+//                sel = selected;
+//               // this.LabelHome.underlineProperty().setValue(true);
+////                this.LabelHome.setStyle(style);
+////                this.LabelHome.setUnderline(true);
+//            }
+//            case "profile" -> {
+//                sel = selected;
+//                //this.LabelProfile.setStyle(style);
+//                //this.LabelProfile.setUnderline(true);
+//            }
+//            case "result" -> {
+//                sel = selected;
+//                //this.LabelResult.setStyle(style);
+//                //this.LabelResult.setUnderline(true);
+//                break;
+//            }
+//            default -> {
+//                break;
+//            }
+//        }
+//    }
+
     public void switchToHome(MouseEvent mouseEvent) throws IOException {
+        sel = "home";
         this.ugc.switchToHomePage(this.LabelHome.getScene());
         stackScene.push("home");
+        this.LabelHome.setUnderline(true);
         System.out.println(stackScene);
     }
-    @FXML
+
     public void switchToResult(MouseEvent mouseEvent) {
+        sel = "result";
         this.ugc.switchToResultPage(this.LabelResult.getScene());
         stackScene.push("result");
         System.out.println(stackScene);
     }
-    @FXML
-    public void switchToProfile(MouseEvent mouseEvent) throws IOException {
+
+    public void switchToProfile(MouseEvent mouseEvent){
+        sel = "profile";
         this.ugc.switchToProfilePage(this.LabelProfile.getScene());
         stackScene.push("profile");
         System.out.println(stackScene);
@@ -64,33 +123,15 @@ public class MenuBarController {
 //        System.out.println(stackScene);
 //    }
 
-    @FXML
     public void logout(){
         SessionUser.getInstance().closeSession();
         this.ugc.switchToLogin(this.LabelHome.getScene());}
 
 
-    public void switchToSignUp(MouseEvent mouseEvent) {
-    }
+//    public void switchToSignUp(MouseEvent mouseEvent) {
+//    }
 
-    public void init(String selected) {
 
-        this.ugc = UserGraphicChange.getInstance();
-        switch (selected) {
-            case "home" -> {
-                this.LabelHome.setStyle(style);
-            }
-            case "profile" -> {
-                this.LabelProfile.setStyle(style);
-                this.LabelProfile.setUnderline(true);
-            }
-            case "result" -> this.LabelResult.setStyle(style);
-            default -> {
-            }
-        }
-    }
-
-    @FXML
     public void undoScene() throws IOException {
 
         if(stackScene.size() >= 2){
@@ -107,4 +148,6 @@ public class MenuBarController {
             this.ugc.switchToHomePage(this.imageUndo.getScene());
         }
     }
+
+
 }

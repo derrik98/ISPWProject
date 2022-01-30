@@ -118,7 +118,7 @@ public class GUIChangeTemplate{
                            pos.getChildren().add(fxmlLoader);
 
 //                        //stackScene.push(fxmlLoader);
-                        menuBarController.init(sel);
+                        //menuBarController.init(sel);
 //                        System.out.println(pos.getChildren());
 //                        System.out.println(pos.getChildren().get(0));
 //                        Parent a = (Parent) pos.getChildren().get(0);

@@ -14,6 +14,7 @@ module it.ispw.daniele.backpacker {
     requires org.json;
     requires java.logging;
     requires java.sql;
+    requires org.jetbrains.annotations;
 
     exports it.ispw.daniele.backpacker.fxmlView;
     opens it.ispw.daniele.backpacker.fxmlView to javafx.fxml;
