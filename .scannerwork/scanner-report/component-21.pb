@@ -1,1 +1,1 @@
- 2xmlXhrJProject/.idea/libraries/Maven__org_kordamp_ikonli_ikonli_javafx_12_2_0.xml
+ 2xmlXhrCProject/.idea/libraries/Maven__org_openjfx_javafx_base_17_0_0_1.xml

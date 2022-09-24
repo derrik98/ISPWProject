@@ -1,1 +1,1 @@
-2 2javaXfhrOProject/src/main/java/it/ispw/daniele/backpacker/boundary/ResultController.java
+2 2javaXhrCProject/src/main/java/it/ispw/daniele/backpacker/bean/UserBean.java

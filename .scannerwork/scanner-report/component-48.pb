@@ -1,1 +1,1 @@
-0 2javaXGhrNProject/src/main/java/it/ispw/daniele/backpacker/boundary/LoginController.java
+0 2javaX-hrEProject/src/main/java/it/ispw/daniele/backpacker/bean/ResultBean.java

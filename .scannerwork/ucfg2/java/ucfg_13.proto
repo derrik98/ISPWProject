@@ -1,201 +1,16 @@
 
-4it.ispw.daniele.backpacker.bean.HomeBean#validate()Zv
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaP P("5*ﬂ
-2v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaS S(§
-°
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaS S(
-%3java.io.PrintStream"__id*
-""‘
-—
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaS S(&
-%4java.lang.String"__id*9*7*
-(it.ispw.daniele.backpacker.bean.HomeBean"	
-country—
-Œ
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaS) S(-
-%5java.lang.String"__id*6*4*
-(it.ispw.daniele.backpacker.bean.HomeBean"
-city—
-Œ
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaS S(-
-%6java.lang.String"__concat*
-
-%4java.lang.String*
-
-%5java.lang.String‘
-—
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaS0 S(7
-%7java.lang.String"__id*9*7*
-(it.ispw.daniele.backpacker.bean.HomeBean"	
-address—
-Œ
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaS S(7
-%8java.lang.String"__concat*
-
-%6java.lang.String*
-
-%7java.lang.Stringçä
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaS S(8
-
-%9void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%3java.io.PrintStream*
-
-%8java.lang.String2println(Ljava/lang/String;)"Ä
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaT T(
-""*⁄
-3v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaR+ R(2‘
-—
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaR+ R(2
-%2java.lang.String"__id*9*7*
-(it.ispw.daniele.backpacker.bean.HomeBean"	
-address*
-2
-1*◊
-4v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaR R(!—
-Œ
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaR R(!
-%1java.lang.String"__id*6*4*
-(it.ispw.daniele.backpacker.bean.HomeBean"
-city*
-2
-3*⁄
-5v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaR R(‘
-—
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaR R(
-%0java.lang.String"__id*9*7*
-(it.ispw.daniele.backpacker.bean.HomeBean"	
-country*
-2
-4*ô"
+Eit.ispw.daniele.backpacker.bean.HomeBean#getRange()Ljava/lang/String;v
+lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaB B("1*Â
 1v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaW  W(0ôñ
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaWI W(Z
-%10java.lang.String"Git.ispw.daniele.backpacker.bean.HomeBean#getCountry()Ljava/lang/String;*,*
-(it.ispw.daniele.backpacker.bean.HomeBean2getCountry()ìê
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaW\ W(j
-%11java.lang.String"Dit.ispw.daniele.backpacker.bean.HomeBean#getCity()Ljava/lang/String;*,*
-(it.ispw.daniele.backpacker.bean.HomeBean2	getCity()ôñ
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaWl W(}
-%12java.lang.String"Git.ispw.daniele.backpacker.bean.HomeBean#getAddress()Ljava/lang/String;*,*
-(it.ispw.daniele.backpacker.bean.HomeBean2getAddress()√
-¿
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaW W(8
-datiCorretti(it.ispw.daniele.backpacker.bean.HomeBean"__id*
-""•
-¢
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaX X(
-%13java.io.PrintStream"__id*
-""“
+lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaC C(“
 œ
 v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaX* X(.
-%14java.lang.String"__id*6*4*
-(it.ispw.daniele.backpacker.bean.HomeBean"
-city…
-∆
+lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaC C(
+%0java.lang.String"__id*7*5*
+(it.ispw.daniele.backpacker.bean.HomeBean"
+range"í
 v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaX X(.
-%15java.lang.String"__concat*
-
-provafatta*
-
-%14java.lang.Stringêç
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaX X(/
-%16void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%13java.io.PrintStream*
-
-%15java.lang.String2println(Ljava/lang/String;)•
-¢
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaY Y(
-%17java.io.PrintStream"__id*
-""’
-“
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaY Y("
-%18java.lang.String"__id*9*7*
-(it.ispw.daniele.backpacker.bean.HomeBean"	
-countryêç
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaY Y(#
-%19void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%17java.io.PrintStream*
-
-%18java.lang.String2println(Ljava/lang/String;)•
-¢
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.java[ [(
-%20java.io.PrintStream"__id*
-""„
-‡
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.java[ [(/
-%21java.lang.String"__id*G*E
-8
-datiCorretti(it.ispw.daniele.backpacker.bean.HomeBean"	
-country‡
-›
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.java[2 [(C
-%22java.lang.String"__id*D*B
-8
-datiCorretti(it.ispw.daniele.backpacker.bean.HomeBean"
-city‘
-—
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.java[ [(C
-%23java.lang.String"__concat*
-
-%21java.lang.String*
-
-%22java.lang.String„
-‡
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.java[F [(Z
-%24java.lang.String"__id*G*E
-8
-datiCorretti(it.ispw.daniele.backpacker.bean.HomeBean"	
-address‘
-—
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.java[ [(Z
-%25java.lang.String"__concat*
-
-%23java.lang.String*
-
-%24java.lang.Stringêç
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.java[ [([
-%26void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%20java.io.PrintStream*
-
-%25java.lang.String2println(Ljava/lang/String;)"Ä
-v
-lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.java_ _($
-""B,*
+lC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.javaC C(
+
+%0java.lang.StringB,*
 (it.ispw.daniele.backpacker.bean.HomeBean

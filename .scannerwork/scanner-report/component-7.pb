@@ -1,1 +1,1 @@
- 2xmlX	hr*Project/.idea/libraries/jfoenix_9_0_10.xml
+ 2xmlX	hr)Project/.idea/libraries/json_20210307.xml

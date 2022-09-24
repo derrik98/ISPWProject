@@ -1,6 +1,5 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
-import it.ispw.daniele.backpacker.bean.UserBean;
 import it.ispw.daniele.backpacker.utils.Roles;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -23,17 +22,18 @@ public class UserGraphicChange extends GUIChangeTemplate{
         }
         return instance;
     }
-
+    @Override
     public void switchToHomePage(Scene scene) throws IOException {
         this.catcher(new GUIAction() {
             @Override
             public void action() throws IOException {
-                //HomeUserController homeUserController = new HomeUserController();
+                HomeUserController huc = new HomeUserController();
                 FXMLLoader loader = new FXMLLoader();
                 FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Home-Page.fxml");
                 Parent fxmlLoader = loader.load(fileInputStream);
+                loader.setController(huc);
                 scene.setRoot(fxmlLoader);
-                //loader.setController(homeUserController);
+
                 //stackScene.push(fxmlLoader);
                 //homeUserController.init();
             }
@@ -41,14 +41,30 @@ public class UserGraphicChange extends GUIChangeTemplate{
     }
 
     //public void toProfilePage(Scene scene, UserBean ub, String from, String searchString) {
-        public void switchToProfilePage(Scene scene) {
+    public void switchToProfilePage(Scene scene) {
         this.catcher(new GUIAction() {
             @Override
             public void action() throws IOException {
-                ProfileController controller = new ProfileController();
+                ProfileController pc = new ProfileController();
                 FXMLLoader loader = new FXMLLoader();
                 FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Profile-Page.fxml");
                 Parent fxmlLoader = loader.load(fileInputStream);
+                loader.setController(pc);
+                scene.setRoot(fxmlLoader);
+                //                controller.init();
+            }
+        });
+    }
+
+    public void switchToResultPage(Scene scene) {
+        this.catcher(new GUIAction() {
+            @Override
+            public void action() throws IOException {
+                ResultController rc = new ResultController();
+                FXMLLoader loader = new FXMLLoader();
+                FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Profile-Page.fxml");
+                Parent fxmlLoader = loader.load(fileInputStream);
+                loader.setController(rc);
                 scene.setRoot(fxmlLoader);
                 //                controller.init();
             }

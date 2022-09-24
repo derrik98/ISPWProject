@@ -1,1 +1,1 @@
-, 2javaX`hrGProject/src/main/java/it/ispw/daniele/backpacker/bean/RegisterBean.java
+, 2xmlX‡hrProject/pom.xml

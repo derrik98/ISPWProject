@@ -1,1 +1,1 @@
- 2xmlXhrCProject/.idea/libraries/Maven__org_controlsfx_controlsfx_11_1_0.xml
+ 2xmlXhrLProject/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_1.xml

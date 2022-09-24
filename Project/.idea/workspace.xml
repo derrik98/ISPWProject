@@ -29,24 +29,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql.8" />
-    <property name="Downloaded.Files.Path.Enabled" value="true" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/it/ispw/daniele/backpacker" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/mysql-connector-java-5.1.46-bin.jar" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Problems" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.40728477" />
-    <property name="settings.editor.selected.configurable" value="SQL Resolution Scopes" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="it.ispw.daniele.backpacker.fxmlView" />
@@ -280,6 +267,20 @@
       <workItem from="1643496541085" duration="6594000" />
       <workItem from="1645568969818" duration="203000" />
       <workItem from="1645569229703" duration="25000" />
+      <workItem from="1654808497337" duration="165000" />
+      <workItem from="1659394104256" duration="83000" />
+      <workItem from="1659394294389" duration="32000" />
+      <workItem from="1660496181927" duration="152000" />
+      <workItem from="1660496541805" duration="312000" />
+      <workItem from="1662674707053" duration="79000" />
+      <workItem from="1662674868567" duration="58000" />
+      <workItem from="1663341100223" duration="311000" />
+      <workItem from="1663341488041" duration="47000" />
+      <workItem from="1663438965411" duration="513000" />
+      <workItem from="1663439547687" duration="78000" />
+      <workItem from="1663858539668" duration="1754000" />
+      <workItem from="1663940319263" duration="5393000" />
+      <workItem from="1664028069970" duration="7655000" />
     </task>
     <servers />
   </component>
@@ -308,5 +309,10 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Project$App.ic" NAME="App Coverage Results" MODIFIED="1664028245769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>it.ispw.daniele.backpacker.fxmlView.*</FILTER>
+    </SUITE>
   </component>
 </project>

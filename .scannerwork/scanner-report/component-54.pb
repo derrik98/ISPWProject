@@ -1,1 +1,1 @@
-6 2javaX,hrSProject/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java
+6 2javaX2hrSProject/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java

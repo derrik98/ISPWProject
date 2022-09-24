@@ -22,7 +22,7 @@ public class LoginController {
         }
 
         GeneralUser result = gud.findUser(userBean.getUsername(), userBean.getPassword());
-        System.out.println(result);
+       // System.out.println(result);
         if (result == null)	{
             return null;
         } else {
@@ -39,14 +39,19 @@ public class LoginController {
         return ud.createUser(ub.getUsername(), ub.getName(), ub.getSurname(), ub.getEmail(), ub.getPassword(), ub.getProfilePicture());
     }
 
-//    public boolean createRestayrantOwner(RestaurantOwnerBean ab) {
+//    public boolean createRestaurantOwner(RestaurantOwnerBean ab) {
 //        RestaurantOwnerDao ad = new RestaurantOwnerDao();
 //        return ad.createRestaurantOwner(ab.getUsername(), ab.getPassword(), ab.getBandName(), ab.getProfilePicture(), ab.getEmail());
 //    }
 //
-    public boolean createTouristGuide(TouristGuideBean tgb) {
+    /*public boolean createTouristGuide(TouristGuideBean tgb) {
         TouristGuideDao tgd = new TouristGuideDao();
         return tgd.createTouristGuide(tgb.getUsername(), tgb.getName(), tgb.getSurname(), tgb.getEmail(), tgb.getPassword(), tgb.getProfilePicture(), tgb.getIdentificationCode());
+    }*/
+
+    public boolean createTouristGuide(TouristGuideBean tgb) {
+        TouristGuideDao tgd = new TouristGuideDao();
+        return tgd.createTouristGuide(tgb.getUsername(), tgb.getName(), tgb.getSurname(), tgb.getEmail(), tgb.getPassword(), tgb.getIdentificationCode());
     }
 
 }

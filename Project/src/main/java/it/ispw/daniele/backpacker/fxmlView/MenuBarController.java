@@ -19,6 +19,7 @@ import java.util.Stack;
 
 public class MenuBarController implements Initializable{
 
+    public AnchorPane APMenuBar = new AnchorPane();
     @FXML
     private Label LabelHome = new Label();
     @FXML
@@ -39,8 +40,8 @@ public class MenuBarController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        String style="-fx-background-color: transparent; -fx-border: none; -fx-text-fill: rgba(245, 203, 92, 1); -fx-font-size: 40 ; -fx-font-weight: bold;";
-
+        //String style="-fx-background-color: transparent; -fx-border: none; -fx-text-fill: rgba(0, 0, 0, 1); -fx-font-size: 40 ; -fx-font-weight: bold;";
+        String style = "-fx-underline: true;";
         switch (sel){
             case "home" -> {
             //    this.LabelHome.setUnderline(true);
@@ -125,7 +126,8 @@ public class MenuBarController implements Initializable{
 
     public void logout(){
         SessionUser.getInstance().closeSession();
-        this.ugc.switchToLogin(this.LabelHome.getScene());}
+        this.ugc.switchToLogin(this.LabelHome.getScene());
+    }
 
 
 //    public void switchToSignUp(MouseEvent mouseEvent) {
@@ -134,20 +136,17 @@ public class MenuBarController implements Initializable{
 
     public void undoScene() throws IOException {
 
-        if(stackScene.size() >= 2){
-            this.from = stackScene.get(stackScene.size()-2);
+        if (stackScene.size() >= 2) {
+            this.from = stackScene.get(stackScene.size() - 2);
             switch (this.from) {
                 case "home" -> this.ugc.switchToHomePage(this.imageUndo.getScene());
                 case "result" -> this.ugc.switchToResultPage(this.imageUndo.getScene());
                 case "profile" -> this.ugc.switchToProfilePage(this.imageUndo.getScene());
             }
-            stackScene.remove(stackScene.size()-1);
+            stackScene.remove(stackScene.size() - 1);
             System.out.println(stackScene);
-        }
-        else{
+        } else {
             this.ugc.switchToHomePage(this.imageUndo.getScene());
         }
     }
-
-
 }

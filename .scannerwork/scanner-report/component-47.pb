@@ -1,1 +1,1 @@
-/ 2javaX,hrMProject/src/main/java/it/ispw/daniele/backpacker/boundary/HomeController.java
+/ 2javaX`hrGProject/src/main/java/it/ispw/daniele/backpacker/bean/RegisterBean.java

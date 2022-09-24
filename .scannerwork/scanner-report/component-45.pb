@@ -1,1 +1,1 @@
-- 2javaXhrTProject/src/main/java/it/ispw/daniele/backpacker/boundary/EditProfileController.java
+- 2javaXUhrJProject/src/main/java/it/ispw/daniele/backpacker/bean/GeneralUserBean.java

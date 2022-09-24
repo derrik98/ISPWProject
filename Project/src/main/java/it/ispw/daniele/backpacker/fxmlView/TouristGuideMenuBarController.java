@@ -7,6 +7,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class TouristGuideMenuBarController {
 
@@ -26,6 +28,7 @@ public class TouristGuideMenuBarController {
 
     private TouristGuideGraphicChange tggc = TouristGuideGraphicChange.getInstance();
 
+    private static String sel = "home";
     String style = "-fx-background-color: trasparent; -fx-border:none; -fx-font-size:16;";
 
     @FXML
@@ -73,4 +76,32 @@ public class TouristGuideMenuBarController {
 
     public void undoScene(MouseEvent mouseEvent) {
     }
+
+    /*@Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        // String style="-fx-background-color: transparent; -fx-border: none; -fx-text-fill: rgba(0, 0, 0, 1); -fx-font-size: 40 ; -fx-font-weight: bold;";
+        String style = "-fx-underline: true;";
+        switch (sel){
+            case "home" -> {
+                //    this.LabelHome.setUnderline(true);
+                this.LabelHome.setStyle(style);
+//                this.LabelHome.setUnderline(true);
+            }
+            case "profile" -> {
+                this.LabelProfile.setStyle(style);
+                //this.LabelProfile.setUnderline(true);
+            }
+            case "result" -> {
+                this.LabelResult.setStyle(style);
+                break;
+            }
+            default -> {
+                break;
+            }
+
+        }
+*/
+
+ //   }
 }

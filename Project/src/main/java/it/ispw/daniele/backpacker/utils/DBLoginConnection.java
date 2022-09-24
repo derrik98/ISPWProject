@@ -18,10 +18,10 @@ public class DBLoginConnection {
 
     public static Connection getLoginConnection() throws ClassNotFoundException, SQLException {
 
-        if(me != null) return me;
+        if(me != null) {return me;}
         else {
             Class.forName(driverClassName);
-            me = DriverManager.getConnection(dbUrl,user,"login");
+            me = (Connection) DriverManager.getConnection(dbUrl,user,"login");
             return me;
         }
 

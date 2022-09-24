@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 
 import static it.ispw.daniele.backpacker.utils.Roles.TOURIST_GUIDE;
 
-public class GUIChangeTemplate{
+public abstract class GUIChangeTemplate{
 
     protected final Logger logger = Logger.getLogger("GraphicChange");
 
@@ -39,13 +39,18 @@ public class GUIChangeTemplate{
         this.catcher(new GUIAction() {
             @Override
             public void action() throws IOException {
-                LoginController loginController = new LoginController();
+                LoginViewController lvc = new LoginViewController();
                 FXMLLoader loader = new FXMLLoader();
                 FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/LoginViewPage.fxml");
                 Parent fxmlLoader = loader.load(fileInputStream);
-                //loader.setController(loginController);
+                loader.setController(lvc);
                 scene.setRoot(fxmlLoader);
-                //stackScene.push(fxmlLoader);
+                //FXMLLoader loader = new FXMLLoader();
+                //FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/LoginViewPage.fxml");
+                //Parent fxmlLoader = loader.load(fileInputStream);
+                ///loader.setController(loginController);
+                //scene.setRoot(fxmlLoader);
+                ///stackScene.push(fxmlLoader);
             }
         });
     }
@@ -93,9 +98,16 @@ public class GUIChangeTemplate{
         this.catcher(new GUIAction() {
             @Override
             public void action() throws IOException {
-                FXMLLoader loader = new FXMLLoader();
+                FXMLLoader loader;
                 switch (whoAmI){
                     case USER -> {
+                        MenuBarController mbc = new MenuBarController();
+                        loader = new FXMLLoader();
+                        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/MenuBar.fxml");
+                        Parent fxmlLoader = loader.load(fileInputStream);
+                        loader.setController(mbc);
+                        pos.getChildren().add(fxmlLoader);
+
 //                        loader = new FXMLLoader(getClass().getResource("/src/main/java/it/ispw/daniele/backpacker/fxmlView/MenuBar.fxml"));
 //                        MenuBarController mbc = new MenuBarController();
 //                        Parent parent = loader.load();
@@ -108,14 +120,14 @@ public class GUIChangeTemplate{
 //                        System.out.println(a.getChildren().get(0));
 //                        System.out.println(pos);
 //                        break;
-                        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/MenuBar.fxml");
-                        Parent fxmlLoader = loader.load(fileInputStream);
-                        MenuBarController menuBarController = new MenuBarController();
+                       // FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/MenuBar.fxml");
+                       // Parent fxmlLoader = loader.load(fileInputStream);
+                       // MenuBarController menuBarController = new MenuBarController();
 //                        //FXMLLoader loader = new FXMLLoader();
 
 //                        //scene.setRoot(fxmlLoader);
                         //loader.setController(menuBarController);
-                           pos.getChildren().add(fxmlLoader);
+                          // pos.getChildren().add(fxmlLoader);
 
 //                        //stackScene.push(fxmlLoader);
                         //menuBarController.init(sel);
@@ -126,17 +138,25 @@ public class GUIChangeTemplate{
 //                        System.out.println(pos);
                        break;}
                        case TOURIST_GUIDE -> {
-                            FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/TouristGuideMenuBar.fxml");
-                            Parent fxmlLoader = loader.load(fileInputStream);
-                            TouristGuideMenuBarController menuBarController = new TouristGuideMenuBarController();
+                           TouristGuideMenuBarController tgmbc = new TouristGuideMenuBarController();
+                           loader = new FXMLLoader();
+                           FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/TouristGuideMenuBar.fxml");
+                           Parent fxmlLoader = loader.load(fileInputStream);
+                           loader.setController(tgmbc);
+                           pos.getChildren().add(fxmlLoader);
+
+
+                            ///FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/TouristGuideMenuBar.fxml");
+                            ///Parent fxmlLoader = loader.load(fileInputStream);
+                            ///TouristGuideMenuBarController menuBarController = new TouristGuideMenuBarController();
 //                        //FXMLLoader loader = new FXMLLoader();
 
 //                        //scene.setRoot(fxmlLoader);
                             //loader.setController(menuBarController);
-                            pos.getChildren().add(fxmlLoader);
+                            ///pos.getChildren().add(fxmlLoader);
 
 //                        //stackScene.push(fxmlLoader);
-                            menuBarController.init(sel);
+                            ///menuBarController.init(sel);
 //                            System.out.println(pos.getChildren());
 //                            System.out.println(pos.getChildren().get(0));
 //                            Parent a = (Parent) pos.getChildren().get(0);
@@ -151,5 +171,6 @@ public class GUIChangeTemplate{
     }
 
 
+    public abstract void switchToHomePage(Scene scene) throws IOException;
 }
 

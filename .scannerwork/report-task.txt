@@ -1,7 +1,7 @@
 organization=derrik98
 projectKey=derrik98_ISPWProject
 serverUrl=https://sonarcloud.io
-serverVersion=8.0.0.24907
+serverVersion=8.0.0.27028
 dashboardUrl=https://sonarcloud.io/dashboard?id=derrik98_ISPWProject
-ceTaskId=AX1CV2QUmoFtFLK_nBmG
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AX1CV2QUmoFtFLK_nBmG
+ceTaskId=AX8jlxOxMLnvUtVGGhaj
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AX8jlxOxMLnvUtVGGhaj

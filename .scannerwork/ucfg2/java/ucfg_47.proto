@@ -1,16 +1,17 @@
 
-dit.ispw.daniele.backpacker.controller.search.MonumentFromAddress#getMonuments()Ljava/util/ArrayList;
-„C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java   ()"1*Õ
-1
-„C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java! !(‹
-ˆ
-
-„C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java! !(
-%0java.util.ArrayList"__id*S*QB
-@it.ispw.daniele.backpacker.controller.search.MonumentFromAddress"
-	monuments"¯
-
-„C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java! !(
-
-%0java.util.ArrayListBDB
-@it.ispw.daniele.backpacker.controller.search.MonumentFromAddress
+Lit.ispw.daniele.backpacker.bean.RegisterBean#getPassword()Ljava/lang/String;z
+pC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/RegisterBean.java5 5("1*ø
+1z
+pC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/RegisterBean.java6 6(Ý
+Ú
+z
+pC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/RegisterBean.java6 6(
+%0java.lang.String"__id*>*<.
+,it.ispw.daniele.backpacker.bean.RegisterBean"
+
+password"–
+z
+pC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/RegisterBean.java6 6(
+
+%0java.lang.StringB0.
+,it.ispw.daniele.backpacker.bean.RegisterBean

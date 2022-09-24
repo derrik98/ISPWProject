@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.fxmlView.MenuBarController">
+<AnchorPane fx:id="APMenuBar" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.fxmlView.MenuBarController">
    <children>
-      <HBox alignment="CENTER" spacing="35.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox alignment="CENTER" spacing="35.0" style="-fx-background-color: silver;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label fx:id="LabelHome" onMouseClicked="#switchToHome" text="Home" wrapText="true" style="-fx-border: none;">
+            <Label fx:id="LabelHome" onMouseClicked="#switchToHome" style="-fx-border: none;" text="Home" wrapText="true">
                <font>
                   <Font size="40.0" />
                </font>
@@ -25,7 +25,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </Label>
-            <Label fx:id="LabelResult" onMouseClicked="#switchToResult" text="Result" style="-fx-border: none;">
+            <Label fx:id="LabelResult" onMouseClicked="#switchToResult" style="-fx-border: none;" text="Result">
                <font>
                   <Font size="40.0" />
                </font>
@@ -36,7 +36,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </Label>
-            <Label fx:id="LabelProfile" onMouseClicked="#switchToProfile" text="Profile" style="-fx-border: none;;">
+            <Label fx:id="LabelProfile" onMouseClicked="#switchToProfile" style="-fx-border: none;;" text="Profile">
                <font>
                   <Font size="40.0" />
                </font>

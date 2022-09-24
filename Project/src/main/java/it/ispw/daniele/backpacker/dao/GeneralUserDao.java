@@ -17,20 +17,20 @@ public class GeneralUserDao extends DaoTemplate{
                 Connection conn = null;
                 GeneralUser u = null;
                 conn = DBLoginConnection.getLoginConnection();
-                if(conn != null){
+                /*if(conn != null){
                     System.out.println("connessoine stabilita");
                 }
                 else{
                     System.out.println("connessoine non stabilita");
                 }
-                System.out.println(username + password);
+                System.out.println(username + password);*/
 
                 String sql = "call backpacker.login(?, ?);\r\n";
                 try(PreparedStatement stm = conn.prepareStatement(sql)){
                     stm.setString(1, username);
                     stm.setString(2, password);
                     try (ResultSet rs = stm.executeQuery()) {
-                        System.out.println(username + password);
+                        //System.out.println(username + password);
                         if (!rs.first()) // rs not empty
                             return null;
 
@@ -39,9 +39,9 @@ public class GeneralUserDao extends DaoTemplate{
                         rs.first();
 
                         String role = rs.getString("role");
-                        System.out.println(role);
+                        //System.out.println(role);
                         String usernameLoaded = rs.getString("username");
-                        System.out.println(username);
+                        //System.out.println(username);
 
                         if(usernameLoaded.equals(username)) {
                             u = new GeneralUser(usernameLoaded, "", role);

@@ -13,8 +13,8 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.fxmlView.SignUpController">
-     <VBox fx:id="dynamicZone" alignment="TOP_CENTER">
+<AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.fxmlView.SignUpController">
+     <VBox fx:id="dynamicZone" alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <VBox alignment="CENTER">
              <HBox alignment="CENTER">
                  <VBox.margin>
@@ -157,7 +157,7 @@
                      </HBox>
                  </VBox>
              </HBox>
-             <Button fx:id="buttonSignUp" mnemonicParsing="false" onMouseClicked="#signUp" text="Sign up">
+             <Button fx:id="buttonSignUp" mnemonicParsing="false" onAction="#signUp" text="Sign up">
                  <font>
                      <Font size="27.0" />
                  </font>

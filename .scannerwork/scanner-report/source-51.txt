@@ -1,70 +1,52 @@
-package it.ispw.daniele.backpacker.boundary;
+package it.ispw.daniele.backpacker.controller.login;
 
-import it.ispw.daniele.backpacker.bean.RegisterBean;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
+import it.ispw.daniele.backpacker.bean.GeneralUserBean;
+import it.ispw.daniele.backpacker.bean.TouristGuideBean;
+import it.ispw.daniele.backpacker.bean.UserBean;
+import it.ispw.daniele.backpacker.dao.GeneralUserDao;
+import it.ispw.daniele.backpacker.dao.TouristGuideDao;
+import it.ispw.daniele.backpacker.dao.UserDAO;
+import it.ispw.daniele.backpacker.entity.GeneralUser;
+import it.ispw.daniele.backpacker.exceptions.LoginEmptyFieldException;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.Objects;
+public class LoginController {
 
-public class SignUpController extends GUIController{
+    public GeneralUserBean login(GeneralUserBean userBean) throws LoginEmptyFieldException {
+        GeneralUserDao gud = new GeneralUserDao();
 
-    @FXML
-    Label genericUserSignUp;
-    @FXML
-    Label restaurantOwnerSignUp;
-    @FXML
-    TextField textFieldEmailSignUp,textFieldNameSignUp, textFieldSurnameSignUp, textFieldPassSignUp, textFieldConfPassSignUp;
-    @FXML
-    TextField textFieldVATNumber;
-    @FXML
-    Button buttonSignUp;
-    @FXML
-    Button buttonSignUpRest;
+        if(userBean.getUsername().equals("")) {
+            throw new LoginEmptyFieldException("Username necessary");
+        }
+        if(userBean.getPassword().equals("")) {
+            throw new LoginEmptyFieldException("Password necessary");
+        }
 
-    public SignUpController() throws IOException {
+        GeneralUser result = gud.findUser(userBean.getUsername(), userBean.getPassword());
+        System.out.println(result);
+        if (result == null)	{
+            return null;
+        } else {
+            GeneralUserBean gu = new GeneralUserBean();
+            gu.setUsername(result.getUsername());
+            gu.setPassword(result.getPassword());
+            gu.setRole(result.getRole());
+            return gu;
+        }
     }
 
-    public void switchToGenericUserSignUpPage() throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        FileInputStream fileInputStream = new FileInputStream("src/main/resources/it/ispw/daniele/backpacker/SignUp-Page.fxml");
-        fxmlLoader = loader.load(fileInputStream);
-        stage = (Stage) LabelProfile.getScene().getWindow();
-        scene = new Scene(fxmlLoader, stage.getScene().getWidth(), stage.getScene().getHeight());
-        stage.setScene(scene);
-        stackScene.push(scene);
-        System.out.println(stackScene);
+    public boolean createUser(UserBean ub) {
+        UserDAO ud = new UserDAO();
+        return ud.createUser(ub.getUsername(), ub.getName(), ub.getSurname(), ub.getEmail(), ub.getPassword(), ub.getProfilePicture());
     }
 
-    public void switchToRestaurantOwnerSignUpPage() throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        FileInputStream fileInputStream = new FileInputStream("src/main/resources/it/ispw/daniele/backpacker/Restaurant-Owner-SignUp-Page.fxml");
-        fxmlLoader = loader.load(fileInputStream);
-        stage = (Stage) LabelProfile.getScene().getWindow();
-        scene = new Scene(fxmlLoader, stage.getScene().getWidth(), stage.getScene().getHeight());
-        stage.setScene(scene);
-        stackScene.push(scene);
-        System.out.println(stackScene);
+//    public boolean createRestayrantOwner(RestaurantOwnerBean ab) {
+//        RestaurantOwnerDao ad = new RestaurantOwnerDao();
+//        return ad.createRestaurantOwner(ab.getUsername(), ab.getPassword(), ab.getBandName(), ab.getProfilePicture(), ab.getEmail());
+//    }
+//
+    public boolean createTouristGuide(TouristGuideBean tgb) {
+        TouristGuideDao tgd = new TouristGuideDao();
+        return tgd.createTouristGuide(tgb.getUsername(), tgb.getName(), tgb.getSurname(), tgb.getEmail(), tgb.getPassword(), tgb.getProfilePicture(), tgb.getIdentificationCode());
     }
 
-    public void signUp(MouseEvent mouseEvent) {
-        RegisterBean registerBean = new RegisterBean(textFieldEmailSignUp.getText(),
-                textFieldNameSignUp.getText(), textFieldSurnameSignUp.getText(),
-                textFieldPassSignUp.getText(), textFieldConfPassSignUp.getText()).getInstance();
-
-        System.out.println("Email " + textFieldEmailSignUp.getText() + "\tName " + textFieldNameSignUp.getText() + "\tSurname " + textFieldSurnameSignUp.getText()
-                + "\tPass " + textFieldPassSignUp.getText() + "\t ConfPass " + textFieldConfPassSignUp.getText());
-    }
-
-    public void signUpRest(MouseEvent mouseEvent) {
-        System.out.println("Email " + textFieldEmailSignUp.getText() + "\tName " + textFieldNameSignUp.getText() + "\tSurname " + textFieldSurnameSignUp.getText()
-                + "\tPass " + textFieldPassSignUp.getText() + "\t ConfPass " + textFieldConfPassSignUp.getText() + "\t VAT " + textFieldVATNumber.getText());
-    }
 }

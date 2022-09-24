@@ -11,20 +11,31 @@ import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Border;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
+import javax.swing.*;
+import javax.swing.border.LineBorder;
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
+import java.awt.*;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static java.awt.Color.RED;
+import static java.awt.Color.red;
 
 public class HomeUserController implements Initializable {
 
@@ -57,6 +68,9 @@ public class HomeUserController implements Initializable {
 
     public void SearchRoutes() throws IOException{
 
+        this.textFieldCity.setStyle("-fx-border-style: none; -fx-border-width: none; -fx-border-color: none");
+        this.textFieldAddress.setStyle("-fx-border-style: none; -fx-border-width: none; -fx-border-color: none");
+
         //HomeBean homeBean = new HomeBean(textFieldCountry.getText(), textFieldCity.getText(), textFieldAddress.getText(), labelRange.getText(), radioButtonRestaurant.isSelected());
          HomeBean homeBean = HomeBean.getInstance();
          homeBean.setCountry(textFieldCountry.getText());
@@ -68,18 +82,20 @@ public class HomeUserController implements Initializable {
             UserGraphicChange.getInstance().switchToResultPage(this.textFieldCountry.getScene());
         } catch (CityNotFoundException cnfe) {
             //e.printStackTrace();
-            this.showFeedback(cnfe.getMessage());
+            this.textFieldCity.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
+            //this.showFeedback(cnfe.getMessage());
         } catch (AddressNotFoundException anfe){
             //anfe.printStackTrace();
-            this.showFeedback(anfe.getMessage());
+            //this.showFeedback(anfe.getMessage());
+            this.textFieldAddress.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
         }catch (MonumentNotFoundException mnfe){
-            this.showFeedback(mnfe.getMessage());
+            //this.showFeedback(mnfe.getMessage());
         }
     }
 
     @FXML
     public void handleKeyPressed(KeyEvent event) throws  IOException {
-        if (event.getCode().equals(KeyCode.ENTER)) {
+        if (event.getCode().toString().equals(KeyCode.ENTER)) {
             this.SearchRoutes();
         }
     }
@@ -116,11 +132,10 @@ public class HomeUserController implements Initializable {
             System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.TOURIST_GUIDE.name());
         }
         else {
-        UserGraphicChange ugc = UserGraphicChange.getInstance();
-        ugc.menuBar(this.menuBar, "home");
+            UserGraphicChange ugc = UserGraphicChange.getInstance();
+            ugc.menuBar(this.menuBar, "home");
             System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.USER.name().toLowerCase());
 
         }
-        System.out.println(this.menuBar.getChildren() + "EEEEEEEEEEE");
     }
 }

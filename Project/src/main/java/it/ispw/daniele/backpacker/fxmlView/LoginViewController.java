@@ -1,7 +1,7 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
-import com.jfoenix.controls.JFXSnackbar;
-import com.jfoenix.controls.JFXSnackbarLayout;
+//import com.jfoenix.controls.JFXSnackbar;
+//import com.jfoenix.controls.JFXSnackbarLayout;
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.controller.login.LoginController;
 import it.ispw.daniele.backpacker.exceptions.LoginEmptyFieldException;
@@ -13,16 +13,21 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
+import javafx.event.ActionEvent;
+//import java.awt.event.ActionEvent;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.security.Key;
 import java.util.Objects;
 
-public class LoginViewController extends App {
+public class LoginViewController {//extends App {
 
     @FXML
     public Label LabelHome;
@@ -38,46 +43,52 @@ public class LoginViewController extends App {
     @FXML
     private Button ButtonLogin;
     @FXML
-    private TextField textFieldUserLogin = new TextField();
+    private TextField textFieldUsername = new TextField();
     @FXML
-    private TextField textFieldPassLogin = new TextField();
+    private TextField textFieldPassword = new TextField();
 
     @FXML
-    public void loginAction() throws IOException {
+    public void loginButtonAction() throws IOException {
+
+        this.textFieldUsername.setStyle("-fx-border-style: none; -fx-border-width: none; -fx-border-color: none");
+        this.textFieldPassword.setStyle("-fx-border-style: none; -fx-border-width: none; -fx-border-color: none");
 
         GeneralUserBean gub = new GeneralUserBean();
-        gub.setUsername(this.textFieldUserLogin.getText());
-        gub.setPassword(this.textFieldPassLogin.getText());
+        gub.setUsername(this.textFieldUsername.getText());
+        gub.setPassword(this.textFieldPassword.getText());
 
-        LoginController loginController = new LoginController();
+        LoginController controller = new LoginController();
         GeneralUserBean gu;
         try{
-            gu = loginController.login(gub);
+            gu = controller.login(gub);
             if(gu == null){
-                System.out.println("errore nel LOGIN");
+                this.textFieldUsername.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
+                this.textFieldPassword.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
+                //System.out.println("Login failed!");
             }
             else{
                 String role = gu.getRole();
 
-                //SET SESSION
+                //SET SESSION GENERAL USER
                 SessionUser su = SessionUser.getInstance();
                 su.setSession(gu);
 
-                switch (role){
-                    case "user":
-                        UserGraphicChange.getInstance().switchToHomePage(this.textFieldUserLogin.getScene());
+                switch (role) {
+                    case "user" -> {
+                        UserGraphicChange.getInstance().switchToHomePage(this.textFieldUsername.getScene());
                         //ProfileController.init();
-                        System.out.println(this.textFieldUserLogin.getScene());
-                        break;
-                    case "tourist_guide":
-                        TouristGuideGraphicChange.getInstance().switchToHomePage(this.textFieldUserLogin.getScene());
-                        break;
-                    default:
-                        break;
+                        //System.out.println(this.textFieldUsername.getScene());
+                    }
+                    case "tourist_guide" ->
+                            TouristGuideGraphicChange.getInstance().switchToHomePage(this.textFieldUsername.getScene());
+                    default -> {
+                    }
                 }
             }
-        }catch (LoginEmptyFieldException emptyFieldException){
-            System.out.println("ERRORE NEL LOGIN");
+        }catch (LoginEmptyFieldException exception){
+            this.textFieldUsername.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
+            this.textFieldPassword.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
+            System.out.println("Login error");
         }
 
 
@@ -98,7 +109,7 @@ public class LoginViewController extends App {
 //        homeBean.setAddress(textFieldAddress.getText());
     }
 
-    private void showFeedback(int i){
+  /*  private void showFeedback(int i){
         JFXSnackbar snackbar = new JFXSnackbar(APLogin);
         if(i == 1){
             snackbar.fireEvent(new JFXSnackbar.SnackbarEvent(new JFXSnackbarLayout("Login Success"), Duration.seconds(2.5), null));
@@ -110,7 +121,7 @@ public class LoginViewController extends App {
             snackbar.setStyle("-fx-font-size: 27px;");
             //snackbar.getStylesheets().add(Objects.requireNonNull(getClass().getResource("styleLoginDenied.css")).toExternalForm());
         }
-    }
+    }*/
 
     public void switchToSignUp() throws IOException {
         SignUpController signUpController = new SignUpController();
@@ -146,5 +157,12 @@ public class LoginViewController extends App {
     }
 
     public void undoScene(MouseEvent mouseEvent) {
+    }
+
+    @FXML
+    public void enterKeyPressed(KeyEvent keyEvent) throws IOException {
+        if (keyEvent.getCode().equals(KeyCode.ENTER)){
+            this.loginButtonAction();
+        }
     }
 }

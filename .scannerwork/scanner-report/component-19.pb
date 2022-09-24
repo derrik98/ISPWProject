@@ -1,1 +1,1 @@
- 2xmlXhrQProject/.idea/libraries/Maven__org_kordamp_bootstrapfx_bootstrapfx_core_0_4_0.xml
+ 2xmlXhrHProject/.idea/libraries/Maven__org_kordamp_ikonli_ikonli_core_12_2_0.xml

@@ -1,9 +1,13 @@
 <component name="libraryTable">
-  <library name="json-20210307">
+  <library name="Maven: eu.hansolo:tilesfx:11.48">
     <CLASSES>
-      <root url="jar://$USER_HOME$/Downloads/jar_files/json-20210307.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/eu/hansolo/tilesfx/11.48/tilesfx-11.48.jar!/" />
     </CLASSES>
-    <JAVADOC />
-    <SOURCES />
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/eu/hansolo/tilesfx/11.48/tilesfx-11.48-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/eu/hansolo/tilesfx/11.48/tilesfx-11.48-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>
