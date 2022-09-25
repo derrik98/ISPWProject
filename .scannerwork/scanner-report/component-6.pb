@@ -1,0 +1,1 @@
+ 2xmlX	hr*Project/.idea/libraries/jfoenix_9_0_10.xml

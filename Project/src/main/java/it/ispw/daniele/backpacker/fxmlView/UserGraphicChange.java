@@ -41,7 +41,7 @@ public class UserGraphicChange extends GUIChangeTemplate{
     }
 
     //public void toProfilePage(Scene scene, UserBean ub, String from, String searchString) {
-    public void switchToProfilePage(Scene scene) {
+   /* public void switchToProfilePage(Scene scene) {
         this.catcher(new GUIAction() {
             @Override
             public void action() throws IOException {
@@ -54,9 +54,9 @@ public class UserGraphicChange extends GUIChangeTemplate{
                 //                controller.init();
             }
         });
-    }
+    }*/
 
-    public void switchToResultPage(Scene scene) {
+    /*public void switchToResultPage(Scene scene) {
         this.catcher(new GUIAction() {
             @Override
             public void action() throws IOException {
@@ -69,5 +69,5 @@ public class UserGraphicChange extends GUIChangeTemplate{
                 //                controller.init();
             }
         });
-    }
+    }*/
 }

@@ -1,7 +1,5 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
-import com.jfoenix.controls.JFXSnackbar;
-import com.jfoenix.controls.JFXSnackbarLayout;
 import it.ispw.daniele.backpacker.bean.HomeBean;
 import it.ispw.daniele.backpacker.exceptions.AddressNotFoundException;
 import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
@@ -11,31 +9,16 @@ import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
-import javafx.util.Duration;
 
-import javax.swing.*;
-import javax.swing.border.LineBorder;
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane;
-import java.awt.*;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import static java.awt.Color.RED;
-import static java.awt.Color.red;
 
 public class HomeUserController implements Initializable {
 
@@ -79,7 +62,7 @@ public class HomeUserController implements Initializable {
 
         try {
             homeBean.validate();
-            UserGraphicChange.getInstance().switchToResultPage(this.textFieldCountry.getScene());
+            UserGraphicChange.getInstance().switchToResult(this.textFieldCountry.getScene());
         } catch (CityNotFoundException cnfe) {
             //e.printStackTrace();
             this.textFieldCity.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
@@ -94,27 +77,10 @@ public class HomeUserController implements Initializable {
     }
 
     @FXML
-    public void handleKeyPressed(KeyEvent event) throws  IOException {
-        if (event.getCode().toString().equals(KeyCode.ENTER)) {
+    public void enterKeyPressed(KeyEvent keyEvent) throws  IOException {
+        if (keyEvent.getCode().equals(KeyCode.ENTER)){
             this.SearchRoutes();
         }
-    }
-
-    private void showFeedback(String message){
-        JFXSnackbar snackbar = new JFXSnackbar(APHome);
-        snackbar.setStyle("-fx-background-color: slateblue; -fx-text-fill: white;");
-        snackbar.fireEvent(new JFXSnackbar.SnackbarEvent(new JFXSnackbarLayout(message), Duration.seconds(2.5), null));
-        //snackbar.getStylesheets().add(String.valueOf(HomeController.class.getResource("styleLoginDenied.css")));
-
-//        JFXSnackbar snackbar = new JFXSnackbar(APHome);
-//        JFXSnackbarLayout layout = new JFXSnackbarLayout(message);
-//
-//        String css = "style/styleLoginDenied.css";
-//
-//        snackbar.getStylesheets().add(css);
-//        layout.getStylesheets().add(css);
-//
-//        snackbar.enqueue(new JFXSnackbar.SnackbarEvent(layout, Duration.seconds(2.5)));
     }
 
 //    public void init(){

@@ -3,6 +3,7 @@ package it.ispw.daniele.backpacker.fxmlView;
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.bean.ResultBean;
 import it.ispw.daniele.backpacker.entity.Itinerary;
+import it.ispw.daniele.backpacker.utils.Roles;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -44,9 +45,23 @@ public class ResultController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        UserGraphicChange ugc = UserGraphicChange.getInstance();
+
+        if(SessionUser.getInstance().getSession().getRole().equals(Roles.TOURIST_GUIDE.name().toLowerCase())) {
+            TouristGuideGraphicChange i = TouristGuideGraphicChange.getInstance();
+            i.menuBar(this.menuBar, "result");
+            System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.TOURIST_GUIDE.name());
+        }
+        else {
+            UserGraphicChange ugc = UserGraphicChange.getInstance();
+            ugc.menuBar(this.menuBar, "result");
+            System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.USER.name().toLowerCase());
+
+        }
+
+
+        //UserGraphicChange ugc = UserGraphicChange.getInstance();
         //vBoxResult.getChildren().add(accordionResult);
-        ugc.menuBar(this.menuBar, "result");
+        //ugc.menuBar(this.menuBar, "result");
         Accordion accordion = new Accordion();
         //for(int i = 0; i < 4;i++) {
         for(int indexItinerary = 0; indexItinerary < ResultBean.getInstance().getItinerary().size(); indexItinerary++){

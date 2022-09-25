@@ -2,6 +2,7 @@ package it.ispw.daniele.backpacker.fxmlView;
 
 import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -10,7 +11,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class TouristGuideMenuBarController {
+import static it.ispw.daniele.backpacker.fxmlView.MenuBarController.stackScene;
+
+public class TouristGuideMenuBarController implements Initializable {
 
     @FXML
     private Label LabelHome = new Label();
@@ -26,10 +29,10 @@ public class TouristGuideMenuBarController {
     public ImageView imageUndo;
 
 
-    private TouristGuideGraphicChange tggc = TouristGuideGraphicChange.getInstance();
+    private TouristGuideGraphicChange tggc;
 
     private static String sel = "home";
-    String style = "-fx-background-color: trasparent; -fx-border:none; -fx-font-size:16;";
+    //String style = "-fx-background-color: trasparent; -fx-border:none; -fx-font-size:16;";
 
     @FXML
     public void switchToHome(MouseEvent mouseEvent) throws IOException {
@@ -37,7 +40,12 @@ public class TouristGuideMenuBarController {
     }
     @FXML
     public void switchToResult(MouseEvent mouseEvent) {
-        this.tggc.switchToResultPage(this.LabelResult.getScene());
+        sel = "result";
+        this.tggc.switchToResult(this.LabelResult.getScene());
+        stackScene.push("result");
+        System.out.println(stackScene);
+
+        //this.tggc.switchToResult(this.LabelResult.getScene());
     }
     @FXML
     public void switchToProfile(MouseEvent mouseEvent) throws IOException {
@@ -51,12 +59,13 @@ public class TouristGuideMenuBarController {
     @FXML
     public void logout(){
         SessionUser.getInstance().closeSession();
-        this.tggc.switchToLogin(this.LabelHome.getScene());}
+        this.tggc.switchToLogin(this.LabelHome.getScene());
+    }
 
     public void switchToSignUp(MouseEvent mouseEvent) {
     }
 
-    public void init(String selected) {
+    /*public void init(String selected) {
 
         this.tggc = TouristGuideGraphicChange.getInstance();
         switch(selected){
@@ -72,17 +81,19 @@ public class TouristGuideMenuBarController {
             default:
                 break;
         }
-    }
+    }*/
 
     public void undoScene(MouseEvent mouseEvent) {
     }
 
-    /*@Override
+    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        // String style="-fx-background-color: transparent; -fx-border: none; -fx-text-fill: rgba(0, 0, 0, 1); -fx-font-size: 40 ; -fx-font-weight: bold;";
+        this.tggc = TouristGuideGraphicChange.getInstance();
+
         String style = "-fx-underline: true;";
-        switch (sel){
+
+        switch (sel) {
             case "home" -> {
                 //    this.LabelHome.setUnderline(true);
                 this.LabelHome.setStyle(style);
@@ -94,14 +105,11 @@ public class TouristGuideMenuBarController {
             }
             case "result" -> {
                 this.LabelResult.setStyle(style);
-                break;
             }
             default -> {
-                break;
             }
 
-        }
-*/
 
- //   }
+        }
+    }
 }

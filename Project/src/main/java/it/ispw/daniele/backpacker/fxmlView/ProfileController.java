@@ -1,7 +1,7 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
-import it.ispw.daniele.backpacker.bean.UserBean;
+import it.ispw.daniele.backpacker.utils.Roles;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,7 +24,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.web.WebView;
-import javafx.stage.Stage;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -104,18 +103,30 @@ public class ProfileController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        UserGraphicChange ugc = UserGraphicChange.getInstance();
+        if(SessionUser.getInstance().getSession().getRole().equals(Roles.TOURIST_GUIDE.name().toLowerCase())) {
+            TouristGuideGraphicChange i = TouristGuideGraphicChange.getInstance();
+            i.menuBar(this.menuBar, "result");
+            System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.TOURIST_GUIDE.name());
+        }
+        else {
+            UserGraphicChange ugc = UserGraphicChange.getInstance();
+            ugc.menuBar(this.menuBar, "result");
+            System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.USER.name().toLowerCase());
+
+        }
+
+        //UserGraphicChange ugc = UserGraphicChange.getInstance();
         GeneralUserBean gu= SessionUser.getInstance().getSession();
         this.username.setText(gu.getUsername());
         this.name.setText(gu.getPassword());
 
-        ugc.menuBar(this.menuBar, "profile");
+        //ugc.menuBar(this.menuBar, "profile");
 
         vBoxProfile.getChildren().add(accordionResult);
 
 
         Accordion accordion = new Accordion();
-        for(int i = 0; i < 4;i++) {
+        for(int i = 0; i < 4; i++) {
 
             TitledPane titledPane = new TitledPane();
             titledPane.setCollapsible(false);

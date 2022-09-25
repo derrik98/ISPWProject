@@ -33,15 +33,18 @@ public class MenuBarController implements Initializable{
 
     protected static Stack<String> stackScene = new Stack<>();
 
-    private UserGraphicChange ugc = UserGraphicChange.getInstance();
+    private UserGraphicChange ugc;
 
     private static String sel = "home";
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        //String style="-fx-background-color: transparent; -fx-border: none; -fx-text-fill: rgba(0, 0, 0, 1); -fx-font-size: 40 ; -fx-font-weight: bold;";
+        this.ugc = UserGraphicChange.getInstance();
+
+
         String style = "-fx-underline: true;";
+
         switch (sel){
             case "home" -> {
             //    this.LabelHome.setUnderline(true);
@@ -106,14 +109,14 @@ public class MenuBarController implements Initializable{
 
     public void switchToResult(MouseEvent mouseEvent) {
         sel = "result";
-        this.ugc.switchToResultPage(this.LabelResult.getScene());
+        this.ugc.switchToResult(this.LabelResult.getScene());
         stackScene.push("result");
         System.out.println(stackScene);
     }
 
     public void switchToProfile(MouseEvent mouseEvent){
         sel = "profile";
-        this.ugc.switchToProfilePage(this.LabelProfile.getScene());
+        this.ugc.switchToProfile(this.LabelProfile.getScene());
         stackScene.push("profile");
         System.out.println(stackScene);
     }
@@ -140,8 +143,8 @@ public class MenuBarController implements Initializable{
             this.from = stackScene.get(stackScene.size() - 2);
             switch (this.from) {
                 case "home" -> this.ugc.switchToHomePage(this.imageUndo.getScene());
-                case "result" -> this.ugc.switchToResultPage(this.imageUndo.getScene());
-                case "profile" -> this.ugc.switchToProfilePage(this.imageUndo.getScene());
+                case "result" -> this.ugc.switchToResult(this.imageUndo.getScene());
+                case "profile" -> this.ugc.switchToProfile(this.imageUndo.getScene());
             }
             stackScene.remove(stackScene.size() - 1);
             System.out.println(stackScene);
