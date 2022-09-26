@@ -36,7 +36,11 @@ public class TouristGuideMenuBarController implements Initializable {
 
     @FXML
     public void switchToHome(MouseEvent mouseEvent) throws IOException {
+        sel = "home";
         this.tggc.switchToHomePage(this.LabelHome.getScene());
+        stackScene.push("home");
+        //this.LabelHome.setUnderline(true);
+        System.out.println(stackScene);
     }
     @FXML
     public void switchToResult(MouseEvent mouseEvent) {
@@ -49,7 +53,10 @@ public class TouristGuideMenuBarController implements Initializable {
     }
     @FXML
     public void switchToProfile(MouseEvent mouseEvent) throws IOException {
-        this.tggc.switchToProfilePage(this.LabelProfile.getScene());
+        sel = "profile";
+        this.tggc.switchToProfile(this.LabelProfile.getScene());
+        stackScene.push("profile");
+        System.out.println(stackScene);
     }
     @FXML
     public void switchToLogin(MouseEvent mouseEvent) {

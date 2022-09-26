@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class GeneralUser {
     protected String username;
     protected String password;
+    protected String email;
     private String role;
 
     public GeneralUser() {
@@ -25,6 +26,10 @@ public class GeneralUser {
 
     public String getPassword() {
         return password;
+    }
+
+    public String getEmail(){
+        return email;
     }
 
     public String getRole() {

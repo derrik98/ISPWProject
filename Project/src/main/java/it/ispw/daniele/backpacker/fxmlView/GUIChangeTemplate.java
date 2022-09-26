@@ -1,5 +1,6 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
+import it.ispw.daniele.backpacker.bean.UserBean;
 import it.ispw.daniele.backpacker.utils.Roles;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -58,7 +59,7 @@ public abstract class GUIChangeTemplate{
         });
     }
 
-    public void switchToProfile(Scene scene) {
+    public void switchToProfile(Scene scene){//(Scene scene, UserBean ub, String from, String searchstring) {
         this.catcher(new GUIAction() {
             @Override
             public void action() throws IOException {
@@ -68,6 +69,16 @@ public abstract class GUIChangeTemplate{
                 Parent fxmlLoader = loader.load(fileInputStream);
                 loader.setController(pc);
                 scene.setRoot(fxmlLoader);
+
+                /*ProfileController pc = new ProfileController();
+                FXMLLoader loader = new FXMLLoader();
+                FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Profile-Page.fxml");
+                Parent fxmlLoader = loader.load(fileInputStream);
+                loader.setController(pc);
+                scene.setRoot(fxmlLoader);
+                pc.init(ub, from, searchstring);*/
+
+
             }
         });
     }

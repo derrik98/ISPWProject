@@ -61,7 +61,7 @@ public class SignUpController{
 
     @FXML
     public void signUp(ActionEvent event){
-        LoginController loginController = new LoginController();
+        LoginController lc = new LoginController();
 
         boolean regResult = false;
 
@@ -89,32 +89,32 @@ public class SignUpController{
 //            newFileName = username + filename;
 //        }
         if (userType.equals(Roles.USER.name())){
-            String firstName = this.textFieldNameSignUp.getText();
-            String lastName = this.textFieldSurnameSignUp.getText();
+            String name = this.textFieldNameSignUp.getText();
+            String surname = this.textFieldSurnameSignUp.getText();
             UserBean ub = new UserBean();
             ub.setUsername(username);
-            ub.setName(firstName);
-            ub.setSurname(lastName);
+            ub.setName(name);
+            ub.setSurname(surname);
             ub.setEmail(email);
             ub.setPassword(password);
             ub.setProfilePicture("");
             //u.setProfilePicture(newFileName);
-            regResult = loginController.createUser(ub);
+            regResult = lc.createUser(ub);
         }
         else if(userType.equals(Roles.TOURIST_GUIDE.name())){
-            String firstName = this.textFieldNameSignUp.getText();
-            String lastName = this.textFieldSurnameSignUp.getText();
+            String name = this.textFieldNameSignUp.getText();
+            String surname = this.textFieldSurnameSignUp.getText();
             VATNumb = textFieldVATNumber.getText();
             TouristGuideBean tgb = new TouristGuideBean();
             tgb.setUsername(username);
-            tgb.setName(firstName);
-            tgb.setSurname(lastName);
+            tgb.setName(name);
+            tgb.setSurname(surname);
             tgb.setEmail(email);
             tgb.setPassword(password);
             //tgb.setProfilePicture("");
             //u.setProfilePicture(newFileName);
             tgb.setIdentificationCode(VATNumb);
-            regResult = loginController.createTouristGuide(tgb);
+            regResult = lc.createTouristGuide(tgb);
         }
 
         if(Boolean.TRUE.equals(regResult)){
@@ -142,7 +142,7 @@ public class SignUpController{
         this.textFieldPassSignUp.setText("");
         this.textFieldConfPassSignUp.setText("");
         this.textFieldSurnameSignUp.setText("");
-        this.textFieldVATNumber.setText("");
+        //this.textFieldVATNumber.setText("");
     }
 
     /*public void signUp(MouseEvent mouseEvent) {

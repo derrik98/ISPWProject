@@ -35,12 +35,12 @@ public class UserDAO extends DaoTemplate{
 
                 System.out.println("sono qui");
                 Connection con = DBUserConnection.getUserConnection();
-                if(con == null){
+                /*if(con == null){
                     System.out.println("connessoine non stabilita");
                 }
                 else{
                     System.out.println("connessoine stabilita");
-                }
+                }*/
 
                 String sql = "call backpacker.add_user(?, ?, ?, ?, ?, ?);\r\n";
                 try (PreparedStatement stm = con.prepareStatement(sql)) {

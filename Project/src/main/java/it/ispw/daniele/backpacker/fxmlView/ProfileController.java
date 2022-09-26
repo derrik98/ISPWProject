@@ -1,6 +1,8 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
+import it.ispw.daniele.backpacker.bean.TouristGuideBean;
+import it.ispw.daniele.backpacker.bean.UserBean;
 import it.ispw.daniele.backpacker.utils.Roles;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.fxml.FXML;
@@ -42,7 +44,7 @@ public class ProfileController implements Initializable {
     @FXML
     private Label username;
     @FXML
-    private Label name;
+    private Label name = new Label();
     @FXML
     private Label surname;
     @FXML
@@ -51,6 +53,8 @@ public class ProfileController implements Initializable {
     private HBox menuBar = new HBox();
 
     private final Accordion accordionResult = new Accordion();
+
+    private GeneralUserBean gub;
 
     public void init() {
 
@@ -103,22 +107,25 @@ public class ProfileController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        if(SessionUser.getInstance().getSession().getRole().equals(Roles.TOURIST_GUIDE.name().toLowerCase())) {
-            TouristGuideGraphicChange i = TouristGuideGraphicChange.getInstance();
-            i.menuBar(this.menuBar, "result");
-            System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.TOURIST_GUIDE.name());
-        }
-        else {
             UserGraphicChange ugc = UserGraphicChange.getInstance();
-            ugc.menuBar(this.menuBar, "result");
+            ugc.menuBar(this.menuBar, "profile");
             System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.USER.name().toLowerCase());
+            gub = SessionUser.getInstance().getSession();
 
-        }
+            this.username.setText(this.gub.getUsername());
+            this.name.setText(this.gub.getPassword());
+            this.email.setText(this.gub.getEmail());
+
+            System.out.println("Email " + this.gub.getEmail());
+            System.out.println("Pass " + this.gub.getPassword());
+            System.out.println("User " + this.gub.getUsername());
+
+            System.out.println(gub);
 
         //UserGraphicChange ugc = UserGraphicChange.getInstance();
-        GeneralUserBean gu= SessionUser.getInstance().getSession();
-        this.username.setText(gu.getUsername());
-        this.name.setText(gu.getPassword());
+
+        //this.username.setText(gu.getUsername());
+        //this.name.setText(gu.getPassword());
 
         //ugc.menuBar(this.menuBar, "profile");
 
@@ -182,5 +189,14 @@ public class ProfileController implements Initializable {
             accordion.getPanes().add(titledPane);
         }
         vBoxProfile.getChildren().add(accordion);
+    }
+
+    public void init(UserBean ub, String from, String searchstring) {
+
+        UserGraphicChange ugc = UserGraphicChange.getInstance();
+        ugc.menuBar(this.menuBar, "profile");
+
+        this.email.setText(ub.getEmail());
+
     }
 }

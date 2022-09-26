@@ -103,7 +103,7 @@ public class MenuBarController implements Initializable{
         sel = "home";
         this.ugc.switchToHomePage(this.LabelHome.getScene());
         stackScene.push("home");
-        this.LabelHome.setUnderline(true);
+        //this.LabelHome.setUnderline(true);
         System.out.println(stackScene);
     }
 

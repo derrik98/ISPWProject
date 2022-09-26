@@ -29,6 +29,7 @@ public class LoginController {
             GeneralUserBean gu = new GeneralUserBean();
             gu.setUsername(result.getUsername());
             gu.setPassword(result.getPassword());
+            gu.setEmail(result.getEmail());
             gu.setRole(result.getRole());
             return gu;
         }

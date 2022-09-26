@@ -3,6 +3,7 @@ package it.ispw.daniele.backpacker.fxmlView;
 //import com.jfoenix.controls.JFXSnackbar;
 //import com.jfoenix.controls.JFXSnackbarLayout;
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
+import it.ispw.daniele.backpacker.bean.UserBean;
 import it.ispw.daniele.backpacker.controller.login.LoginController;
 import it.ispw.daniele.backpacker.exceptions.LoginEmptyFieldException;
 import it.ispw.daniele.backpacker.utils.SessionUser;
@@ -76,8 +77,6 @@ public class LoginViewController {//extends App {
                 switch (role) {
                     case "user" -> {
                         UserGraphicChange.getInstance().switchToHomePage(this.textFieldUsername.getScene());
-                        //ProfileController.init();
-                        //System.out.println(this.textFieldUsername.getScene());
                     }
                     case "tourist_guide" ->
                             TouristGuideGraphicChange.getInstance().switchToHomePage(this.textFieldUsername.getScene());
