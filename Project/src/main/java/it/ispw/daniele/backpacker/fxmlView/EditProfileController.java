@@ -5,7 +5,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-public class EditProfileController extends App {
+public class EditProfileController {
 
     @FXML
     private TextField textFieldNameSetting;

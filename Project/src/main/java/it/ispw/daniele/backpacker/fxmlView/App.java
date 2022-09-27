@@ -28,7 +28,7 @@ public class App extends Application {
         //stackScene.push(fxmlLoader);
 
         stage.setScene(scene);
-        stage.setMaximized(true);
+        //stage.setMaximized(true);
         stage.show();
     }
 

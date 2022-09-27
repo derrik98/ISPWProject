@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17.0.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.fxmlView.ProfileController">
+<AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.fxmlView.ProfileController">
     <ScrollPane fitToHeight="true" fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <VBox alignment="TOP_CENTER">
          <StackPane>
@@ -43,7 +43,7 @@
                     <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                     </HBox.margin>
-                    <StackPane style="-fx-border-color: black;">
+                    <StackPane prefWidth="325.0" style="-fx-border-color: black;">
                         <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                             <Image url="@/utente.png" />
                         </ImageView>
@@ -58,12 +58,12 @@
                   <children>
                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username: ">
                         <font>
-                           <Font size="27.0" />
+                           <Font size="24.0" />
                         </font>
                      </Text>
                      <Label fx:id="username" text="null">
                         <font>
-                           <Font size="27.0" />
+                           <Font size="24.0" />
                         </font>
                         <HBox.margin>
                            <Insets />
@@ -75,12 +75,12 @@
                   <children>
                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name: ">
                               <font>
-                                  <Font size="27.0" />
+                                  <Font size="24.0" />
                               </font>
                           </Text>
                      <Label fx:id="name">
                         <font>
-                           <Font size="27.0" />
+                           <Font size="24.0" />
                         </font>
                      </Label>
                   </children>
@@ -89,12 +89,12 @@
                   <children>
                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Surname: ">
                               <font>
-                                  <Font size="27.0" />
+                                  <Font size="24.0" />
                               </font>
                           </Text>
                      <Label fx:id="surname">
                         <font>
-                           <Font size="27.0" />
+                           <Font size="24.0" />
                         </font>
                      </Label>
                   </children>
@@ -103,12 +103,12 @@
                   <children>
                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail: ">
                               <font>
-                                  <Font size="27.0" />
+                                  <Font size="24.0" />
                               </font>
                           </Text>
                      <Label fx:id="email">
                         <font>
-                           <Font size="27.0" />
+                           <Font size="24.0" />
                         </font>
                      </Label>
                   </children>

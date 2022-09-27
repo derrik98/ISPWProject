@@ -62,6 +62,10 @@ public class LoginViewController {//extends App {
         GeneralUserBean gu;
         try{
             gu = controller.login(gub);
+            System.out.println(gu.getUsername());
+            System.out.println(gu.getEmail());
+            System.out.println(gu.getPassword());
+            System.out.println(gu.getRole());
             if(gu == null){
                 this.textFieldUsername.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
                 this.textFieldPassword.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");

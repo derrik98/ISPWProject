@@ -6,12 +6,13 @@ public class User extends GeneralUser{
     private String profilePicture;
 
     public User(String username, String password, String name,
-                String surname, String profilePicture) {
+                String surname, String profilePicture, String email) {
         this.username = username;
         this.password = password;
         this.name = name;
         this.surname = surname;
         this.profilePicture = profilePicture;
+        this.email = email;
     }
 
     public User(String username, String name, String surname, String profilePicture) {
@@ -19,6 +20,14 @@ public class User extends GeneralUser{
         this.name = name;
         this.surname = surname;
         this.profilePicture = profilePicture;
+    }
+
+    public User(String username, String name, String surname, String profilePicture, String email) {
+        this.username = username;
+        this.name = name;
+        this.surname = surname;
+        this.profilePicture = profilePicture;
+        this.email = email;
     }
 
     public String getName() {

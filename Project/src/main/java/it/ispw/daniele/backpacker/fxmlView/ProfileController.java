@@ -3,6 +3,8 @@ package it.ispw.daniele.backpacker.fxmlView;
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.bean.TouristGuideBean;
 import it.ispw.daniele.backpacker.bean.UserBean;
+import it.ispw.daniele.backpacker.dao.UserDAO;
+import it.ispw.daniele.backpacker.entity.User;
 import it.ispw.daniele.backpacker.utils.Roles;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.fxml.FXML;
@@ -30,6 +32,8 @@ import javafx.scene.web.WebView;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -112,15 +116,32 @@ public class ProfileController implements Initializable {
             System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.USER.name().toLowerCase());
             gub = SessionUser.getInstance().getSession();
 
-            this.username.setText(this.gub.getUsername());
+           /* this.username.setText(this.gub.getUsername());
             this.name.setText(this.gub.getPassword());
-            this.email.setText(this.gub.getEmail());
+            this.email.setText(this.gub.getEmail());*/
 
             System.out.println("Email " + this.gub.getEmail());
             System.out.println("Pass " + this.gub.getPassword());
             System.out.println("User " + this.gub.getUsername());
 
             System.out.println(gub);
+
+            List<UserBean> users = this.getSearchUser("searchuser", SessionUser.getInstance().getSession().getUsername());
+        System.out.println(SessionUser.getInstance().getSession().getUsername());
+            System.out.println("aaaaa" + users);
+
+            for(int i = 0;i < users.size(); i++){
+                System.out.println(users.get(i).getName());
+                System.out.println(users.get(i).getSurname());
+                System.out.println(users.get(i).getEmail());
+                System.out.println(users.get(i).getPassword());
+                System.out.println(users.get(i).getUsername());
+            }
+
+        this.username.setText(users.get(0).getUsername());
+        this.name.setText(users.get(0).getName());
+        this.email.setText(users.get(0).getEmail());
+        this.surname.setText(users.get(0).getSurname());
 
         //UserGraphicChange ugc = UserGraphicChange.getInstance();
 
@@ -198,5 +219,26 @@ public class ProfileController implements Initializable {
 
         this.email.setText(ub.getEmail());
 
+    }
+
+    public List<UserBean> getSearchUser(String searchString, String caller){
+        UserDAO ud = new UserDAO();
+        List<User> l = ud.getSearchUser(searchString, caller);
+        return this.convert(l);
+    }
+
+    private List<UserBean> convert(List<User> l) {
+        List<UserBean> lb = new ArrayList<>();
+        for(int i = 0; i < l.size(); i++){
+            User u = l.get(i);
+            UserBean ub = new UserBean();
+            ub.setUsername(u.getUsername());
+            ub.setName(u.getName());
+            ub.setSurname(u.getSurname());
+            ub.setProfilePicture(u.getProfilePicture());
+            ub.setEmail(u.getEmail());
+            lb.add(ub);
+        }
+        return lb;
     }
 }

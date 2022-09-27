@@ -20,7 +20,7 @@ public class UserDAO extends DaoTemplate{
 //    private static final String ACCEPTFRIENDREQUEST = "acceptfriendrequest";
 //    private static final String REMOVEFRIENDREQUEST = "removefrinedrequest";
 //    private static final String REQUESTFRIEND = "requestfriend";
-//    private static final String SEARCHUSER = "searchuser";
+    private static final String SEARCHUSER = "searchuser";
 //    private static final String VIEWFRIENDS = "viewfriends";
 //    private static final String VIEWFRIENDSREQUESTS = "viewfriendsrequests";
 //    private static final String SEARCHFRIENDREQUEST = "searchfriendrequest";
@@ -69,9 +69,9 @@ public class UserDAO extends DaoTemplate{
 //        this.manageFollow(username, artist, UNFOLLOW);
 //    }
 //
-//    public List<User> getSearchUser(String searchString, String caller){
-//        return this.queryDatabase(searchString, caller, SEARCHUSER);
-//    }
+    public List<User> getSearchUser(String searchString, String caller){
+        return this.queryDatabase(searchString, caller, SEARCHUSER);
+    }
 //
 //    public List<User> getFriends(String username){
 //        return this.queryDatabase(username, "", VIEWFRIENDS);
@@ -152,65 +152,71 @@ public class UserDAO extends DaoTemplate{
 //        });
 //    }
 
-//    private List<User> queryDatabase(String string, String caller, String operation){
-//        List <User> ret = this.execute(new DaoAction<List<User>>() {
-//            @Override
-//            public List<User> act() throws ClassNotFoundException, SQLException {
-//                List<User> l = new ArrayList<>();
-//                Connection conn = DBUserConnection.getUserConnection();
-//                PreparedStatement stm = null;
-//                try {
-//                    String sql;
-//                    switch (operation) {
-//                        case SEARCHUSER:
-//                            sql = "call livethemusic.search_user(?, ?);\r\n";
-//                            stm = conn.prepareStatement(sql);
-//                            stm.setString(1, string);
-//                            stm.setString(2, caller);
-//                            break;
-//                        case VIEWFRIENDS:
-//                            sql = "call livethemusic.view_friends(?);\r\n";
-//                            stm = conn.prepareStatement(sql);
-//                            stm.setString(1, string);
-//                            break;
-//                        case VIEWFRIENDSREQUESTS:
-//                            sql = "call livethemusic.view_friend_requests(?);\r\n";
-//                            stm = conn.prepareStatement(sql);
-//                            stm.setString(1, string);
-//                            break;
-//                        default:
-//                            return Collections.emptyList();
-//                    }
-//                    try (ResultSet rs = stm.executeQuery()) {
-//                        if (!rs.first()) // rs not empty
-//                            return Collections.emptyList();
-//
-//                        do{
-//                            String username = rs.getString("username");
-//                            String name = rs.getString("name");
-//                            String surname = rs.getString("surname");
-//                            String profilePicture = rs.getString("profile_picture_path");
-//
-//                            if(profilePicture == null || profilePicture.equals("")) {
-//                                profilePicture = "concert.jpg";
-//                            }
-//
-//                            l.add(new User(username, name, surname, profilePicture));
-//                        } while (rs.next());
-//                        return l;
-//                    }
-//                } finally {
-//                    if (stm != null)
-//                        stm.close();
-//                }
-//            }
-//        });
-//        if (ret != null) {
-//            return ret;
-//        } else {
-//            return Collections.emptyList();
-//        }
-//    }
+    private List<User> queryDatabase(String string, String caller, String operation){
+        List <User> ret = this.execute(new DaoAction<List<User>>() {
+            @Override
+            public List<User> act() throws ClassNotFoundException, SQLException {
+                List<User> l = new ArrayList<>();
+                Connection conn = DBUserConnection.getUserConnection();
+                PreparedStatement stm = null;
+                try {
+                    String sql;
+                    switch (operation) {
+
+                        case SEARCHUSER:
+                            System.out.println("sonosqui");
+                            sql = "call backpacker.search_user(?);\r\n";
+                            stm = conn.prepareStatement(sql);
+                           // stm.setString(1, string);
+                            stm.setString(1, caller);
+                            break;
+                        /*case VIEWFRIENDS:
+                            sql = "call livethemusic.view_friends(?);\r\n";
+                            stm = conn.prepareStatement(sql);
+                            stm.setString(1, string);
+                            break;
+                        case VIEWFRIENDSREQUESTS:
+                            sql = "call livethemusic.view_friend_requests(?);\r\n";
+                            stm = conn.prepareStatement(sql);
+                            stm.setString(1, string);
+                            break;*/
+                        default:
+                            return Collections.emptyList();
+                    }
+                    try (ResultSet rs = stm.executeQuery()) {
+                        if (!rs.first()) // rs not empty
+                            return Collections.emptyList();
+
+                        do{
+                            String username = rs.getString("username");
+                            String name = rs.getString("name");
+                            String surname = rs.getString("surname");
+                            String profilePicture = rs.getString("profile_picture_path");
+                            String email = rs.getString("email");
+
+                            System.out.println("sono qui" + username + "   " + email);
+
+                            if(profilePicture == null || profilePicture.equals("")) {
+                                //profilePicture = "concert.jpg";
+                            }
+
+                            l.add(new User(username, name, surname, profilePicture, email));
+                            //l.add(new User(username, name, surname, profilePicture));
+                        } while (rs.next());
+                        return l;
+                    }
+                } finally {
+                    if (stm != null)
+                        stm.close();
+                }
+            }
+        });
+        if (ret != null) {
+            return ret;
+        } else {
+            return Collections.emptyList();
+        }
+    }
 
 
 //    private Boolean isQueryDataBase(String user, String target, String operation) {
