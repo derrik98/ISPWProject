@@ -1,11 +1,11 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
-import it.ispw.daniele.backpacker.bean.UserBean;
 import it.ispw.daniele.backpacker.utils.Roles;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
 import java.io.FileInputStream;
@@ -69,20 +69,9 @@ public abstract class GUIChangeTemplate{
                 Parent fxmlLoader = loader.load(fileInputStream);
                 loader.setController(pc);
                 scene.setRoot(fxmlLoader);
-
-                /*ProfileController pc = new ProfileController();
-                FXMLLoader loader = new FXMLLoader();
-                FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Profile-Page.fxml");
-                Parent fxmlLoader = loader.load(fileInputStream);
-                loader.setController(pc);
-                scene.setRoot(fxmlLoader);
-                pc.init(ub, from, searchstring);*/
-
-
             }
         });
     }
-
 
     public void menuBar (HBox pos, String sel){
         this.catcher(new GUIAction() {
@@ -97,6 +86,7 @@ public abstract class GUIChangeTemplate{
                         Parent fxmlLoader = loader.load(fileInputStream);
                         loader.setController(mbc);
                         pos.getChildren().add(fxmlLoader);
+
                     }
                     case TOURIST_GUIDE -> {
                         TouristGuideMenuBarController tgmbc = new TouristGuideMenuBarController();
@@ -115,5 +105,28 @@ public abstract class GUIChangeTemplate{
 
 
     public abstract void switchToHomePage(Scene scene) throws IOException;
+
+    public void backButton(Scene scene, String from) {
+        this.catcher(new GUIAction() {
+            @Override
+            public void action() throws IOException {
+                //BackController bc = BackControllerFactory.getInstance().creator(whoAmI);
+                switch (from){
+                    case "home":
+                        switchToHomePage(scene);
+                    case "result":
+                        switchToResult(scene);
+                    case "profile":
+                        switchToProfile(scene);
+                }
+                /*FXMLLoader loader = new FXMLLoader();
+                FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Profile-Page.fxml");
+                Parent fxmlLoader = loader.load(fileInputStream); // loader.setController(bc);
+                scene.setRoot(fxmlLoader);*/
+                //ap.getChildren().add(loader.load());
+                //bc.init(from, searchString);
+            }
+        });
+    }
 }
 

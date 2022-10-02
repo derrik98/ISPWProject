@@ -101,7 +101,9 @@ public class HomeUserController implements Initializable {
             UserGraphicChange ugc = UserGraphicChange.getInstance();
             ugc.menuBar(this.menuBar, "home");
             System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.USER.name().toLowerCase());
-
+            //ugc.backButton(this.APHome, "home");
         }
     }
+
+
 }

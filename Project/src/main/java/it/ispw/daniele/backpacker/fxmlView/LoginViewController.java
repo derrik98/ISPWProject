@@ -28,10 +28,8 @@ import java.io.IOException;
 import java.security.Key;
 import java.util.Objects;
 
-public class LoginViewController {//extends App {
+public class LoginViewController {
 
-    @FXML
-    public Label LabelHome;
     @FXML
     public Label LabelLogin;
     @FXML
@@ -41,8 +39,7 @@ public class LoginViewController {//extends App {
     public VBox dynamicZone;
     @FXML
     private AnchorPane APLogin;
-    @FXML
-    private Button ButtonLogin;
+
     @FXML
     private TextField textFieldUsername = new TextField();
     @FXML
@@ -62,10 +59,7 @@ public class LoginViewController {//extends App {
         GeneralUserBean gu;
         try{
             gu = controller.login(gub);
-            System.out.println(gu.getUsername());
-            System.out.println(gu.getEmail());
-            System.out.println(gu.getPassword());
-            System.out.println(gu.getRole());
+
             if(gu == null){
                 this.textFieldUsername.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
                 this.textFieldPassword.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
@@ -112,26 +106,12 @@ public class LoginViewController {//extends App {
 //        homeBean.setAddress(textFieldAddress.getText());
     }
 
-  /*  private void showFeedback(int i){
-        JFXSnackbar snackbar = new JFXSnackbar(APLogin);
-        if(i == 1){
-            snackbar.fireEvent(new JFXSnackbar.SnackbarEvent(new JFXSnackbarLayout("Login Success"), Duration.seconds(2.5), null));
-            snackbar.getStylesheets().add(Objects.requireNonNull(getClass().getResource("src/main/resources/it/ispw/daniele/backpacker/styleLoginSuccess.css")).toExternalForm());
-        }
-        else{
-            JFXSnackbarLayout layout = new JFXSnackbarLayout("Login Denied");
-            snackbar.fireEvent(new JFXSnackbar.SnackbarEvent(layout, Duration.seconds(2.5), null));
-            snackbar.setStyle("-fx-font-size: 27px;");
-            //snackbar.getStylesheets().add(Objects.requireNonNull(getClass().getResource("styleLoginDenied.css")).toExternalForm());
-        }
-    }*/
-
     public void switchToSignUp() throws IOException {
-        SignUpController signUpController = new SignUpController();
+        SignUpController suc = new SignUpController();
         FXMLLoader loader = new FXMLLoader();
         FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/SignUp-Page.fxml");
-        //loader.setController(loginViewController);
         Parent fxmlLoader = loader.load(fileInputStream);
+        loader.setController(suc);
 
         dynamicZone.getChildren().remove(0, dynamicZone.getChildren().size());
         dynamicZone.getChildren().add(fxmlLoader);
@@ -140,23 +120,16 @@ public class LoginViewController {//extends App {
     }
 
     public void switchToLogin() throws IOException {
+
+        LoginViewController lvc = new LoginViewController();
         FXMLLoader loader = new FXMLLoader();
         FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/LoginViewPage.fxml");
-        //loader.setController(loginViewController);
         Parent fxmlLoader = loader.load(fileInputStream);
+        loader.setController(lvc);
         this.LabelLogin.getScene().setRoot(fxmlLoader);
         this.LabelSignUp.setUnderline(false);
         this.LabelLogin.setUnderline(true);
-    }
 
-    public void switchToHome() throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Home-Page.fxml");
-        //loader.setController(loginViewController);
-        Parent fxmlLoader = loader.load(fileInputStream);
-        this.LabelLogin.getScene().setRoot(fxmlLoader);
-        this.LabelSignUp.setUnderline(false);
-        this.LabelLogin.setUnderline(true);
     }
 
     public void undoScene(MouseEvent mouseEvent) {

@@ -11,9 +11,6 @@ import java.io.IOException;
 
 public class App extends Application {
 
-    //protected static Stack<Parent> stackScene = new Stack<>();
-
-
     @Override
     public void start(Stage stage) throws IOException {
 
@@ -24,8 +21,6 @@ public class App extends Application {
         Parent fxmlLoader = loader.load(fileInputStream);
         loader.setController(lvc);
         Scene scene = new Scene(fxmlLoader);
-
-        //stackScene.push(fxmlLoader);
 
         stage.setScene(scene);
         //stage.setMaximized(true);
