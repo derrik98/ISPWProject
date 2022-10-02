@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class TouristGuideGraphicChange extends GUIChangeTemplate{
@@ -37,17 +38,13 @@ public class TouristGuideGraphicChange extends GUIChangeTemplate{
         });
     }
 
-    public void switchToProfilePage(Scene scene) {
-        this.catcher(new GUIAction() {
-            @Override
-            public void action() throws IOException {
-                ProfileController controller = new ProfileController();
-                FXMLLoader loader = new FXMLLoader();
-                FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Profile-Page.fxml");
-                Parent fxmlLoader = loader.load(fileInputStream);
-                scene.setRoot(fxmlLoader);
-                //                controller.init();
-            }
-        });
+
+    public void switchToAddItinerary(Scene scene) throws IOException {
+        AddItineraryController itineraryController = new AddItineraryController();
+        FXMLLoader loader = new FXMLLoader();
+        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Add-Itinerary-Page.fxml");
+        Parent fxmlLoader = loader.load(fileInputStream);
+        loader.setController(itineraryController);
+        scene.setRoot(fxmlLoader);
     }
 }

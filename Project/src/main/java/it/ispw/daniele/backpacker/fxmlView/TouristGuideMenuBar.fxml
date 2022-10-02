@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17.0.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.fxmlView.TouristGuideMenuBarController">
+<AnchorPane prefWidth="1920.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.fxmlView.TouristGuideMenuBarController">
    <children>
-      <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" spacing="35.0" style="-fx-background-color: #eae4e4;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" spacing="35.0" style="-fx-background-color: silver;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label fx:id="LabelHome" contentDisplay="TEXT_ONLY" onMouseClicked="#switchToHome" text="Home">
                <font>
@@ -36,13 +36,16 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </Label>
-            <Label fx:id="LabelCreateItinerary" text="Create Itinerary">
+            <Label fx:id="LabelAddItinerary" onMouseClicked="#switchToAddItinerary" text="Add Itinerary">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
                <font>
                   <Font size="40.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Label>
             <Label fx:id="LabelProfile" onMouseClicked="#switchToProfile" text="Profile">
                <font>

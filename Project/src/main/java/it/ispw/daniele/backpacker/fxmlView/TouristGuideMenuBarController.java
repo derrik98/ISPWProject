@@ -10,8 +10,7 @@ import javafx.scene.input.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import static it.ispw.daniele.backpacker.fxmlView.MenuBarController.stackScene;
+import java.util.Stack;
 
 public class TouristGuideMenuBarController implements Initializable {
 
@@ -22,22 +21,52 @@ public class TouristGuideMenuBarController implements Initializable {
     @FXML
     private Label LabelProfile = new Label();
     @FXML
-    public Label LabelLogin = new Label();
-    @FXML
-    public Label LabelCreateItinerary;
+    public Label LabelAddItinerary = new Label();
     @FXML
     public ImageView imageUndo;
 
+    protected static Stack<String> stackScene = new Stack<>();
 
-    private TouristGuideGraphicChange tggc;
+    private TouristGuideGraphicChange guideGraphicChange;
 
     private static String sel = "home";
     //String style = "-fx-background-color: trasparent; -fx-border:none; -fx-font-size:16;";
 
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        this.guideGraphicChange = TouristGuideGraphicChange.getInstance();
+
+        if(stackScene.isEmpty()){
+            stackScene.push("home");
+        }
+
+        String style = "-fx-underline: true;";
+
+        switch (sel){
+            case "home" -> {
+                this.LabelHome.setStyle(style);
+            }
+            case "profile" -> {
+                this.LabelProfile.setStyle(style);
+            }
+            case "result" -> {
+                this.LabelResult.setStyle(style);
+            }
+            case "addItinerary" -> {
+                this.LabelAddItinerary.setStyle(style);
+            }
+            default -> {
+            }
+
+        }
+    }
+
     @FXML
     public void switchToHome(MouseEvent mouseEvent) throws IOException {
         sel = "home";
-        this.tggc.switchToHomePage(this.LabelHome.getScene());
+        this.guideGraphicChange.switchToHomePage(this.LabelHome.getScene());
         stackScene.push("home");
         //this.LabelHome.setUnderline(true);
         System.out.println(stackScene);
@@ -45,7 +74,7 @@ public class TouristGuideMenuBarController implements Initializable {
     @FXML
     public void switchToResult(MouseEvent mouseEvent) {
         sel = "result";
-        this.tggc.switchToResult(this.LabelResult.getScene());
+        this.guideGraphicChange.switchToResult(this.LabelResult.getScene());
         stackScene.push("result");
         System.out.println(stackScene);
 
@@ -54,19 +83,22 @@ public class TouristGuideMenuBarController implements Initializable {
     @FXML
     public void switchToProfile(MouseEvent mouseEvent) throws IOException {
         sel = "profile";
-        this.tggc.switchToProfile(this.LabelProfile.getScene());
+        this.guideGraphicChange.switchToProfile(this.LabelProfile.getScene());
         stackScene.push("profile");
         System.out.println(stackScene);
     }
+
     @FXML
-    public void switchToLogin(MouseEvent mouseEvent) {
-        this.tggc.switchToLogin(this.LabelLogin.getScene());
+    public void switchToAddItinerary(MouseEvent mouseEvent) throws IOException {
+        sel = "addItinerary";
+        this.guideGraphicChange.switchToAddItinerary(this.LabelAddItinerary.getScene());
+        stackScene.push("addItinerary");
     }
 
     @FXML
     public void logout(){
         SessionUser.getInstance().closeSession();
-        this.tggc.switchToLogin(this.LabelHome.getScene());
+        this.guideGraphicChange.switchToLogin(this.LabelHome.getScene());
     }
 
     public void switchToSignUp(MouseEvent mouseEvent) {
@@ -93,10 +125,10 @@ public class TouristGuideMenuBarController implements Initializable {
     public void undoScene(MouseEvent mouseEvent) {
     }
 
-    @Override
+    /*@Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        this.tggc = TouristGuideGraphicChange.getInstance();
+        this.guideGraphicChange = TouristGuideGraphicChange.getInstance();
 
         String style = "-fx-underline: true;";
 
@@ -118,5 +150,5 @@ public class TouristGuideMenuBarController implements Initializable {
 
 
         }
-    }
+    }*/
 }

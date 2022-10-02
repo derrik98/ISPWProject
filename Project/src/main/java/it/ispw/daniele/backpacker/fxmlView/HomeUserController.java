@@ -55,13 +55,13 @@ public class HomeUserController implements Initializable {
         this.textFieldAddress.setStyle("-fx-border-style: none; -fx-border-width: none; -fx-border-color: none");
 
         //HomeBean homeBean = new HomeBean(textFieldCountry.getText(), textFieldCity.getText(), textFieldAddress.getText(), labelRange.getText(), radioButtonRestaurant.isSelected());
-         HomeBean homeBean = HomeBean.getInstance();
-         homeBean.setCountry(textFieldCountry.getText());
-         homeBean.setCity(textFieldCity.getText());
-         homeBean.setAddress(textFieldAddress.getText());
+        // HomeBean homeBean = HomeBean.getInstance();
+        // homeBean.setCountry(textFieldCountry.getText());
+        // homeBean.setCity(textFieldCity.getText());
+        // homeBean.setAddress(textFieldAddress.getText());
 
-        try {
-            homeBean.validate();
+        /*try {
+           // homeBean.validate();
             UserGraphicChange.getInstance().switchToResult(this.textFieldCountry.getScene());
         } catch (CityNotFoundException cnfe) {
             //e.printStackTrace();
@@ -73,7 +73,7 @@ public class HomeUserController implements Initializable {
             this.textFieldAddress.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
         }catch (MonumentNotFoundException mnfe){
             //this.showFeedback(mnfe.getMessage());
-        }
+        }*/
     }
 
     @FXML
@@ -93,8 +93,8 @@ public class HomeUserController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if(SessionUser.getInstance().getSession().getRole().equals(Roles.TOURIST_GUIDE.name().toLowerCase())) {
-            TouristGuideGraphicChange i = TouristGuideGraphicChange.getInstance();
-            i.menuBar(this.menuBar, "home");
+            TouristGuideGraphicChange tggc = TouristGuideGraphicChange.getInstance();
+            tggc.menuBar(this.menuBar, "home");
             System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.TOURIST_GUIDE.name());
         }
         else {
