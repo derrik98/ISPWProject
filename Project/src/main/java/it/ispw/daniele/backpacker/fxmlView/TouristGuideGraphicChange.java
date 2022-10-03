@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class TouristGuideGraphicChange extends GUIChangeTemplate{
@@ -40,7 +39,7 @@ public class TouristGuideGraphicChange extends GUIChangeTemplate{
 
 
     public void switchToAddItinerary(Scene scene) throws IOException {
-        AddItineraryController itineraryController = new AddItineraryController();
+        AddItineraryViewController itineraryController = new AddItineraryViewController();
         FXMLLoader loader = new FXMLLoader();
         FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Add-Itinerary-Page.fxml");
         Parent fxmlLoader = loader.load(fileInputStream);

@@ -29,12 +29,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "settings.editor.selected.configurable": "reactor"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="it.ispw.daniele.backpacker.fxmlView" />
@@ -290,6 +291,7 @@
       <workItem from="1664488356967" duration="3842000" />
       <workItem from="1664723991735" duration="9508000" />
       <workItem from="1664743225290" duration="5415000" />
+      <workItem from="1664790925983" duration="5469000" />
     </task>
     <servers />
   </component>
