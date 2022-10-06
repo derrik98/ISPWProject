@@ -5,6 +5,7 @@ import java.io.Serializable;
 public class ItineraryBean implements Serializable {
 
     static final long serialVersionUID = 42L;
+    private String steps;
     private String id;
     private String guideId;
     private String name;
@@ -62,14 +63,6 @@ public class ItineraryBean implements Serializable {
         return id;
     }
 
-    public void setArtistId(String id) {
-        this.guideId = id;
-    }
-
-    public String getArtistId() {
-        return guideId;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -86,14 +79,6 @@ public class ItineraryBean implements Serializable {
         return this.location;
     }
 
-    public void setTicketone(String ticketone) {
-        this.ticketone = ticketone;
-    }
-
-    public String getTicketone() {
-        return this.ticketone;
-    }
-
     public void setDate(String date) {
         this.date = date;
     }
@@ -108,6 +93,14 @@ public class ItineraryBean implements Serializable {
 
     public double getDistance() {
         return this.distance;
+    }
+
+    public String getSteps() {
+        return this.steps;
+    }
+
+    public void setSteps(String steps) {
+        this.steps = steps;
     }
 
 }

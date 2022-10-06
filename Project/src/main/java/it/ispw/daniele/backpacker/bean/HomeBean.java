@@ -80,7 +80,7 @@ public class HomeBean {
     }
 
 
-    /*public boolean validate() throws IOException, CityNotFoundException, AddressNotFoundException, MonumentNotFoundException {
+    public boolean validate() throws IOException, CityNotFoundException, AddressNotFoundException, MonumentNotFoundException {
         // controllo sintattico
         if (country.equals("") || city.equals("") || address.equals("")) {
             return false;
@@ -97,10 +97,10 @@ public class HomeBean {
         System.out.println(country);
 
         System.out.println(datiCorretti.country + datiCorretti.city + datiCorretti.address);
-        *//*if(utenteTrovato==null)
+        /*if(utenteTrovato==null)
             return false;
-        return true;*//*
-        return datiCorretti != null;*/
+        return true;*/
+        return datiCorretti != null;
 
-   // }
+    }
 }

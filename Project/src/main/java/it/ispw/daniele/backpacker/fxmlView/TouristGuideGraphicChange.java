@@ -27,11 +27,11 @@ public class TouristGuideGraphicChange extends GUIChangeTemplate{
         this.catcher(new GUIAction() {
             @Override
             public void action() throws IOException {
-                HomeUserController huc = new HomeUserController();
+                HomeUserController homeUserController = new HomeUserController();
                 FXMLLoader loader = new FXMLLoader();
                 FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Home-Page.fxml");
                 Parent fxmlLoader = loader.load(fileInputStream);
-                loader.setController(huc);
+                loader.setController(homeUserController);
                 scene.setRoot(fxmlLoader);
             }
         });

@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.net.URL;
@@ -27,16 +26,14 @@ public class TouristGuideMenuBarController implements Initializable {
 
     protected static Stack<String> stackScene = new Stack<>();
 
-    private TouristGuideGraphicChange guideGraphicChange;
+    private TouristGuideGraphicChange tGuideGraphicChange;
 
     private static String sel = "home";
-    //String style = "-fx-background-color: trasparent; -fx-border:none; -fx-font-size:16;";
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        this.guideGraphicChange = TouristGuideGraphicChange.getInstance();
+        this.tGuideGraphicChange = TouristGuideGraphicChange.getInstance();
 
         if(stackScene.isEmpty()){
             stackScene.push("home");
@@ -45,110 +42,72 @@ public class TouristGuideMenuBarController implements Initializable {
         String style = "-fx-underline: true;";
 
         switch (sel){
-            case "home" -> {
-                this.LabelHome.setStyle(style);
-            }
-            case "profile" -> {
-                this.LabelProfile.setStyle(style);
-            }
-            case "result" -> {
-                this.LabelResult.setStyle(style);
-            }
-            case "addItinerary" -> {
-                this.LabelAddItinerary.setStyle(style);
-            }
+            case "home" -> this.LabelHome.setStyle(style);
+            case "profile" -> this.LabelProfile.setStyle(style);
+            case "result" -> this.LabelResult.setStyle(style);
+            case "addItinerary" -> this.LabelAddItinerary.setStyle(style);
             default -> {
             }
-
         }
     }
 
     @FXML
-    public void switchToHome(MouseEvent mouseEvent) throws IOException {
+    public void switchToHome() throws IOException {
         sel = "home";
-        this.guideGraphicChange.switchToHomePage(this.LabelHome.getScene());
+        this.tGuideGraphicChange.switchToHomePage(this.LabelHome.getScene());
         stackScene.push("home");
         //this.LabelHome.setUnderline(true);
         System.out.println(stackScene);
     }
     @FXML
-    public void switchToResult(MouseEvent mouseEvent) {
+    public void switchToResult() {
         sel = "result";
-        this.guideGraphicChange.switchToResult(this.LabelResult.getScene());
+        this.tGuideGraphicChange.switchToResult(this.LabelResult.getScene());
         stackScene.push("result");
         System.out.println(stackScene);
 
         //this.tggc.switchToResult(this.LabelResult.getScene());
     }
     @FXML
-    public void switchToProfile(MouseEvent mouseEvent) throws IOException {
+    public void switchToProfile() {
         sel = "profile";
-        this.guideGraphicChange.switchToProfile(this.LabelProfile.getScene());
+        this.tGuideGraphicChange.switchToProfile(this.LabelProfile.getScene());
         stackScene.push("profile");
         System.out.println(stackScene);
     }
 
     @FXML
-    public void switchToAddItinerary(MouseEvent mouseEvent) throws IOException {
+    public void switchToAddItinerary() throws IOException {
         sel = "addItinerary";
-        this.guideGraphicChange.switchToAddItinerary(this.LabelAddItinerary.getScene());
+        this.tGuideGraphicChange.switchToAddItinerary(this.LabelAddItinerary.getScene());
         stackScene.push("addItinerary");
     }
 
     @FXML
     public void logout(){
+        stackScene.empty();
         SessionUser.getInstance().closeSession();
-        this.guideGraphicChange.switchToLogin(this.LabelHome.getScene());
+        this.tGuideGraphicChange.switchToLogin(this.LabelHome.getScene());
     }
 
-    public void switchToSignUp(MouseEvent mouseEvent) {
-    }
+    public void undoScene() throws IOException {
 
-    /*public void init(String selected) {
+        if (stackScene.size() > 1) {
+            String from = stackScene.get(stackScene.size() - 2);
+            sel = stackScene.get(stackScene.size() - 2);
+            switch (from) {
+                case "home" -> this.tGuideGraphicChange.switchToHomePage(this.LabelHome.getScene());
+                case "result" -> this.tGuideGraphicChange.switchToResult(this.LabelResult.getScene());
+                case "profile" -> this.tGuideGraphicChange.switchToProfile(this.LabelProfile.getScene());
+                case "addItinerary" -> this.tGuideGraphicChange.switchToProfile(this.LabelAddItinerary.getScene());
+            }
 
-        this.tggc = TouristGuideGraphicChange.getInstance();
-        switch(selected){
-            case "home":
-                this.LabelHome.setStyle(style);
-                break;
-            case "profile":
-                this.LabelProfile.setStyle(style);
-                break;
-            case "result":
-                this.LabelProfile.setStyle(style);
-                break;
-            default:
-                break;
+            stackScene.remove(stackScene.size() - 1);
+
+        } else {
+            this.tGuideGraphicChange.switchToHomePage(this.imageUndo.getScene());
         }
-    }*/
 
-    public void undoScene(MouseEvent mouseEvent) {
     }
 
-    /*@Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        this.guideGraphicChange = TouristGuideGraphicChange.getInstance();
-
-        String style = "-fx-underline: true;";
-
-        switch (sel) {
-            case "home" -> {
-                //    this.LabelHome.setUnderline(true);
-                this.LabelHome.setStyle(style);
-//                this.LabelHome.setUnderline(true);
-            }
-            case "profile" -> {
-                this.LabelProfile.setStyle(style);
-                //this.LabelProfile.setUnderline(true);
-            }
-            case "result" -> {
-                this.LabelResult.setStyle(style);
-            }
-            default -> {
-            }
-
-
-        }
-    }*/
 }

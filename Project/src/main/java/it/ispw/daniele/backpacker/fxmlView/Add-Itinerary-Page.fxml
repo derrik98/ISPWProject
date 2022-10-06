@@ -91,7 +91,7 @@
                                     <Insets right="10.0" />
                                  </HBox.margin>
                               </Text>
-                              <DatePicker fx:id="fieldDate" prefHeight="43.2" prefWidth="248.8" showWeekNumbers="true" />
+                              <DatePicker fx:id="fieldDate" prefHeight="43.2" prefWidth="248.8" />
                            </HBox>
                            <HBox alignment="CENTER_RIGHT">
                               <VBox.margin>

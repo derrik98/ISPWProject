@@ -1,16 +1,12 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
-//import com.jfoenix.controls.JFXSnackbar;
-//import com.jfoenix.controls.JFXSnackbarLayout;
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
-import it.ispw.daniele.backpacker.bean.UserBean;
 import it.ispw.daniele.backpacker.controller.login.LoginController;
 import it.ispw.daniele.backpacker.exceptions.LoginEmptyFieldException;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -19,14 +15,9 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
-import javafx.util.Duration;
 
-import javafx.event.ActionEvent;
-//import java.awt.event.ActionEvent;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.security.Key;
-import java.util.Objects;
 
 public class LoginViewController {
 

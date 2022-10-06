@@ -16,7 +16,7 @@ public class AddItineraryController {
         Date currentDate = new Date();
         List<Double> coordinates = null;
 
-        if(itineraryBean.getName().equals("") || itineraryBean.getLocation().equals("")) {
+        if(itineraryBean.getGuideId().equals("") || itineraryBean.getLocation().equals("")) {
             return false;
         }
 
@@ -46,8 +46,14 @@ public class AddItineraryController {
 
         if(date.before(currentDate)){
             DateFormat outputFormatter = new SimpleDateFormat("dd/MM/yyyy");
-            throw new DateException(outputFormatter.format(date) + " is before current date");
+            //throw new DateException(outputFormatter.format(date) + " is before current date");
         }
-        return itineraryDao.addItinerary(itineraryBean.getName(), itineraryBean.getLocation(), itineraryBean.getArtistId(), date, itineraryBean.getTicketone(), coordinates);
+
+        System.out.println(itineraryBean.getName());
+        System.out.println(itineraryBean.getLocation());
+        System.out.println(itineraryBean.getGuideId());
+        System.out.println(date);
+        System.out.println(itineraryBean.getSteps());
+        return itineraryDao.addItinerary(itineraryBean.getGuideId(), itineraryBean.getLocation(), itineraryBean.getGuideId(), date, itineraryBean.getSteps());
     }
 }
