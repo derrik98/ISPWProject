@@ -21,7 +21,7 @@ public class App extends Application {
         Parent fxmlLoader = loader.load(fileInputStream);
         loader.setController(lvc);
         Scene scene = new Scene(fxmlLoader);
-
+        lvc.init();
         stage.setScene(scene);
         //stage.setMaximized(true);
         stage.show();

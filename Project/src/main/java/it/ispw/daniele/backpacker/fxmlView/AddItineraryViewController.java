@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 public class AddItineraryViewController implements Initializable {
@@ -20,8 +21,9 @@ public class AddItineraryViewController implements Initializable {
     @FXML
     public TextField textFieldPrice;
     @FXML
-    public TextField textFieldPartecipants;
+    public TextField textFieldParticipants;
     public ListView<Object> listView = new ListView<>();
+    public TextField textFieldId;
     @FXML
     private HBox menuBar = new HBox();
     @FXML
@@ -54,10 +56,11 @@ public class AddItineraryViewController implements Initializable {
         System.out.println(this.steps);
 
         System.out.println("condiviso");
+        String id = this.textFieldId.getText();
         String location = this.textFieldCity.getText();
         String date = "";
         String time = this.textFieldTime.getText();
-        String partecipants = this.textFieldPartecipants.getText();
+        String participants = this.textFieldParticipants.getText();
         String price = this.textFieldPrice.getText();
         boolean result = false;
 
@@ -66,15 +69,16 @@ public class AddItineraryViewController implements Initializable {
         }
 
         ItineraryBean itineraryBean = new ItineraryBean();
+        itineraryBean.setItineraryId(id);
         itineraryBean.setGuideId(this.guideBean.getUsername());
         itineraryBean.setDate(date);
         itineraryBean.setLocation(location);
         itineraryBean.setTime(time);
-        itineraryBean.setPartecipants(partecipants);
+        itineraryBean.setParticipants(participants);
         itineraryBean.setPrice(price);
         itineraryBean.setSteps(this.steps);
         System.out.println(this.guideBean.getUsername());
-        System.out.println("Dati" + itineraryBean.getGuideId() + "\n" + itineraryBean.getDate() + "\n" + itineraryBean.getLocation() + "\n" + itineraryBean.getTime() + "\n" + itineraryBean.getPartecipants() + "\n" + itineraryBean.getPrice());
+        System.out.println("Dati" + itineraryBean.getGuideId() + "\n" + itineraryBean.getDate() + "\n" + itineraryBean.getLocation() + "\n" + itineraryBean.getTime() + "\n" + itineraryBean.getParticipants() + "\n" + itineraryBean.getPrice());
 
         try {
             result = controller.addItinerary(itineraryBean);

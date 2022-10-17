@@ -94,11 +94,18 @@ public class SearchController{
     }
 
     public Itinerary createItinerary(Vector<Monument> pointOfInterest) {
+
+        String steps = "";
+        for(int i = 0; i < pointOfInterest.size(); i++){
+            steps = steps + "/" + pointOfInterest.get(i);
+        }
+
+
         Random num = new Random();
         //Vector<String> copyList = pointOfInterest;
         //copyList = attraction;
        // System.out.println(copyList.size());
-        Itinerary itinerary = new Itinerary();
+        Itinerary itinerary = new Itinerary(steps);
         Vector<Monument> vector = new Vector<>();
         //Vector<Itinerary> allItinerary = new Vector<>();
         //System.out.println("COPYLIST   " + copyList);

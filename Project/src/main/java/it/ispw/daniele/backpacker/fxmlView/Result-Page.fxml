@@ -3,6 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
@@ -11,27 +13,23 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17.0.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.fxmlView.ResultController">
+<AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.fxmlView.ResultController">
     <ScrollPane fitToHeight="true" fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <VBox alignment="TOP_CENTER">
-         <StackPane>
-            <children>
-               <Region style="-fx-background-image: url('itinerario.jpg'); -fx-background-size: 100% 100%;" StackPane.alignment="CENTER" />
-               <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="5.0" text="Backpacker">
-                  <font>
-                     <Font size="140.0" />
-                  </font>
-                  <StackPane.margin>
-                     <Insets bottom="30.0" top="30.0" />
-                  </StackPane.margin>
-               </Text>
-            </children>
-         </StackPane>
-         <AnchorPane>
-            <children>
-               <HBox fx:id="menuBar" alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            </children>
-         </AnchorPane>
+           <StackPane>
+              <Region style="-fx-background-image: url('itinerario.jpg'); -fx-background-size: 100% 100%;" StackPane.alignment="CENTER" />
+              <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="5.0" text="Backpacker">
+                 <font>
+                    <Font size="140.0" />
+                 </font>
+                 <StackPane.margin>
+                    <Insets bottom="30.0" top="30.0" />
+                 </StackPane.margin>
+              </Text>
+           </StackPane>
+           <AnchorPane>
+              <HBox fx:id="menuBar" alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+           </AnchorPane>
             <HBox alignment="TOP_CENTER" VBox.vgrow="SOMETIMES">
             <Label text="Search Results for : ">
                <font>
@@ -43,7 +41,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Italia">
+            <Label fx:id="countrySearch" text="none">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -53,7 +51,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Roma">
+            <Label fx:id="citySearch" text="none">
                <font>
                    <Font name="System Bold" size="18.0" />
                </font>
@@ -63,7 +61,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="via del Corso">
+            <Label fx:id="addressSearch" text="none">
                <font>
                    <Font name="System Bold" size="18.0" />
                </font>
@@ -73,7 +71,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="Included">
+            <Label fx:id="isRestaurant" text="none">
                <font>
                    <Font name="System Bold" size="18.0" />
                </font>
@@ -83,7 +81,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label text="5.2 km">
+            <Label fx:id="radiusSearch" text="none">
                <font>
                    <Font name="System Bold" size="18.0" />
                </font>
@@ -92,11 +90,66 @@
                <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
             </VBox.margin>
             </HBox>
-            <VBox fx:id="vBoxResult" alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
-                <VBox.margin>
-                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                </VBox.margin>
-            </VBox>
+         <AnchorPane VBox.vgrow="ALWAYS">
+            <VBox.margin>
+               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </VBox.margin>
+            <children>
+               <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                     <HBox alignment="CENTER">
+                        <VBox.margin>
+                           <Insets bottom="10.0" />
+                        </VBox.margin>
+                        <children>
+                           <Text fx:id="suggestedItinerary" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
+                              <font>
+                                 <Font size="14.0" />
+                              </font>
+                              <HBox.margin>
+                                 <Insets right="10.0" />
+                              </HBox.margin>
+                           </Text>
+                           <ImageView fx:id="guideImage" pickOnBounds="true" preserveRatio="true" />
+                        </children>
+                     </HBox>
+                        <VBox fx:id="vBoxResultGuide" alignment="TOP_CENTER" />
+                  </children>
+               </VBox>
+            </children>
+         </AnchorPane>
+         <AnchorPane layoutX="30.0" layoutY="384.0" VBox.vgrow="ALWAYS">
+            <children>
+               <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                     <HBox alignment="CENTER">
+                        <VBox.margin>
+                           <Insets bottom="10.0" />
+                        </VBox.margin>
+                        <children>
+                           <Text fx:id="selfItinerary" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
+                              <font>
+                                 <Font size="14.0" />
+                              </font>
+                              <HBox.margin>
+                                 <Insets right="10.0" />
+                              </HBox.margin>
+                           </Text>
+                           <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@/guideOff.png" />
+                              </image>
+                           </ImageView>
+                        </children>
+                     </HBox>
+                     <VBox fx:id="vBoxResult" alignment="TOP_CENTER" />
+                  </children>
+               </VBox>
+            </children>
+            <VBox.margin>
+               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </VBox.margin>
+         </AnchorPane>
         </VBox>
     </ScrollPane>
 </AnchorPane>

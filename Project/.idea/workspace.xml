@@ -14,9 +14,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Interface" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -33,6 +33,7 @@
   &quot;keyToString&quot;: {
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/resources&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reactor&quot;
   }
 }</component>
@@ -43,6 +44,7 @@
       <recent name="it.ispw.daniele.backpacker.controller.search" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\Desktop\ISPWProject\trunk\Project\src\main\resources" />
       <recent name="C:\Users\danie\Desktop\Backpacker\src\main\resources" />
       <recent name="C:\Users\danie\Desktop\Backpacker\src\main\resources\it\ispw\daniele\backpacker" />
     </key>
@@ -296,6 +298,16 @@
       <workItem from="1664984638451" duration="5083000" />
       <workItem from="1665062605842" duration="21000" />
       <workItem from="1665062749782" duration="3871000" />
+      <workItem from="1665329749264" duration="4176000" />
+      <workItem from="1665672748278" duration="1952000" />
+      <workItem from="1665674716242" duration="18000" />
+      <workItem from="1665695268209" duration="6243000" />
+      <workItem from="1665739013712" duration="8063000" />
+      <workItem from="1665784677661" duration="5036000" />
+      <workItem from="1665844089268" duration="4280000" />
+      <workItem from="1665856346239" duration="3250000" />
+      <workItem from="1665998912436" duration="4304000" />
+      <workItem from="1666004634145" duration="43000" />
     </task>
     <servers />
   </component>

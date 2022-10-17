@@ -30,9 +30,9 @@
                      </StackPane.margin>
                  </Text>
              </StackPane>
-         <AnchorPane style="-fx-min-width: 100%;">
+         <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="1280.0" style="-fx-min-width: 100%;" VBox.vgrow="ALWAYS">
             <children>
-               <HBox fx:id="menuBar" alignment="CENTER" style="-fx-pref-width: 100%;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               <HBox fx:id="menuBar" alignment="CENTER" prefHeight="70.0" prefWidth="1280.0" style="-fx-pref-width: 100%;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
             </children>
          </AnchorPane>
              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Backpacker" textAlignment="CENTER">

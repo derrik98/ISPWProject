@@ -5,23 +5,22 @@ import java.io.Serializable;
 public class ItineraryBean implements Serializable {
 
     static final long serialVersionUID = 42L;
-    private String steps;
-    private String id;
+    private String itineraryId;
     private String guideId;
-    private String name;
     private String location;
-    private String ticketone;
     private String date;
     private String time;
-    private String partecipants;
+    private String participants;
     private String price;
+    private String steps;
 
-    public String getPartecipants() {
-        return partecipants;
+
+    public String getParticipants() {
+        return participants;
     }
 
-    public void setPartecipants(String partecipants) {
-        this.partecipants = partecipants;
+    public void setParticipants(String participants) {
+        this.participants = participants;
     }
 
     public String getPrice() {
@@ -40,35 +39,12 @@ public class ItineraryBean implements Serializable {
         this.time = time;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getGuideId() {
         return guideId;
     }
 
     public void setGuideId(String guideId) {
         this.guideId = guideId;
-    }
-
-    private double distance;
-
-    public void setId(int id) {
-
-        this.id = "" + id;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public void setLocation(String location) {
@@ -87,14 +63,6 @@ public class ItineraryBean implements Serializable {
         return this.date;
     }
 
-    public void setDistance(double distance) {
-        this.distance = distance;
-    }
-
-    public double getDistance() {
-        return this.distance;
-    }
-
     public String getSteps() {
         return this.steps;
     }
@@ -103,4 +71,11 @@ public class ItineraryBean implements Serializable {
         this.steps = steps;
     }
 
+    public String getItineraryId() {
+        return this.itineraryId;
+    }
+
+    public void setItineraryId(String itineraryId) {
+        this.itineraryId = itineraryId;
+    }
 }

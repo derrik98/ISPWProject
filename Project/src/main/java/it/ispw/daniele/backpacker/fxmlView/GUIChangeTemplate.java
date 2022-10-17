@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -55,6 +56,8 @@ public abstract class GUIChangeTemplate{
                 Parent fxmlLoader = loader.load(fileInputStream);
                 loader.setController(rc);
                 scene.setRoot(fxmlLoader);
+
+
             }
         });
     }
@@ -69,6 +72,7 @@ public abstract class GUIChangeTemplate{
                 Parent fxmlLoader = loader.load(fileInputStream);
                 loader.setController(pc);
                 scene.setRoot(fxmlLoader);
+                //pc.init();
             }
         });
     }
@@ -86,14 +90,13 @@ public abstract class GUIChangeTemplate{
                         Parent fxmlLoader = loader.load(fileInputStream);
                         loader.setController(mbc);
                         pos.getChildren().add(fxmlLoader);
-
                     }
                     case TOURIST_GUIDE -> {
-                        TouristGuideMenuBarController guideBarController = new TouristGuideMenuBarController();
+                        TouristGuideMenuBarController gbc = new TouristGuideMenuBarController();
                         loader = new FXMLLoader();
                         FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/TouristGuideMenuBar.fxml");
                         Parent fxmlLoader = loader.load(fileInputStream);
-                        loader.setController(guideBarController);
+                        loader.setController(gbc);
                         pos.getChildren().add(fxmlLoader);
                     }
                     default -> {

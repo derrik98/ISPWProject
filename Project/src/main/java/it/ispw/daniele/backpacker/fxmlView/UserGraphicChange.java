@@ -33,9 +33,10 @@ public class UserGraphicChange extends GUIChangeTemplate{
                 Parent fxmlLoader = loader.load(fileInputStream);
                 loader.setController(huc);
                 scene.setRoot(fxmlLoader);
-
+                //huc.init();
                 //stackScene.push(fxmlLoader);
                 //homeUserController.init();
+
             }
         });
     }

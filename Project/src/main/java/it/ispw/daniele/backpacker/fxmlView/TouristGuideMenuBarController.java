@@ -26,14 +26,14 @@ public class TouristGuideMenuBarController implements Initializable {
 
     protected static Stack<String> stackScene = new Stack<>();
 
-    private TouristGuideGraphicChange tGuideGraphicChange;
+    private TouristGuideGraphicChange guideGraphicChange;
 
     private static String sel = "home";
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        this.tGuideGraphicChange = TouristGuideGraphicChange.getInstance();
+        this.guideGraphicChange = TouristGuideGraphicChange.getInstance();
 
         if(stackScene.isEmpty()){
             stackScene.push("home");
@@ -54,7 +54,7 @@ public class TouristGuideMenuBarController implements Initializable {
     @FXML
     public void switchToHome() throws IOException {
         sel = "home";
-        this.tGuideGraphicChange.switchToHomePage(this.LabelHome.getScene());
+        this.guideGraphicChange.switchToHomePage(this.LabelHome.getScene());
         stackScene.push("home");
         //this.LabelHome.setUnderline(true);
         System.out.println(stackScene);
@@ -62,7 +62,7 @@ public class TouristGuideMenuBarController implements Initializable {
     @FXML
     public void switchToResult() {
         sel = "result";
-        this.tGuideGraphicChange.switchToResult(this.LabelResult.getScene());
+        this.guideGraphicChange.switchToResult(this.LabelResult.getScene());
         stackScene.push("result");
         System.out.println(stackScene);
 
@@ -71,7 +71,7 @@ public class TouristGuideMenuBarController implements Initializable {
     @FXML
     public void switchToProfile() {
         sel = "profile";
-        this.tGuideGraphicChange.switchToProfile(this.LabelProfile.getScene());
+        this.guideGraphicChange.switchToProfile(this.LabelProfile.getScene());
         stackScene.push("profile");
         System.out.println(stackScene);
     }
@@ -79,7 +79,7 @@ public class TouristGuideMenuBarController implements Initializable {
     @FXML
     public void switchToAddItinerary() throws IOException {
         sel = "addItinerary";
-        this.tGuideGraphicChange.switchToAddItinerary(this.LabelAddItinerary.getScene());
+        this.guideGraphicChange.switchToAddItinerary(this.LabelAddItinerary.getScene());
         stackScene.push("addItinerary");
     }
 
@@ -87,7 +87,7 @@ public class TouristGuideMenuBarController implements Initializable {
     public void logout(){
         stackScene.empty();
         SessionUser.getInstance().closeSession();
-        this.tGuideGraphicChange.switchToLogin(this.LabelHome.getScene());
+        this.guideGraphicChange.switchToLogin(this.LabelHome.getScene());
     }
 
     public void undoScene() throws IOException {
@@ -96,18 +96,17 @@ public class TouristGuideMenuBarController implements Initializable {
             String from = stackScene.get(stackScene.size() - 2);
             sel = stackScene.get(stackScene.size() - 2);
             switch (from) {
-                case "home" -> this.tGuideGraphicChange.switchToHomePage(this.LabelHome.getScene());
-                case "result" -> this.tGuideGraphicChange.switchToResult(this.LabelResult.getScene());
-                case "profile" -> this.tGuideGraphicChange.switchToProfile(this.LabelProfile.getScene());
-                case "addItinerary" -> this.tGuideGraphicChange.switchToProfile(this.LabelAddItinerary.getScene());
+                case "home" -> this.guideGraphicChange.switchToHomePage(this.LabelHome.getScene());
+                case "result" -> this.guideGraphicChange.switchToResult(this.LabelResult.getScene());
+                case "profile" -> this.guideGraphicChange.switchToProfile(this.LabelProfile.getScene());
+                case "addItinerary" -> this.guideGraphicChange.switchToProfile(this.LabelAddItinerary.getScene());
             }
 
             stackScene.remove(stackScene.size() - 1);
 
         } else {
-            this.tGuideGraphicChange.switchToHomePage(this.imageUndo.getScene());
+            this.guideGraphicChange.switchToHomePage(this.imageUndo.getScene());
         }
 
     }
-
 }

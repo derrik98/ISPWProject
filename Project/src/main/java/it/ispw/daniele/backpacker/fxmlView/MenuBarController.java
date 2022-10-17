@@ -18,14 +18,13 @@ public class MenuBarController implements Initializable{
     @FXML
     private Label LabelHome = new Label();
     @FXML
-    Label LabelResult = new Label();
+    private Label LabelResult = new Label();
     @FXML
-    Label LabelProfile = new Label();
+    private Label LabelProfile = new Label();
     @FXML
     public ImageView imageUndo;
 
     protected static Stack<String> stackScene = new Stack<>();
-
 
     private UserGraphicChange ugc;
 
@@ -39,8 +38,6 @@ public class MenuBarController implements Initializable{
         if(stackScene.isEmpty()){
             stackScene.push("home");
         }
-
-        //String style = "-fx-underline: true;";
 
         String style = "-fx-underline: true;";
 
@@ -110,10 +107,8 @@ public class MenuBarController implements Initializable{
                     this.ugc.switchToProfile(this.LabelProfile.getScene());
                 }
             }
-
-            //System.out.println(sel + "      aaaaaaaa");
             stackScene.remove(stackScene.size() - 1);
-            //System.out.println(stackScene);
+
         } else {
             this.ugc.switchToHomePage(this.imageUndo.getScene());
         }

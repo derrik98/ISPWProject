@@ -39,9 +39,6 @@ public class LoginViewController {
     @FXML
     public void loginButtonAction() throws IOException {
 
-        this.textFieldUsername.setStyle("-fx-border-style: none; -fx-border-width: none; -fx-border-color: none");
-        this.textFieldPassword.setStyle("-fx-border-style: none; -fx-border-width: none; -fx-border-color: none");
-
         GeneralUserBean gub = new GeneralUserBean();
         gub.setUsername(this.textFieldUsername.getText());
         gub.setPassword(this.textFieldPassword.getText());
@@ -131,5 +128,12 @@ public class LoginViewController {
         if (keyEvent.getCode().equals(KeyCode.ENTER)){
             this.loginButtonAction();
         }
+    }
+
+    public void init() {
+
+        this.textFieldUsername.setStyle("-fx-border-style: none; -fx-border-width: none; -fx-border-color: none");
+        this.textFieldPassword.setStyle("-fx-border-style: none; -fx-border-width: none; -fx-border-color: none");
+
     }
 }

@@ -49,11 +49,16 @@ public class AddItineraryController {
             //throw new DateException(outputFormatter.format(date) + " is before current date");
         }
 
-        System.out.println(itineraryBean.getName());
         System.out.println(itineraryBean.getLocation());
         System.out.println(itineraryBean.getGuideId());
         System.out.println(date);
         System.out.println(itineraryBean.getSteps());
-        return itineraryDao.addItinerary(itineraryBean.getGuideId(), itineraryBean.getLocation(), itineraryBean.getGuideId(), date, itineraryBean.getSteps());
+
+        if(itineraryDao.getItineraryId(itineraryBean.getItineraryId())){
+            System.out.println("id gia esistente");
+            return false;
+        }
+
+        return itineraryDao.addItinerary(itineraryBean.getItineraryId(), itineraryBean.getGuideId(), itineraryBean.getLocation(), date, itineraryBean.getTime(), itineraryBean.getParticipants(), itineraryBean.getPrice(), itineraryBean.getSteps());
     }
 }

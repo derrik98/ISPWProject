@@ -116,9 +116,9 @@ public class ProfileController implements Initializable {
             System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.USER.name().toLowerCase());
             gub = SessionUser.getInstance().getSession();
 
-           /* this.username.setText(this.gub.getUsername());
+            this.username.setText(this.gub.getUsername());
             this.name.setText(this.gub.getPassword());
-            this.email.setText(this.gub.getEmail());*/
+            this.email.setText(this.gub.getEmail());
 
             System.out.println("Email " + this.gub.getEmail());
             System.out.println("Pass " + this.gub.getPassword());
