@@ -8,27 +8,35 @@ import it.ispw.daniele.backpacker.booktour.BookTourController;
 import it.ispw.daniele.backpacker.entity.Itinerary;
 import it.ispw.daniele.backpacker.utils.Roles;
 import it.ispw.daniele.backpacker.utils.SessionUser;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
-import javafx.scene.control.Accordion;
-import javafx.scene.control.Control;
-import javafx.scene.control.Label;
-import javafx.scene.control.TitledPane;
+import javafx.scene.Parent;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+//import javafx.scene.input.MouseEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.web.WebView;
 
+import java.awt.event.MouseAdapter;
+
+import java.awt.event.MouseListener;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -37,20 +45,26 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ResultController implements Initializable {
-    public Text suggestedItinerary;
+
+    @FXML
+    public Text suggestedItinerary = new Text();
+    @FXML
     public VBox vBoxResultGuide = new VBox();
-    public Text selfItinerary;
-    public ImageView guideImage;
     @FXML
-    private Label countrySearch;
+    public Text selfItinerary = new Text();
     @FXML
-    private Label citySearch;
+    public ImageView guideImage = new ImageView();
+    public StackPane stackPaneResult = new StackPane();
     @FXML
-    private Label addressSearch;
+    private Label countrySearch = new Label();
     @FXML
-    private Label isRestaurant;
+    private Label citySearch = new Label();
     @FXML
-    private Label radiusSearch;
+    private Label addressSearch = new Label();
+    @FXML
+    private Label isRestaurant = new Label();
+    @FXML
+    private Label radiusSearch = new Label();
     @FXML
     private VBox vBoxResult = new VBox();
     @FXML
@@ -66,6 +80,7 @@ public class ResultController implements Initializable {
 
     public ResultController() throws IOException {
     }
+
 
    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -206,7 +221,30 @@ public class ResultController implements Initializable {
                    System.out.println("ITTTT " + it + it.getItineraryId());
 
                    ivBuy.setOnMouseClicked(mouseEvent -> {
-                       //boolean isPart = controller.isParticipating(this.sessionUser, this.itinerary);
+
+                       FXMLLoader loader = new FXMLLoader();
+                       FileInputStream fileInputStream = null;
+                       try {
+
+                           fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/ItineraryDetails-Page.fxml");
+                           Parent fxmlLoader = loader.load(fileInputStream);
+                           ItineraryDetailsController idc =  loader.getController();;
+                          idc.convertItinerary(it);
+                           System.out.println("RRRRRRRRRRRRRRRRRRR " + it);
+                          // ItineraryDetailsController.getInstance().convertItinerary(it);
+                           this.stackPaneResult.getChildren().add(fxmlLoader);
+                           stackPaneResult.getChildren().get(0).setDisable(true);
+                           //loader.setController(idc);
+                       } catch (IOException e) {
+                           throw new RuntimeException(e);
+                       }
+
+                       //loader.setController(suc);
+
+
+
+
+                       /*//boolean isPart = controller.isParticipating(this.sessionUser, this.itinerary);
                        boolean isPart = controller.isParticipating(this.sessionUser, it);
                        if(isPart){
                            controller.removeParticipation(this.sessionUser, this.itinerary);
@@ -214,7 +252,7 @@ public class ResultController implements Initializable {
                        } else {
                            controller.addParticipation(this.sessionUser, it);
                            //this.part.setText("Remove Participation");
-                       }
+                       }*/
                    });
 
                    ivMap.setOnMouseClicked(mouseEvent -> {
@@ -389,4 +427,6 @@ public class ResultController implements Initializable {
 
 
     }
+
+
 }
