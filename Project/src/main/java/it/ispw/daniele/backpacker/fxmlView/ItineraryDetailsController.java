@@ -14,7 +14,7 @@ import javafx.scene.layout.StackPane;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ItineraryDetailsController implements Initializable {
+public class ItineraryDetailsController {
     @FXML
     public Button subscribeButton;
     @FXML
@@ -22,8 +22,8 @@ public class ItineraryDetailsController implements Initializable {
     @FXML
     public AnchorPane APDetails;
 
-    private BookTourController controller = new BookTourController();
-    private GeneralUserBean sessionUser = SessionUser.getInstance().getSession();
+    private final BookTourController controller = new BookTourController();
+    private final GeneralUserBean sessionUser = SessionUser.getInstance().getSession();
 
    public static ItineraryDetailsController instance = null;
 
@@ -47,12 +47,12 @@ public class ItineraryDetailsController implements Initializable {
     public void subscribe() {
 System.out.println(itineraryBean);
         //boolean isPart = controller.isParticipating(this.sessionUser, this.itineraryBean);
-        boolean isPart = controller.isParticipating(this.sessionUser, this.itineraryBean);
+        boolean isPart = controller.isParticipating(this.sessionUser, itineraryBean);
         if(isPart){
-            controller.removeParticipation(this.sessionUser, this.itineraryBean);
+            controller.removeParticipation(this.sessionUser, itineraryBean);
                            //this.part.setText("Add Participation");
         } else {
-            controller.addParticipation(this.sessionUser, this.itineraryBean);
+            controller.addParticipation(this.sessionUser, itineraryBean);
                            //this.part.setText("Remove Participation");
         }
     }
@@ -61,8 +61,4 @@ System.out.println(itineraryBean);
         itineraryBean = it;
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
 }

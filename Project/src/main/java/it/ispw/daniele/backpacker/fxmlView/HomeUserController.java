@@ -20,7 +20,8 @@ import java.math.RoundingMode;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class HomeUserController implements Initializable {
+public class HomeUserController{//
+    // implements Initializable {
 
 
     @FXML
@@ -91,8 +92,22 @@ public class HomeUserController implements Initializable {
 //        System.out.println(this.menuBar.getChildren() + "EEEEEEEEEEE");
 //    }
 
-    @Override
+    /*@Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        if(SessionUser.getInstance().getSession().getRole().equals(Roles.TOURIST_GUIDE.name().toLowerCase())) {
+            TouristGuideGraphicChange tGuideGraphicChange = TouristGuideGraphicChange.getInstance();
+            tGuideGraphicChange.menuBar(this.menuBar, "home");
+            System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.TOURIST_GUIDE.name());
+        }
+        else {
+            UserGraphicChange ugc = UserGraphicChange.getInstance();
+            ugc.menuBar(this.menuBar, "home");
+            System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.USER.name().toLowerCase());
+            //ugc.backButton(this.APHome, "home");
+        }
+    }*/
+
+    public void init() {
         if(SessionUser.getInstance().getSession().getRole().equals(Roles.TOURIST_GUIDE.name().toLowerCase())) {
             TouristGuideGraphicChange tGuideGraphicChange = TouristGuideGraphicChange.getInstance();
             tGuideGraphicChange.menuBar(this.menuBar, "home");

@@ -2,17 +2,14 @@ package it.ispw.daniele.backpacker.fxmlView;
 
 import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import java.util.Stack;
 
-public class MenuBarController implements Initializable{
+public class MenuBarController {
 
     public AnchorPane APMenuBar = new AnchorPane();
     @FXML
@@ -29,33 +26,6 @@ public class MenuBarController implements Initializable{
     private UserGraphicChange ugc;
 
     private static String sel = "home";
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        this.ugc = UserGraphicChange.getInstance();
-
-        if(stackScene.isEmpty()){
-            stackScene.push("home");
-        }
-
-        String style = "-fx-underline: true;";
-
-        switch (sel){
-            case "home" -> {
-                this.LabelHome.setStyle(style);
-            }
-            case "profile" -> {
-                this.LabelProfile.setStyle(style);
-            }
-            case "result" -> {
-                this.LabelResult.setStyle(style);
-            }
-            default -> {
-            }
-
-        }
-    }
 
     @FXML
     public void switchToHome() throws IOException {
@@ -113,5 +83,30 @@ public class MenuBarController implements Initializable{
             this.ugc.switchToHomePage(this.imageUndo.getScene());
         }
 
+    }
+
+    public void init() {
+        this.ugc = UserGraphicChange.getInstance();
+
+        if(stackScene.isEmpty()){
+            stackScene.push("home");
+        }
+
+        String style = "-fx-underline: true;";
+
+        switch (sel){
+            case "home" -> {
+                this.LabelHome.setStyle(style);
+            }
+            case "profile" -> {
+                this.LabelProfile.setStyle(style);
+            }
+            case "result" -> {
+                this.LabelResult.setStyle(style);
+            }
+            default -> {
+            }
+
+        }
     }
 }

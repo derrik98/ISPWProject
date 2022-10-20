@@ -12,7 +12,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 
 import java.net.URL;
-import java.util.Random;
 import java.util.ResourceBundle;
 
 public class AddItineraryViewController implements Initializable {

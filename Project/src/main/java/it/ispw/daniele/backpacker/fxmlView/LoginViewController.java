@@ -61,11 +61,8 @@ public class LoginViewController {
                 su.setSession(gu);
 
                 switch (role) {
-                    case "user" -> {
-                        UserGraphicChange.getInstance().switchToHomePage(this.textFieldUsername.getScene());
-                    }
-                    case "tourist_guide" ->
-                            TouristGuideGraphicChange.getInstance().switchToHomePage(this.textFieldUsername.getScene());
+                    case "user" -> UserGraphicChange.getInstance().switchToHomePage(this.textFieldUsername.getScene());
+                    case "tourist_guide" -> TouristGuideGraphicChange.getInstance().switchToHomePage(this.textFieldUsername.getScene());
                     default -> {
                     }
                 }
@@ -131,9 +128,7 @@ public class LoginViewController {
     }
 
     public void init() {
-
         this.textFieldUsername.setStyle("-fx-border-style: none; -fx-border-width: none; -fx-border-color: none");
         this.textFieldPassword.setStyle("-fx-border-style: none; -fx-border-width: none; -fx-border-color: none");
-
     }
 }

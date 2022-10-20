@@ -8,7 +8,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefWidth="1920.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.fxmlView.TouristGuideMenuBarController">
    <children>
@@ -83,6 +85,29 @@
                   <Image url="@/annulla.png" />
                </image>
             </ImageView>
+            <StackPane alignment="BOTTOM_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0">
+               <children>
+                  <ImageView fx:id="imageMessage" fitHeight="50.0" fitWidth="50.0" nodeOrientation="INHERIT" onMouseClicked="#viewNotification" pickOnBounds="true" preserveRatio="true">
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <image>
+                        <Image url="@/message.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="notificationNumber" onMouseClicked="#viewNotification" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+                     <StackPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </StackPane.margin>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Text>
+               </children>
+            </StackPane>
          </children>
       </HBox>
    </children>

@@ -5,14 +5,21 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Stack;
 
-public class TouristGuideMenuBarController implements Initializable {
+public class TouristGuideMenuBarController {
 
+
+    @FXML
+    public Text notificationNumber;
+    public ImageView imageMessage;
     @FXML
     private Label LabelHome = new Label();
     @FXML
@@ -29,27 +36,6 @@ public class TouristGuideMenuBarController implements Initializable {
     private TouristGuideGraphicChange guideGraphicChange;
 
     private static String sel = "home";
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        this.guideGraphicChange = TouristGuideGraphicChange.getInstance();
-
-        if(stackScene.isEmpty()){
-            stackScene.push("home");
-        }
-
-        String style = "-fx-underline: true;";
-
-        switch (sel){
-            case "home" -> this.LabelHome.setStyle(style);
-            case "profile" -> this.LabelProfile.setStyle(style);
-            case "result" -> this.LabelResult.setStyle(style);
-            case "addItinerary" -> this.LabelAddItinerary.setStyle(style);
-            default -> {
-            }
-        }
-    }
 
     @FXML
     public void switchToHome() throws IOException {
@@ -108,5 +94,30 @@ public class TouristGuideMenuBarController implements Initializable {
             this.guideGraphicChange.switchToHomePage(this.imageUndo.getScene());
         }
 
+    }
+
+    public void viewNotification() {
+        this.guideGraphicChange.switchToNotifications(this.imageMessage.getScene());
+    }
+
+    public void init() {
+        notificationNumber.setText("10");
+
+        this.guideGraphicChange = TouristGuideGraphicChange.getInstance();
+
+        if(stackScene.isEmpty()){
+            stackScene.push("home");
+        }
+
+        String style = "-fx-underline: true;";
+
+        switch (sel){
+            case "home" -> this.LabelHome.setStyle(style);
+            case "profile" -> this.LabelProfile.setStyle(style);
+            case "result" -> this.LabelResult.setStyle(style);
+            case "addItinerary" -> this.LabelAddItinerary.setStyle(style);
+            default -> {
+            }
+        }
     }
 }

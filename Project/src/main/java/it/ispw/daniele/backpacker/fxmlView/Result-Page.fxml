@@ -30,134 +30,116 @@
            <AnchorPane>
               <HBox fx:id="menuBar" alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
            </AnchorPane>
-         <StackPane fx:id="stackPaneResult" VBox.vgrow="SOMETIMES">
-            <VBox.margin>
-               <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
-            </VBox.margin>
-            <children>
-               <VBox>
-                  <children>
-                        <HBox alignment="TOP_CENTER">
+            <StackPane fx:id="stackPaneResult" VBox.vgrow="SOMETIMES">
+                <VBox.margin>
+                    <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                </VBox.margin>
+                <VBox fx:id="vBoxDynamic" alignment="CENTER">
+                    <HBox fx:id="hBoxInput" alignment="TOP_CENTER">
                         <Label text="Search Results for : ">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
+                            <font>
+                                <Font size="18.0" />
+                            </font>
                         </Label>
                         <Label text="Country = ">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
+                            <font>
+                                <Font size="18.0" />
+                            </font>
                         </Label>
                         <Label fx:id="countrySearch" text="none">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
                         </Label>
                         <Label text=", City = ">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
+                            <font>
+                                <Font size="18.0" />
+                            </font>
                         </Label>
                         <Label fx:id="citySearch" text="none">
-                           <font>
-                               <Font name="System Bold" size="18.0" />
-                           </font>
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
                         </Label>
                         <Label text=", Address = ">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
+                            <font>
+                                <Font size="18.0" />
+                            </font>
                         </Label>
                         <Label fx:id="addressSearch" text="none">
-                           <font>
-                               <Font name="System Bold" size="18.0" />
-                           </font>
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
                         </Label>
                         <Label text=", Restaurant = ">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
+                            <font>
+                                <Font size="18.0" />
+                            </font>
                         </Label>
                         <Label fx:id="isRestaurant" text="none">
-                           <font>
-                               <Font name="System Bold" size="18.0" />
-                           </font>
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
                         </Label>
                         <Label text=", Search radius = ">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
+                            <font>
+                                <Font size="18.0" />
+                            </font>
                         </Label>
                         <Label fx:id="radiusSearch" text="none">
-                           <font>
-                               <Font name="System Bold" size="18.0" />
-                           </font>
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
                         </Label>
-                        </HBox>
-                     <AnchorPane VBox.vgrow="ALWAYS">
+                    </HBox>
+                    <AnchorPane VBox.vgrow="ALWAYS">
                         <VBox.margin>
-                           <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                         </VBox.margin>
-                        <children>
-                           <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                              <children>
-                                 <HBox alignment="CENTER">
-                                    <VBox.margin>
-                                       <Insets bottom="10.0" />
-                                    </VBox.margin>
-                                    <children>
-                                       <Text fx:id="suggestedItinerary" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
-                                          <font>
-                                             <Font size="14.0" />
-                                          </font>
-                                          <HBox.margin>
-                                             <Insets right="10.0" />
-                                          </HBox.margin>
-                                       </Text>
-                                       <ImageView fx:id="guideImage" pickOnBounds="true" preserveRatio="true" />
-                                    </children>
-                                 </HBox>
-                                    <VBox fx:id="vBoxResultGuide" alignment="TOP_CENTER" />
-                              </children>
-                           </VBox>
-                        </children>
-                     </AnchorPane>
-                     <AnchorPane VBox.vgrow="ALWAYS">
-                        <children>
-                           <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                              <children>
-                                 <HBox alignment="CENTER">
-                                    <VBox.margin>
-                                       <Insets bottom="10.0" />
-                                    </VBox.margin>
-                                    <children>
-                                       <Text fx:id="selfItinerary" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
-                                          <font>
-                                             <Font size="14.0" />
-                                          </font>
-                                          <HBox.margin>
-                                             <Insets right="10.0" />
-                                          </HBox.margin>
-                                       </Text>
-                                       <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                                          <image>
-                                             <Image url="@/guideOff.png" />
-                                          </image>
-                                       </ImageView>
-                                    </children>
-                                 </HBox>
-                                 <VBox fx:id="vBoxResult" alignment="TOP_CENTER" />
-                              </children>
-                           </VBox>
-                        </children>
+                        <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <HBox alignment="CENTER">
+                                <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                </VBox.margin>
+                                <Text fx:id="suggestedItinerary" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets right="10.0" />
+                                    </HBox.margin>
+                                </Text>
+                                <ImageView fx:id="guideImage" pickOnBounds="true" preserveRatio="true" />
+                            </HBox>
+                            <VBox fx:id="vBoxResultGuide" alignment="TOP_CENTER" />
+                        </VBox>
+                    </AnchorPane>
+                    <AnchorPane VBox.vgrow="ALWAYS">
                         <VBox.margin>
-                           <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                         </VBox.margin>
-                     </AnchorPane>
-                  </children>
-               </VBox>
-            </children>
-         </StackPane>
+                        <VBox alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <HBox alignment="CENTER">
+                                <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                </VBox.margin>
+                                <Text fx:id="selfItinerary" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets right="10.0" />
+                                    </HBox.margin>
+                                </Text>
+                                <ImageView fx:id="guideOff" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                    <Image url="@/guideOff.png" />
+                                </ImageView>
+                            </HBox>
+                            <VBox fx:id="vBoxResult" alignment="TOP_CENTER" />
+                        </VBox>
+                    </AnchorPane>
+                </VBox>
+            </StackPane>
         </VBox>
     </ScrollPane>
 </AnchorPane>

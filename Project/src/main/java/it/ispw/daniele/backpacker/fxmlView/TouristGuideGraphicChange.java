@@ -23,27 +23,27 @@ public class TouristGuideGraphicChange extends GUIChangeTemplate{
         return instance;
     }
 
-    public void switchToHomePage(Scene scene) throws IOException {
-        this.catcher(new GUIAction() {
-            @Override
-            public void action() throws IOException {
-                HomeUserController homeUserController = new HomeUserController();
-                FXMLLoader loader = new FXMLLoader();
-                FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Home-Page.fxml");
-                Parent fxmlLoader = loader.load(fileInputStream);
-                loader.setController(homeUserController);
-                scene.setRoot(fxmlLoader);
-            }
+    public void switchToHomePage(Scene scene) {
+        this.catcher(() -> {
+            FXMLLoader loader = new FXMLLoader();
+            FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Home-Page.fxml");
+            Parent fxmlLoader = loader.load(fileInputStream);
+            HomeUserController huc = loader.getController();
+            huc.init();
+            scene.setRoot(fxmlLoader);
         });
     }
 
 
     public void switchToAddItinerary(Scene scene) throws IOException {
-        AddItineraryViewController itineraryController = new AddItineraryViewController();
         FXMLLoader loader = new FXMLLoader();
         FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Add-Itinerary-Page.fxml");
         Parent fxmlLoader = loader.load(fileInputStream);
-        loader.setController(itineraryController);
+        /*AddItineraryController aic = loader.getController();
+        aic.init();*/
         scene.setRoot(fxmlLoader);
+    }
+
+    public void switchToNotifications(Scene scene) {
     }
 }

@@ -23,17 +23,16 @@ public class UserGraphicChange extends GUIChangeTemplate{
         return instance;
     }
     @Override
-    public void switchToHomePage(Scene scene) throws IOException {
+    public void switchToHomePage(Scene scene) {
         this.catcher(new GUIAction() {
             @Override
             public void action() throws IOException {
-                HomeUserController huc = new HomeUserController();
                 FXMLLoader loader = new FXMLLoader();
                 FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Home-Page.fxml");
                 Parent fxmlLoader = loader.load(fileInputStream);
-                loader.setController(huc);
+                HomeUserController huc = loader.getController();
+                huc.init();
                 scene.setRoot(fxmlLoader);
-                //huc.init();
                 //stackScene.push(fxmlLoader);
                 //homeUserController.init();
 

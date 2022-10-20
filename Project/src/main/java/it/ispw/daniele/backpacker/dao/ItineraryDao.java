@@ -18,8 +18,8 @@ public class ItineraryDao extends DaoTemplate{
     private static final String DATE= "date";
     private static final String STEPS = "steps";
 
-    private static final String ADD_PART = "addpart";
-    private static final String REMOVE_PART = "removepart";
+    private static final String ADD_PART = "add_part";
+    private static final String REMOVE_PART = "remove_part";
 
 
     public Itinerary getItinerary(String city){//, String role) {

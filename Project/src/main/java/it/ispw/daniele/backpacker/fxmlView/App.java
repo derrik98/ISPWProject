@@ -15,13 +15,16 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
 
         stage.setTitle("Backpacker");
-        LoginViewController lvc = new LoginViewController();
+        //LoginViewController lvc = new LoginViewController();
         FXMLLoader loader = new FXMLLoader();
         FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/LoginViewPage.fxml");
         Parent fxmlLoader = loader.load(fileInputStream);
-        loader.setController(lvc);
+
+        //loader.setController(lvc);
         Scene scene = new Scene(fxmlLoader);
+        LoginViewController lvc = loader.getController();
         lvc.init();
+        //lvc.init();
         stage.setScene(scene);
         //stage.setMaximized(true);
         stage.show();
