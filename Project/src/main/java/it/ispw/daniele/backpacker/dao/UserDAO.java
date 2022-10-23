@@ -20,7 +20,7 @@ public class UserDAO extends DaoTemplate{
 //    private static final String ACCEPTFRIENDREQUEST = "acceptfriendrequest";
 //    private static final String REMOVEFRIENDREQUEST = "removefrinedrequest";
 //    private static final String REQUESTFRIEND = "requestfriend";
-    private static final String SEARCHUSER = "searchuser";
+    private static final String SEARCH_USER = "search_user";
 //    private static final String VIEWFRIENDS = "viewfriends";
 //    private static final String VIEWFRIENDSREQUESTS = "viewfriendsrequests";
 //    private static final String SEARCHFRIENDREQUEST = "searchfriendrequest";
@@ -70,7 +70,7 @@ public class UserDAO extends DaoTemplate{
 //    }
 //
     public List<User> getSearchUser(String searchString, String caller){
-        return this.queryDatabase(searchString, caller, SEARCHUSER);
+        return this.queryDatabase(searchString, caller, SEARCH_USER);
     }
 //
 //    public List<User> getFriends(String username){
@@ -163,7 +163,7 @@ public class UserDAO extends DaoTemplate{
                     String sql;
                     switch (operation) {
 
-                        case SEARCHUSER:
+                        case SEARCH_USER:
                             System.out.println("sonosqui");
                             sql = "call backpacker.search_user(?);\r\n";
                             stm = conn.prepareStatement(sql);

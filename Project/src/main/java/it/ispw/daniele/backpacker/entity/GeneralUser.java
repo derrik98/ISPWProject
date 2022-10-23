@@ -6,7 +6,7 @@ public class GeneralUser {
     protected String username;
     protected String password;
     protected String email;
-    private String role;
+    private final String role;
 
     public GeneralUser() {
         this.username = "";

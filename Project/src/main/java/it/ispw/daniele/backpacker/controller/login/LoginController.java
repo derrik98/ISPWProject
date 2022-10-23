@@ -44,11 +44,6 @@ public class LoginController {
 //        RestaurantOwnerDao ad = new RestaurantOwnerDao();
 //        return ad.createRestaurantOwner(ab.getUsername(), ab.getPassword(), ab.getBandName(), ab.getProfilePicture(), ab.getEmail());
 //    }
-//
-    /*public boolean createTouristGuide(TouristGuideBean tgb) {
-        TouristGuideDao tgd = new TouristGuideDao();
-        return tgd.createTouristGuide(tgb.getUsername(), tgb.getName(), tgb.getSurname(), tgb.getEmail(), tgb.getPassword(), tgb.getProfilePicture(), tgb.getIdentificationCode());
-    }*/
 
     public boolean createTouristGuide(TouristGuideBean tgb) {
         TouristGuideDao tgd = new TouristGuideDao();

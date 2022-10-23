@@ -1,17 +1,14 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
+import it.ispw.daniele.backpacker.bean.TouristGuideBean;
+import it.ispw.daniele.backpacker.bean.UserBean;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import java.util.Stack;
 
 public class TouristGuideMenuBarController {
@@ -34,37 +31,26 @@ public class TouristGuideMenuBarController {
     protected static Stack<String> stackScene = new Stack<>();
 
     private TouristGuideGraphicChange guideGraphicChange;
-
-    private static String sel = "home";
+    private TouristGuideBean myUser;
 
     @FXML
     public void switchToHome() throws IOException {
-        sel = "home";
         this.guideGraphicChange.switchToHomePage(this.LabelHome.getScene());
         stackScene.push("home");
-        //this.LabelHome.setUnderline(true);
-        System.out.println(stackScene);
     }
     @FXML
     public void switchToResult() {
-        sel = "result";
         this.guideGraphicChange.switchToResult(this.LabelResult.getScene());
         stackScene.push("result");
-        System.out.println(stackScene);
-
-        //this.tggc.switchToResult(this.LabelResult.getScene());
     }
     @FXML
-    public void switchToProfile() {
-        sel = "profile";
-        this.guideGraphicChange.switchToProfile(this.LabelProfile.getScene());
+    public void switchToTGuideDetails() {
+        this.guideGraphicChange.switchToTGuideDet(this.LabelProfile.getScene(), this.myUser);
         stackScene.push("profile");
-        System.out.println(stackScene);
     }
 
     @FXML
     public void switchToAddItinerary() throws IOException {
-        sel = "addItinerary";
         this.guideGraphicChange.switchToAddItinerary(this.LabelAddItinerary.getScene());
         stackScene.push("addItinerary");
     }
@@ -80,12 +66,11 @@ public class TouristGuideMenuBarController {
 
         if (stackScene.size() > 1) {
             String from = stackScene.get(stackScene.size() - 2);
-            sel = stackScene.get(stackScene.size() - 2);
             switch (from) {
                 case "home" -> this.guideGraphicChange.switchToHomePage(this.LabelHome.getScene());
                 case "result" -> this.guideGraphicChange.switchToResult(this.LabelResult.getScene());
-                case "profile" -> this.guideGraphicChange.switchToProfile(this.LabelProfile.getScene());
-                case "addItinerary" -> this.guideGraphicChange.switchToProfile(this.LabelAddItinerary.getScene());
+                case "profile" -> this.guideGraphicChange.switchToTGuideDet(this.LabelProfile.getScene(), this.myUser);
+                case "addItinerary" -> this.guideGraphicChange.switchToAddItinerary(this.LabelAddItinerary.getScene());
             }
 
             stackScene.remove(stackScene.size() - 1);
@@ -100,7 +85,7 @@ public class TouristGuideMenuBarController {
         this.guideGraphicChange.switchToNotifications(this.imageMessage.getScene());
     }
 
-    public void init() {
+    public void init(String selected) {
         notificationNumber.setText("10");
 
         this.guideGraphicChange = TouristGuideGraphicChange.getInstance();
@@ -111,7 +96,7 @@ public class TouristGuideMenuBarController {
 
         String style = "-fx-underline: true;";
 
-        switch (sel){
+        switch (selected){
             case "home" -> this.LabelHome.setStyle(style);
             case "profile" -> this.LabelProfile.setStyle(style);
             case "result" -> this.LabelResult.setStyle(style);

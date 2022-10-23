@@ -112,10 +112,23 @@ public class ResultController {
             guideOff.setVisible(false);
 
             hBoxInput.getChildren().removeAll();
-            Hyperlink link = new Hyperlink("Home Page");
+            Hyperlink link = new Hyperlink("Start the search from the Home-Page");
             link.setOnMouseClicked(mouseEvent -> {
-                UserGraphicChange.getInstance().switchToHomePage(selfItinerary.getScene());
-                UserGraphicChange.getInstance().menuBar(this.menuBar, "home");
+                /*UserGraphicChange.getInstance().switchToHomePage(selfItinerary.getScene());
+                UserGraphicChange.getInstance().menuBar(this.menuBar, "home");*/
+                if(SessionUser.getInstance().getSession().getRole().equals(Roles.TOURIST_GUIDE.name().toLowerCase())) {
+                    TouristGuideGraphicChange i = TouristGuideGraphicChange.getInstance();
+                    //i.switchToHomePage(this.menuBar.getScene());
+
+                    i.menuBar(this.menuBar, "home");
+                    System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.TOURIST_GUIDE.name());
+                }
+                else {
+                    UserGraphicChange ugc = UserGraphicChange.getInstance();
+                    ugc.switchToHomePage(this.menuBar.getScene());
+                    //ugc.menuBar(this.menuBar, "home");
+                    System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.USER.name().toLowerCase());
+                }
 
             });
 

@@ -36,7 +36,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </Label>
-            <Label fx:id="LabelProfile" onMouseClicked="#switchToProfile" style="-fx-border: none;;" text="Profile">
+            <Label fx:id="LabelProfile" onMouseClicked="#switchToUserDet" style="-fx-border: none;;" text="Profile">
                <font>
                   <Font size="40.0" />
                </font>

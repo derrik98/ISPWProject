@@ -1,9 +1,9 @@
 package it.ispw.daniele.backpacker.entity;
 
 public class User extends GeneralUser{
-    private String name;
-    private String surname;
-    private String profilePicture;
+    private final String name;
+    private final String surname;
+    private final String profilePicture;
 
     public User(String username, String password, String name,
                 String surname, String profilePicture, String email) {

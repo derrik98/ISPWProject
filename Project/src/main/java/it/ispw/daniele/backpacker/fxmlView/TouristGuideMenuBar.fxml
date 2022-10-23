@@ -49,7 +49,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Label>
-            <Label fx:id="LabelProfile" onMouseClicked="#switchToProfile" text="Profile">
+            <Label fx:id="LabelProfile" onMouseClicked="#switchToTGuideDetails" text="Profile">
                <font>
                   <Font size="40.0" />
                </font>

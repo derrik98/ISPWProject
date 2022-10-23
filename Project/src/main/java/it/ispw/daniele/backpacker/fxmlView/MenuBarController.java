@@ -1,12 +1,12 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
+import it.ispw.daniele.backpacker.bean.UserBean;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
-import java.io.IOException;
 import java.util.Stack;
 
 public class MenuBarController {
@@ -24,32 +24,24 @@ public class MenuBarController {
     protected static Stack<String> stackScene = new Stack<>();
 
     private UserGraphicChange ugc;
-
-    private static String sel = "home";
+    private UserBean myUser;
 
     @FXML
-    public void switchToHome() throws IOException {
-        sel = "home";
+    public void switchToHome() {
         this.ugc.switchToHomePage(this.LabelHome.getScene());
         stackScene.push("home");
-        //this.LabelHome.setUnderline(true);
-        System.out.println(stackScene);
     }
 
     @FXML
     public void switchToResult() {
-        sel = "result";
         this.ugc.switchToResult(this.LabelResult.getScene());
         stackScene.push("result");
-        System.out.println(stackScene);
     }
 
     @FXML
-    public void switchToProfile(){
-        sel = "profile";
-        this.ugc.switchToProfile(this.LabelProfile.getScene());
+    public void switchToUserDet(){
+        this.ugc.switchToUserDet(this.LabelProfile.getScene(), this.myUser);
         stackScene.push("profile");
-        System.out.println(stackScene);
     }
 
     @FXML
@@ -61,21 +53,14 @@ public class MenuBarController {
 
 
     @FXML
-    public void undoScene() throws IOException {
+    public void undoScene() {
 
         if (stackScene.size() > 1) {
             String from = stackScene.get(stackScene.size() - 2);
-            sel = stackScene.get(stackScene.size() - 2);
             switch (from) {
-                case "home" -> {
-                    this.ugc.switchToHomePage(this.LabelHome.getScene());
-                }
-                case "result" -> {
-                    this.ugc.switchToResult(this.LabelResult.getScene());
-                }
-                case "profile" -> {
-                    this.ugc.switchToProfile(this.LabelProfile.getScene());
-                }
+                case "home" -> this.ugc.switchToHomePage(this.LabelHome.getScene());
+                case "result" -> this.ugc.switchToResult(this.LabelResult.getScene());
+                case "profile" -> this.ugc.switchToUserDet(this.LabelProfile.getScene(), this.myUser);
             }
             stackScene.remove(stackScene.size() - 1);
 
@@ -85,7 +70,7 @@ public class MenuBarController {
 
     }
 
-    public void init() {
+    public void init(String selected) {
         this.ugc = UserGraphicChange.getInstance();
 
         if(stackScene.isEmpty()){
@@ -94,16 +79,10 @@ public class MenuBarController {
 
         String style = "-fx-underline: true;";
 
-        switch (sel){
-            case "home" -> {
-                this.LabelHome.setStyle(style);
-            }
-            case "profile" -> {
-                this.LabelProfile.setStyle(style);
-            }
-            case "result" -> {
-                this.LabelResult.setStyle(style);
-            }
+        switch (selected){
+            case "home" -> this.LabelHome.setStyle(style);
+            case "profile" -> this.LabelProfile.setStyle(style);
+            case "result" -> this.LabelResult.setStyle(style);
             default -> {
             }
 

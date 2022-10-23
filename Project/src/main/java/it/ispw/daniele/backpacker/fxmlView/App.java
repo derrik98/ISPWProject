@@ -17,7 +17,7 @@ public class App extends Application {
         stage.setTitle("Backpacker");
         //LoginViewController lvc = new LoginViewController();
         FXMLLoader loader = new FXMLLoader();
-        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/LoginViewPage.fxml");
+        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/LoginView-Page.fxml");
         Parent fxmlLoader = loader.load(fileInputStream);
 
         //loader.setController(lvc);

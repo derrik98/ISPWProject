@@ -7,7 +7,6 @@ import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
 import it.ispw.daniele.backpacker.utils.Roles;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -17,12 +16,8 @@ import javafx.scene.layout.HBox;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class HomeUserController{//
-    // implements Initializable {
-
+public class HomeUserController{
 
     @FXML
     private HBox menuBar = new HBox();
@@ -85,28 +80,6 @@ public class HomeUserController{//
         }
     }
 
-//    public void init(){
-//        UserGraphicChange ugc = UserGraphicChange.getInstance();
-//
-//        ugc.menuBar(this.menuBar, "home");
-//        System.out.println(this.menuBar.getChildren() + "EEEEEEEEEEE");
-//    }
-
-    /*@Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        if(SessionUser.getInstance().getSession().getRole().equals(Roles.TOURIST_GUIDE.name().toLowerCase())) {
-            TouristGuideGraphicChange tGuideGraphicChange = TouristGuideGraphicChange.getInstance();
-            tGuideGraphicChange.menuBar(this.menuBar, "home");
-            System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.TOURIST_GUIDE.name());
-        }
-        else {
-            UserGraphicChange ugc = UserGraphicChange.getInstance();
-            ugc.menuBar(this.menuBar, "home");
-            System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.USER.name().toLowerCase());
-            //ugc.backButton(this.APHome, "home");
-        }
-    }*/
-
     public void init() {
         if(SessionUser.getInstance().getSession().getRole().equals(Roles.TOURIST_GUIDE.name().toLowerCase())) {
             TouristGuideGraphicChange tGuideGraphicChange = TouristGuideGraphicChange.getInstance();
@@ -120,21 +93,5 @@ public class HomeUserController{//
             //ugc.backButton(this.APHome, "home");
         }
     }
-
-    /*public void init(){
-        *//*if(SessionUser.getInstance().getSession().getRole().equals(Roles.TOURIST_GUIDE.name().toLowerCase())) {
-            TouristGuideGraphicChange tGuideGraphicChange = TouristGuideGraphicChange.getInstance();
-            tGuideGraphicChange.menuBar(this.menuBar, "home");
-            System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.TOURIST_GUIDE.name());
-        }
-        else {*//*
-            UserGraphicChange ugc = UserGraphicChange.getInstance();
-            ugc.menuBar(this.menuBar, "home");
-            System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.USER.name().toLowerCase());
-            //ugc.backButton(this.APHome, "home");
-        //}
-
-    }*/
-
 
 }
