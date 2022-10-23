@@ -1,19 +1,18 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
+import it.ispw.daniele.backpacker.bean.TouristGuideBean;
 import it.ispw.daniele.backpacker.bean.UserBean;
+import it.ispw.daniele.backpacker.dao.TouristGuideDao;
 import it.ispw.daniele.backpacker.dao.UserDAO;
+import it.ispw.daniele.backpacker.entity.TouristGuide;
 import it.ispw.daniele.backpacker.entity.User;
-import it.ispw.daniele.backpacker.utils.Roles;
+import it.ispw.daniele.backpacker.utils.Controller;
 import it.ispw.daniele.backpacker.utils.SessionUser;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Label;
 import javafx.scene.control.TitledPane;
@@ -27,109 +26,76 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.web.WebView;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class ProfileController {
-
-    @FXML
-    private ImageView imageSettings;
-    @FXML
-    private Text textSettings;
-    @FXML
-    private VBox vBoxProfile;
-    @FXML
-    private Label username;
-    @FXML
-    private Label name = new Label();
-    @FXML
-    private Label surname;
-    @FXML
-    private Label email;
-    @FXML
-    private HBox menuBar = new HBox();
-
-    private final Accordion accordionResult = new Accordion();
+public class TGuideDetailsController extends Controller {
+    public HBox menuBar;
+    public Label username;
+    public Label name;
+    public Label surname;
+    public Label email;
+    public Label vat;
+    public ImageView imageSettings;
+    public Text textSettings;
+    public VBox vBoxProfile;
 
     private GeneralUserBean gub;
+    private final Accordion accordionResult = new Accordion();
 
-
-
-    public void switchToSettings() throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        FileInputStream fileInputStream = new FileInputStream("src/main/resources/it/ispw/daniele/backpacker/Edit-Profile-Page.fxml");
-        Parent fxmlLoader = loader.load(fileInputStream);
-        Scene scene = this.imageSettings.getScene();
-        scene.setRoot(fxmlLoader);
-        //stackScene.push(fxmlLoader);
+    public void switchToSettings(MouseEvent mouseEvent) {
     }
 
     public void showInfoSettings(MouseEvent mouseEvent) {
-        textSettings.setVisible(true);
     }
 
     public void notShowInfoSettings(MouseEvent mouseEvent) {
-        textSettings.setVisible(false);
     }
 
-    public List<UserBean> getSearchUser(String searchString, String caller){
-        UserDAO ud = new UserDAO();
-        List<User> l = ud.getSearchUser(searchString, caller);
-        return this.convert(l);
+    /*public List<TouristGuideBean> getSearchUser(String searchString, String caller){
+        TouristGuideDao ud = new TouristGuideDao();
+        List<TouristGuide> l = ud.getSearchUser(searchString, caller);
+        return this.convert(l.get(0));
+    }*/
+
+    public TouristGuideBean getSearchUser(String searchString, String caller){
+        TouristGuideDao ud = new TouristGuideDao();
+        List<TouristGuide> l = ud.getSearchUser(searchString, caller);
+        return this.convert(l.get(0));
     }
 
-    private List<UserBean> convert(List<User> l) {
-        List<UserBean> lb = new ArrayList<>();
-        for(int i = 0; i < l.size(); i++){
-            User u = l.get(i);
-            UserBean ub = new UserBean();
-            ub.setUsername(u.getUsername());
-            ub.setName(u.getName());
-            ub.setSurname(u.getSurname());
-            ub.setProfilePicture(u.getProfilePicture());
-            ub.setEmail(u.getEmail());
-            lb.add(ub);
-        }
-        return lb;
-    }
+    public void init(TouristGuideBean myUser) {
 
+        TouristGuideGraphicChange tgc = new TouristGuideGraphicChange();
+        tgc.menuBar(this.menuBar, "profile");
 
-    public void init() {
-
-        UserGraphicChange ugc = UserGraphicChange.getInstance();
-        ugc.menuBar(this.menuBar, "profile");
-        System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.USER.name().toLowerCase());
         gub = SessionUser.getInstance().getSession();
 
         this.username.setText(this.gub.getUsername());
         this.name.setText(this.gub.getPassword());
         this.email.setText(this.gub.getEmail());
 
-        System.out.println("Email " + this.gub.getEmail());
-        System.out.println("Pass " + this.gub.getPassword());
-        System.out.println("User " + this.gub.getUsername());
+        //List<TouristGuideBean> users = this.getSearchUser("search_tguide", SessionUser.getInstance().getSession().getUsername());
+        TouristGuideBean users = this.getSearchUser("search_t_guide", SessionUser.getInstance().getSession().getUsername());
 
-        System.out.println(gub);
-
-        List<UserBean> users = this.getSearchUser("searchuser", SessionUser.getInstance().getSession().getUsername());
-        System.out.println(SessionUser.getInstance().getSession().getUsername());
-        System.out.println("aaaaa" + users);
-
-        for(int i = 0;i < users.size(); i++){
+        /*for(int i = 0; i < users.size(); i++){
             System.out.println(users.get(i).getName());
             System.out.println(users.get(i).getSurname());
             System.out.println(users.get(i).getEmail());
             System.out.println(users.get(i).getPassword());
             System.out.println(users.get(i).getUsername());
-        }
+        }*/
 
-        this.username.setText(users.get(0).getUsername());
+        /*this.username.setText(users.get(0).getUsername());
         this.name.setText(users.get(0).getName());
         this.email.setText(users.get(0).getEmail());
-        this.surname.setText(users.get(0).getSurname());
+        this.surname.setText(users.get(0).getSurname());*/
+
+        this.username.setText(users.getUsername());
+        this.name.setText(users.getName());
+        this.email.setText(users.getEmail());
+        this.surname.setText(users.getSurname());
+        this.vat.setText(users.getIdentificationCode());
 
         //UserGraphicChange ugc = UserGraphicChange.getInstance();
 
@@ -199,4 +165,5 @@ public class ProfileController {
         }
         vBoxProfile.getChildren().add(accordion);
     }
+
 }
