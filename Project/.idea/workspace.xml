@@ -59,7 +59,7 @@
       <recent name="it.ispw.daniele.backpacker.fxmlView" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="Application.CLI">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.fxmlView.App" />
       <module name="Backpacker" />
@@ -73,12 +73,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Sample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.Sample" />
+    <configuration name="CLI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.fxmlView.CLI" />
       <module name="Backpacker" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="it.ispw.daniele.backpacker.fxmlView.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommandLine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.fxmlView.CLI.CommandLine" />
+      <module name="Backpacker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.ispw.daniele.backpacker.fxmlView.CLI.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -88,19 +101,6 @@
     </configuration>
     <configuration name="ScrollString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.fxmlView.ScrollString" />
-      <module name="Backpacker" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.ispw.daniele.backpacker.fxmlView.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SimpleSlideShow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.SimpleSlideShow" />
       <module name="Backpacker" />
       <extension name="coverage">
         <pattern>
@@ -127,11 +127,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CLI" />
+        <item itemvalue="Application.CommandLine" />
         <item itemvalue="Application.App" />
         <item itemvalue="Application.ScrollString" />
         <item itemvalue="Application.SubSceneExample" />
-        <item itemvalue="Application.Sample" />
-        <item itemvalue="Application.SimpleSlideShow" />
       </list>
     </recent_temporary>
   </component>
@@ -321,6 +321,8 @@
       <workItem from="1666567697602" duration="3178000" />
       <workItem from="1666611276643" duration="4269000" />
       <workItem from="1666619273795" duration="4853000" />
+      <workItem from="1666624548165" duration="780000" />
+      <workItem from="1666625468715" duration="1742000" />
     </task>
     <servers />
   </component>
