@@ -1,6 +1,5 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
-import it.ispw.daniele.backpacker.bean.UserBean;
 import it.ispw.daniele.backpacker.utils.Roles;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

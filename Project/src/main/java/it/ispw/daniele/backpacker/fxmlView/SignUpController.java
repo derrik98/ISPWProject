@@ -3,64 +3,35 @@ package it.ispw.daniele.backpacker.fxmlView;
 import it.ispw.daniele.backpacker.bean.TouristGuideBean;
 import it.ispw.daniele.backpacker.bean.UserBean;
 import it.ispw.daniele.backpacker.controller.login.LoginController;
+import it.ispw.daniele.backpacker.utils.FileManager;
 import it.ispw.daniele.backpacker.utils.Roles;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
 
 public class SignUpController{
 
     @FXML
-    private Label USER;
+    private Label TOURIST_GUIDE;
+    public TextField textFieldImage;
     @FXML
-    private Label restaurantOwnerSignUp;
+    private Label USER;
     @FXML
     private TextField textFieldEmailSignUp,textFieldNameSignUp, textFieldSurnameSignUp, textFieldPassSignUp, textFieldConfPassSignUp;
     @FXML
     private TextField textFieldVATNumber;
-    @FXML
-    private Button buttonSignUp;
-    @FXML
-    private Button buttonSignUpRest;
-    @FXML
-    private VBox dynamicZone;
+
     private File imageFile = null;
 
-    public void switchToGenericUserSignUpPage() throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/SignUp-Page.fxml");
-        Parent fxmlLoader = loader.load(fileInputStream);
-//        Scene scene = this.USER.getScene();
-//        scene.setRoot(fxmlLoader);
-        dynamicZone.getChildren().remove(0, dynamicZone.getChildren().size());
-        dynamicZone.getChildren().add(fxmlLoader);
-        //stackScene.push(fxmlLoader);
-    }
-
-    public void switchToRestaurantOwnerSignUpPage() throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Tourist-Guide-SignUp-Page.fxml" +
-                "");
-        Parent fxmlLoader = loader.load(fileInputStream);
-//        Scene scene = this.restaurantOwnerSignUp.getScene();
-//        scene.setRoot(fxmlLoader);
-        dynamicZone.getChildren().remove(0, dynamicZone.getChildren().size());
-        dynamicZone.getChildren().add(fxmlLoader);
-        //stackScene.push(fxmlLoader);
-    }
-
     @FXML
-    public void signUp(ActionEvent event){
+    public void signUp(){
         LoginController lc = new LoginController();
 
         boolean regResult = false;
@@ -74,20 +45,24 @@ public class SignUpController{
         email = textFieldEmailSignUp.getText();
         username = textFieldNameSignUp.getText();
         password = textFieldPassSignUp.getText();
-        userType = USER.getId();
+        if(this.USER.isUnderline()){
+            userType = USER.getId();
+        }
+        else {
+            userType = TOURIST_GUIDE.getId();
+        }
 
-
-        String filename;
+        String fileName;
         String newFileName;
 
-        //        if(this.imageFile == null){
-//            filename = "";
-//            newFileName = "";
-//        }
-//        else{
-//            filename = this.imageFile.getName();
-//            newFileName = username + filename;
-//        }
+        if(this.imageFile == null) {
+            fileName="";
+            newFileName="";
+        }else {
+            fileName=this.imageFile.getName();
+            newFileName=username+fileName;
+        }
+
         if (userType.equals(Roles.USER.name())){
             String name = this.textFieldNameSignUp.getText();
             String surname = this.textFieldSurnameSignUp.getText();
@@ -97,8 +72,7 @@ public class SignUpController{
             ub.setSurname(surname);
             ub.setEmail(email);
             ub.setPassword(password);
-            ub.setProfilePicture("");
-            //u.setProfilePicture(newFileName);
+            ub.setProfilePicture(newFileName);
             regResult = lc.createUser(ub);
         }
         else if(userType.equals(Roles.TOURIST_GUIDE.name())){
@@ -111,27 +85,26 @@ public class SignUpController{
             tgb.setSurname(surname);
             tgb.setEmail(email);
             tgb.setPassword(password);
-            //tgb.setProfilePicture("");
-            //u.setProfilePicture(newFileName);
+            tgb.setProfilePicture(newFileName);
             tgb.setIdentificationCode(VATNumb);
             regResult = lc.createTouristGuide(tgb);
         }
 
         if(Boolean.TRUE.equals(regResult)){
             System.out.println("REGISTRATION SUCCESSFULL");
-//            if(this.imageFile != null){
-//                String path = FileManager.PROFILE;
-//                File file = new File(path, filename);
-//                File newFile = new File(path, newFileName);
-//                try(InputStream inputStream = new FileInputStream(this.imageFile)){
-//                    Files.copy(inputStream, file.toPath());
-//                }catch (Exception e){
-//                    System.out.println("Warning image");
-//                }
-//                if(!file.renameTo(newFile)){
-//                    System.out.println("unable to rename");
-//                }
-            //           }
+            if(this.imageFile != null){
+                String path = FileManager.PROFILE;
+                File file = new File(path, fileName);
+                File newFile = new File(path, newFileName);
+                try(InputStream inputStream = new FileInputStream(this.imageFile)){
+                    Files.copy(inputStream, file.toPath());
+                }catch (Exception e){
+                    System.out.println("Warning image");
+                }
+                if(!file.renameTo(newFile)){
+                    System.out.println("unable to rename");
+                }
+                       }
         }
         else{
             System.out.println("unsuccessfull registration");
@@ -142,89 +115,33 @@ public class SignUpController{
         this.textFieldPassSignUp.setText("");
         this.textFieldConfPassSignUp.setText("");
         this.textFieldSurnameSignUp.setText("");
-        //this.textFieldVATNumber.setText("");
+        this.textFieldVATNumber.setText("");
+        this.imageFile = null;
+        this.textFieldImage.setText("No image selected");
     }
 
-    /*public void signUp(MouseEvent mouseEvent) {
+    @FXML
+    public void selectImage() {
+        final FileChooser fc=new FileChooser();
+        fc.setTitle("Select image");
+        fc.setInitialDirectory(new File(System.getProperty("user.home")));
+        fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JPG","*.jpg"),
+                new FileChooser.ExtensionFilter("PNG","*.png"));
+        this.imageFile=fc.showOpenDialog(new Stage());
+        if(this.imageFile!=null)this.textFieldImage.setText(this.imageFile.getName());
+    }
 
-        LoginController loginController = new LoginController();
-        Boolean regResult = false;
-        String email = "";
-        String username = "";
-        String password = "";
-        String userType = "";
+    @FXML
+    public void switchToUserSignUpPage() {
+        this.textFieldVATNumber.setDisable(true);
+        this.USER.setUnderline(true);
+        this.TOURIST_GUIDE.setUnderline(false);
+    }
 
-        email = textFieldEmailSignUp.getText();
-        username = textFieldNameSignUp.getText();
-        password = textFieldPassSignUp.getText();
-        //userType = this.typeOfUserField.getValue();
-        userType = USER.getId();
-
-        String filename;
-        String newFileName;
-
-//        if(this.imageFile == null){
-//            filename = "";
-//            newFileName = "";
-//        }
-//        else{
-//            filename = this.imageFile.getName();
-//            newFileName = username + filename;
-//        }
-        if (userType.equals(Roles.USER.name())){
-            String firstName = this.textFieldNameSignUp.getText();
-            String lastName = this.textFieldSurnameSignUp.getText();
-            UserBean u = new UserBean();
-            u.setUsername(username);
-            u.setName(firstName);
-            u.setSurname(lastName);
-            u.setEmail(email);
-            u.setPassword(password);
-            u.setProfilePicture("");
-            //u.setProfilePicture(newFileName);
-            regResult = loginController.createUser(u);
-        }
-//        else if(userType.equals(RESTAURANT_OWNER)){
-//System.out.println("ristoratore");
-//        }
-
-        if(Boolean.TRUE.equals(regResult)){
-            System.out.println("REGISTRATION SUCCESSFULL");
-//            if(this.imageFile != null){
-//                String path = FileManager.PROFILE;
-//                File file = new File(path, filename);
-//                File newFile = new File(path, newFileName);
-//                try(InputStream inputStream = new FileInputStream(this.imageFile)){
-//                    Files.copy(inputStream, file.toPath());
-//                }catch (Exception e){
-//                    System.out.println("Warning image");
-//                }
-//                if(!file.renameTo(newFile)){
-//                    System.out.println("unable to rename");
-//                }
- //           }
-        }
-        else{
-            System.out.println("unsuccessfull registration");
-        }
-
-        this.textFieldEmailSignUp.setText("");
-        this.textFieldNameSignUp.setText("");
-        this.textFieldPassSignUp.setText("");
-        this.textFieldConfPassSignUp.setText("");
-        this.textFieldSurnameSignUp.setText("");
-
-    }*/
-//        RegisterBean registerBean = new RegisterBean(textFieldEmailSignUp.getText(),
-//                textFieldNameSignUp.getText(), textFieldSurnameSignUp.getText(),
-//                textFieldPassSignUp.getText(), textFieldConfPassSignUp.getText()).getInstance();
-//
-//        System.out.println("Email " + textFieldEmailSignUp.getText() + "\tName " + textFieldNameSignUp.getText() + "\tSurname " + textFieldSurnameSignUp.getText()
-//                + "\tPass " + textFieldPassSignUp.getText() + "\t ConfPass " + textFieldConfPassSignUp.getText());
-//    }
-
-    public void signUpRest(MouseEvent mouseEvent) {
-        System.out.println("Email " + textFieldEmailSignUp.getText() + "\tName " + textFieldNameSignUp.getText() + "\tSurname " + textFieldSurnameSignUp.getText()
-                + "\tPass " + textFieldPassSignUp.getText() + "\t ConfPass " + textFieldConfPassSignUp.getText() + "\t VAT " + textFieldVATNumber.getText());
+    @FXML
+    public void switchToTGuideSignUpPage() {
+        this.textFieldVATNumber.setDisable(false);
+        this.USER.setUnderline(false);
+        this.TOURIST_GUIDE.setUnderline(true);
     }
 }

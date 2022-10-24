@@ -9,11 +9,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import java.io.FileInputStream;
@@ -25,19 +22,15 @@ public class LoginViewController {
     public Label LabelLogin;
     @FXML
     public Label LabelSignUp;
-    public ImageView imageUndo;
     @FXML
     public VBox dynamicZone;
-    @FXML
-    private AnchorPane APLogin;
-
     @FXML
     private TextField textFieldUsername = new TextField();
     @FXML
     private TextField textFieldPassword = new TextField();
 
     @FXML
-    public void loginButtonAction() throws IOException {
+    public void loginButtonAction() {
 
         GeneralUserBean gub = new GeneralUserBean();
         gub.setUsername(this.textFieldUsername.getText());
@@ -72,23 +65,6 @@ public class LoginViewController {
             this.textFieldPassword.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
             System.out.println("Login error");
         }
-
-
-
-//        if(!textFieldUserLogin.getText().equals("") || !textFieldPassLogin.getText().equals("")){
-//            GeneralUserBean loginBean = new GeneralUserBean(textFieldUserLogin.getText(), textFieldPassLogin.getText()).getInstance();
-//            System.out.println("User " + textFieldUserLogin.getText() + "\tPass " + textFieldPassLogin.getText());
-//            showFeedback(1);
-//        }
-//        else{
-//            showFeedback(0);
-//        }
-
-
-       //);
-//        homeBean.setCountry(textFieldCountry.getText());
-//        homeBean.setCity(textFieldCity.getText());
-//        homeBean.setAddress(textFieldAddress.getText());
     }
 
     public void switchToSignUp() throws IOException {
@@ -117,11 +93,8 @@ public class LoginViewController {
 
     }
 
-    public void undoScene(MouseEvent mouseEvent) {
-    }
-
     @FXML
-    public void enterKeyPressed(KeyEvent keyEvent) throws IOException {
+    public void enterKeyPressed(KeyEvent keyEvent) {
         if (keyEvent.getCode().equals(KeyCode.ENTER)){
             this.loginButtonAction();
         }
