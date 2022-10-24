@@ -1,7 +1,6 @@
 package it.ispw.daniele.backpacker.dao;
 
 import it.ispw.daniele.backpacker.entity.User;
-import it.ispw.daniele.backpacker.utils.DBLoginConnection;
 import it.ispw.daniele.backpacker.utils.DBUserConnection;
 
 import java.sql.Connection;
@@ -197,7 +196,7 @@ public class UserDAO extends DaoTemplate{
                             System.out.println("sono qui" + username + "   " + email);
 
                             if(profilePicture == null || profilePicture.equals("")) {
-                                //profilePicture = "concert.jpg";
+                                profilePicture = "user.png";
                             }
 
                             l.add(new User(username, name, surname, profilePicture, email));

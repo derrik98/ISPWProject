@@ -64,7 +64,7 @@ public class TouristGuideDao extends DaoTemplate{
                             String vatNum = rs.getString("identification_code");
 
                             if(profilePicture == null || profilePicture.equals("")) {
-                                //profilePicture = "concert.jpg";
+                                profilePicture = "tourist_guide.png";
                             }
 
                             l.add(new TouristGuide(username, name, surname, profilePicture, email, vatNum));

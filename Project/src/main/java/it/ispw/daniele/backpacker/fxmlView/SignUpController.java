@@ -94,6 +94,7 @@ public class SignUpController{
             System.out.println("REGISTRATION SUCCESSFULL");
             if(this.imageFile != null){
                 String path = FileManager.PROFILE;
+                System.out.println(path);
                 File file = new File(path, fileName);
                 File newFile = new File(path, newFileName);
                 try(InputStream inputStream = new FileInputStream(this.imageFile)){

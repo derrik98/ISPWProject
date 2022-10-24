@@ -1,10 +1,15 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
+import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.bean.UserBean;
+import it.ispw.daniele.backpacker.booktour.BookTourController;
+import it.ispw.daniele.backpacker.dao.ItineraryDao;
 import it.ispw.daniele.backpacker.dao.UserDAO;
+import it.ispw.daniele.backpacker.entity.Itinerary;
 import it.ispw.daniele.backpacker.entity.User;
 import it.ispw.daniele.backpacker.utils.Controller;
+import it.ispw.daniele.backpacker.utils.FileManager;
 import it.ispw.daniele.backpacker.utils.Roles;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.fxml.FXML;
@@ -26,15 +31,20 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.scene.transform.Scale;
 import javafx.scene.web.WebView;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class UserDetailsController extends Controller {
 
+    @FXML
+    public ImageView profilePicture;
     @FXML
     private ImageView imageSettings;
     @FXML
@@ -55,8 +65,6 @@ public class UserDetailsController extends Controller {
     private final Accordion accordionResult = new Accordion();
 
     private GeneralUserBean gub;
-
-
 
     public void switchToSettings() throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -96,9 +104,9 @@ public class UserDetailsController extends Controller {
 
         gub = SessionUser.getInstance().getSession();
 
-        this.username.setText(this.gub.getUsername());
+        /*this.username.setText(this.gub.getUsername());
         this.name.setText(this.gub.getPassword());
-        this.email.setText(this.gub.getEmail());
+        this.email.setText(this.gub.getEmail());*/
 
         //List<UserBean> users = this.getSearchUser("search_user", SessionUser.getInstance().getSession().getUsername());
         UserBean users = this.getSearchUser("search_user", SessionUser.getInstance().getSession().getUsername());
@@ -121,6 +129,14 @@ public class UserDetailsController extends Controller {
         this.email.setText(users.getEmail());
         this.surname.setText(users.getSurname());
 
+        String path = FileManager.PROFILE + File.separator + users.getProfilePicture();
+
+        File file = new File(path);
+        Image image = new Image(file.toURI().toString());
+        this.profilePicture.setImage(image);
+        this.profilePicture.setFitHeight(150);
+        this.profilePicture.setFitWidth(150);
+
         //UserGraphicChange ugc = UserGraphicChange.getInstance();
 
         //this.username.setText(gu.getUsername());
@@ -129,6 +145,26 @@ public class UserDetailsController extends Controller {
         //ugc.menuBar(this.menuBar, "profile");
 
         vBoxProfile.getChildren().add(accordionResult);
+
+
+        BookTourController btc = new BookTourController();
+        List<ItineraryBean> it;
+        it = btc.getItinerary(users.getUsername(), "user");
+
+        for(int j = 0;  j < it.size(); j++) {
+            ResultController r = new ResultController();
+            String[] steps = it.get(j).getSteps().split("/");
+            ArrayList<String> als = new ArrayList<>();
+            for (int i = 0; i < steps.length; i++) {
+                als.add(i, steps[i]);
+            }
+
+            //r.createTable(als, it.get(j));
+
+            Accordion accordion = r.createTable(als, it.get(j));
+            vBoxProfile.getChildren().add(accordion);
+        }
+        /*vBoxResultGuide.getChildren().add(accordion);
 
 
         Accordion accordion = new Accordion();
@@ -187,6 +223,7 @@ public class UserDetailsController extends Controller {
             titledPane.setContent(v);
             accordion.getPanes().add(titledPane);
         }
-        vBoxProfile.getChildren().add(accordion);
+        vBoxProfile.getChildren().add(accordion);*/
     }
+
 }

@@ -45,14 +45,16 @@ public class ItineraryDetailsController {
 
     @FXML
     public void subscribe() {
-System.out.println(itineraryBean);
+        System.out.println(itineraryBean);
         //boolean isPart = controller.isParticipating(this.sessionUser, this.itineraryBean);
         boolean isPart = controller.isParticipating(this.sessionUser, itineraryBean);
         if(isPart){
             controller.removeParticipation(this.sessionUser, itineraryBean);
+            this.subscribeButton.setText("Subscribe");
                            //this.part.setText("Add Participation");
         } else {
             controller.addParticipation(this.sessionUser, itineraryBean);
+            this.subscribeButton.setText("Remove");
                            //this.part.setText("Remove Participation");
         }
     }

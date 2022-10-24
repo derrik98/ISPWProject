@@ -91,7 +91,7 @@ public class ResultController {
 
         BookTourController btc = new BookTourController();
         List<ItineraryBean> itineraries = new ArrayList<>();
-        ItineraryBean it;// = new ItineraryBean();
+        //ItineraryBean it;// = new ItineraryBean();
         HomeBean hb = HomeBean.getInstance();
 
         if (hb.getCountry() != null && hb.getCity() != null && hb.getAddress() != null) {
@@ -112,7 +112,7 @@ public class ResultController {
             guideOff.setVisible(false);
 
             hBoxInput.getChildren().removeAll();
-            Hyperlink link = new Hyperlink("Start the search from the Home-Page");
+            Hyperlink link = new Hyperlink("Start from the Home-Page");
             link.setOnMouseClicked(mouseEvent -> {
                 /*UserGraphicChange.getInstance().switchToHomePage(selfItinerary.getScene());
                 UserGraphicChange.getInstance().menuBar(this.menuBar, "home");*/
@@ -136,28 +136,31 @@ public class ResultController {
         }
 
         //try {
-
-        it = btc.getItinerary(citySearch.getText());
+        List<ItineraryBean> it;
+        it = btc.getItinerary(citySearch.getText(), "city");
 
         if(it == null){
             System.out.println("DATABASE " + it);
         }
         else{
-            System.out.println(it.getSteps());
-            suggestedItinerary.setText("Suggested Itinerary");
-            guideImage.setImage(new Image("guideOn.png"));
-            guideImage.setFitHeight(50);
-            guideImage.setFitHeight(50);
 
-            String[] steps = it.getSteps().split("/");
-            ArrayList<String> als = new ArrayList<>();
-            for(int i = 0; i < steps.length; i++){
-                als.add(i, steps[i]);
+            for(int j = 0; j < it.size(); j++) {
+                System.out.println(it.get(j).getSteps());
+                suggestedItinerary.setText("Suggested Itinerary");
+                guideImage.setImage(new Image("guideOn.png"));
+                guideImage.setFitHeight(50);
+                guideImage.setFitHeight(50);
+
+                String[] steps = it.get(j).getSteps().split("/");
+                ArrayList<String> als = new ArrayList<>();
+                for (int i = 0; i < steps.length; i++) {
+                    als.add(i, steps[i]);
+                }
+                System.out.println("als " + als);
+                //Accordion accordion = new Accordion();
+                Accordion accordion = createTable(als, it.get(j));
+                vBoxResultGuide.getChildren().add(accordion);
             }
-            System.out.println("als " + als);
-            //Accordion accordion = new Accordion();
-            Accordion accordion = createTable(als, it);
-            vBoxResultGuide.getChildren().add(accordion);
         }
 
        /*} catch (NoMusicEventFoundException e) {
@@ -304,7 +307,7 @@ public class ResultController {
 
     }
 
-    private Accordion createTable(ArrayList<String> als, ItineraryBean it){
+    public Accordion createTable(ArrayList<String> als, ItineraryBean it){
         Accordion accordion = new Accordion();
         TitledPane titledPane = new TitledPane();
         titledPane.setCollapsible(false);

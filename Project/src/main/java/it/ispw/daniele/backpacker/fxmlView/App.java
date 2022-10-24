@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.FileInputStream;
@@ -15,6 +16,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
 
         stage.setTitle("Backpacker");
+        stage.getIcons().add(new Image("/backpack.png"));
         //LoginViewController lvc = new LoginViewController();
         FXMLLoader loader = new FXMLLoader();
         FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/LoginView-Page.fxml");

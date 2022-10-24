@@ -4,38 +4,28 @@ import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.dao.ItineraryDao;
 import it.ispw.daniele.backpacker.entity.Itinerary;
+import it.ispw.daniele.backpacker.utils.Controller;
 
-public class BookTourController {
+import java.util.List;
 
-    protected ItineraryBean convert(Itinerary itinerary) {
-        ItineraryBean ib = new ItineraryBean();
-        ib.setItineraryId(itinerary.getId());
-        ib.setGuideId(itinerary.getGuideId());
-        ib.setLocation(itinerary.getLocation());
-        ib.setDate(itinerary.getDate());
-        ib.setTime(itinerary.getTime());
-        ib.setParticipants(itinerary.getParticipants());
-        ib.setPrice(itinerary.getPrice());
-        ib.setSteps(itinerary.getSteps());
+public class BookTourController extends Controller {
 
-        return ib;
-    }
-
-    public ItineraryBean getItinerary(String city){//, GeneralUserBean gu) {
+    public List<ItineraryBean> getItinerary(String input, String type){//, GeneralUserBean gu) {
         ItineraryDao id = new ItineraryDao();
-        Itinerary itinerary = id.getItinerary(city);//, gu.getRole());
-        System.out.println(itinerary);
+        List<Itinerary> itinerary = null;
+        switch (type) {
+            case "city" -> itinerary = id.getItinerary(input);
+            case "user" -> itinerary = id.getBookedItineraries(input);
+            default -> {
+            }
+        };
         if(itinerary != null){
-            ItineraryBean ib = this.convert(itinerary);
+            List<ItineraryBean> ib = (List<ItineraryBean>) this.convert(itinerary);
             return ib;
         }
         else{
             return null;
         }
-
-        //ib.setLatitude(me.getCoordinates().get(0));
-        //ib.setLongitude(me.getCoordinates().get(1));
-
     }
 
     public void addParticipation(GeneralUserBean user, ItineraryBean itinerary) {

@@ -1,7 +1,9 @@
 package it.ispw.daniele.backpacker.utils;
 
+import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.bean.TouristGuideBean;
 import it.ispw.daniele.backpacker.bean.UserBean;
+import it.ispw.daniele.backpacker.entity.Itinerary;
 import it.ispw.daniele.backpacker.entity.TouristGuide;
 import it.ispw.daniele.backpacker.entity.User;
 
@@ -39,5 +41,29 @@ public abstract class Controller {
             //lb.add(tgb);
         //}
         return tgb;
+    }
+
+    protected List<ItineraryBean> convert(List<Itinerary> itinerary) {
+        List<ItineraryBean> lb = new ArrayList<>();
+        for (Itinerary it : itinerary) {
+            ItineraryBean ib = this.convert(it);
+            lb.add(ib);
+        }
+
+        return lb;
+    }
+
+    protected ItineraryBean convert(Itinerary itinerary) {
+        ItineraryBean ib = new ItineraryBean();
+        ib.setItineraryId(itinerary.getId());
+        ib.setGuideId(itinerary.getGuideId());
+        ib.setLocation(itinerary.getLocation());
+        ib.setDate(itinerary.getDate());
+        ib.setTime(itinerary.getTime());
+        ib.setParticipants(itinerary.getParticipants());
+        ib.setPrice(itinerary.getPrice());
+        ib.setSteps(itinerary.getSteps());
+
+        return ib;
     }
 }
