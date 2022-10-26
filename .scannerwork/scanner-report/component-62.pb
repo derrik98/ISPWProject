@@ -1,1 +1,1 @@
-> 2javaX"hrHProject/src/main/java/it/ispw/daniele/backpacker/entity/GeneralUser.java
+> 2javaX¾hrXProject/src/main/java/it/ispw/daniele/backpacker/controller/search/SearchController.java

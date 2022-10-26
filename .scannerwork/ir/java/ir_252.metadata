@@ -1,0 +1,7 @@
+it.ispw.daniele.backpacker.fxmlView.AddItineraryViewController#initialize(Ljava/net/URL;Ljava/util/ResourceBundle;)V
+null
+java.lang.String#valueOf(I)Ljava/lang/String;
+it.ispw.daniele.backpacker.controller.addItinerary.AddItineraryController#instance-init#
+it.ispw.daniele.backpacker.controller.addItinerary.AddItineraryController#<init>()V
+it.ispw.daniele.backpacker.utils.SessionUser#getInstance()Lit/ispw/daniele/backpacker/utils/SessionUser;
+it.ispw.daniele.backpacker.fxmlView.TouristGuideGraphicChange#getInstance()Lit/ispw/daniele/backpacker/fxmlView/TouristGuideGraphicChange;

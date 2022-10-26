@@ -1,1 +1,1 @@
- 2xmlXhrProject/.idea/compiler.xml
+ 2xmlXhrProject/.idea/compiler.xml

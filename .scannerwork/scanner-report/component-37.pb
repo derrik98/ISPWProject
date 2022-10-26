@@ -1,1 +1,1 @@
-% 2xmlX	hrProject/.idea/sqldialects.xml
+% 2xmlX	hrProject/.idea/sqldialects.xml

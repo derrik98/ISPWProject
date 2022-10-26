@@ -1,57 +1,39 @@
-package it.ispw.daniele.backpacker.dao;
+package it.ispw.daniele.backpacker.controller.search;
 
-import it.ispw.daniele.backpacker.entity.GeneralUser;
-import it.ispw.daniele.backpacker.utils.DBLoginConnection;
+import it.ispw.daniele.backpacker.bean.HomeBean;
+import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.io.IOException;
 
-public class GeneralUserDao extends DaoTemplate{
+public class CityFromCountry extends JSONFactory{
 
-    public GeneralUser findUser(String username, String password) {
-        return this.execute(new DaoAction<GeneralUser>() {
-            @Override
-            public GeneralUser act() throws ClassNotFoundException, SQLException {
-                Connection conn = null;
-                GeneralUser u = null;
-                conn = DBLoginConnection.getLoginConnection();
-                if(conn != null){
-                    System.out.println("connessoine stabilita");
-                }
-                else{
-                    System.out.println("connessoine non stabilita");
-                }
-                System.out.println(username + password);
+    private static CityFromCountry instance = null;
 
-                String sql = "call backpacker.login(?, ?);\r\n";
-                try(PreparedStatement stm = conn.prepareStatement(sql)){
-                    stm.setString(1, username);
-                    stm.setString(2, password);
-                    try (ResultSet rs = stm.executeQuery()) {
-                        System.out.println(username + password);
-                        if (!rs.first()) // rs not empty
-                            return null;
-
-                        boolean moreThanOne = rs.first() && rs.next();
-                        assert !moreThanOne;
-                        rs.first();
-
-                        String role = rs.getString("role");
-                        System.out.println(role);
-                        String usernameLoaded = rs.getString("username");
-                        System.out.println(username);
-
-                        if(usernameLoaded.equals(username)) {
-                            u = new GeneralUser(usernameLoaded, "", role);
-
-                        }
-                    }
-                }
-                System.out.println(username + password);
-                return u;
-            }
-        });
+    public static synchronized CityFromCountry getInstance() {
+        if(instance==null) {
+            instance = new CityFromCountry();
+        }
+        return instance;
     }
+
+    protected CityFromCountry(){
+    }
+
+    @Override
+    public boolean getJSON(String city, String country) throws CityNotFoundException, IOException {
+        JSONObject json;
+            json = readJsonFromUrl("https://maps.googleapis.com/maps/api/geocode/json?address=" + city
+                    + "&components=country:" + country + "&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");
+            System.out.println(json);
+            System.out.println(json.getString("status"));
+            if(!json.getString("status").equals("OK")) {
+                throw new CityNotFoundException("Questa città non è presente in questo stato");
+            }
+
+        return true;
+
+    }
+
 }

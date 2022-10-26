@@ -1,0 +1,45 @@
+
+±it.ispw.daniele.backpacker.booktour.AddParticipationController#isParticipating(Lit/ispw/daniele/backpacker/bean/GeneralUserBean;Lit/ispw/daniele/backpacker/bean/ItineraryBean;)Zç
+ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/booktour/AddParticipationController.java (&"1*é
+1ç
+ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/booktour/AddParticipationController.java (0Û
+ç
+ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/booktour/AddParticipationController.java" (.1
+%0+it.ispw.daniele.backpacker.dao.ItineraryDao"+it.ispw.daniele.backpacker.dao.ItineraryDaoÖ
+Ç
+ç
+ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/booktour/AddParticipationController.java (0
+%1"5it.ispw.daniele.backpacker.dao.ItineraryDao#<init>()V*3
+1
+%0+it.ispw.daniele.backpacker.dao.ItineraryDaoÅ
+˛
+ç
+ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/booktour/AddParticipationController.java (11
+id+it.ispw.daniele.backpacker.dao.ItineraryDao"__id*3
+1
+%0+it.ispw.daniele.backpacker.dao.ItineraryDao∆√
+ç
+ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/booktour/AddParticipationController.java& (8
+%2java.lang.String"Oit.ispw.daniele.backpacker.bean.GeneralUserBean#getUsername()Ljava/lang/String;*9
+7
+user/it.ispw.daniele.backpacker.bean.GeneralUserBean2getUsername()Õ 
+ç
+ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/booktour/AddParticipationController.java: (T
+%3java.lang.String"Pit.ispw.daniele.backpacker.bean.ItineraryBean#getItineraryId()Ljava/lang/String;*<
+:
+	itinerary-it.ispw.daniele.backpacker.bean.ItineraryBean2getItineraryId()¬ø
+ç
+ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/booktour/AddParticipationController.java (U
+%4java.lang.Boolean"tit.ispw.daniele.backpacker.dao.ItineraryDao#isParticipating(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Boolean;*3
+1
+id+it.ispw.daniele.backpacker.dao.ItineraryDao*
+
+%2java.lang.String*
+
+%3java.lang.String25isParticipating(Ljava/lang/String;Ljava/lang/String;)"ò
+ç
+ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/booktour/AddParticipationController.java (V
+"":7
+user/it.ispw.daniele.backpacker.bean.GeneralUserBean::
+	itinerary-it.ispw.daniele.backpacker.bean.ItineraryBeanBB@
+>it.ispw.daniele.backpacker.booktour.AddParticipationController

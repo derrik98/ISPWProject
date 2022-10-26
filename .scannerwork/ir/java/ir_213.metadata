@@ -1,0 +1,3 @@
+it.ispw.daniele.backpacker.dao.TouristGuideDao#queryDatabase(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
+java.util.Collections#emptyList()Ljava/util/List;
+it.ispw.daniele.backpacker.dao.DaoTemplate#execute(Lit/ispw/daniele/backpacker/dao/DaoAction;)Ljava/lang/Object;

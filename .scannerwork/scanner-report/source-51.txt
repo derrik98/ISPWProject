@@ -1,52 +1,23 @@
-package it.ispw.daniele.backpacker.controller.login;
+package it.ispw.daniele.backpacker.booktour;
 
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
-import it.ispw.daniele.backpacker.bean.TouristGuideBean;
-import it.ispw.daniele.backpacker.bean.UserBean;
-import it.ispw.daniele.backpacker.dao.GeneralUserDao;
-import it.ispw.daniele.backpacker.dao.TouristGuideDao;
-import it.ispw.daniele.backpacker.dao.UserDAO;
-import it.ispw.daniele.backpacker.entity.GeneralUser;
-import it.ispw.daniele.backpacker.exceptions.LoginEmptyFieldException;
+import it.ispw.daniele.backpacker.bean.ItineraryBean;
+import it.ispw.daniele.backpacker.dao.ItineraryDao;
 
-public class LoginController {
-
-    public GeneralUserBean login(GeneralUserBean userBean) throws LoginEmptyFieldException {
-        GeneralUserDao gud = new GeneralUserDao();
-
-        if(userBean.getUsername().equals("")) {
-            throw new LoginEmptyFieldException("Username necessary");
-        }
-        if(userBean.getPassword().equals("")) {
-            throw new LoginEmptyFieldException("Password necessary");
+public class AddParticipationController {
+        public void addParticipation(GeneralUserBean user, ItineraryBean itinerary) {
+            ItineraryDao id = new ItineraryDao();
+            id.addParticipation(user.getUsername(), itinerary.getItineraryId());
         }
 
-        GeneralUser result = gud.findUser(userBean.getUsername(), userBean.getPassword());
-        System.out.println(result);
-        if (result == null)	{
-            return null;
-        } else {
-            GeneralUserBean gu = new GeneralUserBean();
-            gu.setUsername(result.getUsername());
-            gu.setPassword(result.getPassword());
-            gu.setRole(result.getRole());
-            return gu;
+        public void removeParticipation(GeneralUserBean user, ItineraryBean itinerary) {
+            ItineraryDao id = new ItineraryDao();
+           id.removeParticipation(user.getUsername(), itinerary.getItineraryId());
+        }
+
+        public boolean isParticipating(GeneralUserBean user, ItineraryBean itinerary) {
+            ItineraryDao id = new ItineraryDao();
+            return id.isParticipating(user.getUsername(), itinerary.getItineraryId());
         }
     }
 
-    public boolean createUser(UserBean ub) {
-        UserDAO ud = new UserDAO();
-        return ud.createUser(ub.getUsername(), ub.getName(), ub.getSurname(), ub.getEmail(), ub.getPassword(), ub.getProfilePicture());
-    }
-
-//    public boolean createRestayrantOwner(RestaurantOwnerBean ab) {
-//        RestaurantOwnerDao ad = new RestaurantOwnerDao();
-//        return ad.createRestaurantOwner(ab.getUsername(), ab.getPassword(), ab.getBandName(), ab.getProfilePicture(), ab.getEmail());
-//    }
-//
-    public boolean createTouristGuide(TouristGuideBean tgb) {
-        TouristGuideDao tgd = new TouristGuideDao();
-        return tgd.createTouristGuide(tgb.getUsername(), tgb.getName(), tgb.getSurname(), tgb.getEmail(), tgb.getPassword(), tgb.getProfilePicture(), tgb.getIdentificationCode());
-    }
-
-}

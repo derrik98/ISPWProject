@@ -1,16 +1,16 @@
 
-Iit.ispw.daniele.backpacker.bean.RegisterBean#getEmail()Ljava/lang/String;z
-pC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/RegisterBean.javaG G("1*õ
-1z
-pC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/RegisterBean.javaH H(Ú
-×
-z
-pC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/RegisterBean.javaH H(
-%0java.lang.String"__id*;*9.
-,it.ispw.daniele.backpacker.bean.RegisterBean"
-email"–
-z
-pC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/RegisterBean.javaH H(
+Qit.ispw.daniele.backpacker.bean.ItineraryBean#getParticipants()Ljava/lang/String;{
+qC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/ItineraryBean.java (!"1*€
+1{
+qC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/ItineraryBean.java (ã
+à
+{
+qC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/ItineraryBean.java (
+%0java.lang.String"__id*C*A/
+-it.ispw.daniele.backpacker.bean.ItineraryBean"
+participants"—
+{
+qC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/ItineraryBean.java (
 
-%0java.lang.StringB0.
-,it.ispw.daniele.backpacker.bean.RegisterBean
+%0java.lang.StringB1/
+-it.ispw.daniele.backpacker.bean.ItineraryBean

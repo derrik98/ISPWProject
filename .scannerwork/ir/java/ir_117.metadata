@@ -1,0 +1,2 @@
+it.ispw.daniele.backpacker.dao.UserDAO#getSearchUser(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;
+it.ispw.daniele.backpacker.dao.UserDAO#queryDatabase(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;

@@ -1,24 +1,45 @@
-package it.ispw.daniele.backpacker.fxmlView;
+package it.ispw.daniele.backpacker.entity;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
+public class User extends GeneralUser{
+    private final String name;
+    private final String surname;
+    private final String profilePicture;
 
-import java.io.IOException;
-
-public class EditProfileController extends App {
-
-    @FXML
-    private TextField textFieldNameSetting;
-    @FXML
-    private TextField textFieldSurnameSetting;
-    @FXML
-    private TextField textFieldCurrentPassSetting;
-    @FXML
-    private TextField textFieldNewPassSetting;
-    @FXML
-    private TextField textFieldConfNewPassSetting;
-
-
-    public EditProfileController() throws IOException {
+    public User(String username, String password, String name,
+                String surname, String profilePicture, String email) {
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.surname = surname;
+        this.profilePicture = profilePicture;
+        this.email = email;
     }
+
+    public User(String username, String name, String surname, String profilePicture) {
+        this.username = username;
+        this.name = name;
+        this.surname = surname;
+        this.profilePicture = profilePicture;
+    }
+
+    public User(String username, String name, String surname, String profilePicture, String email) {
+        this.username = username;
+        this.name = name;
+        this.surname = surname;
+        this.profilePicture = profilePicture;
+        this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getProfilePicture() {
+        return profilePicture;
+    }
+
 }

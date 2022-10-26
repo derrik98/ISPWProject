@@ -1,1 +1,1 @@
-J 2javaXhrTProject/src/main/java/it/ispw/daniele/backpacker/fxmlView/EditProfileController.java
+J 2javaX.hrAProject/src/main/java/it/ispw/daniele/backpacker/entity/User.java

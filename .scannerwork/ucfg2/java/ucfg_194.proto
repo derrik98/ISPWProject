@@ -1,0 +1,63 @@
+
+lit.ispw.daniele.backpacker.controller.search.JSONFactory#convertString(Ljava/lang/String;)Ljava/lang/String;†
+|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java& &(&"1*º
+1†
+|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java' '(¹
+¶
+†
+|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java' '(
+	newStringjava.lang.String"__id*
+""ÜÙ
+†
+|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java( ((4
+%0java.lang.String"Sjava.lang.String#replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;*
+
+stringjava.lang.String*
+\\s+*
+%2020replaceAll(Ljava/lang/String;Ljava/lang/String;)Ë
+È
+†
+|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java( ((4
+	newStringjava.lang.String"__id*
+
+%0java.lang.Stringµ
+²
+†
+|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java) )(
+%1java.io.PrintStream"__id*
+""ß
+Ü
+†
+|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java) )(2
+%2java.lang.String"__concat*
+
+NEWSTRING *
+
+	newStringjava.lang.Stringž›
+†
+|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java) )(3
+
+%3void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%1java.io.PrintStream*
+
+%2java.lang.String2println(Ljava/lang/String;)µ
+²
+†
+|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java* *(
+%4java.io.PrintStream"__id*
+""¢Ÿ
+†
+|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java* *("
+
+%5void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%4java.io.PrintStream*
+
+stringjava.lang.String2println(Ljava/lang/String;)"ª
+†
+|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java+ +(
+
+	newStringjava.lang.String:
+stringjava.lang.StringB<":
+8it.ispw.daniele.backpacker.controller.search.JSONFactory

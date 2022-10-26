@@ -1,1 +1,1 @@
-T 2javaX°hrPProject/src/main/java/it/ispw/daniele/backpacker/fxmlView/ProfileController.java
+T 2javaXhrTProject/src/main/java/it/ispw/daniele/backpacker/fxmlView/EditProfileController.java

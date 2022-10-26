@@ -1,0 +1,2 @@
+it.ispw.daniele.backpacker.dao.ItineraryDao#getItineraryId(Ljava/lang/String;)Z
+it.ispw.daniele.backpacker.dao.DaoTemplate#execute(Lit/ispw/daniele/backpacker/dao/DaoAction;)Ljava/lang/Object;

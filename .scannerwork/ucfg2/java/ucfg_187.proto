@@ -1,0 +1,50 @@
+
+„it.ispw.daniele.backpacker.dao.TouristGuideDao#queryDatabase(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;|
+rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.java (,"3*›
+2|
+rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javaQ Q("—
+|
+rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javaQ Q(
+
+retjava.util.List*¿	
+3|
+rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.java" (&ëè
+|
+rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.java3 (P6
+%00it.ispw.daniele.backpacker.dao.TouristGuideDao$1"0it.ispw.daniele.backpacker.dao.TouristGuideDao$1Ý
+Ú
+|
+rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.java/ O(	
+%1"java.lang.Object#<init>()V*8
+6
+%00it.ispw.daniele.backpacker.dao.TouristGuideDao$1¬©
+|
+rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.java" O(
+
+%2java.util.List"pit.ispw.daniele.backpacker.dao.DaoTemplate#execute(Lit/ispw/daniele/backpacker/dao/DaoAction;)Ljava/lang/Object;*20
+.it.ispw.daniele.backpacker.dao.TouristGuideDao*8
+6
+%00it.ispw.daniele.backpacker.dao.TouristGuideDao$123execute(Lit/ispw/daniele/backpacker/dao/DaoAction;)¶
+³
+|
+rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.java O(
+retjava.util.List"__id*
+
+%2java.util.List*
+2
+1*‚
+1|
+rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javaS S(å
+â
+|
+rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javaS S(*
+%3java.util.List"1java.util.Collections#emptyList()Ljava/util/List;*"
+java.util.Collections"–
+|
+rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javaS S(+
+
+%3java.util.List:
+stringjava.lang.String:
+callerjava.lang.String:
+	operationjava.lang.StringB20
+.it.ispw.daniele.backpacker.dao.TouristGuideDao

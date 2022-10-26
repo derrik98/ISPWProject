@@ -1,53 +1,778 @@
 
-dit.ispw.daniele.backpacker.controller.search.JSONFactory#readAll(Ljava/io/Reader;)Ljava/lang/String;Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java (!"4*Ø
-2Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java (õò
-Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java ( 
-%3java.lang.StringBuilder":java.lang.StringBuilder#append(C)Ljava/lang/StringBuilder;*
-
-sbjava.lang.StringBuilder*
-""2	append(C)*
-3*Ê
-3Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java (œÃ
-Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java (	
-%2int"java.io.Reader#read()I*
-
-rdjava.io.Reader2read()*
-2
-1*Ü
-4Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java (.ƒ¡
-Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java (,
-%0java.lang.StringBuilder"java.lang.StringBuilder÷
+<it.ispw.daniele.backpacker.fxmlView.ResultController#init()VÇ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaM M("27*’
+13Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaù ù(÷
 ”
-Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java (.
-%1"!java.lang.StringBuilder#<init>()V*
-
-%0java.lang.StringBuilder“
-œ
-Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java (/
-sbjava.lang.StringBuilder"__id*
-
-%0java.lang.StringBuilder*
-3*º
-1Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java (áÑ
-Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java (
-%4java.lang.String"4java.lang.StringBuilder#toString()Ljava/lang/String;*
-
-sbjava.lang.StringBuilder2
-toString()"£
-Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java (
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaù ù('
+%57java.lang.String"
+__arrayGet*
+
+stepsjava.lang.String[]*
+""‰
+·
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaù ù((
+%58void"
+__arrayAdd*
+
+alsjava.util.ArrayList*
+""*
+
+%57java.lang.String*
+13
+11*≥
+24Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java\! \(9ˇ¸
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java\% \(7=
+%306it.ispw.daniele.backpacker.booktour.BookTourController"6it.ispw.daniele.backpacker.booktour.BookTourControllerí
+è
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java\! \(9
+%31"@it.ispw.daniele.backpacker.booktour.BookTourController#<init>()V*?
+=
+%306it.ispw.daniele.backpacker.booktour.BookTourControlleré
+ã
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java\ \(:=
+btc6it.ispw.daniele.backpacker.booktour.BookTourController"__id*?
+=
+%306it.ispw.daniele.backpacker.booktour.BookTourControllerπ∂
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java]. ](9
+%32java.util.ArrayList"java.util.ArrayListÃ
+…
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java]* ](;
+%33"java.util.ArrayList#<init>()V*
+
+%32java.util.ArrayList…
+∆
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java_ _(,/
+%34(it.ispw.daniele.backpacker.bean.HomeBean"`it.ispw.daniele.backpacker.bean.HomeBean#getInstance()Lit/ispw/daniele/backpacker/bean/HomeBean;*,"*
+(it.ispw.daniele.backpacker.bean.HomeBeanÒ
+Ó
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java_ _(-.
+hb(it.ispw.daniele.backpacker.bean.HomeBean"__id*1
+/
+%34(it.ispw.daniele.backpacker.bean.HomeBean™ß
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaa a(
+%35java.lang.String"Git.ispw.daniele.backpacker.bean.HomeBean#getCountry()Ljava/lang/String;*0
+.
+hb(it.ispw.daniele.backpacker.bean.HomeBean2getCountry()*
+20
+23*é
+25Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaW$ W(5˝
+˙
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaW$ W(C<
+%195it.ispw.daniele.backpacker.fxmlView.UserGraphicChange"zit.ispw.daniele.backpacker.fxmlView.UserGraphicChange#getInstance()Lit/ispw/daniele/backpacker/fxmlView/UserGraphicChange;*9"7
+5it.ispw.daniele.backpacker.fxmlView.UserGraphicChangeå
+â
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaW W(D<
+ugc5it.ispw.daniele.backpacker.fxmlView.UserGraphicChange"__id*>
+<
+%195it.ispw.daniele.backpacker.fxmlView.UserGraphicChange‡›
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaX X(/
+%20"Xit.ispw.daniele.backpacker.fxmlView.GUIChangeTemplate#menuBar(LHBox;Ljava/lang/String;)V*>
+<
+ugc5it.ispw.daniele.backpacker.fxmlView.UserGraphicChange*
+""*
+
+result2!menuBar(LHBox;Ljava/lang/String;)≤
+Ø
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaY Y(
+%21java.io.PrintStream"__id*
+""Ÿ
+÷
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaY Y(83
+%22,it.ispw.daniele.backpacker.utils.SessionUser"hit.ispw.daniele.backpacker.utils.SessionUser#getInstance()Lit/ispw/daniele/backpacker/utils/SessionUser;*0".
+,it.ispw.daniele.backpacker.utils.SessionUserÒÓ
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaY Y(E6
+%23/it.ispw.daniele.backpacker.bean.GeneralUserBean"jit.ispw.daniele.backpacker.utils.SessionUser#getSession()Lit/ispw/daniele/backpacker/bean/GeneralUserBean;*5
+3
+%22,it.ispw.daniele.backpacker.utils.SessionUser2getSession()≥∞
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaY Y(O
+%24java.lang.String"Kit.ispw.daniele.backpacker.bean.GeneralUserBean#getRole()Ljava/lang/String;*8
+6
+%23/it.ispw.daniele.backpacker.bean.GeneralUserBean2	getRole()≈
+¬
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaYR Y(\-
+%25&it.ispw.daniele.backpacker.utils.Roles"__id*
+""ÉÄ
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaYR Y(c
+%26java.lang.String"'java.lang.Enum#name()Ljava/lang/String;*/
+-
+%25&it.ispw.daniele.backpacker.utils.Roles2name()˝˙
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaYR Y(q
+%27java.lang.String"0java.lang.String#toLowerCase()Ljava/lang/String;*
+
+%26java.lang.String2toLowerCase()·
+ﬁ
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaY Y(q
+%28java.lang.String"__concat*
+
+%24java.lang.String*
+
+%27java.lang.Stringùö
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaY Y(r
+%29void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%21java.io.PrintStream*
+
+%28java.lang.String2println(Ljava/lang/String;)*
+24*Ö
+15Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaî î(¥
+±
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaî î(
+%48java.io.PrintStream"__id*
+""Ï
+È
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaî# î(,4
+%49-it.ispw.daniele.backpacker.bean.ItineraryBean"
+__arrayGet*
+
+itjava.util.List*
+""≥∞
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaî# î(7
+%50java.lang.String"Jit.ispw.daniele.backpacker.bean.ItineraryBean#getSteps()Ljava/lang/String;*6
+4
+%49-it.ispw.daniele.backpacker.bean.ItineraryBean2
+getSteps()üú
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaî î(8
+%51void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%48java.io.PrintStream*
+
+%50java.lang.String2println(Ljava/lang/String;)Ï
+È
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaö! ö(*4
+%52-it.ispw.daniele.backpacker.bean.ItineraryBean"
+__arrayGet*
+
+itjava.util.List*
+""≥∞
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaö! ö(5
+%53java.lang.String"Jit.ispw.daniele.backpacker.bean.ItineraryBean#getSteps()Ljava/lang/String;*6
+4
+%52-it.ispw.daniele.backpacker.bean.ItineraryBean2
+getSteps()°û
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaö! ö(@
+%54java.lang.String[]"=java.lang.String#split(Ljava/lang/String;)[Ljava/lang/String;*
+
+%53java.lang.String*
+/2split(Ljava/lang/String;) 
+«
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaö ö(A
+stepsjava.lang.String[]"__id*
+
+%54java.lang.String[]ª∏
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaõ, õ(7
+%55java.util.ArrayList"java.util.ArrayListŒ
+À
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaõ( õ(9
+%56"java.util.ArrayList#<init>()V*
+
+%55java.util.ArrayList 
+«
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaõ õ(:
+alsjava.util.ArrayList"__id*
+
+%55java.util.ArrayList*
+13
+11*¡
+26Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaR* R(Cù
+ö
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaR* R(QC
+%9=it.ispw.daniele.backpacker.fxmlView.TouristGuideGraphicChange"äit.ispw.daniele.backpacker.fxmlView.TouristGuideGraphicChange#getInstance()Lit/ispw/daniele/backpacker/fxmlView/TouristGuideGraphicChange;*A"?
+=it.ispw.daniele.backpacker.fxmlView.TouristGuideGraphicChangeô
+ñ
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaR R(RB
+i=it.ispw.daniele.backpacker.fxmlView.TouristGuideGraphicChange"__id*E
+C
+%9=it.ispw.daniele.backpacker.fxmlView.TouristGuideGraphicChangeÊ„
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaS S(-
+%10"Xit.ispw.daniele.backpacker.fxmlView.GUIChangeTemplate#menuBar(LHBox;Ljava/lang/String;)V*D
+B
+i=it.ispw.daniele.backpacker.fxmlView.TouristGuideGraphicChange*
+""*
+
+result2!menuBar(LHBox;Ljava/lang/String;)≤
+Ø
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaT T(
+%11java.io.PrintStream"__id*
+""Ÿ
+÷
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaT T(83
+%12,it.ispw.daniele.backpacker.utils.SessionUser"hit.ispw.daniele.backpacker.utils.SessionUser#getInstance()Lit/ispw/daniele/backpacker/utils/SessionUser;*0".
+,it.ispw.daniele.backpacker.utils.SessionUserÒÓ
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaT T(E6
+%13/it.ispw.daniele.backpacker.bean.GeneralUserBean"jit.ispw.daniele.backpacker.utils.SessionUser#getSession()Lit/ispw/daniele/backpacker/bean/GeneralUserBean;*5
+3
+%12,it.ispw.daniele.backpacker.utils.SessionUser2getSession()≥∞
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaT T(O
+%14java.lang.String"Kit.ispw.daniele.backpacker.bean.GeneralUserBean#getRole()Ljava/lang/String;*8
+6
+%13/it.ispw.daniele.backpacker.bean.GeneralUserBean2	getRole()≈
+¬
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaTR T(e-
+%15&it.ispw.daniele.backpacker.utils.Roles"__id*
+""ÉÄ
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaTR T(l
+%16java.lang.String"'java.lang.Enum#name()Ljava/lang/String;*/
+-
+%15&it.ispw.daniele.backpacker.utils.Roles2name()·
+ﬁ
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaT T(l
+%17java.lang.String"__concat*
+
+%14java.lang.String*
+
+%16java.lang.Stringùö
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaT T(m
+%18void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%11java.io.PrintStream*
+
+%17java.lang.String2println(Ljava/lang/String;)*
+24*Â
+16Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaì ì(ŒÀ
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaì ì((
+
+%47int"java.util.List#size()I*
+
+itjava.util.List2size()*
+15
+8*’
+27Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaO O(&ÿ
+’
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaO O(42
+%0,it.ispw.daniele.backpacker.utils.SessionUser"hit.ispw.daniele.backpacker.utils.SessionUser#getInstance()Lit/ispw/daniele/backpacker/utils/SessionUser;*0".
+,it.ispw.daniele.backpacker.utils.SessionUserÔÏ
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaO O(A5
+%1/it.ispw.daniele.backpacker.bean.GeneralUserBean"jit.ispw.daniele.backpacker.utils.SessionUser#getSession()Lit/ispw/daniele/backpacker/bean/GeneralUserBean;*4
+2
+%0,it.ispw.daniele.backpacker.utils.SessionUser2getSession()ê
+ç
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaO O(AG6
+4it.ispw.daniele.backpacker.fxmlView.ResultController"
+sessionUser"__id*7
+5
+%1/it.ispw.daniele.backpacker.bean.GeneralUserBeanÿ
+’
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaQ Q($2
+%2,it.ispw.daniele.backpacker.utils.SessionUser"hit.ispw.daniele.backpacker.utils.SessionUser#getInstance()Lit/ispw/daniele/backpacker/utils/SessionUser;*0".
+,it.ispw.daniele.backpacker.utils.SessionUserÔÏ
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaQ Q(15
+%3/it.ispw.daniele.backpacker.bean.GeneralUserBean"jit.ispw.daniele.backpacker.utils.SessionUser#getSession()Lit/ispw/daniele/backpacker/bean/GeneralUserBean;*4
+2
+%2,it.ispw.daniele.backpacker.utils.SessionUser2getSession()±Æ
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaQ Q(;
+%4java.lang.String"Kit.ispw.daniele.backpacker.bean.GeneralUserBean#getRole()Ljava/lang/String;*7
+5
+%3/it.ispw.daniele.backpacker.bean.GeneralUserBean2	getRole()ƒ
+¡
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaQC Q(V,
+%5&it.ispw.daniele.backpacker.utils.Roles"__id*
+""Å˛
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaQC Q(]
+%6java.lang.String"'java.lang.Enum#name()Ljava/lang/String;*.
+,
+%5&it.ispw.daniele.backpacker.utils.Roles2name()˚¯
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaQC Q(k
+%7java.lang.String"0java.lang.String#toLowerCase()Ljava/lang/String;*
 
-%4java.lang.String:
-rdjava.io.ReaderB<":
-8it.ispw.daniele.backpacker.controller.search.JSONFactory
+%6java.lang.String2toLowerCase()ïí
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaQ Q(l
+%8boolean",java.lang.String#equals(Ljava/lang/Object;)Z*
+
+%4java.lang.String*
+
+%7java.lang.String2equals(Ljava/lang/Object;)*
+25
+26*¿
+18Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaè è(¥
+±
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaè è(
+%44java.io.PrintStream"__id*
+""‘
+—
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaè è(/
+%45java.lang.String"__concat*
+	DATABASE *
+
+itjava.util.Listüú
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaè è(0
+%46void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%44java.io.PrintStream*
+
+%45java.lang.String2println(Ljava/lang/String;)*
+8*é
+19Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaã ã(Æ
+´
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaã ã(
+itjava.util.List"__id*
+""ìê
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaå å(;
+%43"yit.ispw.daniele.backpacker.booktour.BookTourController#getItinerary(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;*?
+=
+btc6it.ispw.daniele.backpacker.booktour.BookTourController*
+""*
+city22getItinerary(Ljava/lang/String;Ljava/lang/String;)Ø
+¨
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaå å(;
+itjava.util.List"__id*
+
+%43*
+16
+18*§
+0 "ú
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java¥ ¥(
+implicit return*Å
+3Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java˙ ˙(áÑ
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java˙% ˙(3
+%95java.lang.String"4java.lang.StringBuilder#toString()Ljava/lang/String;* 
+
+Urljava.lang.StringBuilder2
+toString()ñì
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaÉM É(W
+%96java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*86
+4it.ispw.daniele.backpacker.fxmlView.ResultController2
+getClass()Æ´
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaÉM É(v
+%97java.net.URL"=java.lang.Class#getResource(Ljava/lang/String;)Ljava/net/URL;*
+
+%96java.lang.Class*
+/googleMaps.png2getResource(Ljava/lang/String;)ï
+í
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaÉ6 É(w
+%98java.net.URL"Fjava.util.Objects#requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;*"
+java.util.Objects*
+
+%97java.net.URL˛˚
+Ö
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaÉ6 É(à
+%99java.lang.String"/java.net.URL#toExternalForm()Ljava/lang/String;*
+
+%98java.net.URL2toExternalForm()óî
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaáN á(X
+%100java.lang.Class",java.lang.Object#getClass()Ljava/lang/Class;*86
+4it.ispw.daniele.backpacker.fxmlView.ResultController2
+getClass()™ß
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaáN á(q
+%101java.net.URL"=java.lang.Class#getResource(Ljava/lang/String;)Ljava/net/URL;*
+
+%100java.lang.Class*
+	/save.png2getResource(Ljava/lang/String;)ó
+î
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaá7 á(r
+%102java.net.URL"Fjava.util.Objects#requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;*"
+java.util.Objects*
+
+%101java.net.URLÄ˝
+Ö
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaá7 á(É
+%103java.lang.String"/java.net.URL#toExternalForm()Ljava/lang/String;*
+
+%102java.net.URL2toExternalForm()Çˇ
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaå" å(4>
+%1046it.ispw.daniele.backpacker.booktour.BookTourController"6it.ispw.daniele.backpacker.booktour.BookTourControllerñ
+ì
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaå å(6
+%105"@it.ispw.daniele.backpacker.booktour.BookTourController#<init>()V*@
+>
+%1046it.ispw.daniele.backpacker.booktour.BookTourControllerö
+ó
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaå å(6F6
+4it.ispw.daniele.backpacker.fxmlView.ResultController"
+
+controller"__id*@
+>
+%1046it.ispw.daniele.backpacker.booktour.BookTourController
+Ì
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaô$ £(
+%106"__declareFunction*IG
+E__sonar_lambda_3$it.ispw.daniele.backpacker.fxmlView.ResultController
+Ì
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java•% ß(
+%107"__declareFunction*IG
+E__sonar_lambda_4$it.ispw.daniele.backpacker.fxmlView.ResultController*
+8*ü
+5Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java’( ’(+Ω∫
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java’. ’(F
+%83java.util.Vector"Lit.ispw.daniele.backpacker.entity.Itinerary#getItinerary()Ljava/util/Vector;*:
+8
+	itinerary+it.ispw.daniele.backpacker.entity.Itinerary2getItinerary()Ï
+È
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java’. ’(Y1
+%84*it.ispw.daniele.backpacker.entity.Monument"
+__arrayGet*
+
+%83java.util.Vector*
+""´®
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java’. ’(c
+%85java.lang.String"Fit.ispw.daniele.backpacker.entity.Monument#getName()Ljava/lang/String;*3
+1
+%84*it.ispw.daniele.backpacker.entity.Monument2	getName()œ
+Ã
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java’( ’(c
+%86java.lang.String"__concat*
+ *
+
+%85java.lang.Stringœ
+Ã
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java’( ’(i
+%87java.lang.String"__concat*
+
+%86java.lang.String*
+ ¥
+±
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java› ›(
+%88java.io.PrintStream"__id*
+""Ê„
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java› ›(S
+%89" java.io.PrintStream#println([C)V*
+
+%88java.io.PrintStream*
+""2println([C)ºπ
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java‡ ‡(
+%90java.lang.StringBuilder"Kjava.lang.StringBuilder#append(Ljava/lang/String;)Ljava/lang/StringBuilder;* 
+
+Urljava.lang.StringBuilder*
+/2append(Ljava/lang/String;)Ω∫
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java‡' ‡(?
+%91java.util.Vector"Lit.ispw.daniele.backpacker.entity.Itinerary#getItinerary()Ljava/util/Vector;*:
+8
+	itinerary+it.ispw.daniele.backpacker.entity.Itinerary2getItinerary()Ï
+È
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java‡' ‡(R1
+%92*it.ispw.daniele.backpacker.entity.Monument"
+__arrayGet*
+
+%91java.util.Vector*
+""´®
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java‡' ‡(\
+%93java.lang.String"Fit.ispw.daniele.backpacker.entity.Monument#getName()Ljava/lang/String;*3
+1
+%92*it.ispw.daniele.backpacker.entity.Monument2	getName()–Õ
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java‡ ‡(]
+%94java.lang.StringBuilder"Kjava.lang.StringBuilder#append(Ljava/lang/String;)Ljava/lang/StringBuilder;* 
+
+%90java.lang.StringBuilder*
+
+%93java.lang.String2append(Ljava/lang/String;)*
+6*®
+6Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java”' ”(4Ω∫
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java”7 ”(O
+%81java.util.Vector"Lit.ispw.daniele.backpacker.entity.Itinerary#getItinerary()Ljava/util/Vector;*:
+8
+	itinerary+it.ispw.daniele.backpacker.entity.Itinerary2getItinerary()”–
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java”7 ”(V
+
+%82int"java.util.Vector#size()I*
+
+%81java.util.Vector2size()*
+3
+5*ï 
+7Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaµ$ µ(4ß
+§
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java¿ ¿(/
+%67double"__id*
+""ß
+§
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java≈  ≈(0
+%68double"__id*
+""ß
+§
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java…  …(0
+%69double"__id*
+""√¿
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaÕ$ Õ(1
+%70java.lang.StringBuilder"java.lang.StringBuilderà
+Ö
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaÕ  Õ(O
+%71"3java.lang.StringBuilder#<init>(Ljava/lang/String;)V* 
+
+%70java.lang.StringBuilder*
+https://google.it/maps/dir“
+œ
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaÕ Õ(P
+Urljava.lang.StringBuilder"__id* 
+
+%70java.lang.StringBuilder¥
+±
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaœ œ(
+%72java.io.PrintStream"__id*
+""”
+–
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaœ œ(71
+%73*it.ispw.daniele.backpacker.bean.ResultBean"dit.ispw.daniele.backpacker.bean.ResultBean#getInstance()Lit/ispw/daniele/backpacker/bean/ResultBean;*.",
+*it.ispw.daniele.backpacker.bean.ResultBeanµ≤
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaœ œ(F
+%74java.util.Vector"Kit.ispw.daniele.backpacker.bean.ResultBean#getItinerary()Ljava/util/Vector;*3
+1
+%73*it.ispw.daniele.backpacker.bean.ResultBean2getItinerary()üú
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaœ œ(G
+%75void"0java.io.PrintStream#println(Ljava/lang/Object;)V*
+
+%72java.io.PrintStream*
+
+%74java.util.Vector2println(Ljava/lang/Object;)”
+–
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java—" —(:1
+%76*it.ispw.daniele.backpacker.bean.ResultBean"dit.ispw.daniele.backpacker.bean.ResultBean#getInstance()Lit/ispw/daniele/backpacker/bean/ResultBean;*.",
+*it.ispw.daniele.backpacker.bean.ResultBeanµ≤
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java—" —(I
+%77java.util.Vector"Kit.ispw.daniele.backpacker.bean.ResultBean#getItinerary()Ljava/util/Vector;*3
+1
+%76*it.ispw.daniele.backpacker.bean.ResultBean2getItinerary()Ì
+Í
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java—" —(]2
+%78+it.ispw.daniele.backpacker.entity.Itinerary"
+__arrayGet*
+
+%77java.util.Vector*
+""Ä
+˝
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java— —(^8
+	itinerary+it.ispw.daniele.backpacker.entity.Itinerary"__id*4
+2
+%78+it.ispw.daniele.backpacker.entity.Itinerary¥
+±
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java“ “(
+%79java.io.PrintStream"__id*
+""¿Ω
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java“ “()
+%80void"0java.io.PrintStream#println(Ljava/lang/Object;)V*
+
+%79java.io.PrintStream*:
+8
+	itinerary+it.ispw.daniele.backpacker.entity.Itinerary2println(Ljava/lang/Object;)*
+6*ˆ
+8Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java≥$ ≥(2”
+–
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java≥5 ≥(M1
+%64*it.ispw.daniele.backpacker.bean.ResultBean"dit.ispw.daniele.backpacker.bean.ResultBean#getInstance()Lit/ispw/daniele/backpacker/bean/ResultBean;*.",
+*it.ispw.daniele.backpacker.bean.ResultBeanµ≤
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java≥5 ≥(\
+%65java.util.Vector"Kit.ispw.daniele.backpacker.bean.ResultBean#getItinerary()Ljava/util/Vector;*3
+1
+%64*it.ispw.daniele.backpacker.bean.ResultBean2getItinerary()”–
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java≥5 ≥(c
+
+%66int"java.util.Vector#size()I*
+
+%65java.util.Vector2size()*
+7
+0*Ä
+20Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javai i(Ó
+Î
+É
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javat# Ö(
+%42"__declareFunction*IG
+E__sonar_lambda_2$it.ispw.daniele.backpacker.fxmlView.ResultController~
+|
+
+__unknown_file ( 
+
+%42"
+ResultController.this"__id*86
+4it.ispw.daniele.backpacker.fxmlView.ResultController*
+19*π
+
+21Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javab b(™ß
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javab' b(6
+%38java.lang.String"Git.ispw.daniele.backpacker.bean.HomeBean#getCountry()Ljava/lang/String;*0
+.
+hb(it.ispw.daniele.backpacker.bean.HomeBean2getCountry()§°
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javac$ c(0
+%39java.lang.String"Dit.ispw.daniele.backpacker.bean.HomeBean#getCity()Ljava/lang/String;*0
+.
+hb(it.ispw.daniele.backpacker.bean.HomeBean2	getCity()™ß
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javad' d(6
+%40java.lang.String"Git.ispw.daniele.backpacker.bean.HomeBean#getAddress()Ljava/lang/String;*0
+.
+hb(it.ispw.daniele.backpacker.bean.HomeBean2getAddress()¶£
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaf& f(3
+%41java.lang.String"Eit.ispw.daniele.backpacker.bean.HomeBean#getRange()Ljava/lang/String;*0
+.
+hb(it.ispw.daniele.backpacker.bean.HomeBean2
+getRange()*
+19*¿
+22Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaa? a(A™ß
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaa? a(N
+%37java.lang.String"Git.ispw.daniele.backpacker.bean.HomeBean#getAddress()Ljava/lang/String;*0
+.
+hb(it.ispw.daniele.backpacker.bean.HomeBean2getAddress()*
+20
+21*º
+11Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaü ü(¥
+±
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaü ü(
+%59java.io.PrintStream"__id*
+""’
+“
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaü# ü(/
+%60java.lang.String"__concat*
+als *
+
+alsjava.util.ArrayListüú
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaü ü(0
+%61void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%59java.io.PrintStream*
+
+%60java.lang.String2println(Ljava/lang/String;)Ï
+È
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java°7 °(@4
+%62-it.ispw.daniele.backpacker.bean.ItineraryBean"
+__arrayGet*
+
+itjava.util.List*
+""àÖ
+Ñ
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.java°& °(A
+%63"ëit.ispw.daniele.backpacker.fxmlView.ResultController#createTable(Ljava/util/ArrayList;Lit/ispw/daniele/backpacker/bean/ItineraryBean;)LAccordion;*86
+4it.ispw.daniele.backpacker.fxmlView.ResultController*
+
+alsjava.util.ArrayList*6
+4
+%62-it.ispw.daniele.backpacker.bean.ItineraryBean2QcreateTable(Ljava/util/ArrayList;Lit/ispw/daniele/backpacker/bean/ItineraryBean;)*
+16*∫
+23Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaa' a()§°
+Ç
+xC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/ResultController.javaa' a(3
+%36java.lang.String"Dit.ispw.daniele.backpacker.bean.HomeBean#getCity()Ljava/lang/String;*0
+.
+hb(it.ispw.daniele.backpacker.bean.HomeBean2	getCity()*
+20
+22B86
+4it.ispw.daniele.backpacker.fxmlView.ResultController

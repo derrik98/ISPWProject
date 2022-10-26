@@ -1,39 +1,45 @@
-package it.ispw.daniele.backpacker.controller.search;
+package it.ispw.daniele.backpacker.commandLineInterface;
 
-import it.ispw.daniele.backpacker.bean.HomeBean;
-import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
-import org.json.JSONException;
-import org.json.JSONObject;
 
-import java.io.IOException;
+import java.util.Scanner;
 
-public class CityFromCountry extends JSONFactory{
+public class CLI {
 
-    private static CityFromCountry instance = null;
+    public static final String RESET = "\033[0m";  // Text Reset
+    public static final String RED = "\033[0;31m";     // RED
 
-    public static synchronized CityFromCountry getInstance() {
-        if(instance==null) {
-            instance = new CityFromCountry();
-        }
-        return instance;
-    }
+    public static void main(String[] args) {
 
-    protected CityFromCountry(){
-    }
 
-    @Override
-    public boolean getJSON(String city, String country) throws CityNotFoundException, IOException {
-        JSONObject json;
-            json = readJsonFromUrl("https://maps.googleapis.com/maps/api/geocode/json?address=" + city
-                    + "&components=country:" + country + "&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");
-            System.out.println(json);
-            System.out.println(json.getString("status"));
-            if(!json.getString("status").equals("OK")) {
-                throw new CityNotFoundException("Questa città non è presente in questo stato");
+        Scanner scan = new Scanner(System.in);
+
+        do
+        {
+        System.out.println("-----------------------------------EXIT [quit]----");
+        System.out.println("--------------------------------------------------");
+        System.out.println("----------------LOGIN [0]-------------------------");
+        System.out.println("----------------SIGNUP [1]------------------------");
+        System.out.println("--------------------------------------------------");
+        System.out.println("--------------------------------------------------");
+
+        System.out.println("Command: ");
+
+            switch (scan.nextLine()) {
+                case "0":
+                    CliLoginController loginController = new CliLoginController();
+                    loginController.init(scan);
+                    return;
+                case "1":
+                    CliSignUpController signUpController = new CliSignUpController();
+                    signUpController.init(scan);
+                    return;
+                case "quit":
+                    return;
+                default:
+                    System.out.println(RED + "Command not found" + RESET);
+                    break;
             }
-
-        return true;
-
+            System.out.flush();
+        } while (true);
     }
-
 }

@@ -1,0 +1,8 @@
+it.ispw.daniele.backpacker.controller.login.LoginController#login(Lit/ispw/daniele/backpacker/bean/GeneralUserBean;)Lit/ispw/daniele/backpacker/bean/GeneralUserBean;
+it.ispw.daniele.backpacker.dao.GeneralUserDao#<init>()V
+it.ispw.daniele.backpacker.exceptions.LoginEmptyFieldException#<init>(Ljava/lang/String;)V
+it.ispw.daniele.backpacker.bean.GeneralUserBean#<init>()V
+java.lang.String#equals(Ljava/lang/Object;)Z
+it.ispw.daniele.backpacker.bean.GeneralUserBean#instance-init#
+it.ispw.daniele.backpacker.exceptions.LoginEmptyFieldException#instance-init#
+it.ispw.daniele.backpacker.dao.GeneralUserDao#instance-init#

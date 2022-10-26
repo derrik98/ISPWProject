@@ -1,0 +1,12 @@
+it.ispw.daniele.backpacker.fxmlView.ResultController#createTable(Ljava/util/ArrayList;Lit/ispw/daniele/backpacker/bean/ItineraryBean;)LAccordion;
+null
+java.lang.Object#getClass()Ljava/lang/Class;
+java.lang.Class#getResource(Ljava/lang/String;)Ljava/net/URL;
+it.ispw.daniele.backpacker.booktour.BookTourController#<init>()V
+java.lang.StringBuilder#instance-init#
+java.lang.StringBuilder#<init>(Ljava/lang/String;)V
+java.net.URL#toExternalForm()Ljava/lang/String;
+java.lang.StringBuilder#append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+it.ispw.daniele.backpacker.booktour.BookTourController#instance-init#
+java.util.Objects#requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+java.lang.StringBuilder#toString()Ljava/lang/String;

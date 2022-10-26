@@ -1,2 +1,2 @@
-ISPWProject :W!GXC.3	f1cN5>/] ?;aBH<O[#6V7Fb'2@d`,$LYDK0"4T
-R&=89_:J%e-EA^B+'https://github.com/derrik98/ISPWProjectB.*https://travis-ci.org/derrik98/ISPWProjectB2.https://github.com/derrik98/ISPWProject/issuesB+'https://github.com/derrik98/ISPWProjectRderrik98_ISPWProject
+ISPWProject :c!ObKd	pX/F.AnR\86#`=o'qm+U0
+D>?l7T%,M-9sI1;Eg BJCe4<N23GQ5$VLZ":^k&@irHjB+'https://github.com/derrik98/ISPWProjectB.*https://travis-ci.org/derrik98/ISPWProjectB2.https://github.com/derrik98/ISPWProject/issuesB+'https://github.com/derrik98/ISPWProjectRderrik98_ISPWProject

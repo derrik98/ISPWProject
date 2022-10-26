@@ -8,7 +8,7 @@ public class TouristGuideBean extends GeneralUserBean{
     private String identificationCode;
 
     public String getIdentificationCode() {
-        return identificationCode;
+        return this.identificationCode;
     }
 
     public void setIdentificationCode(String identificationCode) {

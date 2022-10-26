@@ -1,1 +1,0 @@
-] 2javaXMhr\Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/TouristGuideMenuBarController.java

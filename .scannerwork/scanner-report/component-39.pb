@@ -1,1 +1,1 @@
-' 2xmlX¸hrProject/.idea/workspace.xml
+' 2xmlXËhrProject/.idea/workspace.xml

@@ -1,0 +1,9 @@
+it.ispw.daniele.backpacker.controller.search.SearchController#getInput(Lit/ispw/daniele/backpacker/bean/HomeBean;)Lit/ispw/daniele/backpacker/bean/HomeBean;
+it.ispw.daniele.backpacker.controller.search.CityFromCountry#getInstance()Lit/ispw/daniele/backpacker/controller/search/CityFromCountry;
+java.util.Vector#<init>()V
+it.ispw.daniele.backpacker.controller.search.AddressFromCity#instance-init#
+java.util.Vector#instance-init#
+it.ispw.daniele.backpacker.bean.HomeBean#getInstance()Lit/ispw/daniele/backpacker/bean/HomeBean;
+it.ispw.daniele.backpacker.controller.search.JSONFactory#convertString(Ljava/lang/String;)Ljava/lang/String;
+it.ispw.daniele.backpacker.controller.search.AddressFromCity#<init>()V
+it.ispw.daniele.backpacker.bean.ResultBean#getInstance()Lit/ispw/daniele/backpacker/bean/ResultBean;

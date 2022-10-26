@@ -1,106 +1,81 @@
 package it.ispw.daniele.backpacker.bean;
 
-import it.ispw.daniele.backpacker.controller.search.SearchController;
-import it.ispw.daniele.backpacker.exceptions.AddressNotFoundException;
-import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
-import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
+import java.io.Serializable;
 
-import java.io.IOException;
+public class ItineraryBean implements Serializable {
 
-public class HomeBean {
+    static final long serialVersionUID = 42L;
+    private String itineraryId;
+    private String guideId;
+    private String location;
+    private String date;
+    private String time;
+    private String participants;
+    private String price;
+    private String steps;
 
-    private String country;
-    private String city;
-    private String address;
-    private String range;
-    private boolean restaurant;
 
-    private static HomeBean INSTANCE = null;
-
-    public static synchronized HomeBean getInstance() {
-        if(INSTANCE==null) {
-            INSTANCE = new HomeBean();
-            //INSTANCE = new HomeBean(country, city, address, range, restaurant);
-        }
-        return INSTANCE;
+    public String getParticipants() {
+        return participants;
     }
 
-    protected HomeBean() {
+    public void setParticipants(String participants) {
+        this.participants = participants;
     }
 
-    protected HomeBean(String country, String city, String address, String range, boolean restaurant) {
-        this.country = country;
-        this.city = city;
-        this.address = address;
-        this.range = range;
-        this.restaurant = restaurant;
-
-        System.out.println("Country " + this.country + "\tCity " + this.city + "\tAddress " + this.address + "\tRadius " + this.range
-                + "\tRestaurant " + this.restaurant);
+    public String getPrice() {
+        return price;
     }
 
-    public String getCountry() {
-        return country;
+    public void setPrice(String price) {
+        this.price = price;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public String getTime() {
+        return time;
     }
 
-    public String getCity() {
-        return city;
+    public void setTime(String time) {
+        this.time = time;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public String getGuideId() {
+        return guideId;
     }
 
-    public String getAddress() {
-        return address;
+    public void setGuideId(String guideId) {
+        this.guideId = guideId;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
-    public String getRange() {
-        return range;
+    public String getLocation() {
+        return this.location;
     }
 
-    public void setRange(String range) {
-        this.range = range;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public boolean isRestaurant() {
-        return restaurant;
+    public String getDate() {
+        return this.date;
     }
 
-    public void setRestaurant(boolean restaurant) {
-        this.restaurant = restaurant;
+    public String getSteps() {
+        return this.steps;
     }
 
+    public void setSteps(String steps) {
+        this.steps = steps;
+    }
 
-    public boolean validate() throws IOException, CityNotFoundException, AddressNotFoundException, MonumentNotFoundException {
-        // controllo sintattico
-        if (country.equals("") || city.equals("") || address.equals("")) {
-            return false;
-        }
+    public String getItineraryId() {
+        return this.itineraryId;
+    }
 
-        HomeBean datiCorretti = null;
-        try {
-            datiCorretti = SearchController.getInstances().getInput(this);
-        } catch (CityNotFoundException e) {
-            throw new CityNotFoundException(e.getMessage());
-           // e.printStackTrace();
-        }
-        System.out.println("provafatta" + city);//FARE COME LA VALIDATE
-        System.out.println(country);
-
-        System.out.println(datiCorretti.country + datiCorretti.city + datiCorretti.address);
-        /*if(utenteTrovato==null)
-            return false;
-        return true;*/
-        return datiCorretti != null;
-
+    public void setItineraryId(String itineraryId) {
+        this.itineraryId = itineraryId;
     }
 }

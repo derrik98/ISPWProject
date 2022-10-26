@@ -1,0 +1,91 @@
+
+‡it.ispw.daniele.backpacker.utils.Controller#convert(Lit/ispw/daniele/backpacker/entity/User;)Lit/ispw/daniele/backpacker/bean/UserBean;y
+oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/Controller.java ("1*ñ
+1y
+oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/Controller.java ((ØÕ
+y
+oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/Controller.java (&.
+%0(it.ispw.daniele.backpacker.bean.UserBean"(it.ispw.daniele.backpacker.bean.UserBeanê
+ç
+y
+oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/Controller.java ((
+%1"2it.ispw.daniele.backpacker.bean.UserBean#<init>()V*0
+.
+%0(it.ispw.daniele.backpacker.bean.UserBeanæ
+ã
+y
+oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/Controller.java ().
+ub(it.ispw.daniele.backpacker.bean.UserBean"__id*0
+.
+%0(it.ispw.daniele.backpacker.bean.UserBean£ 
+y
+oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/Controller.java (*
+%2java.lang.String"Mit.ispw.daniele.backpacker.entity.GeneralUser#getUsername()Ljava/lang/String;*-
++
+l&it.ispw.daniele.backpacker.entity.User2getUsername()ÉÆ
+y
+oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/Controller.java (+
+
+%3void"Pit.ispw.daniele.backpacker.bean.GeneralUserBean#setUsername(Ljava/lang/String;)V*0
+.
+ub(it.ispw.daniele.backpacker.bean.UserBean*
+
+%2java.lang.String2setUsername(Ljava/lang/String;)”‘
+y
+oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/Controller.java ("
+%4java.lang.String"Bit.ispw.daniele.backpacker.entity.User#getName()Ljava/lang/String;*-
++
+l&it.ispw.daniele.backpacker.entity.User2	getName()º·
+y
+oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/Controller.java (#
+
+%5void"Eit.ispw.daniele.backpacker.bean.UserBean#setName(Ljava/lang/String;)V*0
+.
+ub(it.ispw.daniele.backpacker.bean.UserBean*
+
+%4java.lang.String2setName(Ljava/lang/String;)š—
+y
+oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/Controller.java ((
+%6java.lang.String"Eit.ispw.daniele.backpacker.entity.User#getSurname()Ljava/lang/String;*-
++
+l&it.ispw.daniele.backpacker.entity.User2getSurname()À½
+y
+oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/Controller.java ()
+
+%7void"Hit.ispw.daniele.backpacker.bean.UserBean#setSurname(Ljava/lang/String;)V*0
+.
+ub(it.ispw.daniele.backpacker.bean.UserBean*
+
+%6java.lang.String2setSurname(Ljava/lang/String;)¨¥
+y
+oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/Controller.java! (6
+%8java.lang.String"Lit.ispw.daniele.backpacker.entity.User#getProfilePicture()Ljava/lang/String;*-
++
+l&it.ispw.daniele.backpacker.entity.User2getProfilePicture()ÕÒ
+y
+oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/Controller.java (7
+
+%9void"Vit.ispw.daniele.backpacker.bean.GeneralUserBean#setProfilePicture(Ljava/lang/String;)V*0
+.
+ub(it.ispw.daniele.backpacker.bean.UserBean*
+
+%8java.lang.String2%setProfilePicture(Ljava/lang/String;)ž›
+y
+oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/Controller.java ($
+%10java.lang.String"Jit.ispw.daniele.backpacker.entity.GeneralUser#getEmail()Ljava/lang/String;*-
++
+l&it.ispw.daniele.backpacker.entity.User2
+getEmail()ÅÂ
+y
+oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/Controller.java (%
+%11void"Mit.ispw.daniele.backpacker.bean.GeneralUserBean#setEmail(Ljava/lang/String;)V*0
+.
+ub(it.ispw.daniele.backpacker.bean.UserBean*
+
+%10java.lang.String2setEmail(Ljava/lang/String;)"­
+y
+oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/Controller.java (0
+.
+ub(it.ispw.daniele.backpacker.bean.UserBean:+
+l&it.ispw.daniele.backpacker.entity.UserB/-
++it.ispw.daniele.backpacker.utils.Controller

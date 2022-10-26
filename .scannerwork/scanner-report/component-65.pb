@@ -1,1 +1,1 @@
-A 2javaXhrLProject/src/main/java/it/ispw/daniele/backpacker/entity/RestaurantOwner.java
+A 2javaX0hrHProject/src/main/java/it/ispw/daniele/backpacker/dao/GeneralUserDao.java

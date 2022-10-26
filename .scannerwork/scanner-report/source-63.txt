@@ -1,42 +1,7 @@
-package it.ispw.daniele.backpacker.entity;
+package it.ispw.daniele.backpacker.dao;
 
-import java.util.Vector;
+import java.sql.SQLException;
 
-public class Itinerary {
-
-        //private int id;
-        private Vector<Monument> itinerary;
-
-        public Itinerary() {
-            this.itinerary = null;
-        }
-
-        public Itinerary(Vector<Monument> itinerary) {
-            //this.id = id;
-            this.itinerary = itinerary;
-        }
-
-
-//        public int getId() {
-//            return id;
-//        }
-//
-//        public void setId(int id) {
-//            this.id = id;
-//        }
-
-        public Vector<Monument> getItinerary() {
-            return itinerary;
-        }
-
-        public void setItinerary(Vector<Monument> route) {
-            this.itinerary = route;
-        }
-
-        @Override
-        public String toString(){
-            return String.valueOf(this.itinerary);
-//		return this.id + " \"" + this.route + "\" (" + this.id + this.route +")";
-        }
-
+public interface DaoAction<G> {
+    G act() throws SQLException, ClassNotFoundException;
 }

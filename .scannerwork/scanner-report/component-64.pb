@@ -1,1 +1,1 @@
-@ 2javaXQhrEProject/src/main/java/it/ispw/daniele/backpacker/entity/Monument.java
+@ 2javaXhrEProject/src/main/java/it/ispw/daniele/backpacker/dao/DaoTemplate.java

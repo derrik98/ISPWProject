@@ -1,9 +1,11 @@
-package it.ispw.daniele.backpacker.fxmlView;
+package it.ispw.daniele.backpacker.exceptions;
 
-import java.io.IOException;
+public class AddressNotFoundException extends Exception{
 
-public interface GUIAction {
+    private static final long serialVersionUID = 0;
 
-    public void action() throws IOException;
+    public AddressNotFoundException(String message){
+        super(message);
+    }
 
 }

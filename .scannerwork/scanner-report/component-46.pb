@@ -1,1 +1,1 @@
-. 2javaXkhrCProject/src/main/java/it/ispw/daniele/backpacker/bean/HomeBean.java
+. 2javaXRhrHProject/src/main/java/it/ispw/daniele/backpacker/bean/ItineraryBean.java

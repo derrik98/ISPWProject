@@ -1,15 +1,16 @@
 
-²it.ispw.daniele.backpacker.dao.UserDAO#createUser(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Boolean;t
-jC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/UserDAO.java ("1*ù
-1t
-jC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/UserDAO.java   ("~
-t
-jC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/UserDAO.java  9(
-"":
-usernamejava.lang.String:
-namejava.lang.String:
-surnamejava.lang.String:
-emailjava.lang.String:
-passwordjava.lang.String:"
-profilePicturejava.lang.StringB*(
-&it.ispw.daniele.backpacker.dao.UserDAO
+Lit.ispw.daniele.backpacker.bean.GeneralUserBean#getEmail()Ljava/lang/String;}
+sC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/GeneralUserBean.java! !("1*
+1}
+sC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/GeneralUserBean.java" "(à
+Ý
+}
+sC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/GeneralUserBean.java" "(
+%0java.lang.String"__id*>*<1
+/it.ispw.daniele.backpacker.bean.GeneralUserBean"
+email"™
+}
+sC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/bean/GeneralUserBean.java" "(
+
+%0java.lang.StringB31
+/it.ispw.daniele.backpacker.bean.GeneralUserBean

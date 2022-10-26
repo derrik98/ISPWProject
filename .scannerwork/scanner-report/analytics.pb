@@ -11,14 +11,18 @@
 node_js_major_versionUnknown
 0
 'force_node_under_10_during_grace_periodfalse
+
+os_archx86_64
 
 scanner_major_version4.4
  
 msbuild_major_versionUnknown
+
+jvm_arch64
 
 msbuild_versionUnknown
  
-peak_used_heap_byte	233553920
+peak_used_heap_byte	309262840
 
 scanner_type
 ScannerCLI

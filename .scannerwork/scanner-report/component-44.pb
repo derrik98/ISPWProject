@@ -1,1 +1,1 @@
-, 2xmlX‡hrProject/pom.xml
+, 2javaXVhrJProject/src/main/java/it/ispw/daniele/backpacker/bean/GeneralUserBean.java

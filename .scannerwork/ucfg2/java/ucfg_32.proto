@@ -1,48 +1,16 @@
 
-àit.ispw.daniele.backpacker.controller.search.CityFromCountry#getInstance()Lit/ispw/daniele/backpacker/controller/search/CityFromCountry;ã
-ÄC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/CityFromCountry.java/ (:"3*Ç
-2ã
-ÄC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/CityFromCountry.java (,ìê
-ã
-ÄC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/CityFromCountry.java (*B
-%1<it.ispw.daniele.backpacker.controller.search.CityFromCountry"<it.ispw.daniele.backpacker.controller.search.CityFromCountry•
-¢
-ã
-ÄC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/CityFromCountry.java (,
-%2"Fit.ispw.daniele.backpacker.controller.search.CityFromCountry#<init>()V*D
-B
-%1<it.ispw.daniele.backpacker.controller.search.CityFromCountry´
-®
-ã
-ÄC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/CityFromCountry.java (,L>
-<it.ispw.daniele.backpacker.controller.search.CityFromCountry"
-
-instance"__id*D
-B
-%1<it.ispw.daniele.backpacker.controller.search.CityFromCountry*
-1*«
-3ã
-ÄC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/CityFromCountry.java (´
-®
-ã
-ÄC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/CityFromCountry.java (B
-%0<it.ispw.daniele.backpacker.controller.search.CityFromCountry"__id*N*L>
-<it.ispw.daniele.backpacker.controller.search.CityFromCountry"
-
-instance*
-2
-1*ñ
-1ã
-ÄC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/CityFromCountry.java (´
-®
-ã
-ÄC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/CityFromCountry.java (B
-%3<it.ispw.daniele.backpacker.controller.search.CityFromCountry"__id*N*L>
-<it.ispw.daniele.backpacker.controller.search.CityFromCountry"
-
-instance"‘
-ã
-ÄC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/CityFromCountry.java (D
-B
-%3<it.ispw.daniele.backpacker.controller.search.CityFromCountryB@">
-<it.ispw.daniele.backpacker.controller.search.CityFromCountry
+Hit.ispw.daniele.backpacker.entity.Itinerary#getSteps()Ljava/lang/String;y
+oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/entity/Itinerary.java ("1*Ò
+1y
+oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/entity/Itinerary.java (ÿ
+’
+y
+oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/entity/Itinerary.java (
+%0java.lang.String"__id*:*8-
++it.ispw.daniele.backpacker.entity.Itinerary"
+steps"ï
+y
+oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/entity/Itinerary.java (
+
+%0java.lang.StringB/-
++it.ispw.daniele.backpacker.entity.Itinerary

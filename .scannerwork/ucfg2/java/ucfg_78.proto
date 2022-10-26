@@ -1,63 +1,48 @@
 
-lit.ispw.daniele.backpacker.controller.search.JSONFactory#convertString(Ljava/lang/String;)Ljava/lang/String;Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java& &(&"1*∫
-1Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java' '(π
-∂
-Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java' '(
-	newStringjava.lang.String"__id*
-""‹Ÿ
-Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java( ((4
-%0java.lang.String"Sjava.lang.String#replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;*
-
-stringjava.lang.String*
-\\s+*
-%2020replaceAll(Ljava/lang/String;Ljava/lang/String;)À
-»
-Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java( ((4
-	newStringjava.lang.String"__id*
-
-%0java.lang.Stringµ
-≤
-Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java) )(
-%1java.io.PrintStream"__id*
-""ﬂ
-‹
-Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java) )(2
-%2java.lang.String"__concat*
+êit.ispw.daniele.backpacker.controller.search.MonumentFromAddress#getInstance()Lit/ispw/daniele/backpacker/controller/search/MonumentFromAddress;è
+ÑC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java3 (>"3*™
+2è
+ÑC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java (0üú
+è
+ÑC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java (.F
+%1@it.ispw.daniele.backpacker.controller.search.MonumentFromAddress"@it.ispw.daniele.backpacker.controller.search.MonumentFromAddress±
+Æ
+è
+ÑC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java (0
+%2"Jit.ispw.daniele.backpacker.controller.search.MonumentFromAddress#<init>()V*H
+F
+%1@it.ispw.daniele.backpacker.controller.search.MonumentFromAddress∑
+¥
+è
+ÑC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java (0PB
+@it.ispw.daniele.backpacker.controller.search.MonumentFromAddress"
 
-NEWSTRING *
-
-	newStringjava.lang.Stringûõ
-Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java) )(3
+instance"__id*H
+F
+%1@it.ispw.daniele.backpacker.controller.search.MonumentFromAddress*
+1*◊
+3è
+ÑC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java (∑
+¥
+è
+ÑC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java (F
+%0@it.ispw.daniele.backpacker.controller.search.MonumentFromAddress"__id*R*PB
+@it.ispw.daniele.backpacker.controller.search.MonumentFromAddress"
 
-%3void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%1java.io.PrintStream*
-
-%2java.lang.String2println(Ljava/lang/String;)µ
-≤
-Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java* *(
-%4java.io.PrintStream"__id*
-""¢ü
-Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java* *("
+instance*
+2
+1*Æ
+1è
+ÑC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java (∑
+¥
+è
+ÑC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java (F
+%3@it.ispw.daniele.backpacker.controller.search.MonumentFromAddress"__id*R*PB
+@it.ispw.daniele.backpacker.controller.search.MonumentFromAddress"
 
-%5void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%4java.io.PrintStream*
-
-stringjava.lang.String2println(Ljava/lang/String;)"™
-Ü
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java+ +(
-
-	newStringjava.lang.String:
-stringjava.lang.StringB<":
-8it.ispw.daniele.backpacker.controller.search.JSONFactory
+instance"‹
+è
+ÑC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java (H
+F
+%3@it.ispw.daniele.backpacker.controller.search.MonumentFromAddressBD"B
+@it.ispw.daniele.backpacker.controller.search.MonumentFromAddress

@@ -1,41 +1,907 @@
 
-qit.ispw.daniele.backpacker.controller.search.AddressFromCity#upperCaseFirst(Ljava/lang/String;)Ljava/lang/String;ã
-ÄC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/AddressFromCity.java; ;('"1*Í
-
-1ã
-ÄC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/AddressFromCity.java< <(ÎË
-ã
-ÄC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/AddressFromCity.java< <(&
-%0char[]" java.lang.String#toCharArray()[C*
+^it.ispw.daniele.backpacker.commandLineInterface.CliSignUpController#init(Ljava/util/Scanner;)Ví
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java ("21*…
+13î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÖ Ö(◊
+‘
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÖ  Ö(3-
+%66&it.ispw.daniele.backpacker.utils.Roles"__id*
+""ïí
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÖ  Ö(:
+%67java.lang.String"'java.lang.Enum#name()Ljava/lang/String;*/
+-
+%66&it.ispw.daniele.backpacker.utils.Roles2name()Ø¨
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÖ Ö(;
+%68boolean",java.lang.String#equals(Ljava/lang/Object;)Z*
+
+userTypejava.lang.String*
 
-valjava.lang.String2toCharArray()∂
-≥
-ã
-ÄC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/AddressFromCity.java< <('
-arrchar[]"__id*
-
-%0char[]„
-‡
-ã
-ÄC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/AddressFromCity.java= =(.
+%67java.lang.String2equals(Ljava/lang/Object;)*
+11
+12*÷8
+14í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java{ {((Û
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java{ {(&/
+%44(it.ispw.daniele.backpacker.bean.UserBean"(it.ispw.daniele.backpacker.bean.UserBeanÜ
+É
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java{ {((
+%45"2it.ispw.daniele.backpacker.bean.UserBean#<init>()V*1
+/
+%44(it.ispw.daniele.backpacker.bean.UserBeanÅ
+˛
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java{ {().
+ub(it.ispw.daniele.backpacker.bean.UserBean"__id*1
+/
+%44(it.ispw.daniele.backpacker.bean.UserBeanÍÁ
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java| |($
+%46void"Pit.ispw.daniele.backpacker.bean.GeneralUserBean#setUsername(Ljava/lang/String;)V*0
+.
+ub(it.ispw.daniele.backpacker.bean.UserBean*
+
+usernamejava.lang.String2setUsername(Ljava/lang/String;)◊‘
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java} }(
+%47void"Eit.ispw.daniele.backpacker.bean.UserBean#setName(Ljava/lang/String;)V*0
+.
+ub(it.ispw.daniele.backpacker.bean.UserBean*
+
+namejava.lang.String2setName(Ljava/lang/String;)‡›
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java~ ~("
+%48void"Hit.ispw.daniele.backpacker.bean.UserBean#setSurname(Ljava/lang/String;)V*0
+.
+ub(it.ispw.daniele.backpacker.bean.UserBean*
+
+surnamejava.lang.String2setSurname(Ljava/lang/String;)·ﬁ
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java (
+%49void"Mit.ispw.daniele.backpacker.bean.GeneralUserBean#setEmail(Ljava/lang/String;)V*0
+.
+ub(it.ispw.daniele.backpacker.bean.UserBean*
+
+emailjava.lang.String2setEmail(Ljava/lang/String;)ÏÈ
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÄ Ä($
+%50void"Pit.ispw.daniele.backpacker.bean.GeneralUserBean#setPassword(Ljava/lang/String;)V*0
+.
+ub(it.ispw.daniele.backpacker.bean.UserBean*
+
+passwordjava.lang.String2setPassword(Ljava/lang/String;)˚¯
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÅ Å(-
+%51void"Vit.ispw.daniele.backpacker.bean.GeneralUserBean#setProfilePicture(Ljava/lang/String;)V*0
+.
+ub(it.ispw.daniele.backpacker.bean.UserBean*!
+
+newFileNamejava.lang.String2%setProfilePicture(Ljava/lang/String;)ŒÀ
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÇ Ç()
+%52boolean"sit.ispw.daniele.backpacker.controller.login.LoginController#createUser(Lit/ispw/daniele/backpacker/bean/UserBean;)Z*C
+A
+lc;it.ispw.daniele.backpacker.controller.login.LoginController*0
+.
+ub(it.ispw.daniele.backpacker.bean.UserBean26createUser(Lit/ispw/daniele/backpacker/bean/UserBean;)ƒ
+¡
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÉ É(
+%53java.io.PrintStream"__id*
+""≈¬
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÉ É(/
+%54java.lang.String"Oit.ispw.daniele.backpacker.bean.GeneralUserBean#getUsername()Ljava/lang/String;*0
+.
+ub(it.ispw.daniele.backpacker.bean.UserBean2getUsername()∂≥
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÉ0 É(<
+%55java.lang.String"Dit.ispw.daniele.backpacker.bean.UserBean#getName()Ljava/lang/String;*0
+.
+ub(it.ispw.daniele.backpacker.bean.UserBean2	getName()Û
+
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÉ É(<
+%56java.lang.String"__concat*
+
+%54java.lang.String*
+
+%55java.lang.Stringºπ
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÉ= É(L
+%57java.lang.String"Git.ispw.daniele.backpacker.bean.UserBean#getSurname()Ljava/lang/String;*0
+.
+ub(it.ispw.daniele.backpacker.bean.UserBean2getSurname()Û
+
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÉ É(L
+%58java.lang.String"__concat*
+
+%56java.lang.String*
+
+%57java.lang.Stringøº
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÉM É(Z
+%59java.lang.String"Lit.ispw.daniele.backpacker.bean.GeneralUserBean#getEmail()Ljava/lang/String;*0
+.
+ub(it.ispw.daniele.backpacker.bean.UserBean2
+getEmail()Û
+
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÉ É(Z
+%60java.lang.String"__concat*
+
+%58java.lang.String*
+
+%59java.lang.String≈¬
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÉ[ É(k
+%61java.lang.String"Oit.ispw.daniele.backpacker.bean.GeneralUserBean#getPassword()Ljava/lang/String;*0
+.
+ub(it.ispw.daniele.backpacker.bean.UserBean2getPassword()Û
+
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÉ É(k
+%62java.lang.String"__concat*
+
+%60java.lang.String*
+
+%61java.lang.String“œ
+ï
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÉl É(Ç
+%63java.lang.String"Uit.ispw.daniele.backpacker.bean.GeneralUserBean#getProfilePicture()Ljava/lang/String;*0
+.
+ub(it.ispw.daniele.backpacker.bean.UserBean2getProfilePicture()Ù
+Ò
+ï
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÉ É(Ç
+%64java.lang.String"__concat*
+
+%62java.lang.String*
+
+%63java.lang.String∞≠
+ï
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÉ É(É
+%65void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%53java.io.PrintStream*
+
+%64java.lang.String2println(Ljava/lang/String;)*
+11*¡
+15í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaz z(’
+“
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaz z(&-
+%41&it.ispw.daniele.backpacker.utils.Roles"__id*
+""ìê
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaz z(-
+%42java.lang.String"'java.lang.Enum#name()Ljava/lang/String;*/
+-
+%41&it.ispw.daniele.backpacker.utils.Roles2name()≠™
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaz z(.
+%43boolean",java.lang.String#equals(Ljava/lang/Object;)Z*
+
+userTypejava.lang.String*
+
+%42java.lang.String2equals(Ljava/lang/Object;)*
+13
+14*…
 
-%1char"#java.lang.Character#toUpperCase(C)C*"
-java.lang.Character*
-""ª∏
-ã
-ÄC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/AddressFromCity.java> >(
-%2java.lang.String"java.lang.String‡
-›
-ã
-ÄC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/AddressFromCity.java> >(
-%3"java.lang.String#<init>([C)V*
-
-%2java.lang.String*
+16í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaM M(¬
+ø
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaM M(
+%38java.io.PrintStream"__id*
+""ƒ¡
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaM M(J
+%39void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%38java.io.PrintStream*0.
+,Would you like profile image? Yes[y] - No[n]2println(Ljava/lang/String;)¿
+Ω
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaP P(
+fileNamejava.lang.String"__id* √
+¿
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaQ Q( 
+newFileNamejava.lang.String"__id* äá
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaS S(
+%40java.lang.String".java.util.Scanner#nextLine()Ljava/lang/String;*
+
+scanjava.util.Scanner2
+nextLine()*
+15
+19
+20*‚
 
-arrchar[]"®
-ã
-ÄC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/AddressFromCity.java> >(
+17í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javab b(ã
+à
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javab b()
+%35java.io.File"__id*V*TE
+Cit.ispw.daniele.backpacker.commandLineInterface.CliSignUpController"
+	imageFile˝˙
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javab b(3
+%36java.lang.String"(java.io.File#getName()Ljava/lang/String;*
+
+%35java.io.File2	getName()◊
+‘
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javab b(3
+fileNamejava.lang.String"__id*
+
+%36java.lang.String˚
+¯
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javac c(/
+%37java.lang.String"__concat*
+
+usernamejava.lang.String*
+
+fileNamejava.lang.String⁄
+◊
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javac c(/
+newFileNamejava.lang.String"__id*
+
+%37java.lang.String*
+15*≠
+18í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java`% `()ã
+à
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java`% `(3
+%33java.io.File"__id*V*TE
+Cit.ispw.daniele.backpacker.commandLineInterface.CliSignUpController"
+	imageFile˝˙
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java`% `(=
+%34java.lang.String"(java.io.File#getName()Ljava/lang/String;*
+
+%33java.io.File2	getName()*
+17*â
+19í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaX c(0ö
+ó
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java[0 [(O
+%29java.lang.String"Bjava.lang.System#getProperty(Ljava/lang/String;)Ljava/lang/String;*"
+java.lang.System*
+	user.homeª∏
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java[+ [(/
+%30java.io.File"java.io.File˚
+¯
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java[' [(P
+%31"(java.io.File#<init>(Ljava/lang/String;)V*
+
+%30java.io.File*
+
+%29java.lang.String¸
+˘
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java^ ^(?TE
+Cit.ispw.daniele.backpacker.commandLineInterface.CliSignUpController"
+	imageFile"__id*
+""ã
+à
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java_ _(!
+%32java.io.File"__id*V*TE
+Cit.ispw.daniele.backpacker.commandLineInterface.CliSignUpController"
+	imageFile*
+17
+18*¥
+0 "¨
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java∫ ∫(
+implicit return*˙
+1î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java® ®(ø
+º
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java® ®(
+emailjava.lang.String"__id* ¬
+ø
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java© ©(
+usernamejava.lang.String"__id* æ
+ª
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java™ ™(
+namejava.lang.String"__id* ¡
+æ
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java´ ´(
+surnamejava.lang.String"__id* ¬
+ø
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java¨ ¨(
+passwordjava.lang.String"__id* ¬
+ø
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java≠ ≠(
+userTypejava.lang.String"__id* ¡
+æ
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÆ Æ(
+VATNumbjava.lang.String"__id* ˛
+˚
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaØ Ø(TE
+Cit.ispw.daniele.backpacker.commandLineInterface.CliSignUpController"
+	imageFile"__id*
+""*
+0*†
+2î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java• •(≈
+¬
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java• •(
+%104java.io.PrintStream"__id*
+""∂≥
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java• •(<
+%105void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%104java.io.PrintStream*
+unsuccessfull registration2println(Ljava/lang/String;)*
+1*ñ
+3î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java† †(≈
+¬
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java† †(
+%102java.io.PrintStream"__id*
+""¨©
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java† †(:
+%103void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%102java.io.PrintStream*
+unable to rename2println(Ljava/lang/String;)*
+1*≈
+4î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaü ü(†ù
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaü ü(*
+%101boolean"&java.io.File#renameTo(Ljava/io/File;)Z*
+
+filejava.io.File*
+
+newFilejava.io.File2renameTo(Ljava/io/File;)*
+3
+1*Ü
+6î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaõ õ(:‰
+·
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaõ õ(:
+%98long"_java.nio.file.Files#copy(Ljava/io/InputStream;Ljava/nio/file/Path;[Ljava/nio/file/CopyOption;)J*"
+java.nio.file.Files*$
+"
+inputStreamjava.io.InputStream*
+
+%97java.nio.file.Path*
+4*ç
+7î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaö ö(QÊ
+„
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaö ö(Q"
+inputStreamjava.io.InputStream"__id* 
+
+%95java.io.FileInputStreamÇˇ
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaõ, õ(9
+%97java.nio.file.Path")java.io.File#toPath()Ljava/nio/file/Path;*
+
+filejava.io.File2toPath()*
+6*ì
+8î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaöB ö(Fç
+ä
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaöB ö(P
+%94java.io.File"__id*V*TE
+Cit.ispw.daniele.backpacker.commandLineInterface.CliSignUpController"
+	imageFile”–
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaö2 ö(A
+%95java.io.FileInputStream"java.io.FileInputStreamã
+à
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaö. ö(Q
+%96"/java.io.FileInputStream#<init>(Ljava/io/File;)V* 
+
+%95java.io.FileInputStream*
+
+%94java.io.File*
+7*¡
+9î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javañ ñ()¡
+æ
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javañ ñ(1
+%87java.lang.String"__id*
+""’
+“
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javañ ñ(2
+pathjava.lang.String"__id*
+
+%87java.lang.Stringƒ
+¡
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaó ó(
+%88java.io.PrintStream"__id*
+""∞≠
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaó ó((
+%89void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%88java.io.PrintStream*
+
+pathjava.lang.String2println(Ljava/lang/String;)Ω∫
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaò  ò($
+%90java.io.File"java.io.File∞
+≠
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaò ò(4
+%91":java.io.File#<init>(Ljava/lang/String;Ljava/lang/String;)V*
+
+%90java.io.File*
+
+pathjava.lang.String*
+
+fileNamejava.lang.StringÕ
+ 
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaò ò(5
+filejava.io.File"__id*
+
+%90java.io.FileΩ∫
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaô# ô('
+%92java.io.File"java.io.File≥
+∞
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaô ô(:
+%93":java.io.File#<init>(Ljava/lang/String;Ljava/lang/String;)V*
+
+%92java.io.File*
+
+pathjava.lang.String*!
+
+newFileNamejava.lang.String–
+Õ
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaô ô(;
+newFilejava.io.File"__id*
+
+%92java.io.File*
+8*è
+20í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaT W(.¿
+Ω
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaU U(
+fileNamejava.lang.String"__id* √
+¿
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaV V( 
+newFileNamejava.lang.String"__id* ¬
+ø
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaW W(
+%27java.io.PrintStream"__id*
+""üú
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaW W(-
+%28void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%27java.io.PrintStream*	
+sonoqui2println(Ljava/lang/String;)*
+19*‰G
+21í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java (¡
+æ
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java (
+%0java.io.PrintStream"__id*
+""üú
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java ()
+
+%1void".java.io.PrintStream#print(Ljava/lang/String;)V*
+
+%0java.io.PrintStream*
+\033[H\033[2J2print(Ljava/lang/String;)¡
+æ
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java (
+%2java.io.PrintStream"__id*
+""ËÂ
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java (
+
+%3void"java.io.PrintStream#flush()V*
+
+%2java.io.PrintStream2flush()òï
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java! (0A
+%4;it.ispw.daniele.backpacker.controller.login.LoginController";it.ispw.daniele.backpacker.controller.login.LoginController™
+ß
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java (2
+%5"Eit.ispw.daniele.backpacker.controller.login.LoginController#<init>()V*C
+A
+%4;it.ispw.daniele.backpacker.controller.login.LoginController¶
+£
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java (3A
+lc;it.ispw.daniele.backpacker.controller.login.LoginController"__id*C
+A
+%4;it.ispw.daniele.backpacker.controller.login.LoginControllerΩ
+∫
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java (
+emailjava.lang.String"__id* ¿
+Ω
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java (
+usernamejava.lang.String"__id* º
+π
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java   (
+namejava.lang.String"__id* ø
+º
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java! !(
+surnamejava.lang.String"__id* ¿
+Ω
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java" "(
+passwordjava.lang.String"__id* ¿
+Ω
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java# #(
+userTypejava.lang.String"__id* ø
+º
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java$ $(
+VATNumbjava.lang.String"__id* ¡
+æ
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java' '(
+%6java.io.PrintStream"__id*
+""úô
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java' '($
+
+%7void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%6java.io.PrintStream*
+
+Email:2println(Ljava/lang/String;)âÜ
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java( ((
+%8java.lang.String".java.util.Scanner#nextLine()Ljava/lang/String;*
+
+scanjava.util.Scanner2
+nextLine()”
+–
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java( ((
+emailjava.lang.String"__id*
 
-%2java.lang.String:
-valjava.lang.StringB@">
-<it.ispw.daniele.backpacker.controller.search.AddressFromCity
+%8java.lang.String¡
+æ
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java* *(
+%9java.io.PrintStream"__id*
+""†ù
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java* *('
+%10void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%9java.io.PrintStream*
+	Username:2println(Ljava/lang/String;)äá
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java+ +("
+%11java.lang.String".java.util.Scanner#nextLine()Ljava/lang/String;*
+
+scanjava.util.Scanner2
+nextLine()◊
+‘
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java+ +("
+usernamejava.lang.String"__id*
+
+%11java.lang.String¬
+ø
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java- -(
+%12java.io.PrintStream"__id*
+""ùö
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java- -(#
+%13void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%12java.io.PrintStream*	
+Name:2println(Ljava/lang/String;)äá
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java. .(
+%14java.lang.String".java.util.Scanner#nextLine()Ljava/lang/String;*
+
+scanjava.util.Scanner2
+nextLine()”
+–
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java. .(
+namejava.lang.String"__id*
+
+%14java.lang.String¬
+ø
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java0 0(
+%15java.io.PrintStream"__id*
+""†ù
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java0 0(&
+%16void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%15java.io.PrintStream*
+
+Surname:2println(Ljava/lang/String;)äá
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java1 1(!
+%17java.lang.String".java.util.Scanner#nextLine()Ljava/lang/String;*
+
+scanjava.util.Scanner2
+nextLine()÷
+”
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java1 1(!
+surnamejava.lang.String"__id*
+
+%17java.lang.String¬
+ø
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java3 3(
+%18java.io.PrintStream"__id*
+""°û
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java3 3('
+%19void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%18java.io.PrintStream*
+	Password:2println(Ljava/lang/String;)äá
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java4 4("
+%20java.lang.String".java.util.Scanner#nextLine()Ljava/lang/String;*
+
+scanjava.util.Scanner2
+nextLine()◊
+‘
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java4 4("
+passwordjava.lang.String"__id*
+
+%20java.lang.String¬
+ø
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java: :(
+%21java.io.PrintStream"__id*
+""√¿
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java: :(I
+%22void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%21java.io.PrintStream*/-
++Type of user: Generic[0] - Tourist_Guide[1]2println(Ljava/lang/String;)äá
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java; ;("
+%23java.lang.String".java.util.Scanner#nextLine()Ljava/lang/String;*
+
+scanjava.util.Scanner2
+nextLine()◊
+‘
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java; ;("
+userTypejava.lang.String"__id*
+
+%23java.lang.String*
+16
+22
+23*Ø
+10î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaî î(ƒ
+¡
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaî î(
+%84java.io.PrintStream"__id*
+""≤Ø
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaî î(:
+%85void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%84java.io.PrintStream*
+REGISTRATION SUCCESSFULL2println(Ljava/lang/String;)ç
+ä
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaï ï(
+%86java.io.File"__id*V*TE
+Cit.ispw.daniele.backpacker.commandLineInterface.CliSignUpController"
+	imageFile*
+9
+1*¬
+
+22í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java@ C(*œ
+Ã
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaA A(*
+userTypejava.lang.String"__id*
+TOURIST_GUIDE¬
+ø
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaB B(
+%24java.io.PrintStream"__id*
+""£†
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaB B(1
+%25void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%24java.io.PrintStream*
+VAT Number:2println(Ljava/lang/String;)äá
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaC C()
+%26java.lang.String".java.util.Scanner#nextLine()Ljava/lang/String;*
+
+scanjava.util.Scanner2
+nextLine()÷
+”
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaC C()
+VATNumbjava.lang.String"__id*
+
+%26java.lang.String*
+16*Ö
+11î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaì ì(¬
+ø
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaì ì(
+%82java.lang.Boolean"__id*
+""ôñ
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaì ì()
+%83boolean"-java.lang.Boolean#equals(Ljava/lang/Object;)Z*
+
+%82java.lang.Boolean*
+""2equals(Ljava/lang/Object;)*
+2
+10*Ë
+23í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java= ?(∆
+√
+í
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.java> >(!
+userTypejava.lang.String"__id*
+USER*
+16*Ñ(
+12î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÜ Ü(ƒ
+¡
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÜ Ü(
+%69java.io.PrintStream"__id*
+""•¢
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaÜ Ü(-
+%70void"0java.io.PrintStream#println(Ljava/lang/String;)V*
+
+%69java.io.PrintStream*
+VAT Number:2println(Ljava/lang/String;)åâ
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaá á(%
+%71java.lang.String".java.util.Scanner#nextLine()Ljava/lang/String;*
+
+scanjava.util.Scanner2
+nextLine()ÿ
+’
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaá á(%
+VATNumbjava.lang.String"__id*
+
+%71java.lang.StringÖÇ
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaà' à(77
+%720it.ispw.daniele.backpacker.bean.TouristGuideBean"0it.ispw.daniele.backpacker.bean.TouristGuideBeanò
+ï
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaà# à(9
+%73":it.ispw.daniele.backpacker.bean.TouristGuideBean#<init>()V*9
+7
+%720it.ispw.daniele.backpacker.bean.TouristGuideBeanî
+ë
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaà à(:7
+tgb0it.ispw.daniele.backpacker.bean.TouristGuideBean"__id*9
+7
+%720it.ispw.daniele.backpacker.bean.TouristGuideBeanıÚ
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaâ â(%
+%74void"Pit.ispw.daniele.backpacker.bean.GeneralUserBean#setUsername(Ljava/lang/String;)V*9
+7
+tgb0it.ispw.daniele.backpacker.bean.TouristGuideBean*
+
+usernamejava.lang.String2setUsername(Ljava/lang/String;)ÍÁ
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaä ä(
+%75void"Mit.ispw.daniele.backpacker.bean.TouristGuideBean#setName(Ljava/lang/String;)V*9
+7
+tgb0it.ispw.daniele.backpacker.bean.TouristGuideBean*
+
+namejava.lang.String2setName(Ljava/lang/String;)Û
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaã ã(#
+%76void"Pit.ispw.daniele.backpacker.bean.TouristGuideBean#setSurname(Ljava/lang/String;)V*9
+7
+tgb0it.ispw.daniele.backpacker.bean.TouristGuideBean*
+
+surnamejava.lang.String2setSurname(Ljava/lang/String;)ÏÈ
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaå å(
+%77void"Mit.ispw.daniele.backpacker.bean.GeneralUserBean#setEmail(Ljava/lang/String;)V*9
+7
+tgb0it.ispw.daniele.backpacker.bean.TouristGuideBean*
+
+emailjava.lang.String2setEmail(Ljava/lang/String;)ıÚ
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaç ç(%
+%78void"Pit.ispw.daniele.backpacker.bean.GeneralUserBean#setPassword(Ljava/lang/String;)V*9
+7
+tgb0it.ispw.daniele.backpacker.bean.TouristGuideBean*
+
+passwordjava.lang.String2setPassword(Ljava/lang/String;)ÑÅ
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaé é(.
+%79void"Vit.ispw.daniele.backpacker.bean.GeneralUserBean#setProfilePicture(Ljava/lang/String;)V*9
+7
+tgb0it.ispw.daniele.backpacker.bean.TouristGuideBean*!
+
+newFileNamejava.lang.String2%setProfilePicture(Ljava/lang/String;)âÜ
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaè è(.
+%80void"[it.ispw.daniele.backpacker.bean.TouristGuideBean#setIdentificationCode(Ljava/lang/String;)V*9
+7
+tgb0it.ispw.daniele.backpacker.bean.TouristGuideBean*
+
+VATNumbjava.lang.String2)setIdentificationCode(Ljava/lang/String;)¯ı
+î
+áC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliSignUpController.javaê ê(2
+%81boolean"Éit.ispw.daniele.backpacker.controller.login.LoginController#createTouristGuide(Lit/ispw/daniele/backpacker/bean/TouristGuideBean;)Z*C
+A
+lc;it.ispw.daniele.backpacker.controller.login.LoginController*9
+7
+tgb0it.ispw.daniele.backpacker.bean.TouristGuideBean2FcreateTouristGuide(Lit/ispw/daniele/backpacker/bean/TouristGuideBean;)*
+11:
+scanjava.util.ScannerBGE
+Cit.ispw.daniele.backpacker.commandLineInterface.CliSignUpController
