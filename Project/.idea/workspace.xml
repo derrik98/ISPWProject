@@ -34,7 +34,10 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/resources&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reactor&quot;
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -65,7 +68,7 @@
       <module name="Backpacker" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.ispw.daniele.backpacker.fxmlView.*" />
+          <option name="PATTERN" value="it.ispw.daniele.backpacker.commandLineInterface.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -74,11 +77,12 @@
       </method>
     </configuration>
     <configuration name="CLI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.fxmlView.CLI" />
+      <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
+      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.commandLineInterface.CLI" />
       <module name="Backpacker" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.ispw.daniele.backpacker.fxmlView.*" />
+          <option name="PATTERN" value="it.ispw.daniele.backpacker.commandLineInterface.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -86,52 +90,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommandLine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.fxmlView.CLI.CommandLine" />
-      <module name="Backpacker" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.ispw.daniele.backpacker.fxmlView.CLI.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ScrollString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.fxmlView.ScrollString" />
-      <module name="Backpacker" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.ispw.daniele.backpacker.fxmlView.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SubSceneExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.boundary.SubSceneExample" />
-      <module name="Backpacker" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.ispw.daniele.backpacker.fxmlView.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Application.App" />
+      <item itemvalue="Application.CLI" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.CLI" />
-        <item itemvalue="Application.CommandLine" />
         <item itemvalue="Application.App" />
-        <item itemvalue="Application.ScrollString" />
-        <item itemvalue="Application.SubSceneExample" />
       </list>
     </recent_temporary>
   </component>
@@ -323,6 +289,10 @@
       <workItem from="1666619273795" duration="4853000" />
       <workItem from="1666624548165" duration="780000" />
       <workItem from="1666625468715" duration="1742000" />
+      <workItem from="1666729198014" duration="1776000" />
+      <workItem from="1666731037026" duration="1886000" />
+      <workItem from="1666732947838" duration="3244000" />
+      <workItem from="1666794241360" duration="5117000" />
     </task>
     <servers />
   </component>

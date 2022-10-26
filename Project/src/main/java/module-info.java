@@ -18,4 +18,6 @@ module it.ispw.daniele.backpacker {
 
     exports it.ispw.daniele.backpacker.fxmlView;
     opens it.ispw.daniele.backpacker.fxmlView to javafx.fxml;
+    exports it.ispw.daniele.backpacker.commandLineInterface;
+    opens it.ispw.daniele.backpacker.commandLineInterface to javafx.fxml;
 }

@@ -1,7 +1,6 @@
 package it.ispw.daniele.backpacker.utils;
 
 import java.io.File;
-import java.util.random.RandomGenerator;
 
 public class FileManager {
 
