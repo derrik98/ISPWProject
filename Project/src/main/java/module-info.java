@@ -10,7 +10,6 @@ module it.ispw.daniele.backpacker {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires java.desktop;
-    requires com.jfoenix;
     requires org.json;
     requires java.logging;
     requires java.sql;
