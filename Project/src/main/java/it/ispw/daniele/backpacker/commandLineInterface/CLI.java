@@ -10,17 +10,16 @@ public class CLI {
 
     public static void main(String[] args) {
 
-
         Scanner scan = new Scanner(System.in);
 
         do
         {
-        System.out.println("-----------------------------------EXIT [quit]----");
-        System.out.println("--------------------------------------------------");
-        System.out.println("----------------LOGIN [0]-------------------------");
-        System.out.println("----------------SIGNUP [1]------------------------");
-        System.out.println("--------------------------------------------------");
-        System.out.println("--------------------------------------------------");
+        System.out.println("-----------------------------------EXIT [quit]--");
+        System.out.println("------------------------------------------------");
+        System.out.println("----------------LOGIN [0]-----------------------");
+        System.out.println("----------------SIGNUP [1]----------------------");
+        System.out.println("------------------------------------------------");
+        System.out.println("------------------------------------------------");
 
         System.out.println("Command: ");
 
@@ -28,11 +27,11 @@ public class CLI {
                 case "0":
                     CliLoginController loginController = new CliLoginController();
                     loginController.init(scan);
-                    return;
+                    break;
                 case "1":
                     CliSignUpController signUpController = new CliSignUpController();
                     signUpController.init(scan);
-                    return;
+                    break;
                 case "quit":
                     return;
                 default:

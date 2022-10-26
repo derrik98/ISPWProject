@@ -2,12 +2,18 @@ package it.ispw.daniele.backpacker.commandLineInterface;
 
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.controller.login.LoginController;
-import it.ispw.daniele.backpacker.exceptions.LoginEmptyFieldException;
+import it.ispw.daniele.backpacker.exceptions.EmptyFieldException;
+import it.ispw.daniele.backpacker.fxmlView.UserGraphicChange;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class CliLoginController {
+
+    public static final String RESET = "\033[0m";  // Text Reset
+    public static final String RED = "\033[0;31m";     // RED
+
     public void init(Scanner scan) {
 
         System.out.print("\033[H\033[2J");
@@ -21,8 +27,8 @@ public class CliLoginController {
         System.out.println("Password:");
         String password = scan.nextLine();
 
-        System.out.println("Username : " + username);
-        System.out.println("Password : " + password);
+        /*System.out.println("Username : " + username);
+        System.out.println("Password : " + password);*/
 
         GeneralUserBean gub = new GeneralUserBean();
         gub.setUsername(username);
@@ -40,18 +46,20 @@ public class CliLoginController {
                 //SET SESSION GENERAL USER
                 SessionUser su = SessionUser.getInstance();
                 su.setSession(gu);
-                System.out.println("Login success");
-                System.out.println("Login success");
+
                 switch (role) {
-                    //case "user" -> UserGraphicChange.getInstance().switchToHomePage(this.textFieldUsername.getScene());
-                    //case "tourist_guide" -> TouristGuideGraphicChange.getInstance().switchToHomePage(this.textFieldUsername.getScene());*//*
+                    case "user" -> {
+                        CliUserGraphicChange.getInstance().switchToHomePage(scan);
+                        scan.nextLine();
+                        //case "tourist_guide" -> TouristGuideGraphicChange.getInstance().switchToHomePage(this.textFieldUsername.getScene());*//*
+                    }
                     default -> {
                     }
                 }
             }
-        } catch (
-                LoginEmptyFieldException e) {
-            throw new RuntimeException(e);
+        } catch (EmptyFieldException e) {
+            System.out.println("\n" + RED + e.getMessage() + RESET + "\n");
+            //throw new RuntimeException(e);
         }
     }
 }
