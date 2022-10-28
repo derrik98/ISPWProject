@@ -1,3 +1,0 @@
-it.ispw.daniele.backpacker.utils.DBUserConnection#getUserConnection()Ljava/sql/Connection;
-java.sql.DriverManager#getConnection(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;
-java.lang.Class#forName(Ljava/lang/String;)Ljava/lang/Class;

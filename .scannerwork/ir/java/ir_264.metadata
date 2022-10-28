@@ -1,6 +1,0 @@
-it.ispw.daniele.backpacker.controller.search.AddressFromCity#getJSON(Ljava/lang/String;Ljava/lang/String;)Z
-it.ispw.daniele.backpacker.controller.search.JSONFactory#readJsonFromUrl(Ljava/lang/String;)LJSONObject;
-it.ispw.daniele.backpacker.controller.search.AddressFromCity#upperCaseFirst(Ljava/lang/String;)Ljava/lang/String;
-it.ispw.daniele.backpacker.controller.search.JSONFactory#convertString(Ljava/lang/String;)Ljava/lang/String;
-it.ispw.daniele.backpacker.exceptions.AddressNotFoundException#instance-init#
-it.ispw.daniele.backpacker.exceptions.AddressNotFoundException#<init>(Ljava/lang/String;)V

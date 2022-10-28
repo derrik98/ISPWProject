@@ -1,1 +1,0 @@
-G 2javaXQhrEProject/src/main/java/it/ispw/daniele/backpacker/entity/Monument.java

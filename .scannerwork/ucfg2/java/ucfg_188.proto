@@ -1,144 +1,0 @@
-
-Iit.ispw.daniele.backpacker.dao.TouristGuideDao$2#act()Ljava/lang/Boolean;|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.java[ [("13*ô
-13|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.java\! \(9«
-ƒ
-|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.java\! \(U
-%0java.sql.Connection"jit.ispw.daniele.backpacker.utils.DBTouristGuideConnection#getTouristGuideConnection()Ljava/sql/Connection;*=";
-9it.ispw.daniele.backpacker.utils.DBTouristGuideConnection¿
-Ω
-|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.java\ \(V
-conjava.sql.Connection"__id*
-
-%0java.sql.Connection*
-11
-12*à
-1|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javao o("Ñ
-|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javao o(2*˘
-2|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javam m(Ì
-|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javam m('
-
-%12int"+java.sql.PreparedStatement#executeUpdate()I*#
-!
-stmjava.sql.PreparedStatement2executeUpdate()*
-1*¶
-3|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javal l(ùö
-|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javal l(8
-%11void":java.sql.PreparedStatement#setString(ILjava/lang/String;)V*#
-!
-stmjava.sql.PreparedStatement*2*
-""2setString(ILjava/lang/String;)*
-2*¶
-4|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javaj j(ùö
-|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javaj j(.
-%10void":java.sql.PreparedStatement#setString(ILjava/lang/String;)V*#
-!
-stmjava.sql.PreparedStatement*2*
-""2setString(ILjava/lang/String;)*
-3*•
-5|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javai i(úô
-|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javai i(+
-
-%9void":java.sql.PreparedStatement#setString(ILjava/lang/String;)V*#
-!
-stmjava.sql.PreparedStatement*2*
-""2setString(ILjava/lang/String;)*
-4*•
-6|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javah h(úô
-|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javah h(-
-
-%8void":java.sql.PreparedStatement#setString(ILjava/lang/String;)V*#
-!
-stmjava.sql.PreparedStatement*2*
-""2setString(ILjava/lang/String;)*
-5*•
-7|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javag g(úô
-|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javag g(*
-
-%7void":java.sql.PreparedStatement#setString(ILjava/lang/String;)V*#
-!
-stmjava.sql.PreparedStatement*2*
-""2setString(ILjava/lang/String;)*
-6*ˆ
-8|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javae e(FŒ
-À
-|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javae e(F!
-stmjava.sql.PreparedStatement"__id*"
- 
-%5java.sql.PreparedStatementúô
-|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javaf f(.
-
-%6void":java.sql.PreparedStatement#setString(ILjava/lang/String;)V*#
-!
-stmjava.sql.PreparedStatement*2*
-""2setString(ILjava/lang/String;)*
-7*·
-9|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javae- e(0ÿ’
-|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javae- e(F 
-%5java.sql.PreparedStatement"Tjava.sql.Connection#prepareStatement(Ljava/lang/String;)Ljava/sql/PreparedStatement;*
-
-conjava.sql.Connection*
-
-sqljava.lang.String2$prepareStatement(Ljava/lang/String;)*
-8*Ë
-10|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javad d(Wﬁ
-€
-|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javad d(X
-sqljava.lang.String"__id*<:
-8call backpacker.add_tourist_guide(?, ?, ?, ?, ?, ?);\r\n*
-9*“
-11|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javaa a(™
-ß
-|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javaa a(
-%3java.io.PrintStream"__id*
-""öó
-|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.javaa a(E
-
-%4void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%3java.io.PrintStream*
-connessoine stabilitaaaaaaa2println(Ljava/lang/String;)*
-10*–
-12|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.java^ ^(™
-ß
-|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.java^ ^(
-%1java.io.PrintStream"__id*
-""òï
-|
-rC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.java^ ^(C
-
-%2void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%1java.io.PrintStream*
-connessoine non stabilita2println(Ljava/lang/String;)*
-10B42
-0it.ispw.daniele.backpacker.dao.TouristGuideDao$2

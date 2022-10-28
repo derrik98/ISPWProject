@@ -1,1 +1,0 @@
-' 2xmlXËhrProject/.idea/workspace.xml

@@ -1,1 +1,0 @@
-E 2javaX'hrHProject/src/main/java/it/ispw/daniele/backpacker/entity/GeneralUser.java

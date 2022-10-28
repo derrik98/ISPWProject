@@ -1,1 +1,0 @@
-d 2javaXªhrVProject/src/main/java/it/ispw/daniele/backpacker/fxmlView/TGuideDetailsController.java

@@ -1,80 +1,0 @@
-
-jit.ispw.daniele.backpacker.utils.DBTouristGuideConnection#getTouristGuideConnection()Ljava/sql/Connection;á
-}C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBTouristGuideConnection.java (6"3*Ø
-2á
-}C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBTouristGuideConnection.java ( ı
-Ú
-á
-}C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBTouristGuideConnection.java ( 
-%1java.sql.Connection"__id*E*C;
-9it.ispw.daniele.backpacker.utils.DBTouristGuideConnection"
-me"ß
-á
-}C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBTouristGuideConnection.java (!
-
-%1java.sql.Connection*ç
-3á
-}C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBTouristGuideConnection.java (ı
-Ú
-á
-}C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBTouristGuideConnection.java (
-%0java.sql.Connection"__id*E*C;
-9it.ispw.daniele.backpacker.utils.DBTouristGuideConnection"
-me*
-2
-1*µ
-1á
-}C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBTouristGuideConnection.java (ˇ
-¸
-á
-}C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBTouristGuideConnection.java ()
-%2java.lang.String"__id*R*P;
-9it.ispw.daniele.backpacker.utils.DBTouristGuideConnection"
-driverClassNameë
-é
-á
-}C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBTouristGuideConnection.java (*
-%3java.lang.Class"<java.lang.Class#forName(Ljava/lang/String;)Ljava/lang/Class;*"
-java.lang.Class*
-
-%2java.lang.Stringı
-Ú
-á
-}C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBTouristGuideConnection.java- (2
-%4java.lang.String"__id*H*F;
-9it.ispw.daniele.backpacker.utils.DBTouristGuideConnection"
-dbUrl¸
-˘
-á
-}C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBTouristGuideConnection.java3 (?
-%5java.lang.String"__id*O*M;
-9it.ispw.daniele.backpacker.utils.DBTouristGuideConnection"
-touristGuide˛
-˚
-á
-}C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBTouristGuideConnection.java (P
-%6java.sql.Connection"qjava.sql.DriverManager#getConnection(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;*"
-java.sql.DriverManager*
-
-%4java.lang.String*
-
-%5java.lang.String*
-tourist_guideı
-Ú
-á
-}C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBTouristGuideConnection.java (PC;
-9it.ispw.daniele.backpacker.utils.DBTouristGuideConnection"
-me"__id*
-
-%6java.sql.Connectionı
-Ú
-á
-}C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBTouristGuideConnection.java (
-%7java.sql.Connection"__id*E*C;
-9it.ispw.daniele.backpacker.utils.DBTouristGuideConnection"
-me"ß
-á
-}C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBTouristGuideConnection.java (
-
-%7java.sql.ConnectionB=";
-9it.ispw.daniele.backpacker.utils.DBTouristGuideConnection

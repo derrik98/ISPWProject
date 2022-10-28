@@ -1,1 +1,0 @@
-I 2javaX#hrIProject/src/main/java/it/ispw/daniele/backpacker/entity/TouristGuide.java

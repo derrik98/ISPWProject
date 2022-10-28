@@ -1,28 +1,0 @@
-
-‹it.ispw.daniele.backpacker.dao.GeneralUserDao#findUser(Ljava/lang/String;Ljava/lang/String;)Lit/ispw/daniele/backpacker/entity/GeneralUser;{
-qC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/GeneralUserDao.java ("1*Ë	
-1{
-qC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/GeneralUserDao.java (èå
-{
-qC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/GeneralUserDao.java  (65
-%0/it.ispw.daniele.backpacker.dao.GeneralUserDao$1"/it.ispw.daniele.backpacker.dao.GeneralUserDao$1Û
-Ø
-{
-qC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/GeneralUserDao.java -(	
-%1"java.lang.Object#<init>()V*7
-5
-%0/it.ispw.daniele.backpacker.dao.GeneralUserDao$1ÈÅ
-{
-qC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/GeneralUserDao.java -(
-3
-%2-it.ispw.daniele.backpacker.entity.GeneralUser"pit.ispw.daniele.backpacker.dao.DaoTemplate#execute(Lit/ispw/daniele/backpacker/dao/DaoAction;)Ljava/lang/Object;*1/
--it.ispw.daniele.backpacker.dao.GeneralUserDao*7
-5
-%0/it.ispw.daniele.backpacker.dao.GeneralUserDao$123execute(Lit/ispw/daniele/backpacker/dao/DaoAction;)"´
-{
-qC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/GeneralUserDao.java -(5
-3
-%2-it.ispw.daniele.backpacker.entity.GeneralUser:
-usernamejava.lang.String:
-passwordjava.lang.StringB1/
--it.ispw.daniele.backpacker.dao.GeneralUserDao

@@ -1,53 +1,0 @@
-
-dit.ispw.daniele.backpacker.controller.search.JSONFactory#readAll(Ljava/io/Reader;)Ljava/lang/String;†
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java (!"4*¯
-2†
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java (›˜
-†
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java ( 
-%3java.lang.StringBuilder":java.lang.StringBuilder#append(C)Ljava/lang/StringBuilder;*
-
-sbjava.lang.StringBuilder*
-""2	append(C)*
-3*æ
-3†
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java (ÏÌ
-†
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java (	
-%2int"java.io.Reader#read()I*
-
-rdjava.io.Reader2read()*
-2
-1*†
-4†
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java (.ÄÁ
-†
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java (,
-%0java.lang.StringBuilder"java.lang.StringBuilderÖ
-Ó
-†
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java (.
-%1"!java.lang.StringBuilder#<init>()V*
-
-%0java.lang.StringBuilderÒ
-Ï
-†
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java (/
-sbjava.lang.StringBuilder"__id*
-
-%0java.lang.StringBuilder*
-3*¼
-1†
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java (‡„
-†
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java (
-%4java.lang.String"4java.lang.StringBuilder#toString()Ljava/lang/String;*
-
-sbjava.lang.StringBuilder2
-toString()"£
-†
-|C:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/JSONFactory.java (
-
-%4java.lang.String:
-rdjava.io.ReaderB<":
-8it.ispw.daniele.backpacker.controller.search.JSONFactory

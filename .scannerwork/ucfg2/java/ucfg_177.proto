@@ -1,48 +1,0 @@
-
-dit.ispw.daniele.backpacker.dao.ItineraryDao#getBookedItineraries(Ljava/lang/String;)Ljava/util/List;{
-oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/ItineraryDao.javaÇ Ç(/"3*™
-2{
-oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/ItineraryDao.javaó ó("–
-{
-oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/ItineraryDao.javaó ó(
-
-retjava.util.List*«	
-3{
-oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/ItineraryDao.javaÈ È("äá
-{
-oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/ItineraryDao.javaÈ/ È(I3
-%0-it.ispw.daniele.backpacker.dao.ItineraryDao$6"-it.ispw.daniele.backpacker.dao.ItineraryDao$6Ù
-Ö
-{
-oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/ItineraryDao.javaÈ+ ñ(	
-%1"java.lang.Object#<init>()V*5
-3
-%0-it.ispw.daniele.backpacker.dao.ItineraryDao$6¥¢
-{
-oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/ItineraryDao.javaÈ ñ(
-
-%2java.util.List"pit.ispw.daniele.backpacker.dao.DaoTemplate#execute(Lit/ispw/daniele/backpacker/dao/DaoAction;)Ljava/lang/Object;*/-
-+it.ispw.daniele.backpacker.dao.ItineraryDao*5
-3
-%0-it.ispw.daniele.backpacker.dao.ItineraryDao$623execute(Lit/ispw/daniele/backpacker/dao/DaoAction;)µ
-²
-{
-oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/ItineraryDao.javaÈ ñ(
-retjava.util.List"__id*
-
-%2java.util.List*
-2
-1*ÿ
-1{
-oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/ItineraryDao.javaõ õ(ä
-á
-{
-oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/ItineraryDao.javaõ õ(*
-%3java.util.List"1java.util.Collections#emptyList()Ljava/util/List;*"
-java.util.Collections"•
-{
-oC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/ItineraryDao.javaõ õ(+
-
-%3java.util.List:
-inputjava.lang.StringB/-
-+it.ispw.daniele.backpacker.dao.ItineraryDao

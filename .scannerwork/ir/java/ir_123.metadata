@@ -1,7 +1,0 @@
-it.ispw.daniele.backpacker.controller.search.SearchController#createItinerary(Ljava/util/Vector;)Lit/ispw/daniele/backpacker/entity/Itinerary;
-it.ispw.daniele.backpacker.entity.Itinerary#<init>(Ljava/lang/String;)V
-java.util.Vector#<init>()V
-java.util.Vector#instance-init#
-java.util.Random#instance-init#
-it.ispw.daniele.backpacker.entity.Itinerary#instance-init#
-java.util.Random#<init>()V

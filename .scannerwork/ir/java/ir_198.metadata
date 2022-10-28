@@ -1,2 +1,0 @@
-it.ispw.daniele.backpacker.dao.ItineraryDao#removeParticipation(Ljava/lang/String;Ljava/lang/String;)V
-it.ispw.daniele.backpacker.dao.ItineraryDao#manageParticipation(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V

@@ -1,3 +1,0 @@
-it.ispw.daniele.backpacker.utils.FileManager#generateNewFileName(Ljava/lang/String;ZLjava/lang/String;)Ljava/lang/String;
-it.ispw.daniele.backpacker.utils.RandomNumberGenerator#getInstance()Lit/ispw/daniele/backpacker/utils/RandomNumberGenerator;
-java.lang.String#equals(Ljava/lang/Object;)Z

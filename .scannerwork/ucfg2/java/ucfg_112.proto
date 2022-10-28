@@ -1,80 +1,0 @@
-
-\it.ispw.daniele.backpacker.utils.DBLoginConnection#getLoginConnection()Ljava/sql/Connection;€
-vC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBLoginConnection.java (/"3*“
-2€
-vC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBLoginConnection.java (!ç
-ä
-€
-vC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBLoginConnection.java (!
-%1java.sql.Connection"__id*>*<4
-2it.ispw.daniele.backpacker.utils.DBLoginConnection"
-me" 
-€
-vC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBLoginConnection.java ("
-
-%1java.sql.Connection*ø
-3€
-vC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBLoginConnection.java (ç
-ä
-€
-vC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBLoginConnection.java (
-%0java.sql.Connection"__id*>*<4
-2it.ispw.daniele.backpacker.utils.DBLoginConnection"
-me*
-2
-1*Ã
-1€
-vC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBLoginConnection.java (ñ
-î
-€
-vC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBLoginConnection.java ()
-%2java.lang.String"__id*K*I4
-2it.ispw.daniele.backpacker.utils.DBLoginConnection"
-driverClassNameŠ
-‡
-€
-vC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBLoginConnection.java (*
-%3java.lang.Class"<java.lang.Class#forName(Ljava/lang/String;)Ljava/lang/Class;*"
-java.lang.Class*
-
-%2java.lang.Stringç
-ä
-€
-vC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBLoginConnection.java: (?
-%4java.lang.String"__id*A*?4
-2it.ispw.daniele.backpacker.utils.DBLoginConnection"
-dbUrlæ
-ã
-€
-vC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBLoginConnection.java@ (D
-%5java.lang.String"__id*@*>4
-2it.ispw.daniele.backpacker.utils.DBLoginConnection"
-userï
-ì
-€
-vC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBLoginConnection.java (M
-%6java.sql.Connection"qjava.sql.DriverManager#getConnection(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;*"
-java.sql.DriverManager*
-
-%4java.lang.String*
-
-%5java.lang.String*	
-loginç
-ä
-€
-vC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBLoginConnection.java (M<4
-2it.ispw.daniele.backpacker.utils.DBLoginConnection"
-me"__id*
-
-%6java.sql.Connectionç
-ä
-€
-vC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBLoginConnection.java (
-%7java.sql.Connection"__id*>*<4
-2it.ispw.daniele.backpacker.utils.DBLoginConnection"
-me" 
-€
-vC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/utils/DBLoginConnection.java (
-
-%7java.sql.ConnectionB6"4
-2it.ispw.daniele.backpacker.utils.DBLoginConnection

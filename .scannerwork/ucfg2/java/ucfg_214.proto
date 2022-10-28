@@ -1,389 +1,0 @@
-
-Git.ispw.daniele.backpacker.fxmlView.AddItineraryViewController#share()Vç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.java- -("8"10*à
-2ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaY Y(Ω
-∫
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaY Y(
-%47java.io.PrintStream"__id*
-""≠™
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaY Y(<
-%48void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%47java.io.PrintStream*
-errore aggiunta itinerario2println(Ljava/lang/String;)*
-0*Å
-3ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaV V(Ω
-∫
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaV V(
-%45java.io.PrintStream"__id*
-""¶£
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaV V(9
-%46void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%45java.io.PrintStream*
-itinerario aggiunto2println(Ljava/lang/String;)*
-0*„
-5ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaS S(ø
-º
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaS S(P
-%43Iit.ispw.daniele.backpacker.controller.addItinerary.AddItineraryController"__id*R*P@
->it.ispw.daniele.backpacker.fxmlView.AddItineraryViewController"
-
-controllerÉÄ
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaS S(;
-%44boolean"àit.ispw.daniele.backpacker.controller.addItinerary.AddItineraryController#addItinerary(Lit/ispw/daniele/backpacker/bean/ItineraryBean;)Z*R
-P
-%43Iit.ispw.daniele.backpacker.controller.addItinerary.AddItineraryController*@
->
-itineraryBean-it.ispw.daniele.backpacker.bean.ItineraryBean2=addItinerary(Lit/ispw/daniele/backpacker/bean/ItineraryBean;)*
-2
-3*°U
-6ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaF& F(9˜Ù
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaF* F(73
-%7-it.ispw.daniele.backpacker.bean.ItineraryBean"-it.ispw.daniele.backpacker.bean.ItineraryBeanâ
-Ü
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaF& F(9
-%8"7it.ispw.daniele.backpacker.bean.ItineraryBean#<init>()V*5
-3
-%7-it.ispw.daniele.backpacker.bean.ItineraryBeanê
-ç
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaF F(:>
-itineraryBean-it.ispw.daniele.backpacker.bean.ItineraryBean"__id*5
-3
-%7-it.ispw.daniele.backpacker.bean.ItineraryBeanÚÔ
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaG G((
-
-%9void"Qit.ispw.daniele.backpacker.bean.ItineraryBean#setItineraryId(Ljava/lang/String;)V*@
->
-itineraryBean-it.ispw.daniele.backpacker.bean.ItineraryBean*
-
-idjava.lang.String2"setItineraryId(Ljava/lang/String;)§
-°
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaH! H(/6
-%10/it.ispw.daniele.backpacker.bean.GeneralUserBean"__id*Q*O@
->it.ispw.daniele.backpacker.fxmlView.AddItineraryViewController"
-	guideBean∆√
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaH! H(=
-%11java.lang.String"Oit.ispw.daniele.backpacker.bean.GeneralUserBean#getUsername()Ljava/lang/String;*8
-6
-%10/it.ispw.daniele.backpacker.bean.GeneralUserBean2getUsername()ÏÈ
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaH H(>
-%12void"Mit.ispw.daniele.backpacker.bean.ItineraryBean#setGuideId(Ljava/lang/String;)V*@
->
-itineraryBean-it.ispw.daniele.backpacker.bean.ItineraryBean*
-
-%11java.lang.String2setGuideId(Ljava/lang/String;)Á‰
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaI I(#
-%13void"Jit.ispw.daniele.backpacker.bean.ItineraryBean#setDate(Ljava/lang/String;)V*@
->
-itineraryBean-it.ispw.daniele.backpacker.bean.ItineraryBean*
-
-datejava.lang.String2setDate(Ljava/lang/String;)Û
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaJ J(+
-%14void"Nit.ispw.daniele.backpacker.bean.ItineraryBean#setLocation(Ljava/lang/String;)V*@
->
-itineraryBean-it.ispw.daniele.backpacker.bean.ItineraryBean*
-
-locationjava.lang.String2setLocation(Ljava/lang/String;)Á‰
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaK K(#
-%15void"Jit.ispw.daniele.backpacker.bean.ItineraryBean#setTime(Ljava/lang/String;)V*@
->
-itineraryBean-it.ispw.daniele.backpacker.bean.ItineraryBean*
-
-timejava.lang.String2setTime(Ljava/lang/String;)ˇ¸
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaL L(3
-%16void"Rit.ispw.daniele.backpacker.bean.ItineraryBean#setParticipants(Ljava/lang/String;)V*@
->
-itineraryBean-it.ispw.daniele.backpacker.bean.ItineraryBean*"
- 
-participantsjava.lang.String2#setParticipants(Ljava/lang/String;)ÍÁ
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaM M(%
-%17void"Kit.ispw.daniele.backpacker.bean.ItineraryBean#setPrice(Ljava/lang/String;)V*@
->
-itineraryBean-it.ispw.daniele.backpacker.bean.ItineraryBean*
-
-pricejava.lang.String2setPrice(Ljava/lang/String;)Å
-˛
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaN N()
-%18java.lang.String"__id*M*K@
->it.ispw.daniele.backpacker.fxmlView.AddItineraryViewController"
-stepsËÂ
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaN N(*
-%19void"Kit.ispw.daniele.backpacker.bean.ItineraryBean#setSteps(Ljava/lang/String;)V*@
->
-itineraryBean-it.ispw.daniele.backpacker.bean.ItineraryBean*
-
-%18java.lang.String2setSteps(Ljava/lang/String;)Ω
-∫
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaO O(
-%20java.io.PrintStream"__id*
-""§
-°
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaO O()6
-%21/it.ispw.daniele.backpacker.bean.GeneralUserBean"__id*Q*O@
->it.ispw.daniele.backpacker.fxmlView.AddItineraryViewController"
-	guideBean∆√
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaO O(7
-%22java.lang.String"Oit.ispw.daniele.backpacker.bean.GeneralUserBean#getUsername()Ljava/lang/String;*8
-6
-%21/it.ispw.daniele.backpacker.bean.GeneralUserBean2getUsername()®•
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaO O(8
-%23void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%20java.io.PrintStream*
-
-%22java.lang.String2println(Ljava/lang/String;)Ω
-∫
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaP P(
-%24java.io.PrintStream"__id*
-"" «
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaP$ P(>
-%25java.lang.String"Lit.ispw.daniele.backpacker.bean.ItineraryBean#getGuideId()Ljava/lang/String;*@
->
-itineraryBean-it.ispw.daniele.backpacker.bean.ItineraryBean2getGuideId()€
-ÿ
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaP P(>
-%26java.lang.String"__concat*
-Dati*
-
-%25java.lang.StringŸ
-÷
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaP P(E
-%27java.lang.String"__concat*
-
-%26java.lang.String*
-\nƒ¡
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaPH P(_
-%28java.lang.String"Iit.ispw.daniele.backpacker.bean.ItineraryBean#getDate()Ljava/lang/String;*@
->
-itineraryBean-it.ispw.daniele.backpacker.bean.ItineraryBean2	getDate()Ï
-È
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaP P(_
-%29java.lang.String"__concat*
-
-%27java.lang.String*
-
-%28java.lang.StringŸ
-÷
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaP P(f
-%30java.lang.String"__concat*
-
-%29java.lang.String*
-\nÕ 
-é
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaPi P(Ñ
-%31java.lang.String"Mit.ispw.daniele.backpacker.bean.ItineraryBean#getLocation()Ljava/lang/String;*@
->
-itineraryBean-it.ispw.daniele.backpacker.bean.ItineraryBean2getLocation()Ì
-Í
-é
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaP P(Ñ
-%32java.lang.String"__concat*
-
-%30java.lang.String*
-
-%31java.lang.String⁄
-◊
-é
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaP P(ã
-%33java.lang.String"__concat*
-
-%32java.lang.String*
-\n∆√
-è
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaPé P(•
-%34java.lang.String"Iit.ispw.daniele.backpacker.bean.ItineraryBean#getTime()Ljava/lang/String;*@
->
-itineraryBean-it.ispw.daniele.backpacker.bean.ItineraryBean2	getTime()Ì
-Í
-é
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaP P(•
-%35java.lang.String"__concat*
-
-%33java.lang.String*
-
-%34java.lang.String⁄
-◊
-é
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaP P(¨
-%36java.lang.String"__concat*
-
-%35java.lang.String*
-\n÷”
-è
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaPØ P(Œ
-%37java.lang.String"Qit.ispw.daniele.backpacker.bean.ItineraryBean#getParticipants()Ljava/lang/String;*@
->
-itineraryBean-it.ispw.daniele.backpacker.bean.ItineraryBean2getParticipants()Ì
-Í
-é
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaP P(Œ
-%38java.lang.String"__concat*
-
-%36java.lang.String*
-
-%37java.lang.String⁄
-◊
-é
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaP P(’
-%39java.lang.String"__concat*
-
-%38java.lang.String*
-\n»≈
-è
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaPÿ P(
-%40java.lang.String"Jit.ispw.daniele.backpacker.bean.ItineraryBean#getPrice()Ljava/lang/String;*@
->
-itineraryBean-it.ispw.daniele.backpacker.bean.ItineraryBean2
-getPrice()Ì
-Í
-é
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaP P(
-%41java.lang.String"__concat*
-
-%39java.lang.String*
-
-%40java.lang.String©¶
-é
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaP P(Ò
-%42void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%24java.io.PrintStream*
-
-%41java.lang.String2println(Ljava/lang/String;)*
-5*÷
-7ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaC C(ª
-∏
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.javaC C(7
-datejava.lang.String"__id*
-""*
-6*‹
-8ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.java7 7(º
-π
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.java7 7(
-%2java.io.PrintStream"__id*
-""Ä
-˝
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.java7 7(%
-%3java.lang.String"__id*M*K@
->it.ispw.daniele.backpacker.fxmlView.AddItineraryViewController"
-steps•¢
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.java7 7(&
-
-%4void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%2java.io.PrintStream*
-
-%3java.lang.String2println(Ljava/lang/String;)º
-π
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.java9 9(
-%5java.io.PrintStream"__id*
-""öó
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.java9 9('
-
-%6void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%5java.io.PrintStream*
-	condiviso2println(Ljava/lang/String;)π
-∂
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.java: :(/
-idjava.lang.String"__id*
-""ø
-º
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.java; ;(7
-locationjava.lang.String"__id*
-""∑
-¥
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.java< <(
-datejava.lang.String"__id* ª
-∏
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.java= =(3
-timejava.lang.String"__id*
-""√
-¿
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.java> >(C 
-participantsjava.lang.String"__id*
-""º
-π
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.java? ?(5
-pricejava.lang.String"__id*
-""*
-6
-7*™
-10ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.java3 3(!Ä
-˝
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.java3 3('
-%0java.lang.String"__id*M*K@
->it.ispw.daniele.backpacker.fxmlView.AddItineraryViewController"
-stepsñì
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.java3 3(A
-%1"=java.lang.String#concat(Ljava/lang/String;)Ljava/lang/String;*
-
-%0java.lang.String*
-""2concat(Ljava/lang/String;)Ó
-Î
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.java3 3(AK@
->it.ispw.daniele.backpacker.fxmlView.AddItineraryViewController"
-steps"__id*
-
-%1*
-8
-10*≠
-0 "•
-ç
-ÇC:/Users/danie/Desktop/ISPWProject/trunk/Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/AddItineraryViewController.java` `(
-implicit returnBB@
->it.ispw.daniele.backpacker.fxmlView.AddItineraryViewController

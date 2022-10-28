@@ -1,1 +1,0 @@
-e 2javaX?hrXProject/src/main/java/it/ispw/daniele/backpacker/fxmlView/TouristGuideGraphicChange.java
