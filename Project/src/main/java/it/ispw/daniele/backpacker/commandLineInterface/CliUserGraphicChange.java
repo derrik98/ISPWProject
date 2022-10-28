@@ -4,6 +4,9 @@ import it.ispw.daniele.backpacker.utils.Roles;
 
 import java.util.Scanner;
 
+import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RED;
+import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RESET;
+
 public class CliUserGraphicChange extends CliGuiChangeTemplate{
 
     private static CliUserGraphicChange instance = null;
@@ -37,5 +40,36 @@ public class CliUserGraphicChange extends CliGuiChangeTemplate{
 
         /*    }
         });*/
+    }
+
+    public void switchToMenuPage(Scanner scanner) {
+
+        do {
+            System.out.println("-----------------------------------UNDO [u]--");
+            System.out.println("---------------------------------------------");
+            System.out.println("----------------Home [0]---------------------");
+            System.out.println("----------------Profile [1]------------------");
+            System.out.println("----------------Logout [2]-------------------");
+            System.out.println("---------------------------------------------");
+
+            System.out.println("Command: ");
+
+            switch (scanner.nextLine()) {
+                case "0":
+                    CliHomeController homeController = new CliHomeController();
+                    homeController.init(scanner);
+                    break;
+                case "1":
+                    CliSignUpController signUpController = new CliSignUpController();
+                    signUpController.init(scanner);
+                    break;
+                case "2":
+                    return;
+                default:
+                    System.out.println(RED + "Command not found" + RESET);
+                    break;
+            }
+            System.out.flush();
+        } while (true);
     }
 }

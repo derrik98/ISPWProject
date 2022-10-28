@@ -49,7 +49,7 @@ public class CliLoginController {
 
                 switch (role) {
                     case "user" -> {
-                        CliUserGraphicChange.getInstance().switchToHomePage(scan);
+                        CliUserGraphicChange.getInstance().switchToMenuPage(scan);
                         scan.nextLine();
                         //case "tourist_guide" -> TouristGuideGraphicChange.getInstance().switchToHomePage(this.textFieldUsername.getScene());*//*
                     }

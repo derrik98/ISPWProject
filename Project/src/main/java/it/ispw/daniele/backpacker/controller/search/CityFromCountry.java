@@ -2,8 +2,10 @@ package it.ispw.daniele.backpacker.controller.search;
 
 import it.ispw.daniele.backpacker.bean.HomeBean;
 import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONString;
 
 import java.io.IOException;
 
@@ -21,15 +23,27 @@ public class CityFromCountry extends JSONFactory{
     protected CityFromCountry(){
     }
 
-    @Override
+   //@Override
     public boolean getJSON(String city, String country) throws CityNotFoundException, IOException {
         JSONObject json;
-            json = readJsonFromUrl("https://maps.googleapis.com/maps/api/geocode/json?address=" + city
-                    + "&components=country:" + country + "&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");
+
+        json = readJsonFromUrl("https://maps.googleapis.com/maps/api/geocode/json?address=" + city
+                + "&components=country:" + country + "&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");
+        json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/autocomplete/json?input=" + city + "&types=(cities)&language=it&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg"
+        );
+
             System.out.println(json);
-            System.out.println(json.getString("status"));
+
+        JSONArray ja = (JSONArray) json.get("predictions");
+        JSONObject o = (JSONObject) ja.getJSONObject(0).get("structured_formatting");
+        String s = (String) o.get("secondary_text");
+            System.out.println("WW" + s);
+
+            if(s.contains(country)){
+                System.out.println("citta presente");  // caso con lettere maiuscole e minuscole
+            }
             if(!json.getString("status").equals("OK")) {
-                throw new CityNotFoundException("Questa città non è presente in questo stato");
+                throw new CityNotFoundException("City not found in this country");
             }
 
         return true;

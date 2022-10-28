@@ -20,8 +20,7 @@ public class BookTourController extends Controller {
             }
         };
         if(itinerary != null){
-            List<ItineraryBean> ib = (List<ItineraryBean>) this.convert(itinerary);
-            return ib;
+            return this.convert(itinerary);
         }
         else{
             return null;

@@ -2,10 +2,8 @@ package it.ispw.daniele.backpacker.commandLineInterface;
 
 import it.ispw.daniele.backpacker.fxmlView.*;
 import it.ispw.daniele.backpacker.utils.Roles;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
 
 import java.io.FileInputStream;
@@ -43,19 +41,16 @@ public abstract class CliGuiChangeTemplate {
         });
     }
 
-    public void switchToResult(Scene scene) {
-        this.catcher(new CliGuiAction() {
-            @Override
-            public void action() throws IOException {
-                FXMLLoader loader = new FXMLLoader();
-                FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Result-Page.fxml");
-                Parent fxmlLoader = loader.load(fileInputStream);
-                ResultController rc = loader.getController();
-                scene.setRoot(fxmlLoader);
-                rc.init();
+    public void switchToResult(Scanner scanner) {
+        this.catcher(() -> {
+            /*FXMLLoader loader = new FXMLLoader();
+            FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Result-Page.fxml");
+            Parent fxmlLoader = loader.load(fileInputStream);*/
+            CliResultController rc = new CliResultController();
+            //scene.setRoot(fxmlLoader);
+            rc.init(scanner);
 
 
-            }
         });
     }
 

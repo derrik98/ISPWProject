@@ -13,7 +13,7 @@ public class HomeBean {
     private String city;
     private String address;
     private String range;
-    private boolean restaurant;
+    private String restaurant;
 
     private static HomeBean INSTANCE = null;
 
@@ -25,10 +25,10 @@ public class HomeBean {
         return INSTANCE;
     }
 
-    protected HomeBean() {
+    public HomeBean() {
     }
 
-    protected HomeBean(String country, String city, String address, String range, boolean restaurant) {
+    protected HomeBean(String country, String city, String address, String range, String restaurant) {
         this.country = country;
         this.city = city;
         this.address = address;
@@ -71,16 +71,16 @@ public class HomeBean {
         this.range = range;
     }
 
-    public boolean isRestaurant() {
+    public String isRestaurant() {
         return restaurant;
     }
 
-    public void setRestaurant(boolean restaurant) {
+    public void setRestaurant(String restaurant) {
         this.restaurant = restaurant;
     }
 
 
-    public boolean validate() throws IOException, CityNotFoundException, AddressNotFoundException, MonumentNotFoundException {
+    /*public boolean validate() throws IOException, CityNotFoundException, AddressNotFoundException, MonumentNotFoundException {
         // controllo sintattico
         if (country.equals("") || city.equals("") || address.equals("")) {
             return false;
@@ -97,10 +97,10 @@ public class HomeBean {
         System.out.println(country);
 
         System.out.println(datiCorretti.country + datiCorretti.city + datiCorretti.address);
-        /*if(utenteTrovato==null)
+        *//*if(utenteTrovato==null)
             return false;
-        return true;*/
+        return true;*//*
         return datiCorretti != null;
 
-    }
+    }*/
 }

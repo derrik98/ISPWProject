@@ -1,6 +1,7 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
 import it.ispw.daniele.backpacker.bean.HomeBean;
+import it.ispw.daniele.backpacker.controller.search.SearchController;
 import it.ispw.daniele.backpacker.exceptions.AddressNotFoundException;
 import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
 import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
@@ -13,9 +14,11 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Objects;
 
 public class HomeUserController{
 
@@ -48,20 +51,52 @@ public class HomeUserController{
 
     public void SearchRoutes() throws IOException{
 
+        buttonSearch.setStyle("");
+
         this.textFieldCity.setStyle("-fx-border-style: none; -fx-border-width: none; -fx-border-color: none");
         this.textFieldAddress.setStyle("-fx-border-style: none; -fx-border-width: none; -fx-border-color: none");
 
-        //HomeBean homeBean = new HomeBean(textFieldCountry.getText(), textFieldCity.getText(), textFieldAddress.getText(), labelRange.getText(), radioButtonRestaurant.isSelected());
-         HomeBean homeBean = HomeBean.getInstance();
-         homeBean.setCountry(textFieldCountry.getText());
-         homeBean.setCity(textFieldCity.getText());
-         homeBean.setAddress(textFieldAddress.getText());
+        HomeBean homeBean = new HomeBean();
+        homeBean.setCountry(this.textFieldCountry.getText());
+        homeBean.setCity(this.textFieldCity.getText());
+        homeBean.setAddress(this.textFieldAddress.getText());
+        homeBean.setRestaurant(this.radioButtonRestaurant.getText());
+        homeBean.setRange(this.labelRange.getText());
 
         try {
-            homeBean.validate();
-            UserGraphicChange.getInstance().switchToResult(this.textFieldCountry.getScene());
+            //////////////////
+
+            if (textFieldCountry.getText().equals("") || textFieldCity.getText().equals("") || textFieldAddress.getText().equals("")) {
+                throw new FileNotFoundException("ERROR");
+                //return false;
+            }
+            SearchController sc = new SearchController();
+            HomeBean datiCorretti = sc.checkInput(homeBean);
+
+            //HomeBean datiCorretti = null;
+            //
+            /*try {
+                datiCorretti = SearchController.getInstances().getInput();
+            } catch (CityNotFoundException e) {
+                throw new CityNotFoundException(e.getMessage());
+                // e.printStackTrace();
+            }*/
+            //
+            //System.out.println("provafatta" + city);//FARE COME LA VALIDATE
+            //System.out.println(country);
+
+            //System.out.println(datiCorretti.country + datiCorretti.city + datiCorretti.address);
+        /*if(utenteTrovato==null)
+            return false;
+        return true;*/
+            //////return datiCorretti != null;
+
+            //////////////////
+            //homeBean.validate();
+            UserGraphicChange.getInstance().switchToResult(this.textFieldCountry.getScene(), this.textFieldCountry.getText(), this.textFieldCity.getText(), this.textFieldAddress.getText(), this.radioButtonRestaurant.getText(), String.valueOf(this.sliderRange.getValue()));
         } catch (CityNotFoundException cnfe) {
             //e.printStackTrace();
+            System.out.println(cnfe.getMessage() + "EEEEEEEEEEEEEEEEEEEEEEEEE");
             this.textFieldCity.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
             //this.showFeedback(cnfe.getMessage());
         } catch (AddressNotFoundException anfe){

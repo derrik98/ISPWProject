@@ -1,7 +1,5 @@
 package it.ispw.daniele.backpacker.entity;
 
-import java.io.Serializable;
-
 public class GeneralUser {
     protected String username;
     protected String password;
@@ -31,7 +29,6 @@ public class GeneralUser {
     public String getEmail(){
         return email;
     }
-
     public String getRole() {
         return role;
     }

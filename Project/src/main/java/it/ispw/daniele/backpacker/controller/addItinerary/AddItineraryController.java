@@ -14,25 +14,10 @@ public class AddItineraryController {
         ItineraryDao itineraryDao = new ItineraryDao();
         Date date = null;
         Date currentDate = new Date();
-        List<Double> coordinates = null;
 
         if(itineraryBean.getGuideId().equals("") || itineraryBean.getLocation().equals("")) {
             return false;
         }
-
-        /*try {
-            coordinates = GoogleMapBoundary.locateAddress(meb.getLocation());
-        } catch (IOException e) {
-            logger.log(Level.WARNING, e.toString());
-            return false;
-        } catch (org.json.simple.parser.ParseException pe) {
-            logger.log(Level.WARNING, pe.toString());
-            return false;
-        } catch (LocationNotFoundException e) {
-            //Maybe log to the view
-            logger.log(Level.WARNING, e.getMessage());
-            return false;*/
-        //}
 
         if (itineraryBean.getDate() != null) {
             try {
@@ -49,13 +34,8 @@ public class AddItineraryController {
             //throw new DateException(outputFormatter.format(date) + " is before current date");
         }
 
-        System.out.println(itineraryBean.getLocation());
-        System.out.println(itineraryBean.getGuideId());
-        System.out.println(date);
-        System.out.println(itineraryBean.getSteps());
-
         if(itineraryDao.getItineraryId(itineraryBean.getItineraryId())){
-            System.out.println("id gia esistente");
+            //System.out.println("id gia esistente");
             return false;
         }
 

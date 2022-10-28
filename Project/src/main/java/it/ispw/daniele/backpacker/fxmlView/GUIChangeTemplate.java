@@ -44,7 +44,7 @@ public abstract class GUIChangeTemplate{
         });
     }
 
-    public void switchToResult(Scene scene) {
+    public void switchToResult(Scene scene, String country, String city, String address, String restaurant, String range) {
         this.catcher(new GUIAction() {
             @Override
             public void action() throws IOException {
@@ -53,7 +53,8 @@ public abstract class GUIChangeTemplate{
                 Parent fxmlLoader = loader.load(fileInputStream);
                 ResultController rc = loader.getController();
                 scene.setRoot(fxmlLoader);
-                rc.init();
+                System.out.println("VVVVVVVVVVVVV"  +country + city + address + restaurant + range);
+                rc.init(country, city, address, restaurant, range);
 
 
             }

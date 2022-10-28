@@ -6,6 +6,7 @@ import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.bean.ResultBean;
 import it.ispw.daniele.backpacker.booktour.BookTourController;
 import it.ispw.daniele.backpacker.entity.Itinerary;
+import it.ispw.daniele.backpacker.utils.Controller;
 import it.ispw.daniele.backpacker.utils.Roles;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.event.EventHandler;
@@ -34,7 +35,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class ResultController {
+public class ResultController  {
 
     @FXML
     public Text suggestedItinerary = new Text();
@@ -74,9 +75,9 @@ public class ResultController {
     protected ItineraryBean itinerary;
 
 
-    public void init() {
+    public void init(String country, String city, String address, String restaurant, String range) {
 
-        this.sessionUser = SessionUser.getInstance().getSession();
+        //this.sessionUser = SessionUser.getInstance().getSession();
 
         if(SessionUser.getInstance().getSession().getRole().equals(Roles.TOURIST_GUIDE.name().toLowerCase())) {
             TouristGuideGraphicChange i = TouristGuideGraphicChange.getInstance();
@@ -92,14 +93,21 @@ public class ResultController {
         BookTourController btc = new BookTourController();
         List<ItineraryBean> itineraries = new ArrayList<>();
         //ItineraryBean it;// = new ItineraryBean();
-        HomeBean hb = HomeBean.getInstance();
+        //HomeBean hb = HomeBean.getInstance();
 
-        if (hb.getCountry() != null && hb.getCity() != null && hb.getAddress() != null) {
+        /*if (hb.getCountry() != null && hb.getCity() != null && hb.getAddress() != null) {
             this.countrySearch.setText(hb.getCountry());
             this.citySearch.setText(hb.getCity());
             this.addressSearch.setText(hb.getAddress());
             this.isRestaurant.setText("bho");
             this.radiusSearch.setText(hb.getRange());
+        }*/
+        if (!country.equals("") && !city.equals("") && !address.equals("")) {
+            this.countrySearch.setText(country);
+            this.citySearch.setText(city);
+            this.addressSearch.setText(address);
+            this.isRestaurant.setText(restaurant);
+            this.radiusSearch.setText(range);
         }
         else {
             this.countrySearch.setText("");
@@ -140,17 +148,15 @@ public class ResultController {
         it = btc.getItinerary(citySearch.getText(), "city");
 
         if(it == null){
-            System.out.println("DATABASE " + it);
+            System.out.println("EMPTY_DATABASE ");
         }
         else{
-
+            suggestedItinerary.setText("Suggested Itinerary");
+            guideImage.setImage(new Image("guideOn.png"));
+            guideImage.setFitHeight(50);
+            guideImage.setFitHeight(50);
             for(int j = 0; j < it.size(); j++) {
                 System.out.println(it.get(j).getSteps());
-                suggestedItinerary.setText("Suggested Itinerary");
-                guideImage.setImage(new Image("guideOn.png"));
-                guideImage.setFitHeight(50);
-                guideImage.setFitHeight(50);
-
                 String[] steps = it.get(j).getSteps().split("/");
                 ArrayList<String> als = new ArrayList<>();
                 for (int i = 0; i < steps.length; i++) {
@@ -159,6 +165,7 @@ public class ResultController {
                 System.out.println("als " + als);
                 //Accordion accordion = new Accordion();
                 Accordion accordion = createTable(als, it.get(j));
+                this.controller = new BookTourController();
                 vBoxResultGuide.getChildren().add(accordion);
             }
         }
@@ -252,10 +259,10 @@ public class ResultController {
             titledPane.setContent(v);
 
 
-            //ImageView ivBuy = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/buy.png")).toExternalForm()));
-            //ivBuy.setFitWidth(55);
-            //ivBuy.setFitHeight(55);
-            //ivBuy.setCursor(Cursor.HAND);
+            ImageView ivBuy = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/buy.png")).toExternalForm()));
+            ivBuy.setFitWidth(55);
+            ivBuy.setFitHeight(55);
+            ivBuy.setCursor(Cursor.HAND);
             ImageView ivMap = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/googleMaps.png")).toExternalForm()));
             ivMap.setFitWidth(35);
             ivMap.setFitHeight(35);
@@ -267,7 +274,7 @@ public class ResultController {
 
             this.controller = new BookTourController();
 
-            /*ivBuy.setOnMouseClicked(mouseEvent -> {
+            ivBuy.setOnMouseClicked(mouseEvent -> {
                 boolean isPart = controller.isParticipating(this.sessionUser, this.itinerary);
                 if(isPart){
                     controller.removeParticipation(this.sessionUser, this.itinerary);
@@ -276,23 +283,9 @@ public class ResultController {
                     controller.addParticipation(this.sessionUser, this.itinerary);
                     //this.part.setText("Remove Participation");
                 }
-            });*/
-
-            ivMap.setOnMouseClicked(mouseEvent -> {
-                if (!titledPane.isCollapsible()) {
-                    titledPane.setCollapsible(true);
-                    titledPane.setExpanded(true);
-                    System.out.println("tasto mappa cliccato");
-                } else {
-                    titledPane.setCollapsible(false);
-                    titledPane.setExpanded(false);
-
-                }
             });
 
-            ivSave.setOnMouseClicked(mouseEvent -> {
-                Node s = contentPane.getChildren().get(0);
-            });
+            //imageClick(titledPane, contentPane, ivMap, ivSave);
 
             //contentPane.getChildren().addAll(region, ivBuy, region1, ivMap, region2, ivSave);
             contentPane.getChildren().addAll(region, ivMap, region2, ivSave);
@@ -375,6 +368,7 @@ public class ResultController {
         ivMap.setFitWidth(35);
         ivMap.setFitHeight(35);
         ivMap.setCursor(Cursor.HAND);
+        ivMap.setId("MAP");
         ImageView ivSave = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/save.png")).toExternalForm()));
         ivSave.setCursor(Cursor.HAND);
         ivSave.setFitWidth(35);
@@ -399,21 +393,7 @@ public class ResultController {
             }
         });
 
-        ivMap.setOnMouseClicked(mouseEvent -> {
-            if (!titledPane.isCollapsible()) {
-                titledPane.setCollapsible(true);
-                titledPane.setExpanded(true);
-                System.out.println("tasto mappa cliccato");
-            } else {
-                titledPane.setCollapsible(false);
-                titledPane.setExpanded(false);
-
-            }
-        });
-
-        ivSave.setOnMouseClicked(mouseEvent -> {
-            Node s = contentPane.getChildren().get(0);
-        });
+        //imageClick(titledPane, contentPane, ivMap, ivSave);
 
         contentPane.getChildren().addAll(region, ivBuy, region1, ivMap, region2
                 , ivSave);
@@ -425,4 +405,28 @@ public class ResultController {
         accordion.getPanes().add(titledPane);
         return accordion;
     }
+
+    /*private void imageClick(TitledPane titledPane, HBox contentPane, ImageView ivMap, ImageView ivSave) {
+        switch (ivMap.getId()){
+            case "BUY":
+
+            case "MAP":
+                ivMap.setOnMouseClicked(mouseEvent -> {
+                    if (!titledPane.isCollapsible()) {
+                        titledPane.setCollapsible(true);
+                        titledPane.setExpanded(true);
+                        System.out.println("tasto mappa cliccato");
+                    } else {
+                        titledPane.setCollapsible(false);
+                        titledPane.setExpanded(false);
+
+                    }
+                });
+        }
+
+
+        ivSave.setOnMouseClicked(mouseEvent -> {
+            Node s = contentPane.getChildren().get(0);
+        });
+    }*/
 }

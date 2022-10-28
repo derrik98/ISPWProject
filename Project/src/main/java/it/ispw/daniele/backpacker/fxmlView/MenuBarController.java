@@ -34,7 +34,7 @@ public class MenuBarController {
 
     @FXML
     public void switchToResult() {
-        this.ugc.switchToResult(this.LabelResult.getScene());
+        //this.ugc.switchToResult(this.LabelResult.getScene());
         stackScene.push("result");
     }
 
@@ -59,7 +59,7 @@ public class MenuBarController {
             String from = stackScene.get(stackScene.size() - 2);
             switch (from) {
                 case "home" -> this.ugc.switchToHomePage(this.LabelHome.getScene());
-                case "result" -> this.ugc.switchToResult(this.LabelResult.getScene());
+                //case "result" -> this.ugc.switchToResult(this.LabelResult.getScene());
                 case "profile" -> this.ugc.switchToUserDet(this.LabelProfile.getScene(), this.myUser);
             }
             stackScene.remove(stackScene.size() - 1);

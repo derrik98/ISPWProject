@@ -40,7 +40,7 @@ public class TouristGuideMenuBarController {
     }
     @FXML
     public void switchToResult() {
-        this.guideGraphicChange.switchToResult(this.LabelResult.getScene());
+        //this.guideGraphicChange.switchToResult(this.LabelResult.getScene());
         stackScene.push("result");
     }
     @FXML
@@ -68,7 +68,7 @@ public class TouristGuideMenuBarController {
             String from = stackScene.get(stackScene.size() - 2);
             switch (from) {
                 case "home" -> this.guideGraphicChange.switchToHomePage(this.LabelHome.getScene());
-                case "result" -> this.guideGraphicChange.switchToResult(this.LabelResult.getScene());
+                //case "result" -> this.guideGraphicChange.switchToResult(this.LabelResult.getScene());
                 case "profile" -> this.guideGraphicChange.switchToTGuideDet(this.LabelProfile.getScene(), this.myUser);
                 case "addItinerary" -> this.guideGraphicChange.switchToAddItinerary(this.LabelAddItinerary.getScene());
             }

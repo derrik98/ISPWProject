@@ -3,11 +3,11 @@ package it.ispw.daniele.backpacker.fxmlView;
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.controller.login.LoginController;
 import it.ispw.daniele.backpacker.exceptions.EmptyFieldException;
-import it.ispw.daniele.backpacker.exceptions.LoginFailException;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
@@ -17,6 +17,7 @@ import javafx.scene.text.Text;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Objects;
 
 public class LoginViewController {
 
@@ -108,4 +109,5 @@ public class LoginViewController {
         this.textFieldUsername.setStyle("-fx-border-style: none; -fx-border-width: none; -fx-border-color: none");
         this.textFieldPassword.setStyle("-fx-border-style: none; -fx-border-width: none; -fx-border-color: none");
     }
+
 }
