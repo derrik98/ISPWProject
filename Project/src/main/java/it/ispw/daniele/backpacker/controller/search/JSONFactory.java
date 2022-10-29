@@ -44,6 +44,29 @@ public abstract class JSONFactory {
 
     }
 
+    protected StringBuilder upperCase(String country) {
+        StringBuilder newString = new StringBuilder();
+        boolean upp = false;
+        newString.append(country.substring(0, 1).toUpperCase());
+        for(int i = 1; i < country.length(); i++){
+            if(country.charAt(i) == ' '){
+                newString.append(" ");
+                upp = true;
+            }
+            else {
+                if(upp){
+                    newString.append(country.substring(i, i + 1).toUpperCase());
+                }
+                else {
+                    newString.append(country.charAt(i));
+                }
+                upp = false;
+            }
+        }
+        return newString;
+    }
+
     public abstract boolean getJSON(String city, String country) throws CityNotFoundException, AddressNotFoundException, MonumentNotFoundException, IOException;
+
 
 }

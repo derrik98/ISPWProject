@@ -10,6 +10,7 @@ import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
 import org.json.JSONException;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Vector;
 
@@ -68,26 +69,29 @@ public class SearchController{
         //JSONFactory.convertString(bean.getAddress());
 
             if (checkCityCountry.getJSON(bean.getCity(), bean.getCountry())) {
-             ///   JSONFactory checkAddressCity = new AddressFromCity();
-             ///   if (checkAddressCity.getJSON(bean.getAddress(), bean.getCity())) {
-                    /*Vector<Monument> monuments = this.searchMonuments();
-                    Vector<Itinerary> allItinerary = new Vector<>();
-                    for (int i = 0; i < 5; i++) {
-                        this.createItinerary(monuments);
-                        allItinerary.add(this.createItinerary(monuments));
+                JSONFactory checkAddressCity = new AddressFromCity();
+                if(checkAddressCity.getJSON(bean.getAddress(), bean.getCity())) {
+                    JSONFactory monuments = new MonumentFromAddress();
+                    monuments.getJSON(bean.getAddress(), "monuments");
+                    //Vector<Monument> monuments = this.searchMonuments();
+                    //Vector<Itinerary> allItinerary = new Vector<>();
+                    //for (int i = 0; i < 5; i++) {
+                    //    this.createItinerary(monuments);
+                    //    allItinerary.add(this.createItinerary(monuments));
                         //System.out.println(allItinerary.size());
-                    }
-                    ResultBean.getInstance().setItinerary(allItinerary);*/
+                    //}
+                    //ResultBean.getInstance().setItinerary(allItinerary);*/
                     return HomeBean.getInstance();
                 }
                 else{
                     return null;
                 }
-           // }
+            }
             //else {
             //    return null;
             //}
         //return HomeBean.getInstance();
+        return null;
     }
 
     public Vector<Monument> searchMonuments() throws MonumentNotFoundException {

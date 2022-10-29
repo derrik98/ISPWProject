@@ -1,6 +1,7 @@
 package it.ispw.daniele.backpacker.controller.search;
 
 import it.ispw.daniele.backpacker.exceptions.AddressNotFoundException;
+import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,7 +26,7 @@ public class AddressFromCity extends JSONFactory{
     public boolean getJSON(String address, String city) throws AddressNotFoundException, IOException {
         JSONObject json;
 
-            json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/autocomplete/json?input=" + convertString(address) + "&types=geocode&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg&language=it");
+        json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/autocomplete/json?input=" + convertString(address) + "&types=geocode&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg&language=it");
 
 
         if(!json.getString("status").equals("OK")) {
@@ -34,32 +35,34 @@ public class AddressFromCity extends JSONFactory{
 
         JSONArray a = (JSONArray) json.get("predictions");
         JSONObject o = a.getJSONObject(0);
-        JSONArray arr = o.getJSONArray("terms");
-        JSONObject ob = arr.getJSONObject(1);
+        String s = (String) o.get("description");
+        //JSONObject arr = o.getJSONObject("description");
+        //JSONObject ob = arr.getJSONObject(1);
+        String upperCase;
+        upperCase = String.valueOf(upperCase(city));
 
-
-        System.out.println(upperCaseFirst(city) + " VALUE " + ob.get("value"));
-            if(!ob.get("value").equals(upperCaseFirst(city))) {
+        if (s.contains(city) || s.contains(upperCase)) {
+            System.out.println(upperCase);
+            return true;
+        }
+        else{
+            throw new AddressNotFoundException("Address not present in this city");
+        }
+        //System.out.println(upperCaseFirst(city) + " VALUE " + s);
+            /*if(!ob.get("value").equals(upperCaseFirst(city))) {
                 System.out.println(city + " VALUE " + ob.get("value"));
                 throw new AddressNotFoundException("Questa via non è presente in questo città");
-            }
+            }*/
 
 
 
-            System.out.println("Address from city" + json);
+            //System.out.println("Address from city" + json);
             //System.out.println(a);
             //System.out.println(o);
             //System.out.println(arr);
             //System.out.println(ob);
             //System.out.println(ob.get("value"));
 
-        return true;
-    }
-
-    public static String upperCaseFirst(String val) {
-        char[] arr = val.toCharArray();
-        arr[0] = Character.toUpperCase(arr[0]);
-        return new String(arr);
     }
 
 }

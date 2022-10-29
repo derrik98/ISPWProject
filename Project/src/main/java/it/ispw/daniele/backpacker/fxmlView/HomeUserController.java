@@ -13,6 +13,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.text.Text;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -22,6 +23,7 @@ import java.util.Objects;
 
 public class HomeUserController{
 
+    public Text errorText;
     @FXML
     private HBox menuBar = new HBox();
     @FXML
@@ -94,14 +96,13 @@ public class HomeUserController{
             //////////////////
             //homeBean.validate();
             UserGraphicChange.getInstance().switchToResult(this.textFieldCountry.getScene(), this.textFieldCountry.getText(), this.textFieldCity.getText(), this.textFieldAddress.getText(), this.radioButtonRestaurant.getText(), String.valueOf(this.sliderRange.getValue()));
-        } catch (CityNotFoundException cnfe) {
-            //e.printStackTrace();
-            System.out.println(cnfe.getMessage() + "EEEEEEEEEEEEEEEEEEEEEEEEE");
+        } catch (CityNotFoundException cityException) {
+            this.errorText.setStyle("-fx-font-size: 27px;");
+            this.errorText.setText(cityException.getMessage());
             this.textFieldCity.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
-            //this.showFeedback(cnfe.getMessage());
-        } catch (AddressNotFoundException anfe){
-            //anfe.printStackTrace();
-            //this.showFeedback(anfe.getMessage());
+        } catch (AddressNotFoundException addressException){
+            this.errorText.setStyle("-fx-font-size: 27px;");
+            this.errorText.setText(addressException.getMessage());
             this.textFieldAddress.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
         }catch (MonumentNotFoundException mnfe){
             //this.showFeedback(mnfe.getMessage());
