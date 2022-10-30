@@ -50,4 +50,5 @@ public class GeneralUserBean implements Serializable {
         return this.profilePicture;
     }
 
+
 }
