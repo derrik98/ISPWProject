@@ -161,7 +161,7 @@ public class UserDetailsController extends Controller {
 
             //r.createTable(als, it.get(j));
 
-            Accordion accordion = r.createTable(als, it.get(j));
+            Accordion accordion = r.createTable(it);
             vBoxProfile.getChildren().add(accordion);
         }
         /*vBoxResultGuide.getChildren().add(accordion);

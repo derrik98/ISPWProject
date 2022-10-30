@@ -12,7 +12,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public abstract class JSONFactory {
-
     private static String readAll(Reader rd) throws IOException {
         StringBuilder sb = new StringBuilder();
         int cp;
@@ -66,7 +65,7 @@ public abstract class JSONFactory {
         return newString;
     }
 
-    public abstract boolean getJSON(String city, String country) throws CityNotFoundException, AddressNotFoundException, MonumentNotFoundException, IOException;
+    protected abstract boolean getJSON(String city, String country) throws CityNotFoundException, AddressNotFoundException, MonumentNotFoundException, IOException;
 
 
 }

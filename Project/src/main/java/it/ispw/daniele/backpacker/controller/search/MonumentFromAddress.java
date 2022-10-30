@@ -8,11 +8,11 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Vector;
 
 public class MonumentFromAddress extends JSONFactory{
-
-    private Vector<Monument> monuments = new Vector<>();
+    private ArrayList<String> monuments = new ArrayList<>();
     private static MonumentFromAddress instance = null;
 
     public static synchronized MonumentFromAddress getInstance() {
@@ -22,59 +22,38 @@ public class MonumentFromAddress extends JSONFactory{
         return instance;
     }
 
-    protected MonumentFromAddress(){
-    }
-
-    public void setMonuments(Vector<Monument> monuments) {
-        this.monuments = monuments;
-    }
-
-    public Vector<Monument> getMonuments() {
+    public ArrayList<String> getMonuments(String address) throws MonumentNotFoundException {
+        this.getJSON(address, "monuments");
+        System.out.println("MONUMENTI" + monuments);
+        //resultBean.setMonuments(monumentFromAddress.getMonuments());
         return this.monuments;
     }
 
-
     @Override
     public boolean getJSON(String address, String type) throws MonumentNotFoundException {
-        JSONObject json = null;
-        try {
-            json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/textsearch/json?query=monuments+in+"
-                    + convertString(address) +
-                    "&radius=8000&type=tourist_attraction&language=it&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        //////https://maps.googleapis.com/maps/api/place/textsearch/json?query=monuments+in+viadelcorso&radius=8000&type=tourist_attraction&language=it&pagetoken=AcYSjRg09uzz6xPSqXiBlHQMvTuSusuBHqvv4toPcF5W1Zb3jtAXS1aGe-104lK4774v1HkarzuNBur5npDjMZsDOUhkkYFYnaKZxIz6udZ655kFhxaFNyVfp-MiXI1irBq1QvI8ukQBGkNBQ-MMca-htmAdWbSYAQovJqnwygPu2gk83_xnO8VrZrP05vYosN9shAocrUQEQyP6C3gHmlKaa6f3J_7EWh6-mDk43b0id9AbyFkBavrtMdtxHoRp_oUCbAGW7VTjDpdmOE5cYRz6uzeC5AKlnulx7gJpl1BbVOiEVno0a39iS-PTlv07DKsdBQr8AMbLe5A_WULds46Ju2KBRnFurhPLmSzUqen3t0Xmd4p8GTiVP-dmLPbRrMJSmZBo-elw048KgsdywTiNjlxfxCCvHZ_83MVgM0n5JAEbPOOd2v8jta3t5M2_rb5tdwgnfiOHfBjXZ2S1C0VUVT_Fz0uNv4KphEGDbwqMPDmy6U2b8Z1MA1VMrl7wLDYe31N8-7rYhDr9rzqzqodYEjoaQyba1yd1Mqik1WLUNRlOr3TZUrBl-uqnwQSHoVeYHqxXtemLFqsp2HL1ALeKhwIjgcuoXBx45q2oJ8aKi9PJw5fmR2So7g-WrY0D3l0tA1qXILl1IQ&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg
-        //nextpage
-        try {
-            //json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + type + "+in+" + convertString(address) + "&radius=8000&type=tourist_attraction&language=it&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");
 
-//            json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/textsearch/json?query=monuments+in+"
-//                    + convertString(address) +
-//                    "&radius=8000&type=tourist_attraction&language=it&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");
-            assert json != null;
+
+        //ArrayList<String> monuments = new ArrayList<>();
+
+        try {
+            JSONObject json;
+            String url = ("https://maps.googleapis.com/maps/api/place/textsearch/json?query=monuments+in+"+convertString(address)+
+                    "&radius=8000&type=tourist_attraction&language=it&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");
+            json = readJsonFromUrl(url);
             JSONArray a = (JSONArray) json.get("results");
             int i = 0;
-            JSONObject o = null;
-            while (i < a.length()){ //OKKKKKKK
+            JSONObject o;
+            while (i < a.length()){ //finche ci sono record
                 o = a.getJSONObject(i);
-                //System.out.println(o);
-                /*this.getJSONName(o);
-                this.getLat(o);
-                this.getLon(o);
-                this.getRating(o);
-                this.getTypes(o);
-                Monument monument = new Monument(this.getJSONName(o), this.getLat(o), this.getLon(o), this.getRating(o), this.getTypes(o));
-                */System.out.println(o.get("name"));
-                //getMonuments().add(o.get("name").toString());
-                //getMonuments().add(monument);
+                if(!monuments.contains((String) o.get("name"))){
+                    monuments.add((String) o.get("name"));
+                }
                 i++;
             }
             if(!json.get("status").equals("OK")) {
-                throw new MonumentNotFoundException("Non sono presenti monumenti in questa zona");
+                throw new MonumentNotFoundException("No result");
             }
-        }
-        catch (JSONException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return true;
@@ -85,7 +64,7 @@ public class MonumentFromAddress extends JSONFactory{
     }
 
     private String getRating(JSONObject jsonObject) {
-            return jsonObject.get("rating").toString();
+        return jsonObject.get("rating").toString();
     }
 
     private BigDecimal getLat(JSONObject jsonObject) {

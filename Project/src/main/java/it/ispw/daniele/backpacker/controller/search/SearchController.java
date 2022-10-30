@@ -1,20 +1,23 @@
 package it.ispw.daniele.backpacker.controller.search;
 
 import it.ispw.daniele.backpacker.bean.HomeBean;
+import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.bean.ResultBean;
 import it.ispw.daniele.backpacker.entity.Itinerary;
 import it.ispw.daniele.backpacker.entity.Monument;
 import it.ispw.daniele.backpacker.exceptions.AddressNotFoundException;
 import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
 import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
+import it.ispw.daniele.backpacker.utils.Controller;
 import org.json.JSONException;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Vector;
 
-public class SearchController{
+public class SearchController extends Controller {
 
 
     //private static SearchController INSTANCE = null;
@@ -66,98 +69,103 @@ public class SearchController{
 
     public HomeBean checkInput(HomeBean bean) throws CityNotFoundException, AddressNotFoundException, MonumentNotFoundException, IOException {
         JSONFactory checkCityCountry = new CityFromCountry();//.getInstance();
-        //JSONFactory.convertString(bean.getAddress());
 
-            if (checkCityCountry.getJSON(bean.getCity(), bean.getCountry())) {
-                JSONFactory checkAddressCity = new AddressFromCity();
-                if(checkAddressCity.getJSON(bean.getAddress(), bean.getCity())) {
-                    JSONFactory monuments = new MonumentFromAddress();
-                    monuments.getJSON(bean.getAddress(), "monuments");
-                    //Vector<Monument> monuments = this.searchMonuments();
-                    //Vector<Itinerary> allItinerary = new Vector<>();
-                    //for (int i = 0; i < 5; i++) {
-                    //    this.createItinerary(monuments);
-                    //    allItinerary.add(this.createItinerary(monuments));
-                        //System.out.println(allItinerary.size());
-                    //}
-                    //ResultBean.getInstance().setItinerary(allItinerary);*/
-                    return HomeBean.getInstance();
+        if (checkCityCountry.getJSON(bean.getCity(), bean.getCountry())) {
+            JSONFactory checkAddressCity = new AddressFromCity();
+            if(checkAddressCity.getJSON(bean.getAddress(), bean.getCity())) {
+                MonumentFromAddress monuments = new MonumentFromAddress();
+                ArrayList<String> result = monuments.getMonuments(bean.getAddress());
+                monuments.getJSON(bean.getAddress(), "monuments");
+                ArrayList<Itinerary> allItineraries = new ArrayList<>();
+                for (int i = 0; i < 5; i++) {
+                    //this.createItinerary(result);
+                    //////allItineraries.add(this.createItinerary(result)); ////c'era
+                    //////System.out.println(allItineraries.size());
                 }
-                else{
-                    return null;
-                }
+                return HomeBean.getInstance();
             }
-            //else {
-            //    return null;
-            //}
-        //return HomeBean.getInstance();
+            else{
+                return null;
+            }
+        }
         return null;
     }
 
-    public Vector<Monument> searchMonuments() throws MonumentNotFoundException {
+    /*public Vector<Monument> searchMonuments() throws MonumentNotFoundException {
         monumentFromAddress.getJSON(HomeBean.getInstance().getAddress(), "monuments");
         System.out.println("MONUMENTI" + monumentFromAddress.getMonuments());
         resultBean.setMonuments(monumentFromAddress.getMonuments());
         return monumentFromAddress.getMonuments();
 
-    }
+    }*/
 
-    public Itinerary createItinerary(Vector<Monument> pointOfInterest) {
+    public List<ItineraryBean> createItinerary(String address) throws MonumentNotFoundException {
+
+        MonumentFromAddress monuments = new MonumentFromAddress();
+        ArrayList<String> result = monuments.getMonuments(address);
+        monuments.getJSON(address, "monuments");
+        ArrayList<Itinerary> allItineraries = new ArrayList<>();
 
         String steps = "";
-        for(int i = 0; i < pointOfInterest.size(); i++){
-            steps = steps + "/" + pointOfInterest.get(i);
+        for(int i = 0; i < result.size(); i++){
+            steps = steps + "/" + result.get(i);
         }
 
+        System.out.println("STEPS " + steps);
+        ArrayList<Itinerary> it = new ArrayList<>();
 
-        Random num = new Random();
-        //Vector<String> copyList = pointOfInterest;
-        //copyList = attraction;
-       // System.out.println(copyList.size());
-        Itinerary itinerary = new Itinerary(steps);
-        Vector<Monument> vector = new Vector<>();
-        //Vector<Itinerary> allItinerary = new Vector<>();
-        //System.out.println("COPYLIST   " + copyList);
-        for (int i = 0; i <= 5; i++) {
-            //int index = num.nextInt(copyList.size());
-            int index = num.nextInt((pointOfInterest.size()-1) + 1);
-            //System.out.println("INDEX " + index + " BOUND " + pointOfInterest.size());
+        for(int i = 0; i < 5; i++) {
+            Random num = new Random();
+            //Vector<String> copyList = pointOfInterest;
+            //copyList = attraction;
+            // System.out.println(copyList.size());
+            //Itinerary itinerary = new Itinerary(steps);
+            StringBuilder vector = new StringBuilder();
+            //Vector<Itinerary> allItinerary = new Vector<>();
+            //System.out.println("COPYLIST   " + copyList);
+            for (int j = 0; j <= 5; j++) {
+                //int index = num.nextInt(copyList.size());
+                int index = num.nextInt((result.size() - 1) + 1);
+                //System.out.println("INDEX " + index + " BOUND " + pointOfInterest.size());
 //    		int index = num.nextInt(10);
 //    		System.out.println(copyList.get(index));
-        //    itinerary.add(copyList.get(index));
-            //itinerary.setItinerary(pointOfInterest.get(index));
-            if(!vector.contains(pointOfInterest.get(index))){
-                vector.add(pointOfInterest.get(index));
-            }
-            //vector.add(pointOfInterest.get(index));
+                //    itinerary.add(copyList.get(index));
+                //itinerary.setItinerary(pointOfInterest.get(index));
+                if (!vector.toString().contains(result.get(index))) {
+                    //vector.add(pointOfInterest.get(index));
+                    vector.append("/").append(result.get(index));
+                }
+                //vector.add(pointOfInterest.get(index));
 //    		itinerary.add(copyList.get(i));
-            //Itinerary iti = new Itinerary();
-            //iti.setItinerary(pointOfInterest);
-            //System.out.println("ENTITY " + iti.getItinerary());
-           // resultBean.getInstance().setItinerary(itinerary); //RIMOSSO DOPO
+                //Itinerary iti = new Itinerary();
+                //iti.setItinerary(pointOfInterest);
+                //System.out.println("ENTITY " + iti.getItinerary());
+                // resultBean.getInstance().setItinerary(itinerary); //RIMOSSO DOPO
 //    		System.out.println(resultBean.getInstance().getItinerary());
 //    		copyList.remove(index);
-           // System.out.println("elemento scelto   :" + copyList.get(index));
-            //copyList.remove(index);
-            //
-            // System.out.println("COPYLIST   " + copyList);
+                // System.out.println("elemento scelto   :" + copyList.get(index));
+                //copyList.remove(index);
+                //
+                // System.out.println("COPYLIST   " + copyList);
 //    		System.out.println("INFO" + num.nextInt(10) + copyList + itinerary);
 
 //    		new ResultPage().getInstance().addRoute(itinerary.toString());
-        }
+            }
 //        allItinerary.add(new Itinerary(itinerary));
 //        ResultBean.getInstance().setItinerary(allItinerary);
-        //System.out.println("ITINERARYYYYYY " + vector);
+            //System.out.println("ITINERARYYYYYY " + vector);
 
-        itinerary.setItinerary(vector);
-      //  new ResultPage().getInstance().addRoute(itinerary);   RIMOSSO DOPO
+            //itinerary.setItinerary(vector.toString());
+            //  new ResultPage().getInstance().addRoute(itinerary);   RIMOSSO DOPO
 //    	new ResultPage().getInstance().addRoute(itinerary);
 
-
-//    	System.out.println(itinerary);
+            //    	System.out.println(itinerary);
 //    	ResultBean.getInstance().setItinerary(itinerary);
 //    	System.out.println(resultBean.getInstance().getItinerary());
-        return itinerary;
+            Itinerary itinerary = new Itinerary(vector.toString());
+            it.add(itinerary);
+        }
+        return this.convert(it);
     }
 
 
@@ -167,7 +175,7 @@ public class SearchController{
 
     public void searchRestaurants(HomeBean bean) {
         //if (bean.isRestaurant()){
-           // JSONFactory checkRestaurant = new Restaurants(bean.getAddress());
+        // JSONFactory checkRestaurant = new Restaurants(bean.getAddress());
         //}
 
     }

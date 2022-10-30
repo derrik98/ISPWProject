@@ -29,7 +29,7 @@ public class UserGraphicChange extends GUIChangeTemplate{
             @Override
             public void action() throws IOException {
                 FXMLLoader loader = new FXMLLoader();
-                FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Home-Page.fxml");
+                FileInputStream fileInputStream = new FileInputStream("Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/Home-Page.fxml");
                 Parent fxmlLoader = loader.load(fileInputStream);
                 HomeUserController huc = loader.getController();
                 scene.setRoot(fxmlLoader);
@@ -46,7 +46,7 @@ public class UserGraphicChange extends GUIChangeTemplate{
             @Override
             public void action() throws IOException {
                 FXMLLoader loader = new FXMLLoader();
-                FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/User-Details-Page.fxml");
+                FileInputStream fileInputStream = new FileInputStream("Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/User-Details-Page.fxml");
                 Parent fxmlLoader = loader.load(fileInputStream);
                 UserDetailsController pc = loader.getController();
                 scene.setRoot(fxmlLoader);

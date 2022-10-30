@@ -1,5 +1,6 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
+import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
 import it.ispw.daniele.backpacker.utils.Roles;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,7 +25,7 @@ public abstract class GUIChangeTemplate{
     public void catcher(GUIAction guiAction){
         try {
             guiAction.action();
-        }catch (IOException ioException){
+        }catch (IOException | MonumentNotFoundException ioException){
             logger.log(Level.WARNING, ioException.toString(), ioException.getCause());
         }
     }
@@ -35,7 +36,7 @@ public abstract class GUIChangeTemplate{
             @Override
             public void action() throws IOException {
                 FXMLLoader loader = new FXMLLoader();
-                FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/LoginView-Page.fxml");
+                FileInputStream fileInputStream = new FileInputStream("Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/LoginView-Page.fxml");
                 Parent fxmlLoader = loader.load(fileInputStream);
                 LoginViewController lvc = loader.getController();
                 scene.setRoot(fxmlLoader);
@@ -47,9 +48,9 @@ public abstract class GUIChangeTemplate{
     public void switchToResult(Scene scene, String country, String city, String address, String restaurant, String range) {
         this.catcher(new GUIAction() {
             @Override
-            public void action() throws IOException {
+            public void action() throws IOException, MonumentNotFoundException {
                 FXMLLoader loader = new FXMLLoader();
-                FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Result-Page.fxml");
+                FileInputStream fileInputStream = new FileInputStream("Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/Result-Page.fxml");
                 Parent fxmlLoader = loader.load(fileInputStream);
                 ResultController rc = loader.getController();
                 scene.setRoot(fxmlLoader);
@@ -83,7 +84,7 @@ public abstract class GUIChangeTemplate{
                 switch (whoAmI){
                     case USER -> {
                         loader = new FXMLLoader();
-                        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/MenuBar.fxml");
+                        FileInputStream fileInputStream = new FileInputStream("Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/MenuBar.fxml");
                         Parent fxmlLoader = loader.load(fileInputStream);
                         MenuBarController mbc = loader.getController();
                         pos.getChildren().add(fxmlLoader);
@@ -91,7 +92,7 @@ public abstract class GUIChangeTemplate{
                     }
                     case TOURIST_GUIDE -> {
                         loader = new FXMLLoader();
-                        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/TouristGuideMenuBar.fxml");
+                        FileInputStream fileInputStream = new FileInputStream("Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/TouristGuideMenuBar.fxml");
                         Parent fxmlLoader = loader.load(fileInputStream);
                         TouristGuideMenuBarController gbc = loader.getController();
                         pos.getChildren().add(fxmlLoader);
