@@ -166,7 +166,6 @@ public class ResultController  {
             for (int i = 0; i < steps.length; i++) {
                 als.add(i, steps[i]);
             }
-            System.out.println("als " + als);
 
             TitledPane titledPane = new TitledPane();
             titledPane.setCollapsible(false);
