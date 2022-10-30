@@ -1,16 +1,8 @@
 package it.ispw.daniele.backpacker.commandLineInterface;
 
 import it.ispw.daniele.backpacker.bean.HomeBean;
-import it.ispw.daniele.backpacker.exceptions.AddressNotFoundException;
-import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
-import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
-import it.ispw.daniele.backpacker.fxmlView.UserGraphicChange;
 
-import java.io.IOException;
 import java.util.Scanner;
-
-import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RED;
-import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RESET;
 
 public class CliHomeController {
     public void init(Scanner scanner) {

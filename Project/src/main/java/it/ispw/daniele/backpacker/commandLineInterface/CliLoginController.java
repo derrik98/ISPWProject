@@ -3,10 +3,8 @@ package it.ispw.daniele.backpacker.commandLineInterface;
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.controller.login.LoginController;
 import it.ispw.daniele.backpacker.exceptions.EmptyFieldException;
-import it.ispw.daniele.backpacker.fxmlView.UserGraphicChange;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class CliLoginController {

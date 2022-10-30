@@ -1,6 +1,7 @@
 package it.ispw.daniele.backpacker.commandLineInterface;
 
-import it.ispw.daniele.backpacker.fxmlView.*;
+import it.ispw.daniele.backpacker.fxmlView.MenuBarController;
+import it.ispw.daniele.backpacker.fxmlView.TouristGuideMenuBarController;
 import it.ispw.daniele.backpacker.utils.Roles;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
