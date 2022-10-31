@@ -1,12 +1,5 @@
 package it.ispw.daniele.backpacker.bean;
 
-import it.ispw.daniele.backpacker.controller.search.SearchController;
-import it.ispw.daniele.backpacker.exceptions.AddressNotFoundException;
-import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
-import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
-
-import java.io.IOException;
-
 public class HomeBean {
 
     private String country;
