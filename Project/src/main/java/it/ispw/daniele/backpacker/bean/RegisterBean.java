@@ -77,19 +77,4 @@ public class RegisterBean {
         this.email = email;
     }
 
-
-//    public boolean validate() throws Exception {
-//        // controllo sintattico
-//        System.out.println("registerbean " + email + password);
-//
-//        if (email == null || email.equals("") || password.equals(null) || password.equals("") || name.equals("") || surname.equals("")) {
-//            return false;
-//        }
-//        System.out.println(email + password);
-//        RegisterBean utenteRegistrato = RegisterController.getInstance().register(name, surname, password, email);
-//        return utenteRegistrato != null;
-//
-//    }
-
-
 }

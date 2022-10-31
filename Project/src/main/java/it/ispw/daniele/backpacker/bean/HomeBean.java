@@ -1,5 +1,7 @@
 package it.ispw.daniele.backpacker.bean;
 
+import java.util.logging.Logger;
+
 public class HomeBean {
 
     private String country;
@@ -13,7 +15,6 @@ public class HomeBean {
     public static synchronized HomeBean getInstance() {
         if(INSTANCE==null) {
             INSTANCE = new HomeBean();
-            //INSTANCE = new HomeBean(country, city, address, range, restaurant);
         }
         return INSTANCE;
     }
@@ -28,7 +29,7 @@ public class HomeBean {
         this.range = range;
         this.restaurant = restaurant;
 
-        System.out.println("Country " + this.country + "\tCity " + this.city + "\tAddress " + this.address + "\tRadius " + this.range
+        Logger.getLogger("Country " + this.country + "\tCity " + this.city + "\tAddress " + this.address + "\tRadius " + this.range
                 + "\tRestaurant " + this.restaurant);
     }
 

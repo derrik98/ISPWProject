@@ -11,7 +11,6 @@ public class CLI {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-
         do
         {
         System.out.println("-----------------------------------EXIT [quit]");
