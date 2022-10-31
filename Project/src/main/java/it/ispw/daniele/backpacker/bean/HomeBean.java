@@ -13,7 +13,7 @@ public class HomeBean {
     private static HomeBean INSTANCE = null;
 
     public static synchronized HomeBean getInstance() {
-        if(INSTANCE==null) {
+        if (INSTANCE == null) {
             INSTANCE = new HomeBean();
         }
         return INSTANCE;
@@ -73,28 +73,4 @@ public class HomeBean {
         this.restaurant = restaurant;
     }
 
-
-    /*public boolean validate() throws IOException, CityNotFoundException, AddressNotFoundException, MonumentNotFoundException {
-        // controllo sintattico
-        if (country.equals("") || city.equals("") || address.equals("")) {
-            return false;
-        }
-
-        HomeBean datiCorretti = null;
-        try {
-            datiCorretti = SearchController.getInstances().getInput(this);
-        } catch (CityNotFoundException e) {
-            throw new CityNotFoundException(e.getMessage());
-           // e.printStackTrace();
-        }
-        System.out.println("provafatta" + city);//FARE COME LA VALIDATE
-        System.out.println(country);
-
-        System.out.println(datiCorretti.country + datiCorretti.city + datiCorretti.address);
-        *//*if(utenteTrovato==null)
-            return false;
-        return true;*//*
-        return datiCorretti != null;
-
-    }*/
 }
