@@ -1,28 +1,20 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
-import it.ispw.daniele.backpacker.bean.GeneralUserBean;
-import it.ispw.daniele.backpacker.bean.HomeBean;
 import it.ispw.daniele.backpacker.bean.ItineraryBean;
-import it.ispw.daniele.backpacker.bean.ResultBean;
 import it.ispw.daniele.backpacker.booktour.BookTourController;
 import it.ispw.daniele.backpacker.controller.search.SearchController;
-import it.ispw.daniele.backpacker.entity.Itinerary;
 import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
-import it.ispw.daniele.backpacker.utils.Controller;
 import it.ispw.daniele.backpacker.utils.Roles;
 import it.ispw.daniele.backpacker.utils.SessionUser;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.StackPane;
@@ -69,7 +61,7 @@ public class ResultController  {
     private HBox menuBar = new HBox();
 
 
-    public void init(String country, String city, String address, String restaurant, String range) throws MonumentNotFoundException, MonumentNotFoundException {
+    public void init(String country, String city, String address, String restaurant, String range) throws MonumentNotFoundException {
 
         if(SessionUser.getInstance().getSession().getRole().equals(Roles.TOURIST_GUIDE.name().toLowerCase())) {
             TouristGuideGraphicChange i = TouristGuideGraphicChange.getInstance();
@@ -150,8 +142,8 @@ public class ResultController  {
         else {
             selfItinerary.setText("Self Itinerary");
 
-            Accordion accordionn = createTable(iti);
-            vBoxResult.getChildren().add(accordionn);
+            Accordion accordionSelf = createTable(iti);
+            vBoxResult.getChildren().add(accordionSelf);
         }
     }
 

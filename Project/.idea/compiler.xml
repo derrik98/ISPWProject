@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="15">
-      <module name="Backpacker" target="15" />
+      <module name="Backpacker" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

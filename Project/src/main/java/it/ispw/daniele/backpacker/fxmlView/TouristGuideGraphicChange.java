@@ -27,7 +27,7 @@ public class TouristGuideGraphicChange extends GUIChangeTemplate{
     public void switchToHomePage(Scene scene) {
         this.catcher(() -> {
             FXMLLoader loader = new FXMLLoader();
-            FileInputStream fileInputStream = new FileInputStream("Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/Home-Page.fxml");
+            FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Home-Page.fxml");
             Parent fxmlLoader = loader.load(fileInputStream);
             HomeUserController huc = loader.getController();
             scene.setRoot(fxmlLoader);
@@ -38,7 +38,7 @@ public class TouristGuideGraphicChange extends GUIChangeTemplate{
 
     public void switchToAddItinerary(Scene scene) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        FileInputStream fileInputStream = new FileInputStream("Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/Add-Itinerary-Page.fxml");
+        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Add-Itinerary-Page.fxml");
         Parent fxmlLoader = loader.load(fileInputStream);
         scene.setRoot(fxmlLoader);
     }
@@ -51,7 +51,7 @@ public class TouristGuideGraphicChange extends GUIChangeTemplate{
             @Override
             public void action() throws IOException {
                 FXMLLoader loader = new FXMLLoader();
-                FileInputStream fileInputStream = new FileInputStream("Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/TGuide-Details-Page.fxml");
+                FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/TGuide-Details-Page.fxml");
                 Parent fxmlLoader = loader.load(fileInputStream);
                 TGuideDetailsController gdc = loader.getController();
                 scene.setRoot(fxmlLoader);
