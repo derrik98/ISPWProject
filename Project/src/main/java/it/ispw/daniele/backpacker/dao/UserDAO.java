@@ -194,7 +194,7 @@ public class UserDAO extends DaoTemplate{
                             String email = rs.getString("email");
 
                             System.out.println("sono qui" + username + "   " + email);
-
+System.out.println("\n" + profilePicture + "  ss");
                             if(profilePicture == null || profilePicture.equals("")) {
                                 profilePicture = "user.png";
                             }

@@ -164,6 +164,7 @@ public class UserDetailsController extends Controller {
             Accordion accordion = r.createTable(it, "both");
             vBoxProfile.getChildren().add(accordion);
         }
+
         /*vBoxResultGuide.getChildren().add(accordion);
 
 
@@ -224,6 +225,8 @@ public class UserDetailsController extends Controller {
             accordion.getPanes().add(titledPane);
         }
         vBoxProfile.getChildren().add(accordion);*/
+
+
     }
 
 }

@@ -92,7 +92,7 @@ public abstract class GUIChangeTemplate{
                     }
                     case TOURIST_GUIDE -> {
                         loader = new FXMLLoader();
-                        FileInputStream fileInputStream = new FileInputStream("Project/src/main/java/it/ispw/daniele/backpacker/fxmlView/TouristGuideMenuBar.fxml");
+                        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/TouristGuideMenuBar.fxml");
                         Parent fxmlLoader = loader.load(fileInputStream);
                         TouristGuideMenuBarController gbc = loader.getController();
                         pos.getChildren().add(fxmlLoader);
