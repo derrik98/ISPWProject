@@ -73,7 +73,8 @@ public class HomeUserController{
                 //return false;
             }
             SearchController sc = new SearchController();
-            HomeBean datiCorretti = sc.checkInput(homeBean);
+            sc.checkInput(homeBean);
+            //HomeBean datiCorretti = sc.checkInput(homeBean);
 
             //HomeBean datiCorretti = null;
             //

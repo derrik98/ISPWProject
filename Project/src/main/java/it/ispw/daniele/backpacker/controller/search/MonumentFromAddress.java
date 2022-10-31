@@ -32,9 +32,6 @@ public class MonumentFromAddress extends JSONFactory{
     @Override
     public boolean getJSON(String address, String type) throws MonumentNotFoundException {
 
-
-        //ArrayList<String> monuments = new ArrayList<>();
-
         try {
             JSONObject json;
             String url = ("https://maps.googleapis.com/maps/api/place/textsearch/json?query=monuments+in+"+convertString(address)+

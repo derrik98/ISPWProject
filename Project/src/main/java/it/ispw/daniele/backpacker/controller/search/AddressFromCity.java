@@ -36,8 +36,7 @@ public class AddressFromCity extends JSONFactory{
         JSONArray a = (JSONArray) json.get("predictions");
         JSONObject o = a.getJSONObject(0);
         String s = (String) o.get("description");
-        //JSONObject arr = o.getJSONObject("description");
-        //JSONObject ob = arr.getJSONObject(1);
+
         String upperCase;
         upperCase = String.valueOf(upperCase(city));
 
@@ -48,20 +47,6 @@ public class AddressFromCity extends JSONFactory{
         else{
             throw new AddressNotFoundException("Address not present in this city");
         }
-        //System.out.println(upperCaseFirst(city) + " VALUE " + s);
-            /*if(!ob.get("value").equals(upperCaseFirst(city))) {
-                System.out.println(city + " VALUE " + ob.get("value"));
-                throw new AddressNotFoundException("Questa via non è presente in questo città");
-            }*/
-
-
-
-            //System.out.println("Address from city" + json);
-            //System.out.println(a);
-            //System.out.println(o);
-            //System.out.println(arr);
-            //System.out.println(ob);
-            //System.out.println(ob.get("value"));
 
     }
 

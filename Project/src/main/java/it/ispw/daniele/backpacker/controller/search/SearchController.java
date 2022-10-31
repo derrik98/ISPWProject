@@ -67,28 +67,23 @@ public class SearchController extends Controller {
 //        return HomeBean.getInstance();
 //    }
 
-    public HomeBean checkInput(HomeBean bean) throws CityNotFoundException, AddressNotFoundException, MonumentNotFoundException, IOException {
+    public boolean checkInput(HomeBean bean) throws CityNotFoundException, AddressNotFoundException, MonumentNotFoundException, IOException {
         JSONFactory checkCityCountry = new CityFromCountry();//.getInstance();
 
         if (checkCityCountry.getJSON(bean.getCity(), bean.getCountry())) {
             JSONFactory checkAddressCity = new AddressFromCity();
             if(checkAddressCity.getJSON(bean.getAddress(), bean.getCity())) {
                 MonumentFromAddress monuments = new MonumentFromAddress();
-                ArrayList<String> result = monuments.getMonuments(bean.getAddress());
-                monuments.getJSON(bean.getAddress(), "monuments");
-                ArrayList<Itinerary> allItineraries = new ArrayList<>();
-                for (int i = 0; i < 5; i++) {
-                    //this.createItinerary(result);
-                    //////allItineraries.add(this.createItinerary(result)); ////c'era
-                    //////System.out.println(allItineraries.size());
+                if(monuments.getJSON(bean.getAddress(), "monuments")){
+                    return true;
                 }
-                return HomeBean.getInstance();
+                return false;
             }
             else{
-                return null;
+                return false;
             }
         }
-        return null;
+        return false;
     }
 
     /*public Vector<Monument> searchMonuments() throws MonumentNotFoundException {

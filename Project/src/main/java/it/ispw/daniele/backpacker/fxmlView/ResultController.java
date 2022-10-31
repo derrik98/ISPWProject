@@ -224,7 +224,7 @@ public class ResultController  {
             int finalJ = j;
             ivBuy.setOnMouseClicked(mouseEvent -> {
                 FXMLLoader loader = new FXMLLoader();
-                FileInputStream fileInputStream = null;
+                FileInputStream fileInputStream;
                 try {
 
                     fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/ItineraryDetails-Page.fxml");

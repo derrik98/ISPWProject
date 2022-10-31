@@ -25,17 +25,13 @@ public class CityFromCountry extends JSONFactory{
     public boolean getJSON(String city, String country) throws CityNotFoundException, IOException {
         JSONObject json;
 
-        //json = readJsonFromUrl("https://maps.googleapis.com/maps/api/geocode/json?address=" + city
-        //        + "&components=country:" + country + "&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");
-        json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/autocomplete/json?input=" + city + "&types=(cities)&language=it&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg"
-        );
-
-        System.out.println(json);
+        json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/autocomplete/json?input="
+                + city + "&types=(cities)&language=it&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");
 
         JSONArray ja = (JSONArray) json.get("predictions");
         JSONObject o = (JSONObject) ja.getJSONObject(0).get("structured_formatting");
         String s = (String) o.get("secondary_text");
-        System.out.println("WW" + s);
+
         String upperCase;
         upperCase = String.valueOf(upperCase(country));
 
@@ -46,13 +42,6 @@ public class CityFromCountry extends JSONFactory{
         else{
             throw new CityNotFoundException("City not found in this country");
         }
-
-
-       /* if (!json.getString("status").equals("OK")) {
-
-
-        }*/
-
 
     }
 
