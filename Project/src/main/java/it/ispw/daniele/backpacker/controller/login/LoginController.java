@@ -48,7 +48,7 @@ public class LoginController {
 
     public boolean createTouristGuide(TouristGuideBean tgb) {
         TouristGuideDao tgd = new TouristGuideDao();
-        return tgd.createTouristGuide(tgb.getUsername(), tgb.getName(), tgb.getSurname(), tgb.getEmail(), tgb.getPassword(), tgb.getIdentificationCode());
+        return tgd.createTouristGuide(tgb.getUsername(), tgb.getName(), tgb.getSurname(), tgb.getEmail(), tgb.getPassword(), tgb.getProfilePicture(), tgb.getIdentificationCode());
     }
 
 }

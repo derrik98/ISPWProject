@@ -8,6 +8,7 @@ import it.ispw.daniele.backpacker.dao.UserDAO;
 import it.ispw.daniele.backpacker.entity.TouristGuide;
 import it.ispw.daniele.backpacker.entity.User;
 import it.ispw.daniele.backpacker.utils.Controller;
+import it.ispw.daniele.backpacker.utils.FileManager;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -26,6 +27,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.web.WebView;
 
+import java.io.File;
 import java.util.List;
 import java.util.Objects;
 
@@ -39,6 +41,7 @@ public class TGuideDetailsController extends Controller {
     public ImageView imageSettings;
     public Text textSettings;
     public VBox vBoxProfile;
+    public ImageView profilePicture;
 
     private GeneralUserBean gub;
     private final Accordion accordionResult = new Accordion();
@@ -103,6 +106,14 @@ public class TGuideDetailsController extends Controller {
         //this.name.setText(gu.getPassword());
 
         //ugc.menuBar(this.menuBar, "profile");
+
+        String path = FileManager.PROFILE + File.separator + users.getProfilePicture();
+
+        File file = new File(path);
+        Image image = new Image(file.toURI().toString());
+        this.profilePicture.setImage(image);
+        this.profilePicture.setFitHeight(150);
+        this.profilePicture.setFitWidth(150);
 
         vBoxProfile.getChildren().add(accordionResult);
 

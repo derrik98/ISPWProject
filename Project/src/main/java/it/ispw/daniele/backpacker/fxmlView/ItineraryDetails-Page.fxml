@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="APDetails" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="280.0" prefWidth="450.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.fxmlView.ItineraryDetailsController">
+<AnchorPane fx:id="APDetails" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="280.0" prefWidth="450.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.fxmlView.ItineraryDetailsController">
    <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <StackPane>
          <VBox alignment="BOTTOM_CENTER" style="-fx-background-radius: 10;">
