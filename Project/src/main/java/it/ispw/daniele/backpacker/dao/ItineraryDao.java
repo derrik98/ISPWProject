@@ -1,6 +1,8 @@
 package it.ispw.daniele.backpacker.dao;
 
 import it.ispw.daniele.backpacker.entity.Itinerary;
+import it.ispw.daniele.backpacker.entity.User;
+import it.ispw.daniele.backpacker.exceptions.IdJustUsed;
 import it.ispw.daniele.backpacker.utils.DBTouristGuideConnection;
 import it.ispw.daniele.backpacker.utils.DBUserConnection;
 
@@ -8,6 +10,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -103,7 +107,7 @@ public class ItineraryDao extends DaoTemplate{
                 String sql = "call backpacker.is_participating(?, ?);\r\n";
                 try (PreparedStatement stm = conn.prepareStatement(sql)) {
                     stm.setString(1, username);
-                    stm.setInt(2,  Integer.parseInt(itineraryId));
+                    stm.setString(2,  itineraryId);
                     try (ResultSet rs = stm.executeQuery()) {
                         return (rs.first());
                     }
@@ -132,7 +136,7 @@ public class ItineraryDao extends DaoTemplate{
                     }
                     stm = conn.prepareStatement(sql);
                     stm.setString(1, username);
-                    stm.setInt(2,  Integer.parseInt(id));
+                    stm.setString(2,  id);
                     stm.executeUpdate();
                 } finally {
                     if (stm != null)
@@ -167,33 +171,37 @@ public class ItineraryDao extends DaoTemplate{
         }) != null);
     }
 
+
     public boolean getItineraryId(String id) {
-        return (this.execute(new DaoAction<Boolean>() {
+        Boolean ret = this.execute(new DaoAction<Boolean>() {
             @Override
             public Boolean act() throws ClassNotFoundException, SQLException {
-                Connection conn = DBUserConnection.getUserConnection();
-                Itinerary itinerary = null;
-                String sql = "call backpacker.get_itinerary_id(?);\r\n";
+                Connection conn = null;
+                String sql = null;
+                PreparedStatement stm = null;
 
-                try (PreparedStatement stm = conn.prepareStatement(sql)) {
+                conn = DBUserConnection.getUserConnection();
+                sql = "call backpacker.get_itinerary_id(?);\r\n";
+                stm = conn.prepareStatement(sql);
 
-                    stm.setString(1, id);
+                stm.setString(1, id);
 
-                    try (ResultSet rs = stm.executeQuery()) {
-                        rs.next();
-
-                        String id = rs.getString("itinerary_id");
-
-                        System.out.println(id + "AAAAAAAAAAAAAAAAAAA");
-
-                        //itinerary = new Itinerary(name, location, guideId, date, steps);
-                        System.out.println("sono quiiiiiiiiiii " + itinerary);
-                        //itinerary.setCoordinates(coordinates);
+                try (ResultSet rs = stm.executeQuery()) {
+                    if (!rs.first()) // rs not empty
                         return true;
-                    }
-                }
+
+                    return false;
+                } finally {
+                if (stm != null)
+                    stm.close();
             }
-        }) != null);
+        }
+    });
+        if (ret != null) {
+        return ret;
+    } else {
+        return true;
+    }
     }
 
     public List<Itinerary> getBookedItineraries(String input) {
@@ -252,13 +260,13 @@ public class ItineraryDao extends DaoTemplate{
             return Collections.emptyList();
 
         do{
-            String name = rs.getString(ID);
+            String id = rs.getString(ID);
             String location = rs.getString(LOCATION);
             String guideId = rs.getString(GUIDE_ID);
             String date = rs.getString(DATE);
             String steps = rs.getString(STEPS);
 
-            Itinerary itinerary = new Itinerary(name, location, guideId, date, steps);
+            Itinerary itinerary = new Itinerary(id, location, guideId, date, steps);
 
             l.add(itinerary);
         } while (rs.next());
