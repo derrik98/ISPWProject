@@ -7,10 +7,10 @@ import java.sql.SQLException;
 public class DBLoginConnection {
 
     private static Connection me = null;
-    private static String user = "login";
-    private static String dbUrl = "jdbc:mysql://localhost/backpacker?useSSL=false";
+    private static final String user = "login";
+    private static final String dbUrl = "jdbc:mysql://localhost/backpacker?allowPublicKeyRetrieval=true&useSSL=false";
 
-    private static String driverClassName = "com.mysql.jdbc.Driver";
+    private static final String driverClassName = "com.mysql.jdbc.Driver";
 
     private DBLoginConnection() {
 

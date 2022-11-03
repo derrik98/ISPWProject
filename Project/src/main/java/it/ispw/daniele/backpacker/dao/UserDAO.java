@@ -1,6 +1,7 @@
 package it.ispw.daniele.backpacker.dao;
 
 import it.ispw.daniele.backpacker.entity.User;
+import it.ispw.daniele.backpacker.utils.DBLoginConnection;
 import it.ispw.daniele.backpacker.utils.DBUserConnection;
 
 import java.sql.Connection;
@@ -33,7 +34,7 @@ public class UserDAO extends DaoTemplate{
             public Boolean act() throws ClassNotFoundException, SQLException {
 
                 System.out.println("sono qui");
-                Connection con = DBUserConnection.getUserConnection();
+                Connection con = DBLoginConnection.getLoginConnection();
                 /*if(con == null){
                     System.out.println("connessoine non stabilita");
                 }

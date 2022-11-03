@@ -7,10 +7,10 @@ import java.sql.SQLException;
 public class DBTouristGuideConnection {
 
     private static Connection me = null;
-    private static String touristGuide = "tourist_guide";
-    private static String dbUrl = "jdbc:mysql://localhost/backpacker?useSSL=false";
+    private static final String touristGuide = "tourist_guide";
+    private static final String dbUrl = "jdbc:mysql://localhost/backpacker?allowPublicKeyRetrieval=true&useSSL=false";
 
-    private static String driverClassName = "com.mysql.jdbc.Driver";
+    private static final String driverClassName = "com.mysql.jdbc.Driver";
 
     private DBTouristGuideConnection() {
 

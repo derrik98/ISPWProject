@@ -7,8 +7,8 @@ import java.sql.SQLException;
 public class DBUserConnection {
 
     private static Connection me = null;
-    private static String user = "root";
-    private static String dbUrl = "jdbc:mysql://localhost/backpacker?useSSL=false";
+    private static String user = "user";
+    private static String dbUrl = "jdbc:mysql://localhost/backpacker?allowPublicKeyRetrieval=true&useSSL=false";
 
     private static String driverClassName = "com.mysql.jdbc.Driver";
 
@@ -21,7 +21,7 @@ public class DBUserConnection {
         if(me != null) return me;
         else {
             Class.forName(driverClassName);
-            me = DriverManager.getConnection(dbUrl,user,"");
+            me = DriverManager.getConnection(dbUrl,user,"user");
             return me;
         }
 
