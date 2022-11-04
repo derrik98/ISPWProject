@@ -5,8 +5,7 @@ public class User extends GeneralUser{
     private final String surname;
     private final String profilePicture;
 
-    public User(String username, String password, String name,
-                String surname, String profilePicture, String email) {
+    public User(String username, String password, String name, String surname, String profilePicture, String email) {
         this.username = username;
         this.password = password;
         this.name = name;
