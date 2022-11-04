@@ -1,8 +1,6 @@
 package it.ispw.daniele.backpacker.dao;
 
 import it.ispw.daniele.backpacker.entity.Itinerary;
-import it.ispw.daniele.backpacker.entity.User;
-import it.ispw.daniele.backpacker.exceptions.IdJustUsed;
 import it.ispw.daniele.backpacker.utils.DBTouristGuideConnection;
 import it.ispw.daniele.backpacker.utils.DBUserConnection;
 
@@ -10,8 +8,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -271,5 +267,26 @@ public class ItineraryDao extends DaoTemplate{
             l.add(itinerary);
         } while (rs.next());
         return l;
+    }
+
+    public boolean saveTour(String username, String location, Date date, String itinerarySteps) {
+        return (this.execute(new DaoAction<Boolean>() {
+            @Override
+            public Boolean act() throws ClassNotFoundException, SQLException {
+                Connection con = DBTouristGuideConnection.getTouristGuideConnection();
+                String sql = "call backpacker.save_itinerary(?, ?);\r\n";
+                try (PreparedStatement stm = con.prepareStatement(sql)) {
+                    java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+
+                    stm.setString(1, username);
+                    stm.setString(2, location);
+                    stm.setDate(3, sqlDate);
+                    stm.setString(4, itinerarySteps);
+
+                    stm.executeUpdate();
+                    return true;
+                }
+            }
+        }) != null);
     }
 }

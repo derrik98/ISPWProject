@@ -2,6 +2,7 @@ package it.ispw.daniele.backpacker.fxmlView;
 
 import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.booktour.BookTourController;
+import it.ispw.daniele.backpacker.booktour.SaveTour;
 import it.ispw.daniele.backpacker.controller.search.SearchController;
 import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
 import it.ispw.daniele.backpacker.utils.Roles;
@@ -11,7 +12,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -26,6 +26,7 @@ import javafx.scene.web.WebView;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -60,7 +61,6 @@ public class ResultController  {
     private VBox vBoxResult = new VBox();
     @FXML
     private HBox menuBar = new HBox();
-
 
     public void init(String country, String city, String address, String restaurant, String range) throws MonumentNotFoundException {
 
@@ -263,8 +263,16 @@ public class ResultController  {
                 }
             });
 
+            int finalJ1 = j;
             ivSave.setOnMouseClicked(mouseEvent -> {
-                Node s = contentPane.getChildren().get(0);
+                System.out.println("SONO QUI");
+
+                SaveTour st = new SaveTour();
+                try {
+                    st.saveTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(finalJ1));
+                } catch (ParseException e) {
+                    throw new RuntimeException(e);
+                }
             });
 
             contentPane.getChildren().addAll(region1, ivMap, region2, ivSave);

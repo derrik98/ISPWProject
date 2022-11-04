@@ -2,6 +2,7 @@ package it.ispw.daniele.backpacker.dao;
 
 import it.ispw.daniele.backpacker.entity.TouristGuide;
 import it.ispw.daniele.backpacker.entity.User;
+import it.ispw.daniele.backpacker.utils.DBLoginConnection;
 import it.ispw.daniele.backpacker.utils.DBTouristGuideConnection;
 import it.ispw.daniele.backpacker.utils.DBUserConnection;
 
@@ -89,7 +90,7 @@ public class TouristGuideDao extends DaoTemplate{
         return (this.execute(new DaoAction<Boolean>() {
             @Override
             public Boolean act() throws ClassNotFoundException, SQLException {
-                Connection con = DBTouristGuideConnection.getTouristGuideConnection();
+                Connection con = DBLoginConnection.getLoginConnection();
                 if(con == null){
                     System.out.println("connessoine non stabilita");
                 }

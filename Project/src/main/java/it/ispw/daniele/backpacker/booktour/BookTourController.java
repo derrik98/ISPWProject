@@ -41,4 +41,5 @@ public class BookTourController extends Controller {
         AddParticipationController apc = new AddParticipationController();
         return apc.isParticipating(user, itinerary);
     }
+
 }

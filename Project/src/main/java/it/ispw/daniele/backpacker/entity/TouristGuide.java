@@ -5,7 +5,7 @@ public class TouristGuide extends GeneralUser{
     private final String name;
     private final String surname;
     private final String profilePicture;
-    private String vatNum;
+    private final String vatNum;
 
     public String getVatNum() {
         return vatNum;
