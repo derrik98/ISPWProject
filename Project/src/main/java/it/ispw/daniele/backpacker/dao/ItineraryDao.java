@@ -269,24 +269,36 @@ public class ItineraryDao extends DaoTemplate{
         return l;
     }
 
-    public boolean saveTour(String username, String location, Date date, String itinerarySteps) {
-        return (this.execute(new DaoAction<Boolean>() {
+    public void saveTour(String username, String location, String itinerarySteps) {
+        this.execute(new DaoAction<Boolean>() {
             @Override
             public Boolean act() throws ClassNotFoundException, SQLException {
-                Connection con = DBTouristGuideConnection.getTouristGuideConnection();
-                String sql = "call backpacker.save_itinerary(?, ?);\r\n";
+                Connection con = DBUserConnection.getUserConnection();
+                String sql = "call backpacker.add_itinerary(?, ?, ?, ?, ?, ?, ?, ?);\r\n";
                 try (PreparedStatement stm = con.prepareStatement(sql)) {
-                    java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+
+                    stm.setString(1, "ciao");
+                    stm.setString(2, null);
+                    stm.setString(3, location);
+                    stm.setDate(4, null);
+                    stm.setString(5, null);
+                    stm.setInt(6, 0);
+                    stm.setInt(7, 0);
+                    stm.setString(8, itinerarySteps);
+                    stm.executeUpdate();
+                    //return true;
+                }
+
+                sql = "call backpacker.save_itinerary(?);\r\n";
+                try (PreparedStatement stm = con.prepareStatement(sql)) {
 
                     stm.setString(1, username);
-                    stm.setString(2, location);
-                    stm.setDate(3, sqlDate);
-                    stm.setString(4, itinerarySteps);
 
                     stm.executeUpdate();
-                    return true;
+
                 }
+                return true;
             }
-        }) != null);
+        });
     }
 }
