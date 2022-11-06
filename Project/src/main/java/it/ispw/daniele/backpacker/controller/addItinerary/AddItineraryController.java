@@ -40,6 +40,7 @@ public class AddItineraryController {
             //System.out.println("id gia esistente");
             //return false;
         }
+
         return itineraryDao.addItinerary(itineraryBean.getItineraryId(), itineraryBean.getGuideId(), itineraryBean.getLocation(), date, itineraryBean.getTime(), itineraryBean.getParticipants(), itineraryBean.getPrice(), itineraryBean.getSteps());
 
     }

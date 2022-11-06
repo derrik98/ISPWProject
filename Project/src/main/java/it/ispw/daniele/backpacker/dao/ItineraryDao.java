@@ -269,36 +269,87 @@ public class ItineraryDao extends DaoTemplate{
         return l;
     }
 
-    public void saveTour(String username, String location, String itinerarySteps) {
+    public void saveTour(String username, String itinerary) {
         this.execute(new DaoAction<Boolean>() {
             @Override
             public Boolean act() throws ClassNotFoundException, SQLException {
                 Connection con = DBUserConnection.getUserConnection();
-                String sql = "call backpacker.add_itinerary(?, ?, ?, ?, ?, ?, ?, ?);\r\n";
+                String sql = "call backpacker.save_itinerary(?, ?);\r\n";
+
                 try (PreparedStatement stm = con.prepareStatement(sql)) {
-
-                    stm.setString(1, "ciao");
-                    stm.setString(2, null);
-                    stm.setString(3, location);
-                    stm.setDate(4, null);
-                    stm.setString(5, null);
-                    stm.setInt(6, 0);
-                    stm.setInt(7, 0);
-                    stm.setString(8, itinerarySteps);
-                    stm.executeUpdate();
-                    //return true;
-                }
-
-                sql = "call backpacker.save_itinerary(?);\r\n";
-                try (PreparedStatement stm = con.prepareStatement(sql)) {
-
                     stm.setString(1, username);
-
+                    stm.setString(2, itinerary);
                     stm.executeUpdate();
 
                 }
                 return true;
             }
         });
+    }
+
+    public List<Itinerary> getSavedItinerary(String input) {
+        List<Itinerary> ret = this.execute(new DaoAction<List<Itinerary>>() {
+            @Override
+            public List<Itinerary> act() throws ClassNotFoundException, SQLException {
+                Connection conn = null;
+                List<Itinerary> itinerary = new ArrayList<>();
+                String sql = null;
+
+                /*if(role.equals("admin")) {
+                    conn =DBTouristGuideConnection.getTouristGuideConnection();
+                    sql = "call livethemusic.get_pending_itinerary(?);\r\n";
+                } else {*/
+                conn = DBUserConnection.getUserConnection();
+                sql = "call backpacker.get_saved_itinerary(?);\r\n";
+                //}
+
+                try(PreparedStatement stm = conn.prepareStatement(sql)) {
+
+                    stm.setString(1, input);
+
+                    if (stm != null) {
+                        try (ResultSet rs = stm.executeQuery()) {
+                            itinerary = unpackResult(rs);
+                        }
+                    }
+                    /*try (ResultSet rs = stm.executeQuery()) {
+                        rs.next();
+
+                        String name = rs.getString(ID);
+                        String location = rs.getString(LOCATION);
+                        String guideId = rs.getString(GUIDE_ID);
+                        String date = rs.getString(DATE);
+                        String steps = rs.getString(STEPS);
+
+                        System.out.println(name + location + guideId + date + steps + "AAAAAAAAAAAAAAAAAAA");
+
+                        //itinerary = new Itinerary(name, location, guideId, date, steps);
+                        System.out.println("sono quiiiiiiiiiii " + itinerary);
+                    }*/
+                }
+                return itinerary;
+            }
+        });
+        if (ret != null)
+            return ret;
+        else
+            return Collections.emptyList();
+    }
+
+    private List<Itinerary> unpackResult(ResultSet rs) throws SQLException {
+        List<Itinerary> l = new ArrayList<>();
+
+        if (!rs.first()) // rs not empty
+            return Collections.emptyList();
+
+        do{
+
+            String steps = rs.getString(STEPS);
+
+            Itinerary itinerary = new Itinerary(steps);
+
+            l.add(itinerary);
+        } while (rs.next());
+        return l;
     }
 }

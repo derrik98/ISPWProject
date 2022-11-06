@@ -4,6 +4,8 @@ import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.bean.UserBean;
 import it.ispw.daniele.backpacker.booktour.BookTourController;
+import it.ispw.daniele.backpacker.booktour.SaveTour;
+import it.ispw.daniele.backpacker.controller.search.SearchController;
 import it.ispw.daniele.backpacker.dao.ItineraryDao;
 import it.ispw.daniele.backpacker.dao.UserDAO;
 import it.ispw.daniele.backpacker.entity.Itinerary;
@@ -146,23 +148,36 @@ public class UserDetailsController extends Controller {
 
         vBoxProfile.getChildren().add(accordionResult);
 
+        ResultController r = new ResultController();
 
         BookTourController btc = new BookTourController();
         List<ItineraryBean> it;
         it = btc.getItinerary(users.getUsername(), "user");
 
-        for(int j = 0;  j < it.size(); j++) {
-            ResultController r = new ResultController();
-            String[] steps = it.get(j).getSteps().split("/");
-            ArrayList<String> als = new ArrayList<>();
-            for (int i = 0; i < steps.length; i++) {
-                als.add(i, steps[i]);
-            }
-
-            //r.createTable(als, it.get(j));
-
-            Accordion accordion = r.createTable(it, "both");
+        if(it == null){
+            System.out.println("EMPTY_DATABASE ");
+        }
+        else{
+            //suggestedItinerary.setText("Suggested Itinerary");
+            //guideImage.setImage(new Image("guideOn.png"));
+            //guideImage.setFitHeight(50);
+            //guideImage.setFitHeight(50);
+            Accordion accordion = r.createTable(it, "suggested");
             vBoxProfile.getChildren().add(accordion);
+        }
+
+        SaveTour st = new SaveTour();
+        List<ItineraryBean> iti;
+        iti = st.getItinerary(users.getUsername());
+
+        if(iti == null){
+            System.out.println("EMPTY_DATABASE ");
+        }
+        else {
+            //selfItinerary.setText("Self Itinerary");
+
+            Accordion accordionSelf = r.createTable(iti, "self");
+            vBoxProfile.getChildren().add(accordionSelf);
         }
 
         /*vBoxResultGuide.getChildren().add(accordion);
