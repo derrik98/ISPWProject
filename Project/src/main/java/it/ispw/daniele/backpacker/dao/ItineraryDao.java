@@ -15,7 +15,7 @@ import java.util.List;
 
 public class ItineraryDao extends DaoTemplate{
 
-    private static final String ID = "itinerary_id";
+    private static final String ID = "id";
     private static final String LOCATION = "location";
     private static final String GUIDE_ID = "guideId";
     private static final String DATE= "date";

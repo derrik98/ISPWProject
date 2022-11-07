@@ -1,7 +1,11 @@
 package it.ispw.daniele.backpacker.commandLineInterface;
 
+import it.ispw.daniele.backpacker.exceptions.AddressNotFoundException;
+import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
+import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
 import it.ispw.daniele.backpacker.utils.Roles;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RED;
@@ -42,10 +46,10 @@ public class CliUserGraphicChange extends CliGuiChangeTemplate{
         });*/
     }
 
-    public void switchToMenuPage(Scanner scanner) {
+    public void switchToMenuPage(Scanner scanner) throws AddressNotFoundException, IOException, CityNotFoundException, MonumentNotFoundException {
 
         do {
-            System.out.println("-----------------------------------UNDO [u]--");
+            System.out.println("MENU'------------------------------UNDO [u]--");
             System.out.println("---------------------------------------------");
             System.out.println("----------------Home [0]---------------------");
             System.out.println("----------------Profile [1]------------------");
@@ -66,10 +70,12 @@ public class CliUserGraphicChange extends CliGuiChangeTemplate{
                 case "2":
                     return;
                 default:
-                    System.out.println(RED + "Command not found" + RESET);
+                    System.out.println(RED + "Command not found\n" + RESET);
                     break;
             }
-            System.out.flush();
         } while (true);
+    }
+
+    public void switchToResult(String country, String city, String address, String restaurant, String range) {
     }
 }

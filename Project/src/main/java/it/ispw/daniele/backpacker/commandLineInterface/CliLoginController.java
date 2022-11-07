@@ -2,9 +2,13 @@ package it.ispw.daniele.backpacker.commandLineInterface;
 
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.controller.login.LoginController;
+import it.ispw.daniele.backpacker.exceptions.AddressNotFoundException;
+import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
 import it.ispw.daniele.backpacker.exceptions.EmptyFieldException;
+import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class CliLoginController {
@@ -58,6 +62,14 @@ public class CliLoginController {
         } catch (EmptyFieldException e) {
             System.out.println("\n" + RED + e.getMessage() + RESET + "\n");
             //throw new RuntimeException(e);
+        } catch (AddressNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (CityNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (MonumentNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 }

@@ -1,11 +1,21 @@
 package it.ispw.daniele.backpacker.commandLineInterface;
 
 import it.ispw.daniele.backpacker.bean.HomeBean;
+import it.ispw.daniele.backpacker.controller.search.SearchController;
+import it.ispw.daniele.backpacker.exceptions.AddressNotFoundException;
+import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
+import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
+import it.ispw.daniele.backpacker.fxmlView.UserGraphicChange;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
+import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RED;
+import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RESET;
+
 public class CliHomeController {
-    public void init(Scanner scanner) {
+    public void init(Scanner scanner) throws IOException, AddressNotFoundException, CityNotFoundException, MonumentNotFoundException {
 
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -19,11 +29,33 @@ public class CliHomeController {
         System.out.println("Address:");
         String address = scanner.nextLine();
 
+        System.out.println("Restaurant: [Yes or No]");
+        String restaurant = scanner.nextLine();
 
-        HomeBean homeBean = HomeBean.getInstance();
+        System.out.println("Range:");
+        String range = scanner.nextLine();
+
+
+        HomeBean homeBean = new HomeBean();
         homeBean.setCountry(country);
         homeBean.setCity(city);
         homeBean.setAddress(address);
+        homeBean.setRestaurant(restaurant);
+        homeBean.setRange(range);
+        try{
+        if (country.equals("") || city.equals("") || address.equals("")) {
+            throw new FileNotFoundException("ERROR");
+            //return false;
+        }
+        SearchController sc = new SearchController();
+        sc.checkInput(homeBean);
+
+        CliResultController crc = new CliResultController();
+        crc.init(country, city, address, restaurant, range);
+        //CliUserGraphicChange.getInstance().switchToResult(country, city, address, restaurant, range);
+    } catch (CityNotFoundException | AddressNotFoundException | MonumentNotFoundException exception) {
+        System.out.println(RED + exception.getMessage() + RESET + "\n");
+    }
 
         /*try {
             //homeBean.validate();

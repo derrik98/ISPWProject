@@ -82,7 +82,7 @@ public class MenuBarController {
         switch (selected){
             case "home" -> this.LabelHome.setStyle(style);
             case "profile" -> this.LabelProfile.setStyle(style);
-            case "result" -> this.LabelResult.setStyle(style);
+            //case "result" -> this.LabelResult.setStyle(style);
             default -> {
             }
 

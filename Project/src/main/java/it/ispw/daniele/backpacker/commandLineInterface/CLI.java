@@ -34,7 +34,7 @@ public class CLI {
                 case "quit":
                     return;
                 default:
-                    System.out.println(RED + "Command not found" + RESET);
+                    System.out.println(RED + "Command not found\n" + RESET);
                     break;
             }
             System.out.flush();
