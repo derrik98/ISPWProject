@@ -33,9 +33,9 @@
   &quot;keyToString&quot;: {
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/Desktop/ISPW_Project/trunk/Project/lib&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
@@ -48,6 +48,7 @@
       <recent name="it.ispw.daniele.backpacker.controller.search" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\Desktop\ISPW_Project\trunk\Project\lib" />
       <recent name="C:\Users\danie\Desktop\ISPWProject\trunk\Project\src\main\resources" />
       <recent name="C:\Users\danie\Desktop\Backpacker\src\main\resources" />
       <recent name="C:\Users\danie\Desktop\Backpacker\src\main\resources\it\ispw\daniele\backpacker" />
@@ -317,6 +318,9 @@
       <workItem from="1667833349734" duration="3606000" />
       <workItem from="1667915117209" duration="2960000" />
       <workItem from="1667919351215" duration="10000" />
+      <workItem from="1667920764091" duration="745000" />
+      <workItem from="1667922162191" duration="264000" />
+      <workItem from="1667922651483" duration="465000" />
     </task>
     <servers />
   </component>
