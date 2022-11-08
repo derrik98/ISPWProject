@@ -35,7 +35,7 @@
     "extract.method.default.visibility": "private",
     "last_opened_file_path": "C:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Problems",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
@@ -63,7 +63,7 @@
       <recent name="it.ispw.daniele.backpacker.fxmlView" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CLI">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.fxmlView.App" />
       <module name="Backpacker" />
@@ -97,8 +97,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CLI" />
         <item itemvalue="Application.App" />
+        <item itemvalue="Application.CLI" />
       </list>
     </recent_temporary>
   </component>
@@ -315,6 +315,7 @@
       <workItem from="1667747593000" duration="689000" />
       <workItem from="1667772257475" duration="2180000" />
       <workItem from="1667833349734" duration="3606000" />
+      <workItem from="1667915117209" duration="2960000" />
     </task>
     <servers />
   </component>

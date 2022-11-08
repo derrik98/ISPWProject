@@ -1,9 +1,7 @@
 package it.ispw.daniele.backpacker.dao;
 
 import it.ispw.daniele.backpacker.entity.TouristGuide;
-import it.ispw.daniele.backpacker.entity.User;
 import it.ispw.daniele.backpacker.utils.DBLoginConnection;
-import it.ispw.daniele.backpacker.utils.DBTouristGuideConnection;
 import it.ispw.daniele.backpacker.utils.DBUserConnection;
 
 import java.sql.Connection;

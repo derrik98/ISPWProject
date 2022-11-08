@@ -18,10 +18,7 @@ public class CityFromCountry extends JSONFactory{
         return instance;
     }
 
-    protected CityFromCountry(){
-    }
-
-   //@Override
+    @Override
     public boolean getJSON(String city, String country) throws CityNotFoundException, IOException {
         JSONObject json;
 
