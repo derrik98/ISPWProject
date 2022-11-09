@@ -21,16 +21,11 @@ public class CliLoginController {
         System.out.print("\033[H\033[2J");
         System.out.flush();
 
-        //Chiede di introdurre nome e cognome
         System.out.println("Username:");
-        String username = scan.nextLine(); //il programma adesso prende TUTTO il testo introdotto fino alla pressione di ENTER
+        String username = scan.nextLine();
 
-//Chiede di introdurre la città
         System.out.println("Password:");
         String password = scan.nextLine();
-
-        /*System.out.println("Username : " + username);
-        System.out.println("Password : " + password);*/
 
         GeneralUserBean gub = new GeneralUserBean();
         gub.setUsername(username);
@@ -50,26 +45,23 @@ public class CliLoginController {
                 su.setSession(gu);
 
                 switch (role) {
-                    case "user" -> {
-                        CliUserGraphicChange.getInstance().switchToMenuPage(scan);
+                    case "user": {
+                        CliUserGraphicChange.getInstance().menuBar();
                         scan.nextLine();
-                        //case "tourist_guide" -> TouristGuideGraphicChange.getInstance().switchToHomePage(this.textFieldUsername.getScene());*//*
                     }
-                    default -> {
+                    case "tourist_guide": {
+                        CliTouristGuideGraphicChange.getInstance().menuBar();
+                        scan.nextLine();
+                    }
+
+                    default :{
                     }
                 }
-            }
+                }
+
         } catch (EmptyFieldException e) {
             System.out.println("\n" + RED + e.getMessage() + RESET + "\n");
             //throw new RuntimeException(e);
-        } catch (AddressNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (CityNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (MonumentNotFoundException e) {
-            throw new RuntimeException(e);
         }
     }
 }

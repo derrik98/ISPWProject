@@ -15,6 +15,7 @@ import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RED;
 import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RESET;
 
 public class CliHomeController {
+
     public void init(Scanner scanner) throws IOException, AddressNotFoundException, CityNotFoundException, MonumentNotFoundException {
 
         System.out.print("\033[H\033[2J");
@@ -45,7 +46,6 @@ public class CliHomeController {
         try{
         if (country.equals("") || city.equals("") || address.equals("")) {
             throw new FileNotFoundException("ERROR");
-            //return false;
         }
         SearchController sc = new SearchController();
         sc.checkInput(homeBean);

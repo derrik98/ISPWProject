@@ -1,5 +1,8 @@
 package it.ispw.daniele.backpacker.commandLineInterface;
 
+import it.ispw.daniele.backpacker.exceptions.AddressNotFoundException;
+import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
+import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
 import it.ispw.daniele.backpacker.fxmlView.MenuBarController;
 import it.ispw.daniele.backpacker.fxmlView.TouristGuideMenuBarController;
 import it.ispw.daniele.backpacker.utils.Roles;
@@ -24,7 +27,7 @@ public abstract class CliGuiChangeTemplate {
     public void catcher(CliGuiAction cGuiAction){
         try {
             cGuiAction.action();
-        }catch (IOException ioException){
+        }catch (IOException | AddressNotFoundException | CityNotFoundException | MonumentNotFoundException ioException){
             logger.log(Level.WARNING, ioException.toString(), ioException.getCause());
         }
     }
@@ -69,27 +72,19 @@ public abstract class CliGuiChangeTemplate {
         });
     }*/
 
-    public void menuBar (HBox pos, String sel){
+    public void menuBar (){
         this.catcher(new CliGuiAction() {
             @Override
-            public void action() throws IOException {
+            public void action() throws IOException, AddressNotFoundException, CityNotFoundException, MonumentNotFoundException {
                 FXMLLoader loader;
                 switch (whoAmI){
                     case USER -> {
-                        loader = new FXMLLoader();
-                        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/MenuBar.fxml");
-                        Parent fxmlLoader = loader.load(fileInputStream);
-                        MenuBarController mbc = loader.getController();
-                        pos.getChildren().add(fxmlLoader);
-                        mbc.init(sel);
+                        CliMenuUserController cliMenuUserController = new CliMenuUserController();
+                        cliMenuUserController.init();
                     }
                     case TOURIST_GUIDE -> {
-                        loader = new FXMLLoader();
-                        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/TouristGuideMenuBar.fxml");
-                        Parent fxmlLoader = loader.load(fileInputStream);
-                        TouristGuideMenuBarController gbc = loader.getController();
-                        pos.getChildren().add(fxmlLoader);
-                        gbc.init(sel);
+                        CliMenuGuideController cliMenuGuideController = new CliMenuGuideController();
+                        cliMenuGuideController.init();
                     }
                     default -> {
                     }
@@ -98,6 +93,6 @@ public abstract class CliGuiChangeTemplate {
         });
     }
 
-    public abstract void switchToHomePage(Scanner scanner) throws IOException;
+    //public abstract void switchToHomePage(Scanner scanner) throws IOException;
 
 }
