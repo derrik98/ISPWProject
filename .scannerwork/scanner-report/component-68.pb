@@ -1,0 +1,1 @@
+D 2xmlX	hr;Project/.idea/libraries/mysql_connector_java_5_1_46_bin.xml

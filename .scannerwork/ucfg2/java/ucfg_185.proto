@@ -1,0 +1,28 @@
+
+rit.ispw.daniele.backpacker.dao.TouristGuideDao#getSearchUser(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;}
+sC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.java (+"1*ù
+1}
+sC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.java (¨
+¥
+}
+sC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.java8 (F
+%0java.lang.String"__id*
+""¯
+¬
+}
+sC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.java (G
+%1java.util.List"„it.ispw.daniele.backpacker.dao.TouristGuideDao#queryDatabase(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;*20
+.it.ispw.daniele.backpacker.dao.TouristGuideDao*"
+ 
+searchStringjava.lang.String*
+
+callerjava.lang.String*
+
+%0java.lang.String"—
+}
+sC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/TouristGuideDao.java (H
+
+%1java.util.List: 
+searchStringjava.lang.String:
+callerjava.lang.StringB20
+.it.ispw.daniele.backpacker.dao.TouristGuideDao

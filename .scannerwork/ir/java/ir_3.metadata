@@ -1,0 +1,5 @@
+it.ispw.daniele.backpacker.fxmlView.SignUpController#selectImage()V
+null
+java.io.File#<init>(Ljava/lang/String;)V
+java.lang.System#getProperty(Ljava/lang/String;)Ljava/lang/String;
+java.io.File#instance-init#

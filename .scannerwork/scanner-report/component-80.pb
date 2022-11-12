@@ -1,0 +1,1 @@
+P 2javaXRhrHProject/src/main/java/it/ispw/daniele/backpacker/bean/ItineraryBean.java

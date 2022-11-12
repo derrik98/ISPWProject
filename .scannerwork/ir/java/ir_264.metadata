@@ -1,0 +1,5 @@
+it.ispw.daniele.backpacker.commandLineInterface.CliResultController#init(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+it.ispw.daniele.backpacker.booktour.BookTourController#<init>()V
+it.ispw.daniele.backpacker.controller.search.SearchController#instance-init#
+it.ispw.daniele.backpacker.booktour.BookTourController#instance-init#
+it.ispw.daniele.backpacker.controller.search.SearchController#<init>()V

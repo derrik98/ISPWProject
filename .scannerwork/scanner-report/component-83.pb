@@ -1,0 +1,1 @@
+S 2javaX"hrKProject/src/main/java/it/ispw/daniele/backpacker/bean/TouristGuideBean.java

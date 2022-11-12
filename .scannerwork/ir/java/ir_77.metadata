@@ -1,0 +1,2 @@
+it.ispw.daniele.backpacker.dao.GeneralUserDao#findUser(Ljava/lang/String;Ljava/lang/String;)Lit/ispw/daniele/backpacker/entity/GeneralUser;
+it.ispw.daniele.backpacker.dao.DaoTemplate#execute(Lit/ispw/daniele/backpacker/dao/DaoAction;)Ljava/lang/Object;

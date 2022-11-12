@@ -1,0 +1,14 @@
+it.ispw.daniele.backpacker.fxmlView.ResultController#createTable(Ljava/util/List;Ljava/lang/String;)LAccordion;
+null
+java.util.ArrayList#<init>()V
+java.lang.Class#getResource(Ljava/lang/String;)Ljava/net/URL;
+java.lang.StringBuilder#<init>(Ljava/lang/String;)V
+java.lang.StringBuilder#append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+java.util.ArrayList#instance-init#
+java.lang.StringBuilder#toString()Ljava/lang/String;
+java.lang.Object#getClass()Ljava/lang/Class;
+java.lang.String#split(Ljava/lang/String;)[Ljava/lang/String;
+java.lang.StringBuilder#instance-init#
+java.net.URL#toExternalForm()Ljava/lang/String;
+java.lang.String#equals(Ljava/lang/Object;)Z
+java.util.Objects#requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;

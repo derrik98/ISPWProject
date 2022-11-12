@@ -1,0 +1,4 @@
+it.ispw.daniele.backpacker.commandLineInterface.CliResultController#createTable(Ljava/util/List;Ljava/lang/String;)V
+java.util.ArrayList#<init>()V
+java.lang.String#split(Ljava/lang/String;)[Ljava/lang/String;
+java.util.ArrayList#instance-init#

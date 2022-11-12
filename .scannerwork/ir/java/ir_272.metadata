@@ -1,0 +1,3 @@
+it.ispw.daniele.backpacker.utils.Controller#convert(Lit/ispw/daniele/backpacker/entity/TouristGuide;)Lit/ispw/daniele/backpacker/bean/TouristGuideBean;
+it.ispw.daniele.backpacker.bean.TouristGuideBean#<init>()V
+it.ispw.daniele.backpacker.bean.TouristGuideBean#instance-init#

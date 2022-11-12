@@ -1,0 +1,1 @@
+Q 2javaXQhrGProject/src/main/java/it/ispw/daniele/backpacker/bean/RegisterBean.java

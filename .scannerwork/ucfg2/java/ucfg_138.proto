@@ -1,0 +1,80 @@
+
+Éit.ispw.daniele.backpacker.controller.login.LoginController#createTouristGuide(Lit/ispw/daniele/backpacker/bean/TouristGuideBean;)Zã
+ÄC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/login/LoginController.java1 1(%"1*  
+1ã
+ÄC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/login/LoginController.java2 2(3˜Ù
+ã
+ÄC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/login/LoginController.java2" 2(14
+%0.it.ispw.daniele.backpacker.dao.TouristGuideDao".it.ispw.daniele.backpacker.dao.TouristGuideDaoâ
+Ü
+ã
+ÄC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/login/LoginController.java2 2(3
+%1"8it.ispw.daniele.backpacker.dao.TouristGuideDao#<init>()V*6
+4
+%0.it.ispw.daniele.backpacker.dao.TouristGuideDaoÜ
+É
+ã
+ÄC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/login/LoginController.java2 2(45
+tgd.it.ispw.daniele.backpacker.dao.TouristGuideDao"__id*6
+4
+%0.it.ispw.daniele.backpacker.dao.TouristGuideDaoƒ¡
+ã
+ÄC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/login/LoginController.java3& 3(7
+%2java.lang.String"Oit.ispw.daniele.backpacker.bean.GeneralUserBean#getUsername()Ljava/lang/String;*9
+7
+tgb0it.ispw.daniele.backpacker.bean.TouristGuideBean2getUsername()Ω∫
+ã
+ÄC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/login/LoginController.java39 3(F
+%3java.lang.String"Lit.ispw.daniele.backpacker.bean.TouristGuideBean#getName()Ljava/lang/String;*9
+7
+tgb0it.ispw.daniele.backpacker.bean.TouristGuideBean2	getName()√¿
+ã
+ÄC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/login/LoginController.java3H 3(X
+%4java.lang.String"Oit.ispw.daniele.backpacker.bean.TouristGuideBean#getSurname()Ljava/lang/String;*9
+7
+tgb0it.ispw.daniele.backpacker.bean.TouristGuideBean2getSurname()æª
+ã
+ÄC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/login/LoginController.java3Z 3(h
+%5java.lang.String"Lit.ispw.daniele.backpacker.bean.GeneralUserBean#getEmail()Ljava/lang/String;*9
+7
+tgb0it.ispw.daniele.backpacker.bean.TouristGuideBean2
+getEmail()ƒ¡
+ã
+ÄC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/login/LoginController.java3j 3({
+%6java.lang.String"Oit.ispw.daniele.backpacker.bean.GeneralUserBean#getPassword()Ljava/lang/String;*9
+7
+tgb0it.ispw.daniele.backpacker.bean.TouristGuideBean2getPassword()—Œ
+å
+ÄC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/login/LoginController.java3} 3(î
+%7java.lang.String"Uit.ispw.daniele.backpacker.bean.GeneralUserBean#getProfilePicture()Ljava/lang/String;*9
+7
+tgb0it.ispw.daniele.backpacker.bean.TouristGuideBean2getProfilePicture()€ÿ
+ç
+ÄC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/login/LoginController.java3ñ 3(±
+%8java.lang.String"Zit.ispw.daniele.backpacker.bean.TouristGuideBean#getIdentificationCode()Ljava/lang/String;*9
+7
+tgb0it.ispw.daniele.backpacker.bean.TouristGuideBean2getIdentificationCode()ÜÉ
+å
+ÄC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/login/LoginController.java3 3(≤
+%9java.lang.Boolean"‘it.ispw.daniele.backpacker.dao.TouristGuideDao#createTouristGuide(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Boolean;*7
+5
+tgd.it.ispw.daniele.backpacker.dao.TouristGuideDao*
+
+%2java.lang.String*
+
+%3java.lang.String*
+
+%4java.lang.String*
+
+%5java.lang.String*
+
+%6java.lang.String*
+
+%7java.lang.String*
+
+%8java.lang.String2ícreateTouristGuide(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)"ó
+å
+ÄC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/login/LoginController.java3 3(≥
+"":7
+tgb0it.ispw.daniele.backpacker.bean.TouristGuideBeanB?=
+;it.ispw.daniele.backpacker.controller.login.LoginController
