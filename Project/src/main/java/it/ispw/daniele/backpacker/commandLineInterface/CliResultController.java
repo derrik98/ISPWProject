@@ -98,15 +98,11 @@ public class CliResultController {
             //WebView webView = new WebView();
             //webView.setMinHeight(300);
             //StringBuilder Url = new StringBuilder("https://google.it/maps/dir");
-
-            for (int indexMonument = 0; indexMonument < als.size(); indexMonument++) {
-
-                System.out.println(als.get(indexMonument));
-                System.out.println("-");
-
-
-
+            StringBuilder line = new StringBuilder();
+            for (String al : als) {
+                line.append(al).append("-");
             }
+            System.out.println(line);
             System.out.print("\n");
            /* webView.getEngine().load(Url.toString());
             VBox v = new VBox(webView);

@@ -33,15 +33,9 @@ public abstract class CliGuiChangeTemplate {
     }
 
     public void switchToLogin(Scanner scanner){
-        this.catcher((CliGuiAction) () -> {
+        this.catcher(() -> {
             CliLoginController clc = new CliLoginController();
-            clc.init(scanner);
-            /*FXMLLoader loader = new FXMLLoader();
-            FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/LoginView-Page.fxml");
-            Parent fxmlLoader = loader.load(fileInputStream);
-            LoginViewController lvc = loader.getController();
-            scene.setRoot(fxmlLoader);
-            lvc.init();*/
+            clc.init();
         });
     }
 
@@ -76,7 +70,6 @@ public abstract class CliGuiChangeTemplate {
         this.catcher(new CliGuiAction() {
             @Override
             public void action() throws IOException, AddressNotFoundException, CityNotFoundException, MonumentNotFoundException {
-                FXMLLoader loader;
                 switch (whoAmI){
                     case USER -> {
                         CliMenuUserController cliMenuUserController = new CliMenuUserController();
