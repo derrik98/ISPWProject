@@ -15,8 +15,6 @@ public class CliLoginController {
 
     public void init() {
 
-        //scan = new Scanner(System.in);
-
         do {
             System.out.print("\033[H\033[2J");
             System.out.println("----------------------------------EXIT [quit]");
@@ -29,22 +27,25 @@ public class CliLoginController {
             System.out.println("Command: ");
 
             switch (scan.nextLine()) {
-                case "0" -> this.login();
+                case "0" -> {
+                    this.login();
 
-                //CliLoginController loginController = new CliLoginController();
-                //loginController.init(scan);
+                    //CliLoginController loginController = new CliLoginController();
+                    //loginController.init(scan);
+                }
                 case "1" -> {
                     CliSignUpController signUpController = new CliSignUpController();
                     signUpController.init(scan);
                 }
                 case "quit" -> {
                     System.out.println(RED + "CLOSE APPLICATION" + RESET);
+                    scan.close();
                     return;
                 }
                 default -> System.out.println(RED + "Command not found\n" + RESET);
             }
 
-        } while (true);
+        } while (scan.hasNext());
     }
 
     private void login() {
@@ -74,12 +75,8 @@ public class CliLoginController {
                 su.setSession(gu);
 
                 switch (role) {
-                    case "user" -> {
-                        CliUserGraphicChange.getInstance().menuBar();
-                    }
-                    case "tourist_guide" -> {
-                        CliTouristGuideGraphicChange.getInstance().menuBar();
-                    }
+                    case "user" -> CliUserGraphicChange.getInstance().menuBar();
+                    case "tourist_guide" -> CliTouristGuideGraphicChange.getInstance().menuBar();
                     default -> {
                     }
                 }

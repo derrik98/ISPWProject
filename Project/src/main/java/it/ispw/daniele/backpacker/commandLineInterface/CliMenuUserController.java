@@ -47,11 +47,10 @@ public class CliMenuUserController {
                     System.out.println(RED + "LOGOUT" + RESET);
                     SessionUser.getInstance().closeSession();
                     this.ugc.switchToLogin(scanner);
-                    System.out.flush();
                     return;
                 }
                 default -> System.out.println(RED + "Command not found\n" + RESET);
             }
-        } while (true);
+        } while (scanner.hasNext());
     }
 }

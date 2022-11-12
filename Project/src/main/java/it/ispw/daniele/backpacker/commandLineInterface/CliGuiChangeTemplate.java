@@ -39,19 +39,6 @@ public abstract class CliGuiChangeTemplate {
         });
     }
 
-    public void switchToResult(Scanner scanner) {
-        this.catcher(() -> {
-            /*FXMLLoader loader = new FXMLLoader();
-            FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Result-Page.fxml");
-            Parent fxmlLoader = loader.load(fileInputStream);*/
-            CliResultController rc = new CliResultController();
-            //scene.setRoot(fxmlLoader);
-            rc.init(scanner);
-
-
-        });
-    }
-
     /*public void switchToProfile(Scene scene, UserBean myUser){//(Scene scene, UserBean ub, String from, String searchstring) {
         this.catcher(new GUIAction() {
             @Override

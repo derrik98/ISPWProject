@@ -265,7 +265,6 @@ public class ResultController  {
 
             int finalJ1 = j;
             ivSave.setOnMouseClicked(mouseEvent -> {
-                System.out.println("SONO QUI");
 
                 SaveTour st = new SaveTour();
                 try {

@@ -32,18 +32,22 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
+import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RED;
+import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RESET;
+
 public class CliResultController {
 
-    public void init(Scanner scanner) {
+    Scanner scanner = new Scanner(System.in);
+
+    public void init() {
 
         //GeneralUserBean sessionUser = SessionUser.getInstance().getSession();
 
-        if(SessionUser.getInstance().getSession().getRole().equals(Roles.TOURIST_GUIDE.name().toLowerCase())) {
+        if (SessionUser.getInstance().getSession().getRole().equals(Roles.TOURIST_GUIDE.name().toLowerCase())) {
             TouristGuideGraphicChange i = TouristGuideGraphicChange.getInstance();
             //i.menuBar(this.menuBar, "result");
             System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.TOURIST_GUIDE.name());
-        }
-        else {
+        } else {
             UserGraphicChange ugc = UserGraphicChange.getInstance();
             //ugc.menuBar(this.menuBar, "result");
             System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.USER.name().toLowerCase());
@@ -54,15 +58,13 @@ public class CliResultController {
     public void init(String country, String city, String address, String restaurant, String range) throws MonumentNotFoundException {
         System.out.println("Country: " + country + ", City: " + city + ", Address: " + address + ", Restaurant: " + restaurant + ", Range: " + range + "\n");
 
-////TOLTO IL CLICK SULLA LABEL DEI RESULT////
         BookTourController btc = new BookTourController();
         List<ItineraryBean> it;
         it = btc.getItinerary(city, "city");
 
-        if(it == null){
-            System.out.println("EMPTY_DATABASE ");
-        }
-        else{
+        if (it == null) {
+            System.out.println(RED + "EMPTY_DATABASE " + RESET);
+        } else {
             System.out.println("Suggested Itinerary");
             createTable(it, "suggested");
 
@@ -72,23 +74,52 @@ public class CliResultController {
         List<ItineraryBean> iti;
         iti = sc.createItinerary(address);
 
-        if(iti == null){
+        if (iti == null) {
             System.out.println("EMPTY_DATABASE ");
-        }
-        else {
+        } else {
             System.out.print("Self Itinerary");
-
-
             createTable(iti, "self");
-
         }
+
     }
+
+    private void createCommand(List<ItineraryBean> itineraryBeanList, String type) {
+        StringBuilder commands = new StringBuilder("");
+        commands.append("Commands : VIEW ON MAP[0] - SAVE[1]");
+        if (type.equals("suggested")) {
+            commands.append(" - BUY[2]");
+        }
+        System.out.println(commands);
+//        do{
+//        switch (scanner.nextLine()) {
+//            case "0" -> {
+//                System.out.println("visualizza sulla mappa");
+//            }
+//            case "1" -> {
+//                SaveTour st = new SaveTour();
+//                try {
+//                    st.saveTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(scanner.nextInt()));
+//                } catch (ParseException e) {
+//                    throw new RuntimeException(e);
+//                }
+//            }
+//                case "2" -> {
+//                    if (type.equals("suggested")) {
+//                    System.out.println("BUY");
+//                    //ItineraryDetailsController idc = new ItineraryDetailsController();
+//                    //idc.convertItinerary(itineraryBeanList.get(finalJ));
+//                }
+//            }
+//            default -> System.out.println(RED + "Command not found\n" + RESET);
+//        }
+//    } while(scanner.hasNext());
+}
 
     public void createTable(List<ItineraryBean> itineraryBeanList, String type){
 
         int j;
+        StringBuilder Url = new StringBuilder("https://google.it/maps/dir");
         for(j = 0; j < itineraryBeanList.size(); j++) {
-            //System.out.println(itineraryBeanList.get(j).getSteps());
             String[] steps = itineraryBeanList.get(j).getSteps().split("/");
             ArrayList<String> als = new ArrayList<>();
             for (int i = 0; i < steps.length; i++) {
@@ -98,12 +129,20 @@ public class CliResultController {
             //WebView webView = new WebView();
             //webView.setMinHeight(300);
             //StringBuilder Url = new StringBuilder("https://google.it/maps/dir");
-            StringBuilder line = new StringBuilder();
-            for (String al : als) {
-                line.append(al).append("-");
+            StringBuilder line = new StringBuilder("");
+            line.append("ID [").append(j).append("] ");
+            for (int indexMonument = 0; indexMonument < als.size(); indexMonument++) {
+                line.append(als.get(indexMonument));
+
+                if(indexMonument != 0 && indexMonument != als.size()-1) {
+                    line.append(" - ");
+                    Url.append("/").append(als.get(indexMonument));
+
+                }
             }
             System.out.println(line);
             System.out.print("\n");
+
            /* webView.getEngine().load(Url.toString());
             VBox v = new VBox(webView);
 
@@ -170,5 +209,6 @@ public class CliResultController {
 
         }
 
+        this.createCommand(itineraryBeanList, type);
         }
 }
