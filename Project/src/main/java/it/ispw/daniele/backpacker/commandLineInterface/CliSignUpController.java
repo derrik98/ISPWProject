@@ -27,13 +27,13 @@ public class CliSignUpController {
 
         boolean regResult = false;
 
-        String email = "";
-        String username = "";
-        String name = "";
-        String surname = "";
-        String password = "";
-        String userType = "";
-        String VATNumb = "";
+        String email;
+        String username;
+        String name;
+        String surname;
+        String password;
+        String userType;
+        String VATNumb;
         String ProfilePicture = "";
 
         System.out.println("Email:");
@@ -57,14 +57,13 @@ public class CliSignUpController {
 
         System.out.println("Type of user: Generic[0] - Tourist_Guide[1]");
         userType = scan.nextLine();
-        switch (userType){
-            case "0":
-                userType = "USER";
-                break;
-            case "1":
+        switch (userType) {
+            case "0" -> userType = "USER";
+            case "1" -> {
                 userType = "TOURIST_GUIDE";
                 System.out.println("VAT Number:");
                 VATNumb = scan.nextLine();
+            }
         }
 
         /*if(this.USER.isUnderline()){
