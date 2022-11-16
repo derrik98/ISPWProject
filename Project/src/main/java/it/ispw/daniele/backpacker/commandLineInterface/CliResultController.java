@@ -37,7 +37,6 @@ import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RESET;
 
 public class CliResultController {
 
-    Scanner scanner = new Scanner(System.in);
 
     public void init() {
 
@@ -66,7 +65,7 @@ public class CliResultController {
             System.out.println(RED + "EMPTY_DATABASE " + RESET);
         } else {
             System.out.println("Suggested Itinerary");
-            createTable(it, "suggested");
+            createTable(it);
 
         }
 
@@ -78,48 +77,46 @@ public class CliResultController {
             System.out.println("EMPTY_DATABASE ");
         } else {
             System.out.print("Self Itinerary");
-            createTable(iti, "self");
+            createTable(iti);
         }
-
+        createCommand(iti);
     }
 
-    private void createCommand(List<ItineraryBean> itineraryBeanList, String type) {
-        StringBuilder commands = new StringBuilder("");
-        commands.append("Commands : VIEW ON MAP[0] - SAVE[1]");
-        if (type.equals("suggested")) {
-            commands.append(" - BUY[2]");
-        }
-        System.out.println(commands);
-//        do{
-//        switch (scanner.nextLine()) {
-//            case "0" -> {
-//                System.out.println("visualizza sulla mappa");
-//            }
-//            case "1" -> {
-//                SaveTour st = new SaveTour();
-//                try {
-//                    st.saveTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(scanner.nextInt()));
-//                } catch (ParseException e) {
-//                    throw new RuntimeException(e);
-//                }
-//            }
-//                case "2" -> {
-//                    if (type.equals("suggested")) {
-//                    System.out.println("BUY");
-//                    //ItineraryDetailsController idc = new ItineraryDetailsController();
-//                    //idc.convertItinerary(itineraryBeanList.get(finalJ));
-//                }
-//            }
-//            default -> System.out.println(RED + "Command not found\n" + RESET);
-//        }
-//    } while(scanner.hasNext());
-}
+    private void createCommand(List<ItineraryBean> itineraryBeanList) {
 
-    public void createTable(List<ItineraryBean> itineraryBeanList, String type){
+        System.out.println("" + "Commands : VIEW ON MAP[0] - SAVE[1] - BUY[2] (Only for suggester itinerary)");
+
+        Scanner scanner = new Scanner(System.in);
+        do {
+            switch (scanner.nextLine()) {
+                case "0" -> {
+                    System.out.println("visualizza sulla mappa");
+                }
+                case "1" -> {
+                    SaveTour st = new SaveTour();
+                    try {
+                        st.saveTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(scanner.nextInt()));
+                    } catch (ParseException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                case "2" -> {
+                    System.out.println("BUY");
+                    //ItineraryDetailsController idc = new ItineraryDetailsController();
+                    //idc.convertItinerary(itineraryBeanList.get(finalJ));
+
+                }
+                default -> System.out.println(RED + "Command not found\n" + RESET);
+            }
+
+        } while (scanner.hasNext());
+    }
+
+    public void createTable(List<ItineraryBean> itineraryBeanList) {
 
         int j;
         StringBuilder Url = new StringBuilder("https://google.it/maps/dir");
-        for(j = 0; j < itineraryBeanList.size(); j++) {
+        for (j = 0; j < itineraryBeanList.size(); j++) {
             String[] steps = itineraryBeanList.get(j).getSteps().split("/");
             ArrayList<String> als = new ArrayList<>();
             for (int i = 0; i < steps.length; i++) {
@@ -134,7 +131,7 @@ public class CliResultController {
             for (int indexMonument = 0; indexMonument < als.size(); indexMonument++) {
                 line.append(als.get(indexMonument));
 
-                if(indexMonument != 0 && indexMonument != als.size()-1) {
+                if (indexMonument != 0 && indexMonument != als.size() - 1) {
                     line.append(" - ");
                     Url.append("/").append(als.get(indexMonument));
 
@@ -206,9 +203,7 @@ public class CliResultController {
                     throw new RuntimeException(e);
                 }
             });*/
-
         }
-
-        this.createCommand(itineraryBeanList, type);
-        }
+        createCommand(itineraryBeanList);
+    }
 }

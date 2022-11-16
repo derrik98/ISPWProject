@@ -95,6 +95,7 @@ public class CliSignUpController {
                 if(this.imageFile!=null){
                     ProfilePicture = this.imageFile.getName();
                 }
+                assert this.imageFile != null;
                 fileName = this.imageFile.getName();;
                 newFileName = username+fileName;
         }
