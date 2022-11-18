@@ -41,7 +41,7 @@ public class AddressFromCity extends JSONFactory{
         upperCase = String.valueOf(upperCase(city));
 
         if (s.contains(city) || s.contains(upperCase)) {
-            System.out.println(upperCase);
+            //System.out.println(upperCase);
             return true;
         }
         else{

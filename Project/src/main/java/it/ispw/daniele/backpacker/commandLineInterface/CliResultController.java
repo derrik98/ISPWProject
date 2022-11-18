@@ -64,7 +64,7 @@ public class CliResultController {
         if (it == null) {
             System.out.println(RED + "EMPTY_DATABASE " + RESET);
         } else {
-            System.out.println("Suggested Itinerary");
+            System.out.println("Suggested Itinerary\n");
             createTable(it);
 
         }
@@ -76,7 +76,7 @@ public class CliResultController {
         if (iti == null) {
             System.out.println("EMPTY_DATABASE ");
         } else {
-            System.out.print("Self Itinerary");
+            System.out.print("Self Itinerary\n");
             createTable(iti);
         }
         createCommand(iti);
@@ -84,7 +84,7 @@ public class CliResultController {
 
     private void createCommand(List<ItineraryBean> itineraryBeanList) {
 
-        System.out.println("" + "Commands : VIEW ON MAP[0] - SAVE[1] - BUY[2] (Only for suggester itinerary)");
+        System.out.println("" + "Commands : VIEW ON MAP[0] - SAVE[1] - BUY[2] (Only for suggester itinerary) - QUIT[3]");
 
         Scanner scanner = new Scanner(System.in);
         do {
@@ -105,6 +105,10 @@ public class CliResultController {
                     //ItineraryDetailsController idc = new ItineraryDetailsController();
                     //idc.convertItinerary(itineraryBeanList.get(finalJ));
 
+                }
+                case "3" ->{
+                    System.out.println("QUIT");
+                    return;
                 }
                 default -> System.out.println(RED + "Command not found\n" + RESET);
             }
@@ -204,6 +208,6 @@ public class CliResultController {
                 }
             });*/
         }
-        createCommand(itineraryBeanList);
+        //createCommand(itineraryBeanList);
     }
 }

@@ -106,7 +106,7 @@ public class SearchController extends Controller {
             steps = steps + "/" + result.get(i);
         }
 
-        System.out.println("STEPS " + steps);
+        //System.out.println("STEPS " + steps);
         ArrayList<Itinerary> it = new ArrayList<>();
 
         for(int i = 0; i < 5; i++) {

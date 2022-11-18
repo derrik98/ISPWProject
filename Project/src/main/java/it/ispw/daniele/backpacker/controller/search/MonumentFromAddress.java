@@ -24,7 +24,7 @@ public class MonumentFromAddress extends JSONFactory{
 
     public ArrayList<String> getMonuments(String address) throws MonumentNotFoundException {
         this.getJSON(address, "monuments");
-        System.out.println("MONUMENTI" + monuments);
+        //System.out.println("MONUMENTI" + monuments);
         //resultBean.setMonuments(monumentFromAddress.getMonuments());
         return this.monuments;
     }
