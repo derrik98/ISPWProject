@@ -29,18 +29,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/Desktop/prevaidea&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.XML&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "last_opened_file_path": "C:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/resources",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.sourceCode.XML"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="it.ispw.daniele.backpacker.commandLineInterface" />
@@ -49,23 +49,24 @@
       <recent name="it.ispw.daniele.backpacker.controller.search" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\Desktop\ISPW_Project\trunk\Project\src\main\resources" />
       <recent name="C:\Users\danie\Desktop\ISPW_Project\trunk\Project\lib" />
       <recent name="C:\Users\danie\Desktop\ISPWProject\trunk\Project\src\main\resources" />
       <recent name="C:\Users\danie\Desktop\Backpacker\src\main\resources" />
       <recent name="C:\Users\danie\Desktop\Backpacker\src\main\resources\it\ispw\daniele\backpacker" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\Desktop\ISPW_Project\trunk\Project\src\main\resources" />
+      <recent name="C:\Users\danie\Desktop\ISPW_Project\trunk\Project\src\main\java\it\ispw\daniele\backpacker\fxmlView" />
       <recent name="C:\Users\danie\Desktop\ISPWProject\trunk\Project\src\main\resources" />
       <recent name="C:\Users\danie\Desktop\ISPWProject\trunk\Project\src\main\resources\profilePictures" />
       <recent name="C:\Users\danie\Desktop\ISPWProject\trunk\Project\src\main\java\it\ispw\daniele\backpacker\fxmlView" />
-      <recent name="C:\Users\danie\Desktop\ISPWProject\trunk\Project\src\main\resources\it\ispw\daniele\backpacker" />
-      <recent name="C:\Users\danie\Desktop\ISPWProject\trunk\Project\src\main\java\it\ispw\daniele\backpacker\fxmlView\style" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="it.ispw.daniele.backpacker.fxmlView" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CLI">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.fxmlView.App" />
       <module name="Backpacker" />
@@ -120,8 +121,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CLI" />
         <item itemvalue="Application.App" />
+        <item itemvalue="Application.CLI" />
       </list>
     </recent_temporary>
   </component>
@@ -355,6 +356,7 @@
       <workItem from="1668637129795" duration="2303000" />
       <workItem from="1668639592666" duration="119000" />
       <workItem from="1668773842570" duration="1548000" />
+      <workItem from="1668814083821" duration="5026000" />
     </task>
     <servers />
   </component>
