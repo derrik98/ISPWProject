@@ -9,6 +9,7 @@ import it.ispw.daniele.backpacker.utils.Controller;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 
 import java.util.List;
+import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class CliUserDetailsController extends Controller {
@@ -30,7 +31,14 @@ public class CliUserDetailsController extends Controller {
         System.out.println("Name: " + users.getName());
         System.out.println("Email: " + users.getEmail());
         System.out.println("Surname: " + users.getSurname());
+        System.out.println("\n");
+        System.out.println("Go Back [press 'b']: ");
+        Scanner s = new Scanner(System.in);
+        if(s.nextLine().equals("b") ){
+            return;
+        }
 
+        System.out.println("\n");
         Logger.getLogger(users.getUsername());
         Logger.getLogger(users.getName());
         Logger.getLogger(users.getEmail());

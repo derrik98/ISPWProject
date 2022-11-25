@@ -70,7 +70,7 @@
       <recent name="it.ispw.daniele.backpacker.fxmlView" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="Application.CLI">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.fxmlView.App" />
       <module name="Backpacker" />
@@ -364,6 +364,7 @@
       <workItem from="1668875353631" duration="235000" />
       <workItem from="1669396243105" duration="1938000" />
       <workItem from="1669398292528" duration="335000" />
+      <workItem from="1669414657580" duration="2355000" />
     </task>
     <servers />
   </component>

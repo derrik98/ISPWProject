@@ -8,13 +8,16 @@ import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CliAddItineraryController {
 
     private String steps = "";
-    private GeneralUserBean guideBean;
-    public ListView<Object> listView = new ListView<>();
+    private GeneralUserBean guideBean = SessionUser.getInstance().getSession();
+    //private ListView<String> listView;
+    private ArrayList<String> listView = new ArrayList<>();
+
     private AddItineraryController controller;
     Scanner scanner = new Scanner(System.in);
 
@@ -28,33 +31,46 @@ public class CliAddItineraryController {
         this.controller = new AddItineraryController();
 
         for(int i = 1; i < 10; i++){
-            System.out.println("step -> + i");
+            System.out.println("step -> " + i);
 
-            if(scanner.nextLine().equals("share")){
+            String input = scanner.nextLine();
+
+            if(input.equals("share")){
                 this.share();
+                return;
             }
             else{
-                listView.getItems().add(scanner.nextLine());
+                listView.add(input);
+                //listView.getItems().add(scanner.nextLine());
             }
 
-            TextField textField = new TextField();
+            /*TextField textField = new TextField();
             textField.setStyle("-fx-font-size: 20");
             textField.setId(String.valueOf(i));
             textField.setPromptText("step -> " + i);
-
+*/
 
         }
         this.guideBean= SessionUser.getInstance().getSession();
     }
 
     private void share() {
-        for(int i = 0; i < this.listView.getItems().size(); i++){
-            TextField t = (TextField) listView.getItems().get(i);
-            if(!t.getText().equals("") && t.getText() != null) {
-                this.steps = this.steps.concat(t.getText() + "/");
+        /*for(int i = 0; i < this.listView.getItems().size(); i++){
+            String t = listView.getItems().get(i);
+            if(!t.equals("") && t != null) {
+                this.steps = this.steps.concat(t + "/");
+            }
+
+        }*/
+
+        for(int i = 0; i < this.listView.size(); i++){
+            String t = listView.get(i);
+            if(!t.equals("") && t != null) {
+                this.steps = this.steps.concat(t + "/");
             }
 
         }
+
         System.out.println(this.steps);
 
         System.out.println("condiviso");

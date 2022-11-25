@@ -61,8 +61,8 @@ public class CliSignUpController {
             case "0" -> userType = "USER";
             case "1" -> {
                 userType = "TOURIST_GUIDE";
-                System.out.println("VAT Number:");
-                VATNumb = scan.nextLine();
+               // System.out.println("VAT Number:");
+                //VATNumb = scan.nextLine();
             }
         }
 
@@ -90,13 +90,15 @@ public class CliSignUpController {
                 fc.setInitialDirectory(new File(System.getProperty("user.home")));
                 fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JPG","*.jpg"),
                         new FileChooser.ExtensionFilter("PNG","*.png"));
-                this.imageFile = fc.showOpenDialog(new Stage());
-                if(this.imageFile!=null){
-                    ProfilePicture = this.imageFile.getName();
-                }
-                assert this.imageFile != null;
-                fileName = this.imageFile.getName();;
-                newFileName = username+fileName;
+                // this.imageFile = fc.showOpenDialog(new Stage());
+                ////if(this.imageFile!=null){
+                //    ProfilePicture = this.imageFile.getName();
+                //}
+                //assert this.imageFile != null;
+                //fileName = this.imageFile.getName();;
+                //newFileName = username+fileName;
+                //C'ERANO
+
         }
 
 

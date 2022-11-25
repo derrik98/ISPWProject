@@ -33,7 +33,6 @@ public class UserDAO extends DaoTemplate{
             @Override
             public Boolean act() throws ClassNotFoundException, SQLException {
 
-                System.out.println("sono qui");
                 Connection con = DBLoginConnection.getLoginConnection();
                 /*if(con == null){
                     System.out.println("connessoine non stabilita");
@@ -164,7 +163,6 @@ public class UserDAO extends DaoTemplate{
                     switch (operation) {
 
                         case SEARCH_USER:
-                            System.out.println("sonosqui");
                             sql = "call backpacker.search_user(?);\r\n";
                             stm = conn.prepareStatement(sql);
                            // stm.setString(1, string);
@@ -194,8 +192,6 @@ public class UserDAO extends DaoTemplate{
                             String profilePicture = rs.getString("profile_picture_path");
                             String email = rs.getString("email");
 
-                            System.out.println("sono qui" + username + "   " + email);
-System.out.println("\n" + profilePicture + "  ss");
                             if(profilePicture == null || profilePicture.equals("")) {
                                 profilePicture = "user.png";
                             }

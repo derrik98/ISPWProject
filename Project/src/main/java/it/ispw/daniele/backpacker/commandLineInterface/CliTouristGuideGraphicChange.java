@@ -7,7 +7,7 @@ public class CliTouristGuideGraphicChange extends CliGuiChangeTemplate{
     private static CliTouristGuideGraphicChange instance = null;
 
     private CliTouristGuideGraphicChange() {
-        whoAmI = Roles.USER;
+        whoAmI = Roles.TOURIST_GUIDE;
     }
 
     public static CliTouristGuideGraphicChange getInstance(){

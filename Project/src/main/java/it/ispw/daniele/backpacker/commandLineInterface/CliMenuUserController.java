@@ -51,6 +51,6 @@ public class CliMenuUserController {
                 }
                 default -> System.out.println(RED + "Command not found\n" + RESET);
             }
-        } while (scanner.hasNext());
+        } while (true);
     }
 }
