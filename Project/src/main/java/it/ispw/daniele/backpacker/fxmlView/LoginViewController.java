@@ -1,5 +1,6 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
+import animatefx.animation.Swing;
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.controller.login.LoginController;
 import it.ispw.daniele.backpacker.exceptions.EmptyFieldException;
@@ -17,7 +18,6 @@ import javafx.scene.text.Text;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Objects;
 
 public class LoginViewController {
 
@@ -27,7 +27,10 @@ public class LoginViewController {
     public Label LabelSignUp;
     @FXML
     public VBox dynamicZone;
+    @FXML
     public Text errorText;
+    @FXML
+    public Button buttonLogin;
     @FXML
     private TextField textFieldUsername = new TextField();
     @FXML
@@ -70,6 +73,8 @@ public class LoginViewController {
             //this.textFieldPassword.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
             //System.out.println(exception);
         }
+
+        new Swing(this.buttonLogin).play();
     }
 
     public void switchToSignUp() throws IOException {

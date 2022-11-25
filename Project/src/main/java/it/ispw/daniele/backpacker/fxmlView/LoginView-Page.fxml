@@ -99,7 +99,7 @@
                     <VBox.margin>
                         <Insets top="15.0" />
                     </VBox.margin>
-                    <Button fx:id="ButtonLogin" mnemonicParsing="false" onAction="#loginButtonAction" styleClass="button" stylesheets="@/style.css" text="Login">
+                    <Button fx:id="buttonLogin" mnemonicParsing="false" onAction="#loginButtonAction" text="Login">
                         <font>
                             <Font size="27.0" />
                         </font>

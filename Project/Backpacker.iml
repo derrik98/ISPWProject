@@ -38,5 +38,6 @@
     <orderEntry type="library" name="Maven: org.jetbrains:annotations:23.0.0" level="project" />
     <orderEntry type="library" name="json-20210307" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.46-bin" level="project" />
+    <orderEntry type="library" name="io.github.typhon0.AnimateFX" level="project" />
   </component>
 </module>
