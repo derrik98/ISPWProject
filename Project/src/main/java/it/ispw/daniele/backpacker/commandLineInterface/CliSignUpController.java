@@ -130,7 +130,7 @@ public class CliSignUpController {
             ub.setPassword(password);
             ub.setProfilePicture(newFileName);
             regResult = lc.createUser(ub);
-            System.out.println(ub.getUsername()+ub.getName()+ub.getSurname()+ub.getEmail()+ub.getPassword()+ub.getProfilePicture());
+            //System.out.println(ub.getUsername()+ub.getName()+ub.getSurname()+ub.getEmail()+ub.getPassword()+ub.getProfilePicture());
         }
         else if(userType.equals(Roles.TOURIST_GUIDE.name())){
             System.out.println("VAT Number:");

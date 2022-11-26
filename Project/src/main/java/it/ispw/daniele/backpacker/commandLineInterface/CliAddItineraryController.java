@@ -80,8 +80,8 @@ public class CliAddItineraryController {
         System.out.println("Location:");
         String location = scanner.nextLine();
 
-        System.out.println("Date:");
-        String date = scanner.nextLine();
+        System.out.println("Date: format[YYYY/MM/DD]");
+        String date = scanner.nextLine().replace("/", "-");
 
         System.out.println("Time:");
         String time = scanner.nextLine();
@@ -93,10 +93,6 @@ public class CliAddItineraryController {
         String price = scanner.nextLine();
 
         boolean result = false;
-
-       /* if(this.fieldDate.getValue() != null) {
-            date = this.fieldDate.getValue().toString();
-        }*/
 
         ItineraryBean itineraryBean = new ItineraryBean();
         itineraryBean.setItineraryId(id);

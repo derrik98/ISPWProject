@@ -3,7 +3,6 @@ package it.ispw.daniele.backpacker.commandLineInterface;
 import it.ispw.daniele.backpacker.exceptions.AddressNotFoundException;
 import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
 import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
-import it.ispw.daniele.backpacker.fxmlView.UserGraphicChange;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 
 import java.io.IOException;

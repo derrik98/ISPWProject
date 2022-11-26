@@ -65,6 +65,7 @@ public class AddItineraryViewController implements Initializable {
 
         if(this.fieldDate.getValue() != null) {
             date = this.fieldDate.getValue().toString();
+            System.out.println(date);
         }
 
         ItineraryBean itineraryBean = new ItineraryBean();
