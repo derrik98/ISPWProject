@@ -11,14 +11,14 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
-import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RED;
-import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RESET;
+import static it.ispw.daniele.backpacker.commandLineInterface.CLI.*;
 
 public class CliHomeController {
 
     public void init(Scanner scanner) throws IOException, AddressNotFoundException, CityNotFoundException, MonumentNotFoundException {
 
         System.out.print("\033[H\033[2J");
+        System.out.println(BOLD + "SEARCH PAGE\n" + RESET);
         System.out.flush();
 
         System.out.println("Country:");

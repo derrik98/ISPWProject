@@ -21,9 +21,6 @@ public abstract class CliGuiChangeTemplate {
 
     protected Roles whoAmI;
 
-    public CliGuiChangeTemplate(){
-    }
-
     public void catcher(CliGuiAction cGuiAction){
         try {
             cGuiAction.action();
@@ -54,20 +51,18 @@ public abstract class CliGuiChangeTemplate {
     }*/
 
     public void menuBar (){
-        this.catcher(new CliGuiAction() {
-            @Override
-            public void action() throws IOException, AddressNotFoundException, CityNotFoundException, MonumentNotFoundException {
-                switch (whoAmI){
-                    case USER -> {
-                        CliMenuUserController cliMenuUserController = new CliMenuUserController();
-                        cliMenuUserController.init();
-                    }
-                    case TOURIST_GUIDE -> {
-                        CliMenuGuideController cliMenuGuideController = new CliMenuGuideController();
-                        cliMenuGuideController.init();
-                    }
-                    default -> {
-                    }
+        this.catcher(() -> {
+            System.out.println("roles" + whoAmI);
+            switch (whoAmI){
+                case USER -> {
+                    CliMenuUserController cliMenuUserController = new CliMenuUserController();
+                    cliMenuUserController.init();
+                }
+                case TOURIST_GUIDE -> {
+                    CliMenuGuideController cliMenuGuideController = new CliMenuGuideController();
+                    cliMenuGuideController.init();
+                }
+                default -> {
                 }
             }
         });

@@ -5,11 +5,12 @@ import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.controller.addItinerary.AddItineraryController;
 import it.ispw.daniele.backpacker.fxmlView.TouristGuideGraphicChange;
 import it.ispw.daniele.backpacker.utils.SessionUser;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RED;
+import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RESET;
 
 public class CliAddItineraryController {
 
@@ -30,6 +31,7 @@ public class CliAddItineraryController {
 
         this.controller = new AddItineraryController();
 
+        System.out.println("Digit 'share' to share itinerary");
         for(int i = 1; i < 10; i++){
             System.out.println("step -> " + i);
 
@@ -73,7 +75,7 @@ public class CliAddItineraryController {
 
         System.out.println(this.steps);
 
-        System.out.println("condiviso");
+        System.out.println("Itinerary details:\n");
         System.out.println("Itinerary id:");
         String id = scanner.nextLine();
 
@@ -110,14 +112,15 @@ public class CliAddItineraryController {
             result = controller.addItinerary(itineraryBean);
             if(result){
                 //this.headerLabel.setText("Music Event Added");
-                System.out.println("itinerario aggiunto");
+                System.out.println("Correct share!\n");
             }
             else{
-                System.out.println("errore aggiunta itinerario");
+                System.out.print(RED + "Error share\n" + RESET);
                 //this.headerLabel.setText("Failed to add music event");
             }
         } catch (Exception e) {
             e.printStackTrace();
+            System.out.print(RED + "Error share\n" + RESET);
             //this.headerLabel.setText(de.getMessage());
         }
     }

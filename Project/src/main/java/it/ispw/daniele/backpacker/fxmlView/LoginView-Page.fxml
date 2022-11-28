@@ -89,13 +89,6 @@
                     </PasswordField>
                 </HBox>
                 <HBox alignment="CENTER">
-                    <Text fx:id="errorText" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0">
-                        <font>
-                            <Font size="1.0" />
-                        </font>
-                    </Text>
-                </HBox>
-                <HBox alignment="CENTER">
                     <VBox.margin>
                         <Insets top="15.0" />
                     </VBox.margin>
@@ -104,6 +97,13 @@
                             <Font size="27.0" />
                         </font>
                     </Button>
+                </HBox>
+                <HBox alignment="CENTER">
+                    <Text fx:id="errorText" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0">
+                        <font>
+                            <Font size="1.0" />
+                        </font>
+                    </Text>
                 </HBox>
             </VBox>
                 </VBox>

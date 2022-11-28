@@ -1,5 +1,6 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
+import animatefx.animation.Shake;
 import animatefx.animation.Swing;
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.controller.login.LoginController;
@@ -72,9 +73,10 @@ public class LoginViewController {
             //this.textFieldUsername.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
             //this.textFieldPassword.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
             //System.out.println(exception);
+            new Shake(this.buttonLogin).play();
         }
 
-        new Swing(this.buttonLogin).play();
+       // new Swing(this.buttonLogin).play();
     }
 
     public void switchToSignUp() throws IOException {

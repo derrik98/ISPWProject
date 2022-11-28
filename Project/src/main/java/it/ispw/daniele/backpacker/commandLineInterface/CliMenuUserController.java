@@ -48,6 +48,9 @@ public class CliMenuUserController {
                     this.ugc.switchToLogin(scanner);
                     return;
                 }
+                case "u" ->{
+
+                }
                 default -> System.out.println(RED + "Command not found\n" + RESET);
             }
         } while (true);

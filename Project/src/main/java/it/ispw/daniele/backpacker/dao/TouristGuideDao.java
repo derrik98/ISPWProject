@@ -2,6 +2,7 @@ package it.ispw.daniele.backpacker.dao;
 
 import it.ispw.daniele.backpacker.entity.TouristGuide;
 import it.ispw.daniele.backpacker.utils.DBLoginConnection;
+import it.ispw.daniele.backpacker.utils.DBTouristGuideConnection;
 import it.ispw.daniele.backpacker.utils.DBUserConnection;
 
 import java.sql.Connection;
@@ -25,7 +26,7 @@ public class TouristGuideDao extends DaoTemplate{
             @Override
             public List<TouristGuide> act() throws ClassNotFoundException, SQLException {
                 List<TouristGuide> l = new ArrayList<>();
-                Connection conn = DBUserConnection.getUserConnection();
+                Connection conn = DBTouristGuideConnection.getTouristGuideConnection();
                 PreparedStatement stm = null;
                 try {
                     String sql;

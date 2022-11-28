@@ -12,6 +12,9 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
+import static it.ispw.daniele.backpacker.commandLineInterface.CLI.BOLD;
+import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RESET;
+
 public class CliUserDetailsController extends Controller {
 
     public UserBean getSearchUser(String searchString, String caller){
@@ -27,6 +30,8 @@ public class CliUserDetailsController extends Controller {
 
         UserBean users = this.getSearchUser("search_user", SessionUser.getInstance().getSession().getUsername());
 
+        System.out.print("\033[H\033[2J");
+        System.out.println(BOLD + "PROFILE PAGE\n" + RESET);
         System.out.println("Username: " + users.getUsername());
         System.out.println("Name: " + users.getName());
         System.out.println("Email: " + users.getEmail());
@@ -37,11 +42,5 @@ public class CliUserDetailsController extends Controller {
         if(s.nextLine().equals("b") ){
             return;
         }
-
-        System.out.println("\n");
-        Logger.getLogger(users.getUsername());
-        Logger.getLogger(users.getName());
-        Logger.getLogger(users.getEmail());
-        Logger.getLogger(users.getSurname());
     }
 }

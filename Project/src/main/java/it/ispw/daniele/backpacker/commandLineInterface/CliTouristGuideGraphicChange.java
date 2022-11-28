@@ -1,6 +1,5 @@
 package it.ispw.daniele.backpacker.commandLineInterface;
 
-import it.ispw.daniele.backpacker.fxmlView.GUIChangeTemplate;
 import it.ispw.daniele.backpacker.utils.Roles;
 
 public class CliTouristGuideGraphicChange extends CliGuiChangeTemplate{
