@@ -79,7 +79,13 @@ public class CliResultController {
             System.out.print("Self Itinerary\n");
             createTable(iti);
         }
-        createCommand(iti);
+        List<ItineraryBean> mergeItinerary = new ArrayList<>();
+        assert it != null;
+        mergeItinerary.
+                addAll(it);
+        assert iti != null;
+        mergeItinerary.addAll(iti);
+        createCommand(mergeItinerary);
     }
 
     private void createCommand(List<ItineraryBean> itineraryBeanList) {
@@ -95,6 +101,7 @@ public class CliResultController {
                 case "1" -> {
                     SaveTour st = new SaveTour();
                     try {
+                        System.out.println(itineraryBeanList.size());
                         st.saveTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(scanner.nextInt()));
                     } catch (ParseException e) {
                         throw new RuntimeException(e);

@@ -143,23 +143,23 @@ public class ItineraryDao extends DaoTemplate{
         });
     }
 
-    public boolean addItinerary(String id, String guideId, String location, Date date, String time, String participants, String price, String steps) {
+    public boolean addItinerary(String guideId, String location, Date date, String time, String participants, String price, String steps) {
         return (this.execute(new DaoAction<Boolean>() {
             @Override
             public Boolean act() throws ClassNotFoundException, SQLException {
                 Connection con = DBTouristGuideConnection.getTouristGuideConnection();
-                String sql = "call backpacker.add_itinerary(?, ?, ?, ?, ?, ?, ?, ?);\r\n";
+                String sql = "call backpacker.add_itinerary(?, ?, ?, ?, ?, ?, ?);\r\n";
                 try (PreparedStatement stm = con.prepareStatement(sql)) {
                     java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 
-                    stm.setString(1, id);
-                    stm.setString(2, guideId);
-                    stm.setString(3, location);
-                    stm.setDate(4, sqlDate);
-                    stm.setString(5, time);
-                    stm.setInt(6, Integer.parseInt(participants));
-                    stm.setInt(7, Integer.parseInt(price));
-                    stm.setString(8, steps);
+                   // stm.setString(1, id);
+                    stm.setString(1, guideId);
+                    stm.setString(2, location);
+                    stm.setDate(3, sqlDate);
+                    stm.setString(4, time);
+                    stm.setInt(5, Integer.parseInt(participants));
+                    stm.setInt(6, Integer.parseInt(price));
+                    stm.setString(7, steps);
                     stm.executeUpdate();
                     return true;
                 }
@@ -167,6 +167,44 @@ public class ItineraryDao extends DaoTemplate{
         }) != null);
     }
 
+    public int getItineraryId(String guideId, String location, String date, String time, String participants, String price, String steps) throws SQLException, ClassNotFoundException {
+
+
+            Connection conn = null;
+                String sql = null;
+                PreparedStatement stm = null;
+
+                conn = DBUserConnection.getUserConnection();
+                sql = "call backpacker.get_itinerary_id(?, ?, ?, ?, ?, ?; ?);\r\n";
+                stm = conn.prepareStatement(sql);
+
+                //java.sql.Date sqlDate = new java.sql.Date(date.);
+
+                // stm.setString(1, id);
+                stm.setString(1, guideId);
+                stm.setString(2, location);
+                stm.setString(3, date);
+                stm.setString(4, time);
+                stm.setInt(5, Integer.parseInt(participants));
+                stm.setInt(6, Integer.parseInt(price));
+                stm.setString(7, steps);
+
+                try (ResultSet rs = stm.executeQuery()) {
+                    if (!rs.first()) { // rs not empty
+                        return rs.getInt("id");
+                    }
+                    return 0;
+                } finally {
+                    if (stm != null)
+                        stm.close();
+                }
+
+        /*if (ret != null) {
+            return ret;
+        } else {
+            return true;
+        }*/
+    }
 
     public boolean getItineraryId(String id) {
         Boolean ret = this.execute(new DaoAction<Boolean>() {
@@ -352,4 +390,6 @@ public class ItineraryDao extends DaoTemplate{
         } while (rs.next());
         return l;
     }
+
+
 }

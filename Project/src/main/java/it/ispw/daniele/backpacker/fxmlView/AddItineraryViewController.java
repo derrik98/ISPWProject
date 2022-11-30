@@ -82,6 +82,7 @@ public class AddItineraryViewController implements Initializable {
 
         try {
             result = controller.addItinerary(itineraryBean);
+            itineraryBean.setItineraryId(String.valueOf(controller.getItineraryId(itineraryBean)));
             if(result){
                 //this.headerLabel.setText("Music Event Added");
                 System.out.println("itinerario aggiunto");

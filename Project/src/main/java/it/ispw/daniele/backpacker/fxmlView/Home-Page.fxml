@@ -5,7 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="APHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.fxmlView.HomeUserController">
+<AnchorPane fx:id="APHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.fxmlView.HomeUserController">
      <ScrollPane fitToHeight="true" fitToWidth="true" onKeyPressed="#enterKeyPressed" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <VBox alignment="TOP_CENTER">
              <StackPane>
@@ -95,7 +94,7 @@
                          <Font size="27.0" />
                      </font>
                  </Text>
-                 <Slider fx:id="sliderRange" blockIncrement="1.0" cache="true" depthTest="DISABLE" majorTickUnit="1.0" max="8.0" maxHeight="-Infinity" maxWidth="-Infinity" min="1.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="1" onMouseClicked="#onSliderChanged" onMouseDragged="#onSliderChanged" prefHeight="53.0" prefWidth="392.0" showTickLabels="true" showTickMarks="true" style="-fx-font-size: 20px;">
+                 <Slider fx:id="sliderRange" blockIncrement="1.0" cache="true" depthTest="DISABLE" majorTickUnit="1.0" max="8.0" min="1.0" minorTickCount="1" onMouseClicked="#onSliderChanged" onMouseDragged="#onSliderChanged" prefWidth="250.0" showTickLabels="true" showTickMarks="true" style="-fx-font-size: 15px;">
                      <HBox.margin>
                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
@@ -108,17 +107,16 @@
                          <Font size="27.0" />
                      </font>
                  </Label>
-                 <Separator orientation="VERTICAL">
-                     <HBox.margin>
-                         <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
-                     </HBox.margin>
-                 </Separator>
-                 <RadioButton fx:id="radioButtonRestaurant" mnemonicParsing="false" text="Include Restaurant">
-                     <font>
-                         <Font size="24.0" />
-                     </font>
-                 </RadioButton>
              </HBox>
+         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <children>
+                    <RadioButton fx:id="radioButtonRestaurant" mnemonicParsing="false" text="Include Restaurant">
+                        <font>
+                            <Font size="20.0" />
+                        </font>
+                    </RadioButton>
+            </children>
+         </HBox>
              <HBox alignment="CENTER">
                  <Text fx:id="errorText" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0">
                      <font>

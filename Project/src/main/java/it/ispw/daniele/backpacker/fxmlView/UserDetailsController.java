@@ -150,7 +150,7 @@ public class UserDetailsController extends Controller {
 
         ResultController r = new ResultController();
 
-        BookTourController btc = new BookTourController();
+        /*BookTourController btc = new BookTourController();
         List<ItineraryBean> it;
         it = btc.getItinerary(users.getUsername(), "user");
 
@@ -158,13 +158,9 @@ public class UserDetailsController extends Controller {
             System.out.println("EMPTY_DATABASE ");
         }
         else{
-            //suggestedItinerary.setText("Suggested Itinerary");
-            //guideImage.setImage(new Image("guideOn.png"));
-            //guideImage.setFitHeight(50);
-            //guideImage.setFitHeight(50);
             Accordion accordion = r.createTable(it, "suggested");
             vBoxProfile.getChildren().add(accordion);
-        }
+        }*/
 
         SaveTour st = new SaveTour();
         List<ItineraryBean> iti;
