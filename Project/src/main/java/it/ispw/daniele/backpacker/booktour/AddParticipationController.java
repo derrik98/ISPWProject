@@ -12,7 +12,7 @@ public class AddParticipationController {
 
         public void removeParticipation(GeneralUserBean user, ItineraryBean itinerary) {
             ItineraryDao id = new ItineraryDao();
-           id.removeParticipation(user.getUsername(), itinerary.getItineraryId());
+            id.removeParticipation(user.getUsername(), itinerary.getItineraryId());
         }
 
         public boolean isParticipating(GeneralUserBean user, ItineraryBean itinerary) {

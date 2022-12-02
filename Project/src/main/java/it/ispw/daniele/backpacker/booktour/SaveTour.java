@@ -16,6 +16,11 @@ public class SaveTour extends Controller {
         id.saveTour(user.getUsername(), itinerary.getSteps());
     }
 
+    public void removeTour(GeneralUserBean user, ItineraryBean itinerary){
+        ItineraryDao id = new ItineraryDao();
+        id.removeTour(user.getUsername(), itinerary.getSteps());
+    }
+
     public List<ItineraryBean> getItinerary(String input){//, GeneralUserBean gu) {
         ItineraryDao id = new ItineraryDao();
         List<Itinerary> itinerary = null;

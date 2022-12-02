@@ -93,7 +93,6 @@ public class LoginViewController {
     }
 
     public void switchToLogin() throws IOException {
-
         LoginViewController lvc = new LoginViewController();
         FXMLLoader loader = new FXMLLoader();
         FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/LoginView-Page.fxml");

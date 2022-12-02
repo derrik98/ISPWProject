@@ -129,7 +129,7 @@ public class ResultController  {
             guideImage.setFitHeight(50);
             guideImage.setFitHeight(50);
 
-            Accordion accordionSuggested = createTable(it, "suggested");
+            Accordion accordionSuggested = createTable(it, "suggested", "result");
             vBoxResultGuide.getChildren().add(accordionSuggested);
         }
 
@@ -143,18 +143,18 @@ public class ResultController  {
         else {
             selfItinerary.setText("Self Itinerary");
 
-            Accordion accordionSelf = createTable(iti, "self");
+            Accordion accordionSelf = createTable(iti, "self", "result");
             vBoxResult.getChildren().add(accordionSelf);
         }
     }
 
-    public Accordion createTable(List<ItineraryBean> itineraryBeanList, String type){
+    public Accordion createTable(List<ItineraryBean> itineraryBeanList, String type, String from){
 
         Accordion accordion = new Accordion();
-        int j;
-        for(j = 0; j < itineraryBeanList.size(); j++) {
-            System.out.println(itineraryBeanList.get(j).getSteps());
-            String[] steps = itineraryBeanList.get(j).getSteps().split("/");
+        int jind;
+        for(jind = 0; jind < itineraryBeanList.size(); jind++) {
+            System.out.println(itineraryBeanList.get(jind).getSteps());
+            String[] steps = itineraryBeanList.get(jind).getSteps().split("/");
             ArrayList<String> als = new ArrayList<>();
             for (int i = 0; i < steps.length; i++) {
                 als.add(i, steps[i]);
@@ -216,12 +216,13 @@ public class ResultController  {
             titledPane.setContent(v);
 
         if(type.equals("suggested")){
-            ImageView ivBuy = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/buy.png")).toExternalForm()));
+            ImageView ivBuy = new ImageView();
+            //ImageView ivBuy = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/buy.png")).toExternalForm()));
             ivBuy.setFitWidth(50);
             ivBuy.setFitHeight(50);
             ivBuy.setCursor(Cursor.HAND);
 
-            int finalJ = j;
+            int finalJ = jind;
             ivBuy.setOnMouseClicked(mouseEvent -> {
                 FXMLLoader loader = new FXMLLoader();
                 FileInputStream fileInputStream;
@@ -241,15 +242,56 @@ public class ResultController  {
             contentPane.getChildren().addAll(region, ivBuy);
         }
 
+        else{
+            ImageView ivSave;
+            int finalJ1 = jind;
+            if(from.equals("profile")){
+                ivSave = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/cestino.png")).toExternalForm()));
+                ivSave.setOnMouseClicked(mouseEvent -> {
+                    SaveTour st = new SaveTour();
+                    System.out.println("ITINERARIO ." + itineraryBeanList.get(finalJ1).getSteps());
+                    st.removeTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(finalJ1));
+                });
+            }
+            else{
+                ivSave = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/save.png")).toExternalForm()));
+                ivSave.setOnMouseClicked(mouseEvent -> {
+
+                    SaveTour st = new SaveTour();
+                    try {
+                        System.out.println("ITINERARIO ." + itineraryBeanList.get(finalJ1).getSteps());
+                        st.saveTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(finalJ1));
+                    } catch (ParseException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+            }
+            //ImageView ivSave = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/save.png")).toExternalForm()));
+            ivSave.setCursor(Cursor.HAND);
+            ivSave.setFitWidth(35);
+            ivSave.setFitHeight(35);
+
+            //int finalJ1 = j;
+            /*ivSave.setOnMouseClicked(mouseEvent -> {
+
+                SaveTour st = new SaveTour();
+                try {
+                    System.out.println("ITINERARIO ." + itineraryBeanList.get(finalJ1).getSteps());
+                    st.saveTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(finalJ1));
+                } catch (ParseException e) {
+                    throw new RuntimeException(e);
+                }
+            });*/
+
+            HBox.setHgrow(region1, Priority.NEVER);
+            contentPane.getChildren().addAll(region, ivSave);
+        }
             ImageView ivMap = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/googleMaps.png")).toExternalForm()));
             ivMap.setFitWidth(35);
             ivMap.setFitHeight(35);
             ivMap.setCursor(Cursor.HAND);
             ivMap.setId("MAP");
-            ImageView ivSave = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/save.png")).toExternalForm()));
-            ivSave.setCursor(Cursor.HAND);
-            ivSave.setFitWidth(35);
-            ivSave.setFitHeight(35);
+
 
             ivMap.setOnMouseClicked(mouseEvent -> {
                 if (!titledPane.isCollapsible()) {
@@ -263,19 +305,7 @@ public class ResultController  {
                 }
             });
 
-            int finalJ1 = j;
-            ivSave.setOnMouseClicked(mouseEvent -> {
-
-                SaveTour st = new SaveTour();
-                try {
-                    System.out.println("ITINERARIO ." + itineraryBeanList.get(finalJ1).getSteps());
-                    st.saveTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(finalJ1));
-                } catch (ParseException e) {
-                    throw new RuntimeException(e);
-                }
-            });
-
-            contentPane.getChildren().addAll(region1, ivMap, region2, ivSave);
+            contentPane.getChildren().addAll(region1, ivMap);
 
             titledPane.setGraphic(contentPane);
             accordion.getPanes().add(titledPane);

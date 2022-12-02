@@ -117,52 +117,46 @@ public class ItineraryDao extends DaoTemplate{
     }
 
     private void manageParticipation(String username, String id, String operation) {
-        this.execute(new DaoAction<Void>() {
-            @Override
-            public Void act() throws ClassNotFoundException, SQLException {
-                Connection conn = null;
-                PreparedStatement stm = null;
-                String sql = null;
-                try {
-                    conn = DBUserConnection.getUserConnection();
-                    if(operation.equals(ADD_PART)) {
-                        sql = "call backpacker.add_participation(?, ?);\r\n";
-                    } else if(operation.equals(REMOVE_PART)) {
-                        sql = "call backpacker.remove_participation(?, ?);\r\n";
-                    }
-                    stm = conn.prepareStatement(sql);
-                    stm.setString(1, username);
-                    stm.setString(2,  id);
-                    stm.executeUpdate();
-                } finally {
-                    if (stm != null)
-                        stm.close();
+        this.execute((DaoAction<Void>) () -> {
+            Connection conn = null;
+            PreparedStatement stm = null;
+            String sql = null;
+            try {
+                conn = DBUserConnection.getUserConnection();
+                if(operation.equals(ADD_PART)) {
+                    sql = "call backpacker.add_participation(?, ?);\r\n";
+                } else if(operation.equals(REMOVE_PART)) {
+                    sql = "call backpacker.remove_participation(?, ?);\r\n";
                 }
-                return null;
+                stm = conn.prepareStatement(sql);
+                stm.setString(1, username);
+                stm.setString(2,  id);
+                stm.executeUpdate();
+            } finally {
+                if (stm != null)
+                    stm.close();
             }
+            return null;
         });
     }
 
     public boolean addItinerary(String guideId, String location, Date date, String time, String participants, String price, String steps) {
-        return (this.execute(new DaoAction<Boolean>() {
-            @Override
-            public Boolean act() throws ClassNotFoundException, SQLException {
-                Connection con = DBTouristGuideConnection.getTouristGuideConnection();
-                String sql = "call backpacker.add_itinerary(?, ?, ?, ?, ?, ?, ?);\r\n";
-                try (PreparedStatement stm = con.prepareStatement(sql)) {
-                    java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+        return (this.execute(() -> {
+            Connection con = DBTouristGuideConnection.getTouristGuideConnection();
+            String sql = "call backpacker.add_itinerary(?, ?, ?, ?, ?, ?, ?);\r\n";
+            try (PreparedStatement stm = con.prepareStatement(sql)) {
+                java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 
-                   // stm.setString(1, id);
-                    stm.setString(1, guideId);
-                    stm.setString(2, location);
-                    stm.setDate(3, sqlDate);
-                    stm.setString(4, time);
-                    stm.setInt(5, Integer.parseInt(participants));
-                    stm.setInt(6, Integer.parseInt(price));
-                    stm.setString(7, steps);
-                    stm.executeUpdate();
-                    return true;
-                }
+               // stm.setString(1, id);
+                stm.setString(1, guideId);
+                stm.setString(2, location);
+                stm.setDate(3, sqlDate);
+                stm.setString(4, time);
+                stm.setInt(5, Integer.parseInt(participants));
+                stm.setInt(6, Integer.parseInt(price));
+                stm.setString(7, steps);
+                stm.executeUpdate();
+                return true;
             }
         }) != null);
     }
@@ -392,4 +386,18 @@ public class ItineraryDao extends DaoTemplate{
     }
 
 
+    public void removeTour(String username, String steps) {
+        this.execute(() -> {
+            Connection con = DBUserConnection.getUserConnection();
+            String sql = "call backpacker.remove_itinerary(?, ?);\r\n";
+
+            try (PreparedStatement stm = con.prepareStatement(sql)) {
+                stm.setString(1, username);
+                stm.setString(2, steps);
+                stm.executeUpdate();
+
+            }
+            return true;
+        });
+    }
 }

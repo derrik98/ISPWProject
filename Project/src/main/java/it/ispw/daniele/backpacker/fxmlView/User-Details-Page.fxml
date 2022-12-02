@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.fxmlView.UserDetailsController">
+<AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.fxmlView.UserDetailsController">
     <ScrollPane fitToHeight="true" fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <VBox alignment="TOP_CENTER">
             <StackPane>
@@ -125,15 +125,24 @@
                     <HBox.margin>
                         <Insets left="20.0" right="20.0" top="20.0" />
                     </HBox.margin>
-                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Favourites Routes">
+                    <Text fx:id="textBookedItineraries" strokeType="OUTSIDE" strokeWidth="0.0" text="Booked Itineraries">
                         <VBox.margin>
-                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                            <Insets bottom="5.0" left="20.0" right="20.0" top="20.0" />
                         </VBox.margin>
                         <font>
                             <Font size="27.0" />
                         </font>
                     </Text>
-                    <VBox fx:id="vBoxProfile" alignment="TOP_CENTER" />
+                    <VBox fx:id="vBoxBooked" alignment="TOP_CENTER" />
+               <Text fx:id="textSavedItineraries" layoutX="144.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saved Itineraries">
+                  <font>
+                     <Font size="27.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets bottom="5.0" left="20.0" right="20.0" top="10.0" />
+                  </VBox.margin>
+               </Text>
+               <VBox fx:id="vBoxSaved" alignment="TOP_CENTER" layoutX="10.0" layoutY="86.0" />
                 </VBox>
             </HBox>
                 </VBox>

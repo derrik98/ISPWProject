@@ -5,54 +5,45 @@ import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.bean.UserBean;
 import it.ispw.daniele.backpacker.booktour.BookTourController;
 import it.ispw.daniele.backpacker.booktour.SaveTour;
-import it.ispw.daniele.backpacker.controller.search.SearchController;
-import it.ispw.daniele.backpacker.dao.ItineraryDao;
 import it.ispw.daniele.backpacker.dao.UserDAO;
-import it.ispw.daniele.backpacker.entity.Itinerary;
 import it.ispw.daniele.backpacker.entity.User;
 import it.ispw.daniele.backpacker.utils.Controller;
 import it.ispw.daniele.backpacker.utils.FileManager;
-import it.ispw.daniele.backpacker.utils.Roles;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Cursor;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Label;
-import javafx.scene.control.TitledPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.scene.transform.Scale;
-import javafx.scene.web.WebView;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class UserDetailsController extends Controller {
 
     @FXML
     public ImageView profilePicture;
     @FXML
+    public Text textBookedItineraries;
+    @FXML
+    public VBox vBoxBooked;
+    @FXML
+    public VBox vBoxSaved;
+    @FXML
+    public Text textSavedItineraries;
+    @FXML
     private ImageView imageSettings;
     @FXML
     private Text textSettings;
-    @FXML
-    private VBox vBoxProfile;
     @FXML
     private Label username;
     @FXML
@@ -146,7 +137,7 @@ public class UserDetailsController extends Controller {
 
         //ugc.menuBar(this.menuBar, "profile");
 
-        vBoxProfile.getChildren().add(accordionResult);
+        ////vBoxProfile.getChildren().add(accordionResult);
 
         ResultController r = new ResultController();
 
@@ -162,18 +153,33 @@ public class UserDetailsController extends Controller {
             vBoxProfile.getChildren().add(accordion);
         }*/
 
-        SaveTour st = new SaveTour();
-        List<ItineraryBean> iti;
-        iti = st.getItinerary(users.getUsername());
+        BookTourController btc = new BookTourController();
+        List<ItineraryBean> booked;
+        booked = btc.getItinerary(users.getUsername(), "user");
 
-        if(iti == null){
+        SaveTour st = new SaveTour();
+        List<ItineraryBean> saved;
+        saved = st.getItinerary(users.getUsername());
+
+        if(booked == null){
+            textBookedItineraries.setText(textBookedItineraries.getText() + ": EMPTY");
             System.out.println("EMPTY_DATABASE ");
         }
         else {
             //selfItinerary.setText("Self Itinerary");
 
-            Accordion accordionSelf = r.createTable(iti, "self");
-            vBoxProfile.getChildren().add(accordionSelf);
+            Accordion accordionSuggested = r.createTable(booked, "suggested", "profile");
+            vBoxBooked.getChildren().addAll(accordionSuggested);
+        }
+        if(saved == null){
+            textSavedItineraries.setText(textSavedItineraries.getText() + ": EMPTY");
+            System.out.println("EMPTY_DATABASE ");
+        }
+        else {
+            //selfItinerary.setText("Self Itinerary");
+
+            Accordion accordionSelf = r.createTable(saved, "self", "profile");
+            vBoxSaved.getChildren().addAll(accordionSelf);
         }
 
         /*vBoxResultGuide.getChildren().add(accordion);
