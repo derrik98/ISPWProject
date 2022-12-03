@@ -32,8 +32,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
-import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RED;
-import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RESET;
+import static it.ispw.daniele.backpacker.commandLineInterface.CLI.*;
 
 public class CliResultController {
 
@@ -80,21 +79,19 @@ public class CliResultController {
             System.out.print("Self Itinerary: \n");
             createTable(iti);
         }
-        List<ItineraryBean> mergeItinerary = new ArrayList<>();
         assert it != null;
-        mergeItinerary.
-                addAll(it);
+        List<ItineraryBean> mergeItinerary = new ArrayList<>(it);
         assert iti != null;
         mergeItinerary.addAll(iti);
         createCommand(mergeItinerary);
     }
 
     private void createCommand(List<ItineraryBean> itineraryBeanList) {
+        Scanner scanner = new Scanner(System.in);
 
+        do {
         System.out.println("" + "Commands : VIEW ON MAP[0] - SAVE[1] - BUY[2] (Only for suggester itinerary) - QUIT[3]");
 
-        Scanner scanner = new Scanner(System.in);
-        do {
             switch (scanner.nextLine()) {
                 case "0" -> {
                     System.out.println("visualizza sulla mappa");
@@ -102,8 +99,10 @@ public class CliResultController {
                 case "1" -> {
                     SaveTour st = new SaveTour();
                     try {
-                        System.out.println(itineraryBeanList.size());
+                        System.out.println("Digit Itinerary id");
                         st.saveTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(scanner.nextInt()));
+                        System.out.println(GREEN + "Itinerary added successfully" + RESET);
+                        System.out.flush();
                     } catch (ParseException e) {
                         throw new RuntimeException(e);
                     }
@@ -121,7 +120,7 @@ public class CliResultController {
                 default -> System.out.println(RED + "Command not found\n" + RESET);
             }
 
-        } while (scanner.hasNext());
+        } while (true);
     }
 
     public void createTable(List<ItineraryBean> itineraryBeanList) {
@@ -138,7 +137,7 @@ public class CliResultController {
             //WebView webView = new WebView();
             //webView.setMinHeight(300);
             //StringBuilder Url = new StringBuilder("https://google.it/maps/dir");
-            StringBuilder line = new StringBuilder("");
+            StringBuilder line = new StringBuilder();
             line.append("ID [").append(j).append("] ");
             for (int indexMonument = 0; indexMonument < als.size(); indexMonument++) {
                 line.append(als.get(indexMonument));
