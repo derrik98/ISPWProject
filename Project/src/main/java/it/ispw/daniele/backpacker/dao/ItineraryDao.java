@@ -73,7 +73,7 @@ public class ItineraryDao extends DaoTemplate{
                         }*/
 
                     //itinerary = new Itinerary(name, location, guideId, date, steps);
-                    System.out.println("sono quiiiiiiiiiii " + itinerary);
+                    ///System.out.println("sono quiiiiiiiiiii " + itinerary);
                     //itinerary.setCoordinates(coordinates);
                 }
 

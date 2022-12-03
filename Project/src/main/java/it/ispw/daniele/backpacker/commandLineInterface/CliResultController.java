@@ -55,16 +55,17 @@ public class CliResultController {
     }
 
     public void init(String country, String city, String address, String restaurant, String range) throws MonumentNotFoundException {
+        System.out.print("\033[H\033[2J");
         System.out.println("Country: " + country + ", City: " + city + ", Address: " + address + ", Restaurant: " + restaurant + ", Range: " + range + "\n");
 
         BookTourController btc = new BookTourController();
         List<ItineraryBean> it;
         it = btc.getItinerary(city, "city");
 
-        if (it == null) {
-            System.out.println(RED + "EMPTY_DATABASE " + RESET);
+        if (it == null || it.isEmpty()) {
+            System.out.println("Suggested Itinerary: " + RED + "EMPTY_DATABASE " + RESET + "\n");
         } else {
-            System.out.println("Suggested Itinerary\n");
+            System.out.println("Suggested Itinerary: \n");
             createTable(it);
 
         }
@@ -74,9 +75,9 @@ public class CliResultController {
         iti = sc.createItinerary(address);
 
         if (iti == null) {
-            System.out.println("EMPTY_DATABASE ");
+            System.out.println("Self Itinerary: " + RED + "EMPTY_DATABASE " + RESET + "\n");
         } else {
-            System.out.print("Self Itinerary\n");
+            System.out.print("Self Itinerary: \n");
             createTable(iti);
         }
         List<ItineraryBean> mergeItinerary = new ArrayList<>();

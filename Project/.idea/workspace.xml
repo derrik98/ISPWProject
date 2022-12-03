@@ -43,7 +43,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.31494254",
     "settings.editor.selected.configurable": "reference.settings.project.maven.archetype.catalogs",
@@ -382,6 +382,7 @@
       <workItem from="1669815930497" duration="3208000" />
       <workItem from="1669991508703" duration="200000" />
       <workItem from="1669991857023" duration="5336000" />
+      <workItem from="1670081641267" duration="1012000" />
     </task>
     <servers />
   </component>
