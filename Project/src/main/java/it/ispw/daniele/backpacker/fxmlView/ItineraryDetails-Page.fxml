@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="APDetails" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="280.0" prefWidth="450.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.fxmlView.ItineraryDetailsController">
+<AnchorPane fx:id="APDetails" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="280.0" prefWidth="450.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.fxmlView.ItineraryDetailsController">
    <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <StackPane>
          <VBox alignment="BOTTOM_CENTER" style="-fx-background-radius: 10;">
@@ -24,35 +24,35 @@
                   <VBox spacing="8.0">
                      <HBox>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Itinerary ID: " />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="123456" />
+                        <Text fx:id="itineraryId" strokeType="OUTSIDE" strokeWidth="0.0" text="123456" />
                      </HBox>
                      <HBox>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Guide ID: " />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="cf" />
+                        <Text fx:id="guideId" strokeType="OUTSIDE" strokeWidth="0.0" text="cf" />
                      </HBox>
                      <HBox layoutX="10.0" layoutY="26.0">
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Location: " />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Roma" />
+                        <Text fx:id="location" strokeType="OUTSIDE" strokeWidth="0.0" text="Roma" />
                      </HBox>
                      <HBox layoutX="10.0" layoutY="42.0">
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date: " />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="08/01/2023" />
+                        <Text fx:id="date" strokeType="OUTSIDE" strokeWidth="0.0" text="08/01/2023" />
                      </HBox>
                      <HBox layoutX="10.0" layoutY="61.0">
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Time: " />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="10:00" />
+                        <Text fx:id="time" strokeType="OUTSIDE" strokeWidth="0.0" text="10:00" />
                      </HBox>
                      <HBox layoutX="10.0" layoutY="79.0">
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Participants: " />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="10/25" />
+                        <Text fx:id="participants" strokeType="OUTSIDE" strokeWidth="0.0" text="10/25" />
                      </HBox>
                      <HBox layoutX="10.0" layoutY="98.0">
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Price: " />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="30$" />
+                        <Text fx:id="price" strokeType="OUTSIDE" strokeWidth="0.0" text="30$" />
                      </HBox>
                      <HBox layoutX="10.0" layoutY="116.0">
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Steps: " />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Colosseo-Piazza Navona" />
+                        <Text fx:id="steps" strokeType="OUTSIDE" strokeWidth="0.0" text="Colosseo-Piazza Navona" />
                      </HBox>
                      <HBox alignment="CENTER" layoutX="10.0" layoutY="122.0">
                         <padding>

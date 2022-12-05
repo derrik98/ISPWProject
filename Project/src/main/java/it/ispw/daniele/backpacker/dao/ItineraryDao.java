@@ -294,6 +294,8 @@ public class ItineraryDao extends DaoTemplate{
             String date = rs.getString(DATE);
             String steps = rs.getString(STEPS);
 
+            System.out.println("LOCATION " + location);
+
             Itinerary itinerary = new Itinerary(id, location, guideId, date, steps);
 
             l.add(itinerary);
@@ -375,7 +377,6 @@ public class ItineraryDao extends DaoTemplate{
             return Collections.emptyList();
 
         do{
-
             String steps = rs.getString(STEPS);
 
             Itinerary itinerary = new Itinerary(steps);

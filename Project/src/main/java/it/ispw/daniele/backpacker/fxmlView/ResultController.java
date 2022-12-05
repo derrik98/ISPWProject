@@ -217,7 +217,7 @@ public class ResultController  {
 
         if(type.equals("suggested")){
             ImageView ivBuy = new ImageView();
-            //ImageView ivBuy = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/buy.png")).toExternalForm()));
+            ivBuy = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/buy.png")).toExternalForm()));
             ivBuy.setFitWidth(50);
             ivBuy.setFitHeight(50);
             ivBuy.setCursor(Cursor.HAND);
@@ -231,7 +231,8 @@ public class ResultController  {
                     fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/ItineraryDetails-Page.fxml");
                     Parent fxmlLoader = loader.load(fileInputStream);
                     ItineraryDetailsController idc = loader.getController();
-                    idc.convertItinerary(itineraryBeanList.get(finalJ));
+                    idc.init(itineraryBeanList.get(finalJ));
+                    //idc.convertItinerary(itineraryBeanList.get(finalJ));
                     this.stackPaneResult.getChildren().add(fxmlLoader);
                     stackPaneResult.getChildren().get(0).setDisable(true);
                 } catch (IOException e) {
