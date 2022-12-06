@@ -18,7 +18,10 @@ public class ItineraryDao extends DaoTemplate{
     private static final String ID = "id";
     private static final String LOCATION = "location";
     private static final String GUIDE_ID = "guideId";
-    private static final String DATE= "date";
+    private static final String DATE = "date";
+    private static final String TIME = "time";
+    private static final String PARTICIPANTS = "participants";
+    private static final String PRICE = "price";
     private static final String STEPS = "steps";
     private static final String ADD_PART = "add_part";
     private static final String REMOVE_PART = "remove_part";
@@ -140,7 +143,7 @@ public class ItineraryDao extends DaoTemplate{
         });
     }
 
-    public boolean addItinerary(String guideId, String location, Date date, String time, String participants, String price, String steps) {
+    public boolean addItinerary(String guideId, String location, Date date, String time, int participants, int price, String steps) {
         return (this.execute(() -> {
             Connection con = DBTouristGuideConnection.getTouristGuideConnection();
             String sql = "call backpacker.add_itinerary(?, ?, ?, ?, ?, ?, ?);\r\n";
@@ -152,8 +155,8 @@ public class ItineraryDao extends DaoTemplate{
                 stm.setString(2, location);
                 stm.setDate(3, sqlDate);
                 stm.setString(4, time);
-                stm.setInt(5, Integer.parseInt(participants));
-                stm.setInt(6, Integer.parseInt(price));
+                stm.setInt(5, participants);
+                stm.setInt(6, price);
                 stm.setString(7, steps);
                 stm.executeUpdate();
                 return true;
@@ -161,7 +164,7 @@ public class ItineraryDao extends DaoTemplate{
         }) != null);
     }
 
-    public int getItineraryId(String guideId, String location, String date, String time, String participants, String price, String steps) throws SQLException, ClassNotFoundException {
+    public int getItineraryId(String guideId, String location, String date, String time, int participants, int price, String steps) throws SQLException, ClassNotFoundException {
 
 
             Connection conn = null;
@@ -179,8 +182,8 @@ public class ItineraryDao extends DaoTemplate{
                 stm.setString(2, location);
                 stm.setString(3, date);
                 stm.setString(4, time);
-                stm.setInt(5, Integer.parseInt(participants));
-                stm.setInt(6, Integer.parseInt(price));
+                stm.setInt(5, participants);
+                stm.setInt(6, price);
                 stm.setString(7, steps);
 
                 try (ResultSet rs = stm.executeQuery()) {
@@ -289,14 +292,17 @@ public class ItineraryDao extends DaoTemplate{
 
         do{
             String id = rs.getString(ID);
-            String location = rs.getString(LOCATION);
             String guideId = rs.getString(GUIDE_ID);
+            String location = rs.getString(LOCATION);
             String date = rs.getString(DATE);
+            String time = rs.getString(TIME);
+            int participants = rs.getInt(PARTICIPANTS);
+            int price = rs.getInt(PRICE);
             String steps = rs.getString(STEPS);
 
             System.out.println("LOCATION " + location);
 
-            Itinerary itinerary = new Itinerary(id, location, guideId, date, steps);
+            Itinerary itinerary = new Itinerary(id, guideId, location, date, time, participants, price, steps);
 
             l.add(itinerary);
         } while (rs.next());

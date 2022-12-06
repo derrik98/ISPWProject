@@ -8,16 +8,20 @@ public class Itinerary {
     private String location;
     private String date;
     private String time;
-    private String participants;
-    private String price;
+    private int participants;
+    private int price;
     private String steps;
 
-    public Itinerary(String id, String location, String guideId, String date, String steps) {
-        this.steps = steps;
-        this.guideId = guideId;
+    public Itinerary(String id, String guideId, String location, String date, String time, int participants, int price, String steps) {
+
         this.id = id;
+        this.guideId = guideId;
         this.location = location;
         this.date = date;
+        this.time = time;
+        this.participants = participants;
+        this.price = price;
+        this.steps = steps;
     }
 
     public Itinerary(String steps) {
@@ -76,19 +80,19 @@ public class Itinerary {
         this.time = time;
     }
 
-    public String getParticipants() {
+    public int getParticipants() {
         return this.participants;
     }
 
-    public void setParticipants(String participants) {
+    public void setParticipants(int participants) {
         this.participants = participants;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return this.price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

@@ -88,8 +88,8 @@ public class ItineraryDetailsController {
         location = new Text(itineraryBean.getLocation());
         date.setText(itineraryBean.getDate());
         time.setText(itineraryBean.getTime());
-        participants.setText(itineraryBean.getParticipants());
-        price.setText(itineraryBean.getPrice());
+        participants.setText(String.valueOf(itineraryBean.getParticipants()));
+        price.setText(String.valueOf(itineraryBean.getPrice()));
         steps.setText(itineraryBean.getSteps());
 
         ib = itineraryBean;

@@ -10,24 +10,24 @@ public class ItineraryBean implements Serializable {
     private String location;
     private String date;
     private String time;
-    private String participants;
-    private String price;
+    private int participants;
+    private int price;
     private String steps;
 
 
-    public String getParticipants() {
+    public int getParticipants() {
         return participants;
     }
 
-    public void setParticipants(String participants) {
+    public void setParticipants(int participants) {
         this.participants = participants;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

@@ -3,14 +3,16 @@ package it.ispw.daniele.backpacker.commandLineInterface;
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.controller.login.LoginController;
 import it.ispw.daniele.backpacker.exceptions.EmptyFieldException;
+import it.ispw.daniele.backpacker.exceptions.LoginFailException;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 
 import java.util.Scanner;
 
+import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RED;
+import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RESET;
+
 public class CliLoginController {
 
-    public static final String RESET = "\033[0m";  // Text Reset
-    public static final String RED = "\033[0;31m";     // RED
     private final Scanner scan = new Scanner(System.in);
 
     public void init() {
@@ -29,7 +31,6 @@ public class CliLoginController {
             switch (scan.nextLine()) {
                 case "0" -> {
                     this.login();
-
                     //CliLoginController loginController = new CliLoginController();
                     //loginController.init(scan);
                 }
@@ -44,7 +45,10 @@ public class CliLoginController {
                 }
                 default -> System.out.println(RED + "Command not found\n" + RESET);
             }
-        } while (scan.hasNext());
+
+            System.out.flush();
+
+        } while (true);
     }
 
     private void login() {
@@ -52,9 +56,11 @@ public class CliLoginController {
 
         System.out.println("Username:");
         String username = scan.nextLine();
+        System.out.flush();
 
         System.out.println("Password:");
         String password = scan.nextLine();
+        System.out.flush();
 
         GeneralUserBean gub = new GeneralUserBean();
         gub.setUsername(username);
@@ -65,7 +71,7 @@ public class CliLoginController {
         try {
             gu = controller.login(gub);
             if (gu == null) {
-                System.out.println(RED + "Login failed!" + RESET);
+                System.out.println(RED + "LOGIN FAILED!" + RESET);
             } else {
                 String role = gu.getRole();
 
@@ -85,5 +91,4 @@ public class CliLoginController {
             System.out.println("\n" + RED + e.getMessage() + RESET + "\n");
         }
     }
-
 }

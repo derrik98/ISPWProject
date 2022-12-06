@@ -102,8 +102,8 @@ public class CliAddItineraryController {
         itineraryBean.setDate(date);
         itineraryBean.setLocation(location);
         itineraryBean.setTime(time);
-        itineraryBean.setParticipants(participants);
-        itineraryBean.setPrice(price);
+        itineraryBean.setParticipants(Integer.parseInt(participants));
+        itineraryBean.setPrice(Integer.parseInt(price));
         itineraryBean.setSteps(this.steps);
         System.out.println(this.guideBean.getUsername());
         System.out.println("Dati" + itineraryBean.getGuideId() + "\n" + itineraryBean.getDate() + "\n" + itineraryBean.getLocation() + "\n" + itineraryBean.getTime() + "\n" + itineraryBean.getParticipants() + "\n" + itineraryBean.getPrice());

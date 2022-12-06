@@ -22,7 +22,7 @@ import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RESET;
 
 public class CliUserDetailsController extends Controller {
 
-    public UserBean getSearchUser(String searchString, String caller){
+    public UserBean getSearchUser(String searchString, String caller) {
         UserDAO ud = new UserDAO();
         List<User> l = ud.getSearchUser(searchString, caller);
         return this.convert(l.get(0));
@@ -35,47 +35,51 @@ public class CliUserDetailsController extends Controller {
 
         UserBean users = this.getSearchUser("search_user", SessionUser.getInstance().getSession().getUsername());
 
-        System.out.print("\033[H\033[2J");
-        System.out.println(BOLD + "PROFILE PAGE\n" + RESET);
-        System.out.println("Username: " + users.getUsername());
-        System.out.println("Name: " + users.getName());
-        System.out.println("Email: " + users.getEmail());
-        System.out.println("Surname: " + users.getSurname());
-        System.out.println("\n");
-        System.out.println("Go Back [press 'b']: ");
-        Scanner s = new Scanner(System.in);
-        /*if(s.nextLine().equals("b") ){
-            return;
-        }*/
+        do {
+            System.out.print("\033[H\033[2J");
+            System.out.println(BOLD + "PROFILE PAGE\n" + RESET);
+            System.out.println("Username: " + users.getUsername());
+            System.out.println("Name: " + users.getName());
+            System.out.println("Email: " + users.getEmail());
+            System.out.println("Surname: " + users.getSurname());
+            System.out.println("\n");
 
-        CliResultController cr = new CliResultController();
 
-        /*BookTourController btc = new BookTourController();
-        List<ItineraryBean> it;
-        it = btc.getItinerary(users.getUsername(), "user");
+            BookTourController btc = new BookTourController();
+            List<ItineraryBean> booked;
+            booked = btc.getItinerary(users.getUsername(), "user");
 
-        if(it == null){
-            System.out.println("EMPTY_DATABASE ");
-        }
-        else{
-            System.out.println(it.get(0).getSteps());
-        }
-*/
-        SaveTour st = new SaveTour();
-        List<ItineraryBean> iti;
-        iti = st.getItinerary(users.getUsername());
+            SaveTour st = new SaveTour();
+            List<ItineraryBean> saved;
+            saved = st.getItinerary(users.getUsername());
 
-        if(iti == null){
-            System.out.println("EMPTY_DATABASE ");
-        }
-        else {
-            //selfItinerary.setText("Self Itinerary");
-            System.out.println("Saved itineraries");
+            if (booked.isEmpty()) {
+                System.out.println("Booked itineraries");
+                System.out.println("EMPTY_DATABASE ");
+                /////INSERIRE ID IN SAVED ID!!!!!!!!!!!!!!SUBITO
+            } else {
+                System.out.println("Booked itineraries");
+                System.out.print("ID [" + booked.get(0).getItineraryId() + "] " + booked.get(0).getSteps() + "\n");
+                //System.out.println(iti.get(0).getSteps());
+            }
+            if (saved.isEmpty()) {
+                System.out.println("Saved itineraries");
+                System.out.println("EMPTY_DATABASE ");
+            } else {
+                System.out.println("Saved itineraries");
+                System.out.print("ID [" + saved.get(0).getItineraryId() + "] " + saved.get(0).getSteps() + "\n");
+                //System.out.println(iti.get(0).getSteps())
 
-            ////Accordion accordionSelf = r.createTable(iti, "self");
-            System.out.print("ID [" + iti.get(0).getItineraryId()  + "] " + iti.get(0).getSteps() + "\n");
-            //System.out.println(iti.get(0).getSteps());
 
-        }
+                System.out.println("\nGo Back [press 'b']: ");
+                Scanner scanner = new Scanner(System.in);
+
+                if (scanner.nextLine().equals("b")) {
+                    return;
+                } else {
+                    System.out.println("Command not found");
+                }
+            }
+        } while (true);
     }
 }
