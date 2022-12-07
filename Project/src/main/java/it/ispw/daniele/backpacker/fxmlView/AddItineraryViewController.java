@@ -55,7 +55,7 @@ public class AddItineraryViewController implements Initializable {
         System.out.println(this.steps);
 
         System.out.println("condiviso");
-        String id = this.textFieldId.getText();
+        int id = Integer.parseInt(this.textFieldId.getText());
         String location = this.textFieldCity.getText();
         String date = "";
         String time = this.textFieldTime.getText();
@@ -82,7 +82,7 @@ public class AddItineraryViewController implements Initializable {
 
         try {
             result = controller.addItinerary(itineraryBean);
-            itineraryBean.setItineraryId(String.valueOf(controller.getItineraryId(itineraryBean)));
+            itineraryBean.setItineraryId(controller.getItineraryId(itineraryBean));
             if(result){
                 //this.headerLabel.setText("Music Event Added");
                 System.out.println("itinerario aggiunto");

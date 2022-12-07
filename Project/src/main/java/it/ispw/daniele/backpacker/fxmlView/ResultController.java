@@ -159,7 +159,6 @@ public class ResultController  {
             for (int i = 0; i < steps.length; i++) {
                 als.add(i, steps[i]);
             }
-
             TitledPane titledPane = new TitledPane();
             titledPane.setCollapsible(false);
             titledPane.setAlignment(Pos.CENTER);
@@ -244,6 +243,7 @@ public class ResultController  {
         }
 
         else{
+
             ImageView ivSave;
             int finalJ1 = jind;
             if(from.equals("profile")){

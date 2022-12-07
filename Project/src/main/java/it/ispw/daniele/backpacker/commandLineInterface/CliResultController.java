@@ -38,8 +38,9 @@ import static it.ispw.daniele.backpacker.commandLineInterface.CLI.*;
 
 public class CliResultController {
 
+    List<ItineraryBean> it;
 
-    public void init() {
+   /* public void init() {
 
         //GeneralUserBean sessionUser = SessionUser.getInstance().getSession();
 
@@ -53,7 +54,7 @@ public class CliResultController {
             System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.USER.name().toLowerCase());
         }
 
-    }
+    }*/
 
     public void init(String country, String city, String address, String restaurant, String range) throws MonumentNotFoundException {
         System.out.print("\033[H\033[2J");
@@ -61,7 +62,7 @@ public class CliResultController {
         System.out.println("Country: " + country + ", City: " + city + ", Address: " + address + ", Restaurant: " + restaurant + ", Range: " + range + "\n");
 
         BookTourController btc = new BookTourController();
-        List<ItineraryBean> it;
+        //List<ItineraryBean> it;
         it = btc.getItinerary(city, "city");
         int bookedSize = 0;
 
@@ -91,20 +92,27 @@ public class CliResultController {
     }
 
     private void createCommand(List<ItineraryBean> itineraryBeanList, int bSize) {
+        System.out.flush();
         Scanner scanner = new Scanner(System.in);
         do {
         System.out.println("" + "Commands : VIEW ON MAP[0] - SAVE[1] - BUY[2] (Only for suggester itinerary) - QUIT[3]");
             switch (scanner.nextLine()) {
                 case "0" -> {
-                    System.out.println("visualizza sulla mappa");
+                    System.out.println("View on map");
                 }
                 case "1" -> {
                     SaveTour st = new SaveTour();
                     try {
                         System.out.println("Digit Itinerary id");
-                        st.saveTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(scanner.nextInt()));
-                        System.out.println(GREEN + "Itinerary added successfully" + RESET);
-                        System.out.flush();
+                        int input = scanner.nextInt();
+                        if(input > bSize){
+                            st.saveTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(scanner.nextInt()));
+                            System.out.println(GREEN + "Itinerary added successfully" + RESET);
+                        }
+                        else{
+                            System.out.println(RED + "Incorrect id" + RESET);
+                            scanner.reset();
+                        }
                     } catch (ParseException e) {
                         throw new RuntimeException(e);
                     }
@@ -113,15 +121,12 @@ public class CliResultController {
                     System.out.println("Digit Itinerary id");
                     int input = scanner.nextInt();
                     if(input <= bSize && input >= bSize){
-
+                        CliItineraryDetailsController cidc = new CliItineraryDetailsController();
+                        cidc.init(itineraryBeanList.get(input));
                     }
                     else{
                         System.out.println(RED + "Incorrect id" + RESET);
                     }
-                    CliItineraryDetailsController cidc = new CliItineraryDetailsController();
-                    cidc.init(itineraryBeanList.get(input));
-                   // cidc.convertItinerary(itineraryBeanList.get(finalJ));
-
                 }
                 case "3" ->{
                     System.out.println("QUIT");
@@ -129,7 +134,6 @@ public class CliResultController {
                 }
                 default -> System.out.println(RED + "Command not found\n" + RESET);
             }
-        System.out.flush();
         } while (true);
     }
 

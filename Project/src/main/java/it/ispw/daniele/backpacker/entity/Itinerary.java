@@ -3,7 +3,7 @@ package it.ispw.daniele.backpacker.entity;
 import java.util.Vector;
 
 public class Itinerary {
-    private String id;
+    private int id;
     private String guideId;
     private String location;
     private String date;
@@ -12,7 +12,7 @@ public class Itinerary {
     private int price;
     private String steps;
 
-    public Itinerary(String id, String guideId, String location, String date, String time, int participants, int price, String steps) {
+    public Itinerary(int id, String guideId, String location, String date, String time, int participants, int price, String steps) {
 
         this.id = id;
         this.guideId = guideId;
@@ -24,10 +24,10 @@ public class Itinerary {
         this.steps = steps;
     }
 
-    public Itinerary(String steps) {
+    public Itinerary(int id ,String steps) {
         this.steps = steps;
         this.guideId = "";
-        this.id = "";
+        this.id = id;
         this.location = "";
         this.date = "";
     }
@@ -40,11 +40,11 @@ public class Itinerary {
         this.steps = steps;
     }
 
-    public String getId() {
+    public int getId() {
         return this.id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

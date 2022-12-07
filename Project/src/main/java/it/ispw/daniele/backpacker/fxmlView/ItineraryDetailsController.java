@@ -82,7 +82,7 @@ public class ItineraryDetailsController {
 
     public void init(ItineraryBean itineraryBean) {
 
-        itineraryId.setText(itineraryBean.getItineraryId());
+        itineraryId.setText(String.valueOf(itineraryBean.getItineraryId()));
         guideId.setText(itineraryBean.getGuideId());
         //location.setText(itineraryBean.getLocation());
         location = new Text(itineraryBean.getLocation());

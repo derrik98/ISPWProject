@@ -90,15 +90,15 @@ public class ItineraryDao extends DaoTemplate{
 
     }
 
-    public void addParticipation(String username, String itineraryId) {
+    public void addParticipation(String username, int itineraryId) {
         this.manageParticipation(username, itineraryId, ADD_PART);
     }
 
-    public void removeParticipation(String username, String itineraryId) {
+    public void removeParticipation(String username, int itineraryId) {
         this.manageParticipation(username, itineraryId, REMOVE_PART);
     }
 
-    public Boolean isParticipating(String username, String itineraryId) {
+    public Boolean isParticipating(String username, int itineraryId) {
         Boolean ret = this.execute(new DaoAction<Boolean>() {
             @Override
             public Boolean act() throws ClassNotFoundException, SQLException {
@@ -106,7 +106,7 @@ public class ItineraryDao extends DaoTemplate{
                 String sql = "call backpacker.is_participating(?, ?);\r\n";
                 try (PreparedStatement stm = conn.prepareStatement(sql)) {
                     stm.setString(1, username);
-                    stm.setString(2,  itineraryId);
+                    stm.setInt(2,  itineraryId);
                     try (ResultSet rs = stm.executeQuery()) {
                         return (rs.first());
                     }
@@ -119,7 +119,7 @@ public class ItineraryDao extends DaoTemplate{
             return false;
     }
 
-    private void manageParticipation(String username, String id, String operation) {
+    private void manageParticipation(String username, int id, String operation) {
         this.execute((DaoAction<Void>) () -> {
             Connection conn = null;
             PreparedStatement stm = null;
@@ -133,7 +133,7 @@ public class ItineraryDao extends DaoTemplate{
                 }
                 stm = conn.prepareStatement(sql);
                 stm.setString(1, username);
-                stm.setString(2,  id);
+                stm.setInt(2,  id);
                 stm.executeUpdate();
             } finally {
                 if (stm != null)
@@ -203,38 +203,6 @@ public class ItineraryDao extends DaoTemplate{
         }*/
     }
 
-    public boolean getItineraryId(String id) {
-        Boolean ret = this.execute(new DaoAction<Boolean>() {
-            @Override
-            public Boolean act() throws ClassNotFoundException, SQLException {
-                Connection conn = null;
-                String sql = null;
-                PreparedStatement stm = null;
-
-                conn = DBUserConnection.getUserConnection();
-                sql = "call backpacker.get_itinerary_id(?);\r\n";
-                stm = conn.prepareStatement(sql);
-
-                stm.setString(1, id);
-
-                try (ResultSet rs = stm.executeQuery()) {
-                    if (!rs.first()) // rs not empty
-                        return true;
-
-                    return false;
-                } finally {
-                if (stm != null)
-                    stm.close();
-            }
-        }
-    });
-        if (ret != null) {
-        return ret;
-    } else {
-        return true;
-    }
-    }
-
     public List<Itinerary> getBookedItineraries(String input) {
         List<Itinerary> ret = this.execute(new DaoAction<List<Itinerary>>() {
             @Override
@@ -291,7 +259,7 @@ public class ItineraryDao extends DaoTemplate{
             return Collections.emptyList();
 
         do{
-            String id = rs.getString(ID);
+            int id = rs.getInt(ID);
             String guideId = rs.getString(GUIDE_ID);
             String location = rs.getString(LOCATION);
             String date = rs.getString(DATE);
@@ -383,15 +351,15 @@ public class ItineraryDao extends DaoTemplate{
             return Collections.emptyList();
 
         do{
+            int id = rs.getInt(ID);
             String steps = rs.getString(STEPS);
 
-            Itinerary itinerary = new Itinerary(steps);
+            Itinerary itinerary = new Itinerary(id, steps);
 
             l.add(itinerary);
         } while (rs.next());
         return l;
     }
-
 
     public void removeTour(String username, String steps) {
         this.execute(() -> {

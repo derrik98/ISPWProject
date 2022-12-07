@@ -157,7 +157,7 @@ public class SearchController extends Controller {
             //    	System.out.println(itinerary);
 //    	ResultBean.getInstance().setItinerary(itinerary);
 //    	System.out.println(resultBean.getInstance().getItinerary());
-            Itinerary itinerary = new Itinerary(vector.toString());
+            Itinerary itinerary = new Itinerary(new Random().nextInt(1000), vector.toString());
             it.add(itinerary);
         }
         return this.convert(it);

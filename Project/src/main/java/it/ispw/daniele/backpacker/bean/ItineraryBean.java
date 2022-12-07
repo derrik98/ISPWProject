@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class ItineraryBean implements Serializable {
 
     static final long serialVersionUID = 42L;
-    private String itineraryId;
+    private int itineraryId;
     private String guideId;
     private String location;
     private String date;
@@ -71,11 +71,11 @@ public class ItineraryBean implements Serializable {
         this.steps = steps;
     }
 
-    public String getItineraryId() {
+    public int getItineraryId() {
         return this.itineraryId;
     }
 
-    public void setItineraryId(String itineraryId) {
+    public void setItineraryId(int itineraryId) {
         this.itineraryId = itineraryId;
     }
 }

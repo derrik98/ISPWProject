@@ -56,20 +56,21 @@ public class CliUserDetailsController extends Controller {
             if (booked.isEmpty()) {
                 System.out.println("Booked itineraries");
                 System.out.println("EMPTY_DATABASE ");
-                /////INSERIRE ID IN SAVED ID!!!!!!!!!!!!!!SUBITO
             } else {
-                System.out.println("Booked itineraries");
-                System.out.print("ID [" + booked.get(0).getItineraryId() + "] " + booked.get(0).getSteps() + "\n");
-                //System.out.println(iti.get(0).getSteps());
+                for(int indexB = 0; indexB < booked.size(); indexB++) {
+                    System.out.println("Booked itineraries");
+                    System.out.print("ID [" + booked.get(indexB).getItineraryId() + "] " + booked.get(indexB).getSteps() + "\n");
+                }
             }
             if (saved.isEmpty()) {
                 System.out.println("Saved itineraries");
                 System.out.println("EMPTY_DATABASE ");
             } else {
-                System.out.println("Saved itineraries");
-                System.out.print("ID [" + saved.get(0).getItineraryId() + "] " + saved.get(0).getSteps() + "\n");
-                //System.out.println(iti.get(0).getSteps())
-
+                for (int indexS = 0; indexS < saved.size(); indexS++) {
+                    System.out.println("Saved itineraries");
+                    System.out.print("ID [" + saved.get(indexS).getItineraryId() + "] " + saved.get(indexS).getSteps() + "\n");
+                }
+            }
 
                 System.out.println("\nGo Back [press 'b']: ");
                 Scanner scanner = new Scanner(System.in);
@@ -79,7 +80,7 @@ public class CliUserDetailsController extends Controller {
                 } else {
                     System.out.println("Command not found");
                 }
-            }
+
         } while (true);
     }
 }

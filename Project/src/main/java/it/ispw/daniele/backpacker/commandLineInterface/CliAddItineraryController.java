@@ -77,7 +77,7 @@ public class CliAddItineraryController {
 
         System.out.println("Itinerary details:\n");
         System.out.println("Itinerary id:");
-        String id = scanner.nextLine();
+        int id = scanner.nextInt();
 
         System.out.println("Location:");
         String location = scanner.nextLine();
