@@ -12,6 +12,8 @@ import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RESET;
 
 public class CliItineraryDetailsController {
 
+    private String command = "SUBSCRIBE";
+
     private final BookTourController controller = new BookTourController();
     private ItineraryBean ib = new ItineraryBean();
     private final GeneralUserBean sessionUser = SessionUser.getInstance().getSession();
@@ -22,12 +24,14 @@ public class CliItineraryDetailsController {
         boolean isPart = controller.isParticipating(this.sessionUser, ib);
         if(isPart){
             controller.removeParticipation(this.sessionUser, ib);
-            System.out.print("Itinerary added!");
+            System.out.print("Itinerary removed!");
+            this.command = "SUBSCRIBE";
             //this.subscribeButton.setText("Subscribe");
             //this.part.setText("Add Participation");
         } else {
             controller.addParticipation(this.sessionUser, ib);
-            System.out.println("Itinerary removed!");
+            System.out.println("Itinerary added!");
+            this.command = "REMOVE";
             //this.subscribeButton.setText("Remove");
             //this.part.setText("Remove Participation");
         }
@@ -58,9 +62,12 @@ public class CliItineraryDetailsController {
         ib = itineraryBean;
 
         Scanner scanner = new Scanner(System.in);
+
         do{
 
-        System.out.println("[0] SUBSCRIBE - [1] UNDO");
+        System.out.println("\nCOMMANDS [0] " + command + " - [1] UNDO\n");
+
+        System.out.println("Digit command: ");
 
 
             switch (scanner.nextInt()) {

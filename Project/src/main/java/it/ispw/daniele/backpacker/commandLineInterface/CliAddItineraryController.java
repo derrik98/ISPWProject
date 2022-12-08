@@ -76,8 +76,8 @@ public class CliAddItineraryController {
         System.out.println(this.steps);
 
         System.out.println("Itinerary details:\n");
-        System.out.println("Itinerary id:");
-        int id = scanner.nextInt();
+        /*System.out.println("Itinerary id:");
+        int id = scanner.nextInt();*/
 
         System.out.println("Location:");
         String location = scanner.nextLine();
@@ -97,7 +97,7 @@ public class CliAddItineraryController {
         boolean result = false;
 
         ItineraryBean itineraryBean = new ItineraryBean();
-        itineraryBean.setItineraryId(id);
+        //itineraryBean.setItineraryId(id);
         itineraryBean.setGuideId(this.guideBean.getUsername());
         itineraryBean.setDate(date);
         itineraryBean.setLocation(location);

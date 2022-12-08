@@ -99,17 +99,14 @@ public class ItineraryDao extends DaoTemplate{
     }
 
     public Boolean isParticipating(String username, int itineraryId) {
-        Boolean ret = this.execute(new DaoAction<Boolean>() {
-            @Override
-            public Boolean act() throws ClassNotFoundException, SQLException {
-                Connection conn = DBUserConnection.getUserConnection();
-                String sql = "call backpacker.is_participating(?, ?);\r\n";
-                try (PreparedStatement stm = conn.prepareStatement(sql)) {
-                    stm.setString(1, username);
-                    stm.setInt(2,  itineraryId);
-                    try (ResultSet rs = stm.executeQuery()) {
-                        return (rs.first());
-                    }
+        Boolean ret = this.execute(() -> {
+            Connection conn = DBUserConnection.getUserConnection();
+            String sql = "call backpacker.is_participating(?, ?);\r\n";
+            try (PreparedStatement stm = conn.prepareStatement(sql)) {
+                stm.setString(1, username);
+                stm.setInt(2,  itineraryId);
+                try (ResultSet rs = stm.executeQuery()) {
+                    return (rs.first());
                 }
             }
         });
@@ -121,7 +118,7 @@ public class ItineraryDao extends DaoTemplate{
 
     private void manageParticipation(String username, int id, String operation) {
         this.execute((DaoAction<Void>) () -> {
-            Connection conn = null;
+            Connection conn;
             PreparedStatement stm = null;
             String sql = null;
             try {

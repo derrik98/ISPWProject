@@ -13,9 +13,9 @@ import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RESET;
 
 public class CliLoginController {
 
-    private final Scanner scan = new Scanner(System.in);
-
     public void init() {
+
+        Scanner scan = new Scanner(System.in);
 
         do {
             System.out.print("\033[H\033[2J");
@@ -30,13 +30,13 @@ public class CliLoginController {
 
             switch (scan.nextLine()) {
                 case "0" -> {
-                    this.login();
+                    this.login(scan);
                     //CliLoginController loginController = new CliLoginController();
                     //loginController.init(scan);
                 }
                 case "1" -> {
                     CliSignUpController signUpController = new CliSignUpController();
-                    signUpController.init(scan);
+                    signUpController.init();
                 }
                 case "quit" -> {
                     System.out.println(RED + "CLOSE APPLICATION" + RESET);
@@ -45,13 +45,12 @@ public class CliLoginController {
                 }
                 default -> System.out.println(RED + "Command not found\n" + RESET);
             }
-
             System.out.flush();
 
         } while (true);
     }
 
-    private void login() {
+    private void login(Scanner scan) {
         System.out.print("\033[H\033[2J");
 
         System.out.println("Username:");

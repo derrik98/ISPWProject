@@ -19,9 +19,11 @@ public class CliSignUpController {
 
     private File imageFile = null;
 
-    public void init(Scanner scan) {
+    public void init() {
 
         System.out.print("\033[H\033[2J");
+
+        Scanner scan = new Scanner(System.in);
 
         LoginController lc = new LoginController();
 
@@ -149,5 +151,7 @@ public class CliSignUpController {
         VATNumb = "";
         this.imageFile = null;
         ProfilePicture = "";
+
+        scan.close();
     }
 }

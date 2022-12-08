@@ -15,6 +15,7 @@ module it.ispw.daniele.backpacker {
     requires java.sql;
     requires org.jetbrains.annotations;
     requires AnimateFX;
+    requires mysql.connector.java;
 
     exports it.ispw.daniele.backpacker.fxmlView;
     opens it.ispw.daniele.backpacker.fxmlView to javafx.fxml;
