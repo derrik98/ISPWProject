@@ -14,7 +14,10 @@ import javafx.scene.layout.HBox;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AddItineraryViewController implements Initializable {
+import static it.ispw.daniele.backpacker.commandLineInterface.CLI.GREEN;
+import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RESET;
+
+public class AddItineraryViewController {
     @FXML
     public TextField textFieldLanguages;
     @FXML
@@ -46,7 +49,6 @@ public class AddItineraryViewController implements Initializable {
 
         for(int i = 0; i < this.listView.getItems().size(); i++){
             TextField t = (TextField) listView.getItems().get(i);
-            //System.out.println(t.getText());
             if(!t.getText().equals("") && t.getText() != null) {
                 this.steps = this.steps.concat(t.getText() + "/");
             }
@@ -85,7 +87,7 @@ public class AddItineraryViewController implements Initializable {
             itineraryBean.setItineraryId(controller.getItineraryId(itineraryBean));
             if(result){
                 //this.headerLabel.setText("Music Event Added");
-                System.out.println("itinerario aggiunto");
+                System.out.println(GREEN + "itinerario aggiunto" + RESET);
             }
             else{
             System.out.println("errore aggiunta itinerario");
@@ -97,8 +99,7 @@ public class AddItineraryViewController implements Initializable {
         }
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void init() {
 
         TouristGuideGraphicChange guideGraphicChange = TouristGuideGraphicChange.getInstance();
         guideGraphicChange.menuBar(this.menuBar, "addItinerary");
@@ -127,5 +128,6 @@ public class AddItineraryViewController implements Initializable {
             listView.getItems().add(textField);
         }
         this.guideBean= SessionUser.getInstance().getSession();
+
     }
 }

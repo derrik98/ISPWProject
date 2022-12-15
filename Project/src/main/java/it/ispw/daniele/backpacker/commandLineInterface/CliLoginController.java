@@ -47,7 +47,7 @@ public class CliLoginController {
             }
             System.out.flush();
 
-        } while (true);
+        } while(scan.hasNext());
     }
 
     private void login(Scanner scan) {

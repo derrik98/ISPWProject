@@ -32,8 +32,6 @@ public class CliItineraryDetailsController {
             controller.addParticipation(this.sessionUser, ib);
             System.out.println("Itinerary added!");
             this.command = "REMOVE";
-            //this.subscribeButton.setText("Remove");
-            //this.part.setText("Remove Participation");
         }
     }
 

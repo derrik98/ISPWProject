@@ -40,7 +40,9 @@ public class TouristGuideGraphicChange extends GUIChangeTemplate{
         FXMLLoader loader = new FXMLLoader();
         FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/Add-Itinerary-Page.fxml");
         Parent fxmlLoader = loader.load(fileInputStream);
+        AddItineraryViewController addItineraryViewController = loader.getController();
         scene.setRoot(fxmlLoader);
+        addItineraryViewController.init();
     }
 
     public void switchToNotifications(Scene scene) {

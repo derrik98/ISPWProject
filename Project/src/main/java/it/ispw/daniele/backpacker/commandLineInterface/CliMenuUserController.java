@@ -13,13 +13,11 @@ import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RESET;
 
 public class CliMenuUserController {
 
-    private CliUserGraphicChange ugc;
-
     private final Scanner scanner = new Scanner(System.in);
 
     public void init() throws AddressNotFoundException, IOException, CityNotFoundException, MonumentNotFoundException {
 
-        this.ugc = CliUserGraphicChange.getInstance();
+        CliUserGraphicChange ugc = CliUserGraphicChange.getInstance();
 
 
         do {
@@ -45,7 +43,7 @@ public class CliMenuUserController {
                 case "2" -> {
                     System.out.println(RED + "LOGOUT" + RESET);
                     SessionUser.getInstance().closeSession();
-                    this.ugc.switchToLogin(scanner);
+                    ugc.switchToLogin(scanner);
                     return;
                 }
                 case "u" ->{
