@@ -32,11 +32,11 @@ public class MenuBarController {
         stackScene.push("home");
     }
 
-    @FXML
+    /*@FXML
     public void switchToResult() {
-        //this.ugc.switchToResult(this.LabelResult.getScene());
+        this.ugc.switchToResult(this.LabelResult.getScene());
         stackScene.push("result");
-    }
+    }*/
 
     @FXML
     public void switchToUserDet(){
@@ -82,7 +82,7 @@ public class MenuBarController {
         switch (selected){
             case "home" -> this.LabelHome.setStyle(style);
             case "profile" -> this.LabelProfile.setStyle(style);
-            //case "result" -> this.LabelResult.setStyle(style);
+            case "result" -> this.LabelResult.setStyle(style);
             default -> {
             }
 

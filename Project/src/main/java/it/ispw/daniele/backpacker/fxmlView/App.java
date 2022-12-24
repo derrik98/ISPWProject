@@ -1,6 +1,5 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
-import animatefx.animation.Shake;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -25,7 +24,6 @@ public class App extends Application {
         LoginViewController lvc = loader.getController();
         lvc.init();
         stage.setScene(scene);
-        //stage.setMaximized(true);
         stage.show();
     }
 

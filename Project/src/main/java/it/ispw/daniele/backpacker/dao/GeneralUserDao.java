@@ -6,13 +6,12 @@ import it.ispw.daniele.backpacker.utils.DBLoginConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class GeneralUserDao extends DaoTemplate{
 
     public GeneralUser findUser(String username, String password) {
         return this.execute(() -> {
-            Connection conn = null;
+            Connection conn;
             GeneralUser u = null;
             conn = DBLoginConnection.getLoginConnection();
 

@@ -3,7 +3,6 @@ package it.ispw.daniele.backpacker.commandLineInterface;
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.controller.login.LoginController;
 import it.ispw.daniele.backpacker.exceptions.EmptyFieldException;
-import it.ispw.daniele.backpacker.exceptions.LoginFailException;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 
 import java.util.Scanner;
@@ -31,8 +30,6 @@ public class CliLoginController {
             switch (scan.nextLine()) {
                 case "0" -> {
                     this.login(scan);
-                    //CliLoginController loginController = new CliLoginController();
-                    //loginController.init(scan);
                 }
                 case "1" -> {
                     CliSignUpController signUpController = new CliSignUpController();
@@ -45,9 +42,10 @@ public class CliLoginController {
                 }
                 default -> System.out.println(RED + "Command not found\n" + RESET);
             }
+
             System.out.flush();
 
-        } while(scan.hasNext());
+        } while(true);
     }
 
     private void login(Scanner scan) {
@@ -81,12 +79,10 @@ public class CliLoginController {
                 switch (role) {
                     case "user" -> CliUserGraphicChange.getInstance().menuBar();
                     case "tourist_guide" -> CliTouristGuideGraphicChange.getInstance().menuBar();
-                    default -> {
-                    }
                 }
             }
 
-        } catch (EmptyFieldException e) {
+        }catch (EmptyFieldException e) {
             System.out.println("\n" + RED + e.getMessage() + RESET + "\n");
         }
     }

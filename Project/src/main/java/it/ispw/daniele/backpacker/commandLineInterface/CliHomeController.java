@@ -23,18 +23,27 @@ public class CliHomeController {
 
         System.out.println("Country:");
         String country = scanner.nextLine();
+        System.out.flush();
 
         System.out.println("City:");
         String city = scanner.nextLine();
+        System.out.flush();
+
 
         System.out.println("Address:");
         String address = scanner.nextLine();
+        System.out.flush();
+
 
         System.out.println("Restaurant: [Yes or No]");
         String restaurant = scanner.nextLine();
+        System.out.flush();
+
 
         System.out.println("Range:");
         String range = scanner.nextLine();
+        System.out.flush();
+
 
 
         HomeBean homeBean = new HomeBean();

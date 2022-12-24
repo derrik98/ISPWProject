@@ -10,7 +10,6 @@ public class SessionUser {
     private static SessionUser instance = null;
 
     private SessionUser(){
-
     }
 
     public static SessionUser getInstance(){

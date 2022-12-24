@@ -5,56 +5,27 @@ import it.ispw.daniele.backpacker.booktour.BookTourController;
 import it.ispw.daniele.backpacker.booktour.SaveTour;
 import it.ispw.daniele.backpacker.controller.search.SearchController;
 import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
-import it.ispw.daniele.backpacker.fxmlView.ItineraryDetailsController;
-import it.ispw.daniele.backpacker.fxmlView.TouristGuideGraphicChange;
-import it.ispw.daniele.backpacker.fxmlView.UserGraphicChange;
-import it.ispw.daniele.backpacker.utils.Roles;
 import it.ispw.daniele.backpacker.utils.SessionUser;
-import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Cursor;
-import javafx.scene.Parent;
-import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.Control;
+import javafx.scene.control.Label;
 import javafx.scene.text.Font;
-import javafx.scene.web.WebView;
 
-import java.io.Console;
-import java.io.FileInputStream;
+import java.awt.*;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 import java.util.Scanner;
-import java.util.logging.ConsoleHandler;
 
 import static it.ispw.daniele.backpacker.commandLineInterface.CLI.*;
 
 public class CliResultController {
 
     List<ItineraryBean> it;
-
-   /* public void init() {
-
-        //GeneralUserBean sessionUser = SessionUser.getInstance().getSession();
-
-        if (SessionUser.getInstance().getSession().getRole().equals(Roles.TOURIST_GUIDE.name().toLowerCase())) {
-            TouristGuideGraphicChange i = TouristGuideGraphicChange.getInstance();
-            //i.menuBar(this.menuBar, "result");
-            System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.TOURIST_GUIDE.name());
-        } else {
-            UserGraphicChange ugc = UserGraphicChange.getInstance();
-            //ugc.menuBar(this.menuBar, "result");
-            System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.USER.name().toLowerCase());
-        }
-
-    }*/
 
     public void init(String country, String city, String address, String restaurant, String range) throws MonumentNotFoundException {
         System.out.print("\033[H\033[2J");
@@ -70,8 +41,8 @@ public class CliResultController {
             System.out.println("Suggested Itinerary: " + RED + "EMPTY_DATABASE " + RESET + "\n");
         } else {
             System.out.println("Suggested Itinerary: \n");
-            createTable(it);
             bookedSize = it.size();
+            createTable(it, 0);
         }
 
         SearchController sc = new SearchController();
@@ -82,7 +53,7 @@ public class CliResultController {
             System.out.println("Self Itinerary: " + RED + "EMPTY_DATABASE " + RESET + "\n");
         } else {
             System.out.print("Self Itinerary: \n");
-            createTable(iti);
+            createTable(iti, bookedSize);
         }
         assert it != null;
         List<ItineraryBean> mergeItinerary = new ArrayList<>(it);
@@ -92,27 +63,65 @@ public class CliResultController {
     }
 
     private void createCommand(List<ItineraryBean> itineraryBeanList, int bSize) {
-        System.out.flush();
+
         Scanner scanner = new Scanner(System.in);
-        do {
         System.out.println("" + "Commands : VIEW ON MAP[0] - SAVE[1] - BUY[2] (Only for suggester itinerary) - QUIT[3]");
+
+        do {
             switch (scanner.nextLine()) {
                 case "0" -> {
-                    System.out.println("View on map");
+                    System.out.println("Digit Itinerary id");
+                    int input = scanner.nextInt();
+                    System.out.flush();
+
+                    String[] steps = itineraryBeanList.get(input).getSteps().split("/");
+                    System.out.println(Arrays.toString(steps));
+
+                    ArrayList<String> als = new ArrayList<>();
+                    for (int i = 0; i < steps.length; i++) {
+                        als.add(i, steps[i]);
+                    }
+
+                    System.out.println("als" + als);
+                    StringBuilder Url = new StringBuilder("https://google.it/maps/dir");
+
+                    for (int indexMonument = 0; indexMonument < als.size(); indexMonument++) {
+                            Url.append("/").append(als.get(indexMonument));
+                    }
+
+                    if(Desktop.isDesktopSupported()){
+                        Desktop desktop = Desktop.getDesktop();
+                        try {
+                            desktop.browse(new URI(Url.toString().replace(" ", "+")));
+                        } catch (IOException | URISyntaxException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
+                    }else{
+                        Runtime runtime = Runtime.getRuntime();
+                        try {
+                            runtime.exec("xdg-open " + Url);
+                        } catch (IOException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
+                    }
                 }
+
                 case "1" -> {
                     SaveTour st = new SaveTour();
                     try {
                         System.out.println("Digit Itinerary id");
                         int input = scanner.nextInt();
-                        if(input > bSize){
-                            st.saveTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(scanner.nextInt()));
+                        System.out.flush();
+                        if(input <= itineraryBeanList.size() && input >= 0){
+                            st.saveTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(input));
                             System.out.println(GREEN + "Itinerary added successfully" + RESET);
-                        }
+                        }//   COMMENTARE IL CODICE
                         else{
                             System.out.println(RED + "Incorrect id" + RESET);
-                            scanner.reset();
                         }
+
                     } catch (ParseException e) {
                         throw new RuntimeException(e);
                     }
@@ -134,33 +143,28 @@ public class CliResultController {
                 }
                 default -> System.out.println(RED + "Command not found\n" + RESET);
             }
+            System.out.flush();
+            scanner.reset();
+            System.out.println("" + "Commands : VIEW ON MAP[0] - SAVE[1] - BUY[2] (Only for suggester itinerary) - QUIT[3]");
         } while (true);
     }
 
-    public void createTable(List<ItineraryBean> itineraryBeanList) {
+    public void createTable(List<ItineraryBean> itineraryBeanList, int tableSize) {
 
         int j;
-        StringBuilder Url = new StringBuilder("https://google.it/maps/dir");
-        for (j = 0; j < itineraryBeanList.size(); j++) {
+        for (j = 0; j < itineraryBeanList.size() ; j++) {
             String[] steps = itineraryBeanList.get(j).getSteps().split("/");
             ArrayList<String> als = new ArrayList<>();
             for (int i = 0; i < steps.length; i++) {
                 als.add(i, steps[i]);
             }
 
-            //WebView webView = new WebView();
-            //webView.setMinHeight(300);
-            //StringBuilder Url = new StringBuilder("https://google.it/maps/dir");
             StringBuilder line = new StringBuilder();
-            line.append("ID [").append(j).append("] ");
+            line.append("ID [").append(tableSize).append("] ");
+            tableSize++;
             for (int indexMonument = 0; indexMonument < als.size(); indexMonument++) {
                 line.append(als.get(indexMonument));
 
-                if (indexMonument != 0 && indexMonument != als.size() - 1) {
-                    line.append(" - ");
-                    Url.append("/").append(als.get(indexMonument));
-
-                }
             }
             System.out.println(line);
             System.out.print("\n");

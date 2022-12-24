@@ -11,7 +11,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 
@@ -19,15 +18,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.Objects;
 
 public class HomeUserController{
 
     public Text errorText;
     @FXML
     private HBox menuBar = new HBox();
-    @FXML
-    private AnchorPane APHome = new AnchorPane();
     @FXML
     private Slider sliderRange;
     @FXML
@@ -43,7 +39,11 @@ public class HomeUserController{
     @FXML
     private RadioButton radioButtonRestaurant;
 
-    public HomeUserController() throws IOException {
+    @FXML
+    public void enterKeyPressed(KeyEvent keyEvent) throws  IOException {
+        if (keyEvent.getCode().equals(KeyCode.ENTER)){
+            this.SearchRoutes();
+        }
     }
 
     public void onSliderChanged() {
@@ -55,8 +55,9 @@ public class HomeUserController{
 
         buttonSearch.setStyle("");
 
-        this.textFieldCity.setStyle("-fx-border-style: none; -fx-border-width: none; -fx-border-color: none");
-        this.textFieldAddress.setStyle("-fx-border-style: none; -fx-border-width: none; -fx-border-color: none");
+        String styleDefault = "-fx-border-style: none; -fx-border-width: none; -fx-border-color: none";
+        this.textFieldCity.setStyle(styleDefault);
+        this.textFieldAddress.setStyle(styleDefault);
 
         HomeBean homeBean = new HomeBean();
         homeBean.setCountry(this.textFieldCountry.getText());
@@ -66,37 +67,15 @@ public class HomeUserController{
         homeBean.setRange(this.labelRange.getText());
 
         try {
-            //////////////////
 
             if (textFieldCountry.getText().equals("") || textFieldCity.getText().equals("") || textFieldAddress.getText().equals("")) {
                 throw new FileNotFoundException("ERROR");
-                //return false;
             }
+
             SearchController sc = new SearchController();
             sc.checkInput(homeBean);
-            //HomeBean datiCorretti = sc.checkInput(homeBean);
-
-            //HomeBean datiCorretti = null;
-            //
-            /*try {
-                datiCorretti = SearchController.getInstances().getInput();
-            } catch (CityNotFoundException e) {
-                throw new CityNotFoundException(e.getMessage());
-                // e.printStackTrace();
-            }*/
-            //
-            //System.out.println("provafatta" + city);//FARE COME LA VALIDATE
-            //System.out.println(country);
-
-            //System.out.println(datiCorretti.country + datiCorretti.city + datiCorretti.address);
-        /*if(utenteTrovato==null)
-            return false;
-        return true;*/
-            //////return datiCorretti != null;
-
-            //////////////////
-            //homeBean.validate();
             UserGraphicChange.getInstance().switchToResult(this.textFieldCountry.getScene(), this.textFieldCountry.getText(), this.textFieldCity.getText(), this.textFieldAddress.getText(), this.radioButtonRestaurant.getText(), String.valueOf(this.sliderRange.getValue()));
+
         } catch (CityNotFoundException cityException) {
             this.errorText.setStyle("-fx-font-size: 27px;");
             this.errorText.setText(cityException.getMessage());
@@ -110,13 +89,6 @@ public class HomeUserController{
         }
     }
 
-    @FXML
-    public void enterKeyPressed(KeyEvent keyEvent) throws  IOException {
-        if (keyEvent.getCode().equals(KeyCode.ENTER)){
-            this.SearchRoutes();
-        }
-    }
-
     public void init() {
         if(SessionUser.getInstance().getSession().getRole().equals(Roles.TOURIST_GUIDE.name().toLowerCase())) {
             TouristGuideGraphicChange tGuideGraphicChange = TouristGuideGraphicChange.getInstance();
@@ -127,7 +99,6 @@ public class HomeUserController{
             UserGraphicChange ugc = UserGraphicChange.getInstance();
             ugc.menuBar(this.menuBar, "home");
             System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.USER.name().toLowerCase());
-            //ugc.backButton(this.APHome, "home");
         }
     }
 

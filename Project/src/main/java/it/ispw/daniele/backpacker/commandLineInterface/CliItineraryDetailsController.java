@@ -20,14 +20,12 @@ public class CliItineraryDetailsController {
     public void subscribe() {
 
         System.out.println(ib);
-        //boolean isPart = controller.isParticipating(this.sessionUser, this.itineraryBean);
+
         boolean isPart = controller.isParticipating(this.sessionUser, ib);
         if(isPart){
             controller.removeParticipation(this.sessionUser, ib);
             System.out.print("Itinerary removed!");
             this.command = "SUBSCRIBE";
-            //this.subscribeButton.setText("Subscribe");
-            //this.part.setText("Add Participation");
         } else {
             controller.addParticipation(this.sessionUser, ib);
             System.out.println("Itinerary added!");
@@ -80,7 +78,7 @@ public class CliItineraryDetailsController {
                     return;
                 }
             }
-        }while (true);
+        }while(true);
 
 
     }

@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="APHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.fxmlView.HomeUserController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.fxmlView.HomeUserController">
      <ScrollPane fitToHeight="true" fitToWidth="true" onKeyPressed="#enterKeyPressed" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <VBox alignment="TOP_CENTER">
              <StackPane>
@@ -108,15 +108,13 @@
                      </font>
                  </Label>
              </HBox>
-         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-            <children>
-                    <RadioButton fx:id="radioButtonRestaurant" mnemonicParsing="false" text="Include Restaurant">
-                        <font>
-                            <Font size="20.0" />
-                        </font>
-                    </RadioButton>
-            </children>
-         </HBox>
+             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                 <RadioButton fx:id="radioButtonRestaurant" mnemonicParsing="false" text="Include Restaurant">
+                     <font>
+                         <Font size="20.0"/>
+                     </font>
+                 </RadioButton>
+             </HBox>
              <HBox alignment="CENTER">
                  <Text fx:id="errorText" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0">
                      <font>

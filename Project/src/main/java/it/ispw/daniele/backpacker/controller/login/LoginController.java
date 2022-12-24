@@ -43,7 +43,7 @@ public class LoginController {
 
 //    public boolean createRestaurantOwner(RestaurantOwnerBean ab) {
 //        RestaurantOwnerDao ad = new RestaurantOwnerDao();
-//        return ad.createRestaurantOwner(ab.getUsername(), ab.getPassword(), ab.getBandName(), ab.getProfilePicture(), ab.getEmail());
+//        return ad.createRestaurantOwner(ab.getUsername(), ab.getPassword(), ab.getName(), ab.getProfilePicture(), ab.getEmail());
 //    }
 
     public boolean createTouristGuide(TouristGuideBean tgb) {

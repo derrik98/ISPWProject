@@ -1,7 +1,6 @@
 package it.ispw.daniele.backpacker.fxmlView;
 
 import animatefx.animation.Shake;
-import animatefx.animation.Swing;
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.controller.login.LoginController;
 import it.ispw.daniele.backpacker.exceptions.EmptyFieldException;
@@ -50,8 +49,9 @@ public class LoginViewController {
             gu = controller.login(gub);
 
             if(gu == null){
-                this.textFieldUsername.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
-                this.textFieldPassword.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
+                String styleErrorLabel = "-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red";
+                this.textFieldUsername.setStyle(styleErrorLabel);
+                this.textFieldPassword.setStyle(styleErrorLabel);
             }
             else{
                 String role = gu.getRole();
@@ -72,11 +72,10 @@ public class LoginViewController {
             this.errorText.setText(exception.getMessage());
             //this.textFieldUsername.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
             //this.textFieldPassword.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
-            //System.out.println(exception);
+
             new Shake(this.buttonLogin).play();
         }
 
-       // new Swing(this.buttonLogin).play();
     }
 
     public void switchToSignUp() throws IOException {
@@ -112,8 +111,9 @@ public class LoginViewController {
     }
 
     public void init() {
-        this.textFieldUsername.setStyle("-fx-border-style: none; -fx-border-width: none; -fx-border-color: none");
-        this.textFieldPassword.setStyle("-fx-border-style: none; -fx-border-width: none; -fx-border-color: none");
+        String styleDefault = "-fx-border-style: none; -fx-border-width: none; -fx-border-color: none";
+        this.textFieldUsername.setStyle(styleDefault);
+        this.textFieldPassword.setStyle(styleDefault);
     }
 
 }

@@ -45,6 +45,7 @@ public abstract class GUIChangeTemplate{
         });
     }
 
+    //Sistemare il metodo
     public void switchToResult(Scene scene, String country, String city, String address, String restaurant, String range) {
         this.catcher(new GUIAction() {
             @Override

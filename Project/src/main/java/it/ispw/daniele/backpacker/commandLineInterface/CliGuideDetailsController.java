@@ -42,27 +42,27 @@ public class CliGuideDetailsController extends Controller {
 
     public void init() {
 
-        //TouristGuideGraphicChange tgc = new TouristGuideGraphicChange();
-        //tgc.menuBar(this.menuBar, "profile");
-
         GeneralUserBean gub = SessionUser.getInstance().getSession();
 
-        //List<TouristGuideBean> users = this.getSearchUser("search_tguide", SessionUser.getInstance().getSession().getUsername());
         TouristGuideBean users = this.getSearchUser("search_t_guide", gub.getUsername());
 
-        System.out.print("\033[H\033[2J");
-
-        System.out.println(BOLD + "PROFILE PAGE\n" + RESET);
-        System.out.println("Username: " + users.getUsername());
-        System.out.println("Name: " + users.getName());
-        System.out.println("Email: " + users.getEmail());
-        System.out.println("Surname: " + users.getSurname());
-        System.out.println("Vat number: " + users.getIdentificationCode());
-        System.out.println("\n");
-        System.out.println("Go Back [press 'b']: ");
-        Scanner s = new Scanner(System.in);
-        if (s.nextLine().equals("b")) {
-            return;
-        }
+        do {
+            System.out.print("\033[H\033[2J");
+            System.out.println(BOLD + "PROFILE PAGE\n" + RESET);
+            System.out.println("Username: " + users.getUsername());
+            System.out.println("Name: " + users.getName());
+            System.out.println("Email: " + users.getEmail());
+            System.out.println("Surname: " + users.getSurname());
+            System.out.println("Vat number: " + users.getIdentificationCode());
+            System.out.println("\n");
+            System.out.println("Go Back [press 'b']: ");
+            Scanner s = new Scanner(System.in);
+            if (s.nextLine().equals("b")) {
+                return;
+            }
+            else {
+                System.out.println("Incorrect command!");
+            }
+        }while (true);
     }
 }

@@ -22,7 +22,7 @@ import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RESET;
 
 public class CliUserDetailsController extends Controller {
 
-    public UserBean getSearchUser(String searchString, String caller) {
+    private UserBean getSearchUser(String searchString, String caller) {
         UserDAO ud = new UserDAO();
         List<User> l = ud.getSearchUser(searchString, caller);
         return this.convert(l.get(0));
@@ -44,7 +44,6 @@ public class CliUserDetailsController extends Controller {
             System.out.println("Surname: " + users.getSurname());
             System.out.println("\n");
 
-
             BookTourController btc = new BookTourController();
             List<ItineraryBean> booked;
             booked = btc.getItinerary(users.getUsername(), "user");
@@ -54,20 +53,20 @@ public class CliUserDetailsController extends Controller {
             saved = st.getItinerary(users.getUsername());
 
             if (booked.isEmpty()) {
-                System.out.println("Booked itineraries");
-                System.out.println("EMPTY_DATABASE ");
+                System.out.println("Booked itineraries: ");
+                System.out.println("EMPTY_DATABASE\n");
             } else {
                 for(int indexB = 0; indexB < booked.size(); indexB++) {
-                    System.out.println("Booked itineraries");
+                    System.out.println("Booked itineraries: ");
                     System.out.print("ID [" + booked.get(indexB).getItineraryId() + "] " + booked.get(indexB).getSteps() + "\n");
                 }
             }
             if (saved.isEmpty()) {
-                System.out.println("Saved itineraries");
-                System.out.println("EMPTY_DATABASE ");
+                System.out.println("Saved itineraries: ");
+                System.out.println("EMPTY_DATABASE\n");
             } else {
                 for (int indexS = 0; indexS < saved.size(); indexS++) {
-                    System.out.println("Saved itineraries");
+                    System.out.println("Saved itineraries: ");
                     System.out.print("ID [" + saved.get(indexS).getItineraryId() + "] " + saved.get(indexS).getSteps() + "\n");
                 }
             }
@@ -81,6 +80,7 @@ public class CliUserDetailsController extends Controller {
                     System.out.println("Command not found");
                 }
 
+                System.out.flush();
         } while (true);
     }
 }

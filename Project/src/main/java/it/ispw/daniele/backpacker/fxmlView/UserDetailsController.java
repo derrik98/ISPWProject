@@ -57,8 +57,6 @@ public class UserDetailsController extends Controller {
 
     private final Accordion accordionResult = new Accordion();
 
-    private GeneralUserBean gub;
-
     public void switchToSettings() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         FileInputStream fileInputStream = new FileInputStream("src/main/resources/it/ispw/daniele/backpacker/Edit-User-Details-Page.fxml");
@@ -68,21 +66,15 @@ public class UserDetailsController extends Controller {
         //stackScene.push(fxmlLoader);
     }
 
-    public void showInfoSettings(MouseEvent mouseEvent) {
+    public void showInfoSettings() {
         textSettings.setVisible(true);
     }
 
-    public void notShowInfoSettings(MouseEvent mouseEvent) {
+    public void notShowInfoSettings() {
         textSettings.setVisible(false);
     }
 
-    /*public List<UserBean> getSearchUser(String searchString, String caller){
-        UserDAO ud = new UserDAO();
-        List<User> l = ud.getSearchUser(searchString, caller);
-        return this.convert(l);
-    }*/
-
-    public UserBean getSearchUser(String searchString, String caller){
+    private UserBean getSearchUser(String searchString, String caller){
         UserDAO ud = new UserDAO();
         List<User> l = ud.getSearchUser(searchString, caller);
         return this.convert(l.get(0));
@@ -95,7 +87,7 @@ public class UserDetailsController extends Controller {
         UserGraphicChange ugc = UserGraphicChange.getInstance();
         ugc.menuBar(this.menuBar, "profile");
 
-        gub = SessionUser.getInstance().getSession();
+        GeneralUserBean gub = SessionUser.getInstance().getSession();
 
         /*this.username.setText(this.gub.getUsername());
         this.name.setText(this.gub.getPassword());

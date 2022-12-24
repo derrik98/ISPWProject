@@ -5,14 +5,10 @@ import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.controller.addItinerary.AddItineraryController;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
-
-import java.net.URL;
-import java.util.ResourceBundle;
 
 import static it.ispw.daniele.backpacker.commandLineInterface.CLI.GREEN;
 import static it.ispw.daniele.backpacker.commandLineInterface.CLI.RESET;
@@ -41,8 +37,6 @@ public class AddItineraryViewController {
     private AddItineraryController controller;
     private String steps = "";
 
-    public AddItineraryViewController() {
-    }
 
     @FXML
     public void share() {
@@ -86,16 +80,13 @@ public class AddItineraryViewController {
             result = controller.addItinerary(itineraryBean);
             itineraryBean.setItineraryId(controller.getItineraryId(itineraryBean));
             if(result){
-                //this.headerLabel.setText("Music Event Added");
                 System.out.println(GREEN + "itinerario aggiunto" + RESET);
             }
             else{
             System.out.println("errore aggiunta itinerario");
-            //this.headerLabel.setText("Failed to add music event");
             }
         } catch (Exception e) {
             e.printStackTrace();
-            //this.headerLabel.setText(de.getMessage());
         }
     }
 

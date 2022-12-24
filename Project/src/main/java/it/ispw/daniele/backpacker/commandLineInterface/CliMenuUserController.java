@@ -35,6 +35,7 @@ public class CliMenuUserController {
                 case "0" -> {
                     CliHomeController homeController = new CliHomeController();
                     homeController.init(scanner);
+                    System.out.flush();
                 }
                 case "1" -> {
                     CliUserDetailsController cliUserDetailsController = new CliUserDetailsController();
@@ -51,6 +52,9 @@ public class CliMenuUserController {
                 }
                 default -> System.out.println(RED + "Command not found\n" + RESET);
             }
+
+            System.out.flush();
+
         } while (true);
     }
 }
