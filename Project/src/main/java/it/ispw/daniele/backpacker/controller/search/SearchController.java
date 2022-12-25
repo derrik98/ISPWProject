@@ -19,56 +19,8 @@ import java.util.Vector;
 
 public class SearchController extends Controller {
 
-
-    //private static SearchController INSTANCE = null;
-    public ResultBean resultBean = ResultBean.getInstance();
-    private static final MonumentFromAddress monumentFromAddress = MonumentFromAddress.getInstance();
-
-    /*public static SearchController getInstances() {
-        if (INSTANCE == null) {
-            INSTANCE = new SearchController();
-        }
-        return INSTANCE;
-    }*/
-
-
-//    public HomeBean getInput(String country, String city, String address) throws IOException, JSONException, JSONNotFound {
-//        //HomeBean interfacebean;
-//        //System.out.println(country + city + address);
-//        JSONFactory firstCheck = CityFromCountry.getInstance();
-//        JSONFactory.convertString(address);
-//        if (firstCheck.getJSON(city, country)) {
-////    		interfacebean = new InterfaceBean(country, city, address);
-////    		interfacebean.setCountry(country);
-////    		interfacebean.setCity(city);
-//
-//            JSONFactory secondCheck = new AddressFromCity();
-//            if (secondCheck.getJSON(address, city)) {
-////				interfacebean.setAddress(address);
-//                searchMonuments();     //RIMOSSO DOPO
-//                createItinerary(mfa.getMonuments());
-////				createItinerary(mfa.getMonuments());
-//                //JSONFactory thirdCheck = new MonumentFromAddress();
-//                //if(thirdCheck.getJSON(address, "monument")) {
-//                //interfacebean.setMonuments(MonumentFromAddress.monuments); } else {
-//                //interfacebean = null;
-//                // }
-//                return HomeBean.getInstance();
-//            }
-////    		else {
-////    			interfacebean = null;
-////    		}
-////        } else {
-////           // interfaceBean = null; RIMOSSO DOPO
-////        }
-////      //  return interfaceBean; RIMOSSO DOPO
-//
-//        }
-//        return HomeBean.getInstance();
-//    }
-
     public boolean checkInput(HomeBean bean) throws CityNotFoundException, AddressNotFoundException, MonumentNotFoundException, IOException {
-        JSONFactory checkCityCountry = new CityFromCountry();//.getInstance();
+        JSONFactory checkCityCountry = new CityFromCountry();
 
         if (checkCityCountry.getJSON(bean.getCity(), bean.getCountry())) {
             JSONFactory checkAddressCity = new AddressFromCity();

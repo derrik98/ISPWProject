@@ -37,6 +37,7 @@ public class GeneralUserDao extends DaoTemplate{
                     }
                 }
             }
+
             return u;
         });
     }

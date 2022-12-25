@@ -34,12 +34,6 @@ public class UserDAO extends DaoTemplate{
             public Boolean act() throws ClassNotFoundException, SQLException {
 
                 Connection con = DBLoginConnection.getLoginConnection();
-                /*if(con == null){
-                    System.out.println("connessoine non stabilita");
-                }
-                else{
-                    System.out.println("connessoine stabilita");
-                }*/
 
                 String sql = "call backpacker.add_user(?, ?, ?, ?, ?, ?);\r\n";
                 try (PreparedStatement stm = con.prepareStatement(sql)) {

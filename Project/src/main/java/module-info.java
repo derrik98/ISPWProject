@@ -17,8 +17,8 @@ module it.ispw.daniele.backpacker {
     requires AnimateFX;
     requires mysql.connector.java;
 
-    exports it.ispw.daniele.backpacker.fxmlView;
-    opens it.ispw.daniele.backpacker.fxmlView to javafx.fxml;
-    exports it.ispw.daniele.backpacker.commandLineInterface;
-    opens it.ispw.daniele.backpacker.commandLineInterface to javafx.fxml;
+    exports it.ispw.daniele.backpacker.view.fxmlView;
+    opens it.ispw.daniele.backpacker.view.fxmlView to javafx.fxml;
+    exports it.ispw.daniele.backpacker.view.commandLineInterface;
+    opens it.ispw.daniele.backpacker.view.commandLineInterface to javafx.fxml;
 }

@@ -1,7 +1,10 @@
 package it.ispw.daniele.backpacker.bean;
 
+import java.io.Serial;
+
 public class UserBean extends GeneralUserBean{
 
+    @Serial
     private static final long serialVersionUID = 42L;
     private String name;
     private String surname;

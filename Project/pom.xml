@@ -124,7 +124,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>it.ispw.daniele.backpacker/it.ispw.daniele.backpacker.fxmlView.App
+                            <mainClass>it.ispw.daniele.backpacker/it.ispw.daniele.backpacker.view.fxmlView.App
                             </mainClass>
                         </configuration>
                     </execution>

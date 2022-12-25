@@ -37,7 +37,7 @@
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/resources&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/Desktop/provasonar/trunk/Calculator&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -82,11 +82,11 @@
   </component>
   <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.fxmlView.App" />
+      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.view.fxmlView.App" />
       <module name="Backpacker" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.ispw.daniele.backpacker.commandLineInterface.*" />
+          <option name="PATTERN" value="it.ispw.daniele.backpacker.view.commandLineInterface.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -96,11 +96,11 @@
     </configuration>
     <configuration name="CLI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
-      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.commandLineInterface.CLI" />
+      <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.view.commandLineInterface.CLI" />
       <module name="Backpacker" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.ispw.daniele.backpacker.commandLineInterface.*" />
+          <option name="PATTERN" value="it.ispw.daniele.backpacker.view.commandLineInterface.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -386,6 +386,19 @@
       <workItem from="1670084073852" duration="791000" />
       <workItem from="1670275861816" duration="4406000" />
       <workItem from="1670349879834" duration="3486000" />
+      <workItem from="1670413796870" duration="2836000" />
+      <workItem from="1670516194962" duration="2577000" />
+      <workItem from="1671115764870" duration="268000" />
+      <workItem from="1671120664438" duration="2086000" />
+      <workItem from="1671215877210" duration="3980000" />
+      <workItem from="1671220283610" duration="112000" />
+      <workItem from="1671221023987" duration="592000" />
+      <workItem from="1671822507114" duration="2634000" />
+      <workItem from="1671893929406" duration="68000" />
+      <workItem from="1671894015368" duration="1590000" />
+      <workItem from="1672000926374" duration="116000" />
+      <workItem from="1672001139967" duration="5532000" />
+      <workItem from="1672007878079" duration="33000" />
     </task>
     <servers />
   </component>
