@@ -15,7 +15,6 @@ public abstract class InterfaceController {
         ub.setProfilePicture(newFileName);
         return ub;
     }
-
     protected TouristGuideBean setTouristGuideBean(String username, String name, String surname, String email, String password, String newFileName, String VATNumber){
         TouristGuideBean tgb = new TouristGuideBean();
         tgb.setUsername(username);
