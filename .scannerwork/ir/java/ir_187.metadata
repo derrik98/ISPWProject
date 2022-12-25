@@ -1,6 +1,0 @@
-it.ispw.daniele.backpacker.controller.search.CityFromCountry#getJSON(Ljava/lang/String;Ljava/lang/String;)Z
-java.lang.String#valueOf(Ljava/lang/Object;)Ljava/lang/String;
-it.ispw.daniele.backpacker.exceptions.CityNotFoundException#instance-init#
-it.ispw.daniele.backpacker.controller.search.JSONFactory#readJsonFromUrl(Ljava/lang/String;)LJSONObject;
-java.lang.String#contains(Ljava/lang/CharSequence;)Z
-it.ispw.daniele.backpacker.exceptions.CityNotFoundException#<init>(Ljava/lang/String;)V

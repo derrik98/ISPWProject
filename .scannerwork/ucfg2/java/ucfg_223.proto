@@ -1,247 +1,0 @@
-
-•it.ispw.daniele.backpacker.commandLineInterface.CliResultController#init(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Vì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java6 6("6*è
-2ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.javaL L(√
-¿
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.javaL L(
-%23java.io.PrintStream"__id*
-""®•
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.javaL L(1
-%24void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%23java.io.PrintStream*
-EMPTY_DATABASE 2println(Ljava/lang/String;)*
-0*È
-3ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.javaG G(4ûõ
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.javaG" G(2D
-%20=it.ispw.daniele.backpacker.controller.search.SearchController"=it.ispw.daniele.backpacker.controller.search.SearchController±
-Æ
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.javaG G(4
-%21"Git.ispw.daniele.backpacker.controller.search.SearchController#<init>()V*F
-D
-%20=it.ispw.daniele.backpacker.controller.search.SearchController¨
-©
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.javaG G(5C
-sc=it.ispw.daniele.backpacker.controller.search.SearchController"__id*F
-D
-%20=it.ispw.daniele.backpacker.controller.search.SearchControlleræ
-ª
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.javaH H( 
-itijava.util.List"__id*
-""Æ´
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.javaI I()
-%22java.util.List"qit.ispw.daniele.backpacker.controller.search.SearchController#createItinerary(Ljava/lang/String;)Ljava/util/List;*E
-C
-sc=it.ispw.daniele.backpacker.controller.search.SearchController*
-
-addressjava.lang.String2#createItinerary(Ljava/lang/String;)œ
-Ã
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.javaI I()
-itijava.util.List"__id*
-
-%22java.util.List*
-2
-1*”
-4ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.javaB B(√
-¿
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.javaB B(
-%17java.io.PrintStream"__id*
-""¨©
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.javaB B(5
-%18void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%17java.io.PrintStream*
-Suggested Itinerary2println(Ljava/lang/String;)Ω∫
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.javaC C((
-%19void"tit.ispw.daniele.backpacker.commandLineInterface.CliResultController#createTable(Ljava/util/List;Ljava/lang/String;)V*GE
-Cit.ispw.daniele.backpacker.commandLineInterface.CliResultController*
-
-itjava.util.List*
-	suggested2/createTable(Ljava/util/List;Ljava/lang/String;)*
-3*è
-5ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java? ?(√
-¿
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java? ?(
-%15java.io.PrintStream"__id*
-""®•
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java? ?(1
-%16void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%15java.io.PrintStream*
-EMPTY_DATABASE 2println(Ljava/lang/String;)*
-3*ò%
-6ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java7 7(¬
-ø
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java7 7(
-%0java.io.PrintStream"__id*
-""È
-Ê
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java7 7(0
-%1java.lang.String"__concat*
-	Country: *
-
-countryjava.lang.String„
-‡
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java7 7(=
-%2java.lang.String"__concat*
-
-%1java.lang.String*
-
-, City: Ò
-Ó
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java7 7(D
-%3java.lang.String"__concat*
-
-%2java.lang.String*
-
-cityjava.lang.StringÊ
-„
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java7 7(T
-%4java.lang.String"__concat*
-
-%3java.lang.String*
-, Address: Ù
-Ò
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java7 7(^
-%5java.lang.String"__concat*
-
-%4java.lang.String*
-
-addressjava.lang.StringÈ
-Ê
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java7 7(q
-%6java.lang.String"__concat*
-
-%5java.lang.String*
-, Restaurant: ˜
-Ù
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java7 7(~
-%7java.lang.String"__concat*
-
-%6java.lang.String* 
-
-
-restaurantjava.lang.StringÂ
-‚
-î
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java7 7(å
-%8java.lang.String"__concat*
-
-%7java.lang.String*
-	, Range: Û
-
-î
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java7 7(î
-%9java.lang.String"__concat*
-
-%8java.lang.String*
-
-rangejava.lang.Stringﬂ
-‹
-î
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java7 7(õ
-%10java.lang.String"__concat*
-
-%9java.lang.String*
-\nÆ´
-î
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java7 7(ú
-%11void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%0java.io.PrintStream*
-
-%10java.lang.String2println(Ljava/lang/String;)êç
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java:% :(7=
-%126it.ispw.daniele.backpacker.booktour.BookTourController"6it.ispw.daniele.backpacker.booktour.BookTourController£
-†
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java:! :(9
-%13"@it.ispw.daniele.backpacker.booktour.BookTourController#<init>()V*?
-=
-%126it.ispw.daniele.backpacker.booktour.BookTourControllerü
-ú
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java: :(:=
-btc6it.ispw.daniele.backpacker.booktour.BookTourController"__id*?
-=
-%126it.ispw.daniele.backpacker.booktour.BookTourControllerΩ
-∫
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java; ;(
-itjava.util.List"__id*
-""∆√
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java< <(+
-%14java.util.List"yit.ispw.daniele.backpacker.booktour.BookTourController#getItinerary(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;*?
-=
-btc6it.ispw.daniele.backpacker.booktour.BookTourController*
-
-cityjava.lang.String*
-city22getItinerary(Ljava/lang/String;Ljava/lang/String;)Œ
-À
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.java< <(+
-itjava.util.List"__id*
-
-%14java.util.List*
-4
-5*≥
-0 "´
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.javaU U(
-implicit return*∆
-1ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.javaO O(√
-¿
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.javaO O(
-%25java.io.PrintStream"__id*
-""£†
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.javaO O(.
-%26void".java.io.PrintStream#print(Ljava/lang/String;)V*
-
-%25java.io.PrintStream*
-Self Itinerary2print(Ljava/lang/String;)π∂
-ì
-àC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CliResultController.javaR R($
-%27void"tit.ispw.daniele.backpacker.commandLineInterface.CliResultController#createTable(Ljava/util/List;Ljava/lang/String;)V*GE
-Cit.ispw.daniele.backpacker.commandLineInterface.CliResultController*
-
-itijava.util.List*
-self2/createTable(Ljava/util/List;Ljava/lang/String;)*
-0:
-countryjava.lang.String:
-cityjava.lang.String:
-addressjava.lang.String:
-
-restaurantjava.lang.String:
-rangejava.lang.StringBGE
-Cit.ispw.daniele.backpacker.commandLineInterface.CliResultController

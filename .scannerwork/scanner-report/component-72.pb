@@ -1,1 +1,0 @@
-H 2xmlX|hrProject/.idea/uiDesigner.xml

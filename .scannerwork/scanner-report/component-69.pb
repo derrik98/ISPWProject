@@ -1,1 +1,0 @@
-E 2xmlXhrProject/.idea/misc.xml

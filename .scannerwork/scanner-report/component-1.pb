@@ -1,2 +1,0 @@
-ISPWProject :ü-Cxã4s "ç+ôÅ&QnP	!<ió{.Ö`\EZâeò15IAöñM~R2,lfgï8^W$#9}GYNuOa*7úqS0cm);ê3Bj/r(ké?VdTUoz'X
-FtÉ]Dbáî6H_vwh:í[õ@p>=ìB+'https://github.com/derrik98/ISPWProjectB.*https://travis-ci.org/derrik98/ISPWProjectB2.https://github.com/derrik98/ISPWProject/issuesB+'https://github.com/derrik98/ISPWProjectRderrik98_ISPWProject

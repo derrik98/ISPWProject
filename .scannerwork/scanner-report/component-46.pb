@@ -1,1 +1,0 @@
-. 2xmlXhrCProject/.idea/libraries/Maven__org_controlsfx_controlsfx_11_1_0.xml

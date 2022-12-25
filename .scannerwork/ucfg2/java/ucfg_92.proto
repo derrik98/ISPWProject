@@ -1,28 +1,0 @@
-
-jit.ispw.daniele.backpacker.dao.UserDAO#getSearchUser(Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;u
-kC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/UserDAO.javaH H(#"1*»
-1u
-kC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/UserDAO.javaI I(†
-ù
-u
-kC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/UserDAO.javaI8 I(C
-%0java.lang.String"__id*
-""ñ
-ì
-u
-kC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/UserDAO.javaI I(D
-%1java.util.List"|it.ispw.daniele.backpacker.dao.UserDAO#queryDatabase(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;**(
-&it.ispw.daniele.backpacker.dao.UserDAO*"
- 
-searchStringjava.lang.String*
-
-callerjava.lang.String*
-
-%0java.lang.String"è
-u
-kC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/UserDAO.javaI I(E
-
-%1java.util.List: 
-searchStringjava.lang.String:
-callerjava.lang.StringB*(
-&it.ispw.daniele.backpacker.dao.UserDAO

@@ -1,1 +1,0 @@
-n 2javaX{hrFProject/src/main/java/it/ispw/daniele/backpacker/entity/Itinerary.java

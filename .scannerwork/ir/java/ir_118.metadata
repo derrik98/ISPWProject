@@ -1,7 +1,0 @@
-it.ispw.daniele.backpacker.controller.search.SearchController#checkInput(Lit/ispw/daniele/backpacker/bean/HomeBean;)Z
-it.ispw.daniele.backpacker.controller.search.CityFromCountry#instance-init#
-it.ispw.daniele.backpacker.controller.search.AddressFromCity#instance-init#
-it.ispw.daniele.backpacker.controller.search.MonumentFromAddress#instance-init#
-it.ispw.daniele.backpacker.controller.search.CityFromCountry#<init>()V
-it.ispw.daniele.backpacker.controller.search.AddressFromCity#<init>()V
-it.ispw.daniele.backpacker.controller.search.MonumentFromAddress#<init>()V

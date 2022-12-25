@@ -1,50 +1,0 @@
-
-vit.ispw.daniele.backpacker.controller.search.MonumentFromAddress#getMonuments(Ljava/lang/String;)Ljava/util/ArrayList;ê
-ÖC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java ()"1*˜
-1ê
-ÖC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java (π∂
-ê
-ÖC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java (*
-%0boolean"oit.ispw.daniele.backpacker.controller.search.MonumentFromAddress#getJSON(Ljava/lang/String;Ljava/lang/String;)Z*DB
-@it.ispw.daniele.backpacker.controller.search.MonumentFromAddress*
-
-addressjava.lang.String*
-	monuments2-getJSON(Ljava/lang/String;Ljava/lang/String;)ø
-º
-ê
-ÖC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java (
-%1java.io.PrintStream"__id*
-""å
-â
-ê
-ÖC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java) (2
-%2java.util.ArrayList"__id*S*QB
-@it.ispw.daniele.backpacker.controller.search.MonumentFromAddress"
-	monuments‰
-·
-ê
-ÖC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java (2
-%3java.lang.String"__concat*
-	MONUMENTI*
-
-%2java.util.ArrayList®•
-ê
-ÖC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java (3
-
-%4void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%1java.io.PrintStream*
-
-%3java.lang.String2println(Ljava/lang/String;)å
-â
-ê
-ÖC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java (
-%5java.util.ArrayList"__id*S*QB
-@it.ispw.daniele.backpacker.controller.search.MonumentFromAddress"
-	monuments"∞
-ê
-ÖC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/controller/search/MonumentFromAddress.java (
-
-%5java.util.ArrayList:
-addressjava.lang.StringBDB
-@it.ispw.daniele.backpacker.controller.search.MonumentFromAddress

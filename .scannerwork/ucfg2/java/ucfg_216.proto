@@ -1,234 +1,0 @@
-
-Nit.ispw.daniele.backpacker.commandLineInterface.CLI#main([Ljava/lang/String;)VÇ
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java ("8*¢
-2Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java( ((≤
-Ø
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java( ((
-%30java.io.PrintStream"__id*
-""⁄◊
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java( ((
-%31void"java.io.PrintStream#flush()V*
-
-%30java.io.PrintStream2flush()*
-3
-0*
-3Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java (≤
-Ø
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java (
-%15java.io.PrintStream"__id*
-""∂≥
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java (L
-%16void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%15java.io.PrintStream*20
-.-----------------------------------EXIT [quit]2println(Ljava/lang/String;)≤
-Ø
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java (
-%17java.io.PrintStream"__id*
-""∂≥
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java (L
-%18void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%17java.io.PrintStream*20
-.----------------------------------------------2println(Ljava/lang/String;)≤
-Ø
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java (
-%19java.io.PrintStream"__id*
-""∂≥
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java (L
-%20void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%19java.io.PrintStream*20
-.----------------LOGIN [0]---------------------2println(Ljava/lang/String;)≤
-Ø
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java (
-%21java.io.PrintStream"__id*
-""∂≥
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java (L
-%22void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%21java.io.PrintStream*20
-.----------------SIGNUP [1]--------------------2println(Ljava/lang/String;)≤
-Ø
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java (
-%23java.io.PrintStream"__id*
-""∂≥
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java (L
-%24void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%23java.io.PrintStream*20
-.----------------------------------------------2println(Ljava/lang/String;)≤
-Ø
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java (
-%25java.io.PrintStream"__id*
-""∂≥
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java (L
-%26void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%25java.io.PrintStream*20
-.----------------------------------------------2println(Ljava/lang/String;)≤
-Ø
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java (
-%27java.io.PrintStream"__id*
-""ëé
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java ('
-%28void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%27java.io.PrintStream*
-	Command: 2println(Ljava/lang/String;)˙˜
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java (#
-%29java.lang.String".java.util.Scanner#nextLine()Ljava/lang/String;*
-
-scanjava.util.Scanner2
-nextLine()*
-4
-5
-6
-7*ä
-4Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java$ &(±
-Æ
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java% %(
-%9java.io.PrintStream"__id*
-""Ø
-¨
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java%' %(*
-%10java.lang.String"__id*
-""ﬂ
-‹
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java%' %(B
-%11java.lang.String"__concat*
-
-%10java.lang.String*
-Command not found\nØ
-¨
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java%E %(J
-%12java.lang.String"__id*
-""·
-ﬁ
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java%' %(J
-%13java.lang.String"__concat*
-
-%11java.lang.String*
-
-%12java.lang.Stringúô
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java% %(K
-%14void"0java.io.PrintStream#println(Ljava/lang/String;)V*
-
-%9java.io.PrintStream*
-
-%13java.lang.String2println(Ljava/lang/String;)*
-2*ò
-5Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java" #("ç
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java# #(
-""*ñ
-6Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java !(òï
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java? (RI
-%6Cit.ispw.daniele.backpacker.commandLineInterface.CliSignUpController"Cit.ispw.daniele.backpacker.commandLineInterface.CliSignUpController™
-ß
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java; (T
-%7"Mit.ispw.daniele.backpacker.commandLineInterface.CliSignUpController#<init>()V*K
-I
-%6Cit.ispw.daniele.backpacker.commandLineInterface.CliSignUpController¥
-±
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java (UW
-signUpControllerCit.ispw.daniele.backpacker.commandLineInterface.CliSignUpController"__id*K
-I
-%6Cit.ispw.daniele.backpacker.commandLineInterface.CliSignUpControlleráÑ
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java   (/
-
-%8void"^it.ispw.daniele.backpacker.commandLineInterface.CliSignUpController#init(Ljava/util/Scanner;)V*Y
-W
-signUpControllerCit.ispw.daniele.backpacker.commandLineInterface.CliSignUpController*
-
-scanjava.util.Scanner2init(Ljava/util/Scanner;)*
-2*å
-7Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java (ñì
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java= (OH
-%3Bit.ispw.daniele.backpacker.commandLineInterface.CliLoginController"Bit.ispw.daniele.backpacker.commandLineInterface.CliLoginController®
-•
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java9 (Q
-%4"Lit.ispw.daniele.backpacker.commandLineInterface.CliLoginController#<init>()V*J
-H
-%3Bit.ispw.daniele.backpacker.commandLineInterface.CliLoginController±
-Æ
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java (RU
-loginControllerBit.ispw.daniele.backpacker.commandLineInterface.CliLoginController"__id*J
-H
-%3Bit.ispw.daniele.backpacker.commandLineInterface.CliLoginControllerÑÅ
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java (.
-
-%5void"]it.ispw.daniele.backpacker.commandLineInterface.CliLoginController#init(Ljava/util/Scanner;)V*W
-U
-loginControllerBit.ispw.daniele.backpacker.commandLineInterface.CliLoginController*
-
-scanjava.util.Scanner2init(Ljava/util/Scanner;)*
-2*∫
-8Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java# ()±
-Æ
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java# (,
-%0java.io.InputStream"__id*
-""¥±
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java ("
-%1java.util.Scanner"java.util.Scanner¯
-ı
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java (-
-%2"0java.util.Scanner#<init>(Ljava/io/InputStream;)V*
-
-%1java.util.Scanner*
-
-%0java.io.InputStreamƒ
-¡
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java (.
-scanjava.util.Scanner"__id*
-
-%1java.util.Scanner*
-3*¢
-0 "ö
-Ç
-xC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/commandLineInterface/CLI.java* *(
-implicit return:
-argsjava.lang.String[]B7"5
-3it.ispw.daniele.backpacker.commandLineInterface.CLI

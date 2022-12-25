@@ -1,1 +1,0 @@
-G 2xmlX	hrProject/.idea/sqldialects.xml

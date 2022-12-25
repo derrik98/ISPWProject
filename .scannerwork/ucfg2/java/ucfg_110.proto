@@ -1,59 +1,0 @@
-
-]it.ispw.daniele.backpacker.booktour.SaveTour#getItinerary(Ljava/lang/String;)Ljava/util/List;{
-qC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/booktour/SaveTour.java (+"3*ô
-2{
-qC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/booktour/SaveTour.java (ÙÖ
-{
-qC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/booktour/SaveTour.java (*
-%3java.util.List"Uit.ispw.daniele.backpacker.utils.Controller#convert(Ljava/util/List;)Ljava/util/List;*0.
-,it.ispw.daniele.backpacker.booktour.SaveTour*
-
-	itineraryjava.util.List2convert(Ljava/util/List;)"•
-{
-qC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/booktour/SaveTour.java (+
-
-%3java.util.List*²
-3{
-qC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/booktour/SaveTour.java (,àÝ
-{
-qC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/booktour/SaveTour.java (*1
-%0+it.ispw.daniele.backpacker.dao.ItineraryDao"+it.ispw.daniele.backpacker.dao.ItineraryDaoò
-ï
-{
-qC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/booktour/SaveTour.java (,
-%1"5it.ispw.daniele.backpacker.dao.ItineraryDao#<init>()V*3
-1
-%0+it.ispw.daniele.backpacker.dao.ItineraryDaoî
-ë
-{
-qC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/booktour/SaveTour.java (-1
-id+it.ispw.daniele.backpacker.dao.ItineraryDao"__id*3
-1
-%0+it.ispw.daniele.backpacker.dao.ItineraryDao«
-¨
-{
-qC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/booktour/SaveTour.java ()
-	itineraryjava.util.List"__id*
-""òï
-{
-qC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/booktour/SaveTour.java (/
-%2java.util.List"ait.ispw.daniele.backpacker.dao.ItineraryDao#getSavedItinerary(Ljava/lang/String;)Ljava/util/List;*3
-1
-id+it.ispw.daniele.backpacker.dao.ItineraryDao*
-
-inputjava.lang.String2%getSavedItinerary(Ljava/lang/String;)»
-¸
-{
-qC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/booktour/SaveTour.java (/
-	itineraryjava.util.List"__id*
-
-%2java.util.List*
-2
-1*ˆ
-1{
-qC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/booktour/SaveTour.java ("…
-{
-qC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/booktour/SaveTour.java (
-"":
-inputjava.lang.StringB0.
-,it.ispw.daniele.backpacker.booktour.SaveTour

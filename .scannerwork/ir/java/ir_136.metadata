@@ -1,3 +1,0 @@
-it.ispw.daniele.backpacker.booktour.SaveTour#getItinerary(Ljava/lang/String;)Ljava/util/List;
-it.ispw.daniele.backpacker.dao.ItineraryDao#instance-init#
-it.ispw.daniele.backpacker.dao.ItineraryDao#<init>()V

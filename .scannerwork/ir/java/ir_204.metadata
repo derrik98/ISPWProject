@@ -1,2 +1,0 @@
-it.ispw.daniele.backpacker.dao.ItineraryDao#saveTour(Ljava/lang/String;Ljava/lang/String;)V
-it.ispw.daniele.backpacker.dao.DaoTemplate#execute(Lit/ispw/daniele/backpacker/dao/DaoAction;)Ljava/lang/Object;

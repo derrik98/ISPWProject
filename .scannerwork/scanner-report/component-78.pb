@@ -1,1 +1,0 @@
-N 2javaX7hrJProject/src/main/java/it/ispw/daniele/backpacker/bean/GeneralUserBean.java

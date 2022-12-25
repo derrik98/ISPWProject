@@ -1,7 +1,0 @@
-it.ispw.daniele.backpacker.commandLineInterface.CliResultController#init(Ljava/util/Scanner;)V
-it.ispw.daniele.backpacker.fxmlView.UserGraphicChange#getInstance()Lit/ispw/daniele/backpacker/fxmlView/UserGraphicChange;
-it.ispw.daniele.backpacker.utils.SessionUser#getInstance()Lit/ispw/daniele/backpacker/utils/SessionUser;
-java.lang.String#equals(Ljava/lang/Object;)Z
-java.lang.Enum#name()Ljava/lang/String;
-it.ispw.daniele.backpacker.fxmlView.TouristGuideGraphicChange#getInstance()Lit/ispw/daniele/backpacker/fxmlView/TouristGuideGraphicChange;
-java.lang.String#toLowerCase()Ljava/lang/String;

@@ -1,33 +1,0 @@
-
-Éit.ispw.daniele.backpacker.dao.ItineraryDao#addItinerary(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z|
-pC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/ItineraryDao.java’ ’("1*û
-1|
-pC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/ItineraryDao.java“ “(åâ
-|
-pC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/ItineraryDao.java“! “(33
-%0-it.ispw.daniele.backpacker.dao.ItineraryDao$4"-it.ispw.daniele.backpacker.dao.ItineraryDao$4Ú
-×
-|
-pC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/ItineraryDao.java“ §(	
-%1"java.lang.Object#<init>()V*5
-3
-%0-it.ispw.daniele.backpacker.dao.ItineraryDao$4©¦
-|
-pC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/ItineraryDao.java“ §(
-
-%2java.lang.Boolean"pit.ispw.daniele.backpacker.dao.DaoTemplate#execute(Lit/ispw/daniele/backpacker/dao/DaoAction;)Ljava/lang/Object;*/-
-+it.ispw.daniele.backpacker.dao.ItineraryDao*5
-3
-%0-it.ispw.daniele.backpacker.dao.ItineraryDao$423execute(Lit/ispw/daniele/backpacker/dao/DaoAction;)"†
-|
-pC:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/java/it/ispw/daniele/backpacker/dao/ItineraryDao.java“ §(
-"":
-idjava.lang.String:
-guideIdjava.lang.String:
-locationjava.lang.String:
-datejava.util.Date:
-timejava.lang.String: 
-participantsjava.lang.String:
-pricejava.lang.String:
-stepsjava.lang.StringB/-
-+it.ispw.daniele.backpacker.dao.ItineraryDao
