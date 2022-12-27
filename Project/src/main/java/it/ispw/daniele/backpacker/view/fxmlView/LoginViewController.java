@@ -81,7 +81,7 @@ public class LoginViewController {
     public void switchToSignUp() throws IOException {
         SignUpController suc = new SignUpController();
         FXMLLoader loader = new FXMLLoader();
-        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/SignUp-Page.fxml");
+        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/view/fxmlView/SignUp-Page.fxml");
         Parent fxmlLoader = loader.load(fileInputStream);
         loader.setController(suc);
 
@@ -94,7 +94,7 @@ public class LoginViewController {
     public void switchToLogin() throws IOException {
         LoginViewController lvc = new LoginViewController();
         FXMLLoader loader = new FXMLLoader();
-        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/LoginView-Page.fxml");
+        FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/view/fxmlView/LoginView-Page.fxml");
         Parent fxmlLoader = loader.load(fileInputStream);
         loader.setController(lvc);
         this.LabelLogin.getScene().setRoot(fxmlLoader);
