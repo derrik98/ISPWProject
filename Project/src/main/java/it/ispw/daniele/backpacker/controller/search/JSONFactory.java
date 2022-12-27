@@ -26,18 +26,14 @@ public abstract class JSONFactory {
         try (InputStream is = new URL(url).openStream()) {
             BufferedReader rd = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
             String jsonText = readAll(rd);
-            JSONObject json = new JSONObject(jsonText);
-            return json;
+            return new JSONObject(jsonText);
         }
     }
 
     public static String convertString(String string) {
         String newString;
         newString = string.replaceAll("\\s+", "%20");
-        //System.out.println("NEWSTRING "+ newString);
-        //System.out.println(string);
         return newString;
-
     }
 
     protected StringBuilder upperCase(String country) {

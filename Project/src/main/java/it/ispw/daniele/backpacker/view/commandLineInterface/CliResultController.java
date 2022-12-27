@@ -106,21 +106,17 @@ public class CliResultController {
 
                 case "1" -> {
                     SaveTour st = new SaveTour();
-                    try {
-                        System.out.println("Digit Itinerary id");
-                        int input = scanner.nextInt();
-                        System.out.flush();
-                        if(input <= itineraryBeanList.size() && input >= 0){
-                            st.saveTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(input));
-                            System.out.println(GREEN + "Itinerary added successfully" + RESET);
-                        }//   COMMENTARE IL CODICE
-                        else{
-                            System.out.println(RED + "Incorrect id" + RESET);
-                        }
-
-                    } catch (ParseException e) {
-                        throw new RuntimeException(e);
+                    System.out.println("Digit Itinerary id");
+                    int input = scanner.nextInt();
+                    System.out.flush();
+                    if(input <= itineraryBeanList.size() && input >= 0){
+                        st.saveTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(input));
+                        System.out.println(GREEN + "Itinerary added successfully" + RESET);
+                    }//   COMMENTARE IL CODICE
+                    else{
+                        System.out.println(RED + "Incorrect id" + RESET);
                     }
+
                 }
                 case "2" -> {
                     System.out.println("Digit Itinerary id");

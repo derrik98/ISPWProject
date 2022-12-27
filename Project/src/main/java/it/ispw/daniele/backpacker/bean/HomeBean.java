@@ -1,7 +1,5 @@
 package it.ispw.daniele.backpacker.bean;
 
-import java.util.logging.Logger;
-
 public class HomeBean {
 
     private String country;

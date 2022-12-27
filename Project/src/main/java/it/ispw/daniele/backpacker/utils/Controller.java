@@ -202,12 +202,8 @@ public abstract class Controller {
                 ivSave.setOnMouseClicked(mouseEvent -> {
 
                     SaveTour st = new SaveTour();
-                    try {
-                        System.out.println("ITINERARIO ." + itineraryBeanList.get(finalJ1).getSteps());
-                        st.saveTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(finalJ1));
-                    } catch (ParseException e) {
-                        throw new RuntimeException(e);
-                    }
+                    System.out.println("ITINERARIO ." + itineraryBeanList.get(finalJ1).getSteps());
+                    st.saveTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(finalJ1));
                 });
             }
 

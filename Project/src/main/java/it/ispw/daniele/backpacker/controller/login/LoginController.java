@@ -41,11 +41,6 @@ public class LoginController {
         return ud.createUser(ub.getUsername(), ub.getName(), ub.getSurname(), ub.getEmail(), ub.getPassword(), ub.getProfilePicture());
     }
 
-//    public boolean createRestaurantOwner(RestaurantOwnerBean ab) {
-//        RestaurantOwnerDao ad = new RestaurantOwnerDao();
-//        return ad.createRestaurantOwner(ab.getUsername(), ab.getPassword(), ab.getName(), ab.getProfilePicture(), ab.getEmail());
-//    }
-
     public boolean createTouristGuide(TouristGuideBean tgb) {
         TouristGuideDao tgd = new TouristGuideDao();
         return tgd.createTouristGuide(tgb.getUsername(), tgb.getName(), tgb.getSurname(), tgb.getEmail(), tgb.getPassword(), tgb.getProfilePicture(), tgb.getIdentificationCode());

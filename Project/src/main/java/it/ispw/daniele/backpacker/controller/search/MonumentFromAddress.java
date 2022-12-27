@@ -24,8 +24,6 @@ public class MonumentFromAddress extends JSONFactory{
 
     public ArrayList<String> getMonuments(String address) throws MonumentNotFoundException {
         this.getJSON(address, "monuments");
-        //System.out.println("MONUMENTI" + monuments);
-        //resultBean.setMonuments(monumentFromAddress.getMonuments());
         return this.monuments;
     }
 
@@ -56,27 +54,4 @@ public class MonumentFromAddress extends JSONFactory{
         return true;
     }
 
-    private JSONArray getTypes(JSONObject jsonObject) {
-        return (JSONArray) jsonObject.get("types");
-    }
-
-    private String getRating(JSONObject jsonObject) {
-        return jsonObject.get("rating").toString();
-    }
-
-    private BigDecimal getLat(JSONObject jsonObject) {
-        JSONObject geometry = (JSONObject) jsonObject.get("geometry");
-        JSONObject location = (JSONObject) geometry.get("location");
-        return (BigDecimal) location.get("lat");
-    }
-
-    private BigDecimal getLon(JSONObject jsonObject) {
-        JSONObject geometry = (JSONObject) jsonObject.get("geometry");
-        JSONObject location = (JSONObject) geometry.get("location");
-        return (BigDecimal) location.get("lng");
-    }
-
-    public String getJSONName(JSONObject jsonObject){
-        return (String) jsonObject.get("name");
-    }
 }

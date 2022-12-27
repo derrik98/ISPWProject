@@ -4,7 +4,6 @@ import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.lang.*;
 import java.io.IOException;
 
 public class CityFromCountry extends JSONFactory{
@@ -33,7 +32,6 @@ public class CityFromCountry extends JSONFactory{
         upperCase = String.valueOf(upperCase(country));
 
         if (s.contains(country) || s.contains(upperCase)) {
-           // System.out.println(upperCase);
             return true;
         }
         else{

@@ -7,11 +7,12 @@ import it.ispw.daniele.backpacker.entity.Itinerary;
 import it.ispw.daniele.backpacker.utils.Controller;
 
 import java.text.ParseException;
+import java.util.Collections;
 import java.util.List;
 
 public class SaveTour extends Controller {
 
-    public void saveTour(GeneralUserBean user, ItineraryBean itinerary) throws ParseException {
+    public void saveTour(GeneralUserBean user, ItineraryBean itinerary) {
         ItineraryDao id = new ItineraryDao();
         id.saveTour(user.getUsername(), itinerary.getSteps());
     }
@@ -21,7 +22,7 @@ public class SaveTour extends Controller {
         id.removeTour(user.getUsername(), itinerary.getSteps());
     }
 
-    public List<ItineraryBean> getItinerary(String input){//, GeneralUserBean gu) {
+    public List<ItineraryBean> getItinerary(String input){
         ItineraryDao id = new ItineraryDao();
         List<Itinerary> itinerary;
 
@@ -31,7 +32,7 @@ public class SaveTour extends Controller {
             return this.convert(itinerary);
         }
         else{
-            return null;
+            return Collections.emptyList();
         }
     }
 
