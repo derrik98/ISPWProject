@@ -12,13 +12,11 @@ public class DBUserConnection {
 
     private static final String driverClassName = "com.mysql.jdbc.Driver";
 
-    private DBUserConnection() {
-
-    }
-
     public static Connection getUserConnection() throws ClassNotFoundException, SQLException {
 
-        if(me != null) return me;
+        if(me != null) {
+            return me;
+        }
         else {
             Class.forName(driverClassName);
             me = DriverManager.getConnection(dbUrl,user,"user");
@@ -27,8 +25,8 @@ public class DBUserConnection {
 
     }
 
-    public static void closeUserConnection() throws SQLException{
-        me.close();
+    public static void closeUserConnection(Connection conn) throws SQLException{
+        conn.close();
         me = null;
     }
 

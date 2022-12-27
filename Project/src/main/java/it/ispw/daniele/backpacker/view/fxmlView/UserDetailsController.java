@@ -84,27 +84,7 @@ public class UserDetailsController extends Controller {
         UserGraphicChange ugc = UserGraphicChange.getInstance();
         ugc.menuBar(this.menuBar, "profile");
 
-        GeneralUserBean gub = SessionUser.getInstance().getSession();
-
-        /*this.username.setText(this.gub.getUsername());
-        this.name.setText(this.gub.getPassword());
-        this.email.setText(this.gub.getEmail());*/
-
-        //List<UserBean> users = this.getSearchUser("search_user", SessionUser.getInstance().getSession().getUsername());
         UserBean users = this.getSearchUser("search_user", SessionUser.getInstance().getSession().getUsername());
-
-        /*for(int i = 0; i < users.size(); i++){
-            System.out.println(users.get(i).getName());
-            System.out.println(users.get(i).getSurname());
-            System.out.println(users.get(i).getEmail());
-            System.out.println(users.get(i).getPassword());
-            System.out.println(users.get(i).getUsername());
-        }*/
-
-        /*this.username.setText(users.get(0).getUsername());
-        this.name.setText(users.get(0).getName());
-        this.email.setText(users.get(0).getEmail());
-        this.surname.setText(users.get(0).getSurname());*/
 
         this.username.setText(users.getUsername());
         this.name.setText(users.getName());
@@ -113,7 +93,7 @@ public class UserDetailsController extends Controller {
 
         String path = FileManager.PROFILE + File.separator + users.getProfilePicture();
 
-        File file = new File(path);
+        File file = new File(FileManager.PROFILE + File.separator + users.getProfilePicture());
         Image image = new Image(file.toURI().toString());
         this.profilePicture.setImage(image);
         this.profilePicture.setFitHeight(150);
@@ -121,7 +101,7 @@ public class UserDetailsController extends Controller {
 
         BookTourController btc = new BookTourController();
         List<ItineraryBean> booked;
-        booked = btc.getItinerary(users.getUsername(), "user");
+        booked = new BookTourController().getItinerary(users.getUsername(), "user");//btc.getItinerary(users.getUsername(), "user");
 
         SaveTour st = new SaveTour();
         List<ItineraryBean> saved;

@@ -23,7 +23,7 @@ public class SaveTour extends Controller {
 
     public List<ItineraryBean> getItinerary(String input){//, GeneralUserBean gu) {
         ItineraryDao id = new ItineraryDao();
-        List<Itinerary> itinerary = null;
+        List<Itinerary> itinerary;
 
         itinerary = id.getSavedItinerary(input);
 

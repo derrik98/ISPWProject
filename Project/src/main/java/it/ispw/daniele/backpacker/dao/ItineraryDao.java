@@ -31,7 +31,7 @@ public class ItineraryDao extends DaoTemplate{
         List<Itinerary> ret = this.execute(new DaoAction<List<Itinerary>>() {
             @Override
             public List<Itinerary> act() throws ClassNotFoundException, SQLException {
-                Connection conn = null;
+                Connection conn;
                 List<Itinerary> itinerary = new ArrayList<>();
                 String sql = null;
 
@@ -52,42 +52,18 @@ public class ItineraryDao extends DaoTemplate{
                             itinerary = unpackResultSet(rs);
                         }
                     }
-                    ////////////////////////////
-                    /*try (ResultSet rs = stm.executeQuery()) {
-                        rs.next();
 
-                        String name = rs.getString(ID);
-                        String location = rs.getString(LOCATION);
-                        String guideId = rs.getString(GUIDE_ID);
-                        String date = rs.getString(DATE);
-                        String steps = rs.getString(STEPS);
-
-                        System.out.println(name + location + guideId + date + steps + "AAAAAAAAAAAAAAAAAAA");*/
-////////////////////////////
-                    //setting up coordinates of the musicevent
-                        /*double latitude = rs.getDouble(LATITUDE);
-                        double longitude = rs.getDouble(LONGITUDE);
-                        List<Double> coordinates = new ArrayList<>();
-                        coordinates.add(latitude);
-                        coordinates.add(longitude);
-
-                        if(coverPath == null || coverPath.equals("")) {
-                            coverPath = DEFAULTPICTURE;
-                        }*/
-
-                    //itinerary = new Itinerary(name, location, guideId, date, steps);
-                    ///System.out.println("sono quiiiiiiiiiii " + itinerary);
-                    //itinerary.setCoordinates(coordinates);
                 }
-
+                DBUserConnection.closeUserConnection(conn);
                 return itinerary;
             }
         });
-        if (ret != null)
+        if (ret != null) {
             return ret;
-        else
+        }
+        else {
             return Collections.emptyList();
-
+        }
     }
 
     public void addParticipation(String username, int itineraryId) {
@@ -106,6 +82,7 @@ public class ItineraryDao extends DaoTemplate{
                 stm.setString(1, username);
                 stm.setInt(2,  itineraryId);
                 try (ResultSet rs = stm.executeQuery()) {
+                    DBUserConnection.closeUserConnection(conn);
                     return (rs.first());
                 }
             }
@@ -136,6 +113,7 @@ public class ItineraryDao extends DaoTemplate{
                 if (stm != null)
                     stm.close();
             }
+            DBUserConnection.closeUserConnection(conn);
             return null;
         });
     }
@@ -147,7 +125,6 @@ public class ItineraryDao extends DaoTemplate{
             try (PreparedStatement stm = con.prepareStatement(sql)) {
                 java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 
-               // stm.setString(1, id);
                 stm.setString(1, guideId);
                 stm.setString(2, location);
                 stm.setDate(3, sqlDate);
@@ -163,18 +140,14 @@ public class ItineraryDao extends DaoTemplate{
 
     public int getItineraryId(String guideId, String location, String date, String time, int participants, int price, String steps) throws SQLException, ClassNotFoundException {
 
-
-            Connection conn = null;
-                String sql = null;
-                PreparedStatement stm = null;
+            Connection conn;
+            String sql;
+            PreparedStatement stm;
 
                 conn = DBUserConnection.getUserConnection();
                 sql = "call backpacker.get_itinerary_id(?, ?, ?, ?, ?, ?; ?);\r\n";
                 stm = conn.prepareStatement(sql);
 
-                //java.sql.Date sqlDate = new java.sql.Date(date.);
-
-                // stm.setString(1, id);
                 stm.setString(1, guideId);
                 stm.setString(2, location);
                 stm.setString(3, date);
@@ -191,13 +164,8 @@ public class ItineraryDao extends DaoTemplate{
                 } finally {
                     if (stm != null)
                         stm.close();
+                    DBUserConnection.closeUserConnection(conn);
                 }
-
-        /*if (ret != null) {
-            return ret;
-        } else {
-            return true;
-        }*/
     }
 
     public List<Itinerary> getBookedItineraries(String input) {
@@ -359,6 +327,7 @@ public class ItineraryDao extends DaoTemplate{
     }
 
     public void removeTour(String username, String steps) {
+
         this.execute(() -> {
             Connection con = DBUserConnection.getUserConnection();
             String sql = "call backpacker.remove_itinerary(?, ?);\r\n";
@@ -367,9 +336,9 @@ public class ItineraryDao extends DaoTemplate{
                 stm.setString(1, username);
                 stm.setString(2, steps);
                 stm.executeUpdate();
-
             }
             return true;
         });
     }
+
 }

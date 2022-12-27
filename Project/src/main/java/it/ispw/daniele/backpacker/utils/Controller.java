@@ -181,17 +181,22 @@ public abstract class Controller {
                 HBox.setHgrow(region1, Priority.ALWAYS);
             }
 
-            //Setting of save image
+
             ImageView ivSave;
             int finalJ1 = jind;
+
+            //Setting of delete image
             if(from.equals("profile")){
                 ivSave = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/cestino.png")).toExternalForm()));
                 ivSave.setOnMouseClicked(mouseEvent -> {
                     SaveTour st = new SaveTour();
                     System.out.println("ITINERARIO ." + itineraryBeanList.get(finalJ1).getSteps());
                     st.removeTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(finalJ1));
+                    accordion.getPanes().remove(titledPane);
                 });
             }
+
+            //Setting of save image
             else{
                 ivSave = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/save.png")).toExternalForm()));
                 ivSave.setOnMouseClicked(mouseEvent -> {
