@@ -112,7 +112,7 @@ public class UserDetailsController extends Controller {
             System.out.println("EMPTY_DATABASE ");
         }
         else {
-            Accordion accordionSuggested = this.createTable(booked, "suggested", "profile");
+            Accordion accordionSuggested = this.createTable(booked, "suggested", "profile", null);
             vBoxBooked.getChildren().addAll(accordionSuggested);
         }
         if(saved == null){
@@ -120,7 +120,7 @@ public class UserDetailsController extends Controller {
             System.out.println("EMPTY_DATABASE ");
         }
         else {
-            Accordion accordionSelf = this.createTable(saved, "self", "profile");
+            Accordion accordionSelf = this.createTable(saved, "self", "profile", null);
             vBoxSaved.getChildren().addAll(accordionSelf);
         }
     }

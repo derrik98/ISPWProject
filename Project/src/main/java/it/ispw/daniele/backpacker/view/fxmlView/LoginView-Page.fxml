@@ -104,6 +104,9 @@
                                     <font>
                                         <Font size="1.0" />
                                     </font>
+                           <HBox.margin>
+                              <Insets bottom="40.0" top="40.0" />
+                           </HBox.margin>
                                 </Text>
                             </HBox>
                      <VBox.margin>

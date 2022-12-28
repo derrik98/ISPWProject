@@ -52,6 +52,8 @@ public class ResultController extends Controller {
     @FXML
     private HBox menuBar = new HBox();
 
+    private static ResultController instance = null;
+
     public void init(HomeBean homeBean) throws MonumentNotFoundException {
 
         if(SessionUser.getInstance().getSession().getRole().equals(Roles.TOURIST_GUIDE.name().toLowerCase())) {
@@ -114,7 +116,7 @@ public class ResultController extends Controller {
             guideImage.setFitHeight(50);
             guideImage.setFitHeight(50);
 
-            Accordion accordionSuggested = this.createTable(suggItinerary, "suggested", "result");
+            Accordion accordionSuggested = this.createTable(suggItinerary, "suggested", "result", stackPaneResult);
             vBoxResultGuide.getChildren().add(accordionSuggested);
         }
 
@@ -128,8 +130,15 @@ public class ResultController extends Controller {
         else {
             selfItinerary.setText("Self Itinerary");
 
-            Accordion accordionSelf = this.createTable(iti, "self", "result");
+            Accordion accordionSelf = this.createTable(iti, "self", "result", null);
             vBoxResult.getChildren().add(accordionSelf);
         }
+    }
+
+    public static ResultController getInstance() {
+        if(instance == null){
+            instance = new ResultController();
+        }
+        return instance;
     }
 }

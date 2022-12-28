@@ -1,6 +1,7 @@
 package it.ispw.daniele.backpacker.view.fxmlView;
 
 import it.ispw.daniele.backpacker.bean.HomeBean;
+import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
 import it.ispw.daniele.backpacker.utils.Roles;
 import javafx.fxml.FXML;
@@ -8,6 +9,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -63,19 +66,30 @@ public abstract class GUIChangeTemplate{
         });
     }
 
-    /*public void switchToProfile(Scene scene, UserBean myUser){//(Scene scene, UserBean ub, String from, String searchstring) {
+    public void switchToItineraryDetails(ItineraryBean itineraryBean){
         this.catcher(new GUIAction() {
             @Override
             public void action() throws IOException {
                 FXMLLoader loader = new FXMLLoader();
-                FileInputStream fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/User-Details-Page.fxml");
+                FileInputStream fileInputStream;
+
+                fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/view/fxmlView/ItineraryDetails-Page.fxml");
                 Parent fxmlLoader = loader.load(fileInputStream);
-                ProfileController pc = loader.getController();
-                scene.setRoot(fxmlLoader);
-                pc.init(myUser);
+                ItineraryDetailsController idc = loader.getController();
+                idc.init(itineraryBean);
+
+                StackPane stackPaneResult = ResultController.getInstance().stackPaneResult;
+                VBox vBox = ResultController.getInstance().vBoxDynamic;
+                //StackPane stackPaneResult = new StackPane();
+
+                System.out.println(itineraryBean);
+                System.out.println(stackPaneResult.getChildren());
+                stackPaneResult.getChildren().add(fxmlLoader)
+                ;//  C'ERANOOOOOO
+                stackPaneResult.getChildren().get(0).setDisable(true);// OOOOOOOOO
             }
         });
-    }*/
+    }
 
     public void menuBar (HBox pos, String sel){
         this.catcher(new GUIAction() {

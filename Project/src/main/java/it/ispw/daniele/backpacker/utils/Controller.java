@@ -8,6 +8,8 @@ import it.ispw.daniele.backpacker.entity.Itinerary;
 import it.ispw.daniele.backpacker.entity.TouristGuide;
 import it.ispw.daniele.backpacker.entity.User;
 import it.ispw.daniele.backpacker.view.fxmlView.ItineraryDetailsController;
+import it.ispw.daniele.backpacker.view.fxmlView.ResultController;
+import it.ispw.daniele.backpacker.view.fxmlView.UserGraphicChange;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -21,11 +23,13 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.web.WebView;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -81,7 +85,7 @@ public abstract class Controller {
         return ib;
     }
 
-    protected Accordion createTable(List<ItineraryBean> itineraryBeanList, String type, String from){
+    protected Accordion createTable(List<ItineraryBean> itineraryBeanList, String type, String from, StackPane stackPane){
 
         Accordion accordion = new Accordion();
         int jind;
@@ -150,31 +154,45 @@ public abstract class Controller {
 
             if(type.equals("suggested")){
 
-                //Setting of buy image
-                ImageView ivBuy = new ImageView();
-                ivBuy = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/buy.png")).toExternalForm()));
-                ivBuy.setFitWidth(50);
-                ivBuy.setFitHeight(50);
-                ivBuy.setCursor(Cursor.HAND);
+                if(!from.equals("profile")) {
 
-                int finalJ = jind;
-                ivBuy.setOnMouseClicked(mouseEvent -> {
-                    FXMLLoader loader = new FXMLLoader();
-                    FileInputStream fileInputStream;
-                    try {
 
-                        fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/fxmlView/ItineraryDetails-Page.fxml");
-                        Parent fxmlLoader = loader.load(fileInputStream);
-                        ItineraryDetailsController idc = loader.getController();
-                        idc.init(itineraryBeanList.get(finalJ));
-                        ////this.stackPaneResult.getChildren().add(fxmlLoader);  C'ERANOOOOOO
-                        /////stackPaneResult.getChildren().get(0).setDisable(true); OOOOOOOOO
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
-                });
+                    //Setting of buy image
+                    ImageView ivBuy = new ImageView();
+                    ivBuy = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/buy.png")).toExternalForm()));
+                    ivBuy.setFitWidth(50);
+                    ivBuy.setFitHeight(50);
+                    ivBuy.setCursor(Cursor.HAND);
 
-                contentPane.getChildren().addAll(region, ivBuy);
+                    int finalJ = jind;
+                    ivBuy.setOnMouseClicked(mouseEvent -> {
+                        FXMLLoader loader = new FXMLLoader();
+                        FileInputStream fileInputStream;
+
+                        try {
+                            fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/view/fxmlView/ItineraryDetails-Page.fxml");
+                            Parent fxmlLoader = loader.load(fileInputStream);
+                            ItineraryDetailsController idc = loader.getController();
+                            idc.init(itineraryBeanList.get(finalJ));
+
+                            stackPane.getChildren().add(fxmlLoader);//  C'ERANOOOOOO
+                            stackPane.getChildren().get(0).setDisable(true);// OOOOOOOOO
+
+                        /*stackPaneResult.getChildren().add(fxmlLoader);//  C'ERANOOOOOO
+                        stackPaneResult.getChildren().get(0).setDisable(true);// OOOOOOOOO*/
+                        } catch (FileNotFoundException e) {
+                            throw new RuntimeException(e);
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+
+                    });
+
+                    contentPane.getChildren().addAll(region, ivBuy);
+                }
+                else {
+                    HBox.setHgrow(region1, Priority.ALWAYS);
+                }
             }
 
             else {
@@ -187,6 +205,7 @@ public abstract class Controller {
 
             //Setting of delete image
             if(from.equals("profile")){
+
                 ivSave = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/cestino.png")).toExternalForm()));
                 ivSave.setOnMouseClicked(mouseEvent -> {
                     SaveTour st = new SaveTour();
