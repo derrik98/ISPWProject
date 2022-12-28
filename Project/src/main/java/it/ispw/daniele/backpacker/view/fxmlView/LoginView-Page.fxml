@@ -58,7 +58,7 @@
                                 <Insets />
                             </opaqueInsets>
                         </HBox>
-                        <VBox fx:id="dynamicZone" alignment="CENTER" prefHeight="268.0" prefWidth="900.0" spacing="15.0" style="-fx-background-color: rgba(183,135,45,0.95); -fx-background-radius: 0 0 25 25;">
+                        <VBox fx:id="dynamicZone" alignment="CENTER" prefWidth="900.0" spacing="15.0" style="-fx-background-color: rgba(183,135,45,0.95); -fx-background-radius: 0 0 25 25;">
                             <HBox alignment="CENTER" prefWidth="900.0" spacing="20.0">
                                 <VBox.margin>
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="40.0" />

@@ -141,4 +141,5 @@ public class ResultController extends Controller {
         }
         return instance;
     }
+
 }

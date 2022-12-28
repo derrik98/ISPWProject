@@ -124,4 +124,5 @@ public class UserDetailsController extends Controller {
             vBoxSaved.getChildren().addAll(accordionSelf);
         }
     }
+
 }

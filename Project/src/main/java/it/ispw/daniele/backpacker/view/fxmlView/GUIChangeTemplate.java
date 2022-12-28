@@ -66,7 +66,7 @@ public abstract class GUIChangeTemplate{
         });
     }
 
-    public void switchToItineraryDetails(ItineraryBean itineraryBean){
+    public void switchToItineraryDetails(Scene scene, ItineraryBean itineraryBean){
         this.catcher(new GUIAction() {
             @Override
             public void action() throws IOException {
@@ -84,8 +84,7 @@ public abstract class GUIChangeTemplate{
 
                 System.out.println(itineraryBean);
                 System.out.println(stackPaneResult.getChildren());
-                stackPaneResult.getChildren().add(fxmlLoader)
-                ;//  C'ERANOOOOOO
+                stackPaneResult.getChildren().add(fxmlLoader);
                 stackPaneResult.getChildren().get(0).setDisable(true);// OOOOOOOOO
             }
         });

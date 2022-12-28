@@ -8,13 +8,12 @@ import it.ispw.daniele.backpacker.entity.Itinerary;
 import it.ispw.daniele.backpacker.entity.TouristGuide;
 import it.ispw.daniele.backpacker.entity.User;
 import it.ispw.daniele.backpacker.view.fxmlView.ItineraryDetailsController;
-import it.ispw.daniele.backpacker.view.fxmlView.ResultController;
-import it.ispw.daniele.backpacker.view.fxmlView.UserGraphicChange;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Control;
 import javafx.scene.control.Label;
@@ -31,7 +30,6 @@ import javafx.scene.web.WebView;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -97,6 +95,7 @@ public abstract class Controller {
                 als.add(i, steps[i]);
             }
             TitledPane titledPane = new TitledPane();
+            titledPane.setStyle("fx-fxbackground-color: rgba(139,103,40,0.95); -fx-color-label-visible: rgba(139,103,40,0.95)");
             titledPane.setCollapsible(false);
             titledPane.setAlignment(Pos.CENTER);
             HBox contentPane = new HBox();
@@ -178,7 +177,7 @@ public abstract class Controller {
                             stackPane.getChildren().add(fxmlLoader);//  C'ERANOOOOOO
                             stackPane.getChildren().get(0).setDisable(true);// OOOOOOOOO
 
-                        /*stackPaneResult.getChildren().add(fxmlLoader);//  C'ERANOOOOOO
+                        /*stackPaneResult.getChildren().add(fxmlLoader);//  C'ERANOOOOOO  prima
                         stackPaneResult.getChildren().get(0).setDisable(true);// OOOOOOOOO*/
                         } catch (FileNotFoundException e) {
                             throw new RuntimeException(e);
@@ -245,7 +244,6 @@ public abstract class Controller {
                 if (!titledPane.isCollapsible()) {
                     titledPane.setCollapsible(true);
                     titledPane.setExpanded(true);
-                    System.out.println("tasto mappa cliccato");
                 } else {
                     titledPane.setCollapsible(false);
                     titledPane.setExpanded(false);
@@ -260,4 +258,5 @@ public abstract class Controller {
         }
         return accordion;
     }
+
 }

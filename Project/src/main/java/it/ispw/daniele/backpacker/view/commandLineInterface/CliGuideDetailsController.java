@@ -1,6 +1,7 @@
 package it.ispw.daniele.backpacker.view.commandLineInterface;
 
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
+import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.bean.TouristGuideBean;
 import it.ispw.daniele.backpacker.dao.TouristGuideDao;
 import it.ispw.daniele.backpacker.entity.TouristGuide;
@@ -46,4 +47,5 @@ public class CliGuideDetailsController extends Controller {
             }
         }while (true);
     }
+
 }
