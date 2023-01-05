@@ -1,5 +1,6 @@
 package it.ispw.daniele.backpacker.view.fxmlView;
 
+import it.ispw.daniele.backpacker.bean.HomeBean;
 import it.ispw.daniele.backpacker.bean.TouristGuideBean;
 import it.ispw.daniele.backpacker.utils.Roles;
 import javafx.fxml.FXMLLoader;
@@ -43,9 +44,6 @@ public class TouristGuideGraphicChange extends GUIChangeTemplate{
         AddItineraryViewController addItineraryViewController = loader.getController();
         scene.setRoot(fxmlLoader);
         addItineraryViewController.init();
-    }
-
-    public void switchToNotifications(Scene scene) {
     }
 
     public void switchToTGuideDet(Scene scene, TouristGuideBean myUser){//(Scene scene, UserBean ub, String from, String searchstring) {

@@ -72,6 +72,8 @@ public class HomeUserController{
                 throw new FileNotFoundException("ERROR");
             }
 
+            SessionUser.getInstance().setSearchSession(homeBean);
+
             SearchController sc = new SearchController();
             sc.checkInput(homeBean);
             UserGraphicChange.getInstance().switchToResult(this.textFieldCountry.getScene(), homeBean);

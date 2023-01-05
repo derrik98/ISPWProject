@@ -5,17 +5,12 @@ import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.text.Text;
 
 import java.io.IOException;
 import java.util.Stack;
 
 public class TouristGuideMenuBarController {
 
-
-    @FXML
-    public Text notificationNumber;
-    public ImageView imageMessage;
     @FXML
     private Label LabelHome = new Label();
     @FXML
@@ -80,12 +75,7 @@ public class TouristGuideMenuBarController {
 
     }
 
-    public void viewNotification() {
-        this.guideGraphicChange.switchToNotifications(this.imageMessage.getScene());
-    }
-
     public void init(String selected) {
-        notificationNumber.setText("10");
 
         this.guideGraphicChange = TouristGuideGraphicChange.getInstance();
 

@@ -13,10 +13,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="FxmlFile" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -37,7 +37,8 @@
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/Desktop/ISPW_Project/trunk/Project/src/main/resources&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/Desktop/file esame controllati/Calculator&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -80,7 +81,7 @@
       <recent name="it.ispw.daniele.backpacker.fxmlView" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CLI">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.view.fxmlView.App" />
       <module name="Backpacker" />
@@ -135,8 +136,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CLI" />
         <item itemvalue="Application.App" />
+        <item itemvalue="Application.CLI" />
       </list>
     </recent_temporary>
   </component>
@@ -405,6 +406,10 @@
       <workItem from="1672180981908" duration="3489000" />
       <workItem from="1672185109322" duration="2274000" />
       <workItem from="1672240070554" duration="5003000" />
+      <workItem from="1672333746277" duration="3942000" />
+      <workItem from="1672358703545" duration="3647000" />
+      <workItem from="1672363067286" duration="632000" />
+      <workItem from="1672873951569" duration="3403000" />
     </task>
     <servers />
   </component>

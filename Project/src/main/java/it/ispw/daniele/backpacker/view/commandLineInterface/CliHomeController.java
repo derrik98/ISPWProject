@@ -59,7 +59,7 @@ public class CliHomeController {
         sc.checkInput(homeBean);
 
         CliResultController crc = new CliResultController();
-        crc.init(country, city, address, restaurant, range);
+        crc.init(homeBean);
         //CliUserGraphicChange.getInstance().switchToResult(country, city, address, restaurant, range);
     } catch (CityNotFoundException | AddressNotFoundException | MonumentNotFoundException exception) {
         System.out.println(RED + exception.getMessage() + RESET + "\n");

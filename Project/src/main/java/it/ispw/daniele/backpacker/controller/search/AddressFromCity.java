@@ -1,5 +1,6 @@
 package it.ispw.daniele.backpacker.controller.search;
 
+import it.ispw.daniele.backpacker.bean.HomeBean;
 import it.ispw.daniele.backpacker.exceptions.AddressNotFoundException;
 import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
 import org.json.JSONArray;
@@ -20,10 +21,10 @@ public class AddressFromCity extends JSONFactory{
     }
 
     @Override
-    public boolean getJSON(String address, String city) throws AddressNotFoundException, IOException {
+    public boolean getJSON(HomeBean homeBean) throws AddressNotFoundException, IOException {
         JSONObject json;
 
-        json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/autocomplete/json?input=" + convertString(address) + "&types=geocode&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg&language=it");
+        json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/autocomplete/json?input=" + convertString(homeBean.getAddress()) + "&types=geocode&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg&language=it");
 
 
         if(!json.getString("status").equals("OK")) {
@@ -35,9 +36,9 @@ public class AddressFromCity extends JSONFactory{
         String s = (String) o.get("description");
 
         String upperCase;
-        upperCase = String.valueOf(upperCase(city));
+        upperCase = String.valueOf(upperCase(homeBean.getCity()));
 
-        if (s.contains(city) || s.contains(upperCase)) {
+        if (s.contains(homeBean.getCity()) || s.contains(upperCase)) {
             return true;
         }
         else{

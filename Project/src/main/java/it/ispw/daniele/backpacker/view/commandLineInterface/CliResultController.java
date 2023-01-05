@@ -1,5 +1,6 @@
 package it.ispw.daniele.backpacker.view.commandLineInterface;
 
+import it.ispw.daniele.backpacker.bean.HomeBean;
 import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.booktour.BookTourController;
 import it.ispw.daniele.backpacker.booktour.SaveTour;
@@ -23,14 +24,14 @@ public class CliResultController {
 
     List<ItineraryBean> it;
 
-    public void init(String country, String city, String address, String restaurant, String range) throws MonumentNotFoundException {
+    public void init(HomeBean homeBean) throws MonumentNotFoundException {
         System.out.print("\033[H\033[2J");
         System.out.println(BOLD + "RESULT PAGE\n" + RESET);
-        System.out.println("Country: " + country + ", City: " + city + ", Address: " + address + ", Restaurant: " + restaurant + ", Range: " + range + "\n");
+        System.out.println("Country: " + homeBean.getCountry() + ", City: " + homeBean.getCity() + ", Address: " + homeBean.getAddress() + ", Restaurant: " + homeBean.isRestaurant() + ", Range: " + homeBean.getRange() + "\n");
 
         BookTourController btc = new BookTourController();
         //List<ItineraryBean> it;
-        it = btc.getItinerary(city, "city");
+        it = btc.getItinerary(homeBean.getCity(), "city");
         int bookedSize = 0;
 
         if (it == null || it.isEmpty()) {
@@ -43,7 +44,8 @@ public class CliResultController {
 
         SearchController sc = new SearchController();
         List<ItineraryBean> iti;
-        iti = sc.createItinerary(address);
+        //iti = sc.createItinerary(homeBean.getAddress());
+        iti = sc.createItinerary(homeBean);
 
         if (iti == null) {
             System.out.println("Self Itinerary: " + RED + "EMPTY_DATABASE " + RESET + "\n");

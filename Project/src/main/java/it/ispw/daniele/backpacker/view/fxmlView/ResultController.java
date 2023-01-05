@@ -122,7 +122,7 @@ public class ResultController extends Controller {
 
         SearchController sc = new SearchController();
         List<ItineraryBean> iti;
-        iti = sc.createItinerary(addressSearch.getText());
+        iti = sc.createItinerary(homeBean);//sc.createItinerary(addressSearch.getText());
 
         if(iti == null){
             System.out.println("EMPTY_DATABASE ");

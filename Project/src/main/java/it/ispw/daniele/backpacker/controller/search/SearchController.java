@@ -18,11 +18,11 @@ public class SearchController extends Controller {
     public boolean checkInput(HomeBean bean) throws CityNotFoundException, AddressNotFoundException, MonumentNotFoundException, IOException {
         JSONFactory checkCityCountry = new CityFromCountry();
 
-        if (checkCityCountry.getJSON(bean.getCity(), bean.getCountry())) {
+        if (checkCityCountry.getJSON(bean)) {
             JSONFactory checkAddressCity = new AddressFromCity();
-            if(checkAddressCity.getJSON(bean.getAddress(), bean.getCity())) {
+            if(checkAddressCity.getJSON(bean)) {
                 MonumentFromAddress monuments = new MonumentFromAddress();
-                return monuments.getJSON(bean.getAddress(), "monuments");
+                return monuments.getJSON(bean);//monuments.getJSON("monuments", bean.getRange());
             }
             else{
                 return false;
@@ -31,11 +31,13 @@ public class SearchController extends Controller {
         return false;
     }
 
-    public List<ItineraryBean> createItinerary(String address) throws MonumentNotFoundException {
+    public List<ItineraryBean> createItinerary(HomeBean homeBean) throws MonumentNotFoundException {
 
         MonumentFromAddress monuments = new MonumentFromAddress();
-        ArrayList<String> result = monuments.getMonuments(address);
-        monuments.getJSON(address, "monuments");
+        //ArrayList<String> result = monuments.getMonuments(homeBean.getAddress());
+        ArrayList<String> result = monuments.getMonuments(homeBean);
+        //monuments.getJSON(address, "monuments");
+        monuments.getJSON(homeBean);
         ArrayList<Itinerary> allItineraries = new ArrayList<>();
 
         String steps = "";
@@ -43,10 +45,11 @@ public class SearchController extends Controller {
             steps = steps + "/" + result.get(i);
         }
 
-        //System.out.println("STEPS " + steps);
+        System.out.println("STEPS " + steps);
         ArrayList<Itinerary> it = new ArrayList<>();
 
         for(int i = 0; i < 5; i++) {
+
             Random num = new Random();
 
             StringBuilder vector = new StringBuilder();
@@ -55,11 +58,16 @@ public class SearchController extends Controller {
 
                 int index = num.nextInt((result.size() - 1) + 1);
 
-                if (!vector.toString().contains(result.get(index))) {
+                if (!vector.toString().contains(result.get(index)) && j != 0) {
 
                     vector.append("/").append(result.get(index));
                 }
+                else {
 
+                    vector.append(result.get(index));
+                }
+
+            System.out.print("VECTOR " + vector);
             }
 
             Itinerary itinerary = new Itinerary(new Random().nextInt(1000), vector.toString());

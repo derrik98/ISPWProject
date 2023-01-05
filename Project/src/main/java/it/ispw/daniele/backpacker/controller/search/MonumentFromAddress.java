@@ -1,5 +1,6 @@
 package it.ispw.daniele.backpacker.controller.search;
 
+import it.ispw.daniele.backpacker.bean.HomeBean;
 import it.ispw.daniele.backpacker.entity.Monument;
 import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
 import org.json.JSONArray;
@@ -22,18 +23,19 @@ public class MonumentFromAddress extends JSONFactory{
         return instance;
     }
 
-    public ArrayList<String> getMonuments(String address) throws MonumentNotFoundException {
-        this.getJSON(address, "monuments");
+    public ArrayList<String> getMonuments(HomeBean homeBean) throws MonumentNotFoundException {
+        //this.getJSON(address, "monuments");
+        this.getJSON(homeBean);
         return this.monuments;
     }
 
     @Override
-    public boolean getJSON(String address, String type) throws MonumentNotFoundException {
+    public boolean getJSON(HomeBean homeBean) throws MonumentNotFoundException {
 
         try {
             JSONObject json;
-            String url = ("https://maps.googleapis.com/maps/api/place/textsearch/json?query=monuments+in+"+convertString(address)+
-                    "&radius=8000&type=tourist_attraction&language=it&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");
+            String url = ("https://maps.googleapis.com/maps/api/place/textsearch/json?query=monuments+in+"+convertString(homeBean.getAddress()) +
+                    "&radius=" + homeBean.getRange() + "&type=tourist_attraction&language=it&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");
             json = readJsonFromUrl(url);
             JSONArray a = (JSONArray) json.get("results");
             int i = 0;

@@ -51,7 +51,7 @@ public class AddItineraryViewController {
         System.out.println(this.steps);
 
         System.out.println("condiviso");
-        int id = Integer.parseInt(this.textFieldId.getText());
+        //int id = Integer.parseInt(this.textFieldId.getText());
         String location = this.textFieldCity.getText();
         String date = "";
         String time = this.textFieldTime.getText();
@@ -65,7 +65,7 @@ public class AddItineraryViewController {
         }
 
         ItineraryBean itineraryBean = new ItineraryBean();
-        itineraryBean.setItineraryId(id);
+        //itineraryBean.setItineraryId(id);
         itineraryBean.setGuideId(this.guideBean.getUsername());
         itineraryBean.setDate(date);
         itineraryBean.setLocation(location);
@@ -105,19 +105,10 @@ public class AddItineraryViewController {
             textField.setId(String.valueOf(i));
             textField.setPromptText("step -> " + i);
 
-            /*textField.setOnMouseClicked(new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent mouseEvent) {
-                    System.out.println(textField.getId());
-                    System.out.println(listView.getItems().size());
-                    if(!textField.getText().equals("") && textField.getText().substring(0,2).equals("n.")){
-                        textField.setText("");
-                    }
-                }
-            });*/
 
             listView.getItems().add(textField);
         }
+
         this.guideBean= SessionUser.getInstance().getSession();
 
     }

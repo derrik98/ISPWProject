@@ -1,5 +1,6 @@
 package it.ispw.daniele.backpacker.utils;
 
+import it.ispw.daniele.backpacker.bean.HomeBean;
 import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.bean.TouristGuideBean;
 import it.ispw.daniele.backpacker.bean.UserBean;
@@ -13,7 +14,6 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Control;
 import javafx.scene.control.Label;
@@ -86,6 +86,7 @@ public abstract class Controller {
     protected Accordion createTable(List<ItineraryBean> itineraryBeanList, String type, String from, StackPane stackPane){
 
         Accordion accordion = new Accordion();
+
         int jind;
         for(jind = 0; jind < itineraryBeanList.size(); jind++) {
             System.out.println(itineraryBeanList.get(jind).getSteps());
@@ -95,7 +96,6 @@ public abstract class Controller {
                 als.add(i, steps[i]);
             }
             TitledPane titledPane = new TitledPane();
-            titledPane.setStyle("fx-fxbackground-color: rgba(139,103,40,0.95); -fx-color-label-visible: rgba(139,103,40,0.95)");
             titledPane.setCollapsible(false);
             titledPane.setAlignment(Pos.CENTER);
             HBox contentPane = new HBox();
@@ -121,19 +121,18 @@ public abstract class Controller {
             //HBox.setHgrow(region2, Priority.ALWAYS);
 
             WebView webView = new WebView();
-            webView.setMinHeight(300);
-            StringBuilder Url = new StringBuilder("https://google.it/maps/dir");
+            webView.setMinHeight(550);
+            StringBuilder Url = new StringBuilder("https://google.it/maps/dir/" + SessionUser.getInstance().getSearchSession().getAddress());
 
             for (int indexMonument = 0; indexMonument < als.size(); indexMonument++) {
 
-                //System.out.println(itinerary.getItinerary());
                 Label label = new Label(" " + als.get(indexMonument) + " ");
                 label.setFont(new Font("Arial", 14));
                 label.setPrefWidth(Control.USE_COMPUTED_SIZE);
                 contentPane.getChildren().add(label);
 
                 if(indexMonument != 0 && indexMonument != als.size()-1) {
-                    System.out.println("INDEXMONUMENT " + indexMonument);
+
                     Label space = new Label(" - ");
                     space.setFont(new Font("Arial", 14));
                     space.setPrefWidth(Control.USE_COMPUTED_SIZE);
@@ -147,6 +146,7 @@ public abstract class Controller {
                 Url.append("/").append(als.get(indexMonument));
 
             }
+            
             webView.getEngine().load(Url.toString());
             VBox v = new VBox(webView);
             titledPane.setContent(v);
@@ -159,8 +159,8 @@ public abstract class Controller {
                     //Setting of buy image
                     ImageView ivBuy = new ImageView();
                     ivBuy = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/buy.png")).toExternalForm()));
-                    ivBuy.setFitWidth(50);
-                    ivBuy.setFitHeight(50);
+                    ivBuy.setFitWidth(40);
+                    ivBuy.setFitHeight(40);
                     ivBuy.setCursor(Cursor.HAND);
 
                     int finalJ = jind;
@@ -250,9 +250,7 @@ public abstract class Controller {
 
                 }
             });
-
             contentPane.getChildren().addAll(region2, ivMap);
-
             titledPane.setGraphic(contentPane);
             accordion.getPanes().add(titledPane);
         }

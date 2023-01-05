@@ -8,104 +8,76 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="it.ispw.daniele.backpacker.view.fxmlView.TouristGuideMenuBarController">
-   <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" spacing="35.0" style="-fx-background-color: silver;"
-         AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
-         AnchorPane.topAnchor="0.0">
+<AnchorPane prefWidth="1920.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.view.fxmlView.TouristGuideMenuBarController">
+   <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" spacing="35.0" style="-fx-background-color: rgba(139,103,40,0.95);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <Label fx:id="LabelHome" contentDisplay="TEXT_ONLY" onMouseClicked="#switchToHome" text="Home">
          <font>
-            <Font size="40.0"/>
+            <Font size="40.0" />
          </font>
          <cursor>
-            <Cursor fx:constant="HAND"/>
+            <Cursor fx:constant="HAND" />
          </cursor>
          <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </Label>
       <Label fx:id="LabelResult" onMouseClicked="#switchToResult" text="Result">
          <font>
-            <Font size="40.0"/>
+            <Font size="40.0" />
          </font>
          <cursor>
-            <Cursor fx:constant="HAND"/>
+            <Cursor fx:constant="HAND" />
          </cursor>
          <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </Label>
       <Label fx:id="LabelAddItinerary" onMouseClicked="#switchToAddItinerary" text="Add Itinerary">
          <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
          <font>
-            <Font size="40.0"/>
+            <Font size="40.0" />
          </font>
          <cursor>
-            <Cursor fx:constant="HAND"/>
+            <Cursor fx:constant="HAND" />
          </cursor>
       </Label>
       <Label fx:id="LabelProfile" onMouseClicked="#switchToTGuideDetails" text="Profile">
          <font>
-            <Font size="40.0"/>
+            <Font size="40.0" />
          </font>
          <cursor>
-            <Cursor fx:constant="HAND"/>
+            <Cursor fx:constant="HAND" />
          </cursor>
          <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </Label>
       <Label onMouseClicked="#logout" text="Log out">
          <font>
-            <Font size="40.0"/>
+            <Font size="40.0" />
          </font>
          <cursor>
-            <Cursor fx:constant="HAND"/>
+            <Cursor fx:constant="HAND" />
          </cursor>
          <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </Label>
-      <ImageView fx:id="imageUndo" fitHeight="50.0" fitWidth="50.0" nodeOrientation="INHERIT"
-                 onMouseClicked="#undoScene" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imageUndo" fitHeight="50.0" fitWidth="50.0" nodeOrientation="INHERIT" onMouseClicked="#undoScene" pickOnBounds="true" preserveRatio="true">
          <viewport>
-            <Rectangle2D/>
+            <Rectangle2D />
          </viewport>
          <cursor>
-            <Cursor fx:constant="HAND"/>
+            <Cursor fx:constant="HAND" />
          </cursor>
          <HBox.margin>
-            <Insets/>
+            <Insets />
          </HBox.margin>
-         <Image url="@/annulla.png"/>
+         <Image url="@/annulla.png" />
       </ImageView>
-      <StackPane alignment="BOTTOM_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-                 minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0">
-         <ImageView fx:id="imageMessage" fitHeight="50.0" fitWidth="50.0" nodeOrientation="INHERIT"
-                    onMouseClicked="#viewNotification" pickOnBounds="true" preserveRatio="true">
-            <viewport>
-               <Rectangle2D/>
-            </viewport>
-            <cursor>
-               <Cursor fx:constant="HAND"/>
-            </cursor>
-            <Image url="@/message.png"/>
-         </ImageView>
-         <Text fx:id="notificationNumber" onMouseClicked="#viewNotification" strokeType="OUTSIDE"
-               strokeWidth="0.0" text="1">
-            <StackPane.margin>
-               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-            </StackPane.margin>
-            <font>
-               <Font name="System Bold" size="12.0"/>
-            </font>
-         </Text>
-      </StackPane>
    </HBox>
 </AnchorPane>
