@@ -1,9 +1,8 @@
-package it.ispw.daniele.backpacker.controller.addItinerary;
+package it.ispw.daniele.backpacker.controller.additinerary;
 
 import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.dao.ItineraryDao;
 import it.ispw.daniele.backpacker.exceptions.DateException;
-import it.ispw.daniele.backpacker.exceptions.IdJustUsed;
 
 import java.sql.SQLException;
 import java.text.DateFormat;

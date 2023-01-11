@@ -1,4 +1,4 @@
-package it.ispw.daniele.backpacker.view.commandLineInterface;
+package it.ispw.daniele.backpacker.view.commandlineinterface;
 
 import it.ispw.daniele.backpacker.exceptions.AddressNotFoundException;
 import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;

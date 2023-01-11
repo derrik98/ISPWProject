@@ -22,7 +22,7 @@ public class SearchController extends Controller {
             JSONFactory checkAddressCity = new AddressFromCity();
             if(checkAddressCity.getJSON(bean)) {
                 MonumentFromAddress monuments = new MonumentFromAddress();
-                return monuments.getJSON(bean);//monuments.getJSON("monuments", bean.getRange());
+                return monuments.getJSON(bean);
             }
             else{
                 return false;
@@ -34,18 +34,10 @@ public class SearchController extends Controller {
     public List<ItineraryBean> createItinerary(HomeBean homeBean) throws MonumentNotFoundException {
 
         MonumentFromAddress monuments = new MonumentFromAddress();
-        //ArrayList<String> result = monuments.getMonuments(homeBean.getAddress());
-        ArrayList<String> result = monuments.getMonuments(homeBean);
-        //monuments.getJSON(address, "monuments");
+        List<String> result = monuments.getMonuments(homeBean);
+
         monuments.getJSON(homeBean);
-        ArrayList<Itinerary> allItineraries = new ArrayList<>();
 
-        String steps = "";
-        for(int i = 0; i < result.size(); i++){
-            steps = steps + "/" + result.get(i);
-        }
-
-        System.out.println("STEPS " + steps);
         ArrayList<Itinerary> it = new ArrayList<>();
 
         for(int i = 0; i < 5; i++) {
@@ -67,7 +59,6 @@ public class SearchController extends Controller {
                     vector.append(result.get(index));
                 }
 
-            System.out.print("VECTOR " + vector);
             }
 
             Itinerary itinerary = new Itinerary(new Random().nextInt(1000), vector.toString());
@@ -77,10 +68,7 @@ public class SearchController extends Controller {
     }
 
     public void searchRestaurants(HomeBean bean) {
-        //if (bean.isRestaurant()){
-        // JSONFactory checkRestaurant = new Restaurants(bean.getAddress());
-        //}
-
+        //TODO
     }
 
 }

@@ -1,4 +1,4 @@
-package it.ispw.daniele.backpacker.view.commandLineInterface;
+package it.ispw.daniele.backpacker.view.commandlineinterface;
 
 import it.ispw.daniele.backpacker.bean.HomeBean;
 import it.ispw.daniele.backpacker.bean.ItineraryBean;
@@ -12,13 +12,12 @@ import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-import static it.ispw.daniele.backpacker.view.commandLineInterface.CLI.*;
+import static it.ispw.daniele.backpacker.view.commandlineinterface.CLI.*;
 
 public class CliResultController {
 

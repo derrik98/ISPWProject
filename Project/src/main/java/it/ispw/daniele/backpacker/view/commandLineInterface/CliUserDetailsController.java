@@ -1,21 +1,20 @@
-package it.ispw.daniele.backpacker.view.commandLineInterface;
+package it.ispw.daniele.backpacker.view.commandlineinterface;
 
-import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.bean.UserBean;
 import it.ispw.daniele.backpacker.booktour.BookTourController;
 import it.ispw.daniele.backpacker.booktour.SaveTour;
 import it.ispw.daniele.backpacker.dao.UserDAO;
 import it.ispw.daniele.backpacker.entity.User;
-import it.ispw.daniele.backpacker.view.fxmlView.UserGraphicChange;
 import it.ispw.daniele.backpacker.utils.Controller;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
-import static it.ispw.daniele.backpacker.view.commandLineInterface.CLI.BOLD;
-import static it.ispw.daniele.backpacker.view.commandLineInterface.CLI.RESET;
+import static it.ispw.daniele.backpacker.view.commandlineinterface.CLI.BOLD;
+import static it.ispw.daniele.backpacker.view.commandlineinterface.CLI.RESET;
 
 public class CliUserDetailsController extends Controller {
 
@@ -26,15 +25,23 @@ public class CliUserDetailsController extends Controller {
     }
 
     public void init() {
-        UserGraphicChange ugc = UserGraphicChange.getInstance();
-        //ugc.menuBar(this.menuBar, "profile");
-        GeneralUserBean gub = SessionUser.getInstance().getSession();
 
         UserBean users = this.getSearchUser("search_user", SessionUser.getInstance().getSession().getUsername());
 
         do {
-            System.out.print("\033[H\033[2J");
-            System.out.println(BOLD + "PROFILE PAGE\n" + RESET);
+            /*String loggerName = "com.something";
+            Logger log = Logger.getLogger(loggerName);
+            ConsoleHandler handler = new ConsoleHandler();
+            handler.setLevel(Level.ALL);
+            log.addHandler(handler);
+            log.setLevel(Level.ALL);
+            log.fine("just testing");*/
+
+
+            Logger.getLogger("\033[H\033[2J");
+            //System.out.print("\033[H\033[2J");
+            Logger.getLogger(BOLD + "PROFILE PAGE\n" + RESET);
+            //System.out.println(BOLD + "PROFILE PAGE\n" + RESET);
             System.out.println("Username: " + users.getUsername());
             System.out.println("Name: " + users.getName());
             System.out.println("Email: " + users.getEmail());

@@ -1,4 +1,4 @@
-package it.ispw.daniele.backpacker.view.commandLineInterface;
+package it.ispw.daniele.backpacker.view.commandlineinterface;
 
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.controller.login.LoginController;
@@ -7,8 +7,8 @@ import it.ispw.daniele.backpacker.utils.SessionUser;
 
 import java.util.Scanner;
 
-import static it.ispw.daniele.backpacker.view.commandLineInterface.CLI.RED;
-import static it.ispw.daniele.backpacker.view.commandLineInterface.CLI.RESET;
+import static it.ispw.daniele.backpacker.view.commandlineinterface.CLI.RED;
+import static it.ispw.daniele.backpacker.view.commandlineinterface.CLI.RESET;
 
 public class CliLoginController {
 

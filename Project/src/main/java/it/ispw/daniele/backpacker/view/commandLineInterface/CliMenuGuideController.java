@@ -1,4 +1,4 @@
-package it.ispw.daniele.backpacker.view.commandLineInterface;
+package it.ispw.daniele.backpacker.view.commandlineinterface;
 
 import it.ispw.daniele.backpacker.exceptions.AddressNotFoundException;
 import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
@@ -8,8 +8,8 @@ import it.ispw.daniele.backpacker.utils.SessionUser;
 import java.io.IOException;
 import java.util.Scanner;
 
-import static it.ispw.daniele.backpacker.view.commandLineInterface.CLI.RED;
-import static it.ispw.daniele.backpacker.view.commandLineInterface.CLI.RESET;
+import static it.ispw.daniele.backpacker.view.commandlineinterface.CLI.RED;
+import static it.ispw.daniele.backpacker.view.commandlineinterface.CLI.RESET;
 
 public class CliMenuGuideController {
 

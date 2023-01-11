@@ -21,10 +21,7 @@ public class ItineraryDetailsController {
 
     private final BookTourController controller = new BookTourController();
     private final GeneralUserBean sessionUser = SessionUser.getInstance().getSession();
-
-   public static ItineraryDetailsController instance = null;
-
-    private static ItineraryBean ib = new ItineraryBean();
+    private ItineraryBean ib = new ItineraryBean();
     @FXML
     public Text itineraryId = new Text();
     @FXML
@@ -42,13 +39,6 @@ public class ItineraryDetailsController {
     @FXML
     public Text steps;
 
-    public static ItineraryDetailsController getInstance(){
-        if(instance == null){
-            instance = new ItineraryDetailsController();
-        }
-        return instance;
-    }
-
     @FXML
     public void closePage() {
         StackPane sp = (StackPane) APDetails.getParent();
@@ -58,29 +48,23 @@ public class ItineraryDetailsController {
 
     @FXML
     public void subscribe() {
-        System.out.println(ib);
-        //boolean isPart = controller.isParticipating(this.sessionUser, this.itineraryBean);
+
         boolean isPart = controller.isParticipating(this.sessionUser, ib);
         if(isPart){
             controller.removeParticipation(this.sessionUser, ib);
             this.subscribeButton.setText("Subscribe");
-                           //this.part.setText("Add Participation");
+
         } else {
             controller.addParticipation(this.sessionUser, ib);
             this.subscribeButton.setText("Remove");
-                           //this.part.setText("Remove Participation");
+
         }
     }
-
-    /*public void convertItinerary(ItineraryBean it) {
-        itineraryBean = it;
-    }*/
 
     public void init(ItineraryBean itineraryBean) {
 
         itineraryId.setText(String.valueOf(itineraryBean.getItineraryId()));
         guideId.setText(itineraryBean.getGuideId());
-        //location.setText(itineraryBean.getLocation());
         location = new Text(itineraryBean.getLocation());
         date.setText(itineraryBean.getDate());
         time.setText(itineraryBean.getTime());

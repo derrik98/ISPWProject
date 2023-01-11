@@ -1,4 +1,4 @@
-package it.ispw.daniele.backpacker.view.commandLineInterface;
+package it.ispw.daniele.backpacker.view.commandlineinterface;
 
 import it.ispw.daniele.backpacker.bean.TouristGuideBean;
 import it.ispw.daniele.backpacker.bean.UserBean;
@@ -14,7 +14,7 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.util.Scanner;
 
-import static it.ispw.daniele.backpacker.view.commandLineInterface.CLI.*;
+import static it.ispw.daniele.backpacker.view.commandlineinterface.CLI.*;
 
 public class CliSignUpController extends InterfaceController {
 

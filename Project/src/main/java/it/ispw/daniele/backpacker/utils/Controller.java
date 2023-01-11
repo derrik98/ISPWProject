@@ -1,6 +1,5 @@
 package it.ispw.daniele.backpacker.utils;
 
-import it.ispw.daniele.backpacker.bean.HomeBean;
 import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.bean.TouristGuideBean;
 import it.ispw.daniele.backpacker.bean.UserBean;
@@ -89,7 +88,7 @@ public abstract class Controller {
 
         int jind;
         for(jind = 0; jind < itineraryBeanList.size(); jind++) {
-            System.out.println(itineraryBeanList.get(jind).getSteps());
+
             String[] steps = itineraryBeanList.get(jind).getSteps().split("/");
             ArrayList<String> als = new ArrayList<>();
             for (int i = 0; i < steps.length; i++) {
@@ -113,12 +112,10 @@ public abstract class Controller {
             HBox region1 = new HBox();
             region1.setMinWidth(15);
             region1.setMaxWidth(Double.MAX_VALUE);
-            //HBox.setHgrow(region1, Priority.ALWAYS);
 
             HBox region2 = new HBox();
             region2.setMinWidth(15);
             region2.setMaxWidth(Double.MAX_VALUE);
-            //HBox.setHgrow(region2, Priority.ALWAYS);
 
             WebView webView = new WebView();
             webView.setMinHeight(550);

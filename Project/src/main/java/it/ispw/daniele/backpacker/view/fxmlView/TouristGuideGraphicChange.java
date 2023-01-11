@@ -1,6 +1,5 @@
 package it.ispw.daniele.backpacker.view.fxmlView;
 
-import it.ispw.daniele.backpacker.bean.HomeBean;
 import it.ispw.daniele.backpacker.bean.TouristGuideBean;
 import it.ispw.daniele.backpacker.utils.Roles;
 import javafx.fxml.FXMLLoader;

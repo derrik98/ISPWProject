@@ -1,4 +1,4 @@
-package it.ispw.daniele.backpacker.view.commandLineInterface;
+package it.ispw.daniele.backpacker.view.commandlineinterface;
 
 import it.ispw.daniele.backpacker.bean.HomeBean;
 import it.ispw.daniele.backpacker.controller.search.SearchController;
@@ -10,7 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
-import static it.ispw.daniele.backpacker.view.commandLineInterface.CLI.*;
+import static it.ispw.daniele.backpacker.view.commandlineinterface.CLI.*;
 
 public class CliHomeController {
 

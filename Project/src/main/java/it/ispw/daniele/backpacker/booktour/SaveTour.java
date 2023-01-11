@@ -6,7 +6,6 @@ import it.ispw.daniele.backpacker.dao.ItineraryDao;
 import it.ispw.daniele.backpacker.entity.Itinerary;
 import it.ispw.daniele.backpacker.utils.Controller;
 
-import java.text.ParseException;
 import java.util.Collections;
 import java.util.List;
 

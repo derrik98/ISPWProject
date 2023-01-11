@@ -1,15 +1,15 @@
-package it.ispw.daniele.backpacker.view.commandLineInterface;
+package it.ispw.daniele.backpacker.view.commandlineinterface;
 
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.bean.ItineraryBean;
-import it.ispw.daniele.backpacker.controller.addItinerary.AddItineraryController;
+import it.ispw.daniele.backpacker.controller.additinerary.AddItineraryController;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static it.ispw.daniele.backpacker.view.commandLineInterface.CLI.RED;
-import static it.ispw.daniele.backpacker.view.commandLineInterface.CLI.RESET;
+import static it.ispw.daniele.backpacker.view.commandlineinterface.CLI.RED;
+import static it.ispw.daniele.backpacker.view.commandlineinterface.CLI.RESET;
 
 public class CliAddItineraryController {
 

@@ -2,7 +2,7 @@ package it.ispw.daniele.backpacker.view.fxmlView;
 
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.bean.ItineraryBean;
-import it.ispw.daniele.backpacker.controller.addItinerary.AddItineraryController;
+import it.ispw.daniele.backpacker.controller.additinerary.AddItineraryController;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
@@ -10,8 +10,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 
-import static it.ispw.daniele.backpacker.view.commandLineInterface.CLI.GREEN;
-import static it.ispw.daniele.backpacker.view.commandLineInterface.CLI.RESET;
+import static it.ispw.daniele.backpacker.view.commandlineinterface.CLI.*;
 
 public class AddItineraryViewController {
     @FXML
@@ -20,8 +19,7 @@ public class AddItineraryViewController {
     public TextField textFieldPrice;
     @FXML
     public TextField textFieldParticipants;
-    public ListView<Object> listView = new ListView<>();
-    public TextField textFieldId;
+    public static final ListView<Object> listView = new ListView<>();
     @FXML
     private HBox menuBar = new HBox();
     @FXML
@@ -31,8 +29,6 @@ public class AddItineraryViewController {
     @FXML
     public TextField textFieldCity;
 
-    //private TouristGuideBean guideBean;
-
     private GeneralUserBean guideBean;
     private AddItineraryController controller;
     private String steps = "";
@@ -41,17 +37,14 @@ public class AddItineraryViewController {
     @FXML
     public void share() {
 
-        for(int i = 0; i < this.listView.getItems().size(); i++){
+        for(int i = 0; i < listView.getItems().size(); i++){
             TextField t = (TextField) listView.getItems().get(i);
             if(!t.getText().equals("") && t.getText() != null) {
                 this.steps = this.steps.concat(t.getText() + "/");
             }
 
         }
-        System.out.println(this.steps);
 
-        System.out.println("condiviso");
-        //int id = Integer.parseInt(this.textFieldId.getText());
         String location = this.textFieldCity.getText();
         String date = "";
         String time = this.textFieldTime.getText();
@@ -61,7 +54,6 @@ public class AddItineraryViewController {
 
         if(this.fieldDate.getValue() != null) {
             date = this.fieldDate.getValue().toString();
-            System.out.println(date);
         }
 
         ItineraryBean itineraryBean = new ItineraryBean();
@@ -73,8 +65,6 @@ public class AddItineraryViewController {
         itineraryBean.setParticipants(Integer.parseInt(participants));
         itineraryBean.setPrice(Integer.parseInt(price));
         itineraryBean.setSteps(this.steps);
-        System.out.println(this.guideBean.getUsername());
-        System.out.println("Dati" + itineraryBean.getGuideId() + "\n" + itineraryBean.getDate() + "\n" + itineraryBean.getLocation() + "\n" + itineraryBean.getTime() + "\n" + itineraryBean.getParticipants() + "\n" + itineraryBean.getPrice());
 
         try {
             result = controller.addItinerary(itineraryBean);
@@ -83,7 +73,7 @@ public class AddItineraryViewController {
                 System.out.println(GREEN + "itinerario aggiunto" + RESET);
             }
             else{
-            System.out.println("errore aggiunta itinerario");
+            System.out.println(RED + "errore aggiunta itinerario" + RESET);
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -21,7 +21,7 @@ import java.math.RoundingMode;
 
 public class HomeUserController{
 
-    public Text errorText;
+    public static final Text errorText = new Text();
     @FXML
     private HBox menuBar = new HBox();
     @FXML
@@ -42,7 +42,7 @@ public class HomeUserController{
     @FXML
     public void enterKeyPressed(KeyEvent keyEvent) throws  IOException {
         if (keyEvent.getCode().equals(KeyCode.ENTER)){
-            this.SearchRoutes();
+            this.searchRoutes();
         }
     }
 
@@ -51,7 +51,7 @@ public class HomeUserController{
         labelRange.setText(sliderValue.setScale(1, RoundingMode.HALF_UP) + " km");
     }
 
-    public void SearchRoutes() throws IOException{
+    public void searchRoutes() throws IOException{
 
         buttonSearch.setStyle("");
 
@@ -79,12 +79,12 @@ public class HomeUserController{
             UserGraphicChange.getInstance().switchToResult(this.textFieldCountry.getScene(), homeBean);
 
         } catch (CityNotFoundException cityException) {
-            this.errorText.setStyle("-fx-font-size: 27px;");
-            this.errorText.setText(cityException.getMessage());
+            errorText.setStyle("-fx-font-size: 27px;");
+            errorText.setText(cityException.getMessage());
             this.textFieldCity.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
         } catch (AddressNotFoundException addressException){
-            this.errorText.setStyle("-fx-font-size: 27px;");
-            this.errorText.setText(addressException.getMessage());
+            errorText.setStyle("-fx-font-size: 27px;");
+            errorText.setText(addressException.getMessage());
             this.textFieldAddress.setStyle("-fx-border-style: solid; -fx-border-width: 1; -fx-border-color: red");
         }catch (MonumentNotFoundException mnfe){
             //this.showFeedback(mnfe.getMessage());
@@ -95,12 +95,10 @@ public class HomeUserController{
         if(SessionUser.getInstance().getSession().getRole().equals(Roles.TOURIST_GUIDE.name().toLowerCase())) {
             TouristGuideGraphicChange tGuideGraphicChange = TouristGuideGraphicChange.getInstance();
             tGuideGraphicChange.menuBar(this.menuBar, "home");
-            System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.TOURIST_GUIDE.name());
         }
         else {
             UserGraphicChange ugc = UserGraphicChange.getInstance();
             ugc.menuBar(this.menuBar, "home");
-            System.out.println(SessionUser.getInstance().getSession().getRole() + Roles.USER.name().toLowerCase());
         }
     }
 

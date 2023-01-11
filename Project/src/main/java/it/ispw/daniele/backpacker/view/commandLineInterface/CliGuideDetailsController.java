@@ -1,7 +1,6 @@
-package it.ispw.daniele.backpacker.view.commandLineInterface;
+package it.ispw.daniele.backpacker.view.commandlineinterface;
 
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
-import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.bean.TouristGuideBean;
 import it.ispw.daniele.backpacker.dao.TouristGuideDao;
 import it.ispw.daniele.backpacker.entity.TouristGuide;
@@ -11,8 +10,8 @@ import it.ispw.daniele.backpacker.utils.SessionUser;
 import java.util.List;
 import java.util.Scanner;
 
-import static it.ispw.daniele.backpacker.view.commandLineInterface.CLI.BOLD;
-import static it.ispw.daniele.backpacker.view.commandLineInterface.CLI.RESET;
+import static it.ispw.daniele.backpacker.view.commandlineinterface.CLI.BOLD;
+import static it.ispw.daniele.backpacker.view.commandlineinterface.CLI.RESET;
 
 public class CliGuideDetailsController extends Controller {
 
