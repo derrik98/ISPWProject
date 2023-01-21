@@ -10,7 +10,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 
-import static it.ispw.daniele.backpacker.view.commandlineinterface.CLI.*;
+import static it.ispw.daniele.backpacker.view.command_line_interface.CLI.*;
 
 public class AddItineraryViewController {
     @FXML

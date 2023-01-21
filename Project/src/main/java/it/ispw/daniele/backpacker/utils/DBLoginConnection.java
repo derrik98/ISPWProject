@@ -7,13 +7,16 @@ import java.sql.SQLException;
 public class DBLoginConnection {
 
     private static Connection me = null;
-    private static final String user = "login";
+    //private static final String user = "login";
+    private static final String user = System.getProperty("login_password");
     private static final String dbUrl = "jdbc:mysql://localhost/backpacker?allowPublicKeyRetrieval=true&useSSL=false";
     private static final String driverClassName = "com.mysql.jdbc.Driver";
 
     public static Connection getLoginConnection() throws ClassNotFoundException, SQLException {
 
-        if(me != null) {return me;}
+        if(me != null) {
+            return me;
+        }
         else {
             Class.forName(driverClassName);
             me = DriverManager.getConnection(dbUrl,user,"login");

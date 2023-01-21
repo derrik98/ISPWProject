@@ -7,7 +7,8 @@ import java.sql.SQLException;
 public class DBTouristGuideConnection {
 
     private static Connection me = null;
-    private static final String touristGuide = "tourist_guide";
+    //private static final String touristGuide = "tourist_guide";
+    private static final String touristGuide = System.getProperty("tourist_guide_password");
     private static final String dbUrl = "jdbc:mysql://localhost/backpacker?allowPublicKeyRetrieval=true&useSSL=false";
 
     private static final String driverClassName = "com.mysql.jdbc.Driver";

@@ -7,7 +7,8 @@ import java.sql.SQLException;
 public class DBUserConnection {
 
     private static Connection me = null;
-    private static final String user = "user";
+    //private static final String user = "user";
+    private static final String user = System.getProperty("user_password");
     private static final String dbUrl = "jdbc:mysql://localhost/backpacker?allowPublicKeyRetrieval=true&useSSL=false";
 
     private static final String driverClassName = "com.mysql.jdbc.Driver";

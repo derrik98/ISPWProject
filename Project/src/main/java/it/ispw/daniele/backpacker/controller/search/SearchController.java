@@ -67,8 +67,4 @@ public class SearchController extends Controller {
         return this.convert(it);
     }
 
-    public void searchRestaurants(HomeBean bean) {
-        //TODO
-    }
-
 }
