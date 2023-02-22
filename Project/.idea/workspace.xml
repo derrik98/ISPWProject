@@ -85,7 +85,7 @@
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.ispw.daniele.backpacker.view.fxmlView.App" />
       <module name="Backpacker" />
-      <option name="VM_PARAMETERS" value="-Dlogin_password=login -Duser_password=user -Dtourist_guide_password=tourist_guide" />
+      <option name="VM_PARAMETERS" value="-Dlogin_password=login -Duser_password=user -Dtourist_guide_password=tourist_guide " />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="it.ispw.daniele.backpacker.view.commandlineinterface.*" />
@@ -418,6 +418,15 @@
       <workItem from="1673908695823" duration="265000" />
       <workItem from="1673942991179" duration="4340000" />
       <workItem from="1674327817947" duration="506000" />
+      <workItem from="1674753180263" duration="380000" />
+      <workItem from="1675778329569" duration="1395000" />
+      <workItem from="1675782973175" duration="613000" />
+      <workItem from="1675789575859" duration="105000" />
+      <workItem from="1675970683767" duration="53000" />
+      <workItem from="1675970853221" duration="107000" />
+      <workItem from="1676895486164" duration="150000" />
+      <workItem from="1677005809089" duration="1600000" />
+      <workItem from="1677072207835" duration="3748000" />
     </task>
     <servers />
   </component>

@@ -27,7 +27,6 @@ import javafx.scene.text.Font;
 import javafx.scene.web.WebView;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -86,8 +85,8 @@ public abstract class Controller {
 
         Accordion accordion = new Accordion();
 
-        int jind;
-        for(jind = 0; jind < itineraryBeanList.size(); jind++) {
+        //int jind;
+        for(int jind = 0; jind < itineraryBeanList.size(); jind++) {
 
             String[] steps = itineraryBeanList.get(jind).getSteps().split("/");
             ArrayList<String> als = new ArrayList<>();
@@ -97,6 +96,18 @@ public abstract class Controller {
             TitledPane titledPane = new TitledPane();
             titledPane.setCollapsible(false);
             titledPane.setAlignment(Pos.CENTER);
+
+//            titledPane.setOnMouseClicked(mouseEvent -> {
+//                if (!titledPane.isCollapsible()) {
+//                    titledPane.setCollapsible(true);
+//                    titledPane.setExpanded(true);
+//                    goToMap(als, titledPane);
+//                } else {
+//                    titledPane.setCollapsible(false);
+//                    titledPane.setExpanded(false);
+//                }
+//            });
+
             HBox contentPane = new HBox();
             contentPane.setAlignment(Pos.CENTER);
 
@@ -117,9 +128,11 @@ public abstract class Controller {
             region2.setMinWidth(15);
             region2.setMaxWidth(Double.MAX_VALUE);
 
-            WebView webView = new WebView();
-            webView.setMinHeight(550);
-            StringBuilder Url = new StringBuilder("https://google.it/maps/dir/" + SessionUser.getInstance().getSearchSession().getAddress());
+            ///////////////////////////////////////////////
+
+//            WebView webView = new WebView();
+//            webView.setMinHeight(550);
+//            StringBuilder Url = new StringBuilder("https://google.it/maps/dir/" + SessionUser.getInstance().getSearchSession().getAddress());
 
             for (int indexMonument = 0; indexMonument < als.size(); indexMonument++) {
 
@@ -140,13 +153,15 @@ public abstract class Controller {
                     label.setOnMouseClicked(mouseEvent -> System.out.println("label cliccata"));
                 }
 
-                Url.append("/").append(als.get(indexMonument));
+                //Url.append("/").append(als.get(indexMonument));
 
             }
             
-            webView.getEngine().load(Url.toString());
-            VBox v = new VBox(webView);
-            titledPane.setContent(v);
+            //webView.getEngine().load(Url.toString());
+            //VBox v = new VBox(webView);
+            //titledPane.setContent(v);
+
+            //////////////////////////////////////
 
             if(type.equals("suggested")){
 
@@ -162,25 +177,27 @@ public abstract class Controller {
 
                     int finalJ = jind;
                     ivBuy.setOnMouseClicked(mouseEvent -> {
-                        FXMLLoader loader = new FXMLLoader();
-                        FileInputStream fileInputStream;
 
-                        try {
-                            fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/view/fxmlView/ItineraryDetails-Page.fxml");
-                            Parent fxmlLoader = loader.load(fileInputStream);
-                            ItineraryDetailsController idc = loader.getController();
-                            idc.init(itineraryBeanList.get(finalJ));
-
-                            stackPane.getChildren().add(fxmlLoader);//  C'ERANOOOOOO
-                            stackPane.getChildren().get(0).setDisable(true);// OOOOOOOOO
-
-                        /*stackPaneResult.getChildren().add(fxmlLoader);//  C'ERANOOOOOO  prima
-                        stackPaneResult.getChildren().get(0).setDisable(true);// OOOOOOOOO*/
-                        } catch (FileNotFoundException e) {
-                            throw new RuntimeException(e);
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        }
+                        BuyItinerary(itineraryBeanList.get(finalJ), stackPane);
+//                        FXMLLoader loader = new FXMLLoader();
+//                        FileInputStream fileInputStream;
+//
+//                        try {
+//                            fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/view/fxmlView/ItineraryDetails-Page.fxml");
+//                            Parent fxmlLoader = loader.load(fileInputStream);
+//                            ItineraryDetailsController idc = loader.getController();
+//                            idc.init(itineraryBeanList.get(finalJ));
+//
+//                            stackPane.getChildren().add(fxmlLoader);//  C'ERANOOOOOO
+//                            stackPane.getChildren().get(0).setDisable(true);// OOOOOOOOO
+//
+//                        /*stackPaneResult.getChildren().add(fxmlLoader);//  C'ERANOOOOOO  prima
+//                        stackPaneResult.getChildren().get(0).setDisable(true);// OOOOOOOOO*/
+//                        } catch (FileNotFoundException e) {
+//                            throw new RuntimeException(e);
+//                        } catch (IOException e) {
+//                            throw new RuntimeException(e);
+//                        }
 
                     });
 
@@ -204,9 +221,13 @@ public abstract class Controller {
 
                 ivSave = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/cestino.png")).toExternalForm()));
                 ivSave.setOnMouseClicked(mouseEvent -> {
-                    SaveTour st = new SaveTour();
-                    System.out.println("ITINERARIO ." + itineraryBeanList.get(finalJ1).getSteps());
-                    st.removeTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(finalJ1));
+                    titledPane.setCollapsible(false);
+                    titledPane.setExpanded(false);
+                    SaveItinerary(itineraryBeanList.get(finalJ1), "remove");
+
+//                    SaveTour st = new SaveTour();
+//                    System.out.println("ITINERARIO ." + itineraryBeanList.get(finalJ1).getSteps());
+//                    st.removeTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(finalJ1));
                     accordion.getPanes().remove(titledPane);
                 });
             }
@@ -216,9 +237,14 @@ public abstract class Controller {
                 ivSave = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/save.png")).toExternalForm()));
                 ivSave.setOnMouseClicked(mouseEvent -> {
 
-                    SaveTour st = new SaveTour();
-                    System.out.println("ITINERARIO ." + itineraryBeanList.get(finalJ1).getSteps());
-                    st.saveTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(finalJ1));
+                    titledPane.setCollapsible(false);
+                    titledPane.setExpanded(false);
+
+                    SaveItinerary(itineraryBeanList.get(finalJ1), "save");
+/////??????
+//                    SaveTour st = new SaveTour();
+//                    System.out.println("ITINERARIO ." + itineraryBeanList.get(finalJ1).getSteps());
+//                    st.saveTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(finalJ1));
                 });
             }
 
@@ -238,12 +264,26 @@ public abstract class Controller {
 
 
             ivMap.setOnMouseClicked(mouseEvent -> {
+                System.out.println("COLL " + titledPane.isCollapsible());
+
                 if (!titledPane.isCollapsible()) {
+                    goToMap(als, titledPane);
+
                     titledPane.setCollapsible(true);
                     titledPane.setExpanded(true);
+
+
+
                 } else {
                     titledPane.setCollapsible(false);
                     titledPane.setExpanded(false);
+
+                    System.out.println("SSSSSSSSSSSSS" + contentPane.getChildren());
+                    System.out.println(titledPane.getContent());
+//                    VBox close = (VBox) titledPane.getContent();
+//                    System.out.println(close.getChildren());
+
+
 
                 }
             });
@@ -252,6 +292,78 @@ public abstract class Controller {
             accordion.getPanes().add(titledPane);
         }
         return accordion;
+    }
+
+    private void BuyItinerary(ItineraryBean itineraryBean, StackPane stackPane) {
+        FXMLLoader loader = new FXMLLoader();
+        FileInputStream fileInputStream;
+
+        try {
+            fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/view/fxmlView/ItineraryDetails-Page.fxml");
+            Parent fxmlLoader = loader.load(fileInputStream);
+            ItineraryDetailsController idc = loader.getController();
+            idc.init(itineraryBean);
+
+            stackPane.getChildren().add(fxmlLoader);//  C'ERANOOOOOO
+            stackPane.getChildren().get(0).setDisable(true);// OOOOOOOOO
+
+                        /*stackPaneResult.getChildren().add(fxmlLoader);//  C'ERANOOOOOO  prima
+                        stackPaneResult.getChildren().get(0).setDisable(true);// OOOOOOOOO*/
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void SaveItinerary(ItineraryBean itineraryBean, String type) {
+        SaveTour st;
+        System.out.println("sonoqui");
+        switch (type){
+            case "save":{
+                System.out.println("sonoqui");
+                st = new SaveTour();
+                st.saveTour(SessionUser.getInstance().getSession(), itineraryBean);
+                System.out.println("sonoqui");
+            }
+            case "remove":{
+                System.out.println("sonoqui");
+                st = new SaveTour();
+                st.removeTour(SessionUser.getInstance().getSession(), itineraryBean);
+                System.out.println("sonoqui");
+            }
+        }
+
+    }
+
+    private void goToMap(ArrayList<String> als, TitledPane titledPane) {
+
+        WebView webView = new WebView();
+        webView.setMinHeight(550);
+        StringBuilder Url = new StringBuilder("https://google.it/maps/dir/" + SessionUser.getInstance().getSearchSession().getAddress());
+
+        for (String element : als) {
+
+            Url.append("/").append(element);
+
+        }
+
+        webView.getEngine().load(Url.toString());
+
+        if(!Url.toString().equals("")){
+            webView.setMaxSize(1200, 600);
+            //webView.maxWidthProperty().bind(webView.getScene().widthProperty());
+            //webView.maxHeightProperty().bind(webView.getScene().heightProperty());
+        } else {
+            webView.maxWidthProperty().unbind();
+            webView.maxHeightProperty().unbind();
+        }
+
+        VBox v = new VBox(webView);
+        titledPane.setContent(v);
+
+        //webView.getEngine().load(null);
+
+
+
     }
 
 }
