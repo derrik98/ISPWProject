@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public abstract class Controller {
+public class Controller {
 
     protected UserBean convert(User l) {
         UserBean ub = new UserBean();
@@ -85,7 +85,6 @@ public abstract class Controller {
 
         Accordion accordion = new Accordion();
 
-        //int jind;
         for(int jind = 0; jind < itineraryBeanList.size(); jind++) {
 
             String[] steps = itineraryBeanList.get(jind).getSteps().split("/");
@@ -94,19 +93,8 @@ public abstract class Controller {
                 als.add(i, steps[i]);
             }
             TitledPane titledPane = new TitledPane();
-            titledPane.setCollapsible(false);
-            titledPane.setAlignment(Pos.CENTER);
 
-//            titledPane.setOnMouseClicked(mouseEvent -> {
-//                if (!titledPane.isCollapsible()) {
-//                    titledPane.setCollapsible(true);
-//                    titledPane.setExpanded(true);
-//                    goToMap(als, titledPane);
-//                } else {
-//                    titledPane.setCollapsible(false);
-//                    titledPane.setExpanded(false);
-//                }
-//            });
+            titledPane.setAlignment(Pos.CENTER);
 
             HBox contentPane = new HBox();
             contentPane.setAlignment(Pos.CENTER);
@@ -128,20 +116,12 @@ public abstract class Controller {
             region2.setMinWidth(15);
             region2.setMaxWidth(Double.MAX_VALUE);
 
-            ///////////////////////////////////////////////
-
-//            WebView webView = new WebView();
-//            webView.setMinHeight(550);
-//            StringBuilder Url = new StringBuilder("https://google.it/maps/dir/" + SessionUser.getInstance().getSearchSession().getAddress());
 
             for (int indexMonument = 0; indexMonument < als.size(); indexMonument++) {
 
                 Label label = new Label(" " + als.get(indexMonument) + " ");
-                label.setFont(new Font("Arial", 14));
-                label.setPrefWidth(Control.USE_COMPUTED_SIZE);
-                contentPane.getChildren().add(label);
 
-                if(indexMonument != 0 && indexMonument != als.size()-1) {
+                if(indexMonument != 0) {
 
                     Label space = new Label(" - ");
                     space.setFont(new Font("Arial", 14));
@@ -150,26 +130,21 @@ public abstract class Controller {
                     contentPane.getChildren().add(space);
 
                     label.setCursor(Cursor.HAND);
-                    label.setOnMouseClicked(mouseEvent -> System.out.println("label cliccata"));
+
                 }
 
-                //Url.append("/").append(als.get(indexMonument));
+                label.setFont(new Font("Arial", 14));
+                label.setPrefWidth(Control.USE_COMPUTED_SIZE);
+                contentPane.getChildren().add(label);
 
             }
-            
-            //webView.getEngine().load(Url.toString());
-            //VBox v = new VBox(webView);
-            //titledPane.setContent(v);
-
-            //////////////////////////////////////
 
             if(type.equals("suggested")){
 
                 if(!from.equals("profile")) {
 
-
                     //Setting of buy image
-                    ImageView ivBuy = new ImageView();
+                    ImageView ivBuy;
                     ivBuy = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/buy.png")).toExternalForm()));
                     ivBuy.setFitWidth(40);
                     ivBuy.setFitHeight(40);
@@ -178,26 +153,7 @@ public abstract class Controller {
                     int finalJ = jind;
                     ivBuy.setOnMouseClicked(mouseEvent -> {
 
-                        BuyItinerary(itineraryBeanList.get(finalJ), stackPane);
-//                        FXMLLoader loader = new FXMLLoader();
-//                        FileInputStream fileInputStream;
-//
-//                        try {
-//                            fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/view/fxmlView/ItineraryDetails-Page.fxml");
-//                            Parent fxmlLoader = loader.load(fileInputStream);
-//                            ItineraryDetailsController idc = loader.getController();
-//                            idc.init(itineraryBeanList.get(finalJ));
-//
-//                            stackPane.getChildren().add(fxmlLoader);//  C'ERANOOOOOO
-//                            stackPane.getChildren().get(0).setDisable(true);// OOOOOOOOO
-//
-//                        /*stackPaneResult.getChildren().add(fxmlLoader);//  C'ERANOOOOOO  prima
-//                        stackPaneResult.getChildren().get(0).setDisable(true);// OOOOOOOOO*/
-//                        } catch (FileNotFoundException e) {
-//                            throw new RuntimeException(e);
-//                        } catch (IOException e) {
-//                            throw new RuntimeException(e);
-//                        }
+                        this.BuyItinerary(itineraryBeanList.get(finalJ), stackPane);
 
                     });
 
@@ -212,7 +168,6 @@ public abstract class Controller {
                 HBox.setHgrow(region1, Priority.ALWAYS);
             }
 
-
             ImageView ivSave;
             int finalJ1 = jind;
 
@@ -221,13 +176,10 @@ public abstract class Controller {
 
                 ivSave = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/cestino.png")).toExternalForm()));
                 ivSave.setOnMouseClicked(mouseEvent -> {
-                    titledPane.setCollapsible(false);
-                    titledPane.setExpanded(false);
-                    SaveItinerary(itineraryBeanList.get(finalJ1), "remove");
+                    //titledPane.setCollapsible(false);
+                    //titledPane.setExpanded(false);
+                    this.SaveItinerary(itineraryBeanList.get(finalJ1), "remove");
 
-//                    SaveTour st = new SaveTour();
-//                    System.out.println("ITINERARIO ." + itineraryBeanList.get(finalJ1).getSteps());
-//                    st.removeTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(finalJ1));
                     accordion.getPanes().remove(titledPane);
                 });
             }
@@ -237,14 +189,8 @@ public abstract class Controller {
                 ivSave = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/save.png")).toExternalForm()));
                 ivSave.setOnMouseClicked(mouseEvent -> {
 
-                    titledPane.setCollapsible(false);
-                    titledPane.setExpanded(false);
+                    this.SaveItinerary(itineraryBeanList.get(finalJ1), "save");
 
-                    SaveItinerary(itineraryBeanList.get(finalJ1), "save");
-/////??????
-//                    SaveTour st = new SaveTour();
-//                    System.out.println("ITINERARIO ." + itineraryBeanList.get(finalJ1).getSteps());
-//                    st.saveTour(SessionUser.getInstance().getSession(), itineraryBeanList.get(finalJ1));
                 });
             }
 
@@ -252,11 +198,10 @@ public abstract class Controller {
             ivSave.setFitWidth(35);
             ivSave.setFitHeight(35);
 
-
             contentPane.getChildren().addAll(region1, ivSave);
 
             //Setting of map image
-            ImageView ivMap = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/googleMaps.png")).toExternalForm()));
+            /*ImageView ivMap = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/googleMaps.png")).toExternalForm()));
             ivMap.setFitWidth(35);
             ivMap.setFitHeight(35);
             ivMap.setCursor(Cursor.HAND);
@@ -265,30 +210,26 @@ public abstract class Controller {
 
             ivMap.setOnMouseClicked(mouseEvent -> {
                 System.out.println("COLL " + titledPane.isCollapsible());
+                System.out.println("COLL " + titledPane.isExpanded());
 
-                if (!titledPane.isCollapsible()) {
+                //if (!titledPane.isCollapsible()) {
+                    if (!titledPane.isExpanded()) {
+
                     goToMap(als, titledPane);
 
-                    titledPane.setCollapsible(true);
+                    //titledPane.setCollapsible(true);
                     titledPane.setExpanded(true);
 
-
-
                 } else {
-                    titledPane.setCollapsible(false);
+                    //titledPane.setCollapsible(true);
                     titledPane.setExpanded(false);
-
-                    System.out.println("SSSSSSSSSSSSS" + contentPane.getChildren());
-                    System.out.println(titledPane.getContent());
-//                    VBox close = (VBox) titledPane.getContent();
-//                    System.out.println(close.getChildren());
-
-
-
                 }
             });
-            contentPane.getChildren().addAll(region2, ivMap);
+            contentPane.getChildren().addAll(region2, ivMap);*/
             titledPane.setGraphic(contentPane);
+            this.goToMap(als, titledPane);
+            titledPane.setExpanded(true);
+            titledPane.setCollapsible(true);
             accordion.getPanes().add(titledPane);
         }
         return accordion;
@@ -304,34 +245,20 @@ public abstract class Controller {
             ItineraryDetailsController idc = loader.getController();
             idc.init(itineraryBean);
 
-            stackPane.getChildren().add(fxmlLoader);//  C'ERANOOOOOO
-            stackPane.getChildren().get(0).setDisable(true);// OOOOOOOOO
+            stackPane.getChildren().add(fxmlLoader);
+            stackPane.getChildren().get(0).setDisable(true);
 
-                        /*stackPaneResult.getChildren().add(fxmlLoader);//  C'ERANOOOOOO  prima
-                        stackPaneResult.getChildren().get(0).setDisable(true);// OOOOOOOOO*/
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
     private void SaveItinerary(ItineraryBean itineraryBean, String type) {
-        SaveTour st;
-        System.out.println("sonoqui");
-        switch (type){
-            case "save":{
-                System.out.println("sonoqui");
-                st = new SaveTour();
-                st.saveTour(SessionUser.getInstance().getSession(), itineraryBean);
-                System.out.println("sonoqui");
-            }
-            case "remove":{
-                System.out.println("sonoqui");
-                st = new SaveTour();
-                st.removeTour(SessionUser.getInstance().getSession(), itineraryBean);
-                System.out.println("sonoqui");
-            }
+        SaveTour st = new SaveTour();
+        switch (type) {
+            case "save" -> st.saveTour(SessionUser.getInstance().getSession(), itineraryBean);
+            case "remove" -> st.removeTour(SessionUser.getInstance().getSession(), itineraryBean);
         }
-
     }
 
     private void goToMap(ArrayList<String> als, TitledPane titledPane) {
@@ -362,8 +289,5 @@ public abstract class Controller {
 
         //webView.getEngine().load(null);
 
-
-
     }
-
 }
