@@ -276,7 +276,7 @@ public class Controller {
         webView.getEngine().load(Url.toString());
 
         if(!Url.toString().equals("")){
-            webView.setMaxSize(1200, 600);
+           // webView.setMaxSize(1200, 600);
             //webView.maxWidthProperty().bind(webView.getScene().widthProperty());
             //webView.maxHeightProperty().bind(webView.getScene().heightProperty());
         } else {
