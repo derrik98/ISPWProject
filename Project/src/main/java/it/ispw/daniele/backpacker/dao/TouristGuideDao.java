@@ -16,11 +16,11 @@ public class TouristGuideDao extends DaoTemplate{
 
     private static final String SEARCH_T_GUIDE = "search_t_guide";
 
-    public List<TouristGuide> getSearchUser(String searchString, String caller){
-        return this.queryDatabase(searchString, caller, SEARCH_T_GUIDE);
+    public List<TouristGuide> getSearchUser(String caller){
+        return this.queryDatabase(caller, SEARCH_T_GUIDE);
     }
 
-    private List<TouristGuide> queryDatabase(String string, String caller, String operation){
+    private List<TouristGuide> queryDatabase(String caller, String operation){
         List <TouristGuide> ret = this.execute(() -> {
             List<TouristGuide> l = new ArrayList<>();
             Connection conn = DBTouristGuideConnection.getTouristGuideConnection();

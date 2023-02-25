@@ -17,7 +17,7 @@ public class CliGuideDetailsController extends Controller {
 
     private TouristGuideBean getSearchUser(String searchString, String caller) {
         TouristGuideDao ud = new TouristGuideDao();
-        List<TouristGuide> l = ud.getSearchUser(searchString, caller);
+        List<TouristGuide> l = ud.getSearchUser(caller);
         return this.convert(l.get(0));
     }
 

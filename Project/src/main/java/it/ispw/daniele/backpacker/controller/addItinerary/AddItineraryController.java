@@ -1,4 +1,4 @@
-package it.ispw.daniele.backpacker.controller.additinerary;
+package it.ispw.daniele.backpacker.controller.addItinerary;
 
 import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.dao.ItineraryDao;

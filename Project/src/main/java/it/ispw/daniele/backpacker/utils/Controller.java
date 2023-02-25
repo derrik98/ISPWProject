@@ -7,7 +7,7 @@ import it.ispw.daniele.backpacker.booktour.SaveTour;
 import it.ispw.daniele.backpacker.entity.Itinerary;
 import it.ispw.daniele.backpacker.entity.TouristGuide;
 import it.ispw.daniele.backpacker.entity.User;
-import it.ispw.daniele.backpacker.view.fxmlView.ItineraryDetailsController;
+import it.ispw.daniele.backpacker.view.fxml_view.ItineraryDetailsController;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

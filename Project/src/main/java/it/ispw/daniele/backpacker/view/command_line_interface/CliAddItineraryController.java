@@ -2,7 +2,7 @@ package it.ispw.daniele.backpacker.view.command_line_interface;
 
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.bean.ItineraryBean;
-import it.ispw.daniele.backpacker.controller.additinerary.AddItineraryController;
+import it.ispw.daniele.backpacker.controller.addItinerary.AddItineraryController;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 
 import java.util.ArrayList;
@@ -48,10 +48,7 @@ public class CliAddItineraryController {
             if (!step.equals("")) {
                 this.steps = this.steps.concat(step + "/");
             }
-
         }
-
-        System.out.println(this.steps);
 
         System.out.println("Itinerary details:\n");
 

@@ -12,10 +12,8 @@ import java.util.List;
 public class SaveTour extends Controller {
 
     public void saveTour(GeneralUserBean user, ItineraryBean itinerary) {
-        System.out.println("SALVATO");
         ItineraryDao id = new ItineraryDao();
         id.saveTour(user.getUsername(), itinerary.getSteps());
-        System.out.println("SALVATO");
     }
 
     public void removeTour(GeneralUserBean user, ItineraryBean itinerary){

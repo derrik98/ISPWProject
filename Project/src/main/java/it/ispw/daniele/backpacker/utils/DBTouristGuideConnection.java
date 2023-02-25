@@ -7,24 +7,18 @@ import java.sql.SQLException;
 public class DBTouristGuideConnection {
 
     private static Connection me = null;
-    //private static final String touristGuide = "tourist_guide";
-    private static final String touristGuide = System.getProperty("tourist_guide_password");
-    private static final String dbUrl = "jdbc:mysql://localhost/backpacker?allowPublicKeyRetrieval=true&useSSL=false";
+    private static final String tourist_guide = System.getProperty("tourist_guide_password");
+    private static final String db_url = "jdbc:mysql://localhost/backpacker?allowPublicKeyRetrieval=true&useSSL=false";
 
-    private static final String driverClassName = "com.mysql.jdbc.Driver";
-
-    private DBTouristGuideConnection() {
-
-    }
+    private static final String driver_class_name = "com.mysql.jdbc.Driver";
 
     public static Connection getTouristGuideConnection() throws ClassNotFoundException, SQLException {
 
-        if(me != null) return me;
-        else {
-            Class.forName(driverClassName);
-            me = DriverManager.getConnection(dbUrl,touristGuide,"tourist_guide");
-            return me;
+        if(me == null) {
+            Class.forName(driver_class_name);
+            me = DriverManager.getConnection(db_url, tourist_guide, "tourist_guide");
         }
+        return me;
 
     }
 

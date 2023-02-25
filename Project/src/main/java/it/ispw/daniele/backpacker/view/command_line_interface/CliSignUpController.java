@@ -5,7 +5,7 @@ import it.ispw.daniele.backpacker.bean.UserBean;
 import it.ispw.daniele.backpacker.controller.login.LoginController;
 import it.ispw.daniele.backpacker.utils.FileManager;
 import it.ispw.daniele.backpacker.utils.Roles;
-import it.ispw.daniele.backpacker.view.utilsView.InterfaceController;
+import it.ispw.daniele.backpacker.view.utils_view.InterfaceController;
 import javafx.stage.FileChooser;
 
 import java.io.File;

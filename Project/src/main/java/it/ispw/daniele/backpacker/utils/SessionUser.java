@@ -2,14 +2,12 @@ package it.ispw.daniele.backpacker.utils;
 
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.bean.HomeBean;
-import it.ispw.daniele.backpacker.bean.TouristGuideBean;
 
 public class SessionUser {
 
     private GeneralUserBean userSession = null;
     private HomeBean searchSession = null;
     private static SessionUser instance = null;
-
 
     private SessionUser(){}
 
@@ -31,9 +29,7 @@ public class SessionUser {
     }
 
     public void setSearchSession(HomeBean homeBean){
-        //if(this.searchSession == null){
-            this.searchSession = homeBean;
-        //}
+        this.searchSession = homeBean;
     }
 
     public HomeBean getSearchSession(){
