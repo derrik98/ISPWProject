@@ -13,7 +13,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-public class ItineraryDao extends DaoTemplate{
+public class ItineraryDao extends DaoTemplate {
 
     private static final String ID = "id";
     private static final String LOCATION = "location";
@@ -27,7 +27,7 @@ public class ItineraryDao extends DaoTemplate{
     private static final String REMOVE_PART = "remove_part";
 
 
-    public List<Itinerary> getItinerary(String city){
+    public List<Itinerary> getItinerary(String city) {
         List<Itinerary> ret = this.execute(new DaoAction<List<Itinerary>>() {
             @Override
             public List<Itinerary> act() throws ClassNotFoundException, SQLException {
@@ -35,16 +35,16 @@ public class ItineraryDao extends DaoTemplate{
                 List<Itinerary> itinerary = new ArrayList<>();
                 String sql;
 
-                    conn = DBUserConnection.getUserConnection();
-                    sql = "call backpacker.get_itinerary(?);\r\n";
+                conn = DBUserConnection.getUserConnection();
+                sql = "call backpacker.get_itinerary(?);\r\n";
 
                 try (PreparedStatement stm = conn.prepareStatement(sql)) {
 
                     stm.setString(1, city);
 
-                        try (ResultSet rs = stm.executeQuery()) {
-                            itinerary = unpackResultSet(rs);
-                        }
+                    try (ResultSet rs = stm.executeQuery()) {
+                        itinerary = unpackResultSet(rs);
+                    }
 
                 }
                 DBUserConnection.closeUserConnection(conn);
@@ -53,8 +53,7 @@ public class ItineraryDao extends DaoTemplate{
         });
         if (ret != null) {
             return ret;
-        }
-        else {
+        } else {
             return Collections.emptyList();
         }
     }
@@ -73,7 +72,7 @@ public class ItineraryDao extends DaoTemplate{
             String sql = "call backpacker.is_participating(?, ?);\r\n";
             try (PreparedStatement stm = conn.prepareStatement(sql)) {
                 stm.setString(1, username);
-                stm.setInt(2,  itineraryId);
+                stm.setInt(2, itineraryId);
                 try (ResultSet rs = stm.executeQuery()) {
                     DBUserConnection.closeUserConnection(conn);
                     return (rs.first());
@@ -93,14 +92,14 @@ public class ItineraryDao extends DaoTemplate{
             String sql = null;
             try {
                 conn = DBUserConnection.getUserConnection();
-                if(operation.equals(ADD_PART)) {
+                if (operation.equals(ADD_PART)) {
                     sql = "call backpacker.add_participation(?, ?);\r\n";
-                } else if(operation.equals(REMOVE_PART)) {
+                } else if (operation.equals(REMOVE_PART)) {
                     sql = "call backpacker.remove_participation(?, ?);\r\n";
                 }
                 stm = conn.prepareStatement(sql);
                 stm.setString(1, username);
-                stm.setInt(2,  id);
+                stm.setInt(2, id);
                 stm.executeUpdate();
             } finally {
                 if (stm != null)
@@ -133,32 +132,31 @@ public class ItineraryDao extends DaoTemplate{
 
     public int getItineraryId(String guideId, String location, String date, String time, int participants, int price, String steps) throws SQLException, ClassNotFoundException {
 
-            Connection conn;
-            String sql;
-            PreparedStatement stm;
+        Connection conn;
+        String sql;
 
-                conn = DBUserConnection.getUserConnection();
-                sql = "call backpacker.get_itinerary_id(?, ?, ?, ?, ?, ?; ?);\r\n";
-                stm = conn.prepareStatement(sql);
+        conn = DBUserConnection.getUserConnection();
+        sql = "call backpacker.get_itinerary_id(?, ?, ?, ?, ?, ?; ?);\r\n";
 
-                stm.setString(1, guideId);
-                stm.setString(2, location);
-                stm.setString(3, date);
-                stm.setString(4, time);
-                stm.setInt(5, participants);
-                stm.setInt(6, price);
-                stm.setString(7, steps);
+        try (PreparedStatement stm = conn.prepareStatement(sql)) {
+            stm.setString(1,guideId);
+            stm.setString(2,location);
+            stm.setString(3,date);
+            stm.setString(4,time);
+            stm.setInt(5,participants);
+            stm.setInt(6,price);
+            stm.setString(7,steps);
 
-                try (ResultSet rs = stm.executeQuery()) {
+            try (ResultSet rs = stm.executeQuery()) {
 
-                    if (!rs.first()) { // rs not empty
-                        return rs.getInt("id");
-                    }
-                    return 0;
-                } finally {
-
-                    DBUserConnection.closeUserConnection(conn);
+                if (!rs.first()) { // rs not empty
+                    return rs.getInt("id");
                 }
+                return 0;
+            } finally {
+                DBUserConnection.closeUserConnection(conn);
+            }
+        }
     }
 
     public List<Itinerary> getBookedItineraries(String input) {

@@ -14,6 +14,7 @@ import javafx.scene.layout.VBox;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -59,7 +60,11 @@ public abstract class GUIChangeTemplate{
                 Parent fxmlLoader = loader.load(fileInputStream);
                 ResultController rc = loader.getController();
                 scene.setRoot(fxmlLoader);
-                rc.init(homeBean);
+                try {
+                    rc.init(homeBean);
+                } catch (NoSuchAlgorithmException e) {
+                    throw new RuntimeException(e);
+                }
 
 
             }

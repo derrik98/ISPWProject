@@ -12,6 +12,7 @@ import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -23,7 +24,7 @@ public class CliResultController {
 
     List<ItineraryBean> it;
 
-    public void init(HomeBean homeBean) throws MonumentNotFoundException {
+    public void init(HomeBean homeBean) throws MonumentNotFoundException, NoSuchAlgorithmException {
         System.out.print("\033[H\033[2J");
         System.out.println(BOLD + "RESULT PAGE\n" + RESET);
         System.out.println("Country: " + homeBean.getCountry() + ", City: " + homeBean.getCity() + ", Address: " + homeBean.getAddress() + ", Restaurant: " + homeBean.isRestaurant() + ", Range: " + homeBean.getRange() + "\n");

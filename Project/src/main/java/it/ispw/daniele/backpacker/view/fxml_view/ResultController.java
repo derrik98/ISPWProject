@@ -19,6 +19,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 public class ResultController extends Controller {
@@ -57,7 +58,7 @@ public class ResultController extends Controller {
 
     private static ResultController instance = null;
 
-    public void init(HomeBean homeBean) throws MonumentNotFoundException {
+    public void init(HomeBean homeBean) throws MonumentNotFoundException, NoSuchAlgorithmException {
 
         if(SessionUser.getInstance().getSession().getRole().equals(Roles.TOURIST_GUIDE.name().toLowerCase())) {
             TouristGuideGraphicChange i = TouristGuideGraphicChange.getInstance();

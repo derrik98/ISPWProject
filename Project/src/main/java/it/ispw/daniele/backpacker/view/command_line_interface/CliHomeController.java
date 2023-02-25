@@ -8,6 +8,7 @@ import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.Scanner;
 
 import static it.ispw.daniele.backpacker.view.command_line_interface.CLI.*;
@@ -63,7 +64,9 @@ public class CliHomeController {
         //CliUserGraphicChange.getInstance().switchToResult(country, city, address, restaurant, range);
     } catch (CityNotFoundException | AddressNotFoundException | MonumentNotFoundException exception) {
         System.out.println(RED + exception.getMessage() + RESET + "\n");
-    }
+    } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
 
         /*try {
             //homeBean.validate();

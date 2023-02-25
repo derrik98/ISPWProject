@@ -9,6 +9,8 @@ import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
 import it.ispw.daniele.backpacker.utils.Controller;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -42,13 +44,19 @@ public class SearchController extends Controller {
 
         for(int i = 0; i < 5; i++) {
 
-            Random num = new Random();
+            Random rand;
+            try {
+                rand = SecureRandom.getInstanceStrong();
+            } catch (NoSuchAlgorithmException e) {
+                throw new RuntimeException(e);
+            }
 
             StringBuilder vector = new StringBuilder();
 
             for (int j = 0; j <= 5; j++) {
 
-                int index = num.nextInt((result.size() - 1) + 1);
+                int index = rand.nextInt((result.size() - 1) + 1);
+                //int index = num.nextInt((result.size() - 1) + 1);
 
                 if (!vector.toString().contains(result.get(index)) && j != 0) {
 
@@ -61,7 +69,12 @@ public class SearchController extends Controller {
 
             }
 
-            Itinerary itinerary = new Itinerary(new Random().nextInt(1000), vector.toString());
+            Itinerary itinerary;
+            try {
+                itinerary = new Itinerary(SecureRandom.getInstanceStrong().nextInt(1000), vector.toString());
+            } catch (NoSuchAlgorithmException e) {
+                throw new RuntimeException(e);
+            }
             it.add(itinerary);
         }
         return this.convert(it);
