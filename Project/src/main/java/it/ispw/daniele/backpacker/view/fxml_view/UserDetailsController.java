@@ -70,9 +70,9 @@ public class UserDetailsController extends Controller {
         textSettings.setVisible(false);
     }
 
-    private UserBean getSearchUser(String searchString, String caller){
+    private UserBean getSearchUser(String caller){
         UserDAO ud = new UserDAO();
-        List<User> l = ud.getSearchUser(searchString, caller);
+        List<User> l = ud.getSearchUser(caller);
         return this.convert(l.get(0));
     }
 
@@ -83,7 +83,7 @@ public class UserDetailsController extends Controller {
         UserGraphicChange ugc = UserGraphicChange.getInstance();
         ugc.menuBar(this.menuBar, "profile");
 
-        UserBean users = this.getSearchUser("search_user", SessionUser.getInstance().getSession().getUsername());
+        UserBean users = this.getSearchUser(SessionUser.getInstance().getSession().getUsername());
 
         this.username.setText(users.getUsername());
         this.name.setText(users.getName());

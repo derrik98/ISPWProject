@@ -2,7 +2,7 @@ package it.ispw.daniele.backpacker.view.command_line_interface;
 
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.bean.ItineraryBean;
-import it.ispw.daniele.backpacker.controller.addItinerary.AddItineraryController;
+import it.ispw.daniele.backpacker.controller.add_itinerary.AddItineraryController;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 
 import java.util.ArrayList;

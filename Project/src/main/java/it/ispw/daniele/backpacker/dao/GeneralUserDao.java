@@ -1,7 +1,7 @@
 package it.ispw.daniele.backpacker.dao;
 
 import it.ispw.daniele.backpacker.entity.GeneralUser;
-import it.ispw.daniele.backpacker.utils.DBLoginConnection;
+import it.ispw.daniele.backpacker.utils.dbLoginConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,7 +13,7 @@ public class GeneralUserDao extends DaoTemplate{
         return this.execute(() -> {
             Connection conn;
             GeneralUser u = null;
-            conn = DBLoginConnection.getLoginConnection();
+            conn = dbLoginConnection.getLoginConnection();
 
             String sql = "call backpacker.login(?, ?);\r\n";
             try (PreparedStatement stm = conn.prepareStatement(sql)) {

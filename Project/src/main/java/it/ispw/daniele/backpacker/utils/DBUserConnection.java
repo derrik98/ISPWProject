@@ -4,27 +4,31 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DBUserConnection {
+public class dbUserConnection {
 
-    private static Connection me = null;
-    private static final String user = System.getProperty("user_password");
-    private static final String db_url = "jdbc:mysql://localhost/backpacker?allowPublicKeyRetrieval=true&useSSL=false";
+    private static Connection connection = null;
+    private static final String USER = System.getProperty("user_password");
+    private static final String DB_URL = "jdbc:mysql://localhost/backpacker?allowPublicKeyRetrieval=true&useSSL=false";
 
-    private static final String driver_class_name = "com.mysql.jdbc.Driver";
+    private static final String DRIVER_CLASS_NAME = "com.mysql.jdbc.Driver";
+
+
+    private dbUserConnection() {
+    }
 
     public static Connection getUserConnection() throws ClassNotFoundException, SQLException {
 
-        if (me == null) {
+        if (connection == null) {
             //Class.forName(driver_class_name);
-            me = DriverManager.getConnection(db_url, user, "user");
+            connection = DriverManager.getConnection(DB_URL, USER, "user");
         }
-        return me;
+        return connection;
 
     }
 
     public static void closeUserConnection(Connection conn) throws SQLException{
         conn.close();
-        me = null;
+        connection = null;
     }
 
 }

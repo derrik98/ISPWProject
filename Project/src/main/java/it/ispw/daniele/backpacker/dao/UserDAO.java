@@ -1,8 +1,8 @@
 package it.ispw.daniele.backpacker.dao;
 
 import it.ispw.daniele.backpacker.entity.User;
-import it.ispw.daniele.backpacker.utils.DBLoginConnection;
-import it.ispw.daniele.backpacker.utils.DBUserConnection;
+import it.ispw.daniele.backpacker.utils.dbLoginConnection;
+import it.ispw.daniele.backpacker.utils.dbUserConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,7 +19,7 @@ public class UserDAO extends DaoTemplate{
                               String email, String password, String profilePicture) {
         return (this.execute(() -> {
 
-            Connection con = DBLoginConnection.getLoginConnection();
+            Connection con = dbLoginConnection.getLoginConnection();
 
             String sql = "call backpacker.add_user(?, ?, ?, ?, ?, ?);\r\n";
             try (PreparedStatement stm = con.prepareStatement(sql)) {
@@ -35,14 +35,14 @@ public class UserDAO extends DaoTemplate{
         }) != null);
     }
 
-    public List<User> getSearchUser(String searchString, String caller){
-        return this.queryDatabase(searchString, caller, SEARCH_USER);
+    public List<User> getSearchUser(String caller){
+        return this.queryDatabase(caller, SEARCH_USER);
     }
 
-    private List<User> queryDatabase(String string, String caller, String operation){
+    private List<User> queryDatabase(String caller, String operation){
         List <User> ret = this.execute(() -> {
             List<User> l = new ArrayList<>();
-            Connection conn = DBUserConnection.getUserConnection();
+            Connection conn = dbUserConnection.getUserConnection();
             PreparedStatement stm = null;
             try {
                 String sql;

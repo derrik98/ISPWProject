@@ -1,5 +1,6 @@
 package it.ispw.daniele.backpacker.view.utils_view;
 
+import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.bean.TouristGuideBean;
 import it.ispw.daniele.backpacker.bean.UserBean;
 
@@ -26,4 +27,17 @@ public abstract class InterfaceController {
         tgb.setIdentificationCode(VATNumber);
         return tgb;
     }
+
+    protected ItineraryBean setItineraryBean(String guideId, String location, String date, String time, int participants, int price, String steps){
+        ItineraryBean ib = new ItineraryBean();
+        ib.setGuideId(guideId);
+        ib.setDate(date);
+        ib.setLocation(location);
+        ib.setTime(time);
+        ib.setParticipants(participants);
+        ib.setPrice(price);
+        ib.setSteps(steps);
+        return ib;
+    }
+
 }

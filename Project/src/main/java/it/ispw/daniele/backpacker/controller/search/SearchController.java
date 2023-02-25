@@ -56,17 +56,13 @@ public class SearchController extends Controller {
             for (int j = 0; j <= 5; j++) {
 
                 int index = rand.nextInt((result.size() - 1) + 1);
-                //int index = num.nextInt((result.size() - 1) + 1);
 
                 if (!vector.toString().contains(result.get(index)) && j != 0) {
-
                     vector.append("/").append(result.get(index));
                 }
                 else {
-
                     vector.append(result.get(index));
                 }
-
             }
 
             Itinerary itinerary;

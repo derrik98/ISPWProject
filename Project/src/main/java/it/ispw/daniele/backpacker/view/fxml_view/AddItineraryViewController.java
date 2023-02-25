@@ -2,8 +2,9 @@ package it.ispw.daniele.backpacker.view.fxml_view;
 
 import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.bean.ItineraryBean;
-import it.ispw.daniele.backpacker.controller.addItinerary.AddItineraryController;
+import it.ispw.daniele.backpacker.controller.add_itinerary.AddItineraryController;
 import it.ispw.daniele.backpacker.utils.SessionUser;
+import it.ispw.daniele.backpacker.view.utils_view.InterfaceController;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ListView;
@@ -12,7 +13,7 @@ import javafx.scene.layout.HBox;
 
 import static it.ispw.daniele.backpacker.view.command_line_interface.CLI.*;
 
-public class AddItineraryViewController {
+public class AddItineraryViewController extends InterfaceController {
     @FXML
     public TextField textFieldLanguages;
     @FXML
@@ -56,15 +57,7 @@ public class AddItineraryViewController {
             date = this.fieldDate.getValue().toString();
         }
 
-        ItineraryBean itineraryBean = new ItineraryBean();
-        //itineraryBean.setItineraryId(id);
-        itineraryBean.setGuideId(this.guideBean.getUsername());
-        itineraryBean.setDate(date);
-        itineraryBean.setLocation(location);
-        itineraryBean.setTime(time);
-        itineraryBean.setParticipants(Integer.parseInt(participants));
-        itineraryBean.setPrice(Integer.parseInt(price));
-        itineraryBean.setSteps(this.steps);
+        ItineraryBean itineraryBean = this.setItineraryBean(this.guideBean.getUsername(), date, location, time, Integer.parseInt(participants), Integer.parseInt(price), this.steps);
 
         try {
             result = controller.addItinerary(itineraryBean);

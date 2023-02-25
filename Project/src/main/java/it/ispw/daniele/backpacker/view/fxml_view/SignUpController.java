@@ -21,7 +21,7 @@ public class SignUpController extends InterfaceController {
 
     @FXML
     private Label TOURIST_GUIDE;
-    public TextField textFieldImage;
+    private TextField textFieldImage;
     @FXML
     private Label USER;
     @FXML

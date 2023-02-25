@@ -1,8 +1,8 @@
 package it.ispw.daniele.backpacker.dao;
 
 import it.ispw.daniele.backpacker.entity.TouristGuide;
-import it.ispw.daniele.backpacker.utils.DBLoginConnection;
-import it.ispw.daniele.backpacker.utils.DBTouristGuideConnection;
+import it.ispw.daniele.backpacker.utils.dbLoginConnection;
+import it.ispw.daniele.backpacker.utils.dbTouristGuideConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -23,7 +23,7 @@ public class TouristGuideDao extends DaoTemplate{
     private List<TouristGuide> queryDatabase(String caller, String operation){
         List <TouristGuide> ret = this.execute(() -> {
             List<TouristGuide> l = new ArrayList<>();
-            Connection conn = DBTouristGuideConnection.getTouristGuideConnection();
+            Connection conn = dbTouristGuideConnection.getTouristGuideConnection();
             PreparedStatement stm = null;
             try {
                 String sql;
@@ -71,7 +71,7 @@ public class TouristGuideDao extends DaoTemplate{
                               String email, String password, String profilePicture, String identificationCode) {
         return (this.execute(() -> {
 
-            Connection con = DBLoginConnection.getLoginConnection();
+            Connection con = dbLoginConnection.getLoginConnection();
             if(con == null){
 
                 return false;
