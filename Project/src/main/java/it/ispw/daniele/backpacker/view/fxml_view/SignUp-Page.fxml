@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.view.fxml_view.SignUpController">
+     <VBox alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <VBox alignment="CENTER">
+             <HBox alignment="CENTER">
+                 <VBox.margin>
+                     <Insets bottom="20.0" left="20.0" right="20.0" top="40.0" />
+                 </VBox.margin>
+                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Create Account: ">
+                     <font>
+                         <Font size="35.0" />
+                     </font>
+                     <HBox.margin>
+                         <Insets />
+                     </HBox.margin>
+                 </Text>
+                 <Label fx:id="USER" onMouseClicked="#switchToUserSignUpPage" text="Generic User" underline="true">
+                     <font>
+                         <Font size="27.0" />
+                     </font>
+                     <HBox.margin>
+                         <Insets left="30.0" right="30.0" />
+                     </HBox.margin>
+                     <cursor>
+                         <Cursor fx:constant="HAND" />
+                     </cursor>
+                 </Label>
+                 <Label fx:id="TOURIST_GUIDE" onMouseClicked="#switchToTGuideSignUpPage" text="Tourist Guide">
+                     <font>
+                         <Font size="27.0" />
+                     </font>
+                     <cursor>
+                         <Cursor fx:constant="HAND" />
+                     </cursor>
+                 </Label>
+             </HBox>
+             <HBox alignment="CENTER" spacing="15.0">
+                 <VBox.margin>
+                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                 </VBox.margin>
+                 <cursor>
+                     <Cursor fx:constant="DEFAULT" />
+                 </cursor>
+                 <VBox alignment="CENTER" prefWidth="500.0">
+                     <HBox.margin>
+                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <HBox alignment="CENTER_RIGHT">
+                         <VBox.margin>
+                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                         </VBox.margin>
+                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail:">
+                             <font>
+                                 <Font size="27.0" />
+                             </font>
+                             <HBox.margin>
+                                 <Insets right="10.0" />
+                             </HBox.margin>
+                         </Text>
+                         <TextField fx:id="textFieldEmailSignUp">
+                             <font>
+                                 <Font size="20.0" />
+                             </font>
+                         </TextField>
+                     </HBox>
+                     <HBox alignment="CENTER_RIGHT">
+                         <VBox.margin>
+                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                         </VBox.margin>
+                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+                             <font>
+                                 <Font size="27.0" />
+                             </font>
+                             <HBox.margin>
+                                 <Insets right="10.0" />
+                             </HBox.margin>
+                         </Text>
+                         <TextField fx:id="textFieldNameSignUp">
+                             <font>
+                                 <Font size="20.0" />
+                             </font>
+                         </TextField>
+                     </HBox>
+                     <HBox alignment="CENTER_RIGHT">
+                         <VBox.margin>
+                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                         </VBox.margin>
+                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Surname:">
+                             <font>
+                                 <Font size="27.0" />
+                             </font>
+                             <HBox.margin>
+                                 <Insets right="10.0" />
+                             </HBox.margin>
+                         </Text>
+                         <TextField fx:id="textFieldSurnameSignUp">
+                             <font>
+                                 <Font size="20.0" />
+                             </font>
+                         </TextField>
+                     </HBox>
+                 </VBox>
+                 <Separator orientation="VERTICAL" HBox.hgrow="ALWAYS" />
+                 <VBox alignment="CENTER" prefWidth="500.0">
+                     <HBox.margin>
+                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <HBox alignment="CENTER_RIGHT">
+                         <VBox.margin>
+                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                         </VBox.margin>
+                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
+                             <font>
+                                 <Font size="27.0" />
+                             </font>
+                             <HBox.margin>
+                                 <Insets right="10.0" />
+                             </HBox.margin>
+                         </Text>
+                         <PasswordField fx:id="textFieldPassSignUp">
+                             <font>
+                                 <Font size="20.0" />
+                             </font>
+                         </PasswordField>
+                     </HBox>
+                     <HBox alignment="CENTER_RIGHT">
+                         <VBox.margin>
+                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                         </VBox.margin>
+                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password:">
+                             <font>
+                                 <Font size="27.0" />
+                             </font>
+                             <HBox.margin>
+                                 <Insets right="10.0" />
+                             </HBox.margin>
+                         </Text>
+                         <PasswordField fx:id="textFieldConfPassSignUp">
+                             <font>
+                                 <Font size="20.0" />
+                             </font>
+                         </PasswordField>
+                     </HBox>
+                     <HBox alignment="CENTER_RIGHT" layoutX="20.0" layoutY="116.0">
+                         <VBox.margin>
+                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                         </VBox.margin>
+                  <Button mnemonicParsing="false" onMouseClicked="#selectImage" text="Select Profile Picture">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                         <TextField fx:id="textFieldImage">
+                             <font>
+                                 <Font size="20.0" />
+                             </font>
+                         </TextField>
+                     </HBox>
+                     <HBox alignment="CENTER_RIGHT">
+                         <VBox.margin>
+                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                         </VBox.margin>
+                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="VAT Number">
+                             <HBox.margin>
+                                 <Insets right="10.0" />
+                             </HBox.margin>
+                             <font>
+                                 <Font size="27.0" />
+                             </font>
+                         </Text>
+                         <TextField fx:id="textFieldVATNumber" disable="true">
+                             <font>
+                                 <Font size="20.0" />
+                             </font>
+                         </TextField>
+                     </HBox>
+                 </VBox>
+             </HBox>
+             <Button mnemonicParsing="false" onAction="#signUp" text="Sign up">
+                 <font>
+                     <Font size="27.0" />
+                 </font>
+                 <VBox.margin>
+                     <Insets bottom="40.0" top="20.0" />
+                 </VBox.margin>
+             </Button>
+
+         </VBox>
+         </VBox>
+</AnchorPane>

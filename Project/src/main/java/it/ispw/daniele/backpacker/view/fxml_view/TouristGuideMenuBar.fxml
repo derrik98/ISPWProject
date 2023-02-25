@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefWidth="1920.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.view.fxml_view.TouristGuideMenuBarController">
+   <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" spacing="35.0" style="-fx-background-color: rgba(139,103,40,0.95);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Label fx:id="LabelHome" contentDisplay="TEXT_ONLY" onMouseClicked="#switchToHome" text="Home">
+         <font>
+            <Font size="40.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="LabelResult" onMouseClicked="#switchToResult" text="Result">
+         <font>
+            <Font size="40.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="LabelAddItinerary" onMouseClicked="#switchToAddItinerary" text="Add Itinerary">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <font>
+            <Font size="40.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label fx:id="LabelProfile" onMouseClicked="#switchToTGuideDetails" text="Profile">
+         <font>
+            <Font size="40.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <Label onMouseClicked="#logout" text="Log out">
+         <font>
+            <Font size="40.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </Label>
+      <ImageView fx:id="imageUndo" fitHeight="50.0" fitWidth="50.0" nodeOrientation="INHERIT" onMouseClicked="#undoScene" pickOnBounds="true" preserveRatio="true">
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+         <Image url="@/annulla.png" />
+      </ImageView>
+   </HBox>
+</AnchorPane>
