@@ -67,7 +67,6 @@ public class HomeUserController{
         homeBean.setRange(this.labelRange.getText());
 
         try {
-
             if (textFieldCountry.getText().equals("") || textFieldCity.getText().equals("") || textFieldAddress.getText().equals("")) {
                 throw new FileNotFoundException("ERROR");
             }

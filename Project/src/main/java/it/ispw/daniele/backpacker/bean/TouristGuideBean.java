@@ -4,8 +4,6 @@ import java.io.Serial;
 
 public class TouristGuideBean extends GeneralUserBean{
 
-    @Serial
-    private static final long serialVersionUID = 42L;
     private String name;
     private String surname;
     private String identificationCode;

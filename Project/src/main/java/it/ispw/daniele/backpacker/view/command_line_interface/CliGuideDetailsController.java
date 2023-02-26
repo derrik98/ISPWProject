@@ -15,7 +15,7 @@ import static it.ispw.daniele.backpacker.view.command_line_interface.CLI.RESET;
 
 public class CliGuideDetailsController extends Controller {
 
-    private TouristGuideBean getSearchUser(String searchString, String caller) {
+    private TouristGuideBean getSearchUser(String caller) {
         TouristGuideDao ud = new TouristGuideDao();
         List<TouristGuide> l = ud.getSearchUser(caller);
         return this.convert(l.get(0));
@@ -24,8 +24,7 @@ public class CliGuideDetailsController extends Controller {
     public void init() {
 
         GeneralUserBean gub = SessionUser.getInstance().getSession();
-
-        TouristGuideBean users = this.getSearchUser("search_t_guide", gub.getUsername());
+        TouristGuideBean users = this.getSearchUser(gub.getUsername());
 
         do {
             System.out.print("\033[H\033[2J");
@@ -46,5 +45,4 @@ public class CliGuideDetailsController extends Controller {
             }
         }while (true);
     }
-
 }

@@ -2,6 +2,7 @@ package it.ispw.daniele.backpacker.view.fxml_view;
 
 import it.ispw.daniele.backpacker.bean.HomeBean;
 import it.ispw.daniele.backpacker.bean.ItineraryBean;
+import it.ispw.daniele.backpacker.exceptions.GenericException;
 import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
 import it.ispw.daniele.backpacker.utils.Roles;
 import javafx.fxml.FXML;
@@ -62,7 +63,7 @@ public abstract class GUIChangeTemplate{
                 scene.setRoot(fxmlLoader);
                 try {
                     rc.init(homeBean);
-                } catch (NoSuchAlgorithmException e) {
+                } catch (NoSuchAlgorithmException | GenericException e) {
                     throw new RuntimeException(e);
                 }
 

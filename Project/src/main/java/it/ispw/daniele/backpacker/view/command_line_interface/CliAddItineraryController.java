@@ -4,6 +4,7 @@ import it.ispw.daniele.backpacker.bean.GeneralUserBean;
 import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.controller.add_itinerary.AddItineraryController;
 import it.ispw.daniele.backpacker.utils.SessionUser;
+import it.ispw.daniele.backpacker.view.utils_view.InterfaceController;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,7 +12,7 @@ import java.util.Scanner;
 import static it.ispw.daniele.backpacker.view.command_line_interface.CLI.RED;
 import static it.ispw.daniele.backpacker.view.command_line_interface.CLI.RESET;
 
-public class CliAddItineraryController {
+public class CliAddItineraryController extends InterfaceController {
 
     private String steps = "";
     private GeneralUserBean guideBean = SessionUser.getInstance().getSession();
@@ -74,16 +75,16 @@ public class CliAddItineraryController {
 
         boolean result;
 
-        ItineraryBean itineraryBean = new ItineraryBean();
-        itineraryBean.setGuideId(this.guideBean.getUsername());
-        itineraryBean.setDate(date);
-        itineraryBean.setLocation(location);
-        itineraryBean.setTime(time);
-        itineraryBean.setParticipants(Integer.parseInt(participants));
-        itineraryBean.setPrice(Integer.parseInt(price));
-        itineraryBean.setSteps(this.steps);
-        System.out.println(this.guideBean.getUsername());
-        System.out.println("Dati" + itineraryBean.getGuideId() + "\n" + itineraryBean.getDate() + "\n" + itineraryBean.getLocation() + "\n" + itineraryBean.getTime() + "\n" + itineraryBean.getParticipants() + "\n" + itineraryBean.getPrice());
+        ItineraryBean itineraryBean = this.setItineraryBean(this.guideBean.getUsername(), location, date, time, Integer.parseInt(participants), Integer.parseInt(price), this.steps);
+//        itineraryBean.setGuideId(this.guideBean.getUsername());
+//        itineraryBean.setDate(date);
+//        itineraryBean.setLocation(location);
+//        itineraryBean.setTime(time);
+//        itineraryBean.setParticipants(Integer.parseInt(participants));
+//        itineraryBean.setPrice(Integer.parseInt(price));
+//        itineraryBean.setSteps(this.steps);
+//        System.out.println(this.guideBean.getUsername());
+//        System.out.println("Dati" + itineraryBean.getGuideId() + "\n" + itineraryBean.getDate() + "\n" + itineraryBean.getLocation() + "\n" + itineraryBean.getTime() + "\n" + itineraryBean.getParticipants() + "\n" + itineraryBean.getPrice());
 
         try {
             result = controller.addItinerary(itineraryBean);

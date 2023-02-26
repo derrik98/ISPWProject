@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 public class GeneralUserBean implements Serializable {
 
-    protected String username;
-    protected String password;
-    protected String email;
-    protected String role;
-    protected String profilePicture;
+    private String username;
+    private String password;
+    private String email;
+    private String role;
+    private String profilePicture;
 
     public void setUsername(String username) {
         this.username = username;

@@ -5,6 +5,7 @@ import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.booktour.BookTourController;
 import it.ispw.daniele.backpacker.booktour.SaveTour;
 import it.ispw.daniele.backpacker.controller.search.SearchController;
+import it.ispw.daniele.backpacker.exceptions.GenericException;
 import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
 import it.ispw.daniele.backpacker.utils.SessionUser;
 
@@ -24,7 +25,7 @@ public class CliResultController {
 
     List<ItineraryBean> it;
 
-    public void init(HomeBean homeBean) throws MonumentNotFoundException, NoSuchAlgorithmException {
+    public void init(HomeBean homeBean) throws MonumentNotFoundException, NoSuchAlgorithmException, GenericException {
         System.out.print("\033[H\033[2J");
         System.out.println(BOLD + "RESULT PAGE\n" + RESET);
         System.out.println("Country: " + homeBean.getCountry() + ", City: " + homeBean.getCity() + ", Address: " + homeBean.getAddress() + ", Restaurant: " + homeBean.isRestaurant() + ", Range: " + homeBean.getRange() + "\n");

@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 public class ItineraryBean implements Serializable {
 
-    static final long serialVersionUID = 42L;
     private int itineraryId;
     private String guideId;
     private String location;

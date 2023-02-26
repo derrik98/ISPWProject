@@ -29,19 +29,9 @@ public class CliUserDetailsController extends Controller {
         UserBean users = this.getSearchUser(SessionUser.getInstance().getSession().getUsername());
 
         do {
-            /*String loggerName = "com.something";
-            Logger log = Logger.getLogger(loggerName);
-            ConsoleHandler handler = new ConsoleHandler();
-            handler.setLevel(Level.ALL);
-            log.addHandler(handler);
-            log.setLevel(Level.ALL);
-            log.fine("just testing");*/
 
-
-            Logger.getLogger("\033[H\033[2J");
-            //System.out.print("\033[H\033[2J");
-            Logger.getLogger(BOLD + "PROFILE PAGE\n" + RESET);
-            //System.out.println(BOLD + "PROFILE PAGE\n" + RESET);
+            System.out.print("\033[H\033[2J");
+            System.out.println(BOLD + "PROFILE PAGE\n" + RESET);
             System.out.println("Username: " + users.getUsername());
             System.out.println("Name: " + users.getName());
             System.out.println("Email: " + users.getEmail());

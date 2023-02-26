@@ -18,5 +18,6 @@ public class CliUserGraphicChange extends CliGuiChangeTemplate{
     }
 
     public void switchToResult(String country, String city, String address, String restaurant, String range) {
+        // Do nothing.
     }
 }

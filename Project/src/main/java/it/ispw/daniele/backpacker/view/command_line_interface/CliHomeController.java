@@ -4,7 +4,9 @@ import it.ispw.daniele.backpacker.bean.HomeBean;
 import it.ispw.daniele.backpacker.controller.search.SearchController;
 import it.ispw.daniele.backpacker.exceptions.AddressNotFoundException;
 import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
+import it.ispw.daniele.backpacker.exceptions.GenericException;
 import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
+import it.ispw.daniele.backpacker.view.utils_view.InterfaceController;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -13,7 +15,7 @@ import java.util.Scanner;
 
 import static it.ispw.daniele.backpacker.view.command_line_interface.CLI.*;
 
-public class CliHomeController {
+public class CliHomeController extends InterfaceController {
 
     public void init(Scanner scanner) throws IOException, AddressNotFoundException, CityNotFoundException, MonumentNotFoundException {
 
@@ -46,12 +48,12 @@ public class CliHomeController {
 
 
 
-        HomeBean homeBean = new HomeBean();
-        homeBean.setCountry(country);
-        homeBean.setCity(city);
-        homeBean.setAddress(address);
-        homeBean.setRestaurant(restaurant);
-        homeBean.setRange(range);
+        HomeBean homeBean = this.setHomeBean(country, city, address, restaurant, range);//new HomeBean();
+//        homeBean.setCountry(country);
+//        homeBean.setCity(city);
+//        homeBean.setAddress(address);
+//        homeBean.setRestaurant(restaurant);
+//        homeBean.setRange(range);
         try{
         if (country.equals("") || city.equals("") || address.equals("")) {
             throw new FileNotFoundException("ERROR");
@@ -65,6 +67,8 @@ public class CliHomeController {
     } catch (CityNotFoundException | AddressNotFoundException | MonumentNotFoundException exception) {
         System.out.println(RED + exception.getMessage() + RESET + "\n");
     } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        } catch (GenericException e) {
             throw new RuntimeException(e);
         }
 

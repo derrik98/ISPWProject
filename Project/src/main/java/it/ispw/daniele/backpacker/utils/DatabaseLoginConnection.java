@@ -4,29 +4,23 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class dbUserConnection {
+public class DatabaseLoginConnection {
 
     private static Connection connection = null;
-    private static final String USER = System.getProperty("user_password");
+    private static final String USER = System.getProperty("login_password");
     private static final String DB_URL = "jdbc:mysql://localhost/backpacker?allowPublicKeyRetrieval=true&useSSL=false";
+    //private static final String DRIVER_CLASS_NAME = "com.mysql.jdbc.Driver";
 
-    private static final String DRIVER_CLASS_NAME = "com.mysql.jdbc.Driver";
-
-
-    private dbUserConnection() {
-    }
-
-    public static Connection getUserConnection() throws ClassNotFoundException, SQLException {
+    public static Connection getLoginConnection() throws SQLException {
 
         if (connection == null) {
             //Class.forName(driver_class_name);
-            connection = DriverManager.getConnection(DB_URL, USER, "user");
+            connection = DriverManager.getConnection(DB_URL, USER, "login");
         }
         return connection;
-
     }
 
-    public static void closeUserConnection(Connection conn) throws SQLException{
+    public static void closeLoginConnection(Connection conn) throws SQLException{
         conn.close();
         connection = null;
     }

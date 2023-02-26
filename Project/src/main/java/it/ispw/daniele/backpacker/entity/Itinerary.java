@@ -1,14 +1,15 @@
 package it.ispw.daniele.backpacker.entity;
 
 public class Itinerary {
-    private Integer id;
+    private int id;
     private String guideId;
     private String location;
     private String date;
     private String time;
-    private Integer participants;
-    private Integer price;
+    private int participants;
+    private int price;
     private String steps;
+
 
     public Itinerary(int id, String guideId, String location, String date, String time, int participants, int price, String steps) {
 

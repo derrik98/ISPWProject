@@ -1,5 +1,6 @@
 package it.ispw.daniele.backpacker.view.utils_view;
 
+import it.ispw.daniele.backpacker.bean.HomeBean;
 import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.bean.TouristGuideBean;
 import it.ispw.daniele.backpacker.bean.UserBean;
@@ -16,7 +17,7 @@ public abstract class InterfaceController {
         ub.setProfilePicture(newFileName);
         return ub;
     }
-    protected TouristGuideBean setTouristGuideBean(String username, String name, String surname, String email, String password, String newFileName, String VATNumber){
+    protected TouristGuideBean setTouristGuideBean(String username, String name, String surname, String email, String password, String newFileName, String vatNumber){
         TouristGuideBean tgb = new TouristGuideBean();
         tgb.setUsername(username);
         tgb.setName(name);
@@ -24,7 +25,7 @@ public abstract class InterfaceController {
         tgb.setEmail(email);
         tgb.setPassword(password);
         tgb.setProfilePicture(newFileName);
-        tgb.setIdentificationCode(VATNumber);
+        tgb.setIdentificationCode(vatNumber);
         return tgb;
     }
 
@@ -40,4 +41,13 @@ public abstract class InterfaceController {
         return ib;
     }
 
+    protected HomeBean setHomeBean(String country, String city, String address, String restaurant, String range){
+        HomeBean hb = new HomeBean();
+        hb.setCountry(country);
+        hb.setCity(city);
+        hb.setAddress(address);
+        hb.setRestaurant(restaurant);
+        hb.setRange(range);
+        return hb;
+    }
 }

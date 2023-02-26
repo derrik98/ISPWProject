@@ -1,8 +1,8 @@
 package it.ispw.daniele.backpacker.dao;
 
 import it.ispw.daniele.backpacker.entity.Itinerary;
-import it.ispw.daniele.backpacker.utils.dbTouristGuideConnection;
-import it.ispw.daniele.backpacker.utils.dbUserConnection;
+import it.ispw.daniele.backpacker.utils.DatabaseTouristGuideConnection;
+import it.ispw.daniele.backpacker.utils.DatabaseUserConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -35,7 +35,7 @@ public class ItineraryDao extends DaoTemplate {
                 List<Itinerary> itinerary = new ArrayList<>();
                 String sql;
 
-                conn = dbUserConnection.getUserConnection();
+                conn = DatabaseUserConnection.getUserConnection();
                 sql = "call backpacker.get_itinerary(?);\r\n";
 
                 try (PreparedStatement stm = conn.prepareStatement(sql)) {
@@ -47,7 +47,7 @@ public class ItineraryDao extends DaoTemplate {
                     }
 
                 }
-                dbUserConnection.closeUserConnection(conn);
+                DatabaseUserConnection.closeUserConnection(conn);
                 return itinerary;
             }
         });
@@ -68,13 +68,13 @@ public class ItineraryDao extends DaoTemplate {
 
     public Boolean isParticipating(String username, int itineraryId) {
         Boolean ret = this.execute(() -> {
-            Connection conn = dbUserConnection.getUserConnection();
+            Connection conn = DatabaseUserConnection.getUserConnection();
             String sql = "call backpacker.is_participating(?, ?);\r\n";
             try (PreparedStatement stm = conn.prepareStatement(sql)) {
                 stm.setString(1, username);
                 stm.setInt(2, itineraryId);
                 try (ResultSet rs = stm.executeQuery()) {
-                    dbUserConnection.closeUserConnection(conn);
+                    DatabaseUserConnection.closeUserConnection(conn);
                     return (rs.first());
                 }
             }
@@ -91,7 +91,7 @@ public class ItineraryDao extends DaoTemplate {
             PreparedStatement stm = null;
             String sql = null;
             try {
-                conn = dbUserConnection.getUserConnection();
+                conn = DatabaseUserConnection.getUserConnection();
                 if (operation.equals(ADD_PART)) {
                     sql = "call backpacker.add_participation(?, ?);\r\n";
                 } else if (operation.equals(REMOVE_PART)) {
@@ -105,14 +105,14 @@ public class ItineraryDao extends DaoTemplate {
                 if (stm != null)
                     stm.close();
             }
-            dbUserConnection.closeUserConnection(conn);
+            DatabaseUserConnection.closeUserConnection(conn);
             return null;
         });
     }
 
     public boolean addItinerary(String guideId, String location, Date date, String time, int participants, int price, String steps) {
         return (this.execute(() -> {
-            Connection con = dbTouristGuideConnection.getTouristGuideConnection();
+            Connection con = DatabaseTouristGuideConnection.getTouristGuideConnection();
             String sql = "call backpacker.add_itinerary(?, ?, ?, ?, ?, ?, ?);\r\n";
             try (PreparedStatement stm = con.prepareStatement(sql)) {
                 java.sql.Date sqlDate = new java.sql.Date(date.getTime());
@@ -135,7 +135,7 @@ public class ItineraryDao extends DaoTemplate {
         Connection conn;
         String sql;
 
-        conn = dbUserConnection.getUserConnection();
+        conn = DatabaseUserConnection.getUserConnection();
         sql = "call backpacker.get_itinerary_id(?, ?, ?, ?, ?, ?; ?);\r\n";
 
         try (PreparedStatement stm = conn.prepareStatement(sql)) {
@@ -154,7 +154,7 @@ public class ItineraryDao extends DaoTemplate {
                 }
                 return 0;
             } finally {
-                dbUserConnection.closeUserConnection(conn);
+                DatabaseUserConnection.closeUserConnection(conn);
             }
         }
     }
@@ -167,7 +167,7 @@ public class ItineraryDao extends DaoTemplate {
                 List<Itinerary> itinerary = new ArrayList<>();
                 String sql;
 
-                conn = dbUserConnection.getUserConnection();
+                conn = DatabaseUserConnection.getUserConnection();
                 sql = "call backpacker.get_booked_itineraries(?);\r\n";
 
                 try(PreparedStatement stm = conn.prepareStatement(sql)) {
@@ -214,7 +214,7 @@ public class ItineraryDao extends DaoTemplate {
         this.execute(new DaoAction<Boolean>() {
             @Override
             public Boolean act() throws ClassNotFoundException, SQLException {
-                Connection con = dbUserConnection.getUserConnection();
+                Connection con = DatabaseUserConnection.getUserConnection();
                 String sql = "call backpacker.save_itinerary(?, ?);\r\n";
 
                 try (PreparedStatement stm = con.prepareStatement(sql)) {
@@ -236,7 +236,7 @@ public class ItineraryDao extends DaoTemplate {
                 List<Itinerary> itinerary = new ArrayList<>();
                 String sql;
 
-                conn = dbUserConnection.getUserConnection();
+                conn = DatabaseUserConnection.getUserConnection();
                 sql = "call backpacker.get_saved_itinerary(?);\r\n";
 
                 try(PreparedStatement stm = conn.prepareStatement(sql)) {
@@ -276,7 +276,7 @@ public class ItineraryDao extends DaoTemplate {
     public void removeTour(String username, String steps) {
 
         this.execute(() -> {
-            Connection con = dbUserConnection.getUserConnection();
+            Connection con = DatabaseUserConnection.getUserConnection();
             String sql = "call backpacker.remove_itinerary(?, ?);\r\n";
 
             try (PreparedStatement stm = con.prepareStatement(sql)) {

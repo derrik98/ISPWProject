@@ -4,6 +4,7 @@ import it.ispw.daniele.backpacker.bean.HomeBean;
 import it.ispw.daniele.backpacker.bean.ItineraryBean;
 import it.ispw.daniele.backpacker.booktour.BookTourController;
 import it.ispw.daniele.backpacker.controller.search.SearchController;
+import it.ispw.daniele.backpacker.exceptions.GenericException;
 import it.ispw.daniele.backpacker.exceptions.MonumentNotFoundException;
 import it.ispw.daniele.backpacker.utils.Controller;
 import it.ispw.daniele.backpacker.utils.Roles;
@@ -58,7 +59,7 @@ public class ResultController extends Controller {
 
     private static ResultController instance = null;
 
-    public void init(HomeBean homeBean) throws MonumentNotFoundException, NoSuchAlgorithmException {
+    public void init(HomeBean homeBean) throws MonumentNotFoundException, NoSuchAlgorithmException, GenericException {
 
         if(SessionUser.getInstance().getSession().getRole().equals(Roles.TOURIST_GUIDE.name().toLowerCase())) {
             TouristGuideGraphicChange i = TouristGuideGraphicChange.getInstance();
