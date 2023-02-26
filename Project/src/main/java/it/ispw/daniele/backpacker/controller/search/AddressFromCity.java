@@ -24,7 +24,7 @@ public class AddressFromCity extends JSONFactory{
     public boolean getJSON(HomeBean homeBean) throws AddressNotFoundException, IOException {
         JSONObject json;
 
-        json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/autocomplete/json?input=" + convertString(homeBean.getAddress()) + "&types=geocode&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg&language=it");
+        json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/autocomplete/json?input=" + convertString(homeBean.getAddress()) + "&types=geocode&key=" + System.getProperty("google_api") + "&language=it");//AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg&language=it");
 
 
         if(!json.getString("status").equals("OK")) {
