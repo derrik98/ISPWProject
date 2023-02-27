@@ -26,7 +26,9 @@ public class CityFromCountry extends JSONFactory{
                 + homeBean.getCity() + "&types=(cities)&language=it&key=" + System.getProperty("google_api"));
 
         JSONArray ja = (JSONArray) json.get("predictions");
+        System.out.println(ja);
         JSONObject o = (JSONObject) ja.getJSONObject(0).get("structured_formatting");
+        System.out.println(o);
         String s = (String) o.get("secondary_text");
 
         String upperCase;
