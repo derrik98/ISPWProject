@@ -1,14 +1,10 @@
 package it.ispw.daniele.backpacker.controller.search;
 
-import com.mysql.fabric.Response;
 import it.ispw.daniele.backpacker.bean.HomeBean;
 import it.ispw.daniele.backpacker.exceptions.AddressNotFoundException;
-import it.ispw.daniele.backpacker.exceptions.CityNotFoundException;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.awt.*;
 import java.io.IOException;
 
 public class AddressFromCity extends JSONFactory{
@@ -28,8 +24,7 @@ public class AddressFromCity extends JSONFactory{
         JSONObject json;
 
         json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/autocomplete/json?input=" + convertString(homeBean.getAddress()) + "&types=geocode&key=" + System.getProperty("google_api") + "&language=it");
-
-
+        
         if(!json.getString("status").equals("OK")) {
             throw new AddressNotFoundException("Questa via non è presente in questo città");
         }
