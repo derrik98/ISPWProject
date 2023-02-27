@@ -16,7 +16,7 @@ public class DatabaseUserConnection {
 
         if (connection == null) {
             //Class.forName(driver_class_name);
-            connection = DriverManager.getConnection(DB_URL, USER, "user");
+            connection = DriverManager.getConnection(DB_URL, "user", USER);
         }
         return connection;
 

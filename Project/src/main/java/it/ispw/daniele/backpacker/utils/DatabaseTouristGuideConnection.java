@@ -17,7 +17,7 @@ public class DatabaseTouristGuideConnection {
 
         if(connection == null) {
             //Class.forName(driver_class_name);
-            connection = DriverManager.getConnection(DB_URL, TOURIST_GUIDE, "tourist_guide");
+            connection = DriverManager.getConnection(DB_URL, "tourist_guide", TOURIST_GUIDE);
         }
         return connection;
 
