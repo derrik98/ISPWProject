@@ -18,20 +18,16 @@ import java.util.Random;
 
 public class SearchController extends Controller {
 
-    public boolean checkInput(HomeBean bean) throws CityNotFoundException, AddressNotFoundException, MonumentNotFoundException, IOException {
+    public void checkInput(HomeBean bean) throws CityNotFoundException, AddressNotFoundException, MonumentNotFoundException, IOException {
         JSONFactory checkCityCountry = new CityFromCountry();
 
         if (checkCityCountry.getJSON(bean)) {
             JSONFactory checkAddressCity = new AddressFromCity();
             if(checkAddressCity.getJSON(bean)) {
                 MonumentFromAddress monuments = new MonumentFromAddress();
-                return monuments.getJSON(bean);
-            }
-            else{
-                return false;
+                monuments.getJSON(bean);
             }
         }
-        return false;
     }
 
     public List<ItineraryBean> createItinerary(HomeBean homeBean) throws MonumentNotFoundException, GenericException {

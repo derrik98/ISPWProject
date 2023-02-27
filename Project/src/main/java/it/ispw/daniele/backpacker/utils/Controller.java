@@ -24,6 +24,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.scene.web.WebView;
 
 import java.io.FileInputStream;
@@ -81,11 +82,11 @@ public class Controller {
         return ib;
     }
 
-    protected Accordion createTable(List<ItineraryBean> itineraryBeanList, String type, String from, StackPane stackPane){
+    protected Accordion createTable(List<ItineraryBean> itineraryBeanList, String type, String from, StackPane stackPane) {
 
         Accordion accordion = new Accordion();
 
-        for(int jind = 0; jind < itineraryBeanList.size(); jind++) {
+        for (int jind = 0; jind < itineraryBeanList.size(); jind++) {
 
             String[] steps = itineraryBeanList.get(jind).getSteps().split("/");
             ArrayList<String> als = new ArrayList<>();
@@ -121,7 +122,7 @@ public class Controller {
 
                 Label label = new Label(" " + als.get(indexMonument) + " ");
 
-                if(indexMonument != 0) {
+                if (indexMonument != 0) {
 
                     Label space = new Label(" - ");
                     space.setFont(new Font("Arial", 14));
@@ -139,9 +140,16 @@ public class Controller {
 
             }
 
-            if(type.equals("suggested")){
+            HBox region3 = new HBox();
+            region3.setMinWidth(15);
+            region3.setMaxWidth(Double.MAX_VALUE);
 
-                if(!from.equals("profile")) {
+            Label output = new Label();
+            contentPane.getChildren().addAll(region3, output);
+
+            if (type.equals("suggested")) {
+
+                if (!from.equals("profile")) {
 
                     //Setting of buy image
                     ImageView ivBuy;
@@ -153,18 +161,16 @@ public class Controller {
                     int finalJ = jind;
                     ivBuy.setOnMouseClicked(mouseEvent -> {
 
+                        titledPane.setExpanded(false);
                         this.BuyItinerary(itineraryBeanList.get(finalJ), stackPane);
 
                     });
 
                     contentPane.getChildren().addAll(region, ivBuy);
-                }
-                else {
+                } else {
                     HBox.setHgrow(region1, Priority.ALWAYS);
                 }
-            }
-
-            else {
+            } else {
                 HBox.setHgrow(region1, Priority.ALWAYS);
             }
 
@@ -172,12 +178,12 @@ public class Controller {
             int finalJ1 = jind;
 
             //Setting of delete image
-            if(from.equals("profile")){
+            if (from.equals("profile")) {
 
                 ivSave = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/cestino.png")).toExternalForm()));
                 ivSave.setOnMouseClicked(mouseEvent -> {
-                    //titledPane.setCollapsible(false);
-                    //titledPane.setExpanded(false);
+                    titledPane.setCollapsible(false);
+                    titledPane.setExpanded(false);
                     this.SaveItinerary(itineraryBeanList.get(finalJ1), "remove");
 
                     accordion.getPanes().remove(titledPane);
@@ -185,22 +191,27 @@ public class Controller {
             }
 
             //Setting of save image
-            else{
+            else {
                 ivSave = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/save.png")).toExternalForm()));
                 ivSave.setOnMouseClicked(mouseEvent -> {
 
-                    this.SaveItinerary(itineraryBeanList.get(finalJ1), "save");
+                    try {
+                        this.SaveItinerary(itineraryBeanList.get(finalJ1), "save");
+                        output.setText("Saved");
+                    } catch (Exception e) {
+                        output.setText("Error");
+                    }
 
                 });
+
+                ivSave.setCursor(Cursor.HAND);
+                ivSave.setFitWidth(35);
+                ivSave.setFitHeight(35);
+
+                contentPane.getChildren().addAll(region1, ivSave);
             }
 
-            ivSave.setCursor(Cursor.HAND);
-            ivSave.setFitWidth(35);
-            ivSave.setFitHeight(35);
-
-            contentPane.getChildren().addAll(region1, ivSave);
-
-            //Setting of map image
+                //Setting of map image
             /*ImageView ivMap = new ImageView(new Image(Objects.requireNonNull(getClass().getResource("/googleMaps.png")).toExternalForm()));
             ivMap.setFitWidth(35);
             ivMap.setFitHeight(35);
@@ -226,21 +237,24 @@ public class Controller {
                 }
             });
             contentPane.getChildren().addAll(region2, ivMap);*/
-            titledPane.setGraphic(contentPane);
-            this.goToMap(als, titledPane);
-            titledPane.setExpanded(true);
-            titledPane.setCollapsible(true);
-            accordion.getPanes().add(titledPane);
+                titledPane.setGraphic(contentPane);
+                this.goToMap(als, titledPane);
+
+
+                titledPane.setExpanded(true);
+                titledPane.setCollapsible(true);
+                accordion.getPanes().add(titledPane);
+            }
+            return accordion;
         }
-        return accordion;
-    }
+
 
     private void BuyItinerary(ItineraryBean itineraryBean, StackPane stackPane) {
         FXMLLoader loader = new FXMLLoader();
         FileInputStream fileInputStream;
 
         try {
-            fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/view/fxmlView/ItineraryDetails-Page.fxml");
+            fileInputStream = new FileInputStream("src/main/java/it/ispw/daniele/backpacker/view/fxml_view/ItineraryDetails-Page.fxml");
             Parent fxmlLoader = loader.load(fileInputStream);
             ItineraryDetailsController idc = loader.getController();
             idc.init(itineraryBean);

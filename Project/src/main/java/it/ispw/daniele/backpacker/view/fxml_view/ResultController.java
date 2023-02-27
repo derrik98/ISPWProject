@@ -32,7 +32,8 @@ public class ResultController extends Controller {
     public Text selfItinerary = new Text();
     @FXML
     public ImageView guideImage = new ImageView();
-    public static final StackPane stackPaneResult = new StackPane();
+    @FXML
+    public StackPane stackPaneResult;
     @FXML
     public HBox hBoxInput = new HBox();
     @FXML
@@ -117,7 +118,7 @@ public class ResultController extends Controller {
             guideImage.setFitHeight(50);
             guideImage.setFitHeight(50);
 
-            Accordion accordionSuggested = this.createTable(suggItinerary, "suggested", result, stackPaneResult);
+            Accordion accordionSuggested = this.createTable(suggItinerary, "suggested", result, this.stackPaneResult);
             vBoxResultGuide.getChildren().add(accordionSuggested);
         }
 

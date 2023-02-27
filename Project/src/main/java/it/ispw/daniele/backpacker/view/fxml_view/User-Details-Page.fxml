@@ -14,146 +14,158 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.view.fxml_view.UserDetailsController">
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.view.fxml_view.UserDetailsController">
     <ScrollPane fitToHeight="true" fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <VBox alignment="TOP_CENTER">
             <StackPane>
                 <Region style="-fx-background-image: url('background_image.jpg'); -fx-background-size: 100% 100%;" StackPane.alignment="CENTER" />
-            <VBox alignment="CENTER">
-               <children>
-                      <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="5.0" text="Backpacker">
-                          <font>
-                              <Font size="140.0" />
-                          </font>
-                      </Text>
-                     <AnchorPane>
-                         <HBox fx:id="menuBar" alignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                     <VBox.margin>
-                        <Insets top="50.0" />
-                     </VBox.margin>
-                     </AnchorPane>
-                     <HBox alignment="TOP_CENTER">
-                         <VBox alignment="CENTER" style="-fx-background-color: rgba(245,184,0,0.95); -fx-background-radius: 25 25 25 25;">
-                             <HBox.margin>
-                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                             </HBox.margin>
-                             <StackPane>
-                                 <ImageView fx:id="profilePicture" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
-                             </StackPane>
-                             <HBox alignment="CENTER_LEFT" VBox.vgrow="ALWAYS">
-                                 <padding>
-                                     <Insets top="30.0" />
-                                 </padding>
-                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username: ">
-                                     <font>
-                                         <Font size="24.0" />
-                                     </font>
-                                 </Text>
-                             </HBox>
-                             <HBox alignment="CENTER_RIGHT" layoutX="36.0" layoutY="272.0" VBox.vgrow="ALWAYS">
-                                 <Label fx:id="username" alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="usename" textAlignment="RIGHT">
-                                     <font>
-                                         <Font size="24.0" />
-                                     </font>
-                                 </Label>
-                             </HBox>
-                             <HBox alignment="CENTER_LEFT">
-                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name: ">
-                                     <font>
-                                         <Font size="24.0" />
-                                     </font>
-                                 </Text>
-                             </HBox>
-                             <HBox alignment="CENTER_RIGHT" layoutX="36.0" layoutY="270.0">
-                                 <Label fx:id="name" alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="name" textAlignment="RIGHT">
-                                     <font>
-                                         <Font size="24.0" />
-                                     </font>
-                                 </Label>
-                             </HBox>
-                             <HBox alignment="CENTER_LEFT">
-                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Surname: ">
-                                     <font>
-                                         <Font size="24.0" />
-                                     </font>
-                                 </Text>
-                             </HBox>
-                             <HBox alignment="CENTER_RIGHT">
-                                 <Label fx:id="surname" alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="surname" textAlignment="RIGHT">
-                                     <font>
-                                         <Font size="24.0" />
-                                     </font>
-                                 </Label>
-                             </HBox>
-                             <HBox alignment="CENTER_LEFT">
-                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail: ">
-                                     <font>
-                                         <Font size="24.0" />
-                                     </font>
-                                 </Text>
-                             </HBox>
-                             <HBox alignment="CENTER_RIGHT">
-                                 <Label fx:id="email" text="e-mail">
-                                     <font>
-                                         <Font size="24.0" />
-                                     </font>
-                                 </Label>
-                             </HBox>
-                             <HBox alignment="CENTER_LEFT" spacing="5.0">
-                                 <ImageView fx:id="imageSettings" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#switchToSettings" onMouseEntered="#showInfoSettings" onMouseExited="#notShowInfoSettings" onMouseMoved="#showInfoSettings" pickOnBounds="true" preserveRatio="true">
-                                     <cursor>
-                                         <Cursor fx:constant="HAND" />
-                                     </cursor>
-                                     <HBox.margin>
-                                         <Insets bottom="10.0" right="10.0" top="10.0" />
-                                     </HBox.margin>
-                                     <Image url="@/impostazioni.png" />
-                                 </ImageView>
-                                 <Text fx:id="textSettings" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings" visible="false">
-                                     <font>
-                                         <Font size="24.0" />
-                                     </font>
-                                 </Text>
-                           <VBox.margin>
-                              <Insets top="20.0" />
-                           </VBox.margin>
-                             </HBox>
-                        <padding>
-                           <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                        </padding>
-                         </VBox>
-                         <VBox alignment="TOP_CENTER" style="-fx-background-color: rgba(183,135,45,0.95); -fx-background-radius: 25 25 25 25;" HBox.hgrow="ALWAYS">
-                             <HBox.margin>
-                                 <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                             </HBox.margin>
-                             <Text fx:id="textBookedItineraries" strokeType="OUTSIDE" strokeWidth="0.0" text="Booked Itineraries">
-                                 <VBox.margin>
-                                     <Insets bottom="5.0" left="20.0" right="20.0" top="20.0" />
-                                 </VBox.margin>
-                                 <font>
-                                     <Font size="27.0" />
-                                 </font>
-                             </Text>
-                             <VBox fx:id="vBoxBooked" alignment="TOP_CENTER" />
-                        <Text fx:id="textSavedItineraries" layoutX="144.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saved Itineraries">
-                           <font>
-                              <Font size="27.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="5.0" left="20.0" right="20.0" top="10.0" />
-                           </VBox.margin>
-                        </Text>
-                        <VBox fx:id="vBoxSaved" alignment="TOP_CENTER" layoutX="10.0" layoutY="86.0" />
-                        <padding>
-                           <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                        </padding>
-                         </VBox>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                     </HBox>
-               </children>
-            </VBox>
+                <VBox alignment="CENTER">
+                    <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="5.0" text="Backpacker">
+                        <font>
+                            <Font size="140.0"/>
+                        </font>
+                    </Text>
+                    <AnchorPane>
+                        <HBox fx:id="menuBar" alignment="CENTER" AnchorPane.bottomAnchor="0.0"
+                              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+                        <VBox.margin>
+                            <Insets top="50.0"/>
+                        </VBox.margin>
+                    </AnchorPane>
+                    <HBox alignment="TOP_CENTER">
+                        <VBox alignment="CENTER"
+                              style="-fx-background-color: rgba(245,184,0,0.95); -fx-background-radius: 25 25 25 25;">
+                            <HBox.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                            </HBox.margin>
+                            <StackPane>
+                                <ImageView fx:id="profilePicture" nodeOrientation="INHERIT" pickOnBounds="true"
+                                           preserveRatio="true"/>
+                            </StackPane>
+                            <HBox alignment="CENTER_LEFT" VBox.vgrow="ALWAYS">
+                                <padding>
+                                    <Insets top="30.0"/>
+                                </padding>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username: ">
+                                    <font>
+                                        <Font size="24.0"/>
+                                    </font>
+                                </Text>
+                            </HBox>
+                            <HBox alignment="CENTER_RIGHT" layoutX="36.0" layoutY="272.0" VBox.vgrow="ALWAYS">
+                                <Label fx:id="username" alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="usename"
+                                       textAlignment="RIGHT">
+                                    <font>
+                                        <Font size="24.0"/>
+                                    </font>
+                                </Label>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT">
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name: ">
+                                    <font>
+                                        <Font size="24.0"/>
+                                    </font>
+                                </Text>
+                            </HBox>
+                            <HBox alignment="CENTER_RIGHT" layoutX="36.0" layoutY="270.0">
+                                <Label fx:id="name" alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="name"
+                                       textAlignment="RIGHT">
+                                    <font>
+                                        <Font size="24.0"/>
+                                    </font>
+                                </Label>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT">
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Surname: ">
+                                    <font>
+                                        <Font size="24.0"/>
+                                    </font>
+                                </Text>
+                            </HBox>
+                            <HBox alignment="CENTER_RIGHT">
+                                <Label fx:id="surname" alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="surname"
+                                       textAlignment="RIGHT">
+                                    <font>
+                                        <Font size="24.0"/>
+                                    </font>
+                                </Label>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT">
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail: ">
+                                    <font>
+                                        <Font size="24.0"/>
+                                    </font>
+                                </Text>
+                            </HBox>
+                            <HBox alignment="CENTER_RIGHT">
+                                <Label fx:id="email" text="e-mail">
+                                    <font>
+                                        <Font size="24.0"/>
+                                    </font>
+                                </Label>
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" spacing="5.0">
+                                <ImageView fx:id="imageSettings" fitHeight="30.0" fitWidth="30.0"
+                                           onMouseClicked="#switchToSettings" onMouseEntered="#showInfoSettings"
+                                           onMouseExited="#notShowInfoSettings" onMouseMoved="#showInfoSettings"
+                                           pickOnBounds="true" preserveRatio="true">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" right="10.0" top="10.0"/>
+                                    </HBox.margin>
+                                    <Image url="@/impostazioni.png"/>
+                                </ImageView>
+                                <Text fx:id="textSettings" strokeType="OUTSIDE" strokeWidth="0.0" text="Settings"
+                                      visible="false">
+                                    <font>
+                                        <Font size="24.0"/>
+                                    </font>
+                                </Text>
+                                <VBox.margin>
+                                    <Insets top="20.0"/>
+                                </VBox.margin>
+                            </HBox>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                            </padding>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER"
+                              style="-fx-background-color: rgba(183,135,45,0.95); -fx-background-radius: 25 25 25 25;"
+                              HBox.hgrow="ALWAYS">
+                            <HBox.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                            </HBox.margin>
+                            <Text fx:id="textBookedItineraries" strokeType="OUTSIDE" strokeWidth="0.0"
+                                  text="Booked Itineraries">
+                                <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="20.0"/>
+                                </VBox.margin>
+                                <font>
+                                    <Font size="27.0"/>
+                                </font>
+                            </Text>
+                            <VBox fx:id="vBoxBooked" alignment="TOP_CENTER"/>
+                            <Text fx:id="textSavedItineraries" layoutX="144.0" layoutY="59.0" strokeType="OUTSIDE"
+                                  strokeWidth="0.0" text="Saved Itineraries">
+                                <font>
+                                    <Font size="27.0"/>
+                                </font>
+                                <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="20.0" top="10.0"/>
+                                </VBox.margin>
+                            </Text>
+                            <VBox fx:id="vBoxSaved" alignment="TOP_CENTER" layoutX="10.0" layoutY="86.0"/>
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                            </padding>
+                        </VBox>
+                        <VBox.margin>
+                            <Insets/>
+                        </VBox.margin>
+                    </HBox>
+                </VBox>
             </StackPane>
                 </VBox>
         </ScrollPane>

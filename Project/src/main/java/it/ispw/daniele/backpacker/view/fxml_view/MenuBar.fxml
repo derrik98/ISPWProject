@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="APMenuBar" prefHeight="70.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.view.fxml_view.MenuBarController">
+<AnchorPane fx:id="APMenuBar" prefHeight="70.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17.0.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ispw.daniele.backpacker.view.fxml_view.MenuBarController">
    <HBox alignment="CENTER" prefWidth="1920.0" spacing="35.0" style="-fx-background-color: rgba(139,103,40,0.95);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <Label fx:id="LabelHome" onMouseClicked="#switchToHome" style="-fx-border: none;" text="Home" wrapText="true">
          <font>

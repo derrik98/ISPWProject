@@ -31,7 +31,7 @@ public class MonumentFromAddress extends JSONFactory{
         try {
             JSONObject json;
             String url = ("https://maps.googleapis.com/maps/api/place/textsearch/json?query=monuments+in+"+convertString(homeBean.getAddress()) +
-                    "&radius=1000&type=tourist_attraction&language=it&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");
+                    "&radius=1000&type=tourist_attraction&language=it&key=" + System.getProperty("google_api"));
             json = readJsonFromUrl(url);
             JSONArray a = (JSONArray) json.get("results");
             int i = 0;

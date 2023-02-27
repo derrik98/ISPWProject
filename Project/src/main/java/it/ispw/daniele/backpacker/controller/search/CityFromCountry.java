@@ -23,7 +23,7 @@ public class CityFromCountry extends JSONFactory{
         JSONObject json;
 
         json = readJsonFromUrl("https://maps.googleapis.com/maps/api/place/autocomplete/json?input="
-                + homeBean.getCity() + "&types=(cities)&language=it&key=AIzaSyDKAl31fAwxbDImIXXOxSre5uma5WdOgHg");
+                + homeBean.getCity() + "&types=(cities)&language=it&key=" + System.getProperty("google_api"));
 
         JSONArray ja = (JSONArray) json.get("predictions");
         JSONObject o = (JSONObject) ja.getJSONObject(0).get("structured_formatting");
